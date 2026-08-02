@@ -1,0 +1,154 @@
+---
+const regulations = [
+  {
+    norm: "MDR 2017/745",
+    scope: "Regla 11 · Marcado CE Clase IIa",
+    status: "En Proceso",
+    badgeColor: "cyan",
+    desc: "Clasificación como software que influye en decisiones diagnósticas clínicas."
+  },
+  {
+    norm: "IEC 62304",
+    scope: "Ciclo de vida de Software Médico · Clase B",
+    status: "En Implementación",
+    badgeColor: "amber",
+    desc: "Control riguroso de diseño y código para mitigar cualquier riesgo derivado del software."
+  },
+  {
+    norm: "IEC 62366-1",
+    scope: "Ingeniería de Usabilidad para Dispositivos Médicos",
+    status: "En Implementación",
+    badgeColor: "purple",
+    desc: "Validación de interfaz sin fricción y captura de percepción del clínico mediante telemetría Zero-PHI."
+  },
+  {
+    norm: "ISO 14971",
+    scope: "Gestión de Riesgos en el Ciclo de Vida",
+    status: "En Implementación",
+    badgeColor: "amber",
+    desc: "Matriz FMEA y evaluación sistemática de impacto en la seguridad del paciente."
+  },
+  {
+    norm: "GDPR / LOPDGDD",
+    scope: "Protección de Datos Sanitarios",
+    status: "Cumplimiento Total",
+    badgeColor: "emerald",
+    desc: "Seudonimización de identidad (HMAC-SHA256), cifrado AES-256 en reposo y datos locales."
+  },
+  {
+    norm: "HL7 FHIR R4",
+    scope: "Interoperabilidad con HCE",
+    status: "En Roadmap",
+    badgeColor: "purple",
+    desc: "Estándar de intercambio de datos clínicos estructurados con Historia Clínica Electrónica."
+  }
+];
+---
+
+<section id="normativas" class="via-regulatory">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Conformidad Regulatoria & Normativa</span>
+      <h2>Marco Regulador <span class="gradient-text">SaMD Clase IIa</span></h2>
+      <p>Diseñado bajo los estándares internacionales más exigentes de la Unión Europea para dispositivos médicos en software.</p>
+    </div>
+
+    <div class="reg-grid">
+      {regulations.map((r) => (
+        <div class="glass-card reg-card">
+          <div class="reg-top">
+            <h3>{r.norm}</h3>
+            <span class={`badge badge-${r.badgeColor}`}>{r.status}</span>
+          </div>
+          <span class="reg-scope">{r.scope}</span>
+          <p class="reg-desc">{r.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="glass-card class-b-box">
+      <div class="class-b-header">
+        <span class="class-icon">🛡️</span>
+        <h4>IEC 62304 — Fundamento de Clase de Seguridad B</h4>
+      </div>
+      <p>
+        Un fallo eventual en el software podría generar datos erróneos que, sin el adecuado escrutinio del profesional, 
+        podría conducir a una decisión subóptima. El riesgo de lesión directa es extremadamente bajo gracias a la <strong>supervisión obligatoria del clínico</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .via-regulatory {
+    padding: 90px 0;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .reg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .reg-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reg-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .reg-top h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+
+  .reg-scope {
+    font-size: 0.825rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    margin-bottom: 0.75rem;
+  }
+
+  .reg-desc {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    line-height: 1.5;
+  }
+
+  .class-b-box {
+    background: rgba(0, 242, 254, 0.04);
+    border: 1px dashed rgba(0, 242, 254, 0.3);
+    padding: 1.75rem;
+  }
+
+  .class-b-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .class-icon {
+    font-size: 1.5rem;
+  }
+
+  .class-b-header h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .class-b-box p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>

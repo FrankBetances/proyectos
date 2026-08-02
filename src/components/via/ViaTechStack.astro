@@ -1,0 +1,65 @@
+---
+const techItems = [
+  { category: "Frontend & UI", stack: "React Native 0.80.1 · TypeScript 5.4 · Gluestack UI v1 · Lucide Icons" },
+  { category: "Base de Datos Local", stack: "TypeORM 0.3.27 · Nitro SQLite (AES-256-GCM) · Offline-First" },
+  { category: "Audio DSP & Tonos", stack: "react-native-audio-api (Oboe engine) · OscillatorNode · AudioRecorder RMS" },
+  { category: "Hardware BLE & Sensores", stack: "react-native-ble-plx (Pulsioxímetro 0x1822) · Vision Camera" },
+  { category: "Voz & Reconocimiento", stack: "react-native-tts · @react-native-voice/voice · Audio Recorder Player" },
+  { category: "Informes & Telemetría", stack: "pdf-lib (PDFs clínicos) · lz-string · react-native-qrcode-svg (ecl Q)" },
+  { category: "Identidad & Backend", stack: "Firebase Auth (email/password) · Firestore (perfil del profesional)" },
+  { category: "Estado Global", stack: "Redux Toolkit · Redux Persist (whitelist theme)" }
+];
+---
+
+<section id="stack-tecnico" class="via-tech">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Arquitectura de Software Médico</span>
+      <h2>Stack Tecnológico <span class="gradient-text">Especializado</span></h2>
+      <p>Construido con librerías nativas de alto rendimiento optimizadas para procesamiento en tiempo real en tablets iOS y Android.</p>
+    </div>
+
+    <div class="tech-grid">
+      {techItems.map((t) => (
+        <div class="glass-card tech-card">
+          <span class="tech-cat">{t.category}</span>
+          <p class="tech-stack">{t.stack}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .via-tech {
+    padding: 90px 0;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tech-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tech-cat {
+    font-size: 0.825rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tech-stack {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+</style>

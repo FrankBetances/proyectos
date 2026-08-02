@@ -1,0 +1,210 @@
+---
+const modules = [
+  {
+    num: "1",
+    icon: "📋",
+    title: "Evaluación Clínica Previa",
+    hw: "🟢 Ninguno",
+    desc: "Anamnesis y cuestionario clínico estructurado previo con firma digital de consentimiento y registro fotográfico.",
+    entity: "ClinicalAssessment",
+    badgeColor: "cyan"
+  },
+  {
+    num: "2",
+    icon: "🧩",
+    title: "Autismo M-CHAT-R",
+    hw: "🟢 Ninguno",
+    desc: "Cribado de Trastorno del Espectro Autista (16–30 meses) con 20 ítems y bandas de riesgo (bajo, medio, alto).",
+    entity: "Screening (autism-tea)",
+    badgeColor: "purple"
+  },
+  {
+    num: "3",
+    icon: "🔊",
+    title: "Sonómetro Ambiental",
+    hw: "🎙️ Micrófono Estéreo",
+    desc: "Gate de sala: mide el ruido de fondo (umbral 45 dB) con captura de micrófono real (AudioRecorder RMS → dBFS).",
+    entity: "Sin persistencia (gate efímero)",
+    badgeColor: "amber"
+  },
+  {
+    num: "4",
+    icon: "👂",
+    title: "Audiometría Infantil",
+    hw: "🔊 Síntesis Audio-API",
+    desc: "Audiometría tonal liminar guiada por algoritmo Hughson-Westlake (250–4000 Hz) con síntesis de tono puro.",
+    entity: "AudiometryTest",
+    badgeColor: "emerald"
+  },
+  {
+    num: "5",
+    icon: "🚂",
+    title: "Audiometría Condicionada",
+    hw: "🔊 Audio-API + Reanimated",
+    desc: "El Tren del Sonido (CRA): avance por estaciones de frecuencia con animación lúdica y silbato de respuesta.",
+    entity: "AudiometryTest (conditioned)",
+    badgeColor: "cyan"
+  },
+  {
+    num: "6",
+    icon: "🎙️",
+    title: "Análisis Acústico de Voz",
+    hw: "🎙️ Mic + DSP (LPC/FFT)",
+    desc: "Biomarcadores vocales: F0, jitter, shimmer, HNR y formantes F1–F3 sobre voz sostenida (/a/).",
+    entity: "VoiceAnalysis",
+    badgeColor: "purple"
+  },
+  {
+    num: "7",
+    icon: "📶",
+    title: "Test de Disfagia MECV-V",
+    hw: "📶 Pulsioxímetro BLE",
+    desc: "Método Volumen-Viscosidad sobre 9 bolos, registro de desaturación SpO₂ ≥3% y recomendación de adaptación de dieta.",
+    entity: "DysphagiaTest",
+    badgeColor: "rose"
+  },
+  {
+    num: "8",
+    icon: "😴",
+    title: "Cribado SAHS Infantil",
+    hw: "🟢 Ninguno",
+    desc: "PSQ de Chervin (SRBD-22) + exploración de amígdalas (Brodsky), IMC y factores de riesgo respiratorios.",
+    entity: "SahsScreening",
+    badgeColor: "amber"
+  },
+  {
+    num: "9",
+    icon: "🗣️",
+    title: "Articulación · T.A.R.",
+    hw: "🎙️ Mic + TTS + ASR",
+    desc: "Test de Articulación a la Repetición con clasificación SODA por fonema y reconocimiento de voz automático.",
+    entity: "ArticulationTest",
+    badgeColor: "emerald"
+  },
+  {
+    num: "10",
+    icon: "💬",
+    title: "Audiometría Verbal",
+    hw: "🗣️ TTS Neural",
+    desc: "Logoaudiometría en campo libre con listas de palabras por banda de edad (A–D) y tarjetas de conjunto cerrado.",
+    entity: "VerbalAudiometryTest",
+    badgeColor: "cyan"
+  },
+  {
+    num: "11",
+    icon: "🧠",
+    title: "Funciones Ejecutivas",
+    hw: "🗣️ TTS (consignas)",
+    desc: "Exploración de 5 mini-juegos de tarjetas (atención, inhibición, flexibilidad, memoria de trabajo y planificación).",
+    entity: "ExecutiveFunctionsTest",
+    badgeColor: "purple"
+  }
+];
+---
+
+<section id="modulos" class="via-modules">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Batería Completa de Evaluación</span>
+      <h2>11 Módulos Clínicos y de <span class="gradient-text">Neurodesarrollo</span></h2>
+      <p>Cada módulo combina rigidez metodológica sanitaria con una interfaz adaptada al paciente pediátrico.</p>
+    </div>
+
+    <div class="modules-grid">
+      {modules.map((m) => (
+        <div class="glass-card module-card">
+          <div class="module-top">
+            <span class="mod-num">M{m.num}</span>
+            <span class="mod-icon">{m.icon}</span>
+            <span class={`badge badge-${m.badgeColor}`}>{m.hw}</span>
+          </div>
+
+          <h3>{m.title}</h3>
+          <p class="mod-desc">{m.desc}</p>
+
+          <div class="mod-footer">
+            <span class="entity-label">Persistencia:</span>
+            <code class="entity-name">{m.entity}</code>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .via-modules {
+    padding: 90px 0;
+    background: rgba(0, 0, 0, 0.25);
+  }
+
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .module-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .module-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .mod-num {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.08);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+  }
+
+  .mod-icon {
+    font-size: 1.75rem;
+  }
+
+  .module-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+
+  .mod-desc {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+  }
+
+  .mod-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border-light);
+    font-size: 0.8rem;
+  }
+
+  .entity-label {
+    color: var(--text-dim);
+  }
+
+  .entity-name {
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.06);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.775rem;
+  }
+</style>

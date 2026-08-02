@@ -1,0 +1,132 @@
+---
+---
+
+<section id="telemetria-via" class="via-telemetry">
+  <div class="container">
+    <div class="glass-card telemetry-box">
+      <div class="telemetry-header">
+        <span class="badge badge-emerald">Ingeniería de Usabilidad IEC 62366-1</span>
+        <h2>Telemetría de Usabilidad <span class="gradient-text-emerald">Zero-PHI</span></h2>
+        <p>
+          VIA+ registra la fricción de uso y la percepción del facultativo mediante un modelo de <strong>privacidad matemática total</strong>: ningún dato del paciente viaja jamás en la telemetría.
+        </p>
+      </div>
+
+      <div class="telemetry-features-grid">
+        <div class="feature-box">
+          <span class="f-icon">🔒</span>
+          <h4>Aislamiento Absoluto de Datos (PHI)</h4>
+          <p>
+            El payload contiene únicamente un <code>sessionId</code> aleatorio de 8 caracteres (base36), los tiempos por reactivo y el Likert del profesional. 
+            No contiene NHC, nombres ni referencias reidentificables.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <span class="f-icon">📦</span>
+          <h4>Compresión LZString Optimizada</h4>
+          <p>
+            Compresión ASCII URL-safe mediante <code>LZString.compressToEncodedURIComponent</code>. 
+            Reduce el payload un <strong>~32% frente al JSON crudo</strong> y un <strong>~49% frente a Base64</strong>.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <span class="f-icon">📷</span>
+          <h4>Exportación mediante QR Anónimo</h4>
+          <p>
+            Al finalizar la batería y marcar el Likert de usabilidad (1–5), la app genera un código QR animado en pantalla con 
+            recuperación de errores del 25% (<code>ecl='Q'</code>) para lectura instantánea.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <span class="f-icon">💾</span>
+          <h4>Persistencia Local AES-256</h4>
+          <p>
+            Los datos clínicos reales residen <strong>únicamente en SQLite local cifrado (AES-256-GCM)</strong>. 
+            La sincronización con Firestore se limita estrictamente al perfil del profesional autenticado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .via-telemetry {
+    padding: 90px 0;
+  }
+
+  .telemetry-box {
+    padding: 3.5rem 3rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(6, 78, 59, 0.25) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    box-shadow: 0 0 40px -5px rgba(16, 185, 129, 0.15);
+  }
+
+  .telemetry-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .telemetry-header h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin: 0.85rem 0;
+  }
+
+  .telemetry-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .telemetry-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .feature-box {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .f-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .feature-box h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .feature-box p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .feature-box code {
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.08);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.825rem;
+  }
+
+  @media (max-width: 768px) {
+    .telemetry-box {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

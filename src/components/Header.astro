@@ -1,6 +1,6 @@
 ---
 interface Props {
-  activeTab?: 'home' | 'cv';
+  activeTab?: 'home' | 'cv' | 'via';
 }
 
 const { activeTab = 'home' } = Astro.props;
@@ -22,13 +22,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
     <nav class="nav-links">
       <a href={`${baseUrl}/`} class={activeTab === 'home' ? 'active' : ''}>Valeria+</a>
-      <a href={`${baseUrl}/cv`} class={activeTab === 'cv' ? 'active' : ''}>
-        <span class="nav-highlight">Currículum (CV)</span>
+      <a href={`${baseUrl}/via`} class={activeTab === 'via' ? 'active' : ''}>
+        <span class="nav-highlight">VIA+ (SaMD)</span>
       </a>
+      <a href={`${baseUrl}/cv`} class={activeTab === 'cv' ? 'active' : ''}>Currículum (CV)</a>
       <a href={`${baseUrl}/#terapias`}>Terapias</a>
       <a href={`${baseUrl}/cv#seccion-proyectos`}>Proyectos</a>
       <a href={`${baseUrl}/cv#seccion-publicaciones`}>Publicaciones</a>
-      <a href={`${baseUrl}/cv#seccion-premios`}>Premios</a>
     </nav>
 
     <div class="header-actions">

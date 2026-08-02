@@ -1,0 +1,210 @@
+---
+const steps = [
+  {
+    num: "0",
+    title: "Acceso Profesional",
+    icon: "🔑",
+    desc: "Autenticación del profesional sanitario con credenciales Firebase y perfil de profesional en Firestore.",
+    badge: "Acceso Restringido",
+    badgeColor: "cyan"
+  },
+  {
+    num: "1",
+    title: "Identificación del Paciente",
+    icon: "👤",
+    desc: "Búsqueda o alta de paciente pediátrico con seudonimización automática (HMAC-SHA256).",
+    badge: "Seudonimizado",
+    badgeColor: "purple"
+  },
+  {
+    num: "2",
+    title: "Consentimiento Informado",
+    icon: "⚠️",
+    desc: "Firma digital del tutor legal. Módulo bloqueante: sin CI válido se deniega el acceso a las pruebas.",
+    badge: "Bloqueante Obligatorio",
+    badgeColor: "rose"
+  },
+  {
+    num: "3",
+    title: "Pre-screening Clínico (CAP)",
+    icon: "📋",
+    desc: "Certificado de Aptitud para la Prueba: checklist visual, motora fina, auditiva periférica y cognitiva.",
+    badge: "Capacidad Verificada",
+    badgeColor: "amber"
+  },
+  {
+    num: "4",
+    title: "Batería Gamificada",
+    icon: "🎮",
+    desc: "11 módulos adaptados. Modo Niño (interfaz lúdica) y Modo Profesional (datos analíticos simultáneos).",
+    badge: "11 Módulos",
+    badgeColor: "emerald"
+  },
+  {
+    num: "5",
+    title: "Resultados & Telemetría QR",
+    icon: "📊",
+    desc: "Informe PDF estructurado y exportación de usabilidad mediante código QR anónimo (Zero-PHI).",
+    badge: "PDF + QR Zero-PHI",
+    badgeColor: "cyan"
+  }
+];
+
+const capItems = [
+  { label: "Capacidad Visual", detail: "Identificación de estímulos y tarjetas en pantalla" },
+  { label: "Motora Fina", detail: "Interacción táctil (arrastrar, pulsar) en tablet" },
+  { label: "Auditiva Periférica", detail: "Percepción basal para recibir consignas" },
+  { label: "Estado Cognitivo", detail: "Atención y alerta mínimas para la tarea lúdica" }
+];
+---
+
+<section id="flujo-clinico" class="via-workflow">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Protocolo Estrictamente Secuencial</span>
+      <h2>Flujo Clínico <span class="gradient-text">Obligatorio</span></h2>
+      <p>Cada fase es un prerequisito ineludible para avanzar hacia la batería de pruebas y evitar sesgos de evaluación.</p>
+    </div>
+
+    <div class="timeline-grid">
+      {steps.map((s) => (
+        <div class="glass-card timeline-card">
+          <div class="timeline-top">
+            <span class="step-num">{s.num}</span>
+            <span class="step-icon">{s.icon}</span>
+            <span class={`badge badge-${s.badgeColor}`}>{s.badge}</span>
+          </div>
+          <h3>{s.title}</h3>
+          <p>{s.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CAP Checklist Box -->
+    <div class="glass-card cap-box">
+      <h3>📋 Pre-Screening — Checklist CAP (Certificado de Aptitud)</h3>
+      <p class="cap-sub">El profesional debe confirmar las 4 capacidades antes de iniciar los módulos:</p>
+
+      <div class="cap-grid">
+        {capItems.map((item) => (
+          <div class="cap-item">
+            <span class="check-mark">✓</span>
+            <div>
+              <strong>{item.label}</strong>
+              <span class="cap-detail">{item.detail}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .via-workflow {
+    padding: 90px 0;
+  }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .timeline-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+
+  .timeline-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .step-num {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.1);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 242, 254, 0.3);
+  }
+
+  .step-icon {
+    font-size: 1.5rem;
+  }
+
+  .timeline-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .cap-box {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--border-light);
+    padding: 2.25rem;
+  }
+
+  .cap-box h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+
+  .cap-sub {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .cap-item {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .check-mark {
+    color: var(--accent-emerald);
+    font-weight: 900;
+    font-size: 1.2rem;
+  }
+
+  .cap-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-main);
+  }
+
+  .cap-detail {
+    font-size: 0.825rem;
+    color: var(--text-dim);
+  }
+</style>

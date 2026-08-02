@@ -1,0 +1,156 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+
+<section class="via-ecosystem">
+  <div class="container">
+    <div class="glass-card ecosystem-box">
+      <div class="eco-header">
+        <span class="badge badge-purple">Ecosistema Earlify Health</span>
+        <h2>Sinergia Clínica: <span class="gradient-text">VIA+ & Valeria+</span></h2>
+        <p>Un ciclo continuo de atención pediátrica desde el tamizaje en consulta hasta la rehabilitación gamificada en el hogar.</p>
+      </div>
+
+      <div class="eco-grid">
+        <div class="eco-card via">
+          <div class="eco-top">
+            <span class="eco-icon">⟁</span>
+            <h3>VIA+</h3>
+            <span class="badge badge-cyan">SaMD Clase IIa</span>
+          </div>
+          <span class="eco-role">Tamizaje, Audiometría y Diagnóstico</span>
+          <p>
+            Herramienta clínica de apoyo en tablet para evaluar hipoacusia, fonética, disfagia, autismo y funciones ejecutivas en consulta médica.
+          </p>
+        </div>
+
+        <div class="eco-arrow">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+
+        <div class="eco-card valeria">
+          <div class="eco-top">
+            <span class="eco-icon">🐻</span>
+            <h3>Valeria+</h3>
+            <span class="badge badge-amber">Terapia Offline Pediátrica</span>
+          </div>
+          <span class="eco-role">Rehabilitación Adaptativa e Intervención</span>
+          <p>
+            Aplicación de intervención diaria con 6 bloques de terapia, cápsulas TPR, formación a padres en Academy y 4 variedades idiomáticas.
+          </p>
+          <a href={`${baseUrl}/`} class="eco-link">Conocer Valeria+ →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .via-ecosystem {
+    padding: 90px 0;
+  }
+
+  .ecosystem-box {
+    padding: 3.5rem 3rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 27, 75, 0.35) 100%);
+    border: 1px solid rgba(138, 43, 226, 0.35);
+  }
+
+  .eco-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .eco-header h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin: 0.85rem 0;
+  }
+
+  .eco-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .eco-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .eco-card {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    flex: 1;
+    min-width: 300px;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .eco-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .eco-icon {
+    font-size: 2rem;
+  }
+
+  .eco-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .eco-role {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+  }
+
+  .eco-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .eco-arrow {
+    color: var(--accent-cyan);
+  }
+
+  .eco-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--accent-cyan);
+    font-weight: 700;
+    font-size: 0.925rem;
+    text-decoration: none;
+  }
+
+  .eco-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .ecosystem-box {
+      padding: 2rem 1.5rem;
+    }
+    .eco-arrow {
+      transform: rotate(90deg);
+    }
+  }
+</style>

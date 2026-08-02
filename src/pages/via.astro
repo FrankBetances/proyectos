@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ViaHero from '../components/via/ViaHero.astro';
+import ViaOverview from '../components/via/ViaOverview.astro';
+import ViaRegulatory from '../components/via/ViaRegulatory.astro';
+import ViaWorkflow from '../components/via/ViaWorkflow.astro';
+import ViaModules from '../components/via/ViaModules.astro';
+import ViaTelemetryPrivacy from '../components/via/ViaTelemetryPrivacy.astro';
+import ViaTechStack from '../components/via/ViaTechStack.astro';
+import ViaEcosystem from '../components/via/ViaEcosystem.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+	title="VIA+ · Valoración Interactiva de Audición y Lenguaje (SaMD Clase IIa)"
+	description="Software como Dispositivo Médico (SaMD) de Clase IIa (MDR 2017/745) para tamizaje auditivo, logoaudiometría, fonética y neurodesarrollo pediátrico."
+>
+	<Header activeTab="via" />
+	<main>
+		<ViaHero />
+		<ViaOverview />
+		<ViaRegulatory />
+		<ViaWorkflow />
+		<ViaModules />
+		<ViaTelemetryPrivacy />
+		<ViaTechStack />
+		<ViaEcosystem />
+	</main>
+	<Footer />
+</Layout>
