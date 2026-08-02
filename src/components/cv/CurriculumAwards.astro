@@ -1,0 +1,301 @@
+---
+const awards = [
+  {
+    year: "2025",
+    title: "Premio Ennova Health 2025 — Categoría Transformación Digital",
+    entity: "Diario Médico & Correo Farmacéutico · Madrid",
+    desc: "Galardón otorgado por la plataforma digital para transformar el diagnóstico temprano de trastornos de audición."
+  },
+  {
+    year: "2025",
+    title: "Programa de Incubación USC-INTEGRA 2025: VALERIA+",
+    entity: "Universidad de Santiago de Compostela · Julio 2025",
+    desc: "Seleccionado por el jurado de la USC para impulsar proyectos emprendedores de alto impacto tecnológico en salud."
+  },
+  {
+    year: "2024",
+    title: "Premio IDeaLugo 2024",
+    entity: "Lugo · Diciembre 2024",
+    desc: "Proyecto Valeria: Mejora y rehabilitación virtual del lenguaje con asistencia interactiva en familia."
+  },
+  {
+    year: "2024",
+    title: "Finalista IX Hackathon de Salud 2024 & AI mHealth Challenge",
+    entity: "Hospital Ramón y Cajal (Madrid) & Gijón",
+    desc: "VALERIA GPT seleccionada como una de las mejores soluciones de IA y mHealth del año."
+  },
+  {
+    year: "2024",
+    title: "Sello de Calidad ITEMAS 2024",
+    entity: "Plataforma ITEMAS / Instituto de Salud Carlos III · Abril 2024",
+    desc: "Acreditación de excelencia e innovación sanitaria para el proyecto VALERIA."
+  },
+  {
+    year: "2024",
+    title: "Premio Argos USC — Equipos Emprendedores",
+    entity: "Universidad de Santiago de Compostela · Marzo 2024",
+    desc: "Reconocimiento a la creación de equipos biomédicos emprendedores."
+  },
+  {
+    year: "2023",
+    title: "Premio Ennova Health 2023 — Transformación Digital",
+    entity: "Madrid · Noviembre 2023",
+    desc: "Premio nacional por la Plataforma Digital de Rehabilitación del Lenguaje."
+  },
+  {
+    year: "2023",
+    title: "Primer Lugar Premio Innovación en Salud SERGAS",
+    entity: "Servicio Gallego de Salud · A Coruña, Abril 2023",
+    desc: "Asistente virtual para rehabilitación y terapia de lenguaje."
+  },
+  {
+    year: "2023",
+    title: "Premio a Mejor Comunicación Oral SGORL-PCF",
+    entity: "50 Reunión Anual de la SGORL-PCF · Lugo",
+    desc: "Trabajo titulado: Rehabilitación digital del Lenguaje: Prueba de concepto."
+  },
+  {
+    year: "2019",
+    title: "Premio Fórum Póster 70 Congreso Nacional SEORL-CCC",
+    entity: "SEORL-CCC & V Congreso Academia Iberoamericana · Santiago de Compostela",
+    desc: "Análisis de la marcha y el equilibrio mediante el uso de sensores inerciales."
+  },
+  {
+    year: "2019",
+    title: "Premio Joven Dominicano Destacado en el Extranjero",
+    entity: "Embajada de República Dominicana · Marzo 2019",
+    desc: "Reconocimiento a la excelencia profesional y médica en el extranjero."
+  },
+  {
+    year: "2018",
+    title: "Premio Jóvenes Creadores Aragoneses 2018",
+    entity: "Gobierno de Aragón · Teruel",
+    desc: "Por el desarrollo e innovación del prototipo de VideoFrenzel de bajo coste."
+  }
+];
+
+const grants = [
+  {
+    title: "Beca SEORL para Estancia Internacional en USA",
+    institution: "UPMC Presbyterian Hospital · Pittsburgh, USA (2017)",
+    desc: "Estancia formativa en cirugía avanzada de base de cráneo y otología."
+  },
+  {
+    title: "Bronze Grant — European Laryngological Society (ELS)",
+    institution: "Hospital Universitario Rey Juan Carlos · Madrid (2017)",
+    desc: "Estancia de perfeccionamiento en laringología y cirugía láser de la vía aérea."
+  },
+  {
+    title: "ERS-Grant — Junior European Rhinologic Society",
+    institution: "Universitätsplatz Graz · Graz, Austria (2016)",
+    desc: "Curso intensivo de cirugía endoscópica nasosinusal y rinoplastia."
+  }
+];
+
+const societies = [
+  "Sociedad Española de Otorrinolaringología y Cirugía de Cabeza y Cuello (SEORL-CCC)",
+  "European Society of Pediatric Otorhinolaryngology (ESPO)",
+  "Grupo de Audiología Computacional de la Asociación Española de Audiología (AEDA)",
+  "Sociedad Jean Piaget",
+  "Grupo de Investigación Multidisciplinar HUGU / IDISCAM"
+];
+---
+
+<section id="seccion-premios" class="cv-section">
+  <div class="container">
+    <div class="section-header align-left">
+      <span class="tag">Reconocimientos & Red Científica</span>
+      <h2>Premios, Becas y Sociedades Científicas</h2>
+      <p>Distinciones en innovación tecnológica sanitaria, becas de investigación internacional y afiliación a sociedades mérito-científicas.</p>
+    </div>
+
+    <!-- Sub-grid: Premios -->
+    <h3 class="subsection-title">🏆 Premios y Galardones de Innovación</h3>
+    <div class="awards-grid">
+      {awards.map((award) => (
+        <div class="award-card glass-card">
+          <div class="award-year">{award.year}</div>
+          <div class="award-content">
+            <h4 class="award-title">{award.title}</h4>
+            <p class="award-entity">{award.entity}</p>
+            <p class="award-desc">{award.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Sub-grid: Becas y Sociedades -->
+    <div class="split-grid" id="seccion-comunicaciones">
+      <div class="grants-block">
+        <h3 class="subsection-title">🎓 Becas de Investigación Internacional</h3>
+        <div class="grants-list">
+          {grants.map((grant) => (
+            <div class="grant-card glass-card">
+              <h4 class="grant-title">{grant.title}</h4>
+              <p class="grant-inst">{grant.institution}</p>
+              <p class="grant-desc">{grant.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="societies-block">
+        <h3 class="subsection-title">🌐 Sociedades Científicas</h3>
+        <div class="societies-card glass-card">
+          <ul class="societies-list">
+            {societies.map((soc) => (
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>{soc}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cv-section {
+    padding: 3.5rem 0;
+  }
+
+  .align-left {
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .subsection-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 2rem 0 1.25rem 0;
+  }
+
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .award-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .award-year {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+
+  .award-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+    line-height: 1.35;
+  }
+
+  .award-entity {
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .award-desc {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .grants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .grant-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+  }
+
+  .grant-inst {
+    color: var(--accent-purple);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .grant-desc {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .societies-card {
+    height: calc(100% - 3.5rem);
+    display: flex;
+    align-items: center;
+  }
+
+  .societies-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .societies-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .societies-list svg {
+    color: var(--accent-emerald);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 900px) {
+    .split-grid {
+      grid-template-columns: 1fr;
+    }
+    .awards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media print {
+    .award-card, .grant-card, .societies-card {
+      background: none !important;
+      border: 1px solid #ddd !important;
+      break-inside: avoid;
+    }
+    .award-title, .grant-title, .societies-list li {
+      color: #000 !important;
+    }
+  }
+</style>

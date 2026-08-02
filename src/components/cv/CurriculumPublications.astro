@@ -1,0 +1,370 @@
+---
+const publications = [
+  {
+    year: "2026",
+    title: "Frontera moral en la consulta: Protocolos, vocación y el paciente que se nos escapa",
+    authors: "Betances, F. A.",
+    journal: "Boletín Pangea SEORL-CCC",
+    details: "(4), 163-168",
+    url: "https://seorl.net/comite-de-humanidades-boletin/",
+    category: "articulo"
+  },
+  {
+    year: "2025",
+    title: "Accuracy of ChatGPT-4o in Text and Video Analysis of Laryngeal Malignant and Premalignant Diseases",
+    authors: "Chiesa-Estomba CM, Andueza-Guembe M, Maniaci A, Mayo-Yanez M, Betances-Reinoso F, Vaira LA, Saibene AM, Lechien JR.",
+    journal: "Journal of Voice",
+    details: "doi: 10.1016/j.jvoice.2025.03.006. PMID: 40148204",
+    url: "https://doi.org/10.1016/j.jvoice.2025.03.006",
+    category: "articulo"
+  },
+  {
+    year: "2025",
+    title: "Inteligencia artificial en Otorrinolaringología: Desafíos éticos para una implementación responsable",
+    authors: "Betances Reinoso, F. A.",
+    journal: "Boletín Pangea SEORL-CCC",
+    details: "85-92",
+    url: "https://seorl.net/comite-de-humanidades-boletin/",
+    category: "articulo"
+  },
+  {
+    year: "2025",
+    title: "Valoración Interactiva de Audición y Lenguaje (VIA+): Prueba de concepto",
+    authors: "Betances Reinoso, F. A.",
+    journal: "Zenodo Repository",
+    details: "doi: 10.5281/zenodo.16788385",
+    url: "https://doi.org/10.5281/zenodo.16788385",
+    category: "preprint"
+  },
+  {
+    year: "2023",
+    title: "VALERIA+: Diagnóstico y Rehabilitación Digital de Audición y Lenguaje",
+    authors: "Betances Reinoso, F. A.",
+    journal: "Zenodo Repository",
+    details: "doi: 10.5281/zenodo.16762398",
+    url: "https://doi.org/10.5281/zenodo.16762398",
+    category: "preprint"
+  },
+  {
+    year: "2021",
+    title: "The Listening Network and Cochlear Implant Benefits in Hearing-Impaired Adults",
+    authors: "James CJ, Graham PL, Betances Reinoso FA, Breuning SN, Durko M, Huarte Irujo A, Royo López J, Müller L, Perenyi A, Jaramillo Saffon R, Salinas Garcia S, Schüssler M, Schwarz Langer MJ, Skarzynski PH, Mecklenburg DJ.",
+    journal: "Frontiers in Aging Neuroscience",
+    details: "13:589296. doi: 10.3389/fnagi.2021.589296",
+    url: "https://doi.org/10.3389/fnagi.2021.589296",
+    category: "articulo"
+  },
+  {
+    year: "2021",
+    title: "Clinical Prevalence of Enhanced Vestibulo-Ocular Reflex Responses on Video Head Impulse Test",
+    authors: "Vargas-Alvarez A, Ninchritz-Becerra E, Goiburu M, Betances F, Rey-Martinez J, Altuna X.",
+    journal: "Otology & Neurotology",
+    details: "doi: 10.1097/MAO.0000000000003171",
+    url: "https://doi.org/10.1097/MAO.0000000000003171",
+    category: "articulo"
+  },
+  {
+    year: "2020",
+    title: "Análisis de la marcha y el equilibrio mediante el uso de sensores inerciales. Estudio prospectivo, longitudinal, no aleatorio",
+    authors: "Betances Reinoso FA, Lopez Montes T, Rodríguez Ontiveros V.",
+    journal: "Ciencia Y Salud",
+    details: "4(1), 11-16. doi: 10.22206/CYSA.2020.V411.PP11-16",
+    url: "https://doi.org/10.22206/CYSA.2020.V411.PP11-16",
+    category: "articulo"
+  },
+  {
+    year: "2020",
+    title: "Cribado Auditivo Neonatal. Exploración de la audición en el niño (Capítulo 27)",
+    authors: "Betances Reinoso, F. A. et al.",
+    journal: "Libro Oficial SEORL-CCC",
+    details: "Madrid, España 2020",
+    url: "https://seorl.net",
+    category: "libro"
+  },
+  {
+    year: "2019",
+    title: "Prototipo de video frenzel-video head impulse test de bajo coste",
+    authors: "Betances Reinoso FA, Lopez Montes T, Rodríguez Ontiveros VM, de León N.",
+    journal: "Ciencia Y Salud",
+    details: "3(3), 7-13. doi: 10.22206/cysa.2019.v3i3.pp7-13",
+    url: "https://doi.org/10.22206/cysa.2019.v3i3.pp7-13",
+    category: "articulo"
+  },
+  {
+    year: "2019",
+    title: "Prevalencia de disfonía infantil en el Colegio de Educación Infantil y Primaria 'Ensanche' de Teruel",
+    authors: "Betances R Frank, Vallés V Hector.",
+    journal: "Revista de Otorrinolaringología y Cirugía de Cabeza y Cuello",
+    details: "79(2), 159-166",
+    url: "https://dx.doi.org/10.4067/s0718-48162019000200159",
+    category: "articulo"
+  },
+  {
+    year: "2017",
+    title: "Incus- & Malleostapedotomy",
+    authors: "Chiesa Estomba CM, Betances Reinoso FA.",
+    journal: "Open Access Atlas of Otolaryngology, Head & Neck Operative Surgery",
+    details: "Vigo, España",
+    url: "http://www.entdev.uct.ac.za/guides/open-access-atlas-of-otolaryngology-head-and-neck-operative-surgery/",
+    category: "libro"
+  },
+  {
+    year: "2016",
+    title: "Utilidad clínica del cultivo de material obtenido mediante punción-aspiración de los abscesos periamigdalinos",
+    authors: "Betances-Reinoso FA, Chiesa-Estomba CM, Osorio-Velásquez A, Domínguez-Collado L, Santidrian-Hidalgo C.",
+    journal: "Anales de Otorrinolaringología Mexicana",
+    details: "61(1):20-24",
+    url: "https://www.medigraphic.com",
+    category: "articulo"
+  }
+];
+---
+
+<section id="seccion-publicaciones" class="cv-section">
+  <div class="container">
+    <div class="section-header align-left">
+      <span class="tag">Producción Científica</span>
+      <h2>Publicaciones & Capítulos de Libros</h2>
+      <p>Artículos biomédicos indexados, capítulos de libros y publicaciones de investigación en tecnología de audición e IA.</p>
+    </div>
+
+    <!-- Filter & Search Controls -->
+    <div class="pub-controls print-hide">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="pub-search" placeholder="Buscar por título, autor o revista..." />
+      </div>
+
+      <div class="filter-buttons">
+        <button class="pub-filter active" data-cat="all">Todos</button>
+        <button class="pub-filter" data-cat="articulo">Artículos</button>
+        <button class="pub-filter" data-cat="libro">Libros</button>
+        <button class="pub-filter" data-cat="preprint">Zenodo / Preprints</button>
+      </div>
+    </div>
+
+    <div class="pub-list" id="pub-list-container">
+      {publications.map((pub) => (
+        <div class="pub-card glass-card" data-category={pub.category}>
+          <div class="pub-header">
+            <span class="pub-year">{pub.year}</span>
+            <span class="badge badge-cyan">{pub.category.toUpperCase()}</span>
+          </div>
+
+          <h3 class="pub-title">{pub.title}</h3>
+          <p class="pub-authors">{pub.authors}</p>
+          <p class="pub-journal">
+            <strong>{pub.journal}</strong> · <span class="pub-details">{pub.details}</span>
+          </p>
+
+          {pub.url && (
+            <a href={pub.url} target="_blank" rel="noopener noreferrer" class="pub-link print-hide">
+              <span>Ver Publicación / DOI</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('pub-search') as HTMLInputElement;
+    const filterBtns = document.querySelectorAll('.pub-filter');
+    const pubCards = document.querySelectorAll('.pub-card');
+
+    let currentCategory = 'all';
+    let currentQuery = '';
+
+    function filterPubs() {
+      pubCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const text = card.textContent?.toLowerCase() || '';
+
+        const matchesCat = currentCategory === 'all' || cat === currentCategory;
+        const matchesQuery = !currentQuery || text.includes(currentQuery);
+
+        if (matchesCat && matchesQuery) {
+          (card as HTMLElement).style.display = 'flex';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = (e.target as HTMLInputElement).value.toLowerCase();
+        filterPubs();
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.getAttribute('data-cat') || 'all';
+        filterPubs();
+      });
+    });
+  });
+</script>
+
+<style>
+  .cv-section {
+    padding: 3.5rem 0;
+  }
+
+  .align-left {
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .pub-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    position: relative;
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .search-box svg {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dim);
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .search-box input:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+  }
+
+  .filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .pub-filter {
+    padding: 0.55rem 1.1rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .pub-filter:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .pub-filter.active {
+    background: var(--accent-cyan);
+    color: #040914;
+    border-color: var(--accent-cyan);
+    font-weight: 700;
+  }
+
+  .pub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .pub-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .pub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-year {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--accent-cyan);
+  }
+
+  .pub-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+
+  .pub-authors {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .pub-journal {
+    color: var(--text-dim);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: color 0.2s ease;
+  }
+
+  .pub-link:hover {
+    color: var(--accent-cyan);
+    text-decoration: underline;
+  }
+
+  @media print {
+    .pub-card {
+      background: none !important;
+      border: 1px solid #eee !important;
+      break-inside: avoid;
+    }
+    .pub-title, .pub-authors, .pub-journal {
+      color: #000 !important;
+    }
+  }
+</style>

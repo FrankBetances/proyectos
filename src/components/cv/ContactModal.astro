@@ -1,0 +1,262 @@
+---
+---
+
+<div id="contact-modal" class="modal-overlay print-hide" aria-hidden="true">
+  <div class="modal-card glass-card">
+    <button id="close-modal" class="close-btn" aria-label="Cerrar modal">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+
+    <div class="modal-header">
+      <div class="modal-icon">✉️</div>
+      <h3>Contacto Profesional & Académico</h3>
+      <p>Canales oficiales de investigación, transferencia tecnológica y consultas médico-académicas.</p>
+    </div>
+
+    <div class="modal-body">
+      <div class="contact-links">
+        <a href="https://www.researchgate.net/profile/Frank-Reinoso" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon">🔬</div>
+          <div>
+            <h4>ResearchGate Profile</h4>
+            <p>Acceso a preprints, publicaciones y red de investigación médica.</p>
+          </div>
+        </a>
+
+        <a href="https://orcid.org/0000-0002-6349-9537" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon id-orcid">ID</div>
+          <div>
+            <h4>Identificador Científico ORCID</h4>
+            <p>0000-0002-6349-9537 — Registro científico internacional.</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/FrankBetances" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon">💻</div>
+          <div>
+            <h4>GitHub Developer & Code Repositories</h4>
+            <p>Proyectos de software médico y código fuente de salud digital.</p>
+          </div>
+        </a>
+      </div>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Gracias por su mensaje profesional. Le responderemos a la brevedad posible.'); document.getElementById('contact-modal').classList.remove('open');">
+        <h4>Mensaje Directo Profesional</h4>
+        <div class="form-group">
+          <label for="contact-name">Nombre / Institución</label>
+          <input type="text" id="contact-name" placeholder="Ej. Dra. María García / Hospital X" required />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Correo Electrónico Profesional</label>
+          <input type="email" id="contact-email" placeholder="correo@institucion.org" required />
+        </div>
+        <div class="form-group">
+          <label for="contact-msg">Asunto / Consulta</label>
+          <textarea id="contact-msg" rows="3" placeholder="Detalle su consulta o propuesta de colaboración..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-width">Enviar Mensaje Seguro</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('contact-modal');
+    const openBtn = document.getElementById('open-contact-modal');
+    const openFooterBtn = document.getElementById('open-contact-modal-footer');
+    const closeBtn = document.getElementById('close-modal');
+
+    function openModal() {
+      if (modal) {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (openFooterBtn) openFooterBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+  });
+</script>
+
+<style>
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(7, 9, 14, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-card {
+    max-width: 580px;
+    width: 100%;
+    position: relative;
+    padding: 2.5rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .close-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: var(--text-main);
+  }
+
+  .modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .modal-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-header h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+  }
+
+  .modal-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .contact-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-cyan);
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+  }
+
+  .contact-icon.id-orcid {
+    font-weight: 800;
+    font-size: 0.85rem;
+    background: #A6CE39;
+    color: #000;
+    padding: 4px 6px;
+    border-radius: 4px;
+  }
+
+  .contact-card h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .contact-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .contact-form h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .form-group input, .form-group textarea {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+  }
+
+  .form-group input:focus, .form-group textarea:focus {
+    border-color: var(--accent-cyan);
+  }
+
+  .full-width {
+    width: 100%;
+    justify-content: center;
+  }
+</style>

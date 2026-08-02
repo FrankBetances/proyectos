@@ -1,0 +1,175 @@
+---
+const educationList = [
+  {
+    title: "Experto en Evaluación para los Servicios Sanitarios",
+    institution: "Universidade de Santiago de Compostela",
+    location: "Santiago de Compostela, España",
+    period: "Feb - Ago 2025",
+    tag: "Servicios Sanitarios & Gestión"
+  },
+  {
+    title: "Especialización en Atención Temprana",
+    institution: "Universidad de Alcalá de Henares",
+    location: "Madrid, España",
+    period: "2021 - 2022",
+    tag: "Desarrollo Infantil"
+  },
+  {
+    title: "Máster MBA en Dirección y Administración de Empresas",
+    institution: "Spain Business School",
+    location: "Madrid, España",
+    period: "2019 - 2022",
+    tag: "Gestión & Empresa"
+  },
+  {
+    title: "Especialización Universitaria en Audiología",
+    institution: "Universidad de Salamanca",
+    location: "Salamanca, España",
+    period: "2020 - 2021",
+    tag: "Audiología Avanzada"
+  },
+  {
+    title: "Experto en Diagnóstico y Rehabilitación en Hipoacusia Infantil",
+    institution: "Universidad de Alcalá de Henares",
+    location: "Madrid, España",
+    period: "2018 - 2019",
+    tag: "Audiología Pediátrica"
+  },
+  {
+    title: "Máster en Patología de la Voz y Voz Profesional",
+    institution: "Universidad de Alcalá de Henares",
+    location: "Madrid, España",
+    period: "2017 - 2018",
+    tag: "Laringología & Voz"
+  },
+  {
+    title: "Especialización en Rehabilitación de la Voz Profesional Hablada y Cantada",
+    institution: "Universidad de Alcalá de Henares",
+    location: "Madrid, España",
+    period: "2016 - 2017",
+    tag: "Voz Profesional"
+  },
+  {
+    title: "Experto en Patología de la Voz",
+    institution: "Universidad de Alcalá de Henares",
+    location: "Madrid, España",
+    period: "2014 - 2015",
+    tag: "Voz Clínica"
+  },
+  {
+    title: "Licenciatura en Medicina y Cirugía",
+    institution: "Universidad Católica Tecnológica del Cibao (UCATECI)",
+    location: "República Dominicana",
+    period: "2002 - 2009",
+    tag: "Grado Médico"
+  }
+];
+---
+
+<section id="seccion-formacion" class="cv-section">
+  <div class="container">
+    <div class="section-header align-left">
+      <span class="tag">Excelencia Académica</span>
+      <h2>Formación Postgraduada & Especialización</h2>
+      <p>Especializaciones universitarias en audiología, neurodesarrollo infantil, patología vocal y administración de servicios de salud.</p>
+    </div>
+
+    <div class="education-grid">
+      {educationList.map((item) => (
+        <div class="edu-card glass-card">
+          <div class="edu-card-top">
+            <span class="badge badge-purple">{item.tag}</span>
+            <span class="edu-period">{item.period}</span>
+          </div>
+          <h3 class="edu-title">{item.title}</h3>
+          <p class="edu-inst">{item.institution}</p>
+          <p class="edu-loc">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            {item.location}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cv-section {
+    padding: 3.5rem 0;
+  }
+
+  .align-left {
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  .education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .edu-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .edu-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.85rem;
+  }
+
+  .edu-period {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-dim);
+  }
+
+  .edu-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+  }
+
+  .edu-inst {
+    color: var(--accent-cyan);
+    font-weight: 600;
+    font-size: 0.925rem;
+    margin-bottom: 0.5rem;
+    margin-top: auto;
+  }
+
+  .edu-loc {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-muted);
+    font-size: 0.825rem;
+  }
+
+  @media (max-width: 640px) {
+    .education-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media print {
+    .edu-card {
+      background: none !important;
+      border: 1px solid #ddd !important;
+      break-inside: avoid;
+    }
+    .edu-title, .edu-inst {
+      color: #000 !important;
+    }
+    .edu-loc {
+      color: #555 !important;
+    }
+  }
+</style>

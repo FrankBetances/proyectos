@@ -1,0 +1,248 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
+<section class="cv-hero">
+  <div class="container">
+    <div class="hero-card glass-card">
+      <div class="hero-top">
+        <div class="avatar-wrapper">
+          <div class="avatar-ring">
+            <div class="avatar-content">
+              <span class="avatar-initials">FB</span>
+            </div>
+          </div>
+          <span class="status-dot" title="Activo profesionalmente"></span>
+        </div>
+
+        <div class="hero-info">
+          <div class="badge-row">
+            <span class="badge badge-cyan">🩺 FEA Otorrinolaringología</span>
+            <span class="badge badge-purple">🔬 Audiología Infantil & Salud Digital</span>
+            <span class="badge badge-emerald">🏆 Ennova Health 2025 & 2023</span>
+          </div>
+
+          <h1 class="hero-title">
+            Dr. Frank Alberto <span class="gradient-text">Betances Reinoso</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Médico Especialista en Otorrinolaringología y Cirugía de Cabeza y Cuello · Especialista en Audiología Infantil · Docente Universitario e Investigador en Salud Digital y Rehabilitación del Lenguaje.
+          </p>
+
+          <div class="hero-affiliations">
+            <div class="affiliation-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v14M21 7v14M6 11h12M6 15h12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg>
+              <span>Facultativo Especialista — <strong>Hospital Ribera Polusa</strong> (Lugo)</span>
+            </div>
+            <div class="affiliation-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span>Docente Universitario de Metodología de la Investigación (UCATECI)</span>
+            </div>
+            <div class="affiliation-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span>Investigador Principal Proyectos <strong>VALERIA+</strong>, <strong>VIA+</strong> y <strong>FONDOCYT</strong></span>
+            </div>
+          </div>
+
+          <div class="hero-actions print-hide">
+            <button onclick="window.print()" class="btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              <span>Imprimir / PDF</span>
+            </button>
+
+            <a href="https://www.researchgate.net/profile/Frank-Reinoso" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>ResearchGate</span>
+            </a>
+
+            <a href="https://orcid.org/0000-0002-6349-9537" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <span class="orcid-icon">ID</span>
+              <span>ORCID</span>
+            </a>
+
+            <button id="open-contact-modal" class="btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>Contacto</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cv-hero {
+    padding: 7rem 0 3rem 0;
+  }
+
+  .hero-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.6) 100%);
+    border: 1px solid var(--border-glow);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-top {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+
+  .avatar-wrapper {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .avatar-ring {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    padding: 4px;
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+  }
+
+  .avatar-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .avatar-initials {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .status-dot {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent-emerald);
+    border: 3px solid var(--bg-dark);
+    box-shadow: 0 0 10px var(--accent-emerald);
+  }
+
+  .hero-info {
+    flex: 1;
+  }
+
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    max-width: 850px;
+    line-height: 1.6;
+  }
+
+  .hero-affiliations {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .affiliation-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-main);
+    font-size: 0.95rem;
+  }
+
+  .affiliation-item svg {
+    color: var(--accent-cyan);
+    flex-shrink: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .orcid-icon {
+    font-weight: 800;
+    font-size: 0.85rem;
+    background: #A6CE39;
+    color: #000;
+    border-radius: 4px;
+    padding: 1px 4px;
+    line-height: 1;
+  }
+
+  @media (max-width: 900px) {
+    .hero-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .badge-row, .hero-affiliations, .hero-actions {
+      justify-content: center;
+    }
+
+    .affiliation-item {
+      justify-content: center;
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+    }
+  }
+
+  @media print {
+    .cv-hero {
+      padding: 0;
+    }
+    .hero-card {
+      background: none !important;
+      border: none !important;
+      padding: 0 !important;
+      color: #000 !important;
+    }
+    .hero-title {
+      color: #000 !important;
+    }
+    .gradient-text {
+      -webkit-text-fill-color: initial !important;
+      color: #000 !important;
+    }
+    .hero-subtitle, .affiliation-item {
+      color: #333 !important;
+    }
+    .print-hide {
+      display: none !important;
+    }
+  }
+</style>
