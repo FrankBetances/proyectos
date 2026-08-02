@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "Valeria+ · Terapia auditivo-verbal y del lenguaje offline",
+	description = "App móvil para niñas y niños con hipoacusia, implante coclear, dislalias o dificultades del lenguaje. Diseñada bajo el principio MDR: el adulto como juez clínico."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- OpenGraph / Social Media -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content="https://github.com/FrankBetances/Valeria" />
+		<meta property="og:image" content="/assets/valeria-preview.png" />
+
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="ambient-glow-1"></div>
+		<div class="ambient-glow-2"></div>
+		<slot />
+	</body>
+</html>

@@ -1,0 +1,131 @@
+---
+---
+
+<section id="que-es" class="what-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Principio Clínico & Filosofía</span>
+      <h2>¿Qué hace único a <span class="gradient-text">Valeria+</span>?</h2>
+      <p>Un enfoque basado en la evidencia clínica donde la tecnología sirve de facilitador y el adulto supervisa cada avance.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="glass-card feature-card">
+        <div class="icon-wrapper cyan">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h3>Marco Regulatorio MDR</h3>
+        <p>
+          La aplicación <strong>nunca decide de forma automatizada</strong> sobre el diagnóstico o progreso del niño. 
+          El padre, madre o logopeda actúa siempre como el juez clínico definitivo, confirmando o rectificando el veredicto con un toque manual.
+        </p>
+        <span class="card-tag">Control Humano Garantizado</span>
+      </div>
+
+      <div class="glass-card feature-card">
+        <div class="icon-wrapper purple">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+          </svg>
+        </div>
+        <h3>Arquitectura 100% Offline</h3>
+        <p>
+          Toda la app —incluyendo la síntesis de voz neuronal (Sharvard, Celtia, HiTZ-TTS), los audios, la telemetría y el almacenamiento cifrado— 
+          funciona <strong>sin conexión a Internet</strong> en reposo.
+        </p>
+        <span class="card-tag">Privacidad Total</span>
+      </div>
+
+      <div class="glass-card feature-card">
+        <div class="icon-wrapper emerald">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3>Doble Evaluación (Padre-Hijo)</h3>
+        <p>
+          En módulos como Pares Mínimos o Expansión Semántica, la app separa claramente la <strong>comprensión auditiva</strong> (selección de imágenes) de la 
+          <strong>producción oral</strong> (repetición), evitando sesgos comunes en clínica.
+        </p>
+        <span class="card-tag">Validación en Doble Vuelta</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .what-section {
+    padding: 100px 0;
+    position: relative;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .icon-wrapper.cyan {
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+  }
+
+  .icon-wrapper.purple {
+    background: rgba(138, 43, 226, 0.12);
+    color: #C084FC;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+  }
+
+  .icon-wrapper.emerald {
+    background: rgba(16, 185, 129, 0.12);
+    color: #6EE7B7;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
+  .feature-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-tag {
+    font-size: 0.775rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

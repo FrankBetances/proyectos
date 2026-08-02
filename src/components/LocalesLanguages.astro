@@ -1,0 +1,171 @@
+---
+const languages = [
+  {
+    flag: "🇪🇸",
+    name: "Castellano",
+    code: "es",
+    voice: "Voz Sharvard",
+    engine: "Neuronal pregenerada offline (878 locuciones)",
+    asr: "Reconocedor de sistema es-ES",
+    desc: "Banco estándar adaptado para la terapia del lenguaje en territorio español."
+  },
+  {
+    flag: "🇪🇸",
+    name: "Galego",
+    code: "gl",
+    project: "Proxecto Nós",
+    voice: "Voz Celtia",
+    engine: "Neuronal Proxecto Nós (816 locuciones offline)",
+    asr: "Reconocedor gl-ES con recaída a expo-speech",
+    desc: "Cubre todos los bloques (Pares Mínimos, Audición, Lenguaje, TEA y Dislexia) con fonética gallega propia."
+  },
+  {
+    flag: "🇩🇴",
+    name: "Dominicano",
+    code: "es-DO",
+    project: "Quisqueya Habla",
+    voice: "Voz Latina",
+    engine: "Catálogo latino del dispositivo (es-US/es-MX)",
+    asr: "Reconocedor es-DO adaptado",
+    desc: "Proyecto editorial que respeta el léxico caribeño y NO penaliza como trastorno los rasgos dialectales normales."
+  },
+  {
+    flag: "🇪🇸",
+    name: "Euskara",
+    code: "eu",
+    project: "ILENIA / NEL-GAITU",
+    voice: "HiTZ-TTS",
+    engine: "Aholab / UPV-EHU (744 locuciones offline)",
+    asr: "Reconocedor eu-ES con pliegue vasco (⟨h⟩ muda)",
+    desc: "Contenido íntegro en euskera batua sin saltos ni mezclas de idiomas."
+  }
+];
+---
+
+<section id="idiomas" class="languages-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Variedad Lingüística & Síntesis Neuronal</span>
+      <h2>4 Variedades Idiomáticas <span class="gradient-text">Offline</span></h2>
+      <p>Cada variedad cuenta con su propio banco de voz neuronal pregenerado en CI y empaquetado en el APK sin consumo de red.</p>
+    </div>
+
+    <div class="lang-grid">
+      {languages.map((l) => (
+        <div class="glass-card lang-card">
+          <div class="lang-top">
+            <span class="lang-flag">{l.flag}</span>
+            <div class="lang-title">
+              <h3>{l.name} <code>({l.code})</code></h3>
+              {l.project && <span class="project-tag">{l.project}</span>}
+            </div>
+          </div>
+
+          <p class="lang-desc">{l.desc}</p>
+
+          <div class="lang-specs">
+            <div class="spec-item">
+              <span class="spec-label">Voz Neuronal:</span>
+              <span class="spec-val">{l.voice} — {l.engine}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Reconocimiento (ASR):</span>
+              <span class="spec-val">{l.asr}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .languages-section {
+    padding: 100px 0;
+    position: relative;
+  }
+
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .lang-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .lang-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .lang-flag {
+    font-size: 2.4rem;
+    line-height: 1;
+  }
+
+  .lang-title h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .lang-title code {
+    font-size: 0.85rem;
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.1);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+  }
+
+  .project-tag {
+    display: inline-block;
+    font-size: 0.725rem;
+    font-weight: 700;
+    color: #C084FC;
+    background: rgba(138, 43, 226, 0.15);
+    padding: 0.1rem 0.5rem;
+    border-radius: var(--radius-full);
+    margin-top: 0.2rem;
+  }
+
+  .lang-desc {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .lang-specs {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .spec-label {
+    font-size: 0.725rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .spec-val {
+    font-size: 0.825rem;
+    color: var(--text-main);
+  }
+</style>

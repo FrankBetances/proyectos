@@ -1,0 +1,306 @@
+---
+---
+
+<section class="hero-section">
+  <div class="container hero-container">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      <span>Valeria+ v9.2 · Producción Clínica Aprobada</span>
+    </div>
+
+    <h1 class="hero-title">
+      Terapia auditivo‑verbal y del lenguaje, <span class="gradient-text">offline y en tu bolsillo</span>
+    </h1>
+
+    <p class="hero-description">
+      App móvil para niñas y niños con hipoacusia, implante coclear, dislalias, TEA o dificultades del lenguaje. 
+      Basada en el principio clínico <strong>MDR</strong>: el adulto es el motor de voz y el juez clínico definitivo de cada respuesta.
+    </p>
+
+    <div class="hero-badges">
+      <span class="badge badge-cyan">🗣️ 4 Variedades Lingüísticas</span>
+      <span class="badge badge-purple">⚡ Expo SDK 54 / React Native</span>
+      <span class="badge badge-emerald">🔒 100% Offline & Cifrado</span>
+      <span class="badge badge-amber">🐻 Test de Ling + 6 Bloques</span>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#terapias" class="btn-primary">
+        <span>Explorar Bloques de Terapia</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      <a href="https://github.com/FrankBetances/Valeria" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+          <path d="M9 18c-4.51 2-5-2-7-2"></path>
+        </svg>
+        <span>Ver Repositorio</span>
+      </a>
+    </div>
+
+    <div class="hero-mockup">
+      <div class="mockup-header">
+        <div class="dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="title-bar">Valeria+ Mobile Therapy Hub</div>
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span>OFFLINE READY</span>
+        </div>
+      </div>
+      
+      <div class="mockup-content">
+        <div class="card-demo card-ling">
+          <div class="card-icon">👂</div>
+          <div class="card-info">
+            <h4>Test de Ling (6 Sonidos)</h4>
+            <p>Comprobación auditiva previa para implante / audífono [a, i, u, m, s, ʃ]</p>
+          </div>
+          <span class="status-badge">Completado</span>
+        </div>
+
+        <div class="card-demo card-minimal">
+          <div class="card-icon">🗣️</div>
+          <div class="card-info">
+            <h4>Pares Mínimos</h4>
+            <p>Dislalias fonológicas (rana/lana, rata/lata) con doble sello padre‑hijo</p>
+          </div>
+          <span class="status-badge active">En Juego</span>
+        </div>
+
+        <div class="card-demo card-academy">
+          <div class="card-icon">🎓</div>
+          <div class="card-info">
+            <h4>Academy · Lengua de Signos (LSE)</h4>
+            <p>27 configuraciones dactilológicas validadas por personas sordas de ACOPROS</p>
+          </div>
+          <span class="status-badge">Multidominio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    position: relative;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1.1rem;
+    border-radius: var(--radius-full);
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: var(--accent-cyan);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.8rem;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-cyan);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 242, 254, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 780px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .hero-mockup {
+    width: 100%;
+    max-width: 850px;
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-glow);
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .mockup-header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+  }
+
+  .dot.red { background: #FF5F56; }
+  .dot.yellow { background: #FFBD2E; }
+  .dot.green { background: #27C93F; }
+
+  .title-bar {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--accent-emerald);
+    font-weight: 700;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-emerald);
+    border-radius: 50%;
+  }
+
+  .mockup-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card-demo {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: all 0.2s ease;
+  }
+
+  .card-demo:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(0, 242, 254, 0.3);
+  }
+
+  .card-icon {
+    font-size: 1.8rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-info {
+    flex-grow: 1;
+  }
+
+  .card-info h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+
+  .card-info p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .status-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-dim);
+  }
+
+  .status-badge.active {
+    background: rgba(0, 242, 254, 0.15);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.3rem;
+    }
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .btn-primary, .btn-secondary {
+      justify-content: center;
+      width: 100%;
+    }
+    .card-demo {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .status-badge {
+      align-self: flex-end;
+    }
+  }
+</style>

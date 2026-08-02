@@ -1,0 +1,200 @@
+---
+const academyDomains = [
+  { icon: "💬", title: "Lenguaje", desc: "Técnicas de 'serve and return', baño de lenguaje e interacción sin corrección punitiva." },
+  { icon: "👂", title: "Hipoacusia / Sordera", desc: "Manejo de audífonos, implantes cocleares y mantenimiento de dispositivos." },
+  { icon: "🗣️", title: "Dislalias", desc: "Puntos de articulación y colocación lingual para fonemas complejos (/r/, /s/)." },
+  { icon: "🔤", title: "Dislexia", desc: "Estrategias de conciencia fonológica y apoyo a la lectura emergente." },
+  { icon: "🧩", title: "TEA", desc: "Comunicación funcional, anticipación y regulación en el espectro autista." },
+  { icon: "🤟", title: "Lengua de Signos (LSE)", desc: "Abecedario dactilológico completo (27 configuraciones dactilológicas dibujadas y validadas)." }
+];
+---
+
+<section id="academy" class="academy-section">
+  <div class="container">
+    <div class="academy-box glass-card">
+      <div class="academy-header-content">
+        <div class="academy-title-wrap">
+          <span class="badge badge-purple">Módulo Formativo Integrado</span>
+          <h2>Academy · <span class="gradient-text">Capacitación del Cuidador</span></h2>
+          <p>
+            En la terapia auditivo-verbal el adulto es el motor clínico. 
+            <strong>Academy</strong> capacita a familias con cápsulas de conocimiento de consumo rápido (≈2 min) y micro-quiz de validación.
+          </p>
+        </div>
+        <div class="academy-badge-large">
+          <span class="academy-xp">⚡ XP por Dominio</span>
+          <span class="academy-status">Persistencia Cifrada</span>
+        </div>
+      </div>
+
+      <div class="domains-grid">
+        {academyDomains.map((d) => (
+          <div class="domain-card">
+            <span class="domain-icon">{d.icon}</span>
+            <div class="domain-body">
+              <h4>{d.title}</h4>
+              <p>{d.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="lse-spotlight">
+        <div class="lse-tag"> Destacado Clínico ACOPROS</div>
+        <h3>🤟 Módulo de Lengua de Signos Española (LSE)</h3>
+        <p>
+          Las <strong>27 configuraciones del abecedario dactilológico</strong> han sido revisadas y validadas directamente por 
+          <strong>la logopeda y personas sordas de ACOPROS</strong>. Enseña lo verdaderamente dactilológico (posturas fijas) y remite a fuentes oficiales 
+          con personas sordas signantes para el léxico en movimiento.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .academy-section {
+    padding: 100px 0;
+    position: relative;
+  }
+
+  .academy-box {
+    padding: 3.5rem 3rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.4) 100%);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    box-shadow: var(--shadow-purple);
+  }
+
+  .academy-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .academy-title-wrap h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0.75rem 0 1rem 0;
+  }
+
+  .academy-title-wrap p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 720px;
+  }
+
+  .academy-badge-large {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+  }
+
+  .academy-xp {
+    background: rgba(138, 43, 226, 0.2);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    color: #C084FC;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .academy-status {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+  }
+
+  .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .domain-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: all 0.2s ease;
+  }
+
+  .domain-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(138, 43, 226, 0.4);
+  }
+
+  .domain-icon {
+    font-size: 1.8rem;
+    width: 44px;
+    height: 44px;
+    background: rgba(138, 43, 226, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .domain-body h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .domain-body p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .lse-spotlight {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px dashed rgba(138, 43, 226, 0.4);
+    border-radius: var(--radius-md);
+    padding: 1.8rem;
+  }
+
+  .lse-tag {
+    font-size: 0.775rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .lse-spotlight h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+
+  .lse-spotlight p {
+    color: var(--text-muted);
+    font-size: 0.975rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .academy-box {
+      padding: 2rem 1.5rem;
+    }
+    .academy-header-content {
+      flex-direction: column;
+    }
+    .academy-badge-large {
+      align-items: flex-start;
+      flex-direction: row;
+    }
+  }
+</style>

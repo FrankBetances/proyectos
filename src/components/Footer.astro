@@ -1,0 +1,137 @@
+---
+---
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div class="footer-brand">
+      <div class="logo">
+        <span class="logo-icon">🐻</span>
+        <span class="logo-name">Valeria<span class="plus">+</span></span>
+      </div>
+      <p class="brand-desc">
+        Terapia auditivo-verbal y del lenguaje offline para niños con hipoacusia, implante coclear, dislalias, TEA o dislexia.
+      </p>
+      <div class="copyright">
+        © {new Date().getFullYear()} Valeria+ Project. Licencia Abierta y Validación Clínica.
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div class="link-group">
+        <h4>Proyecto</h4>
+        <a href="#que-es">¿Qué es?</a>
+        <a href="#terapias">Bloques de Terapia</a>
+        <a href="#academy">Academy</a>
+        <a href="#panel-adulto">Panel del Adulto</a>
+      </div>
+
+      <div class="link-group">
+        <h4>Idiomas & Clínica</h4>
+        <a href="#idiomas">Variedades Lingüísticas</a>
+        <a href="#telemetria">Telemetría del Piloto</a>
+        <a href="https://github.com/FrankBetances/Valeria/tree/main/docs" target="_blank" rel="noopener noreferrer">Documentación Médica</a>
+        <a href="https://github.com/FrankBetances/Valeria/blob/main/docs/guia-dialectal-es-DO.md" target="_blank" rel="noopener noreferrer">Guía Dialectal es-DO</a>
+      </div>
+
+      <div class="link-group">
+        <h4>Repositorio</h4>
+        <a href="https://github.com/FrankBetances/Valeria" target="_blank" rel="noopener noreferrer">GitHub Main Repo</a>
+        <a href="https://github.com/FrankBetances/Valeria/actions" target="_blank" rel="noopener noreferrer">CI/CD Builds (EAS)</a>
+        <a href="https://github.com/FrankBetances/Valeria/blob/main/docs/manual-casos-de-uso.html" target="_blank" rel="noopener noreferrer">Manual de Usuario (v9.1)</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border-light);
+    background: #04060A;
+    padding: 70px 0 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .footer-brand {
+    max-width: 380px;
+  }
+
+  .footer-brand .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .logo-icon {
+    font-size: 1.6rem;
+  }
+
+  .logo-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .logo-name .plus {
+    color: var(--accent-cyan);
+  }
+
+  .brand-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .link-group h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .link-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .link-group a {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .link-group a:hover {
+    color: var(--accent-cyan);
+  }
+
+  @media (max-width: 900px) {
+    .footer-content {
+      flex-direction: column;
+    }
+    .footer-links {
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  }
+</style>

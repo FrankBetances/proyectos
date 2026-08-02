@@ -1,0 +1,201 @@
+---
+const blocks = [
+  {
+    id: "ling",
+    icon: "👂",
+    title: "Test de Ling (6 Sonidos)",
+    category: "Comprobación Previa",
+    desc: "Evaluación de detección auditiva básica con los 6 sonidos del Test de Ling [a, i, u, m, s, ʃ] previa a la sesión con audífono o implante coclear.",
+    badge: "Protocolo Clínico",
+    badgeColor: "amber",
+    items: ["Detección inmediata", "Registro de audífono/implante", "Sin fatiga auditiva"]
+  },
+  {
+    id: "pares",
+    icon: "🗣️",
+    title: "Pares Mínimos",
+    category: "Dislalias Fonológicas",
+    desc: "15 pares contrastivos (rana/lana, rata/lata) organizados en 6 grupos de consonantes con misiones físicas y sello doble de validación padre-hijo.",
+    badge: "15 Pares Mínimos",
+    badgeColor: "cyan",
+    items: ["Rotacismo y sigmatismo", "Frontalización velar", "Sin frases portadoras redundantes"]
+  },
+  {
+    id: "expansion",
+    icon: "🧩",
+    title: "Expansión Semántica",
+    category: "Intervención Temprana",
+    desc: "Progresión léxica estructurada: 5 escenarios diarios, 5 categorías léxicas por familiaridad, 9 progresiones de campo semántico y 8 cápsulas de doble vuelta.",
+    badge: "Doble Vuelta (Comprensión + Producción)",
+    badgeColor: "purple",
+    items: ["46 pictogramas vectoriales SVG", "Familiaridad adaptada por dialecto", "Antesala de material previa"]
+  },
+  {
+    id: "audicion",
+    icon: "👂",
+    title: "Audición (18 Terapias)",
+    category: "Protocolo ACOPROS",
+    desc: "Abordaje integral de fonética-fonología, semántica, morfosintaxis, pragmática y entrenamiento de escucha en ruido competitivo (RA-1 a RA-5).",
+    badge: "ACOPROS Certificado",
+    badgeColor: "emerald",
+    items: ["Escucha en ruido babble", "Discriminación fina", "Rotación de contenidos"]
+  },
+  {
+    id: "lenguaje",
+    icon: "💬",
+    title: "Lenguaje (7 Terapias)",
+    category: "Protocolo Familiar",
+    desc: "Estimulación de atención conjunta, imitación vocal, comprensión instruccional, expresión libre, regulación emocional e interacción social.",
+    badge: "Rutina Diaria",
+    badgeColor: "cyan",
+    items: ["Atención triangulada", "Comunicación funcional", "Interacción en el hogar"]
+  },
+  {
+    id: "tea",
+    icon: "🧠",
+    title: "TEA (6 Terapias)",
+    category: "Espectro Autista (PRT + TCC)",
+    desc: "Intervención basada en tiempo de respuesta, espejo asimétrico, quiebre pragmático con consentimiento y categorización bajo múltiples señales.",
+    badge: "Estresores 100% Manuales",
+    badgeColor: "purple",
+    items: ["Time Delay + Sello Doble", "Consentimiento informado", "Sin sobrecarga automatizada"]
+  },
+  {
+    id: "dislexia",
+    icon: "📖",
+    title: "Dislexia (6 Terapias)",
+    category: "Conciencia Fonológica",
+    desc: "Intruso fonológico auditivo puro, síntesis rítmica fonémica, criba de pseudopalabras y rastreo visual b/d · p/q con mapa de misclicks.",
+    badge: "Lectura Emergente",
+    badgeColor: "amber",
+    items: ["Acceso léxico rápido (RAN)", "Mapa de rotaciones visuales", "Ritmo por persecución dactilar"]
+  }
+];
+---
+
+<section id="terapias" class="therapy-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Módulos Especializados</span>
+      <h2>6 Bloques de Terapia + <span class="gradient-text">Test de Ling</span></h2>
+      <p>Diseñados para cubrir desde la criba auditiva inicial hasta intervenciones complejas en dislalias, TEA y dislexia.</p>
+    </div>
+
+    <div class="blocks-grid">
+      {blocks.map((b) => (
+        <div class="glass-card block-card">
+          <div class="block-top">
+            <span class="block-icon">{b.icon}</span>
+            <span class={`badge badge-${b.badgeColor}`}>{b.badge}</span>
+          </div>
+
+          <span class="block-category">{b.category}</span>
+          <h3 class="block-title">{b.title}</h3>
+          <p class="block-desc">{b.desc}</p>
+
+          <ul class="block-features">
+            {b.items.map((item) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .therapy-section {
+    padding: 100px 0;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .blocks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .block-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+
+  .block-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  .block-icon {
+    font-size: 2.2rem;
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .block-category {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-cyan);
+    margin-bottom: 0.35rem;
+  }
+
+  .block-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .block-desc {
+    color: var(--text-muted);
+    font-size: 0.975rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .block-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .block-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    color: var(--text-main);
+  }
+
+  .block-features svg {
+    color: var(--accent-cyan);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .blocks-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
