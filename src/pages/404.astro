@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+
+<Layout title="Página no encontrada (404) · Dr. Frank Betances">
+  <Header />
+  <main class="error-page">
+    <div class="container">
+      <div class="error-card glass-card">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Página no encontrada</h1>
+        <p class="error-desc">
+          La ruta solicitada no existe o se ha movido. Puedes acceder a las secciones principales del sitio:
+        </p>
+
+        <div class="error-actions">
+          <a href={`${baseUrl}/`} class="btn-primary">
+            <span>Ir al Inicio (Valeria+)</span>
+          </a>
+          <a href={`${baseUrl}/cv`} class="btn-secondary">
+            <span>Ver Currículum Vítae (CV)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .error-page {
+    padding: 10rem 0 6rem 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .error-card {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem;
+  }
+
+  .error-code {
+    font-size: 5rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .error-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .error-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .error-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

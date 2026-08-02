@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import CurriculumHero from '../components/cv/CurriculumHero.astro';
+import CurriculumNav from '../components/cv/CurriculumNav.astro';
+import CurriculumExperience from '../components/cv/CurriculumExperience.astro';
+import CurriculumProjects from '../components/cv/CurriculumProjects.astro';
+import CurriculumAwards from '../components/cv/CurriculumAwards.astro';
+import CurriculumEducation from '../components/cv/CurriculumEducation.astro';
+import CurriculumPublications from '../components/cv/CurriculumPublications.astro';
+import ContactModal from '../components/cv/ContactModal.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+	title="Dr. Frank Alberto Betances Reinoso · Currículum Vítae & Perfil Profesional"
+	description="Perfil profesional, trayectoria médica en Otorrinolaringología, docencia universitaria, proyectos de salud digital (VALERIA+, VIA+, FONDOCYT) y publicaciones científicas del Dr. Frank Alberto Betances Reinoso."
+>
+	<Header activeTab="cv" />
+	<main>
+		<CurriculumHero />
+		<CurriculumNav />
+		<CurriculumExperience />
+		<CurriculumProjects />
+		<CurriculumAwards />
+		<CurriculumEducation />
+		<CurriculumPublications />
+	</main>
+	<ContactModal />
+	<Footer />
+</Layout>

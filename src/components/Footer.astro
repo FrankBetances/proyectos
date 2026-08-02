@@ -1,137 +1,181 @@
 ---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="site-footer">
+<footer class="site-footer print-hide">
   <div class="container footer-content">
     <div class="footer-brand">
-      <div class="logo">
-        <span class="logo-icon">🐻</span>
-        <span class="logo-name">Valeria<span class="plus">+</span></span>
-      </div>
-      <p class="brand-desc">
-        Terapia auditivo-verbal y del lenguaje offline para niños con hipoacusia, implante coclear, dislalias, TEA o dislexia.
+      <a href={`${baseUrl}/`} class="footer-logo">
+        <span class="logo-icon">🩺</span>
+        <span class="logo-name">Dr. Frank Betances</span>
+      </a>
+      <p class="footer-desc">
+        Otorrinolaringólogo y Cirujano de Cabeza y Cuello. Especialista en Audiología Infantil, Docencia e Investigación en Salud Digital y Rehabilitación del Lenguaje.
       </p>
-      <div class="copyright">
-        © {new Date().getFullYear()} Valeria+ Project. Licencia Abierta y Validación Clínica.
+      <div class="footer-badges">
+        <span class="badge badge-cyan">Hospital Ribera Polusa</span>
+        <span class="badge badge-purple">FONDOCYT / USC-INTEGRA</span>
       </div>
     </div>
 
-    <div class="footer-links">
-      <div class="link-group">
-        <h4>Proyecto</h4>
-        <a href="#que-es">¿Qué es?</a>
-        <a href="#terapias">Bloques de Terapia</a>
-        <a href="#academy">Academy</a>
-        <a href="#panel-adulto">Panel del Adulto</a>
-      </div>
+    <div class="footer-column">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href={`${baseUrl}/cv`}>Currículum Vítae (CV)</a></li>
+        <li><a href={`${baseUrl}/`}>Plataforma Valeria+</a></li>
+        <li><a href={`${baseUrl}/cv#seccion-proyectos`}>Proyectos & VIA+</a></li>
+        <li><a href={`${baseUrl}/cv#seccion-publicaciones`}>Publicaciones Científicas</a></li>
+        <li><a href={`${baseUrl}/cv#seccion-premios`}>Premios & Reconocimientos</a></li>
+      </ul>
+    </div>
 
-      <div class="link-group">
-        <h4>Idiomas & Clínica</h4>
-        <a href="#idiomas">Variedades Lingüísticas</a>
-        <a href="#telemetria">Telemetría del Piloto</a>
-        <a href="https://github.com/FrankBetances/Valeria/tree/main/docs" target="_blank" rel="noopener noreferrer">Documentación Médica</a>
-        <a href="https://github.com/FrankBetances/Valeria/blob/main/docs/guia-dialectal-es-DO.md" target="_blank" rel="noopener noreferrer">Guía Dialectal es-DO</a>
-      </div>
+    <div class="footer-column">
+      <h4>Perfiles Académicos</h4>
+      <ul>
+        <li><a href="https://www.researchgate.net/profile/Frank-Reinoso" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+        <li><a href="https://orcid.org/0000-0002-6349-9537" target="_blank" rel="noopener noreferrer">ORCID (0000-0002-6349-9537)</a></li>
+        <li><a href="https://github.com/FrankBetances" target="_blank" rel="noopener noreferrer">GitHub Repositories</a></li>
+        <li><button id="open-contact-modal-footer" class="footer-contact-btn">Contacto Profesional</button></li>
+      </ul>
+    </div>
+  </div>
 
-      <div class="link-group">
-        <h4>Repositorio</h4>
-        <a href="https://github.com/FrankBetances/Valeria" target="_blank" rel="noopener noreferrer">GitHub Main Repo</a>
-        <a href="https://github.com/FrankBetances/Valeria/actions" target="_blank" rel="noopener noreferrer">CI/CD Builds (EAS)</a>
-        <a href="https://github.com/FrankBetances/Valeria/blob/main/docs/manual-casos-de-uso.html" target="_blank" rel="noopener noreferrer">Manual de Usuario (v9.1)</a>
-      </div>
+  <div class="footer-bottom">
+    <div class="container bottom-content">
+      <p>&copy; {currentYear} Dr. Frank Alberto Betances Reinoso. Todos los derechos reservados.</p>
+      <p class="privacy-note">🔒 Perfil profesional sin exposición de datos personales privados (LOPDGDD / GDPR compliant).</p>
     </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
+    background: #030508;
     border-top: 1px solid var(--border-light);
-    background: #04060A;
-    padding: 70px 0 40px 0;
+    padding-top: 4rem;
+    margin-top: 4rem;
   }
 
   .footer-content {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 3rem;
+    padding-bottom: 3rem;
   }
 
-  .footer-brand {
-    max-width: 380px;
-  }
-
-  .footer-brand .logo {
-    display: flex;
+  .footer-logo {
+    display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
+    text-decoration: none;
     margin-bottom: 1rem;
   }
 
-  .logo-icon {
-    font-size: 1.6rem;
+  .footer-logo .logo-icon {
+    font-size: 1.4rem;
   }
 
-  .logo-name {
+  .footer-logo .logo-name {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: var(--text-main);
   }
 
-  .logo-name .plus {
-    color: var(--accent-cyan);
-  }
-
-  .brand-desc {
+  .footer-desc {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.925rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    max-width: 480px;
   }
 
-  .copyright {
-    font-size: 0.8rem;
-    color: var(--text-dim);
-  }
-
-  .footer-links {
+  .footer-badges {
     display: flex;
-    gap: 4rem;
+    gap: 0.6rem;
+    flex-wrap: wrap;
   }
 
-  .link-group h4 {
-    font-size: 0.95rem;
+  .footer-column h4 {
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text-main);
-    margin-bottom: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
   }
 
-  .link-group {
+  .footer-column ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.6rem;
   }
 
-  .link-group a {
+  .footer-column a {
     color: var(--text-muted);
-    font-size: 0.875rem;
     text-decoration: none;
+    font-size: 0.9rem;
     transition: color 0.2s ease;
   }
 
-  .link-group a:hover {
+  .footer-column a:hover {
     color: var(--accent-cyan);
   }
 
-  @media (max-width: 900px) {
+  .footer-contact-btn {
+    background: none;
+    border: none;
+    color: var(--accent-cyan);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+  }
+
+  .footer-contact-btn:hover {
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .privacy-note {
+    color: var(--accent-emerald);
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
     .footer-content {
-      flex-direction: column;
-    }
-    .footer-links {
-      flex-wrap: wrap;
+      grid-template-columns: 1fr;
       gap: 2rem;
+    }
+    .bottom-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media print {
+    .site-footer {
+      display: none !important;
     }
   }
 </style>
