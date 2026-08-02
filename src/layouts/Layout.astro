@@ -2,37 +2,107 @@
 import '../styles/global.css';
 
 interface Props {
-	title?: string;
-	description?: string;
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article' | 'profile';
+  keywords?: string;
+  jsonLd?: object | object[];
 }
 
 const {
-	title = "Valeria+ · Terapia auditivo-verbal y del lenguaje offline",
-	description = "App móvil para niñas y niños con hipoacusia, implante coclear, dislalias o dificultades del lenguaje. Diseñada bajo el principio MDR: el adulto como juez clínico."
+  title = "Dr. Frank Betances · Otorrinolaringología, Valeria+ & VIA+ (SaMD)",
+  description = "Plataforma oficial del Dr. Frank Alberto Betances Reinoso. Otorrinolaringólogo, especialista en Audiología Infantil, Rehabilitación del Lenguaje y Software Médico (VALERIA+, VIA+ SaMD Clase IIa).",
+  image = "https://FrankBetances.github.io/valeria-web/assets/valeria-preview.png",
+  type = "website",
+  keywords = "Dr. Frank Betances, Otorrinolaringología, Audiología Infantil, Valeria+, VIA+ SaMD, Rehabilitación del Lenguaje, Hipoacusia, Implante Coclear, FONDOCYT, Salud Digital",
+  jsonLd
 } = Astro.props;
+
+const siteUrl = "https://FrankBetances.github.io/valeria-web";
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
+
+const defaultJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Physician",
+      "@id": `${siteUrl}/#physician`,
+      "name": "Dr. Frank Alberto Betances Reinoso",
+      "jobTitle": "Facultativo Especialista en Otorrinolaringología & Audiología Infantil",
+      "medicalSpecialty": ["Otorhinolaryngology", "PediatricAudiology"],
+      "url": `${siteUrl}/cv`,
+      "sameAs": [
+        "https://www.researchgate.net/profile/Frank-Reinoso",
+        "https://orcid.org/0000-0002-6349-9537",
+        "https://github.com/FrankBetances"
+      ],
+      "hospitalAffiliation": {
+        "@type": "Hospital",
+        "name": "Hospital Ribera Polusa",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lugo",
+          "addressCountry": "ES"
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Dr. Frank Betances · Salud Digital & ORL",
+      "description": description,
+      "inLanguage": "es-ES"
+    }
+  ]
+};
+
+const finalJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : defaultJsonLd;
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<!-- OpenGraph / Social Media -->
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:url" content="https://github.com/FrankBetances/Valeria" />
-		<meta property="og:image" content="/assets/valeria-preview.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Dr. Frank Alberto Betances Reinoso" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Favicon & Sitemap -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href={`${siteUrl}/sitemap-index.xml`} />
 
-		<title>{title}</title>
-	</head>
-	<body>
-		<div class="ambient-glow-1"></div>
-		<div class="ambient-glow-2"></div>
-		<slot />
-	</body>
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Dr. Frank Betances · Salud Digital & ORL" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={title} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- JSON-LD Structured Data for Google Search & Medical Knowledge Graph -->
+    <script type="application/ld+json" set:html={JSON.stringify(finalJsonLd)} />
+  </head>
+  <body>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+    <slot />
+  </body>
 </html>

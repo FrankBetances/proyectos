@@ -51,6 +51,25 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <span>GitHub Repositorio</span>
       </a>
     </div>
+
+    <!-- VIA+ Screenshots Gallery Showcase -->
+    <div class="via-gallery-grid">
+      <div class="phone-card glass-card">
+        <div class="card-caption">
+          <span class="badge badge-amber">Proyecto Quisqueya Habla</span>
+          <h4>Dirección Clínica & Dirección</h4>
+        </div>
+        <img src={`${baseUrl}/assets/via-app-1.png`} alt="Captura real de VIA+ mostrando Proyecto Quisqueya Habla y Dirección Clínica por Dr. Frank Betances" class="via-img" />
+      </div>
+
+      <div class="phone-card glass-card">
+        <div class="card-caption">
+          <span class="badge badge-cyan">Selección de Pruebas</span>
+          <h4>Análisis de Voz, Audiometría & Idiomas</h4>
+        </div>
+        <img src={`${baseUrl}/assets/via-app-2.png`} alt="Captura real de VIA+ mostrando selección de pruebas, Certificado de Aptitud de sala y variedades de idioma" class="via-img" />
+      </div>
+    </div>
   </div>
 </section>
 
@@ -119,6 +138,38 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .via-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 2rem;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .phone-card {
+    padding: 1rem;
+    border-radius: 24px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .card-caption h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-top: 0.4rem;
+  }
+
+  .via-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
   }
 
   @media (max-width: 768px) {

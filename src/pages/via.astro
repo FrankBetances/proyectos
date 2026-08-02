@@ -10,11 +10,31 @@ import ViaTelemetryPrivacy from '../components/via/ViaTelemetryPrivacy.astro';
 import ViaTechStack from '../components/via/ViaTechStack.astro';
 import ViaEcosystem from '../components/via/ViaEcosystem.astro';
 import Footer from '../components/Footer.astro';
+
+const viaJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VIA+ (Valoración Interactiva de Audición y Lenguaje)",
+  "applicationCategory": "MedicalApplication",
+  "operatingSystem": "iOS, Android",
+  "description": "Software como Dispositivo Médico (SaMD) de Clase IIa (MDR 2017/745) para apoyo a la decisión clínica en audiología y lenguaje pediátrico.",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Frank Alberto Betances Reinoso",
+    "url": "https://FrankBetances.github.io/valeria-web/cv"
+  },
+  "medicalAudience": {
+    "@type": "MedicalAudience",
+    "audienceType": ["Physician", "Audiologist", "Speech Language Pathologist"]
+  }
+};
 ---
 
 <Layout 
 	title="VIA+ · Valoración Interactiva de Audición y Lenguaje (SaMD Clase IIa)"
-	description="Software como Dispositivo Médico (SaMD) de Clase IIa (MDR 2017/745) para tamizaje auditivo, logoaudiometría, fonética y neurodesarrollo pediátrico."
+	description="Software como Dispositivo Médico (SaMD) de Clase IIa (MDR 2017/745, Regla 11) para apoyo a la decisión clínica en audiología pediátrica, logoaudiometría y voz."
+	keywords="VIA+, SaMD, Dispositivo Médico Clase IIa, MDR 2017/745, Audiología Pediátrica, Logoaudiometría, Análisis Acústico de Voz, Dr. Frank Betances"
+	jsonLd={viaJsonLd}
 >
 	<Header activeTab="via" />
 	<main>

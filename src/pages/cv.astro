@@ -10,11 +10,51 @@ import CurriculumEducation from '../components/cv/CurriculumEducation.astro';
 import CurriculumPublications from '../components/cv/CurriculumPublications.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import Footer from '../components/Footer.astro';
+
+const cvJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. Frank Alberto Betances Reinoso",
+  "url": "https://FrankBetances.github.io/valeria-web/cv",
+  "jobTitle": "Facultativo Especialista en Otorrinolaringología & Audiología Infantil",
+  "medicalSpecialty": ["Otorhinolaryngology", "PediatricAudiology", "HeadAndNeckSurgery"],
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Universidad Católica Tecnológica del Cibao (UCATECI)"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Universidad de Alcalá de Henares"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Universidad de Salamanca"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Universidade de Santiago de Compostela"
+    }
+  ],
+  "sameAs": [
+    "https://www.researchgate.net/profile/Frank-Reinoso",
+    "https://orcid.org/0000-0002-6349-9537",
+    "https://github.com/FrankBetances"
+  ],
+  "award": [
+    "Premio Ennova Health 2025 (Transformación Digital)",
+    "Premio Ennova Health 2023 (Transformación Digital)",
+    "Sello de Calidad ITEMAS 2024",
+    "Primer Lugar Premio Innovación SERGAS 2023"
+  ]
+};
 ---
 
 <Layout 
 	title="Dr. Frank Alberto Betances Reinoso · Currículum Vítae & Perfil Profesional"
 	description="Perfil profesional, trayectoria médica en Otorrinolaringología, docencia universitaria, proyectos de salud digital (VALERIA+, VIA+, FONDOCYT) y publicaciones científicas del Dr. Frank Alberto Betances Reinoso."
+	keywords="Dr. Frank Betances, Currículum Vítae, Otorrinolaringólogo, Audiología Infantil, Investigación Médica, ResearchGate, ORCID, SERGAS, FONDOCYT"
+	jsonLd={cvJsonLd}
 >
 	<Header activeTab="cv" />
 	<main>

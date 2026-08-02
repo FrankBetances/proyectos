@@ -9,10 +9,42 @@ import AdultPanel from '../components/AdultPanel.astro';
 import LocalesLanguages from '../components/LocalesLanguages.astro';
 import ClinicalTelemetry from '../components/ClinicalTelemetry.astro';
 import Footer from '../components/Footer.astro';
+
+const valeriaJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Valeria+",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Android, iOS",
+  "description": "App móvil para niños con hipoacusia, implante coclear, dislalias, TEA y trastornos del lenguaje. Diseñada bajo el principio clínico MDR con telemetría anónima Zero-PHI.",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Frank Alberto Betances Reinoso",
+    "url": "https://FrankBetances.github.io/valeria-web/cv"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "featureList": [
+    "Test de Ling de 6 sonidos",
+    "Pares mínimos para dislalias fonológicas",
+    "Academy multidominio de formación para cuidadores (incluye LSE)",
+    "Variedades lingüísticas: Castellano, Galego, Dominicano, Euskara",
+    "Panel del Adulto para carga comunicativa manual (MDR)",
+    "Funcionamiento 100% offline y cifrado en reposo"
+  ]
+};
 ---
 
-<Layout title="Valeria+ · Terapia auditivo-verbal y del lenguaje offline">
-	<Header />
+<Layout 
+	title="Valeria+ · Terapia Auditivo-Verbal y del Lenguaje Offline"
+	description="App móvil para niños con hipoacusia, implante coclear, dislalias, TEA y trastornos del lenguaje. Funciona 100% offline bajo el principio clínico MDR."
+	keywords="Valeria+, Terapia Auditivo Verbal, Hipoacusia, Implante Coclear, Dislalias, Logopedia, Dr. Frank Betances, LSE, Test de Ling, Salud Digital"
+	jsonLd={valeriaJsonLd}
+>
+	<Header activeTab="home" />
 	<main>
 		<Hero />
 		<WhatIsValeria />

@@ -11,7 +11,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <div class="avatar-wrapper">
           <div class="avatar-ring">
             <div class="avatar-content">
-              <span class="avatar-initials">FB</span>
+              <img src={`${baseUrl}/assets/dr-frank-betances.jpg`} alt="Dr. Frank Alberto Betances Reinoso" class="avatar-img" />
             </div>
           </div>
           <span class="status-dot" title="Activo profesionalmente"></span>
@@ -99,12 +99,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .avatar-ring {
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
     padding: 4px;
-    box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.35);
   }
 
   .avatar-content {
@@ -115,15 +115,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
-  .avatar-initials {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   .status-dot {

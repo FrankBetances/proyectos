@@ -1,0 +1,7 @@
+# Robots.txt for Dr. Frank Betances, Valeria+ & VIA+ (SaMD)
+User-agent: *
+Allow: /
+
+# Sitemap Index
+Sitemap: https://FrankBetances.github.io/valeria-web/sitemap-index.xml
+Sitemap: https://FrankBetances.github.io/valeria-web/sitemap-0.xml
