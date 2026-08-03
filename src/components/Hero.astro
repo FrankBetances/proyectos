@@ -54,7 +54,16 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           <span class="phone-notch"></span>
           <span class="phone-title">Valeria+ Mobile App</span>
         </div>
-        <img src={`${baseUrl}/assets/valeria-app-1.png`} alt="Captura real de la app Valeria+ mostrando sesión completada, estrellas EPT-3 y nivel Oso Valiente" class="phone-img" />
+        <img 
+          src={`${baseUrl}/assets/valeria-app-1.png`} 
+          alt="Captura real de la app Valeria+ mostrando sesión completada, estrellas EPT-3 y nivel Oso Valiente" 
+          class="phone-img" 
+          width="360"
+          height="780"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
 
       <div class="hero-mockup">

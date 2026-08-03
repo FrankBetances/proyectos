@@ -28,7 +28,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <strong>AVISO DE SEGURIDAD CLÍNICA OBLIGATORIO</strong>
       </div>
       <p>
-        VIA+ es una herramienta de apoyo a la decisión clínica. Bajo ninguna circunstancia emite diagnósticos automatizados ni sustituye el juicio del profesional sanitario. Su uso está estrictamente restringido a entornos clínicos bajo supervisión profesional directa.
+        VIA+ es una herramienta de apoyo a la decisión clínica. Bajo ninguna circunstancia emite diagnósticos automatizados ni sustituye el juicio del profesional sanitario. Su uso está strictly restringido a entornos clínicos bajo supervisión profesional directa.
       </p>
     </div>
 
@@ -59,7 +59,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           <span class="badge badge-amber">Proyecto Quisqueya Habla</span>
           <h4>Dirección Clínica & Dirección</h4>
         </div>
-        <img src={`${baseUrl}/assets/via-app-1.png`} alt="Captura real de VIA+ mostrando Proyecto Quisqueya Habla y Dirección Clínica por Dr. Frank Betances" class="via-img" />
+        <img 
+          src={`${baseUrl}/assets/via-app-1.png`} 
+          alt="Captura real de VIA+ mostrando Proyecto Quisqueya Habla y Dirección Clínica por Dr. Frank Betances" 
+          class="via-img" 
+          width="360"
+          height="780"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
       <div class="phone-card glass-card">
@@ -67,7 +75,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           <span class="badge badge-cyan">Selección de Pruebas</span>
           <h4>Análisis de Voz, Audiometría & Idiomas</h4>
         </div>
-        <img src={`${baseUrl}/assets/via-app-2.png`} alt="Captura real de VIA+ mostrando selección de pruebas, Certificado de Aptitud de sala y variedades de idioma" class="via-img" />
+        <img 
+          src={`${baseUrl}/assets/via-app-2.png`} 
+          alt="Captura real de VIA+ mostrando selección de pruebas, Certificado de Aptitud de sala y variedades de idioma" 
+          class="via-img" 
+          width="360"
+          height="780"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </div>
   </div>
