@@ -52,19 +52,19 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       </a>
     </div>
 
-    <!-- VIA+ Screenshot Showcase -->
+    <!-- Clean VIA+ Medical Showcase -->
     <div class="via-gallery-grid">
       <div class="phone-card glass-card">
         <div class="card-caption">
-          <span class="badge badge-cyan">Selección de Pruebas</span>
-          <h4>Análisis Vocal & Audiometría</h4>
+          <span class="badge badge-cyan">Módulos de Selección Pediátrica</span>
+          <h4>Análisis Vocal & Audiometría Pediátrica (Play Audiometry)</h4>
         </div>
         <img 
-          src={`${baseUrl}/assets/via-app-2.png`} 
-          alt="Captura real de VIA+ mostrando selección de pruebas, Certificado de Aptitud de sala y variedades de idioma" 
+          src={`${baseUrl}/assets/via-app-clean.png`} 
+          alt="Captura real del módulo clínico de VIA+ SaMD con Análisis Acústico de Voz, Audiometría Infantil y Verbal" 
           class="via-img" 
-          width="360"
-          height="780"
+          width="461"
+          height="491"
           loading="lazy"
           decoding="async"
         />
@@ -144,18 +144,19 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .via-gallery-grid {
     display: flex;
     justify-content: center;
-    max-width: 400px;
+    max-width: 440px;
     margin: 0 auto;
   }
 
   .phone-card {
-    padding: 1rem;
+    padding: 1.25rem;
     border-radius: 24px;
     text-align: left;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
     width: 100%;
+    border: 1px solid var(--border-glow);
   }
 
   .card-caption h4 {
@@ -170,6 +171,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     height: auto;
     border-radius: 16px;
     display: block;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   }
 
   @media (max-width: 768px) {
