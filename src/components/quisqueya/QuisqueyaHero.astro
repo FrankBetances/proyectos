@@ -1,0 +1,159 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+
+<section class="quisqueya-hero">
+  <div class="container">
+    <div class="hero-top-badges">
+      <span class="badge badge-amber">🇩🇴 FONDOCYT 2024-3-4A2-0922</span>
+      <span class="badge badge-purple">🏛️ MESCYT / UFHEC (Rep. Dominicana)</span>
+      <span class="badge badge-emerald">🔒 Égida CONABIOS</span>
+      <span class="badge badge-cyan">🔬 S-CVI 0.879 (28 Expertos)</span>
+    </div>
+
+    <h1 class="hero-title">
+      Proyecto <span class="gradient-text">Quisqueya Habla</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Detección temprana y rehabilitación domiciliaria de trastornos del lenguaje y Trastorno del Espectro Autista (TEA) en niños de 2 a 6 años en la República Dominicana.
+    </p>
+
+    <!-- Pilot Showcase Banner -->
+    <div class="pilot-banner glass-card">
+      <div class="banner-badge">
+        <span class="pulse-dot"></span>
+        <span>Piloto Clínico Activo en Rep. Dominicana</span>
+      </div>
+      <div class="banner-grid">
+        <div class="banner-item">
+          <strong>CIADIF</strong>
+          <span>Centro de Desarrollo Infantil (Evaluaciones Iniciales)</span>
+        </div>
+        <div class="banner-item">
+          <strong>Padre Cavalotto</strong>
+          <span>Escuela de Educación Especial (Intervención Inclusiva)</span>
+        </div>
+        <div class="banner-item">
+          <strong>Léxico es-DO</strong>
+          <span>Adaptación dialectal dominicana sin penalizar variaciones</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#gobernanza" class="btn-primary">
+        <span>Gobernanza & Equipo UFHEC</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      <a href="#ensayo-clinico" class="btn-secondary">
+        <span>Resultados del Ensayo Piloto</span>
+      </a>
+      <a href={`${baseUrl}/cv`} class="btn-secondary">
+        <span>Co-PI Dr. Frank Betances (CV)</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .quisqueya-hero {
+    padding-top: 140px;
+    padding-bottom: 70px;
+    text-align: center;
+  }
+
+  .hero-top-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    max-width: 950px;
+    margin: 0 auto 1.25rem auto;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 850px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+  }
+
+  .pilot-banner {
+    padding: 1.75rem 2rem;
+    max-width: 900px;
+    margin: 0 auto 2.5rem auto;
+    text-align: left;
+    border: 1px solid var(--border-glow);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+  }
+
+  .banner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-amber);
+    margin-bottom: 1rem;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-amber);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-amber);
+    animation: pulse 2s infinite;
+  }
+
+  .banner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .banner-item strong {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .banner-item span {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    display: block;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    .hero-actions {
+      flex-direction: column;
+    }
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

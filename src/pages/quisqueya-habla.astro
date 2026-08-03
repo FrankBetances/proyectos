@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactModal from '../components/cv/ContactModal.astro';
+import QuisqueyaHero from '../components/quisqueya/QuisqueyaHero.astro';
+import QuisqueyaGovernance from '../components/quisqueya/QuisqueyaGovernance.astro';
+import QuisqueyaTrial from '../components/quisqueya/QuisqueyaTrial.astro';
+import QuisqueyaPublications from '../components/quisqueya/QuisqueyaPublications.astro';
+
+const pageTitle = "Proyecto Quisqueya Habla · FONDOCYT 2024-3-4A2-0922 · UFHEC & MESCYT";
+const pageDescription = "Proyecto de investigación clínica Quisqueya Habla (FONDOCYT 2024-3-4A2-0922, UFHEC/MESCYT) para la detección temprana y rehabilitación del lenguaje y autismo en niños de 2 a 6 años en República Dominicana.";
+
+const quisqueyaJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalResearchProject",
+      "@id": "https://FrankBetances.github.io/valeria-web/quisqueya-habla#project",
+      "name": "Quisqueya Habla: Detección temprana y rehabilitación domiciliaria de trastornos del lenguaje y TEA en niños de 2 a 6 años",
+      "identifier": "FONDOCYT 2024-3-4A2-0922",
+      "description": pageDescription,
+      "sponsor": {
+        "@type": "GovernmentOrganization",
+        "name": "MESCYT / FONDOCYT (República Dominicana)"
+      },
+      "funder": {
+        "@type": "GovernmentOrganization",
+        "name": "FONDOCYT"
+      },
+      "parentOrganization": {
+        "@type": "EducationalOrganization",
+        "name": "Universidad Federico Henríquez y Carvajal (UFHEC)"
+      },
+      "principalInvestigator": {
+        "@type": "Person",
+        "name": "Dra. Luz Verys Ramón Javier",
+        "jobTitle": "Investigadora Principal"
+      },
+      "coPrincipalInvestigator": {
+        "@type": "Person",
+        "name": "Dr. Frank Alberto Betances Reinoso",
+        "jobTitle": "Co-Investigador Principal & Líder de Salud Digital",
+        "sameAs": "https://orcid.org/0000-0002-6349-9537"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords="Quisqueya Habla, FONDOCYT 2024-3-4A2-0922, UFHEC, MESCYT, M-CHAT-R/F-RD, CONABIOS, Dr. Frank Betances, Dra. Luz Verys Ramón Javier, CIADIF, Padre Cavalotto, Salud Digital República Dominicana"
+  jsonLd={quisqueyaJsonLd}
+>
+  <Header />
+
+  <main id="main-content">
+    <QuisqueyaHero />
+    <QuisqueyaGovernance />
+    <QuisqueyaTrial />
+    <QuisqueyaPublications />
+  </main>
+
+  <Footer />
+  <ContactModal />
+</Layout>
