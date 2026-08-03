@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactModal from '../components/cv/ContactModal.astro';
+import EarlifyHero from '../components/earlify/EarlifyHero.astro';
+import EarlifyBrands from '../components/earlify/EarlifyBrands.astro';
+import EarlifyNoiseFramework from '../components/earlify/EarlifyNoiseFramework.astro';
+import EarlifyValidation from '../components/earlify/EarlifyValidation.astro';
+import EarlifyFounder from '../components/earlify/EarlifyFounder.astro';
+
+const pageTitle = "Earlify Health S.L. · Menos Ruido. Más Criterio · Salud Digital & Neurodesarrollo";
+const pageDescription = "Earlify Health S.L. es la sombrilla tecnológica y suite clínica creada por el Dr. Frank Betances. Evaluamos, formamos, certificamos y rehabilitamos en audición, lenguaje y neurodesarrollo.";
+
+const earlifyJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://FrankBetances.github.io/valeria-web/earlify#organization",
+      "name": "Earlify Health S.L.",
+      "legalName": "Earlify Health S.L.",
+      "url": "https://FrankBetances.github.io/valeria-web/earlify",
+      "slogan": "Menos ruido. Más criterio.",
+      "founder": {
+        "@type": "Person",
+        "name": "Dr. Frank Alberto Betances Reinoso",
+        "jobTitle": "Fundador y CEO",
+        "sameAs": "https://orcid.org/0000-0002-6349-9537"
+      },
+      "description": pageDescription,
+      "award": [
+        "Sello ITEMAS-ISCIII 2024",
+        "Ennova Health Award 2025",
+        "Ennova Health Award 2023",
+        "Premio Innovación SERGAS Edición III SA304A"
+      ]
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords="Earlify Health, Future for Kids, VIA+ SaMD, Valeria+, Earlify Neuro, ARTEL, Dr. Frank Betances, Marco del Ruido Kahneman, ITEMAS 2024, Ennova Health, Salud Digital"
+  jsonLd={earlifyJsonLd}
+>
+  <Header activeTab="earlify" />
+
+  <main id="main-content">
+    <EarlifyHero />
+    <EarlifyBrands />
+    <EarlifyNoiseFramework />
+    <EarlifyValidation />
+    <EarlifyFounder />
+  </main>
+
+  <Footer />
+  <ContactModal />
+</Layout>

@@ -1,0 +1,208 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+
+<section id="fundador" class="earlify-founder section-padding">
+  <div class="container">
+    <div class="founder-card glass-card">
+      <div class="founder-top">
+        <div class="avatar-wrapper">
+          <div class="avatar-ring">
+            <div class="avatar-content">
+              <img src={`${baseUrl}/assets/dr-frank-betances.jpg`} alt="Dr. Frank Alberto Betances Reinoso · Fundador & CEO de Earlify Health S.L." class="avatar-img" />
+            </div>
+          </div>
+        </div>
+
+        <div class="founder-info">
+          <div class="badge-row">
+            <span class="badge badge-purple">👨‍⚕️ Fundador & CEO · Earlify Health S.L.</span>
+            <span class="badge badge-cyan">🩺 FEA Otorrinolaringología</span>
+            <span class="badge badge-emerald">🔬 Doctorando USC</span>
+          </div>
+
+          <h2 class="founder-title">
+            Dr. Frank Alberto <span class="gradient-text">Betances Reinoso</span>
+          </h2>
+
+          <p class="founder-lead">
+            "La Tríada" que sostiene la ventaja competitiva de Earlify Health: visión médica asistencial de trinchera hospitalaria, rigor de investigación científica y ejecución en tecnología de salud digital.
+          </p>
+
+          <div class="triad-grid">
+            <div class="triad-item">
+              <div class="triad-num">1</div>
+              <div class="triad-text">
+                <strong>Médico Asistencial</strong>
+                <p>Otorrinolaringólogo infantil (Hospital Ribera Polusa). Conoce de primera mano la sobrecarga asistencial y las listas de espera.</p>
+              </div>
+            </div>
+
+            <div class="triad-item">
+              <div class="triad-num">2</div>
+              <div class="triad-text">
+                <strong>Investigador Clínico</strong>
+                <p>Doctorando en la Universidade de Santiago de Compostela (USC), enfocado en la rehabilitación digital del lenguaje.</p>
+              </div>
+            </div>
+
+            <div class="triad-item">
+              <div class="triad-num">3</div>
+              <div class="triad-text">
+                <strong>Emprendedor HealthTech</strong>
+                <p>Liderazgo técnico y estratégico para escalar soluciones SaaS y SaMD validadas con impacto clínico global.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="founder-actions">
+            <a href={`${baseUrl}/cv`} class="btn-primary">
+              <span>Ver Currículum Vítae Completo (CV)</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="https://orcid.org/0000-0002-6349-9537" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <span>ORCID 0000-0002-6349-9537</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .earlify-founder {
+    position: relative;
+  }
+
+  .founder-card {
+    padding: 3.5rem;
+    border: 1px solid var(--border-glow);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%);
+  }
+
+  .founder-top {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .avatar-wrapper {
+    flex-shrink: 0;
+  }
+
+  .avatar-ring {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+    padding: 4px;
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.35);
+  }
+
+  .avatar-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--bg-dark);
+    overflow: hidden;
+  }
+
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .founder-info {
+    flex-grow: 1;
+  }
+
+  .badge-row {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .founder-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .founder-lead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .triad-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .triad-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .triad-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: var(--accent-purple);
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .triad-text strong {
+    color: var(--text-main);
+    font-size: 1.05rem;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .triad-text p {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .founder-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 900px) {
+    .founder-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .badge-row, .founder-actions {
+      justify-content: center;
+    }
+    .triad-item {
+      text-align: left;
+    }
+    .founder-card {
+      padding: 2rem;
+    }
+  }
+</style>
