@@ -118,6 +118,11 @@ const publications = [
     category: "articulo"
   }
 ];
+
+const totalCount = publications.length;
+const articuloCount = publications.filter(p => p.category === 'articulo').length;
+const libroCount = publications.filter(p => p.category === 'libro').length;
+const preprintCount = publications.filter(p => p.category === 'preprint').length;
 ---
 
 <section id="seccion-publicaciones" class="cv-section">
@@ -132,14 +137,22 @@ const publications = [
     <div class="pub-controls print-hide">
       <div class="search-box">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="pub-search" placeholder="Buscar por título, autor o revista..." />
+        <input type="text" id="pub-search" placeholder="Buscar por título, autor o revista..." aria-label="Buscar publicaciones por texto" />
       </div>
 
-      <div class="filter-buttons">
-        <button class="pub-filter active" data-cat="all">Todos</button>
-        <button class="pub-filter" data-cat="articulo">Artículos</button>
-        <button class="pub-filter" data-cat="libro">Libros</button>
-        <button class="pub-filter" data-cat="preprint">Zenodo / Preprints</button>
+      <div class="filter-buttons" role="group" aria-label="Filtrar publicaciones por categoría">
+        <button class="pub-filter active" aria-pressed="true" data-cat="all">
+          <span>Todos</span> <span class="filter-count">{totalCount}</span>
+        </button>
+        <button class="pub-filter" aria-pressed="false" data-cat="articulo">
+          <span>Artículos</span> <span class="filter-count">{articuloCount}</span>
+        </button>
+        <button class="pub-filter" aria-pressed="false" data-cat="libro">
+          <span>Libros</span> <span class="filter-count">{libroCount}</span>
+        </button>
+        <button class="pub-filter" aria-pressed="false" data-cat="preprint">
+          <span>Preprints / Zenodo</span> <span class="filter-count">{preprintCount}</span>
+        </button>
       </div>
     </div>
 
@@ -188,8 +201,10 @@ const publications = [
 
         if (matchesCat && matchesQuery) {
           (card as HTMLElement).style.display = 'flex';
+          (card as HTMLElement).style.opacity = '1';
         } else {
           (card as HTMLElement).style.display = 'none';
+          (card as HTMLElement).style.opacity = '0';
         }
       });
     }
@@ -203,8 +218,12 @@ const publications = [
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
         currentCategory = btn.getAttribute('data-cat') || 'all';
         filterPubs();
       });
@@ -271,28 +290,48 @@ const publications = [
   }
 
   .pub-filter {
-    padding: 0.55rem 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.15rem;
     border-radius: var(--radius-full);
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--border-light);
     color: var(--text-muted);
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
   }
 
   .pub-filter:hover {
     color: var(--text-main);
     background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .filter-count {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
   }
 
   .pub-filter.active {
-    background: var(--accent-cyan);
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
     color: #040914;
     border-color: var(--accent-cyan);
-    font-weight: 700;
+    font-weight: 800;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+  }
+
+  .pub-filter.active .filter-count {
+    background: rgba(4, 9, 20, 0.2);
+    color: #040914;
+    font-weight: 800;
   }
 
   .pub-list {
@@ -305,6 +344,7 @@ const publications = [
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .pub-header {
