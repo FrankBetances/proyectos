@@ -17,7 +17,7 @@ const viaJsonLd = {
   "name": "VIA+ (Valoración Interactiva de Audición y Lenguaje)",
   "applicationCategory": "MedicalApplication",
   "operatingSystem": "iOS, Android",
-  "description": "Software como Dispositivo Médico (SaMD) de Clase IIa (MDR 2017/745) para apoyo a la decisión clínica en audiología y lenguaje pediátrico.",
+  "description": "Software como Dispositivo Médico (SaMD) de Clase IIa (MDR 2017/745, Regla 11) para apoyo a la decisión clínica en audiología, logoaudiometría, voz y neurodesarrollo pediátrico con 12 módulos de evaluación.",
   "author": {
     "@type": "Person",
     "name": "Dr. Frank Alberto Betances Reinoso",
@@ -26,14 +26,24 @@ const viaJsonLd = {
   "medicalAudience": {
     "@type": "MedicalAudience",
     "audienceType": ["Physician", "Audiologist", "Speech Language Pathologist"]
-  }
+  },
+  "featureList": [
+    "12 módulos de evaluación clínicamente validados",
+    "Análisis Prosódico (Móvil 12) sobre habla conectada",
+    "Sonómetro Ambiental en dB(A) con ponderación A (IEC 61672)",
+    "Análisis Acústico de Voz (F0, jitter, shimmer, HNR) validado contra Praat",
+    "Certificado de Aptitud para la Prueba (CAP) bloqueante",
+    "Cero IA en el dispositivo (ADR firmado)",
+    "Telemetría de usabilidad Zero-PHI con QR (IEC 62366-1)",
+    "Operación 100% offline y datos clínicos locales"
+  ]
 };
 ---
 
 <Layout 
-	title="VIA+ · Valoración Interactiva de Audición y Lenguaje (SaMD Clase IIa)"
-	description="Software como Dispositivo Médico (SaMD) de Clase IIa (MDR 2017/745, Regla 11) para apoyo a la decisión clínica en audiología pediátrica, logoaudiometría y voz."
-	keywords="VIA+, SaMD, Dispositivo Médico Clase IIa, MDR 2017/745, Audiología Pediátrica, Logoaudiometría, Análisis Acústico de Voz, Dr. Frank Betances"
+	title="VIA+ · Dispositivo Médico SaMD Clase IIa (12 Módulos)"
+	description="Software como Dispositivo Médico (SaMD) de Clase IIa (MDR 2017/745, Regla 11) para apoyo a la decisión clínica en audiología pediátrica, logoaudiometría, voz y prosodia."
+	keywords="VIA+, SaMD, Dispositivo Médico Clase IIa, MDR 2017/745, Audiología Pediátrica, Logoaudiometría, Análisis Acústico de Voz, Análisis Prosódico, Dr. Frank Betances"
 	jsonLd={viaJsonLd}
 >
 	<Header activeTab="via" />

@@ -23,7 +23,7 @@ const modules = [
     icon: "🔊",
     title: "Sonómetro Ambiental",
     hw: "🎙️ Micrófono Estéreo",
-    desc: "Gate de sala: mide el ruido de fondo (umbral 45 dB) con captura de micrófono real (AudioRecorder RMS → dBFS).",
+    desc: "Gate de sala: mide el ruido de fondo (umbral 45 dB) con captura de micrófono real (LAeq en dB(A) e IEC 61672).",
     entity: "Sin persistencia (gate efímero)",
     badgeColor: "amber"
   },
@@ -50,7 +50,7 @@ const modules = [
     icon: "🎙️",
     title: "Análisis Acústico de Voz",
     hw: "🎙️ Mic + DSP (LPC/FFT)",
-    desc: "Biomarcadores vocales: F0, jitter, shimmer, HNR y formantes F1–F3 sobre voz sostenida (/a/).",
+    desc: "Biomarcadores vocales: F0, jitter, shimmer, HNR y formantes F1–F3 sobre voz sostenida (/a/). Validado contra Praat.",
     entity: "VoiceAnalysis",
     badgeColor: "purple"
   },
@@ -98,6 +98,15 @@ const modules = [
     desc: "Exploración de 5 mini-juegos de tarjetas (atención, inhibición, flexibilidad, memoria de trabajo y planificación).",
     entity: "ExecutiveFunctionsTest",
     badgeColor: "purple"
+  },
+  {
+    num: "12",
+    icon: "〰️",
+    title: "Análisis Prosódico",
+    hw: "🎙️ Mic + DSP (FFT/F0)",
+    desc: "Dinámica del habla en habla conectada (narración 30–60s): rango tonal en semitonos, contorno de cierre, pausas, fracción sonora y tasa de articulación. Registro descriptivo intra-sujeto sin baremo.",
+    entity: "ProsodyAnalysis",
+    badgeColor: "rose"
   }
 ];
 ---
@@ -106,7 +115,7 @@ const modules = [
   <div class="container">
     <div class="section-header">
       <span class="tag">Batería Completa de Evaluación</span>
-      <h2>11 Módulos Clínicos y de <span class="gradient-text">Neurodesarrollo</span></h2>
+      <h2>12 Módulos Clínicos y de <span class="gradient-text">Neurodesarrollo</span></h2>
       <p>Cada módulo combina rigidez metodológica sanitaria con una interfaz adaptada al paciente pediátrico.</p>
     </div>
 
