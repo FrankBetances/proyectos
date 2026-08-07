@@ -91,6 +91,16 @@ const blocks = [
       <p>Diseñados para cubrir desde la criba auditiva inicial hasta intervenciones complejas en dislalias, TEA, dislexia y Realidad Aumentada.</p>
     </div>
 
+    <div class="screenshot-wrapper">
+      <img 
+        src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL}/assets/05-hub-bloques.png`} 
+        alt="Hub de Bloques de Terapia" 
+        class="manual-screenshot" 
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
     <div class="blocks-grid">
       {blocks.map((b) => (
         <div class="glass-card block-card">
@@ -201,6 +211,21 @@ const blocks = [
   .block-features svg {
     color: var(--accent-cyan);
     flex-shrink: 0;
+  }
+
+  .screenshot-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .manual-screenshot {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    border-radius: 18px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-glow);
   }
 
   @media (max-width: 768px) {

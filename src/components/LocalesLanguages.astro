@@ -50,6 +50,16 @@ const languages = [
       <p>Cada variedad cuenta con su propio banco de voz neuronal pregenerado en CI y empaquetado en el APK sin consumo de red.</p>
     </div>
 
+    <div class="screenshot-wrapper">
+      <img 
+        src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL}/assets/22-voz-variedad.png`} 
+        alt="Selector de Variedades de Voz" 
+        class="manual-screenshot" 
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
     <div class="lang-grid">
       {languages.map((l) => (
         <div class="glass-card lang-card">
@@ -167,5 +177,20 @@ const languages = [
   .spec-val {
     font-size: 0.825rem;
     color: var(--text-main);
+  }
+
+  .screenshot-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .manual-screenshot {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    border-radius: 18px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-glow);
   }
 </style>

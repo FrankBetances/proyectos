@@ -9,6 +9,16 @@
       <p>Módulos de estrés comunicativo accionables de forma estrictamente manual. La app nunca adapta ni altera parámetros de forma automática.</p>
     </div>
 
+    <div class="screenshot-wrapper">
+      <img 
+        src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL}/assets/23-panel-adulto.png`} 
+        alt="Panel del Adulto de Valeria+" 
+        class="manual-screenshot" 
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
     <div class="adult-grid">
       <div class="glass-card adult-card">
         <div class="adult-icon cyan">🔊</div>
@@ -148,5 +158,20 @@
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--accent-cyan);
+  }
+
+  .screenshot-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .manual-screenshot {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    border-radius: 18px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-glow);
   }
 </style>

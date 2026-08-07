@@ -9,6 +9,16 @@
       <p>Un enfoque basado en la evidencia clínica donde la tecnología sirve de facilitador y el adulto supervisa cada avance.</p>
     </div>
 
+    <div class="screenshot-wrapper">
+      <img 
+        src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL}/assets/09-pares-veredicto.png`} 
+        alt="Veredicto de Pares Mínimos" 
+        class="manual-screenshot" 
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
     <div class="features-grid">
       <div class="glass-card feature-card">
         <div class="icon-wrapper cyan">
@@ -127,5 +137,20 @@
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+  }
+
+  .screenshot-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .manual-screenshot {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    border-radius: 18px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-glow);
   }
 </style>
