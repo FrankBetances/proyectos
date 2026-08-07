@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://FrankBetances.github.io',
-  base: '/valeria-web',
+  base: '/proyectos',
   build: {
     format: 'file'
   }

@@ -7,7 +7,7 @@ Construido con **Astro**, **TypeScript** y un sistema de diseño CSS en modo osc
 ## 🚀 Despliegue en GitHub Pages
 
 Este repositorio se despliega automáticamente en GitHub Pages mediante GitHub Actions en:
-👉 **[https://FrankBetances.github.io/valeria-web/](https://FrankBetances.github.io/valeria-web/)**
+👉 **[https://FrankBetances.github.io/proyectos/](https://FrankBetances.github.io/proyectos/)**
 
 ## 💻 Desarrollo Local
 
