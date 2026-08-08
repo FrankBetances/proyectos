@@ -1,0 +1,191 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+
+const collaborators = [
+  {
+    id: "acopros",
+    name: "ACOPROS",
+    badge: "Validación Logopédica & Clínica",
+    badgeColor: "amber",
+    desc: "Asociación de Colaboración y Promoción del Sordo (A Coruña). Revisión del corpus de voz, pares mínimos y módulo de LSE.",
+    logo: `${baseUrl}/assets/collaborators/logo-acopros.png`,
+    logoBg: "light",
+    alt: "Logo ACOPROS - Asociación de Colaboración y Promoción del Sordo"
+  },
+  {
+    id: "itemas",
+    name: "ITEMAS / ISCIII",
+    badge: "Sello de Calidad 2024",
+    badgeColor: "cyan",
+    desc: "Plataforma de dinamización e innovación de las capacidades industriales del Sistema Nacional de Salud (Instituto de Salud Carlos III).",
+    logo: `${baseUrl}/assets/collaborators/logo-itemas.png`,
+    logoBg: "light",
+    alt: "Sello de Calidad ITEMAS ISCIII 2024 - Instituto de Salud Carlos III"
+  },
+  {
+    id: "sgorl",
+    name: "SGORL",
+    badge: "Sociedad Científica Médica",
+    badgeColor: "purple",
+    desc: "Sociedad Gallega de Otorrinolaringología y Cirugía de Cabeza y Cuello. Aval científico y clínico en salud auditiva.",
+    logo: `${baseUrl}/assets/collaborators/logo-sgorl.png`,
+    logoBg: "dark",
+    alt: "Logo SGORL - Sociedad Gallega de Otorrinolaringología"
+  },
+  {
+    id: "acis",
+    name: "ACIS - SERGAS",
+    badge: "Agencia de Salud Pública",
+    badgeColor: "emerald",
+    desc: "Axencia de Coñecemento en Saúde (Servizo Galego de Saúde). Promoción del conocimiento e innovación asistencial en salud.",
+    logo: `${baseUrl}/assets/collaborators/logo-acis.png`,
+    logoBg: "light",
+    alt: "Logo ACIS - Axencia de Coñecemento en Saúde (Servizo Galego de Saúde)"
+  }
+];
+---
+
+<section id="colaboradores" class="collaborators-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Acreditación & Respaldo Sanitario</span>
+      <h2>Entidades Colaboradoras & <span class="gradient-text">Sellos de Calidad</span></h2>
+      <p>
+        Valeria+ cuenta con la validación de sociedades científicas, agencias de innovación en salud y entidades especializadas en discapacidad auditiva.
+      </p>
+    </div>
+
+    <div class="collab-grid">
+      {collaborators.map((c) => (
+        <div class="glass-card collab-card">
+          <div class={`logo-container ${c.logoBg}`}>
+            <img 
+              src={c.logo} 
+              alt={c.alt} 
+              class={`collab-img img-${c.id}`} 
+              loading="lazy" 
+              decoding="async" 
+            />
+          </div>
+
+          <div class="collab-body">
+            <div class="collab-top">
+              <h3 class="collab-name">{c.name}</h3>
+              <span class={`badge badge-${c.badgeColor}`}>{c.badge}</span>
+            </div>
+            <p class="collab-desc">{c.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .collaborators-section {
+    padding: 90px 0;
+    position: relative;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(10, 15, 26, 0.9) 100%);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .collab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .collab-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .collab-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 242, 254, 0.35);
+  }
+
+  .logo-container {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .logo-container.light {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  }
+
+  .logo-container.dark {
+    background: linear-gradient(135deg, #090E17 0%, #0F172A 100%);
+  }
+
+  .collab-img {
+    max-height: 85px;
+    max-width: 85%;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+  }
+
+  .collab-card:hover .collab-img {
+    transform: scale(1.05);
+  }
+
+  .img-itemas {
+    max-height: 95px;
+  }
+
+  .img-acis {
+    max-height: 55px;
+  }
+
+  .img-acopros {
+    max-height: 60px;
+  }
+
+  .img-sgorl {
+    max-height: 90px;
+  }
+
+  .collab-body {
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .collab-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .collab-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .collab-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .collab-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
