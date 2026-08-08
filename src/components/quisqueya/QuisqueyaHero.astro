@@ -13,6 +13,20 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <span class="badge badge-cyan">🔬 S-CVI 0.879</span>
     </div>
 
+    <!-- Official Quisqueya Habla Logo -->
+    <div class="logo-wrapper">
+      <img 
+        src={`${baseUrl}/assets/quisqueya-logo.png`} 
+        alt="Logo Oficial del Proyecto Quisqueya Habla" 
+        class="quisqueya-logo-img" 
+        width="420"
+        height="236"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+
     <h1 class="hero-title">
       Proyecto <span class="gradient-text">Quisqueya Habla</span>
     </h1>
@@ -71,6 +85,30 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     justify-content: center;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto 1.75rem auto;
+  }
+
+  .quisqueya-logo-img {
+    max-width: 90%;
+    width: 360px;
+    height: auto;
+    border-radius: 20px;
+    background: #FFFFFF;
+    padding: 14px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 242, 254, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .quisqueya-logo-img:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 242, 254, 0.3);
   }
 
   .hero-title {
