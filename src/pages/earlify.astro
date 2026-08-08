@@ -6,6 +6,7 @@ import ContactModal from '../components/cv/ContactModal.astro';
 import EarlifyHero from '../components/earlify/EarlifyHero.astro';
 import EarlifyBrands from '../components/earlify/EarlifyBrands.astro';
 import EarlifyWorkflow from '../components/earlify/EarlifyWorkflow.astro';
+import EarlifyB2B from '../components/earlify/EarlifyB2B.astro';
 import EarlifyFounder from '../components/earlify/EarlifyFounder.astro';
 
 const pageTitle = "Earlify Health S.L. · Evaluar mejor. Dar continuidad antes.";
@@ -27,7 +28,27 @@ const earlifyJsonLd = {
         "jobTitle": "Fundador y CEO",
         "sameAs": "https://orcid.org/0000-0002-6349-9537"
       },
-      "description": pageDescription
+      "description": pageDescription,
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "SoftwareApplication",
+            "name": "VIA+",
+            "applicationCategory": "HealthApplication",
+            "description": "Herramienta de apoyo a la decisión clínica para profesionales sanitarios en audición, lenguaje y neurodesarrollo."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "SoftwareApplication",
+            "name": "Valeria+",
+            "applicationCategory": "HealthApplication",
+            "description": "Aplicación de rehabilitación auditivo-verbal y del lenguaje para niños, acompañados por padres y cuidadores."
+          }
+        }
+      ]
     }
   ]
 };
@@ -45,6 +66,7 @@ const earlifyJsonLd = {
     <EarlifyHero />
     <EarlifyBrands />
     <EarlifyWorkflow />
+    <EarlifyB2B />
     <EarlifyFounder />
   </main>
 
