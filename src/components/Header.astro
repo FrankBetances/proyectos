@@ -13,7 +13,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <header class="site-header print-hide">
   <div class="container header-content">
     <a href={`${baseUrl}/`} class="logo" aria-label="Ir al inicio de la web del Dr. Frank Betances">
-      <div class="logo-icon">🩺</div>
+      <img src={`${baseUrl}/assets/dr-betances-logo.jpg`} alt="Logo Dr. Frank Betances" class="logo-img" />
       <div class="logo-text">
         <span class="logo-name">Dr. Frank <span class="plus">Betances</span></span>
         <span class="logo-tagline">ORL & Salud Digital</span>
@@ -104,16 +104,11 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     flex-shrink: 0;
   }
 
-  .logo-icon {
-    font-size: 1.4rem;
-    background: rgba(0, 242, 254, 0.1);
-    border: 1px solid rgba(0, 242, 254, 0.3);
+  .logo-img {
     width: 40px;
     height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 50%;
+    object-fit: cover;
     box-shadow: 0 0 12px rgba(0, 242, 254, 0.15);
   }
 

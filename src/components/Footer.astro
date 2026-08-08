@@ -10,7 +10,7 @@ const currentYear = new Date().getFullYear();
   <div class="container footer-content">
     <div class="footer-brand">
       <a href={`${baseUrl}/`} class="footer-logo">
-        <span class="logo-icon">🩺</span>
+        <img src={`${baseUrl}/assets/dr-betances-logo.jpg`} alt="Logo Dr. Frank Betances" class="footer-logo-img" />
         <span class="logo-name">Dr. Frank Betances</span>
       </a>
       <p class="footer-desc">
@@ -78,8 +78,11 @@ const currentYear = new Date().getFullYear();
     margin-bottom: 1rem;
   }
 
-  .footer-logo .logo-icon {
-    font-size: 1.4rem;
+  .footer-logo .footer-logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   .footer-logo .logo-name {
