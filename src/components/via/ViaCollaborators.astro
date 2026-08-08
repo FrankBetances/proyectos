@@ -1,0 +1,167 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+
+const viaCollaborators = [
+  {
+    id: "acopros",
+    name: "ACOPROS",
+    badge: "Validación Logopédica & Audiológica",
+    badgeColor: "amber",
+    desc: "Asociación de Colaboración y Promoción del Sordo. Acreditación de pruebas clínicas pediátricas, logoaudiometría y bancos de estímulo auditivo.",
+    logo: `${baseUrl}/assets/collaborators/logo-acopros.png`,
+    alt: "Logo ACOPROS - Asociación de Colaboración y Promoción del Sordo"
+  },
+  {
+    id: "itemas",
+    name: "ITEMAS / ISCIII",
+    badge: "Sello de Calidad 2024",
+    badgeColor: "cyan",
+    desc: "Plataforma de dinamización e innovación de las capacidades industriales del Sistema Nacional de Salud (Instituto de Salud Carlos III).",
+    logo: `${baseUrl}/assets/collaborators/logo-itemas.png`,
+    alt: "Sello de Calidad ITEMAS ISCIII 2024 - Instituto de Salud Carlos III"
+  },
+  {
+    id: "acis",
+    name: "ACIS - SERGAS",
+    badge: "Agencia de Salud Pública",
+    badgeColor: "emerald",
+    desc: "Axencia de Coñecemento en Saúde (Servizo Galego de Saúde). Promoción del conocimiento asistencial e innovación en dispositivos médicos.",
+    logo: `${baseUrl}/assets/collaborators/logo-acis.png`,
+    alt: "Logo ACIS - Axencia de Coñecemento en Saúde (Servizo Galego de Saúde)"
+  }
+];
+---
+
+<section id="colaboradores-via" class="via-collab-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Acreditaciones & Entidades Sanitarias</span>
+      <h2>Validación Sanitaria & <span class="gradient-text">Sellos de Calidad</span></h2>
+      <p>
+        El desarrollo de VIA+ (SaMD Clase IIa) se respalda en la auditoría de calidad de ITEMAS (ISCIII), validación logopédica de ACOPROS e innovación pública de ACIS.
+      </p>
+    </div>
+
+    <div class="via-collab-grid">
+      {viaCollaborators.map((c) => (
+        <div class="glass-card via-collab-card">
+          <div class="logo-box">
+            <img 
+              src={c.logo} 
+              alt={c.alt} 
+              class={`via-collab-img img-${c.id}`} 
+              loading="lazy" 
+              decoding="async" 
+            />
+          </div>
+
+          <div class="card-content">
+            <div class="card-top">
+              <h3>{c.name}</h3>
+              <span class={`badge badge-${c.badgeColor}`}>{c.badge}</span>
+            </div>
+            <p>{c.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .via-collab-section {
+    padding: 90px 0;
+    position: relative;
+    background: linear-gradient(180deg, rgba(10, 15, 26, 0.95) 0%, rgba(15, 23, 42, 0.7) 100%);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .via-collab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .via-collab-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .via-collab-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 242, 254, 0.35);
+  }
+
+  .logo-box {
+    height: 135px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .via-collab-img {
+    max-height: 85px;
+    max-width: 85%;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+  }
+
+  .via-collab-card:hover .via-collab-img {
+    transform: scale(1.05);
+  }
+
+  .img-itemas {
+    max-height: 95px;
+  }
+
+  .img-acis {
+    max-height: 55px;
+  }
+
+  .img-acopros {
+    max-height: 60px;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .card-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .card-top h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .card-content p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .via-collab-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
