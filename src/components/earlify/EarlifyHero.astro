@@ -13,6 +13,22 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <span class="badge badge-amber">📍 USC-INTEGRA</span>
     </div>
 
+    <!-- Official Earlify Health Logo Card -->
+    <div class="earlify-logo-wrapper">
+      <div class="earlify-logo-card">
+        <img 
+          src={`${baseUrl}/assets/earlify-logo.png`} 
+          alt="Logo Oficial de Earlify Health S.L." 
+          class="earlify-logo-img" 
+          width="280"
+          height="230"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+    </div>
+
     <h1 class="hero-title">
       Earlify Health · <span class="gradient-text">Menos ruido. Más criterio.</span>
     </h1>
@@ -20,7 +36,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <p class="hero-subtitle">
       Plataforma clínica para el neurodesarrollo, audición y lenguaje. 
       <br />
-      <strong>"Evaluamos, formamos, certificamos y rehabilitamos. Hacemos el trabajo completo."</strong>
+      <strong>“VIA+ estructura la evaluación clínica; Valeria+ extiende al hogar el trabajo pautado por el profesional.”</strong>
     </p>
 
     <!-- Canon Quote Banner -->
@@ -65,6 +81,37 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     justify-content: center;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
+  }
+
+  .earlify-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto 1.75rem auto;
+  }
+
+  .earlify-logo-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 1.25rem 2.25rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(168, 85, 247, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .earlify-logo-card:hover {
+    transform: scale(1.04) translateY(-3px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(168, 85, 247, 0.4);
+  }
+
+  .earlify-logo-img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    display: block;
   }
 
   .hero-title {
