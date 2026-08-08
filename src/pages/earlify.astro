@@ -5,12 +5,11 @@ import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import EarlifyHero from '../components/earlify/EarlifyHero.astro';
 import EarlifyBrands from '../components/earlify/EarlifyBrands.astro';
-import EarlifyNoiseFramework from '../components/earlify/EarlifyNoiseFramework.astro';
-import EarlifyValidation from '../components/earlify/EarlifyValidation.astro';
+import EarlifyWorkflow from '../components/earlify/EarlifyWorkflow.astro';
 import EarlifyFounder from '../components/earlify/EarlifyFounder.astro';
 
-const pageTitle = "Earlify Health S.L. · Menos Ruido. Más Criterio · Salud Digital & Neurodesarrollo";
-const pageDescription = "Earlify Health S.L. es la sombrilla tecnológica y suite clínica creada por el Dr. Frank Betances. Evaluamos, formamos, certificamos y rehabilitamos en audición, lenguaje y neurodesarrollo.";
+const pageTitle = "Earlify Health S.L. · Evaluar mejor. Dar continuidad antes.";
+const pageDescription = "Earlify Health desarrolla productos digitales para mejorar el recorrido asistencial en neurodesarrollo: VIA+ para el apoyo a la evaluación clínica y Valeria+ para la continuidad de la intervención en el hogar en español e inglés.";
 
 const earlifyJsonLd = {
   "@context": "https://schema.org",
@@ -21,20 +20,14 @@ const earlifyJsonLd = {
       "name": "Earlify Health S.L.",
       "legalName": "Earlify Health S.L.",
       "url": "https://FrankBetances.github.io/proyectos/earlify",
-      "slogan": "Menos ruido. Más criterio.",
+      "slogan": "Evaluar mejor. Dar continuidad antes.",
       "founder": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
         "jobTitle": "Fundador y CEO",
         "sameAs": "https://orcid.org/0000-0002-6349-9537"
       },
-      "description": pageDescription,
-      "award": [
-        "Sello ITEMAS-ISCIII 2024",
-        "Ennova Health Award 2025",
-        "Ennova Health Award 2023",
-        "Premio Innovación SERGAS Edición III SA304A"
-      ]
+      "description": pageDescription
     }
   ]
 };
@@ -43,7 +36,7 @@ const earlifyJsonLd = {
 <Layout 
   title={pageTitle}
   description={pageDescription}
-  keywords="Earlify Health, Future for Kids, VIA+ SaMD, Valeria+, Earlify Neuro, ARTEL, Dr. Frank Betances, Marco del Ruido Kahneman, ITEMAS 2024, Ennova Health, Salud Digital"
+  keywords="Earlify Health, VIA+ SaMD, Valeria+, Evaluar mejor Dar continuidad antes, Neurodesarrollo, Salud Digital, Dr. Frank Betances"
   jsonLd={earlifyJsonLd}
 >
   <Header activeTab="earlify" />
@@ -51,8 +44,7 @@ const earlifyJsonLd = {
   <main id="main-content">
     <EarlifyHero />
     <EarlifyBrands />
-    <EarlifyNoiseFramework />
-    <EarlifyValidation />
+    <EarlifyWorkflow />
     <EarlifyFounder />
   </main>
 
