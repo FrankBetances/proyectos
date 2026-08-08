@@ -13,6 +13,20 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <span class="badge badge-amber">Telemetría Zero-PHI</span>
     </div>
 
+    <!-- Official VIA+ App Icon Logo -->
+    <div class="via-app-icon-wrapper">
+      <img 
+        src={`${baseUrl}/assets/via-logo.png`} 
+        alt="Logo Oficial de VIA+ (SaMD IIa)" 
+        class="via-app-icon-img" 
+        width="96"
+        height="96"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+
     <h1 class="hero-title">
       VIA<span class="gradient-text">+</span> · Valoración Interactiva de Audición y Lenguaje
     </h1>
@@ -86,6 +100,27 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     justify-content: center;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
+  }
+
+  .via-app-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto 1.5rem auto;
+  }
+
+  .via-app-icon-img {
+    width: 88px;
+    height: 88px;
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4), 0 0 20px rgba(255, 120, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .via-app-icon-img:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 16px 40px rgba(245, 158, 11, 0.6), 0 0 30px rgba(255, 120, 0, 0.4);
   }
 
   .hero-title {
