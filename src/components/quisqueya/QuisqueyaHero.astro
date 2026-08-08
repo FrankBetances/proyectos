@@ -13,33 +13,24 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <span class="badge badge-cyan">🔬 S-CVI 0.879</span>
     </div>
 
-    <!-- Official Quisqueya Habla Corporate Logo -->
-    <div class="corporate-logo-container">
-      <div class="logo-emblem-card glass-card">
-        <div class="emblem-inner">
-          <img 
-            src={`${baseUrl}/assets/quisqueya-logo-clean.png`} 
-            alt="Isotipo Oficial del Proyecto Quisqueya Habla - FONDOCYT MESCYT UFHEC" 
-            class="quisqueya-logo-img" 
-            width="180"
-            height="290"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </div>
-        <div class="emblem-meta">
-          <span class="emblem-title">QUISQUEYA HABLA</span>
-          <span class="emblem-sub">FONDOCYT 2024-3-4A2-0922</span>
-        </div>
+    <!-- Compact Quisqueya Habla Logo & Title Block -->
+    <div class="hero-brand-header">
+      <div class="logo-glow-wrapper">
+        <img 
+          src={`${baseUrl}/assets/quisqueya-logo-clean.png`} 
+          alt="Isotipo Oficial del Proyecto Quisqueya Habla" 
+          class="quisqueya-logo-compact" 
+          width="85"
+          height="137"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
+      <h1 class="hero-title">
+        Proyecto <span class="gradient-text">Quisqueya Habla</span>
+      </h1>
     </div>
-
-    <h1 class="hero-title">
-      Proyecto <span class="gradient-text">Quisqueya Habla</span>
-    </h1>
-      Proyecto <span class="gradient-text">Quisqueya Habla</span>
-    </h1>
 
     <p class="hero-subtitle">
       Detección temprana y rehabilitación domiciliaria de trastornos del lenguaje y TEA en niños de 2 a 6 años en la República Dominicana.
@@ -97,68 +88,48 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     margin-bottom: 1.5rem;
   }
 
-  .corporate-logo-container {
+  .hero-brand-header {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem auto 2.25rem auto;
-  }
-
-  .logo-emblem-card {
-    display: inline-flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 2rem 1.2rem 2rem;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 244, 250, 0.95) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 242, 254, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .logo-emblem-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 242, 254, 0.3);
-  }
-
-  .emblem-inner {
-    display: flex;
     justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .logo-glow-wrapper {
+    position: relative;
+    display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0.5rem;
   }
 
-  .quisqueya-logo-img {
-    width: 170px;
+  .logo-glow-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.3) 0%, rgba(138, 43, 226, 0.15) 50%, transparent 75%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(15px);
+  }
+
+  .quisqueya-logo-compact {
+    position: relative;
+    z-index: 1;
+    width: 80px;
     height: auto;
     display: block;
-    filter: drop-shadow(0 6px 12px rgba(0, 45, 98, 0.25));
+    filter: drop-shadow(0 0 14px rgba(0, 242, 254, 0.5)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.85)) brightness(1.15);
+    transition: transform 0.3s ease, filter 0.3s ease;
   }
 
-  .emblem-meta {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid rgba(0, 45, 98, 0.12);
-    width: 100%;
-  }
-
-  .emblem-title {
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    color: #002D62;
-  }
-
-  .emblem-sub {
-    font-size: 0.725rem;
-    font-weight: 700;
-    color: #CE1126;
-    letter-spacing: 0.05em;
+  .quisqueya-logo-compact:hover {
+    transform: scale(1.08) translateY(-2px);
+    filter: drop-shadow(0 0 25px rgba(0, 242, 254, 0.75)) drop-shadow(0 0 6px rgba(255, 255, 255, 1)) brightness(1.25);
   }
 
   .hero-title {
