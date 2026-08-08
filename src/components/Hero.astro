@@ -6,6 +6,20 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
 <section class="hero-section">
   <div class="container hero-container">
+    <!-- Official Valeria+ App Icon Logo -->
+    <div class="valeria-app-icon-wrapper">
+      <img 
+        src={`${baseUrl}/assets/valeria-logo.png`} 
+        alt="Logo Oficial de Valeria+ (Terapia Auditivo-Verbal y del Lenguaje)" 
+        class="valeria-app-icon-img" 
+        width="96"
+        height="96"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+
     <div class="hero-badge">
       <span class="pulse-dot"></span>
       <span>Valeria+ v10.3 · Producción Clínica Aprobada</span>
@@ -125,6 +139,27 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .valeria-app-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto 1.5rem auto;
+  }
+
+  .valeria-app-icon-img {
+    width: 88px;
+    height: 88px;
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(0, 242, 254, 0.4), 0 0 20px rgba(0, 180, 216, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .valeria-app-icon-img:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 16px 40px rgba(0, 242, 254, 0.6), 0 0 30px rgba(0, 180, 216, 0.4);
   }
 
   .hero-badge {
