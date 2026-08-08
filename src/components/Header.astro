@@ -21,12 +21,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     </a>
 
     <nav class="nav-links" id="main-navigation" aria-label="Navegación principal">
+      <a href={`${baseUrl}/earlify`} class={activeTab === 'earlify' ? 'active' : ''}>
+        <span class="nav-pill nav-purple">Earlify Health</span>
+      </a>
       <a href={`${baseUrl}/`} class={activeTab === 'home' ? 'active' : ''}>Valeria+</a>
       <a href={`${baseUrl}/via`} class={activeTab === 'via' ? 'active' : ''}>
         <span class="nav-pill nav-cyan">VIA+ (SaMD)</span>
-      </a>
-      <a href={`${baseUrl}/earlify`} class={activeTab === 'earlify' ? 'active' : ''}>
-        <span class="nav-pill nav-purple">Earlify Health</span>
       </a>
       <a href={`${baseUrl}/quisqueya-habla`} class={activeTab === 'quisqueya' ? 'active' : ''}>
         <span class="nav-pill nav-amber">Quisqueya Habla</span>
