@@ -17,11 +17,11 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <div class="earlify-logo-wrapper">
       <div class="earlify-logo-card">
         <img 
-          src={`${baseUrl}/assets/earlify-logo.png?v=4`} 
+          src={`${baseUrl}/assets/earlify-logo.png?v=5`} 
           alt="Logo Oficial de Earlify Health S.L." 
           class="earlify-logo-img" 
-          width="340"
-          height="340"
+          width="300"
+          height="300"
           loading="eager"
           fetchpriority="high"
           decoding="async"
@@ -90,20 +90,20 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     align-items: center;
     justify-content: center;
     background: #FFFFFF;
-    border-radius: 28px;
-    padding: 1.5rem 3rem;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45), 0 0 30px rgba(168, 85, 247, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    padding: 1.25rem 2.25rem;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35), 0 0 25px rgba(0, 242, 254, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .earlify-logo-card:hover {
-    transform: scale(1.04) translateY(-3px);
-    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.55), 0 0 40px rgba(168, 85, 247, 0.45);
+    transform: scale(1.03) translateY(-2px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 35px rgba(0, 242, 254, 0.35);
   }
 
   .earlify-logo-img {
-    height: 280px;
+    height: 220px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
