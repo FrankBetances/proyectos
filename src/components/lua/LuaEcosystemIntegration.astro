@@ -1,0 +1,182 @@
+---
+---
+
+<section class="ecosystem-integration section-padding">
+  <div class="container">
+    <div class="integration-header">
+      <h2 class="section-title">Integración con el Ecosistema</h2>
+      <p class="section-description">
+        Lúa utiliza Bluetooth LE (GATT Server) para establecer una conexión en segundo plano y transparente. Su comportamiento cambia diametralmente dependiendo de qué aplicación esté orquestando la sesión.
+      </p>
+    </div>
+
+    <div class="integration-columns">
+      
+      <!-- Valeria+ Column -->
+      <div class="integration-box valeria-integration glass-card">
+        <div class="integration-top">
+          <h3>Integración con Valeria+</h3>
+          <span class="pill pill-purple">Hogar & Terapia</span>
+        </div>
+        <div class="integration-content">
+          <ul>
+            <li>
+              <strong>Mapeo del Turno (TurnPhaseStrip):</strong> Lúa reacciona a cada fase (Escucha → Repite → Veredicto).
+            </li>
+            <li>
+              <strong>Recompensa Visual:</strong> Al registrar un Veredicto Positivo en la app, Lúa ejecuta su protocolo de celebración en menos de 1 segundo.
+            </li>
+            <li>
+              <strong>Modo Suspensión:</strong> Si se pierde la conexión BLE, pasa automáticamente al "Modo Vínculo" para evitar latencias.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- VIA+ Column -->
+      <div class="integration-box via-integration glass-card">
+        <div class="integration-top">
+          <h3>Integración con VIA+</h3>
+          <span class="pill pill-cyan">Valoración Clínica (SaMD)</span>
+        </div>
+        <div class="integration-content">
+          <ul>
+            <li>
+              <strong>Silencio Clínico Obligatorio:</strong> En módulos de análisis acústico o logoaudiometría, la tableta envía un comando que bloquea motores y altavoz.
+            </li>
+            <li>
+              <strong>Gamificación Pasiva:</strong> Recompensas visuales silenciosas al completar umbrales audiométricos.
+            </li>
+            <li>
+              <strong>Celebración Final:</strong> Solo al cerrar el flujo evaluativo (ResultadosFinal), Lúa recibe el permiso para celebrar el fin de la consulta.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .ecosystem-integration {
+    padding: 80px 0;
+  }
+
+  .integration-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+  }
+
+  .section-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .integration-columns {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .integration-box {
+    flex: 1;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+  }
+
+  .valeria-integration {
+    border-top: 4px solid var(--accent-purple);
+  }
+
+  .via-integration {
+    border-top: 4px solid var(--accent-cyan);
+  }
+
+  .integration-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .integration-top h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-main);
+  }
+
+  .pill {
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .pill-purple {
+    background: rgba(168, 85, 247, 0.15);
+    color: var(--accent-purple);
+  }
+
+  .pill-cyan {
+    background: rgba(0, 242, 254, 0.15);
+    color: var(--accent-cyan);
+  }
+
+  .integration-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .integration-content li {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .valeria-integration .integration-content li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--accent-purple);
+  }
+
+  .via-integration .integration-content li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--accent-cyan);
+  }
+
+  .integration-content li strong {
+    color: var(--text-main);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .integration-columns {
+      flex-direction: column;
+    }
+  }
+</style>

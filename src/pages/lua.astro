@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactModal from '../components/cv/ContactModal.astro';
+
+import LuaHero from '../components/lua/LuaHero.astro';
+import LuaClinicalObjectives from '../components/lua/LuaClinicalObjectives.astro';
+import LuaEcosystemIntegration from '../components/lua/LuaEcosystemIntegration.astro';
+import LuaArchitecture from '../components/lua/LuaArchitecture.astro';
+
+const pageTitle = "Lúa (Hardware) · Periférico AIoT de Refuerzo Conductual";
+const pageDescription = "Lúa es un periférico físico de refuerzo conductual basado en microcontroladores ESP32, integrado de forma transparente por BLE con el ecosistema clínico de Earlify Health.";
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords="Lúa, Hardware, ESP32, AIoT, Valeria+, VIA+, Refuerzo Conductual, BLE, SaMD"
+>
+  <Header activeTab="lua" />
+
+  <main id="main-content">
+    <LuaHero />
+    <LuaClinicalObjectives />
+    <LuaEcosystemIntegration />
+    <LuaArchitecture />
+  </main>
+
+  <Footer />
+  <ContactModal />
+</Layout>

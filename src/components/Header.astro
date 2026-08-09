@@ -28,6 +28,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <a href={`${baseUrl}/via`} class={activeTab === 'via' ? 'active' : ''}>
         <span class="nav-pill nav-cyan">VIA+ (SaMD)</span>
       </a>
+      <a href={`${baseUrl}/lua`} class={activeTab === 'lua' ? 'active' : ''}>
+        <span class="nav-pill nav-orange">Lúa (Hardware)</span>
+      </a>
       <a href={`${baseUrl}/quisqueya-habla`} class={activeTab === 'quisqueya' ? 'active' : ''}>
         <span class="nav-pill nav-amber">Quisqueya Habla</span>
       </a>
@@ -177,6 +180,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     background: rgba(245, 158, 11, 0.1);
     border: 1px solid rgba(245, 158, 11, 0.3);
     color: var(--accent-amber);
+  }
+
+  .nav-orange {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    color: #f97316;
   }
 
   .header-actions {

@@ -1,0 +1,170 @@
+---
+---
+
+<section class="clinical-objectives section-padding">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge badge-cyan">Pilares Clínicos</span>
+      <h2 class="section-title">Diseñada bajo estrictos criterios de seguridad</h2>
+      <p class="section-description">
+        Lúa no es un juguete interactivo autónomo. Es un periférico esclavo cuyo comportamiento es dictaminado al milisegundo por los motores clínicos de Valeria+ y VIA+, garantizando la validez de cada intervención.
+      </p>
+    </div>
+
+    <div class="objectives-grid">
+      
+      <div class="objective-card glass-card">
+        <div class="icon-wrapper purple-glow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+        </div>
+        <h3>Adherencia sin Fricción</h3>
+        <p>
+          Traslada la carga motivacional (rachas, insignias) al entorno físico para fortalecer el vínculo afectivo. Mantiene intacto el paradigma <strong>Total Physical Response (TPR)</strong> mediado siempre por los padres.
+        </p>
+      </div>
+
+      <div class="objective-card glass-card">
+        <div class="icon-wrapper red-glow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2h0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2h1.5M11 20v-2c0-1.1.9-2 2-2h0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h0a2 2 0 0 1 2-2h2.5"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+        </div>
+        <h3>Condición Bloqueante: Cero Ruido</h3>
+        <p>
+          El hardware carece de micrófonos habilitados (Zero-PHI). Durante la captura de biomarcadores vocales en VIA+, Lúa entra en <strong>"Silencio Clínico"</strong> absoluto para evitar cualquier interferencia acústica.
+        </p>
+      </div>
+
+      <div class="objective-card glass-card">
+        <div class="icon-wrapper cyan-glow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h3>Gestión de Rutinas (RTC)</h3>
+        <p>
+          Posee un reloj de tiempo real que permite emitir alertas autónomas programadas para iniciar sesiones "píldora", induciendo al niño a interactuar sin necesidad de activar previamente la tableta.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .clinical-objectives {
+    padding: 80px 0;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-cyan {
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: var(--accent-cyan);
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+  }
+
+  .section-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .objective-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .objective-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  .purple-glow {
+    background: rgba(168, 85, 247, 0.2);
+    border: 1px solid var(--accent-purple);
+    color: var(--accent-purple);
+  }
+
+  .red-glow {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid #ef4444;
+    color: #ef4444;
+  }
+
+  .cyan-glow {
+    background: rgba(0, 242, 254, 0.2);
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+  }
+
+  .objective-card h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .objective-card p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .objective-card strong {
+    color: var(--text-main);
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+</style>

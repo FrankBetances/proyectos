@@ -1,0 +1,177 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
+<section class="lua-hero">
+  <div class="container">
+    <div class="hero-top-badges">
+      <span class="badge badge-orange">🤖 Hardware AIoT</span>
+      <span class="badge badge-cyan">🔗 Bluetooth 5.0 LE</span>
+      <span class="badge badge-purple">✨ Refuerzo Conductual</span>
+    </div>
+
+    <h1 class="hero-title">
+      Lúa: El espejo tangible <br/><span class="gradient-text-orange">de los logros clínicos.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Un periférico físico inteligente basado en microcontroladores de la familia ESP32. Su función es actuar como un compañero emocional, ofreciendo retroalimentación visual, acústica y motriz sin requerir interacción táctil, manteniendo el control absoluto en el adulto.
+    </p>
+
+    <!-- Hardware Abstract Representation -->
+    <div class="hardware-abstract">
+      <div class="hardware-circle">
+        <div class="ips-screen-placeholder">
+          <div class="face-eye left"></div>
+          <div class="face-eye right"></div>
+          <div class="face-smile"></div>
+        </div>
+      </div>
+      <div class="hardware-glow"></div>
+    </div>
+    
+  </div>
+</section>
+
+<style>
+  .lua-hero {
+    padding-top: 130px;
+    padding-bottom: 60px;
+    text-align: center;
+    background: radial-gradient(circle at top center, rgba(249, 115, 22, 0.05), transparent 60%);
+  }
+
+  .hero-top-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .badge-orange {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    color: #f97316;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 900;
+    max-width: 900px;
+    margin: 0 auto 1.25rem auto;
+    line-height: 1.15;
+    color: var(--text-main);
+  }
+
+  .gradient-text-orange {
+    background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+  }
+
+  .hardware-abstract {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hardware-circle {
+    width: 200px;
+    height: 200px;
+    background: #0f172a;
+    border-radius: 50%;
+    border: 8px solid #334155;
+    box-shadow: 
+      inset 0 0 20px rgba(0,0,0,0.8),
+      0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .ips-screen-placeholder {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #000;
+    position: relative;
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.2);
+  }
+
+  .face-eye {
+    width: 15px;
+    height: 35px;
+    background: #f97316;
+    border-radius: 20px;
+    position: absolute;
+    top: 35px;
+    animation: blink 4s infinite;
+  }
+
+  .face-eye.left {
+    left: 40px;
+  }
+
+  .face-eye.right {
+    right: 40px;
+  }
+
+  .face-smile {
+    width: 40px;
+    height: 20px;
+    border-bottom: 5px solid #f97316;
+    border-radius: 0 0 40px 40px;
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @keyframes blink {
+    0%, 96%, 98% { transform: scaleY(1); }
+    97% { transform: scaleY(0.1); }
+  }
+
+  .hardware-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse 3s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+  }
+</style>
