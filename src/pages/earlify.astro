@@ -1,4 +1,5 @@
 ---
+---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -8,6 +9,10 @@ import EarlifyBrands from '../components/earlify/EarlifyBrands.astro';
 import EarlifyWorkflow from '../components/earlify/EarlifyWorkflow.astro';
 import EarlifyB2B from '../components/earlify/EarlifyB2B.astro';
 import EarlifyFounder from '../components/earlify/EarlifyFounder.astro';
+import ProblemSection from '../components/earlify/ProblemSection.astro';
+import SolutionSection from '../components/earlify/SolutionSection.astro';
+import EvidenceSection from '../components/earlify/EvidenceSection.astro';
+---
 
 const pageTitle = "Earlify Health S.L. · Evaluación clínica estructurada. Continuidad en el hogar.";
 const pageDescription = "Earlify Health desarrolla productos digitales para mejorar el recorrido asistencial en neurodesarrollo: VIA+ para el apoyo a la evaluación clínica y Valeria+ para la continuidad de la intervención en el hogar en español e inglés.";
@@ -64,6 +69,9 @@ const earlifyJsonLd = {
 
   <main id="main-content">
     <EarlifyHero />
+    <ProblemSection />
+    <SolutionSection />
+    <EvidenceSection />
     <EarlifyBrands />
     <EarlifyWorkflow />
     <EarlifyB2B />
