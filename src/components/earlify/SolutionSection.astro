@@ -6,64 +6,58 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
 <section class="solution-section section-padding">
   <div class="container">
-    <div class="section-header">
-      <span class="section-badge badge-green">La Solución Integral</span>
-      <h2 class="section-title">
-        Dos productos. <span class="gradient-text-green">Un solo recorrido continuo.</span>
+    <div class="solution-header">
+      <span class="section-badge badge-green">Nuestra Solución</span>
+      <h2 class="solution-title">
+        Un ecosistema continuo: <span class="text-green">De la clínica al hogar</span>
       </h2>
-      <p class="section-description">
-        Earlify Health soluciona la desconexión uniendo ambos mundos: la evaluación clínica de alta precisión y la continuidad terapéutica diaria en el hogar. No vendemos software aislado, ofrecemos un ecosistema.
+      <p class="solution-subtitle">
+        Earlify Health no vende software aislado. Ofrecemos dos productos que se sincronizan perfectamente para garantizar que la terapia nunca se detenga al salir de consulta.
       </p>
     </div>
 
-    <div class="solution-bridge">
+    <div class="products-container">
       
-      <!-- Lado Clínico -->
-      <div class="solution-card glass-card via-card">
-        <div class="solution-logo-container">
-          <div class="logo-icon">🩺</div>
-          <h3>VIA+</h3>
+      <!-- Producto: VIA+ -->
+      <div class="product-box via-box glass-card">
+        <div class="product-content">
+          <div class="product-logo">
+            <img src={`${baseUrl}/assets/via-logo.png`} alt="Logo VIA+" class="brand-logo" />
+          </div>
+          <h3>VIA+ : Apoyo a la Decisión Clínica</h3>
+          <p class="product-description">
+            Software como Dispositivo Médico (SaMD) exclusivo para profesionales. Permite realizar evaluaciones estandarizadas, precisas y gamificadas de audición y lenguaje, reduciendo el ruido clínico y generando datos objetivos.
+          </p>
+          <ul class="product-benefits">
+            <li>Evaluación clínica estructurada (SaMD IIa)</li>
+            <li>Generación de informes automáticos</li>
+            <li>Seguimiento de la evolución del paciente</li>
+          </ul>
         </div>
-        <p class="solution-role">Apoyo a la Decisión Clínica</p>
-        <p class="solution-text">
-          Software como Dispositivo Médico (SaMD) diseñado para el entorno clínico. Estandariza la evaluación de audición y lenguaje, apoyando al profesional en la toma de decisiones con datos objetivos.
-        </p>
-        <ul class="solution-features">
-          <li>Evaluación gamificada de alta precisión</li>
-          <li>Apoyo diagnóstico (CDSS)</li>
-          <li>Reducción del "Ruido Clínico"</li>
-        </ul>
-      </div>
-
-      <!-- El Puente -->
-      <div class="bridge-connection">
-        <div class="bridge-line"></div>
-        <div class="bridge-badge glass-card">
-          <span>Sincronización</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16 16 12 20 8 16"></polyline>
-            <line x1="12" y1="12" x2="12" y2="20"></line>
-            <polyline points="8 8 12 4 16 8"></polyline>
-            <line x1="12" y1="4" x2="12" y2="12"></line>
-          </svg>
+        <div class="product-image">
+          <img src={`${baseUrl}/assets/via-app-1.png`} alt="Interfaz de VIA+" />
         </div>
       </div>
 
-      <!-- Lado Hogar -->
-      <div class="solution-card glass-card valeria-card">
-        <div class="solution-logo-container">
-          <div class="logo-icon">🏠</div>
-          <h3>Valeria+</h3>
+      <!-- Producto: Valeria+ -->
+      <div class="product-box valeria-box glass-card">
+        <div class="product-content">
+          <div class="product-logo">
+            <img src={`${baseUrl}/assets/valeria-logo.png`} alt="Logo Valeria+" class="brand-logo" />
+          </div>
+          <h3>Valeria+ : Rehabilitación en el Hogar</h3>
+          <p class="product-description">
+            Aplicación terapéutica diseñada para las familias. Convierte los objetivos clínicos de VIA+ en rutinas y juegos diarios adaptados para el hogar, guiando a los padres paso a paso para estimular el neurodesarrollo.
+          </p>
+          <ul class="product-benefits">
+            <li>Actividades guiadas paso a paso para padres</li>
+            <li>Sincronización directa con los objetivos del clínico</li>
+            <li>Métricas de adherencia en tiempo real</li>
+          </ul>
         </div>
-        <p class="solution-role">Rehabilitación en el Hogar</p>
-        <p class="solution-text">
-          Aplicación móvil terapéutica para familias. Traslada el plan clínico al día a día mediante objetivos claros y actividades guiadas para potenciar el desarrollo auditivo-verbal.
-        </p>
-        <ul class="solution-features">
-          <li>Rutinas diarias y cápsulas formativas</li>
-          <li>Seguimiento de progreso para los padres</li>
-          <li>Aumenta la adherencia terapéutica</li>
-        </ul>
+        <div class="product-image">
+          <img src={`${baseUrl}/assets/valeria-app-1.png`} alt="Interfaz de Valeria+" />
+        </div>
       </div>
 
     </div>
@@ -73,23 +67,22 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <style>
   .solution-section { 
     position: relative;
-    padding: 100px 0;
-    background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.03), transparent 50%);
+    padding: 60px 0 100px 0;
   }
 
-  .section-header {
+  .solution-header {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 3.5rem auto;
+    margin: 0 auto 4rem auto;
   }
 
   .section-badge {
     display: inline-block;
     padding: 0.35rem 1rem;
     border-radius: var(--radius-full);
-    font-size: 0.85rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -100,189 +93,148 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     color: #10b981;
   }
 
-  .section-title {
-    font-size: 2.6rem;
-    font-weight: 800;
+  .solution-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.2;
     margin-bottom: 1.25rem;
+    color: var(--text-main);
   }
 
-  .gradient-text-green {
-    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .text-green {
+    color: #10b981;
   }
 
-  .section-description {
-    font-size: 1.15rem;
+  .solution-subtitle {
+    font-size: 1.2rem;
     color: var(--text-muted);
     line-height: 1.6;
   }
 
-  .solution-bridge {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    gap: 1.5rem;
-    position: relative;
-  }
-
-  .solution-card {
-    flex: 1;
-    max-width: 500px;
-    padding: 2.5rem 2rem;
-    border-radius: var(--radius-lg);
+  .products-container {
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    gap: 3rem;
   }
 
-  .solution-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .via-card {
-    background: rgba(0, 242, 254, 0.03);
-    border: 1px solid rgba(0, 242, 254, 0.2);
-  }
-  .via-card:hover {
-    border-color: rgba(0, 242, 254, 0.5);
-  }
-
-  .valeria-card {
-    background: rgba(168, 85, 247, 0.03);
-    border: 1px solid rgba(168, 85, 247, 0.2);
-  }
-  .valeria-card:hover {
-    border-color: rgba(168, 85, 247, 0.5);
-  }
-
-  .solution-logo-container {
+  .product-box {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
+    gap: 3rem;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
   }
 
-  .logo-icon {
-    font-size: 2.5rem;
+  .via-box {
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    border-left: 4px solid var(--accent-cyan);
   }
 
-  .solution-card h3 {
+  .valeria-box {
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-left: 4px solid var(--accent-purple);
+    flex-direction: row-reverse;
+  }
+
+  .product-content {
+    flex: 1;
+  }
+
+  .product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-height: 350px;
+    object-fit: contain;
+  }
+
+  .brand-logo {
+    height: 48px;
+    width: auto;
+    margin-bottom: 1rem;
+  }
+
+  .product-box h3 {
     font-size: 2rem;
-    font-weight: 900;
-    margin: 0;
+    font-weight: 800;
     color: var(--text-main);
+    margin-bottom: 1rem;
   }
 
-  .solution-role {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .via-box h3 {
+    color: var(--accent-cyan);
   }
 
-  .via-card .solution-role { color: var(--accent-cyan); }
-  .valeria-card .solution-role { color: var(--accent-purple); }
+  .valeria-box h3 {
+    color: var(--accent-purple);
+  }
 
-  .solution-text {
-    font-size: 0.95rem;
+  .product-description {
+    font-size: 1.1rem;
     color: var(--text-muted);
     line-height: 1.6;
     margin-bottom: 2rem;
-    flex-grow: 1;
   }
 
-  .solution-features {
+  .product-benefits {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  .solution-features li {
-    font-size: 0.9rem;
+  .product-benefits li {
+    font-size: 1.05rem;
     color: var(--text-main);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
-  .via-card .solution-features li::before {
+  .via-box .product-benefits li::before {
     content: "✓";
     color: var(--accent-cyan);
     font-weight: bold;
+    font-size: 1.2rem;
   }
 
-  .valeria-card .solution-features li::before {
+  .valeria-box .product-benefits li::before {
     content: "✓";
     color: var(--accent-purple);
     font-weight: bold;
+    font-size: 1.2rem;
   }
 
-  .bridge-connection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 60px;
-  }
-
-  .bridge-line {
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
-    opacity: 0.5;
-  }
-
-  .bridge-badge {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-full);
-    padding: 0.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-    z-index: 2;
-  }
-
-  .bridge-badge span {
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-main);
-  }
-
-  .bridge-badge svg {
-    color: var(--text-muted);
-  }
-
-  @media (max-width: 900px) {
-    .solution-bridge {
+  @media (max-width: 992px) {
+    .product-box, .valeria-box {
       flex-direction: column;
+      padding: 2rem;
+      gap: 2rem;
     }
-    .bridge-connection {
-      width: 100%;
-      height: 60px;
-      flex-direction: row;
+    .product-image img {
+      max-height: 250px;
     }
-    .bridge-line {
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+  }
+
+  @media (max-width: 768px) {
+    .solution-title {
+      font-size: 2.2rem;
     }
-    .bridge-badge {
-      flex-direction: row;
-      padding: 0.5rem 1.2rem;
+    .product-box h3 {
+      font-size: 1.6rem;
+    }
+    .brand-logo {
+      height: 36px;
     }
   }
 </style>
