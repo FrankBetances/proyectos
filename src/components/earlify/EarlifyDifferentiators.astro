@@ -1,0 +1,142 @@
+---
+---
+
+<section class="differentiators-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge badge-cyan">Por qué Earlify</span>
+      <h2 class="section-title">
+        Características que nos hacen <span class="gradient-text">especiales</span>
+      </h2>
+      <p class="section-description">
+        No somos una aplicación más en la tienda. Construimos tecnología sanitaria con estándares clínicos, pensada para funcionar en los entornos más exigentes.
+      </p>
+    </div>
+
+    <div class="diff-grid">
+      <!-- Item 1 -->
+      <div class="diff-card glass-card">
+        <div class="diff-icon">🔒</div>
+        <h3>100% Offline & Privacidad</h3>
+        <p>Zero-PHI architecture. Nuestra tecnología no depende de la nube durante la evaluación clínica. Todos los datos sensibles se procesan y almacenan localmente en el dispositivo, garantizando máxima privacidad.</p>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="diff-card glass-card">
+        <div class="diff-icon">🛡️</div>
+        <h3>Doble Validación Clínica</h3>
+        <p>VIA+ es un Software como Dispositivo Médico (SaMD Clase IIa). Nuestras herramientas no solo son innovadoras, están reguladas y probadas mediante estudios clínicos publicados en revistas de alto impacto.</p>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="diff-card glass-card">
+        <div class="diff-icon">🌍</div>
+        <h3>Bilingüismo Nativo</h3>
+        <p>Diseñado desde cero para soportar poblaciones hispanohablantes y angloparlantes de forma nativa. No es una mera traducción, los pares mínimos y contrastes fonológicos están adaptados culturalmente.</p>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="diff-card glass-card">
+        <div class="diff-icon">🔄</div>
+        <h3>Ecosistema Completo</h3>
+        <p>Mientras otros ofrecen soluciones aisladas (solo diagnóstico o solo ejercicios), Earlify provee el circuito completo: evaluación precisa en consulta + continuidad diaria estructurada en casa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .differentiators-section {
+    position: relative;
+    padding: 100px 0;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-cyan {
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: var(--accent-cyan);
+  }
+
+  .section-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .diff-card {
+    padding: 2.25rem 1.85rem;
+    border-radius: var(--radius-lg);
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .diff-card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 242, 254, 0.03);
+    border-color: rgba(0, 242, 254, 0.3);
+  }
+
+  .diff-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .diff-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .diff-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .diff-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

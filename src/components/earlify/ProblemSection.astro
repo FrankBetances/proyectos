@@ -6,31 +6,235 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
 <section class="problem-section section-padding">
   <div class="container">
-    <h2 class="section-title"><span class="gradient-text">El problema clínico</span></h2>
-    <p class="section-description">La evaluación clínica y la continuidad del cuidado suelen estar desconectadas. Los profesionales recopilan datos en la consulta, pero las familias carecen de una guía estructurada para aplicar los objetivos en el día a día, lo que genera pérdida de información, decisiones fragmentadas y menos eficacia en la intervención.</p>
-    <div class="problem-icons">
-      <div class="icon-item">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M5 12h14"/></svg>
-        <span>Falta de continuidad</span>
+    <div class="section-header">
+      <span class="section-badge badge-red">El dolor del ecosistema</span>
+      <h2 class="section-title">
+        La brecha entre <span class="gradient-text-red">clínica y hogar</span>
+      </h2>
+      <p class="section-description">
+        La evaluación clínica y la continuidad del cuidado están desconectadas. Los profesionales recopilan datos de alto valor en la consulta, pero al salir, las familias carecen de una guía estructurada para aplicar los objetivos terapéuticos en su día a día.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+      <!-- Tarjeta Profesional -->
+      <div class="problem-card glass-card">
+        <div class="card-icon professional-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20"/><path d="M5 12h14"/>
+          </svg>
+        </div>
+        <h3>Para el Profesional Clínico</h3>
+        <ul class="problem-list">
+          <li><strong>Pérdida de trazabilidad:</strong> No hay forma de medir objetivamente el progreso del paciente fuera de la consulta.</li>
+          <li><strong>Decisiones fragmentadas:</strong> Dependencia de información subjetiva no estructurada aportada verbalmente por la familia.</li>
+          <li><strong>Alta variabilidad (Ruido):</strong> Falta de un protocolo estándar transversal en toda la red hospitalaria.</li>
+        </ul>
       </div>
-      <div class="icon-item">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
-        <span>Decisiones fragmentadas</span>
+
+      <!-- Arrow -->
+      <div class="problem-arrow">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
       </div>
-      <div class="icon-item">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-12"/></svg>
-        <span>Menor efectividad terapéutica</span>
+
+      <!-- Tarjeta Familia -->
+      <div class="problem-card glass-card">
+        <div class="card-icon family-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3>Para la Familia</h3>
+        <ul class="problem-list">
+          <li><strong>Desorientación:</strong> Incertidumbre sobre cómo estimular correctamente el neurodesarrollo en la rutina diaria.</li>
+          <li><strong>Sobrecarga:</strong> Frustración al intentar replicar ejercicios clínicos sin herramientas adaptadas para cuidadores.</li>
+          <li><strong>Falta de soporte continuo:</strong> Sensación de abandono entre una cita médica y la siguiente.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="problem-conclusion">
+      <div class="conclusion-box glass-card">
+        <p><strong>El Resultado:</strong> Menor efectividad terapéutica, aumento de los tiempos de rehabilitación y frustración en ambas partes del recorrido asistencial.</p>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  .problem-section { text-align: center; padding: 80px 0; }
-  .problem-icons { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
-  .icon-item { display: flex; flex-direction: column; align-items: center; color: var(--accent-cyan); }
-  .icon-item span { margin-top: 0.5rem; font-weight: 600; }
-  @media (max-width: 768px) {
-    .problem-icons { flex-direction: column; }
+  .problem-section { 
+    position: relative;
+    padding: 100px 0;
+    background: radial-gradient(circle at top right, rgba(239, 68, 68, 0.03), transparent 50%);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-red {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+  }
+
+  .section-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+  }
+
+  .gradient-text-red {
+    background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .problem-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .problem-card {
+    flex: 1;
+    max-width: 480px;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease;
+  }
+
+  .problem-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(239, 68, 68, 0.4);
+  }
+
+  .card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .professional-icon {
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+  }
+
+  .family-icon {
+    background: rgba(168, 85, 247, 0.1);
+    color: var(--accent-purple);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+  }
+
+  .problem-card h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 1.25rem;
+  }
+
+  .problem-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .problem-list li {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .problem-list li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    color: #ef4444;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .problem-list li strong {
+    color: var(--text-main);
+  }
+
+  .problem-arrow {
+    color: #ef4444;
+    opacity: 0.5;
+  }
+
+  .problem-conclusion {
+    display: flex;
+    justify-content: center;
+  }
+
+  .conclusion-box {
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    max-width: 700px;
+  }
+
+  .conclusion-box p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    line-height: 1.5;
+  }
+
+  .conclusion-box strong {
+    color: #f87171;
+  }
+
+  @media (max-width: 900px) {
+    .problem-grid {
+      flex-direction: column;
+    }
+    .problem-arrow {
+      transform: rotate(90deg);
+      margin: 1rem 0;
+    }
   }
 </style>

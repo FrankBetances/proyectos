@@ -1,0 +1,125 @@
+---
+---
+
+<section class="cta-section section-padding">
+  <div class="container">
+    <div class="cta-box glass-card">
+      <div class="cta-content">
+        <h2 class="cta-title">¿Listo para transformar la evaluación clínica en tu centro?</h2>
+        <p class="cta-description">
+          Da el primer paso hacia una evaluación auditivo-verbal estandarizada y asegura la continuidad terapéutica de tus pacientes desde la consulta hasta su hogar.
+        </p>
+        <div class="cta-actions">
+          <button class="btn-primary btn-large" onclick="document.getElementById('contact-modal')?.classList.add('open'); document.getElementById('contact-modal')?.setAttribute('aria-hidden', 'false');">
+            <span>Agendar Demo o Piloto Clínico</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="cta-decoration">
+        <div class="glow-circle"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: 60px 0 100px 0;
+  }
+
+  .cta-box {
+    position: relative;
+    padding: 4rem 3rem;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.9) 100%);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .cta-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .cta-decoration {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .glow-circle {
+    position: absolute;
+    top: -50%;
+    left: 20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+  }
+
+  .glow-circle::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    right: -60%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+  }
+
+  @media (max-width: 768px) {
+    .cta-box {
+      padding: 3rem 1.5rem;
+    }
+    .cta-title {
+      font-size: 1.8rem;
+    }
+    .btn-large {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

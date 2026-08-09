@@ -1,26 +1,288 @@
 ---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
 <section class="solution-section section-padding">
   <div class="container">
-    <h2 class="section-title"><span class="gradient-text">Nuestra solución</span></h2>
-    <p class="section-description">Earlify Health ofrece dos productos integrados que cubren todo el recorrido asistencial.</p>
-    <div class="solution-cards">
-      <div class="card glass-card">
-        <h3>VIA+</h3>
-        <p>Una herramienta de apoyo a la decisión clínica que permite una evaluación estructurada, gamificada y basada en evidencias.</p>
+    <div class="section-header">
+      <span class="section-badge badge-green">La Solución Integral</span>
+      <h2 class="section-title">
+        Dos productos. <span class="gradient-text-green">Un solo recorrido continuo.</span>
+      </h2>
+      <p class="section-description">
+        Earlify Health soluciona la desconexión uniendo ambos mundos: la evaluación clínica de alta precisión y la continuidad terapéutica diaria en el hogar. No vendemos software aislado, ofrecemos un ecosistema.
+      </p>
+    </div>
+
+    <div class="solution-bridge">
+      
+      <!-- Lado Clínico -->
+      <div class="solution-card glass-card via-card">
+        <div class="solution-logo-container">
+          <div class="logo-icon">🩺</div>
+          <h3>VIA+</h3>
+        </div>
+        <p class="solution-role">Apoyo a la Decisión Clínica</p>
+        <p class="solution-text">
+          Software como Dispositivo Médico (SaMD) diseñado para el entorno clínico. Estandariza la evaluación de audición y lenguaje, apoyando al profesional en la toma de decisiones con datos objetivos.
+        </p>
+        <ul class="solution-features">
+          <li>Evaluación gamificada de alta precisión</li>
+          <li>Apoyo diagnóstico (CDSS)</li>
+          <li>Reducción del "Ruido Clínico"</li>
+        </ul>
       </div>
-      <div class="card glass-card">
-        <h3>Valeria+</h3>
-        <p>Aplicación de rehabilitación auditivo‑verbal y del lenguaje para niños, con seguimiento a domicilio guiado por profesionales.</p>
+
+      <!-- El Puente -->
+      <div class="bridge-connection">
+        <div class="bridge-line"></div>
+        <div class="bridge-badge glass-card">
+          <span>Sincronización</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 16 12 20 8 16"></polyline>
+            <line x1="12" y1="12" x2="12" y2="20"></line>
+            <polyline points="8 8 12 4 16 8"></polyline>
+            <line x1="12" y1="4" x2="12" y2="12"></line>
+          </svg>
+        </div>
       </div>
+
+      <!-- Lado Hogar -->
+      <div class="solution-card glass-card valeria-card">
+        <div class="solution-logo-container">
+          <div class="logo-icon">🏠</div>
+          <h3>Valeria+</h3>
+        </div>
+        <p class="solution-role">Rehabilitación en el Hogar</p>
+        <p class="solution-text">
+          Aplicación móvil terapéutica para familias. Traslada el plan clínico al día a día mediante objetivos claros y actividades guiadas para potenciar el desarrollo auditivo-verbal.
+        </p>
+        <ul class="solution-features">
+          <li>Rutinas diarias y cápsulas formativas</li>
+          <li>Seguimiento de progreso para los padres</li>
+          <li>Aumenta la adherencia terapéutica</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
 
 <style>
-  .solution-section { text-align: center; padding: 80px 0; }
-  .solution-cards { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
-  .card { flex: 1; max-width: 460px; padding: 2rem; border: 1px solid var(--border-light); background: rgba(0,242,254,0.08); backdrop-filter: blur(20px); }
-  .card h3 { color: var(--accent-cyan); font-size: 1.6rem; margin-bottom: 0.5rem; }
-  @media (max-width: 768px) { .solution-cards { flex-direction: column; } }
+  .solution-section { 
+    position: relative;
+    padding: 100px 0;
+    background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.03), transparent 50%);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-green {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+  }
+
+  .section-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+  }
+
+  .gradient-text-green {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .solution-bridge {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  .solution-card {
+    flex: 1;
+    max-width: 500px;
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .solution-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .via-card {
+    background: rgba(0, 242, 254, 0.03);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+  }
+  .via-card:hover {
+    border-color: rgba(0, 242, 254, 0.5);
+  }
+
+  .valeria-card {
+    background: rgba(168, 85, 247, 0.03);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+  }
+  .valeria-card:hover {
+    border-color: rgba(168, 85, 247, 0.5);
+  }
+
+  .solution-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .logo-icon {
+    font-size: 2.5rem;
+  }
+
+  .solution-card h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0;
+    color: var(--text-main);
+  }
+
+  .solution-role {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .via-card .solution-role { color: var(--accent-cyan); }
+  .valeria-card .solution-role { color: var(--accent-purple); }
+
+  .solution-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  .solution-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .solution-features li {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .via-card .solution-features li::before {
+    content: "✓";
+    color: var(--accent-cyan);
+    font-weight: bold;
+  }
+
+  .valeria-card .solution-features li::before {
+    content: "✓";
+    color: var(--accent-purple);
+    font-weight: bold;
+  }
+
+  .bridge-connection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 60px;
+  }
+
+  .bridge-line {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+    opacity: 0.5;
+  }
+
+  .bridge-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    z-index: 2;
+  }
+
+  .bridge-badge span {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-main);
+  }
+
+  .bridge-badge svg {
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .solution-bridge {
+      flex-direction: column;
+    }
+    .bridge-connection {
+      width: 100%;
+      height: 60px;
+      flex-direction: row;
+    }
+    .bridge-line {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+    }
+    .bridge-badge {
+      flex-direction: row;
+      padding: 0.5rem 1.2rem;
+    }
+  }
 </style>
----
