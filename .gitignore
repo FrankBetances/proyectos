@@ -19,3 +19,6 @@ yarn-error.log*
 
 # macOS
 .DS_Store
+
+# Secure tokens
+.agents/workflows/.github_pat
