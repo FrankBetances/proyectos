@@ -1,0 +1,36 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
+<section class="problem-section section-padding">
+  <div class="container">
+    <h2 class="section-title"><span class="gradient-text">El problema clínico</span></h2>
+    <p class="section-description">La evaluación clínica y la continuidad del cuidado suelen estar desconectadas. Los profesionales recopilan datos en la consulta, pero las familias carecen de una guía estructurada para aplicar los objetivos en el día a día, lo que genera pérdida de información, decisiones fragmentadas y menos eficacia en la intervención.</p>
+    <div class="problem-icons">
+      <div class="icon-item">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M5 12h14"/></svg>
+        <span>Falta de continuidad</span>
+      </div>
+      <div class="icon-item">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+        <span>Decisiones fragmentadas</span>
+      </div>
+      <div class="icon-item">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-12"/></svg>
+        <span>Menor efectividad terapéutica</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .problem-section { text-align: center; padding: 80px 0; }
+  .problem-icons { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
+  .icon-item { display: flex; flex-direction: column; align-items: center; color: var(--accent-cyan); }
+  .icon-item span { margin-top: 0.5rem; font-weight: 600; }
+  @media (max-width: 768px) {
+    .problem-icons { flex-direction: column; }
+  }
+</style>
