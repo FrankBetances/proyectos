@@ -9,15 +9,34 @@ import LuaClinicalObjectives from '../components/lua/LuaClinicalObjectives.astro
 import LuaEcosystemIntegration from '../components/lua/LuaEcosystemIntegration.astro';
 import LuaArchitecture from '../components/lua/LuaArchitecture.astro';
 
-const pageTitle = "Lúa (Hardware) · Periférico AIoT de Refuerzo Conductual";
-const pageDescription = "Lúa es un periférico físico de refuerzo conductual basado en microcontroladores ESP32, integrado de forma transparente por BLE con el ecosistema clínico de Earlify Health.";
+const pageTitle = "Lúa: Mascota Inteligente para Rehabilitación y Consulta Clínica";
+const pageDescription = "Lúa es una mascota robótica AIoT que facilita la rehabilitación del neurodesarrollo en casa (Valeria+) y asiste en silencio durante las pruebas audiológicas en consulta (VIA+).";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Lúa (Mascota AIoT)",
+  "description": pageDescription,
+  "brand": {
+    "@type": "Organization",
+    "name": "Earlify Health"
+  },
+  "category": "Medical Device Accessory",
+  "audience": {
+    "@type": "Patient",
+    "healthCondition": "Trastornos del Neurodesarrollo y Hipoacusia"
+  }
+};
 ---
 
 <Layout 
   title={pageTitle}
   description={pageDescription}
-  keywords="Lúa, Hardware, ESP32, AIoT, Valeria+, VIA+, Refuerzo Conductual, BLE, SaMD"
+  keywords="Mascota Lúa, Mascota robótica, Rehabilitación en casa, Consulta clínica, Hardware AIoT, Valeria+, VIA+, Refuerzo Conductual pediátrico"
 >
+  <!-- JSON-LD Schema for rich results -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  
   <Header activeTab="lua" />
 
   <main id="main-content">
