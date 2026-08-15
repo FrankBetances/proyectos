@@ -4,9 +4,10 @@
 <section class="ecosystem-integration section-padding">
   <div class="container">
     <div class="integration-header">
-      <h2 class="section-title">Integración con el Ecosistema</h2>
+      <span class="section-badge badge-purple">Integración Dual en el Ecosistema</span>
+      <h2 class="section-title">Comportamiento Asimétrico según el Entorno Clínico</h2>
       <p class="section-description">
-        Lúa utiliza Bluetooth LE (GATT Server) para establecer una conexión en segundo plano y transparente. Su comportamiento cambia diametralmente dependiendo de qué aplicación esté orquestando la sesión.
+        Lúa utiliza Bluetooth LE (GATT Server) con tramas compactas de 4 bytes. Su conducta cambia radicalmente según la aplicación que tome el control: refuerzo continuo en rehabilitación o silencio absoluto en diagnóstico.
       </p>
     </div>
 
@@ -15,19 +16,29 @@
       <!-- Valeria+ Column -->
       <div class="integration-box valeria-integration glass-card">
         <div class="integration-top">
-          <h3>Integración con Valeria+</h3>
-          <span class="pill pill-purple">Hogar & Terapia</span>
+          <div>
+            <span class="sub-badge text-purple">Rehabilitación en el Hogar</span>
+            <h3>Valeria+ (SaMD Clase I)</h3>
+          </div>
+          <span class="pill pill-purple">Maestro Orquestador</span>
         </div>
         <div class="integration-content">
           <ul>
             <li>
-              <strong>Mapeo del Turno (TurnPhaseStrip):</strong> Lúa reacciona a cada fase (Escucha → Repite → Veredicto).
+              <strong>Espejo del Estímulo Visual (<code class="code-tag">PICTO</code>):</strong>
+              El niño mira a la mascota, no a la tableta. Lúa dibuja en su pantalla circular el pictograma clínico de 24×24 enmarcado en su anillo turquesa con destellos orbitales.
             </li>
             <li>
-              <strong>Recompensa Visual:</strong> Al registrar un Veredicto Positivo en la app, Lúa ejecuta su protocolo de celebración en menos de 1 segundo.
+              <strong>Sincronización de Fase (<code class="code-tag">PHASE</code>):</strong>
+              Espeja la tira del turno en tiempo real: <code class="code-tag">PHASE(0)</code> pone cara <em>atenta</em>, <code class="code-tag">PHASE(1)</code> anima al niño a vocalizar abriendo la boca en ánimo.
             </li>
             <li>
-              <strong>Modo Suspensión:</strong> Si se pierde la conexión BLE, pasa automáticamente al "Modo Vínculo" para evitar latencias.
+              <strong>Celebración de Hitos (<code class="code-tag">AWARD</code> & <code class="code-tag">LEVEL</code>):</strong>
+              Muestra las insignias ganadas (9 familias × 5 rangos) sobre fondo oscuro y proyecta el nivel alcanzado en los 12 segmentos del bisel.
+            </li>
+            <li>
+              <strong>Concesión Viva & Latido:</strong>
+              Envía <code class="code-tag">GRANT</code> y mantiene la sesión con un <code class="code-tag">HEARTBEAT</code> cada 10 s. Si la sesión se interrumpe, Lúa se duerme sola.
             </li>
           </ul>
         </div>
@@ -36,19 +47,29 @@
       <!-- VIA+ Column -->
       <div class="integration-box via-integration glass-card">
         <div class="integration-top">
-          <h3>Integración con VIA+</h3>
-          <span class="pill pill-cyan">Valoración Clínica (SaMD)</span>
+          <div>
+            <span class="sub-badge text-cyan">Consulta Sanitaria Especializada</span>
+            <h3>VIA+ (SaMD Clase IIa)</h3>
+          </div>
+          <span class="pill pill-cyan">Silencio Estricto</span>
         </div>
         <div class="integration-content">
           <ul>
             <li>
-              <strong>Silencio Clínico Obligatorio:</strong> En módulos de análisis acústico o logoaudiometría, la tableta envía un comando que bloquea motores y altavoz.
+              <strong>«La Integración Correcta es la Ausencia»:</strong>
+              Durante la logoaudiometría, el análisis acústico de voz o la prueba de aptitud (CAP), Lúa <strong>no participa</strong> para no invalidar las mediciones clínicas.
             </li>
             <li>
-              <strong>Gamificación Pasiva:</strong> Recompensas visuales silenciosas al completar umbrales audiométricos.
+              <strong>Silencio Clínico Inmutable (<code class="code-tag">SAFE 0x01</code>):</strong>
+              Comando prioritario con acuse de recibo. Apaga la pantalla a un gris azulado con anillo rojo de bloqueo y anula cualquier salida acústica o motora.
             </li>
             <li>
-              <strong>Celebración Final:</strong> Solo al cerrar el flujo evaluativo (ResultadosFinal), Lúa recibe el permiso para celebrar el fin de la consulta.
+              <strong>Inmunidad ante Desconexiones:</strong>
+              El Silencio Clínico sobrevive a la caída del enlace Bluetooth. Apagar el móvil no reactiva el dispositivo en mitad de una exploración.
+            </li>
+            <li>
+              <strong>Desbloqueo Explícito de Cierre:</strong>
+              Solo al finalizar la evaluación completa (<code class="code-tag">ResultadosFinal</code>), VIA+ emite un <code class="code-tag">UNLOCK</code> seguido de una breve celebración de despedida.
             </li>
           </ul>
         </div>
@@ -61,38 +82,64 @@
 <style>
   .ecosystem-integration {
     padding: 80px 0;
+    position: relative;
   }
 
   .integration-header {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
+    max-width: 860px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: 0.35rem 1.1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .badge-purple {
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    color: var(--accent-purple);
   }
 
   .section-title {
-    font-size: 2.4rem;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
     font-weight: 800;
     margin-bottom: 1.25rem;
     color: var(--text-main);
+    line-height: 1.2;
   }
 
   .section-description {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   .integration-columns {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 2rem;
   }
 
   .integration-box {
-    flex: 1;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .integration-box:hover {
+    transform: translateY(-4px);
   }
 
   .valeria-integration {
@@ -106,14 +153,27 @@
   .integration-top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 1rem;
   }
 
+  .sub-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .text-purple { color: #c084fc; }
+  .text-cyan { color: #38bdf8; }
+
   .integration-top h3 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: 800;
     margin: 0;
     color: var(--text-main);
@@ -122,18 +182,22 @@
   .pill {
     padding: 0.35rem 0.85rem;
     border-radius: var(--radius-full);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
   }
 
   .pill-purple {
     background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.35);
     color: var(--accent-purple);
   }
 
   .pill-cyan {
     background: rgba(0, 242, 254, 0.15);
+    border: 1px solid rgba(0, 242, 254, 0.35);
     color: var(--accent-cyan);
   }
 
@@ -141,30 +205,34 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
   }
 
   .integration-content li {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
     color: var(--text-muted);
     line-height: 1.6;
-    margin-bottom: 1.5rem;
     padding-left: 1.5rem;
     position: relative;
   }
 
   .valeria-integration .integration-content li::before {
-    content: "■";
+    content: "◆";
     position: absolute;
     left: 0;
     top: 2px;
+    font-size: 0.8rem;
     color: var(--accent-purple);
   }
 
   .via-integration .integration-content li::before {
-    content: "■";
+    content: "◆";
     position: absolute;
     left: 0;
     top: 2px;
+    font-size: 0.8rem;
     color: var(--accent-cyan);
   }
 
@@ -174,9 +242,18 @@
     margin-bottom: 0.25rem;
   }
 
-  @media (max-width: 900px) {
+  .code-tag {
+    font-family: monospace;
+    font-size: 0.85em;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.12em 0.35em;
+    border-radius: 4px;
+    color: #fb923c;
+  }
+
+  @media (max-width: 768px) {
     .integration-columns {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
   }
 </style>

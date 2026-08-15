@@ -6,44 +6,80 @@ import ContactModal from '../components/cv/ContactModal.astro';
 
 import LuaHero from '../components/lua/LuaHero.astro';
 import LuaClinicalObjectives from '../components/lua/LuaClinicalObjectives.astro';
+import LuaExpressionsGallery from '../components/lua/LuaExpressionsGallery.astro';
 import LuaEcosystemIntegration from '../components/lua/LuaEcosystemIntegration.astro';
+import LuaProtocolTable from '../components/lua/LuaProtocolTable.astro';
 import LuaArchitecture from '../components/lua/LuaArchitecture.astro';
+import LuaCTA from '../components/lua/LuaCTA.astro';
 
-const pageTitle = "Lúa: Mascota Inteligente para Rehabilitación y Consulta Clínica";
-const pageDescription = "Lúa es una mascota robótica AIoT que facilita la rehabilitación del neurodesarrollo en casa (Valeria+) y asiste en silencio durante las pruebas audiológicas en consulta (VIA+).";
+const pageTitle = "Lúa · Mascota AIoT para Rehabilitación (Valeria+) y Consulta (VIA+)";
+const pageDescription = "Lúa es una mascota física (ESP32-C3, IPS 240×240) que espeja el estímulo visual en rehabilitación foniátrica (Valeria+) y asiste en Silencio Clínico en VIA+.";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Lúa (Mascota AIoT)",
-  "description": pageDescription,
-  "brand": {
-    "@type": "Organization",
-    "name": "Earlify Health"
-  },
-  "category": "Medical Device Accessory",
-  "audience": {
-    "@type": "Patient",
-    "healthCondition": "Trastornos del Neurodesarrollo y Hipoacusia"
-  }
+  "@graph": [
+    {
+      "@type": "Product",
+      "@id": "https://FrankBetances.github.io/proyectos/lua#product",
+      "name": "Lúa (Mascota Física AIoT)",
+      "description": pageDescription,
+      "brand": {
+        "@type": "Organization",
+        "name": "Earlify Health S.L."
+      },
+      "category": "Medical Device Accessory & Pediatric Neurodevelopment Hardware",
+      "manufacturer": {
+        "@type": "Person",
+        "name": "Dr. Frank Alberto Betances Reinoso",
+        "jobTitle": "ORL & Especialista en Salud Digital"
+      },
+      "audience": {
+        "@type": "Patient",
+        "healthCondition": "Hipoacusia, Trastornos del Lenguaje y Neurodesarrollo Pediátrico"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Microcontroller",
+          "value": "ESP32-C3 (RISC-V 160MHz)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Display",
+          "value": "240x240 IPS Circular GC9A01"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Connectivity",
+          "value": "Bluetooth LE 5.0 (Zero-PHI Binary Protocol)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Microphone",
+          "value": "None (Zero Acoustic Interference / Zero-PHI)"
+        }
+      ]
+    }
+  ]
 };
 ---
 
 <Layout 
   title={pageTitle}
   description={pageDescription}
-  keywords="Mascota Lúa, Mascota robótica, Rehabilitación en casa, Consulta clínica, Hardware AIoT, Valeria+, VIA+, Refuerzo Conductual pediátrico"
+  keywords="Mascota Lúa, Mascota AIoT, ESP32-C3, GC9A01, Rehabilitación del Lenguaje, Valeria+, VIA+ SaMD, Silencio Clínico, Zero-PHI, Refuerzo Conductual Pediátrico, Dr. Frank Betances"
+  jsonLd={jsonLd}
 >
-  <!-- JSON-LD Schema for rich results -->
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-  
   <Header activeTab="lua" />
 
   <main id="main-content">
     <LuaHero />
     <LuaClinicalObjectives />
+    <LuaExpressionsGallery />
     <LuaEcosystemIntegration />
+    <LuaProtocolTable />
     <LuaArchitecture />
+    <LuaCTA />
   </main>
 
   <Footer />

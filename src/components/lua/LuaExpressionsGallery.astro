@@ -1,0 +1,629 @@
+---
+---
+
+<section class="expressions-gallery section-padding">
+  <div class="container">
+    
+    <div class="section-header">
+      <span class="section-badge badge-orange">Catálogo Visual & Motor de Expresiones</span>
+      <h2 class="section-title">22 Caras, 8 Emociones Puras y 66 Fichas Clínicas</h2>
+      <p class="section-description">
+        El sprite base es un diseño determinista en píxel art paritario con Valeria+. Las expresiones se generan mediante parches matemáticos sobre los ojos (5×5) y el hocico (5×10), acompañados de un motor procedural de partículas.
+      </p>
+    </div>
+
+    <!-- 3 States Card Grid -->
+    <div class="states-banner glass-card">
+      <h3 class="states-title">Los Tres Estados Operativos de la Máquina de Estados</h3>
+      <div class="states-grid">
+        <div class="state-card state-dormida">
+          <div class="state-indicator-dot dot-dim"></div>
+          <div class="state-content">
+            <span class="state-code">MODO 0 · REPOSO</span>
+            <h4>Dormida (Estado por Omisión)</h4>
+            <p>Sin concesión viva o tras caducar el TTL. Ojos cerrados, respiración lenta. No atiende a ningún comando salvo IDLE.</p>
+          </div>
+        </div>
+
+        <div class="state-card state-activa">
+          <div class="state-indicator-dot dot-cyan"></div>
+          <div class="state-content">
+            <span class="state-code">MODO 1 · ACTIVA</span>
+            <h4>Activa (Concesión Viva)</h4>
+            <p>Solo con un <code>GRANT</code> reciente y renovado con <code>HEARTBEAT</code> cada 10 s. El anillo del bisel muestra el tiempo restante.</p>
+          </div>
+        </div>
+
+        <div class="state-card state-bloqueada">
+          <div class="state-indicator-dot dot-red"></div>
+          <div class="state-content">
+            <span class="state-code">MODO 2 · BLOQUEADA</span>
+            <h4>Silencio Clínico (SAFE 0x01)</h4>
+            <p>Panel apagado a gris azulado con anillo rojo de seguridad. Sobrevive a reinicios del enlace. Solo se levanta con <code>UNLOCK</code> explícito.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expressions Table / Showcase -->
+    <div class="expressions-matrix-wrapper glass-card">
+      <div class="matrix-header">
+        <div>
+          <span class="sub-badge text-orange">Catálogo Facial</span>
+          <h3 class="matrix-title">Mapeo de Expresiones y Opcodes Clínicos</h3>
+        </div>
+        <span class="pixel-tag">Rejilla 240×240 IPS</span>
+      </div>
+
+      <div class="table-responsive">
+        <table class="expressions-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Expresión</th>
+              <th>Cuándo y Contexto Clínico</th>
+              <th>Opcode Asociado</th>
+              <th>Comportamiento Visual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>0</code></td>
+              <td><strong>Neutra</strong></td>
+              <td>Concesión viva, en calma sin tarea activa</td>
+              <td><code class="opcode-tag">IDLE (0x04)</code></td>
+              <td>Mirada al frente, respiración pausada.</td>
+            </tr>
+            <tr>
+              <td><code>1</code></td>
+              <td><strong>Atenta</strong></td>
+              <td>Fase de escucha del niño y punto de retorno neutral</td>
+              <td><code class="opcode-tag">PHASE(0 · 2)</code></td>
+              <td>Orejas erguidas, pupilas atentas al estímulo.</td>
+            </tr>
+            <tr>
+              <td><code>2</code></td>
+              <td><strong>Animando</strong></td>
+              <td>Fase de repetición: anima al niño a vocalizar</td>
+              <td><code class="opcode-tag">PHASE(1)</code></td>
+              <td>Boca abierta en ánimo, ligero balanceo de cabeza.</td>
+            </tr>
+            <tr>
+              <td><code>6</code></td>
+              <td><strong>Impulso (⚡)</strong></td>
+              <td>Intento cercano (la palabra se dijo a medias)</td>
+              <td><code class="opcode-tag">VERDICT(1)</code></td>
+              <td>Rayo superior y dos cuñas laterales de impulso (1,5 s).</td>
+            </tr>
+            <tr>
+              <td><code>7</code></td>
+              <td><strong>Calma Aprobatoria (✓)</strong></td>
+              <td>Acierto fonológico pronunciado correctamente</td>
+              <td><code class="opcode-tag">VERDICT(2)</code></td>
+              <td>Visto suave superior y halo circular envolvente.</td>
+            </tr>
+            <tr>
+              <td><code>8</code></td>
+              <td><strong>Epifanía (!)</strong></td>
+              <td>Subida de nivel en la sesión de rehabilitación</td>
+              <td><code class="opcode-tag">CELEBRATE(1)</code></td>
+              <td>Exclamación luminosa y cuatro radios giratorios.</td>
+            </tr>
+            <tr>
+              <td><code>9</code></td>
+              <td><strong>Éxito Absoluto (⭐)</strong></td>
+              <td>Insignia clínica desbloqueada (celebración mayor)</td>
+              <td><code class="opcode-tag">CELEBRATE(2)</code></td>
+              <td>Estrella superior y lluvia de confeti expansivo.</td>
+            </tr>
+            <tr>
+              <td><code>18</code></td>
+              <td><strong>Dormida</strong></td>
+              <td>Reposo seguro sin consumo activo</td>
+              <td><code class="opcode-tag">— (Sin concesión)</code></td>
+              <td>Ojos en arco cerrado, respiración cada 3,6 s.</td>
+            </tr>
+            <tr>
+              <td><code>19</code></td>
+              <td><strong>Llamada</strong></td>
+              <td>Modo Vínculo y recordatorio diario de sesión</td>
+              <td><code class="opcode-tag">CALL (0x05)</code></td>
+              <td>Mirada expectante y anillo exterior pulsante.</td>
+            </tr>
+            <tr>
+              <td><code>21</code></td>
+              <td><strong>Bloqueada</strong></td>
+              <td>Silencio Clínico en exploraciones diagnósticas (VIA+)</td>
+              <td><code class="opcode-tag">SAFE(1)</code></td>
+              <td>Panel oscurecido y aro perimetral carmesí.</td>
+            </tr>
+            <tr>
+              <td><code>22</code></td>
+              <td><strong>Pictograma</strong></td>
+              <td>Estímulo foniátrico presentado en la mascota</td>
+              <td><code class="opcode-tag">PICTO(índice)</code></td>
+              <td>Ficha de 24×24 en marco turquesa con destellos.</td>
+            </tr>
+            <tr>
+              <td><code>23</code></td>
+              <td><strong>Insignia</strong></td>
+              <td>Colección gamificada: familia y rango alcanzado</td>
+              <td><code class="opcode-tag">AWARD(id)</code></td>
+              <td>Glifo 24×24 con fondo y anillo del rango (1–5).</td>
+            </tr>
+            <tr>
+              <td><code>24</code></td>
+              <td><strong>Nivel</strong></td>
+              <td>Progresión curricular en 12 niveles de dominio</td>
+              <td><code class="opcode-tag">LEVEL(1..12)</code></td>
+              <td>12 segmentos iluminados en el bisel exterior.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 8 Pure Emotions (AFFECT) Grid -->
+    <div class="emotions-section">
+      <div class="section-subhead">
+        <span class="sub-badge text-cyan">Emociones Puras · Opcode 0x06 (AFFECT)</span>
+        <h3 class="subhead-title">8 Estados de Ánimo con Fisiología de Partículas</h3>
+        <p class="subhead-desc">
+          No miden el acierto del turno: fortalecen el vínculo afectivo. Son emitidas a mano por el acompañante o por hitos de sesión, calculadas mediante un motor de partículas procedimentales.
+        </p>
+      </div>
+
+      <div class="emotions-grid">
+        <div class="emotion-card glass-card">
+          <div class="emotion-top">
+            <span class="emotion-index">AFFECT(0)</span>
+            <h4>Alegría</h4>
+          </div>
+          <p>Explosión radial continua de partículas que renacen desde el centro de la mascota.</p>
+        </div>
+
+        <div class="emotion-card glass-card">
+          <div class="emotion-top">
+            <span class="emotion-index">AFFECT(1)</span>
+            <h4>Amor</h4>
+          </div>
+          <p>Lluvia densa y ascendente de corazones que serpentean en zigzag hacia arriba.</p>
+        </div>
+
+        <div class="emotion-card glass-card">
+          <div class="emotion-top">
+            <span class="emotion-index">AFFECT(2)</span>
+            <h4>Gratitud</h4>
+          </div>
+          <p>Anillo concéntrico de fotones brillantes que convergen suavemente hacia el rostro.</p>
+        </div>
+
+        <div class="emotion-card glass-card">
+          <div class="emotion-top">
+            <span class="emotion-index">AFFECT(3)</span>
+            <h4>Tranquilidad</h4>
+          </div>
+          <p>Onda circular expansiva que respira a compás lento (4 s) alrededor de la gata.</p>
+        </div>
+
+        <div class="emotion-card glass-card">
+          <div class="emotion-top">
+            <span class="emotion-index">AFFECT(4)</span>
+            <h4>Esperanza</h4>
+          </div>
+          <p>Fuente de chispas luminosas que ascienden con fuerza parabólica y caen en gravedad.</p>
+        </div>
+
+        <div class="emotion-card glass-card">
+          <div class="emotion-top">
+            <span class="emotion-index">AFFECT(5)</span>
+            <h4>Orgullo</h4>
+          </div>
+          <p>Rayos solares giratorios lentos coronados por dos pilares de luz ascendente.</p>
+        </div>
+
+        <div class="emotion-card glass-card">
+          <div class="emotion-top">
+            <span class="emotion-index">AFFECT(6)</span>
+            <h4>Inspiración</h4>
+          </div>
+          <p>Destellos estelares estroboscópicos de alta frecuencia en el tercio superior.</p>
+        </div>
+
+        <div class="emotion-card glass-card">
+          <div class="emotion-top">
+            <span class="emotion-index">AFFECT(7)</span>
+            <h4>Diversión</h4>
+          </div>
+          <p>Malla geométrica de triángulos cinéticos que rebotan con inercia contra el bisel.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 66 Pictograms & 45 Badges in 24x24 Pixel Art -->
+    <div class="pixel-art-catalogue glass-card">
+      <div class="catalogue-header">
+        <div>
+          <span class="sub-badge text-emerald">Arte Clínico Redibujado</span>
+          <h3 class="catalogue-title">66 Pictogramas y 45 Insignias en Matriz 24×24</h3>
+          <p class="catalogue-text">
+            El contenido clínico se rediseñó íntegramente en matrices de 24×24 píxeles con paleta de 21 colores, contorno oscuro y luces propias. En la pantalla circular de 32 mm se renderizan a 3 px por celda (72 px de los 240), permitiendo máxima legibilidad sin competir con la gata.
+          </p>
+        </div>
+      </div>
+
+      <div class="catalogue-stats-row">
+        <div class="c-stat">
+          <span class="c-stat-val">66</span>
+          <span class="c-stat-label">Pictogramas Clínicos de Fonética y Vocabulario</span>
+        </div>
+        <div class="c-stat">
+          <span class="c-stat-val">9 × 5</span>
+          <span class="c-stat-label">Insignias (9 Familias × 5 Rangos de Dominio)</span>
+        </div>
+        <div class="c-stat">
+          <span class="c-stat-val">5 Rangos</span>
+          <span class="c-stat-label">Bronce · Plata · Oro · Diamante · Rubí</span>
+        </div>
+        <div class="c-stat">
+          <span class="c-stat-val">12 Niveles</span>
+          <span class="c-stat-label">Segmentos de Corona en Bisel Circular</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .expressions-gallery {
+    padding: 80px 0;
+    position: relative;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: 0.35rem 1.1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .badge-orange {
+    background: rgba(249, 115, 22, 0.12);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    color: #fb923c;
+  }
+
+  .section-title {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+    line-height: 1.2;
+  }
+
+  .section-description {
+    font-size: 1.12rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* States Banner */
+  .states-banner {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .states-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .states-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .state-card {
+    background: rgba(2, 6, 23, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .state-indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .dot-dim { background: #64748b; box-shadow: 0 0 6px #64748b; }
+  .dot-cyan { background: #00f2fe; box-shadow: 0 0 10px #00f2fe; }
+  .dot-red { background: #ef4444; box-shadow: 0 0 10px #ef4444; }
+
+  .state-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .state-code {
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .state-content h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .state-content p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .state-content code {
+    font-family: monospace;
+    font-size: 0.85em;
+    color: #fb923c;
+  }
+
+  /* Expressions Matrix */
+  .expressions-matrix-wrapper {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .matrix-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .sub-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .text-orange { color: #fb923c; }
+  .text-cyan { color: #38bdf8; }
+  .text-emerald { color: #34d399; }
+
+  .matrix-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .pixel-tag {
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .expressions-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .expressions-table th {
+    padding: 0.85rem 1rem;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .expressions-table td {
+    padding: 0.95rem 1rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: middle;
+  }
+
+  .expressions-table td strong {
+    color: var(--text-main);
+  }
+
+  .opcode-tag {
+    font-family: monospace;
+    font-size: 0.84rem;
+    color: #fb923c;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* Emotions Section */
+  .emotions-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-subhead {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .subhead-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+  }
+
+  .subhead-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .emotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .emotion-card {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .emotion-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 242, 254, 0.3);
+  }
+
+  .emotion-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .emotion-index {
+    font-family: monospace;
+    font-size: 0.78rem;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  .emotion-top h4 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .emotion-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Pixel Art Catalogue */
+  .pixel-art-catalogue {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+  }
+
+  .catalogue-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .catalogue-title {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .catalogue-text {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .catalogue-stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .c-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.25rem;
+    background: rgba(2, 6, 23, 0.4);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .c-stat-val {
+    font-size: 1.6rem;
+    font-weight: 900;
+    font-family: var(--font-heading);
+    color: #34d399;
+  }
+
+  .c-stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .expressions-gallery {
+      padding: 60px 0;
+    }
+  }
+</style>

@@ -1,0 +1,481 @@
+---
+---
+
+<section class="protocol-section section-padding">
+  <div class="container">
+    
+    <div class="section-header">
+      <span class="section-badge badge-cyan">Especificación de Protocolo BLE</span>
+      <h2 class="section-title">Protocolo Binario Determinista de 4 Bytes</h2>
+      <p class="section-description">
+        Toda comunicación por Bluetooth LE (GATT Server) viaja en tramas fijas de 4 bytes. La ausencia intencionada de cadenas de texto garantiza <strong>Zero-PHI estructural</strong>: un nombre de paciente es físicamente incapaz de transmitirse al dispositivo.
+      </p>
+    </div>
+
+    <!-- Packet Structure Diagram -->
+    <div class="packet-structure glass-card">
+      <h3 class="packet-title">Estructura de la Trama Bluetooth LE</h3>
+      <div class="packet-bytes-grid">
+        <div class="byte-box">
+          <span class="byte-index">BYTE 0 [8-bit]</span>
+          <span class="byte-name">Versión de Protocolo</span>
+          <span class="byte-example">0x01 (v1.0)</span>
+        </div>
+        <div class="byte-box">
+          <span class="byte-index">BYTE 1 [8-bit]</span>
+          <span class="byte-name">Código de Opcode</span>
+          <span class="byte-example">0x01 ... 0x11</span>
+        </div>
+        <div class="byte-box">
+          <span class="byte-index">BYTE 2 [8-bit]</span>
+          <span class="byte-name">Parámetro (Byte Bajo)</span>
+          <span class="byte-example">Índice / TTL / Glifo</span>
+        </div>
+        <div class="byte-box">
+          <span class="byte-index">BYTE 3 [8-bit]</span>
+          <span class="byte-name">Parámetro (Byte Alto)</span>
+          <span class="byte-example">Máscara / Rango / Índice</span>
+        </div>
+      </div>
+      <p class="packet-footnote">
+        Cualquier trama con longitud incorrecta o versión desconocida no se interpreta por aproximación: se descarta en el acto por el firmware.
+      </p>
+    </div>
+
+    <!-- Opcode Table -->
+    <div class="opcodes-container glass-card">
+      <div class="opcodes-header">
+        <div>
+          <span class="sub-badge text-cyan">Canal CTRL & SAFE</span>
+          <h3 class="opcodes-title">Matriz Completa de Opcodes</h3>
+        </div>
+        <span class="version-tag">protocol.json · v1.0</span>
+      </div>
+
+      <div class="table-responsive">
+        <table class="opcodes-table">
+          <thead>
+            <tr>
+              <th>Opcode</th>
+              <th>Hex</th>
+              <th>Canal</th>
+              <th>Parámetro (16-bit)</th>
+              <th>Descripción & Mapeo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>PHASE</code></td>
+              <td><code>0x01</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>Fase 0..3</td>
+              <td>Espeja <code>TurnPhaseStrip</code>: Escucha (0), Repite (1), Veredicto (2), Misión (3).</td>
+            </tr>
+            <tr>
+              <td><code>VERDICT</code></td>
+              <td><code>0x02</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>MatchLevel 0..2</td>
+              <td>0: No coincide (atenta) · 1: Casi (Impulso ⚡) · 2: Lo dijo (Calma ✓).</td>
+            </tr>
+            <tr>
+              <td><code>CELEBRATE</code></td>
+              <td><code>0x03</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>Intensidad 0..2</td>
+              <td>0: Cierre · 1: Subida de nivel (Epifanía !) · 2: Insignia (Éxito ⭐).</td>
+            </tr>
+            <tr>
+              <td><code>IDLE</code></td>
+              <td><code>0x04</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>—</td>
+              <td>Cara neutra en reposo. Se obedece siempre, incluso sin concesión activa.</td>
+            </tr>
+            <tr>
+              <td><code>CALL</code></td>
+              <td><code>0x05</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>—</td>
+              <td>Animación de llamada del Modo Vínculo (recordatorios diarios de terapia).</td>
+            </tr>
+            <tr>
+              <td><code>AFFECT</code></td>
+              <td><code>0x06</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>Emoción 0..7</td>
+              <td>Emociones puras (0:Alegría, 1:Amor, 2:Gratitud, 3:Tranquilidad, 4:Esperanza, 5:Orgullo, 6:Inspiración, 7:Diversión).</td>
+            </tr>
+            <tr>
+              <td><code>PICTO</code></td>
+              <td><code>0x07</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>Índice (0..65) / <code>0xFFFF</code></td>
+              <td>Muestra la ficha del ejercicio en 24×24 con anillo turquesa. <code>0xFFFF</code> la retira.</td>
+            </tr>
+            <tr>
+              <td><code>AWARD</code></td>
+              <td><code>0x08</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>Glifo (0..8) + Rango (0..4)</td>
+              <td>Réplica de la insignia obtenida: familia en byte bajo, rango en byte alto.</td>
+            </tr>
+            <tr>
+              <td><code>LEVEL</code></td>
+              <td><code>0x09</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>Nivel 1..12</td>
+              <td>Ilumina los segmentos correspondientes en la corona exterior de 12 niveles.</td>
+            </tr>
+            <tr>
+              <td><code>GRANT</code></td>
+              <td><code>0x10</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>TTL (bajo) + Máscara (alto)</td>
+              <td>Concede capacidad con TTL (1–60 s). Máscara: <code>LUA_CAP_VISUAL</code> | <code>LUA_CAP_SOUND</code>.</td>
+            </tr>
+            <tr>
+              <td><code>HEARTBEAT</code></td>
+              <td><code>0x11</code></td>
+              <td><span class="channel-pill ctrl">CTRL</span></td>
+              <td>—</td>
+              <td>Renueva la concesión viva (debe emitirse cada ≤10 s). Activa animación de latido rosa.</td>
+            </tr>
+            <tr>
+              <td><code>CLINICAL_SILENCE</code></td>
+              <td><code>0x01</code></td>
+              <td><span class="channel-pill safe">SAFE</span></td>
+              <td>—</td>
+              <td>Silencio Clínico: revoca concesiones, bloquea el panel en gris azulado con anillo rojo.</td>
+            </tr>
+            <tr>
+              <td><code>UNLOCK</code></td>
+              <td><code>0x02</code></td>
+              <td><span class="channel-pill safe">SAFE</span></td>
+              <td>—</td>
+              <td>Levanta el bloqueo clínico y sitúa el aparato en <strong>REPOSO</strong> seguro.</td>
+            </tr>
+            <tr>
+              <td><code>MUTE</code></td>
+              <td><code>0x03</code></td>
+              <td><span class="channel-pill safe">SAFE</span></td>
+              <td>—</td>
+              <td>Desactiva la capacidad de sonido manteniendo la visual activa («callada no es apagada»).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Emulator Testing Banner -->
+    <div class="emulator-test-banner glass-card">
+      <div class="test-banner-content">
+        <div class="test-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        </div>
+        <div>
+          <h4>Pruebas en el Simulador de Escritorio</h4>
+          <p>Ejecuta <code class="inline-code">make run</code> en la terminal y controla la máquina de estados completa desde <code class="inline-code">http://localhost:8080</code> mediante peticiones GET/REST a <code class="inline-code">/ctrl?op=X&param=Y</code>.</p>
+        </div>
+      </div>
+      <div class="test-command">
+        <code>make run</code>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .protocol-section {
+    padding: 80px 0;
+    position: relative;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: 0.35rem 1.1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .badge-cyan {
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: var(--accent-cyan);
+  }
+
+  .section-title {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+    line-height: 1.2;
+  }
+
+  .section-description {
+    font-size: 1.12rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* Packet Structure */
+  .packet-structure {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .packet-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .packet-bytes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .byte-box {
+    background: rgba(2, 6, 23, 0.5);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+  }
+
+  .byte-index {
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 0.05em;
+  }
+
+  .byte-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .byte-example {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #fb923c;
+    background: rgba(249, 115, 22, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .packet-footnote {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Opcodes Matrix */
+  .opcodes-container {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .opcodes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .sub-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .text-cyan { color: #38bdf8; }
+
+  .opcodes-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .version-tag {
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .opcodes-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .opcodes-table th {
+    padding: 0.85rem 1rem;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .opcodes-table td {
+    padding: 0.95rem 1rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: middle;
+  }
+
+  .opcodes-table td code {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #fb923c;
+    background: rgba(249, 115, 22, 0.1);
+    padding: 0.2rem 0.45rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .channel-pill {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  .channel-pill.ctrl {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+  }
+
+  .channel-pill.safe {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+
+  /* Emulator Test Banner */
+  .emulator-test-banner {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .test-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .test-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    color: #fb923c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .test-banner-content h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 0.35rem 0;
+  }
+
+  .test-banner-content p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .inline-code {
+    font-family: monospace;
+    font-size: 0.85em;
+    color: #38bdf8;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+
+  .test-command code {
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #34d399;
+    background: #020617;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md);
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .protocol-section {
+      padding: 60px 0;
+    }
+  }
+</style>

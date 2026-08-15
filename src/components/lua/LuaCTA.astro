@@ -1,0 +1,132 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
+<section class="lua-cta-section section-padding">
+  <div class="container">
+    <div class="cta-card glass-card">
+      <div class="cta-content">
+        <span class="cta-badge">Open Science & Hardware Determinista</span>
+        <h2 class="cta-title">Desarrollado en Abierto para la Salud Digital Pediátrica</h2>
+        <p class="cta-description">
+          El firmware completo de Lúa, su máquina de estados, el emulador de escritorio y los generadores de arte viven en GitHub con paridad estricta con Valeria+ y VIA+.
+        </p>
+
+        <div class="cta-actions">
+          <a href="https://github.com/FrankBetances/lua-firmware" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <span>Ver Repositorio lua-firmware</span>
+          </a>
+          <a href={`${baseUrl}/`} class="btn btn-secondary">
+            <span>Conoce Valeria+</span>
+          </a>
+          <a href={`${baseUrl}/via`} class="btn btn-secondary">
+            <span>Conoce VIA+ (SaMD)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lua-cta-section {
+    padding: 40px 0 100px 0;
+  }
+
+  .cta-card {
+    background: radial-gradient(circle at top right, rgba(249, 115, 22, 0.15), rgba(15, 23, 42, 0.85) 60%);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 4rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  .cta-content {
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    color: #fb923c;
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: var(--text-main);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .cta-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.5);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-main);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .cta-card {
+      padding: 3rem 1.5rem;
+    }
+  }
+</style>
