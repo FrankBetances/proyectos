@@ -17,7 +17,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <!-- VIA+ Card -->
         <div class="eco-card via">
           <div class="eco-top">
-            <span class="eco-icon">⟁</span>
+            <div class="eco-avatar-wrapper via-avatar-bg">
+              <span class="eco-icon-text">⟁</span>
+            </div>
             <div>
               <h3>VIA+</h3>
               <span class="badge badge-cyan">SaMD Clase IIa</span>
@@ -40,7 +42,17 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <!-- Valeria+ Card -->
         <div class="eco-card valeria">
           <div class="eco-top">
-            <span class="eco-icon">🐻</span>
+            <div class="eco-avatar-wrapper valeria-avatar-bg">
+              <img 
+                src={`${baseUrl}/assets/valeria_lua.png`} 
+                alt="Mascota Valeria+ (Gata en Píxel Art)" 
+                class="eco-cat-img" 
+                width="36" 
+                height="36" 
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <div>
               <h3>Valeria+</h3>
               <span class="badge badge-purple">Terapia en el Hogar</span>
@@ -48,7 +60,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           </div>
           <span class="eco-role">Rehabilitación del Lenguaje y Adherencia</span>
           <p>
-            Aplicación terapéutica offline para niños con hipoacusia o TEL: 7 bloques de estimulación foniátrica, protocolo TPR con familias y formación en Academy.
+            Aplicación terapéutica offline para niñas y niños con hipoacusia o TEL: 7 bloques de estimulación foniátrica, protocolo TPR con familias y formación en Academy.
           </p>
           <a href={`${baseUrl}/`} class="eco-link">Conocer Valeria+ →</a>
         </div>
@@ -63,7 +75,17 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <!-- Lúa Card -->
         <div class="eco-card lua">
           <div class="eco-top">
-            <span class="eco-icon">🐈‍⬛</span>
+            <div class="eco-avatar-wrapper lua-avatar-bg">
+              <img 
+                src={`${baseUrl}/assets/valeria_lua.png`} 
+                alt="Lúa Mascota Física (Hardware ESP32-C3)" 
+                class="eco-cat-img" 
+                width="36" 
+                height="36" 
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <div>
               <h3>Lúa</h3>
               <span class="badge badge-orange">Hardware AIoT</span>
@@ -148,8 +170,43 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     gap: 0.85rem;
   }
 
-  .eco-icon {
-    font-size: 2rem;
+  .eco-avatar-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .via-avatar-bg {
+    background: rgba(0, 242, 254, 0.12);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+  }
+
+  .valeria-avatar-bg {
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+  }
+
+  .lua-avatar-bg {
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+  }
+
+  .eco-icon-text {
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+    font-weight: 800;
+  }
+
+  .eco-cat-img {
+    width: 36px;
+    height: 36px;
+    image-rendering: pixelated;
+    object-fit: contain;
   }
 
   .eco-top h3 {
