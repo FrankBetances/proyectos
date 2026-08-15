@@ -5,52 +5,59 @@ const regulations = [
     scope: "Regla 11 · Marcado CE Clase IIa",
     status: "En Proceso",
     badgeColor: "cyan",
-    desc: "Clasificación como software que influye en decisiones diagnósticas clínicas."
+    desc: "Clasificación como SaMD que proporciona información diagnóstica para decisiones clínicas en neurodesarrollo y audiología pediátrica."
   },
   {
-    norm: "IEC 62304",
-    scope: "Ciclo de vida de Software Médico · Clase B",
+    norm: "IEC 62304:2006+A1",
+    scope: "Ciclo de Vida de Software Médico · Clase B",
     status: "En Implementación",
     badgeColor: "amber",
-    desc: "Control riguroso de diseño y código para mitigar cualquier riesgo derivado del software."
+    desc: "Control riguroso de arquitectura, verificación unitaria y trazabilidad de requisitos para mitigar cualquier riesgo de software."
   },
   {
-    norm: "IEC 62366-1",
-    scope: "Ingeniería de Usabilidad para Dispositivos Médicos",
+    norm: "IEC 62366-1:2015",
+    scope: "Ingeniería de Usabilidad Pediátrica",
     status: "En Implementación",
     badgeColor: "purple",
-    desc: "Validación de interfaz sin fricción y captura de percepción del clínico mediante telemetría Zero-PHI."
+    desc: "Diseño ergonómico centrado en el menor y captura de fricción clínica mediante telemetría anónima Zero-PHI."
   },
   {
-    norm: "ISO 14971",
-    scope: "Gestión de Riesgos en el Ciclo de Vida",
+    norm: "ISO 14971:2019",
+    scope: "Gestión de Riesgos en Dispositivos Médicos",
     status: "En Implementación",
     badgeColor: "amber",
-    desc: "Matriz FMEA y evaluación sistemática de impacto en la seguridad del paciente."
+    desc: "Matriz FMEA y evaluación sistemática de impacto en la seguridad del paciente antes de cualquier cambio en el código."
+  },
+  {
+    norm: "Reglamento (UE) 2024/1689",
+    scope: "Directiva de Inteligencia Artificial",
+    status: "Fuera de Alcance por Diseño",
+    badgeColor: "emerald",
+    desc: "VIA+ ratifica el principio de Cero IA en el dispositivo: no embarca inferencia neuronal en runtime, evitando clasificación como IA de alto riesgo."
   },
   {
     norm: "GDPR / LOPDGDD",
-    scope: "Protección de Datos Sanitarios",
-    status: "Cumplimiento Total",
+    scope: "Privacidad por Diseño (Art. 25)",
+    status: "Conformidad Estricta",
     badgeColor: "emerald",
-    desc: "Seudonimización de identidad (HMAC-SHA256), cifrado AES-256 en reposo y datos locales."
+    desc: "Datos clínicos persistidos exclusivamente en el dispositivo local; a la nube solo viaja la cuenta del profesional por TLS 1.3."
   },
   {
     norm: "HL7 FHIR R4",
-    scope: "Interoperabilidad con HCE",
+    scope: "Interoperabilidad Hospitalaria",
     status: "En Roadmap",
     badgeColor: "purple",
-    desc: "Estándar de intercambio de datos clínicos estructurados con Historia Clínica Electrónica."
+    desc: "Sincronización diferida de informes estructurados con la Historia Clínica Electrónica (HCE)."
   }
 ];
 ---
 
-<section id="normativas" class="via-regulatory">
+<section id="normativas" class="via-regulatory section-padding">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Conformidad Regulatoria & Normativa</span>
+      <span class="tag">Conformidad Médica Internacional</span>
       <h2>Marco Regulador <span class="gradient-text">SaMD Clase IIa</span></h2>
-      <p>Diseñado bajo los estándares internacionales más exigentes de la Unión Europea para dispositivos médicos en software.</p>
+      <p>Diseñado conforme a las directivas más exigentes de la Unión Europea y normativas armonizadas de calidad para software sanitario.</p>
     </div>
 
     <div class="reg-grid">
@@ -66,15 +73,27 @@ const regulations = [
       ))}
     </div>
 
-    <div class="glass-card class-b-box">
-      <div class="class-b-header">
-        <span class="class-icon">🛡️</span>
-        <h4>IEC 62304 — Fundamento de Clase de Seguridad B</h4>
+    <div class="regulatory-cards-bottom">
+      <div class="glass-card class-b-box">
+        <div class="class-b-header">
+          <span class="class-icon">🛡️</span>
+          <h4>IEC 62304 — Clase de Seguridad B</h4>
+        </div>
+        <p>
+          Un fallo eventual en el software podría generar datos orientativos erróneos que, sin el adecuado escrutinio del profesional, 
+          podrían inducir una decisión subóptima. El riesgo de lesión directa es bajo gracias a la <strong>supervisión directa obligatoria del facultativo</strong>.
+        </p>
       </div>
-      <p>
-        Un fallo eventual en el software podría generar datos erróneos que, sin el adecuado escrutinio del profesional, 
-        podría conducir a una decisión subóptima. El riesgo de lesión directa es extremadamente bajo gracias a la <strong>supervisión obligatoria del clínico</strong>.
-      </p>
+
+      <div class="glass-card ai-act-box">
+        <div class="class-b-header">
+          <span class="class-icon">🧠</span>
+          <h4>ADR de Cero IA en Dispositivo</h4>
+        </div>
+        <p>
+          Al confinar los modelos neuronales exclusivamente a la etapa de compilación (build-time), VIA+ ejecuta DSP acústico puramente determinista en consulta, garantizando reproducibilidad matemática y blindando la conformidad regulatoria.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -83,56 +102,87 @@ const regulations = [
   .via-regulatory {
     padding: 90px 0;
     background: rgba(0, 0, 0, 0.2);
+    position: relative;
   }
 
   .reg-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.75rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .reg-card {
     display: flex;
     flex-direction: column;
+    padding: 2rem;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .reg-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 242, 254, 0.35);
   }
 
   .reg-top {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    gap: 0.5rem;
   }
 
   .reg-top h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 800;
+    margin: 0;
+    color: var(--text-main);
   }
 
   .reg-scope {
-    font-size: 0.825rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--accent-cyan);
     margin-bottom: 0.75rem;
+    display: block;
   }
 
   .reg-desc {
+    font-size: 0.9rem;
     color: var(--text-muted);
-    font-size: 0.925rem;
-    line-height: 1.5;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .regulatory-cards-bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .class-b-box, .ai-act-box {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .class-b-box {
-    background: rgba(0, 242, 254, 0.04);
-    border: 1px dashed rgba(0, 242, 254, 0.3);
-    padding: 1.75rem;
+    border-left: 4px solid var(--accent-cyan);
+  }
+
+  .ai-act-box {
+    border-left: 4px solid var(--accent-purple);
   }
 
   .class-b-header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.85rem;
   }
 
   .class-icon {
@@ -141,14 +191,21 @@ const regulations = [
 
   .class-b-header h4 {
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 800;
+    margin: 0;
     color: var(--text-main);
   }
 
-  .class-b-box p {
+  .class-b-box p, .ai-act-box p {
+    font-size: 0.9rem;
     color: var(--text-muted);
-    font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .via-regulatory {
+      padding: 60px 0;
+    }
   }
 </style>

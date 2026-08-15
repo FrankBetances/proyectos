@@ -3,64 +3,71 @@ const modules = [
   {
     num: "1",
     icon: "📋",
-    title: "Evaluación Clínica Previa",
+    title: "Evaluación Clínica Previa (CAP)",
     hw: "🟢 Ninguno",
-    desc: "Anamnesis y cuestionario clínico estructurado previo con firma digital de consentimiento y registro fotográfico.",
+    desc: "Anamnesis y cuestionario estructurado con firma digital manuscrita de consentimiento del tutor y registro fotográfico de la exploración.",
     entity: "ClinicalAssessment",
+    metric: "4 capacidades (Visual, Motora, Auditiva, Cognitiva)",
     badgeColor: "cyan"
   },
   {
     num: "2",
     icon: "🧩",
-    title: "Autismo M-CHAT-R",
+    title: "Cribado de Autismo M-CHAT-R/F",
     hw: "🟢 Ninguno",
-    desc: "Cribado de Trastorno del Espectro Autista (16–30 meses) con 20 ítems y bandas de riesgo (bajo, medio, alto).",
+    desc: "Cribado de TEA validado para 16–30 meses con 20 reactivos, categorización por bandas (0–2 bajo, 3–7 medio, 8–20 alto) y algoritmo de entrevista de seguimiento.",
     entity: "Screening (autism-tea)",
+    metric: "Puntuación de corte 0–20",
     badgeColor: "purple"
   },
   {
     num: "3",
-    icon: "🔊",
-    title: "Sonómetro Ambiental",
+    icon: "🎛️",
+    title: "Sonómetro Ambiental de Sala",
     hw: "🎙️ Micrófono Estéreo",
-    desc: "Gate de sala: mide el ruido de fondo (umbral 45 dB) con captura de micrófono real (LAeq en dB(A) e IEC 61672).",
-    entity: "Sin persistencia (gate efímero)",
+    desc: "Gate de sala previo a la audiometría: medición en dB(A) con ponderación A con estado (IEC 61672), LAeq y percentiles de fondo (L90) y picos (L10). Umbral 45 dB(A).",
+    entity: "Gate efímero (sin PHI)",
+    metric: "Calibración persistida en hardware",
     badgeColor: "amber"
   },
   {
     num: "4",
-    icon: "👂",
-    title: "Audiometría Infantil",
+    icon: "🎧",
+    title: "Audiometría Infantil Tonal",
     hw: "🔊 Síntesis Audio-API",
-    desc: "Audiometría tonal liminar guiada por algoritmo Hughson-Westlake (250–4000 Hz) con síntesis de tono puro.",
+    desc: "Audiometría liminar por vía aérea (250–4000 Hz) con síntesis de tono puro real guiada por algoritmo Hughson-Westlake (-10 dB / +5 dB) y registro separado por oído.",
     entity: "AudiometryTest",
+    metric: "Umbrales normativos ≤20 dB HL",
     badgeColor: "emerald"
   },
   {
     num: "5",
     icon: "🚂",
-    title: "Audiometría Condicionada",
+    title: "Audiometría Condicionada (El Tren)",
     hw: "🔊 Audio-API + Reanimated",
-    desc: "El Tren del Sonido (CRA): avance por estaciones de frecuencia con animación lúdica y silbato de respuesta.",
+    desc: "Audiometría de Refuerzo Visual y Condicionada (CRA): un tren interactivo avanza por estaciones tonales conforme el niño responde haciendo sonar el silbato.",
     entity: "AudiometryTest (conditioned)",
+    metric: "Registro lúdico por frecuencias",
     badgeColor: "cyan"
   },
   {
     num: "6",
-    icon: "🎙️",
+    icon: "🎤",
     title: "Análisis Acústico de Voz",
-    hw: "🎙️ Mic + DSP (LPC/FFT)",
-    desc: "Biomarcadores vocales: F0, jitter, shimmer, HNR y formantes F1–F3 sobre voz sostenida (/a/). Validado contra Praat.",
+    hw: "🎙️ Mic + DSP (LPC 20)",
+    desc: "Biomarcadores vocales sobre /a/ sostenida: F0, jitter (<1%), shimmer (<3%), HNR (>20 dB) y formantes F1–F3. Validado matemáticamente contra Praat.",
     entity: "VoiceAnalysis",
+    metric: "F0: 200–320 Hz · Jitter < 1.0%",
     badgeColor: "purple"
   },
   {
     num: "7",
-    icon: "📶",
+    icon: "💧",
     title: "Test de Disfagia MECV-V",
-    hw: "📶 Pulsioxímetro BLE",
-    desc: "Método Volumen-Viscosidad sobre 9 bolos, registro de desaturación SpO₂ ≥3% y recomendación de adaptación de dieta.",
+    hw: "📶 Pulsioxímetro BLE (0x1822)",
+    desc: "Método de Exploración Clínica Volumen-Viscosidad sobre 9 bolos estructurados. Detección de desaturación de SpO₂ ≥ 3% y algoritmo de prescripción de textura.",
     entity: "DysphagiaTest",
+    metric: "Seguridad y eficacia deglutoria",
     badgeColor: "rose"
   },
   {
@@ -68,55 +75,60 @@ const modules = [
     icon: "😴",
     title: "Cribado SAHS Infantil",
     hw: "🟢 Ninguno",
-    desc: "PSQ de Chervin (SRBD-22) + exploración de amígdalas (Brodsky), IMC y factores de riesgo respiratorios.",
+    desc: "Cuestionario PSQ de Chervin (SRBD-22) + examen orofaríngeo (escala de amígdalas de Brodsky) e IMC para cribado de síndrome de apnea-hipopnea del sueño.",
     entity: "SahsScreening",
+    metric: "Índice Chervin ≥ 0.33 (Positivo)",
     badgeColor: "amber"
   },
   {
     num: "9",
     icon: "🗣️",
     title: "Articulación · T.A.R.",
-    hw: "🎙️ Mic + TTS + ASR",
-    desc: "Test de Articulación a la Repetición con clasificación SODA por fonema y reconocimiento de voz automático.",
+    hw: "🎙️ Mic + @/Voice + SODA",
+    desc: "Test de Articulación a la Repetición con modelo hablado. Alineación fonema a fonema y clasificación SODA (Sustitución, Omisión, Distorsión, Adición) revisable por el clínico.",
     entity: "ArticulationTest",
+    metric: "Inventario fonético del español",
     badgeColor: "emerald"
   },
   {
     num: "10",
-    icon: "💬",
-    title: "Audiometría Verbal",
-    hw: "🗣️ TTS Neural",
-    desc: "Logoaudiometría en campo libre con listas de palabras por banda de edad (A–D) y tarjetas de conjunto cerrado.",
+    icon: "🔊",
+    title: "Audiometría Verbal (Logoaudiometría)",
+    hw: "🗣️ Locuciones 4 Idiomas",
+    desc: "Logoaudiometría binaural en campo libre a 65 y 50 dB con conjunto cerrado de tarjetas. Calcula porcentaje de discriminación y umbral de recepción verbal (URV/SRT).",
     entity: "VerbalAudiometryTest",
+    metric: "Discriminación normal ≥ 90%",
     badgeColor: "cyan"
   },
   {
     num: "11",
     icon: "🧠",
-    title: "Funciones Ejecutivas",
-    hw: "🗣️ TTS (consignas)",
-    desc: "Exploración de 5 mini-juegos de tarjetas (atención, inhibición, flexibilidad, memoria de trabajo y planificación).",
+    title: "Funciones Ejecutivas Pediátricas",
+    hw: "🗣️ Consignas Locutadas",
+    desc: "Batería de 5 mini-juegos de cartas con dificultad adaptativa (bandas A–D): atención sostenida, control inhibitorio (Go/No-Go), flexibilidad cognitiva (DCCS), memoria de trabajo y planificación.",
     entity: "ExecutiveFunctionsTest",
+    metric: "Índice 0–100 por dominio",
     badgeColor: "purple"
   },
   {
     num: "12",
     icon: "〰️",
-    title: "Análisis Prosódico",
-    hw: "🎙️ Mic + DSP (FFT/F0)",
-    desc: "Dinámica del habla en habla conectada (narración 30–60s): rango tonal en semitonos, contorno de cierre, pausas, fracción sonora y tasa de articulación. Registro descriptivo intra-sujeto sin baremo.",
+    title: "Análisis Prosódico (Habla Conectada)",
+    hw: "🎙️ Micrófono Compartido",
+    desc: "Dinámica foniátrica en narración espontánea provocada (30–60 s): rango y variabilidad tonal en semitonos, contorno entonativo de cierre, pausas y tasa de articulación. Sin etiquetas normativas.",
     entity: "ProsodyAnalysis",
+    metric: "Registro descriptivo intra-sujeto",
     badgeColor: "rose"
   }
 ];
 ---
 
-<section id="modulos" class="via-modules">
+<section id="modulos" class="via-modules section-padding">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Batería Completa de Evaluación</span>
-      <h2>12 Módulos Clínicos y de <span class="gradient-text">Neurodesarrollo</span></h2>
-      <p>Cada módulo combina rigidez metodológica sanitaria con una interfaz adaptada al paciente pediátrico.</p>
+      <span class="tag">Batería Integral de Apoyo Clínico</span>
+      <h2>12 Módulos de Evaluación & <span class="gradient-text">Neurodesarrollo</span></h2>
+      <p>Cada módulo combina rigidez metodológica basada en la evidencia foniátrica con interfaces adaptadas a la infancia.</p>
     </div>
 
     <div class="modules-grid">
@@ -131,9 +143,15 @@ const modules = [
           <h3>{m.title}</h3>
           <p class="mod-desc">{m.desc}</p>
 
-          <div class="mod-footer">
-            <span class="entity-label">Persistencia:</span>
-            <code class="entity-name">{m.entity}</code>
+          <div class="mod-meta-box">
+            <div class="meta-row">
+              <span class="meta-k">Criterio:</span>
+              <strong class="meta-v">{m.metric}</strong>
+            </div>
+            <div class="meta-row">
+              <span class="meta-k">Tabla SQLite:</span>
+              <code class="meta-code">{m.entity}</code>
+            </div>
           </div>
         </div>
       ))}
@@ -145,6 +163,7 @@ const modules = [
   .via-modules {
     padding: 90px 0;
     background: rgba(0, 0, 0, 0.25);
+    position: relative;
   }
 
   .modules-grid {
@@ -157,13 +176,23 @@ const modules = [
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 2rem;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .module-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 242, 254, 0.35);
   }
 
   .module-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .mod-num {
@@ -174,7 +203,7 @@ const modules = [
     background: rgba(0, 242, 254, 0.08);
     padding: 0.2rem 0.6rem;
     border-radius: var(--radius-full);
-    border: 1px solid rgba(0, 242, 254, 0.2);
+    border: 1px solid rgba(0, 242, 254, 0.25);
   }
 
   .mod-icon {
@@ -183,37 +212,59 @@ const modules = [
 
   .module-card h3 {
     font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
+    line-height: 1.3;
   }
 
   .mod-desc {
     color: var(--text-muted);
     font-size: 0.925rem;
-    line-height: 1.5;
+    line-height: 1.55;
     flex-grow: 1;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
-  .mod-footer {
+  .mod-meta-box {
+    background: rgba(2, 6, 23, 0.45);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 0.85rem;
-    border-top: 1px solid var(--border-light);
-    font-size: 0.8rem;
+    flex-direction: column;
+    gap: 0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.04);
   }
 
-  .entity-label {
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    gap: 0.5rem;
+  }
+
+  .meta-k {
     color: var(--text-dim);
   }
 
-  .entity-name {
+  .meta-v {
+    color: var(--text-main);
+    font-weight: 600;
+  }
+
+  .meta-code {
     color: var(--accent-cyan);
-    background: rgba(0, 242, 254, 0.06);
-    padding: 0.15rem 0.4rem;
+    background: rgba(0, 242, 254, 0.08);
+    padding: 0.1rem 0.4rem;
     border-radius: 4px;
     font-family: monospace;
-    font-size: 0.775rem;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .via-modules {
+      padding: 60px 0;
+    }
   }
 </style>

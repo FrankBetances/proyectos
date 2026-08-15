@@ -5,15 +5,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
 const viaCollaborators = [
   {
-    id: "acopros",
-    name: "ACOPROS",
-    badge: "Validación Logopédica & Audiológica",
-    badgeColor: "amber",
-    desc: "Asociación de Colaboración y Promoción del Sordo. Acreditación de pruebas clínicas pediátricas, logoaudiometría y bancos de estímulo auditivo.",
-    logo: `${baseUrl}/assets/collaborators/logo-acopros.png`,
-    alt: "Logo ACOPROS - Asociación de Colaboración y Promoción del Sordo"
-  },
-  {
     id: "itemas",
     name: "ITEMAS / ISCIII",
     badge: "Sello de Calidad 2024",
@@ -23,6 +14,15 @@ const viaCollaborators = [
     alt: "Sello de Calidad ITEMAS ISCIII 2024 - Instituto de Salud Carlos III"
   },
   {
+    id: "acopros",
+    name: "ACOPROS",
+    badge: "Validación Logopédica & Audiológica",
+    badgeColor: "amber",
+    desc: "Asociación de Colaboración y Promoción del Sordo. Acreditación de pruebas clínicas pediátricas, logoaudiometría y banco de estímulos en lengua gallega.",
+    logo: `${baseUrl}/assets/collaborators/logo-acopros.png`,
+    alt: "Logo ACOPROS - Asociación de Colaboración y Promoción del Sordo"
+  },
+  {
     id: "acis",
     name: "ACIS - SERGAS",
     badge: "Agencia de Salud Pública",
@@ -30,17 +30,26 @@ const viaCollaborators = [
     desc: "Axencia de Coñecemento en Saúde (Servizo Galego de Saúde). Promoción del conocimiento asistencial e innovación en dispositivos médicos.",
     logo: `${baseUrl}/assets/collaborators/logo-acis.png`,
     alt: "Logo ACIS - Axencia de Coñecemento en Saúde (Servizo Galego de Saúde)"
+  },
+  {
+    id: "sgorl",
+    name: "SGORL",
+    badge: "Sociedad Científica ORL",
+    badgeColor: "purple",
+    desc: "Sociedad Gallega de Otorrinolaringología y Cirugía de Cabeza y Cuello. Respaldo científico en audiología clínica y diagnóstico precoz.",
+    logo: `${baseUrl}/assets/collaborators/logo-sgorl.png`,
+    alt: "Logo SGORL - Sociedad Gallega de Otorrinolaringología"
   }
 ];
 ---
 
-<section id="colaboradores-via" class="via-collab-section">
+<section id="colaboradores-via" class="via-collab-section section-padding">
   <div class="container">
     <div class="section-header">
       <span class="tag">Acreditaciones & Entidades Sanitarias</span>
       <h2>Validación Sanitaria & <span class="gradient-text">Sellos de Calidad</span></h2>
       <p>
-        El desarrollo de VIA+ (SaMD Clase IIa) se respalda en la auditoría de calidad de ITEMAS (ISCIII), validación logopédica de ACOPROS e innovación pública de ACIS.
+        El desarrollo de VIA+ (SaMD Clase IIa) se respalda en la auditoría de calidad de ITEMAS (ISCIII), validación logopédica de ACOPROS, innovación pública de ACIS y aval científico de SGORL.
       </p>
     </div>
 
@@ -80,8 +89,8 @@ const viaCollaborators = [
 
   .via-collab-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
   }
 
   .via-collab-card {
@@ -89,6 +98,10 @@ const viaCollaborators = [
     flex-direction: column;
     height: 100%;
     overflow: hidden;
+    padding: 0;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
     transition: transform 0.3s ease, border-color 0.3s ease;
   }
 
@@ -98,44 +111,29 @@ const viaCollaborators = [
   }
 
   .logo-box {
-    height: 135px;
-    background: #FFFFFF;
+    height: 130px;
+    background: rgba(255, 255, 255, 0.03);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.85rem 1.25rem;
-    border-bottom: 1px solid var(--border-light);
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .via-collab-img {
-    max-height: 85px;
-    max-width: 85%;
-    width: auto;
+    max-height: 80px;
+    max-width: 180px;
     object-fit: contain;
-    transition: transform 0.25s ease;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
   }
 
   .via-collab-card:hover .via-collab-img {
-    transform: scale(1.05);
-  }
-
-  .img-itemas {
-    max-height: 110px;
-    max-width: 90%;
-  }
-
-  .img-acis {
-    max-height: 64px;
-    max-width: 85%;
-  }
-
-  .img-acopros {
-    max-height: 75px;
-    max-width: 90%;
+    filter: brightness(1.1);
   }
 
   .card-content {
-    padding: 1.5rem;
+    padding: 1.75rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -144,8 +142,7 @@ const viaCollaborators = [
   .card-top {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
+    gap: 0.5rem;
     margin-bottom: 0.85rem;
   }
 
@@ -153,18 +150,19 @@ const viaCollaborators = [
     font-size: 1.25rem;
     font-weight: 800;
     color: var(--text-main);
+    margin: 0;
   }
 
   .card-content p {
-    font-size: 0.875rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
     line-height: 1.55;
     margin: 0;
   }
 
   @media (max-width: 768px) {
-    .via-collab-grid {
-      grid-template-columns: 1fr;
+    .via-collab-section {
+      padding: 60px 0;
     }
   }
 </style>

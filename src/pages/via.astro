@@ -7,54 +7,74 @@ import ViaRegulatory from '../components/via/ViaRegulatory.astro';
 import ViaCollaborators from '../components/via/ViaCollaborators.astro';
 import ViaWorkflow from '../components/via/ViaWorkflow.astro';
 import ViaModules from '../components/via/ViaModules.astro';
+import ViaLanguages from '../components/via/ViaLanguages.astro';
 import ViaTelemetryPrivacy from '../components/via/ViaTelemetryPrivacy.astro';
 import ViaTechStack from '../components/via/ViaTechStack.astro';
 import ViaEcosystem from '../components/via/ViaEcosystem.astro';
 import Footer from '../components/Footer.astro';
 
+const pageTitle = "VIA+ · Software Médico SaMD Clase IIa (12 Módulos & 4 Lenguas)";
+const pageDescription = "Software como Dispositivo Médico (SaMD Clase IIa, MDR 2017/745) para apoyo a la decisión clínica en audiología pediátrica, logoaudiometría, voz, disfagia y neurodesarrollo.";
+
 const viaJsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "VIA+ (Valoración Interactiva de Audición y Lenguaje)",
-  "applicationCategory": "MedicalApplication",
-  "operatingSystem": "iOS, Android",
-  "description": "Software como Dispositivo Médico (SaMD) de Clase IIa (MDR 2017/745, Regla 11) para apoyo a la decisión clínica en audiología, logoaudiometría, voz y neurodesarrollo pediátrico con 12 módulos de evaluación.",
-  "author": {
-    "@type": "Person",
-    "name": "Dr. Frank Alberto Betances Reinoso",
-    "url": "https://FrankBetances.github.io/proyectos/cv"
-  },
-  "medicalAudience": {
-    "@type": "MedicalAudience",
-    "audienceType": ["Physician", "Audiologist", "Speech Language Pathologist"]
-  },
-  "featureList": [
-    "12 módulos de evaluación clínicamente validados",
-    "Análisis Prosódico (Móvil 12) sobre habla conectada",
-    "Sonómetro Ambiental en dB(A) con ponderación A (IEC 61672)",
-    "Análisis Acústico de Voz (F0, jitter, shimmer, HNR) validado contra Praat",
-    "Certificado de Aptitud para la Prueba (CAP) bloqueante",
-    "Cero IA en el dispositivo (ADR firmado)",
-    "Telemetría de usabilidad Zero-PHI con QR (IEC 62366-1)",
-    "Operación 100% offline y datos clínicos locales"
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://FrankBetances.github.io/proyectos/via#software",
+      "name": "VIA+ (Valoración Interactiva de Audición y Lenguaje)",
+      "applicationCategory": "MedicalApplication",
+      "operatingSystem": "iOS, Android",
+      "description": pageDescription,
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Frank Alberto Betances Reinoso",
+        "jobTitle": "Especialista en Otorrinolaringología & Salud Digital",
+        "url": "https://FrankBetances.github.io/proyectos/cv"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Earlify Health S.L.",
+        "url": "https://FrankBetances.github.io/proyectos/earlify"
+      },
+      "medicalAudience": {
+        "@type": "MedicalAudience",
+        "audienceType": ["Physician", "Otorhinolaryngologist", "Audiologist", "Speech Language Pathologist", "Pediatrician"]
+      },
+      "featureList": [
+        "12 módulos de evaluación clínica y neurodesarrollo",
+        "Sonómetro Ambiental en dB(A) con ponderación A con estado (IEC 61672)",
+        "Análisis Acústico de Voz (F0, jitter, shimmer, HNR) contrastado contra Praat",
+        "Análisis Prosódico descriptivo sobre habla conectada",
+        "Audiometría Tonal (Hughson-Westlake) y Condicionada (El Tren del Sonido)",
+        "Logoaudiometría Verbal en 4 lenguas (Castellano, Galego, Euskara, Dominicano)",
+        "Test de Disfagia MECV-V con pulsioximetría BLE (0x1822)",
+        "Cribado de Autismo M-CHAT-R/F y SAHS Infantil (PSQ Chervin)",
+        "Pre-screening clínico CAP (Certificado de Aptitud) bloqueante",
+        "Principio de Cero IA en el dispositivo (modelos en build-time)",
+        "Telemetría de usabilidad Zero-PHI con código QR anónimo (IEC 62366-1)",
+        "Operación 100% offline y persistencia local en SQLite (AES-256)"
+      ]
+    }
   ]
 };
 ---
 
 <Layout 
-	title="VIA+ · Dispositivo Médico SaMD Clase IIa (12 Módulos)"
-	description="Software como Dispositivo Médico (SaMD) de Clase IIa (MDR 2017/745, Regla 11) para apoyo a la decisión clínica en audiología pediátrica, logoaudiometría, voz y prosodia."
-	keywords="VIA+, SaMD, Dispositivo Médico Clase IIa, MDR 2017/745, Audiología Pediátrica, Logoaudiometría, Análisis Acústico de Voz, Análisis Prosódico, Dr. Frank Betances"
+	title={pageTitle}
+	description={pageDescription}
+	keywords="VIA+, SaMD, Dispositivo Médico Clase IIa, MDR 2017/745, Audiología Pediátrica, Logoaudiometría, Análisis Acústico de Voz, Análisis Prosódico, Disfagia MECV-V, M-CHAT-R, Telemetría Zero-PHI, Dr. Frank Betances"
 	jsonLd={viaJsonLd}
 >
 	<Header activeTab="via" />
-	<main>
+	<main id="main-content">
 		<ViaHero />
 		<ViaOverview />
 		<ViaRegulatory />
 		<ViaCollaborators />
 		<ViaWorkflow />
 		<ViaModules />
+		<ViaLanguages />
 		<ViaTelemetryPrivacy />
 		<ViaTechStack />
 		<ViaEcosystem />

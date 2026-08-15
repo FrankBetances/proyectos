@@ -4,46 +4,76 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : import.meta.env.BASE_URL;
 ---
 
-<section class="via-ecosystem">
+<section class="via-ecosystem section-padding">
   <div class="container">
     <div class="glass-card ecosystem-box">
       <div class="eco-header">
-        <span class="badge badge-purple">Ecosistema Earlify Health</span>
-        <h2>Sinergia Clínica: <span class="gradient-text">VIA+ & Valeria+</span></h2>
-        <p>Un ciclo continuo de atención pediátrica desde el tamizaje en consulta hasta la rehabilitación gamificada en el hogar.</p>
+        <span class="badge badge-purple">Ecosistema Pediátrico Integrado</span>
+        <h2>Sinergia Asistencial: <span class="gradient-text">VIA+, Valeria+ & Lúa</span></h2>
+        <p>Un recorrido asistencial continuo que conecta la valoración diagnóstica en consulta médica con la terapia diaria en el hogar.</p>
       </div>
 
       <div class="eco-grid">
+        <!-- VIA+ Card -->
         <div class="eco-card via">
           <div class="eco-top">
             <span class="eco-icon">⟁</span>
-            <h3>VIA+</h3>
-            <span class="badge badge-cyan">SaMD Clase IIa</span>
+            <div>
+              <h3>VIA+</h3>
+              <span class="badge badge-cyan">SaMD Clase IIa</span>
+            </div>
           </div>
-          <span class="eco-role">Tamizaje, Audiometría y Diagnóstico</span>
+          <span class="eco-role">Valoración, Audiología y Neurodesarrollo</span>
           <p>
-            Herramienta clínica de apoyo en tablet para evaluar hipoacusia, fonética, disfagia, autismo y funciones ejecutivas en consulta médica.
+            Herramienta clínica en tablet para el facultativo: 12 módulos de evaluación, biomarcadores acústicos validados contra Praat, y telemetría de usabilidad Zero-PHI.
           </p>
+          <span class="eco-tag">Entorno Clínico Supervisado</span>
         </div>
 
         <div class="eco-arrow">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </div>
 
+        <!-- Valeria+ Card -->
         <div class="eco-card valeria">
           <div class="eco-top">
             <span class="eco-icon">🐻</span>
-            <h3>Valeria+</h3>
-            <span class="badge badge-amber">Terapia Offline Pediátrica</span>
+            <div>
+              <h3>Valeria+</h3>
+              <span class="badge badge-purple">Terapia en el Hogar</span>
+            </div>
           </div>
-          <span class="eco-role">Rehabilitación Adaptativa e Intervención</span>
+          <span class="eco-role">Rehabilitación del Lenguaje y Adherencia</span>
           <p>
-            Aplicación de intervención diaria con 6 bloques de terapia, cápsulas TPR, formación a padres en Academy y 4 variedades idiomáticas.
+            Aplicación terapéutica offline para niños con hipoacusia o TEL: 7 bloques de estimulación foniátrica, protocolo TPR con familias y formación en Academy.
           </p>
           <a href={`${baseUrl}/`} class="eco-link">Conocer Valeria+ →</a>
+        </div>
+
+        <div class="eco-arrow">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+
+        <!-- Lúa Card -->
+        <div class="eco-card lua">
+          <div class="eco-top">
+            <span class="eco-icon">🐈‍⬛</span>
+            <div>
+              <h3>Lúa</h3>
+              <span class="badge badge-orange">Hardware AIoT</span>
+            </div>
+          </div>
+          <span class="eco-role">Mascota Física y Silencio Clínico</span>
+          <p>
+            En consulta con VIA+, permanece en estricto <strong>Silencio Clínico</strong> durante la exploración para no contaminar el acto médico; en Valeria+, es el espejo visual del estímulo.
+          </p>
+          <a href={`${baseUrl}/lua`} class="eco-link">Conocer Lúa (Hardware) →</a>
         </div>
       </div>
     </div>
@@ -53,24 +83,27 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <style>
   .via-ecosystem {
     padding: 90px 0;
+    position: relative;
   }
 
   .ecosystem-box {
     padding: 3.5rem 3rem;
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 27, 75, 0.35) 100%);
     border: 1px solid rgba(138, 43, 226, 0.35);
+    border-radius: var(--radius-lg);
   }
 
   .eco-header {
     text-align: center;
-    max-width: 780px;
+    max-width: 820px;
     margin: 0 auto 3rem auto;
   }
 
   .eco-header h2 {
-    font-size: 2.3rem;
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
     font-weight: 800;
     margin: 0.85rem 0;
+    color: var(--text-main);
   }
 
   .eco-header p {
@@ -81,76 +114,113 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .eco-grid {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.25rem;
     flex-wrap: wrap;
   }
 
   .eco-card {
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(2, 6, 23, 0.6);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-lg);
     padding: 2rem;
     flex: 1;
-    min-width: 300px;
-    max-width: 480px;
+    min-width: 270px;
+    max-width: 360px;
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
   }
+
+  .eco-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .eco-card.via { border-top: 4px solid var(--accent-cyan); }
+  .eco-card.valeria { border-top: 4px solid var(--accent-purple); }
+  .eco-card.lua { border-top: 4px solid #fb923c; }
 
   .eco-top {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 0.85rem;
   }
 
   .eco-icon {
     font-size: 2rem;
   }
 
-  .eco-card h3 {
-    font-size: 1.5rem;
+  .eco-top h3 {
+    font-size: 1.3rem;
     font-weight: 800;
+    margin: 0;
+    color: var(--text-main);
+  }
+
+  .badge-orange {
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    color: #fb923c;
   }
 
   .eco-role {
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--accent-cyan);
-    text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
+
+  .eco-card.valeria .eco-role { color: var(--accent-purple); }
+  .eco-card.lua .eco-role { color: #fb923c; }
 
   .eco-card p {
+    font-size: 0.9rem;
     color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.55;
+    flex-grow: 1;
+    margin: 0;
   }
 
-  .eco-arrow {
-    color: var(--accent-cyan);
+  .eco-tag {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .eco-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: var(--accent-cyan);
+    font-size: 0.9rem;
     font-weight: 700;
-    font-size: 0.925rem;
+    color: var(--accent-cyan);
     text-decoration: none;
+    transition: color 0.2s ease;
   }
+
+  .eco-card.valeria .eco-link { color: var(--accent-purple); }
+  .eco-card.lua .eco-link { color: #fb923c; }
 
   .eco-link:hover {
     text-decoration: underline;
   }
 
+  .eco-arrow {
+    display: flex;
+    align-items: center;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 900px) {
+    .eco-arrow {
+      display: none;
+    }
+  }
+
   @media (max-width: 768px) {
     .ecosystem-box {
-      padding: 2rem 1.5rem;
-    }
-    .eco-arrow {
-      transform: rotate(90deg);
+      padding: 2.5rem 1.5rem;
     }
   }
 </style>

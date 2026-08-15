@@ -1,0 +1,349 @@
+---
+const languages = [
+  {
+    code: "es",
+    name: "Castellano",
+    flag: "🇪🇸",
+    voice: "Piper (VITS) · sharvard-medium",
+    status: "Validado Clínicamente",
+    statusColor: "emerald",
+    bank: "38 láminas (Bandas A–D)",
+    corpus: "91 recortes empaquetados",
+    origin: "Modelo abierto calibrado (Valeria+ reference)",
+    desc: "Banco normativo estándar con balance fonético completo y duración mínima garantizada de estímulo (≥350 ms)."
+  },
+  {
+    code: "gl",
+    name: "Galego",
+    flag: "Galicia",
+    voice: "Celtia (Coqui TTS / VITS)",
+    status: "Aprobado por ACOPROS",
+    statusColor: "emerald",
+    bank: "38 láminas propias",
+    corpus: "Locuciones de estímulo integradas",
+    origin: "Proxecto Nós / ILENIA (Xunta de Galicia)",
+    desc: "Banco propio adaptado al inventario fonético gallego, auditado y aprobado formalmente por ACOPROS (28/07/2026)."
+  },
+  {
+    code: "eu",
+    name: "Euskara",
+    flag: "Euskadi",
+    voice: "Maider (AhoTTS VITS)",
+    status: "Provisional (AhoTTS)",
+    statusColor: "amber",
+    bank: "37 láminas propias",
+    corpus: "Frontend fonético vasco",
+    origin: "HiTZ / Aholab · UPV/EHU (NEL-GAITU)",
+    desc: "Banco específico con distribución fonológica de sibilantes vascas (z, s, x, tz, ts, tx) y diptongos decrecientes."
+  },
+  {
+    code: "es-DO",
+    name: "Español Dominicano",
+    flag: "🇩🇴",
+    voice: "Piper LatAm · Claude-High",
+    status: "Aprobado (Quisqueya Habla)",
+    statusColor: "emerald",
+    bank: "37 láminas auditadas",
+    corpus: "86 recortes empaquetados",
+    origin: "Ensayo Clínico Quisqueya Habla / FONDOCYT",
+    desc: "Variante caribeña auditada con 37/37 locuciones aprobadas, respetando los alófonos sin desvirtuar el inventario fonético."
+  }
+];
+---
+
+<section id="idiomas-voz" class="via-languages section-padding">
+  <div class="container">
+    
+    <div class="section-header">
+      <span class="tag tag-purple">Capa de Voz Neuronal Multi-idioma</span>
+      <h2>Cuatro Lenguas de Sesión & <span class="gradient-text">Cero IA en Dispositivo</span></h2>
+      <p>
+        VIA+ adapta tanto las palabras presentadas (banco de estímulos) como los modelos hablados (locuciones). 
+        Siguiendo el <strong>ADR de inferencia en dispositivo</strong>, los modelos neuronales corren en build-time: en la tablet la reproducción es 100% offline y determinista.
+      </p>
+    </div>
+
+    <!-- Languages Grid -->
+    <div class="languages-grid">
+      {languages.map((l) => (
+        <div class="glass-card lang-card">
+          <div class="lang-top">
+            <div class="lang-title-row">
+              <span class="lang-flag">{l.flag}</span>
+              <div>
+                <h3>{l.name}</h3>
+                <span class="lang-code">Código: {l.code}</span>
+              </div>
+            </div>
+            <span class={`badge badge-${l.statusColor}`}>{l.status}</span>
+          </div>
+
+          <div class="lang-body">
+            <p class="lang-desc">{l.desc}</p>
+            
+            <div class="lang-specs-box">
+              <div class="spec-line">
+                <span class="spec-k">Voz Neuronal:</span>
+                <strong class="spec-v">{l.voice}</strong>
+              </div>
+              <div class="spec-line">
+                <span class="spec-k">Banco de Estímulos:</span>
+                <span class="spec-v">{l.bank}</span>
+              </div>
+              <div class="spec-line">
+                <span class="spec-k">Proyecto / Origen:</span>
+                <span class="spec-v text-dim">{l.origin}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Degradation Fallback Chain Box -->
+    <div class="glass-card fallback-chain-box">
+      <div class="chain-header">
+        <span class="chain-icon">🔄</span>
+        <div>
+          <h4>Cadena de Degradación Elegante de <code class="code-inline">speak()</code></h4>
+          <p>Garantía de continuidad clínica: si una locución no está disponible, la prueba continúa sin interrupción.</p>
+        </div>
+      </div>
+
+      <div class="chain-steps">
+        <div class="chain-step">
+          <span class="step-badge">1</span>
+          <div>
+            <strong>Asset Neuronal de la Lengua</strong>
+            <p>Audio .m4a pre-sintetizado con sonoridad normalizada (ffmpeg loudnorm).</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="chain-step">
+          <span class="step-badge">2</span>
+          <div>
+            <strong>Asset Neuronal Base (es)</strong>
+            <p>Locución de referencia castellana (sharvard-medium).</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="chain-step">
+          <span class="step-badge">3</span>
+          <div>
+            <strong>Voz del Sistema Operativo</strong>
+            <p>Motor TTS nativo de la tablet en el idioma seleccionado.</p>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="chain-step">
+          <span class="step-badge">4</span>
+          <div>
+            <strong>Silencio Clínico</strong>
+            <p>El clínico lee la consigna en voz alta directamente al paciente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .via-languages {
+    padding: 90px 0;
+    position: relative;
+  }
+
+  .tag-purple {
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    color: var(--accent-purple);
+  }
+
+  .languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .lang-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2rem;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .lang-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(168, 85, 247, 0.35);
+  }
+
+  .lang-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 0.5rem;
+  }
+
+  .lang-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .lang-flag {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .lang-title-row h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-main);
+  }
+
+  .lang-code {
+    font-family: monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .lang-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+
+  .lang-specs-box {
+    background: rgba(2, 6, 23, 0.45);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .spec-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .spec-k {
+    color: var(--text-muted);
+  }
+
+  .spec-v {
+    color: var(--text-main);
+    text-align: right;
+  }
+
+  /* Fallback Chain */
+  .fallback-chain-box {
+    padding: 2.5rem;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    border-radius: var(--radius-lg);
+  }
+
+  .chain-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .chain-icon {
+    font-size: 2rem;
+  }
+
+  .chain-header h4 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0 0 0.25rem 0;
+    color: var(--text-main);
+  }
+
+  .chain-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .code-inline {
+    font-family: monospace;
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.1);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+  }
+
+  .chain-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .chain-step {
+    background: rgba(2, 6, 23, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .step-badge {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    color: #020617;
+    font-weight: 900;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chain-step strong {
+    font-size: 0.95rem;
+    color: var(--text-main);
+  }
+
+  .chain-step p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .step-arrow {
+    display: none;
+    color: var(--text-dim);
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .via-languages {
+      padding: 60px 0;
+    }
+  }
+</style>

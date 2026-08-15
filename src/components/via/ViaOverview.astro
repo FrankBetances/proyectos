@@ -2,42 +2,54 @@
 const domains = [
   {
     title: "Audiología Pediátrica",
-    desc: "Tamizaje auditivo, audiometría tonal liminar guiada por Hughson-Westlake y audiometría condicionada gamificada (El Tren del Sonido).",
-    icon: "👂"
+    desc: "Tamizaje auditivo, audiometría tonal liminar guiada por algoritmo Hughson-Westlake y audiometría condicionada gamificada («El Tren del Sonido»).",
+    icon: "🎧",
+    badge: "Vía Aérea 250–4000 Hz"
   },
   {
     title: "Logopedia y Lenguaje",
-    desc: "Logoaudiometría verbal en campo libre, discriminación de fonemas, repetición de palabras y evaluación del criterio SODA (T.A.R.).",
-    icon: "🗣️"
+    desc: "Logoaudiometría verbal en campo libre, análisis acústico de voz sostenida (/a/) validado contra Praat, articulación fonética T.A.R. (SODA) y prosodia de habla conectada.",
+    icon: "🗣️",
+    badge: "Biomarcadores Acústicos"
   },
   {
-    title: "Neurodesarrollo",
-    desc: "Cribado de Autismo (M-CHAT-R), SAHS infantil (PSQ de Chervin), test de disfagia MECV-V y exploración de 5 funciones ejecutivas.",
-    icon: "🧠"
+    title: "Neurodesarrollo & Cognición",
+    desc: "Cribado de autismo M-CHAT-R/F (16–30 m), tamizaje de trastornos respiratorios del sueño SAHS (PSQ de Chervin) y 5 mini-juegos de funciones ejecutivas.",
+    icon: "🧠",
+    badge: "Evaluación Conductual"
+  },
+  {
+    title: "Deglución & Disfagia",
+    desc: "Método de Exploración Clínica Volumen-Viscosidad (MECV-V) con pulsioxímetro BLE integrado para detección inmediata de desaturación de SpO₂ ≥ 3%.",
+    icon: "💧",
+    badge: "Seguridad y Eficacia"
   }
 ];
 
 const restrictions = [
-  { text: "Emitir diagnósticos automatizados sin validación médica", reason: "Requeriría clasificación SaMD Clase III" },
-  { text: "Sustituir el juicio del profesional sanitario", reason: "Diseñado como herramienta de apoyo (CDSS), no de reemplazo" },
-  { text: "Interpretar resultados de forma patológica de forma autónoma", reason: "Fuera del alcance validado sin escrutinio clínico" },
-  { text: "Recomendar tratamientos farmacológicos o quirúrgicos", reason: "Competencia exclusiva del facultativo graduado" },
-  { text: "Funcionar en entornos no supervisados o domésticos", reason: "Diseñado y validado únicamente para uso profesional en clínica" }
+  { text: "Emitir diagnósticos automatizados sin validación médica", reason: "Requeriría clasificación SaMD Clase III; VIA+ actúa como CDSS de apoyo" },
+  { text: "Sustituir el juicio clínico del profesional sanitario", reason: "Herramienta de ayuda a la decisión clínica, nunca de reemplazo facultativo" },
+  { text: "Interpretar resultados como patológicos de forma autónoma", reason: "La correlación clínica foniátrica es competencia exclusiva del evaluador" },
+  { text: "Recomendar prescripciones terapéuticas o farmacológicas", reason: "Acto médico reservado al profesional sanitario colegiado" },
+  { text: "Operar en entornos no supervisados o domésticos", reason: "Diseñado y validado estrictamente para uso profesional en consulta clínica" }
 ];
 ---
 
-<section id="que-es-via" class="via-overview">
+<section id="que-es-via" class="via-overview section-padding">
   <div class="container">
     <div class="section-header">
       <span class="tag">Definición & Alcance Clínico</span>
       <h2>¿Qué es <span class="gradient-text">VIA+</span>?</h2>
-      <p>Herramienta de apoyo a la decisión clínica (CDSS) que opera sobre tablets iOS/Android bajo la supervisión directa del facultativo.</p>
+      <p>Herramienta de apoyo a la decisión clínica (CDSS) que opera sobre tablets iOS/Android bajo la supervisión directa del facultativo especialista.</p>
     </div>
 
     <div class="domains-grid">
       {domains.map((d) => (
         <div class="glass-card domain-card">
-          <span class="domain-icon">{d.icon}</span>
+          <div class="domain-top">
+            <span class="domain-icon">{d.icon}</span>
+            <span class="badge badge-cyan">{d.badge}</span>
+          </div>
           <h3>{d.title}</h3>
           <p>{d.desc}</p>
         </div>
@@ -49,7 +61,7 @@ const restrictions = [
       <div class="restriction-header">
         <span class="restriction-icon">⛔</span>
         <div>
-          <h3>¿Qué NO hace VIA+? (Límites Regulatorios)</h3>
+          <h3>¿Qué NO hace VIA+? (Límites y Principios de Seguridad)</h3>
           <p>Para cumplir con la directiva MDR 2017/745 y garantizar la máxima seguridad del paciente pediátrico:</p>
         </div>
       </div>
@@ -72,100 +84,124 @@ const restrictions = [
 <style>
   .via-overview {
     padding: 90px 0;
+    position: relative;
   }
 
   .domains-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 3.5rem;
   }
 
   .domain-card {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 2rem;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .domain-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 242, 254, 0.35);
+  }
+
+  .domain-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
   }
 
   .domain-icon {
-    font-size: 2.2rem;
-    width: 56px;
-    height: 56px;
+    font-size: 2rem;
+    width: 52px;
+    height: 52px;
     background: rgba(0, 242, 254, 0.1);
     border: 1px solid rgba(0, 242, 254, 0.3);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.25rem;
   }
 
   .domain-card h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 800;
     margin-bottom: 0.75rem;
+    color: var(--text-main);
   }
 
   .domain-card p {
+    font-size: 0.92rem;
     color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.55;
+    margin: 0;
   }
 
+  /* Restrictions Box */
   .restriction-card {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 10, 20, 0.4) 100%);
-    border: 1px solid rgba(244, 63, 94, 0.3);
     padding: 2.5rem;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-lg);
   }
 
   .restriction-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.25rem;
     margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .restriction-icon {
-    font-size: 2rem;
-    line-height: 1;
+    font-size: 2.2rem;
   }
 
   .restriction-header h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 800;
-    color: var(--accent-rose);
-    margin-bottom: 0.25rem;
+    margin: 0 0 0.25rem 0;
+    color: var(--text-main);
   }
 
   .restriction-header p {
+    font-size: 0.92rem;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    margin: 0;
   }
 
   .restrictions-list {
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 1.25rem;
   }
 
   .restriction-item {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid var(--border-light);
+    background: rgba(2, 6, 23, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 1.25rem;
     border-radius: var(--radius-md);
-    padding: 1rem 1.25rem;
   }
 
   .cross-icon {
     font-size: 1.1rem;
+    line-height: 1.4;
   }
 
   .restriction-body {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.25rem;
   }
 
   .restriction-body strong {
@@ -174,13 +210,13 @@ const restrictions = [
   }
 
   .reason-tag {
-    font-size: 0.825rem;
-    color: var(--text-dim);
+    font-size: 0.84rem;
+    color: #f87171;
   }
 
   @media (max-width: 768px) {
-    .restriction-card {
-      padding: 1.5rem;
+    .via-overview {
+      padding: 60px 0;
     }
   }
 </style>

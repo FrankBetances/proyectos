@@ -1,22 +1,22 @@
 ---
 const techItems = [
-  { category: "Frontend & UI", stack: "React Native 0.80.1 · TypeScript 5.4 · Gluestack UI v1 · Lucide Icons" },
-  { category: "Base de Datos Local", stack: "TypeORM 0.3.27 · Nitro SQLite (AES-256-GCM) · Offline-First" },
-  { category: "Audio DSP & Tonos", stack: "react-native-audio-api (Oboe engine) · OscillatorNode · AudioRecorder RMS" },
-  { category: "Hardware BLE & Sensores", stack: "react-native-ble-plx (Pulsioxímetro 0x1822) · Vision Camera" },
-  { category: "Voz & Reconocimiento", stack: "react-native-tts · @react-native-voice/voice · Audio Recorder Player" },
-  { category: "Informes & Telemetría", stack: "pdf-lib (PDFs clínicos) · lz-string · react-native-qrcode-svg (ecl Q)" },
-  { category: "Identidad & Backend", stack: "Firebase Auth (email/password) · Firestore (perfil del profesional)" },
-  { category: "Estado Global", stack: "Redux Toolkit · Redux Persist (whitelist theme)" }
+  { category: "Frontend / Mobile Core", stack: "React Native 0.80.1 · TypeScript 5.4 · Gluestack UI v1 · Lucide Icons · Reanimated" },
+  { category: "Persistencia Local & Datos", stack: "TypeORM 0.3.x · Nitro SQLite (driver síncrono C++) · Offline-first estricto" },
+  { category: "Audio DSP & Sonómetro", stack: "react-native-audio-api (Oboe / AudioContext 48 kHz) · Ponderación A con estado (IEC 61672)" },
+  { category: "Validación Acústica Praat", stack: "LPC orden 20 · Pasa-alto 55 Hz · Benchmarks automatizados en Python/Praat (tools/acoustics)" },
+  { category: "Voz Neuronal (Build-time)", stack: "Piper (VITS) · Coqui TTS (Celtia / Proxecto Nós) · AhoTTS (Maider / UPV/EHU) · ffmpeg loudnorm" },
+  { category: "Hardware BLE & Sensores", stack: "react-native-ble-plx (Pulsioxímetro 0x1822 + enlace GATT periférico Lúa)" },
+  { category: "Informes & Telemetría", stack: "pdf-lib (informes clínicos estructurados) · lz-string · react-native-qrcode-svg (ecl Q)" },
+  { category: "Identidad & Seguridad", stack: "Firebase Auth (email/password) · Firestore (solo perfil profesional) · Cifrado TLS 1.3" }
 ];
 ---
 
-<section id="stack-tecnico" class="via-tech">
+<section id="stack-tecnico" class="via-tech section-padding">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Arquitectura de Software Médico</span>
-      <h2>Stack Tecnológico <span class="gradient-text">Especializado</span></h2>
-      <p>Construido con librerías nativas de alto rendimiento optimizadas para procesamiento en tiempo real en tablets iOS y Android.</p>
+      <span class="tag">Arquitectura Embebida de Software Médico</span>
+      <h2>Stack Tecnológico & <span class="gradient-text">Herramientas de Build-Time</span></h2>
+      <p>Construido con librerías nativas de alto rendimiento optimizadas para procesamiento acústico y sensorial en tiempo real en tablets.</p>
     </div>
 
     <div class="tech-grid">
@@ -34,6 +34,7 @@ const techItems = [
   .via-tech {
     padding: 90px 0;
     background: rgba(0, 0, 0, 0.2);
+    position: relative;
   }
 
   .tech-grid {
@@ -45,7 +46,17 @@ const techItems = [
   .tech-card {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.6rem;
+    padding: 1.75rem;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .tech-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 242, 254, 0.3);
   }
 
   .tech-cat {
@@ -60,6 +71,13 @@ const techItems = [
     color: var(--text-main);
     font-size: 0.95rem;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .via-tech {
+      padding: 60px 0;
+    }
   }
 </style>
