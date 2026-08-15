@@ -6,6 +6,7 @@ import WhatIsValeria from '../components/WhatIsValeria.astro';
 import TherapyBlocks from '../components/TherapyBlocks.astro';
 import AcademySection from '../components/AcademySection.astro';
 import AdultPanel from '../components/AdultPanel.astro';
+import LuaMascotSection from '../components/LuaMascotSection.astro';
 import LocalesLanguages from '../components/LocalesLanguages.astro';
 import Collaborators from '../components/Collaborators.astro';
 import ClinicalTelemetry from '../components/ClinicalTelemetry.astro';
@@ -13,49 +14,62 @@ import Footer from '../components/Footer.astro';
 
 const valeriaJsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Valeria+",
-  "softwareVersion": "10.3",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Android, iOS",
-  "description": "Plataforma móvil v10.3 para niños con hipoacusia, implante coclear, dislalias, TEA, dislexia y trastornos del lenguaje. 7 bloques de terapia incluyendo Realidad Aumentada 3D, evaluador de Pares Mínimos D7 y principio clínico MDR 100% offline.",
-  "author": {
-    "@type": "Person",
-    "name": "Dr. Frank Alberto Betances Reinoso",
-    "url": "https://FrankBetances.github.io/proyectos/cv"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR"
-  },
-  "featureList": [
-    "Test de Ling de 6 sonidos",
-    "Pares Mínimos D7 (vecino más cercano O2 con 35/35 contrastes)",
-    "7 bloques de terapia (Pares Mínimos, Expansión Semántica, Audición, Lenguaje, TEA, Dislexia, Realidad Aumentada)",
-    "Realidad Aumentada 3D con sensor de conducta motora y micrófono apagado",
-    "Academy multidominio de formación para cuidadores (incluye 27 configuraciones dactilológicas de LSE)",
-    "Variedades lingüísticas: Castellano, Galego (Proxecto Nós), Dominicano (es-DO), Euskara (ILENIA), Inglés (EE. UU.)",
-    "Panel del Adulto para carga comunicativa manual (MDR)",
-    "Reconocimiento de voz local en dispositivo (ASR Fase A)",
-    "Funcionamiento 100% offline y cifrado en reposo"
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://FrankBetances.github.io/proyectos/#software",
+      "name": "Valeria+",
+      "softwareVersion": "12.0",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android, iOS",
+      "description": "Plataforma móvil v12 para niñas y niños con hipoacusia, implante coclear, dislalias, TEA, dislexia y dificultades del lenguaje. 7 bloques de terapia incluyendo Realidad Aumentada 3D, evaluador de Pares Mínimos D7, mascota Lúa en píxel art y principio clínico MDR 100% offline.",
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Frank Alberto Betances Reinoso",
+        "jobTitle": "Otorrinolaringólogo y Especialista en Salud Digital",
+        "url": "https://FrankBetances.github.io/proyectos/cv"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Earlify Health S.L.",
+        "url": "https://FrankBetances.github.io/proyectos/earlify"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "featureList": [
+        "Test de Ling de 6 sonidos con comprobación previa",
+        "Pares Mínimos D7 (vecino más cercano O2 con 35/35 contrastes detectados)",
+        "7 bloques de terapia (Pares Mínimos, Expansión Semántica, Audición, Lenguaje, TEA, Dislexia, Realidad Aumentada)",
+        "Realidad Aumentada 3D con sensor de conducta motora y micrófono apagado (Filament)",
+        "Mascota oficial Lúa en píxel art con 12 niveles de progreso y 18 insignias en 5 metales",
+        "Academy con 7 dominios de capacitación para cuidadores (incluye 27 configuraciones de LSE)",
+        "5 variedades lingüísticas: Castellano (Sharvard), Galego (Celtia / Nós), Dominicano (es-DO), Euskara (HiTZ-TTS), US English (LJSpeech)",
+        "Panel del Adulto para carga comunicativa manual (muro MDR)",
+        "Reconocimiento de voz local en dispositivo (ASR Fase A)",
+        "Funcionamiento 100% offline y cifrado en reposo"
+      ]
+    }
   ]
 };
 ---
 
 <Layout 
-	title="Valeria+ v10.3 · Terapia Auditivo-Verbal y del Lenguaje Offline"
-	description="Plataforma móvil v10.3 para niños con hipoacusia, implante coclear, dislalias, TEA, dislexia y trastornos del lenguaje. 7 bloques de terapia con Realidad Aumentada 3D 100% offline."
-	keywords="Valeria+ v10.3, Terapia Auditivo Verbal, Hipoacusia, Implante Coclear, Dislalias, Realidad Aumentada, Logopedia, Dr. Frank Betances, LSE, Test de Ling, Salud Digital"
+	title="Valeria+ v12 · Terapia Auditivo-Verbal y del Lenguaje Offline"
+	description="Plataforma móvil v12 para niños con hipoacusia, implante coclear, dislalias, TEA, dislexia y dificultades del lenguaje. 7 bloques de terapia, mascota Lúa y Realidad Aumentada 3D 100% offline."
+	keywords="Valeria+ v12, Lúa, Terapia Auditivo Verbal, Hipoacusia, Implante Coclear, Dislalias, Realidad Aumentada, Logopedia, Dr. Frank Betances, LSE, Test de Ling, Salud Digital"
 	jsonLd={valeriaJsonLd}
 >
 	<Header activeTab="home" />
-	<main>
+	<main id="main-content">
 		<Hero />
 		<WhatIsValeria />
 		<TherapyBlocks />
 		<AcademySection />
 		<AdultPanel />
+		<LuaMascotSection />
 		<LocalesLanguages />
 		<Collaborators />
 		<ClinicalTelemetry />

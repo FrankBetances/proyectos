@@ -1,17 +1,20 @@
 ---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
 ---
 
-<section id="panel-adulto" class="adult-section">
+<section id="panel-adulto" class="adult-section section-padding">
   <div class="container">
     <div class="section-header">
       <span class="tag">Muro Regulatorio MDR</span>
       <h2>Panel del Adulto · <span class="gradient-text">Carga Comunicativa</span></h2>
-      <p>Módulos de estrés comunicativo accionables de forma estrictamente manual. La app nunca adapta ni altera parámetros de forma automática.</p>
+      <p>Módulos de reto foniátrico y cognitivo accionables de forma estrictamente manual. La app nunca adapta ni altera parámetros de forma automática.</p>
     </div>
 
     <div class="screenshot-wrapper">
       <img 
-        src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL}/assets/23-panel-adulto.png`} 
+        src={`${baseUrl}/assets/23-panel-adulto.png`} 
         alt="Panel del Adulto de Valeria+" 
         class="manual-screenshot" 
         loading="lazy"
@@ -38,15 +41,23 @@
       </div>
 
       <div class="glass-card adult-card">
-        <div class="adult-icon purple">🐻</div>
-        <h3>Doble Tarea (Oso Distractor)</h3>
+        <div class="adult-icon purple cat-icon-box">
+          <img 
+            src={`${baseUrl}/assets/valeria_lua.png`} 
+            alt="Lúa Gata Distractora" 
+            class="adult-cat-icon-img" 
+            width="32" 
+            height="32" 
+          />
+        </div>
+        <h3>Doble Tarea (Gata Distractora)</h3>
         <p>
-          Un oso distractor se asoma por la periferia sin ser interactivo (<code>pointerEvents="none"</code>), 
-          creando interferencia visual pura para entrenar el paradigma de carga cognitiva dual.
+          <strong>Lúa</strong> se asoma por la periferia sin ser interactiva (<code>pointerEvents="none"</code>), 
+          creando interferencia visual pura para entrenar el paradigma de carga cognitiva dual con animación en el hilo nativo.
         </p>
         <div class="control-mockup">
           <span class="control-label">Interferencia Visual:</span>
-          <span class="badge badge-purple">Hilo Nativo Activo</span>
+          <span class="badge badge-purple">Lúa en Hilo Nativo</span>
         </div>
       </div>
 
@@ -55,11 +66,11 @@
         <h3>Quiebre Pragmático</h3>
         <p>
           "Fallo deliberado": la app guarda silencio y es el adulto quien rompe la comunicación a propósito para evaluar cómo el niño 
-          aplica <strong>estrategias de reparación</strong>.
+          aplica <strong>estrategias de reparación</strong> (con aviso previo de frustración útil).
         </p>
         <div class="control-mockup">
-          <span class="control-label">Estrategia:</span>
-          <span class="badge badge-amber">Frustración Útil Controlada</span>
+          <span class="control-label">Modo Quiebre:</span>
+          <span class="badge badge-amber">Consentimiento Requerido</span>
         </div>
       </div>
     </div>
@@ -73,6 +84,21 @@
     background: rgba(0, 0, 0, 0.2);
   }
 
+  .screenshot-wrapper {
+    max-width: 320px;
+    margin: 0 auto 3rem auto;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-light);
+  }
+
+  .manual-screenshot {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .adult-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -82,27 +108,47 @@
   .adult-card {
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
 
   .adult-icon {
-    font-size: 2.2rem;
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.6rem;
     margin-bottom: 1.25rem;
   }
 
-  .adult-icon.cyan { background: rgba(0, 242, 254, 0.1); border: 1px solid rgba(0, 242, 254, 0.3); }
-  .adult-icon.purple { background: rgba(138, 43, 226, 0.12); border: 1px solid rgba(138, 43, 226, 0.3); }
-  .adult-icon.amber { background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); }
+  .adult-icon.cyan {
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+  }
+
+  .adult-icon.purple {
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+  }
+
+  .adult-icon.amber {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+  }
+
+  .adult-cat-icon-img {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+    object-fit: contain;
+  }
 
   .adult-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
+    color: var(--text-main);
   }
 
   .adult-card p {
@@ -114,18 +160,18 @@
   }
 
   .control-mockup {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 0.85rem 1.1rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .control-label {
-    font-size: 0.8rem;
+    font-size: 0.825rem;
     color: var(--text-dim);
     font-weight: 600;
   }
@@ -134,44 +180,31 @@
     flex-grow: 1;
     height: 6px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    border-radius: var(--radius-full);
     position: relative;
   }
 
   .slider-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
-    border-radius: 4px;
+    background: var(--accent-cyan);
+    border-radius: var(--radius-full);
   }
 
   .slider-thumb {
-    position: absolute;
-    top: -4px;
     width: 14px;
     height: 14px;
     background: #fff;
     border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
     box-shadow: 0 0 10px var(--accent-cyan);
   }
 
   .control-val {
+    font-family: var(--font-heading);
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--accent-cyan);
-  }
-
-  .screenshot-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
-  }
-
-  .manual-screenshot {
-    max-width: 100%;
-    width: 300px;
-    height: auto;
-    border-radius: 18px;
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-glow);
   }
 </style>

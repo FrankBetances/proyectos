@@ -1,0 +1,283 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+
+const levels = [
+  "1. Gatita", "2. Gata Curiosa", "3. Gata Juguetona", "4. Gata Valiente",
+  "5. Gata Exploradora", "6. Gata Saltarina", "7. Gata Sabia", "8. Gata Sigilosa",
+  "9. Gata Estrella", "10. Gran Gata", "11. Gata Lunar", "12. Gata Legendaria"
+];
+
+const badgeFamilies = [
+  { name: "Huella", tiers: "5 Rangos (1, 10, 25, 50, 100 sesiones)", desc: "De «Primera huella» a «Centenaria»." },
+  { name: "Llama", tiers: "4 Rangos (3, 7, 14, 30 días)", desc: "Racha viva sostenida de práctica diaria." },
+  { name: "Estrella", tiers: "3 Rangos (1, 5, 10 sesiones)", desc: "Sesiones perfectas (todas con ★★★)." },
+  { name: "De Ocasión", tiers: "6 Insignias Especiales", desc: "Práctica matutina, nocturna, fin de semana y reencuentro." }
+];
+---
+
+<section id="lua-mascota" class="lua-mascot-section section-padding">
+  <div class="container">
+    <div class="glass-card lua-box">
+      
+      <div class="lua-grid">
+        <!-- Visual Column -->
+        <div class="lua-visual-col">
+          <div class="lua-avatar-frame">
+            <img 
+              src={`${baseUrl}/assets/valeria_lua.png`} 
+              alt="Lúa, la gata negra de Valeria+ en Píxel Art" 
+              class="lua-hero-img" 
+              width="180" 
+              height="180" 
+              loading="lazy" 
+              decoding="async"
+            />
+          </div>
+          <span class="lua-tag">Mascota Oficial de Marca & AIoT</span>
+          <h3 class="lua-name">Lúa</h3>
+          <p class="lua-role">Gata negra tipo <em>smoking</em> en píxel art nativo</p>
+        </div>
+
+        <!-- Details Column -->
+        <div class="lua-content-col">
+          <span class="badge badge-orange">Identidad Visual & Gamificación v12</span>
+          <h2>Lúa: La Cara Amiga de la <span class="gradient-text-orange">Rehabilitación Diaria</span></h2>
+          <p class="lua-desc">
+            Desde la versión 12, <strong>Lúa</strong> encabeza toda la experiencia del menor: en el icono de la app, pantalla de bienvenida, tira de progreso del hub, distractora de doble tarea y celebración de sesión. 
+            El niño no asocia la terapia con una prueba médica, sino con el juego guiado junto a su compañera felina.
+          </p>
+
+          <!-- 12 Levels Carousel / Grid -->
+          <div class="levels-strip">
+            <span class="strip-label">🏆 Escalera de 12 Niveles de Progreso (100 XP/Nivel):</span>
+            <div class="levels-pills">
+              {levels.map((lvl, index) => (
+                <span class={`level-pill ${index >= 6 ? 'highlight' : ''}`}>{lvl}</span>
+              ))}
+            </div>
+          </div>
+
+          <!-- 18 Badges Grid -->
+          <div class="badges-mini-grid">
+            {badgeFamilies.map((b) => (
+              <div class="badge-mini-card">
+                <strong>{b.name}</strong>
+                <span class="badge-tiers">{b.tiers}</span>
+                <p>{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .lua-mascot-section {
+    padding: 90px 0;
+    position: relative;
+  }
+
+  .lua-box {
+    padding: 3.5rem 3rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(67, 20, 7, 0.35) 100%);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(249, 115, 22, 0.1);
+  }
+
+  .lua-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .lua-visual-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .lua-avatar-frame {
+    width: 190px;
+    height: 190px;
+    border-radius: 28px;
+    background: rgba(2, 6, 23, 0.6);
+    border: 2px solid rgba(249, 115, 22, 0.4);
+    box-shadow: 0 0 35px rgba(249, 115, 22, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+
+  .lua-hero-img {
+    width: 170px;
+    height: 170px;
+    image-rendering: pixelated;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .lua-hero-img:hover {
+    transform: scale(1.06);
+  }
+
+  .lua-tag {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #fb923c;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.25rem;
+  }
+
+  .lua-name {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--text-main);
+    margin: 0 0 0.25rem 0;
+  }
+
+  .lua-role {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .lua-content-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .badge-orange {
+    align-self: flex-start;
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    color: #fb923c;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+  }
+
+  .gradient-text-orange {
+    background: linear-gradient(135deg, #fb923c 0%, #f43f5e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .lua-content-col h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-main);
+    line-height: 1.2;
+  }
+
+  .lua-desc {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .levels-strip {
+    background: rgba(2, 6, 23, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .strip-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .levels-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .level-pill {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-full);
+  }
+
+  .level-pill.highlight {
+    background: rgba(249, 115, 22, 0.12);
+    border-color: rgba(249, 115, 22, 0.35);
+    color: #fdba74;
+    font-weight: 700;
+  }
+
+  .badges-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .badge-mini-card {
+    background: rgba(2, 6, 23, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .badge-mini-card strong {
+    font-size: 0.9rem;
+    color: var(--text-main);
+  }
+
+  .badge-tiers {
+    font-size: 0.78rem;
+    color: #fb923c;
+    font-weight: 600;
+  }
+
+  .badge-mini-card p {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .lua-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .lua-visual-col {
+      margin: 0 auto;
+    }
+    .badge-orange {
+      align-self: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .lua-box {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

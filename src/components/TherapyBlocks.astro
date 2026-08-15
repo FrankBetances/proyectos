@@ -15,7 +15,7 @@ const blocks = [
     icon: "🗣️",
     title: "Pares Mínimos",
     category: "Dislalias Fonológicas",
-    desc: "15 pares contrastivos (rana/lana, rata/lata) en 6 grupos de consonantes. Evaluador D7 (vecino más cercano O2 con 35/35 contrastes) y sello doble padre-hijo.",
+    desc: "15 pares contrastivos (rana/lana, rata/lata) en 6 grupos de consonantes. Evaluador D7 (vecino más cercano O2 con 35/35 contrastes) y sello doble adulto-niño.",
     badge: "15 Pares · D7 (O2)",
     badgeColor: "cyan",
     items: ["Rotacismo y sigmatismo", "Evaluador O2 (35/35 contrastes)", "Sin frases portadoras redundantes"]
@@ -28,7 +28,7 @@ const blocks = [
     desc: "Progresión léxica estructurada: 5 escenarios diarios, 5 categorías léxicas por familiaridad, 9 progresiones de campo semántico y 8 cápsulas de doble vuelta.",
     badge: "Doble Vuelta (Comprensión + Producción)",
     badgeColor: "purple",
-    items: ["46 pictogramas vectoriales SVG", "Familiaridad adaptada por dialecto", "Antesala de material previa"]
+    items: ["66 pictogramas en píxel art 24×24", "Familiaridad adaptada por dialecto", "Antesala de material previa"]
   },
   {
     id: "audicion",
@@ -45,7 +45,7 @@ const blocks = [
     icon: "💬",
     title: "Lenguaje (7 Terapias)",
     category: "Protocolo Familiar",
-    desc: "Estimulación de atención conjunta, imitación vocal, comprensión instruccional, expresión libre, regulación emocional e interacción social.",
+    desc: "Estimulación de atención conjunta (con formas alternativas), imitación vocal, comprensión instruccional, expresión libre, regulación emocional e interacción social.",
     badge: "Rutina Diaria",
     badgeColor: "cyan",
     items: ["Atención triangulada", "Comunicación funcional", "Interacción en el hogar"]
@@ -74,7 +74,7 @@ const blocks = [
     id: "ar",
     icon: "🎯",
     title: "Realidad Aumentada (3 Terapias)",
-    category: "Sensor Motoro Pediátrico",
+    category: "Sensor Motor Pediátrico",
     desc: "La cámara frontal actúa como sensor de conducta motora con micrófono apagado: AR-1 cinemática orofacial (boquita de beso), AR-2 localización instrumentada del sonido (latencia ms) y AR-3 selección semántica por fijación de mirada.",
     badge: "Solo Android · Sensor 3D",
     badgeColor: "cyan",
@@ -83,7 +83,7 @@ const blocks = [
 ];
 ---
 
-<section id="terapias" class="therapy-section">
+<section id="terapias" class="therapy-section section-padding">
   <div class="container">
     <div class="section-header">
       <span class="tag">Módulos Especializados</span>
@@ -96,29 +96,27 @@ const blocks = [
         src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL}/assets/05-hub-bloques.png`} 
         alt="Hub de Bloques de Terapia" 
         class="manual-screenshot" 
-        loading="lazy"
+        loading="lazy" 
         decoding="async"
       />
     </div>
 
     <div class="blocks-grid">
-      {blocks.map((b) => (
+      {blocks.map((block) => (
         <div class="glass-card block-card">
           <div class="block-top">
-            <span class="block-icon">{b.icon}</span>
-            <span class={`badge badge-${b.badgeColor}`}>{b.badge}</span>
+            <span class="block-icon">{block.icon}</span>
+            <span class={`badge badge-${block.badgeColor}`}>{block.badge}</span>
           </div>
 
-          <span class="block-category">{b.category}</span>
-          <h3 class="block-title">{b.title}</h3>
-          <p class="block-desc">{b.desc}</p>
+          <span class="block-category">{block.category}</span>
+          <h3>{block.title}</h3>
+          <p class="block-desc">{block.desc}</p>
 
-          <ul class="block-features">
-            {b.items.map((item) => (
+          <ul class="block-items">
+            {block.items.map((item) => (
               <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
+                <span class="check-icon">✓</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -136,9 +134,24 @@ const blocks = [
     background: rgba(0, 0, 0, 0.2);
   }
 
+  .screenshot-wrapper {
+    max-width: 320px;
+    margin: 0 auto 3rem auto;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-light);
+  }
+
+  .manual-screenshot {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .blocks-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
   }
 
@@ -147,60 +160,56 @@ const blocks = [
     flex-direction: column;
     height: 100%;
     position: relative;
+    overflow: hidden;
   }
 
   .block-top {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 1.25rem;
+    align-items: center;
+    margin-bottom: 1rem;
   }
 
   .block-icon {
-    font-size: 2.2rem;
-    width: 52px;
-    height: 52px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 2rem;
   }
 
   .block-category {
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--text-dim);
     letter-spacing: 0.05em;
-    color: var(--accent-cyan);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
   }
 
-  .block-title {
-    font-size: 1.4rem;
+  .block-card h3 {
+    font-size: 1.35rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
+    color: var(--text-main);
   }
 
   .block-desc {
     color: var(--text-muted);
-    font-size: 0.975rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     flex-grow: 1;
   }
 
-  .block-features {
+  .block-items {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--border-light);
+    padding-top: 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-light);
+    gap: 0.6rem;
   }
 
-  .block-features li {
+  .block-items li {
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -208,29 +217,8 @@ const blocks = [
     color: var(--text-main);
   }
 
-  .block-features svg {
-    color: var(--accent-cyan);
-    flex-shrink: 0;
-  }
-
-  .screenshot-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
-  }
-
-  .manual-screenshot {
-    max-width: 100%;
-    width: 300px;
-    height: auto;
-    border-radius: 18px;
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-glow);
-  }
-
-  @media (max-width: 768px) {
-    .blocks-grid {
-      grid-template-columns: 1fr;
-    }
+  .check-icon {
+    color: var(--accent-emerald);
+    font-weight: bold;
   }
 </style>
