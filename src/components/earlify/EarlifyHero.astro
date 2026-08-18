@@ -14,19 +14,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <div class="glow-orb orb-purple"></div>
       <div class="glow-orb orb-emerald"></div>
       <div class="hero-grid-pattern"></div>
-      
-      <!-- Central Ambient Core Brand Mark -->
-      <div class="brand-ambient-core" id="hero-brand-core">
-        <img 
-          src={`${baseUrl}/assets/earlify-logo.png?v=8`} 
-          alt="Earlify Health S.L." 
-          class="brand-core-img" 
-          width="360"
-          height="360"
-          loading="eager"
-          fetchpriority="high"
-        />
-      </div>
     </div>
 
     <!-- Progress & Stage Indicators (Discreet Editorial Line) -->
@@ -39,9 +26,21 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <!-- PHASE 0: El Abismo Clínico & La Desconexión (0% - 28% Scroll) -->
     <div id="phase-0" class="hero-phase-panel active-phase">
       <div class="phase-inner max-w-content">
+        <!-- Logo Oficial de Earlify Health visible, nítido y luminoso -->
+        <div class="hero-logo-wrapper">
+          <img 
+            src={`${baseUrl}/assets/earlify-logo.png?v=9`} 
+            alt="Logo Oficial de Earlify Health" 
+            class="hero-brand-logo" 
+            width="260"
+            height="260"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+
         <div class="editorial-eyebrow">
-          <span class="eyebrow-accent">—</span>
-          <span>Earlify Health S.L. · Salud Digital & Neurodesarrollo</span>
+          <span>Earlify Health · Salud Digital & Neurodesarrollo</span>
         </div>
         <h1 class="hero-headline">
           Tras un diagnóstico, las familias se sienten solas al volver a casa.
@@ -62,7 +61,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <div id="phase-1" class="hero-phase-panel">
       <div class="phase-inner max-w-content">
         <div class="editorial-eyebrow eyebrow-cyan">
-          <span class="eyebrow-accent">—</span>
           <span>Arquitectura de Continuidad Médica</span>
         </div>
         <h2 class="hero-headline text-gradient-cyan">
@@ -90,7 +88,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <div id="phase-2" class="hero-phase-panel">
       <div class="phase-inner max-w-content">
         <div class="editorial-eyebrow eyebrow-emerald">
-          <span class="eyebrow-accent">—</span>
           <span>Evidencia Empírica & Criterio Médico</span>
         </div>
         <h2 class="hero-headline">
@@ -121,7 +118,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.getElementById('earlify-hero-scrub');
-    const brandCore = document.getElementById('hero-brand-core');
     const phase0 = document.getElementById('phase-0');
     const phase1 = document.getElementById('phase-1');
     const phase2 = document.getElementById('phase-2');
@@ -178,14 +174,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       phase2!.style.opacity = op2.toFixed(3);
       phase2!.style.transform = `translateY(${(0.85 - targetProgress) * 35}px)`;
       phase2!.style.pointerEvents = op2 > 0.4 ? 'auto' : 'none';
-
-      // Central Brand Graphic Scale and Blur Modulation
-      if (brandCore) {
-        const scale = 1 + currentProgress * 0.25;
-        const opacity = Math.max(0.12, 0.25 - currentProgress * 0.12);
-        brandCore.style.transform = `translate(-50%, -50%) scale(${scale.toFixed(3)})`;
-        brandCore.style.opacity = opacity.toFixed(3);
-      }
 
       // Editorial Tracker Bars
       if (fill0) fill0.style.width = `${Math.min(100, Math.max(0, (targetProgress / 0.33) * 100))}%`;
@@ -272,20 +260,27 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
   }
 
-  .brand-ambient-core {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.22;
-    transition: opacity 0.2s ease-out;
-    filter: drop-shadow(0 0 50px rgba(0, 242, 254, 0.2));
+  /* Hero Brand Logo (Phase 0) */
+  .hero-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem auto;
   }
 
-  .brand-core-img {
-    width: min(380px, 70vw);
-    height: auto;
+  .hero-brand-logo {
+    height: clamp(100px, 16vw, 155px);
+    width: auto;
+    max-width: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 0 35px rgba(0, 242, 254, 0.45)) drop-shadow(0 10px 25px rgba(0, 0, 0, 0.6));
+    display: block;
+    animation: subtleFloat 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes subtleFloat {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-6px); }
   }
 
   /* Editorial Tracker */
@@ -355,18 +350,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .editorial-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--accent-cyan);
-    margin-bottom: 1.5rem;
-  }
-
-  .eyebrow-accent {
-    color: var(--accent-cyan);
-    font-weight: 900;
+    margin-bottom: 1.25rem;
   }
 
   .eyebrow-cyan {
