@@ -17,14 +17,28 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     </div>
 
     <!-- Progress & Stage Indicators (Discreet Editorial Line) -->
-    <div class="hero-editorial-tracker" aria-hidden="true">
+    <div class="hero-editorial-tracker" id="v-tracker" aria-hidden="true">
       <div class="tracker-segment" id="v-track-0"><span>01</span><div class="track-bar"><div class="track-fill" id="v-fill-0"></div></div><span>Principio MDR</span></div>
       <div class="tracker-segment" id="v-track-1"><span>02</span><div class="track-bar"><div class="track-fill" id="v-fill-1"></div></div><span>7 Bloques & RA</span></div>
       <div class="tracker-segment" id="v-track-2"><span>03</span><div class="track-bar"><div class="track-fill" id="v-fill-2"></div></div><span>Lúa & Evidencia</span></div>
     </div>
 
-    <!-- PHASE 0: El Principio Clínico & El Muro MDR (0% - 30% Scroll) -->
-    <div id="v-phase-0" class="hero-phase-panel active-phase">
+    <!-- INITIAL ENTRY STAGE: Minimalist clean landing prompt before scroll -->
+    <div id="v-initial-entry" class="hero-initial-entry">
+      <div class="entry-brand-badge">
+        <span class="entry-pulse-dot"></span>
+        <span>Valeria+ v12 · Plataforma Clínica Offline</span>
+      </div>
+      <div class="entry-scroll-prompt">
+        <span class="prompt-text">Desliza para comenzar la experiencia</span>
+        <div class="hint-mouse">
+          <div class="mouse-wheel"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 0: El Principio Clínico & El Muro MDR (Aparece al hacer scroll: 5% - 35%) -->
+    <div id="v-phase-0" class="hero-phase-panel">
       <div class="phase-inner max-w-content">
         <!-- Official Valeria+ App Icon with Lua Mascot -->
         <div class="valeria-app-icon-wrapper">
@@ -59,17 +73,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           <span class="badge-pill pill-emerald">🩺 Sello ITEMAS 2024</span>
           <span class="badge-pill pill-amber">🎓 Incubación USC-INTEGRA</span>
         </div>
-
-        <div class="hero-scroll-hint">
-          <span class="hint-text">Desliza para descubrir los 7 bloques de terapia</span>
-          <div class="hint-mouse">
-            <div class="mouse-wheel"></div>
-          </div>
-        </div>
       </div>
     </div>
 
-    <!-- PHASE 1: Los 7 Bloques Clínicos & Realidad Aumentada 3D (33% - 68% Scroll) -->
+    <!-- PHASE 1: Los 7 Bloques Clínicos & Realidad Aumentada 3D (38% - 70% Scroll) -->
     <div id="v-phase-1" class="hero-phase-panel">
       <div class="phase-inner max-w-showcase">
         <div class="editorial-eyebrow eyebrow-cyan">
@@ -128,7 +135,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       </div>
     </div>
 
-    <!-- PHASE 2: Mascota Lúa, 5 Variedades & Criterio (70% - 100% Scroll) -->
+    <!-- PHASE 2: Mascota Lúa, 5 Variedades & Criterio (72% - 100% Scroll) -->
     <div id="v-phase-2" class="hero-phase-panel">
       <div class="phase-inner max-w-content">
         <div class="editorial-eyebrow eyebrow-emerald">
@@ -172,6 +179,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.getElementById('valeria-hero-scrub');
+    const initialEntry = document.getElementById('v-initial-entry');
+    const tracker = document.getElementById('v-tracker');
     const phase0 = document.getElementById('v-phase-0');
     const phase1 = document.getElementById('v-phase-1');
     const phase2 = document.getElementById('v-phase-2');
@@ -207,25 +216,41 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     function renderLoop() {
       currentProgress += (targetProgress - currentProgress) * 0.18;
 
-      const op0 = calcOpacity(targetProgress, 0.0, 0.05, 0.25, 0.33);
-      const op1 = calcOpacity(targetProgress, 0.33, 0.42, 0.62, 0.70);
-      const op2 = calcOpacity(targetProgress, 0.70, 0.78, 0.96, 1.00);
+      // Initial landing prompt fades out rapidly as soon as user scrolls (> 0.01)
+      const opEntry = calcOpacity(targetProgress, 0.0, 0.01, 0.03, 0.07);
+      if (initialEntry) {
+        initialEntry.style.opacity = opEntry.toFixed(3);
+        initialEntry.style.transform = `translate(-50%, calc(-50% - ${targetProgress * 50}px))`;
+        initialEntry.style.pointerEvents = opEntry > 0.4 ? 'auto' : 'none';
+      }
+
+      // Phase 0: Enters when scroll begins (0.04 -> peaks at 0.14-0.28 -> exits at 0.36)
+      const op0 = calcOpacity(targetProgress, 0.04, 0.14, 0.28, 0.36);
+      // Phase 1: 7 Bloques & RA (0.37 -> peaks at 0.46-0.64 -> exits at 0.72)
+      const op1 = calcOpacity(targetProgress, 0.37, 0.46, 0.64, 0.72);
+      // Phase 2: Lúa & CTAs (0.72 -> peaks at 0.80-1.00)
+      const op2 = calcOpacity(targetProgress, 0.72, 0.80, 0.98, 1.00);
 
       phase0!.style.opacity = op0.toFixed(3);
-      phase0!.style.transform = `translateY(${-targetProgress * 45}px)`;
+      phase0!.style.transform = `translateY(${(0.20 - targetProgress) * 35}px)`;
       phase0!.style.pointerEvents = op0 > 0.4 ? 'auto' : 'none';
 
       phase1!.style.opacity = op1.toFixed(3);
-      phase1!.style.transform = `translateY(${(0.50 - targetProgress) * 40}px)`;
+      phase1!.style.transform = `translateY(${(0.52 - targetProgress) * 40}px)`;
       phase1!.style.pointerEvents = op1 > 0.4 ? 'auto' : 'none';
 
       phase2!.style.opacity = op2.toFixed(3);
-      phase2!.style.transform = `translateY(${(0.85 - targetProgress) * 35}px)`;
+      phase2!.style.transform = `translateY(${(0.86 - targetProgress) * 35}px)`;
       phase2!.style.pointerEvents = op2 > 0.4 ? 'auto' : 'none';
 
-      if (fill0) fill0.style.width = `${Math.min(100, Math.max(0, (targetProgress / 0.33) * 100))}%`;
-      if (fill1) fill1.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.33) / 0.37) * 100))}%`;
-      if (fill2) fill2.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.70) / 0.30) * 100))}%`;
+      // Tracker visibility (fades in once scroll starts)
+      if (tracker) {
+        tracker.style.opacity = targetProgress > 0.04 ? '1' : '0';
+      }
+
+      if (fill0) fill0.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.04) / 0.32) * 100))}%`;
+      if (fill1) fill1.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.36) / 0.36) * 100))}%`;
+      if (fill2) fill2.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.72) / 0.28) * 100))}%`;
 
       requestAnimationFrame(renderLoop);
     }
@@ -331,6 +356,62 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     100% { transform: translateY(-6px); }
   }
 
+  /* Initial Pristine Entry Stage (Visible only at progress = 0) */
+  .hero-initial-entry {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    z-index: 8;
+    will-change: opacity, transform;
+    pointer-events: auto;
+  }
+
+  .entry-brand-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 1.25rem;
+    background: rgba(168, 85, 247, 0.08);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #D8B4FE;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.18);
+  }
+
+  .entry-pulse-dot {
+    width: 9px;
+    height: 9px;
+    background: var(--accent-purple);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent-purple);
+    animation: pulse 2s infinite;
+  }
+
+  .entry-scroll-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .prompt-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
   /* Editorial Tracker */
   .hero-editorial-tracker {
     position: absolute;
@@ -342,6 +423,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     gap: 1.75rem;
     z-index: 10;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   .tracker-segment {
