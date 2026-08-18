@@ -247,15 +247,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       const op2 = calcOpacity(targetProgress, 0.72, 0.76, 0.98, 1.00);
 
       phase0!.style.opacity = op0.toFixed(3);
-      phase0!.style.transform = `translateY(${(0.15 - targetProgress) * 40}px)`;
+      phase0!.style.transform = `translateY(${(0.08 - targetProgress) * 25}px)`;
       phase0!.style.pointerEvents = op0 > 0.4 ? 'auto' : 'none';
 
       phase1!.style.opacity = op1.toFixed(3);
-      phase1!.style.transform = `translateY(${(0.52 - targetProgress) * 40}px)`;
+      phase1!.style.transform = `translateY(${(0.48 - targetProgress) * 25}px)`;
       phase1!.style.pointerEvents = op1 > 0.4 ? 'auto' : 'none';
 
       phase2!.style.opacity = op2.toFixed(3);
-      phase2!.style.transform = `translateY(${(0.86 - targetProgress) * 35}px)`;
+      phase2!.style.transform = `translateY(${(0.82 - targetProgress) * 25}px)`;
       phase2!.style.pointerEvents = op2 > 0.4 ? 'auto' : 'none';
 
       // Lifestyle Background Dynamic Parallax
@@ -404,13 +404,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 1.25rem auto;
+    margin: 0 auto 0.65rem auto;
   }
 
   .quisqueya-brand-logo {
-    width: clamp(110px, 14vw, 145px);
+    width: clamp(70px, 8.5vw, 88px);
+    max-height: 110px;
+    object-fit: contain;
     height: auto;
-    filter: drop-shadow(0 0 35px rgba(245, 158, 11, 0.45)) drop-shadow(0 10px 25px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.45)) drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
     transition: transform 0.3s ease;
     animation: subtleFloat 4s ease-in-out infinite alternate;
   }
@@ -493,7 +495,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1.5rem;
+    padding: 5.5rem 1.5rem 2rem 1.5rem;
     z-index: 5;
     will-change: opacity, transform;
     opacity: 0;
@@ -524,7 +526,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.65rem;
   }
 
   .eyebrow-amber {
@@ -540,12 +542,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .hero-headline {
-    font-size: clamp(2.1rem, 4.2vw, 3.6rem);
+    font-size: clamp(1.85rem, 3.6vw, 3rem);
     font-weight: 900;
     line-height: 1.18;
     letter-spacing: -0.03em;
     color: #FFFFFF;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
   }
 
@@ -563,13 +565,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .hero-narrative-lead {
-    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
     color: #FFFFFF;
-    line-height: 1.75;
+    line-height: 1.7;
     max-width: 860px;
-    margin: 0 auto 2.25rem auto;
+    margin: 0 auto 1.5rem auto;
     font-weight: 600;
-    padding: 1.35rem 1.85rem;
+    padding: 1.15rem 1.65rem;
     background: #070B14;
     border: 2px solid var(--accent-amber);
     border-radius: var(--radius-lg);
