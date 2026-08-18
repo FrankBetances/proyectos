@@ -13,6 +13,21 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <div class="glow-orb orb-cyan"></div>
       <div class="glow-orb orb-purple"></div>
       <div class="glow-orb orb-emerald"></div>
+      
+      <!-- Visual Metaphor: Clinic & Rigor (Left) to Warm Organic Home (Right) bridged by energy flow -->
+      <div class="hero-metaphor-stage" id="hero-metaphor-stage">
+        <img 
+          src={`${baseUrl}/assets/earlify-hero-metaphor.jpg`} 
+          alt="Metáfora visual de conexión entre el rigor clínico y el hogar" 
+          class="metaphor-artwork-img"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="metaphor-overlay-gradient"></div>
+      </div>
+
       <div class="hero-grid-pattern"></div>
     </div>
 
@@ -125,6 +140,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     const fill0 = document.getElementById('fill-0');
     const fill1 = document.getElementById('fill-1');
     const fill2 = document.getElementById('fill-2');
+    const metaphorStage = document.getElementById('hero-metaphor-stage');
 
     if (!heroSection || !phase0 || !phase1 || !phase2) return;
 
@@ -174,6 +190,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       phase2!.style.opacity = op2.toFixed(3);
       phase2!.style.transform = `translateY(${(0.85 - targetProgress) * 35}px)`;
       phase2!.style.pointerEvents = op2 > 0.4 ? 'auto' : 'none';
+
+      // Metaphor Artwork Dynamic Parallax
+      if (metaphorStage) {
+        const scale = 1 + currentProgress * 0.08;
+        const transY = currentProgress * -25;
+        const artOpacity = Math.max(0.40, 0.70 - currentProgress * 0.25);
+        metaphorStage.style.transform = `translate(-50%, -50%) scale(${scale.toFixed(3)}) translateY(${transY.toFixed(1)}px)`;
+        metaphorStage.style.opacity = artOpacity.toFixed(3);
+      }
 
       // Editorial Tracker Bars
       if (fill0) fill0.style.width = `${Math.min(100, Math.max(0, (targetProgress / 0.33) * 100))}%`;
@@ -249,6 +274,42 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     opacity: 0.16;
   }
 
+  /* Visual Metaphor Stage */
+  .hero-metaphor-stage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(1380px, 94vw);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 82vh;
+    opacity: 0.70;
+    pointer-events: none;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 60px rgba(0, 242, 254, 0.25));
+  }
+
+  .metaphor-artwork-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 92%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 92%);
+    filter: brightness(0.92) contrast(1.12);
+  }
+
+  .metaphor-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(7, 9, 14, 0.2) 0%, rgba(7, 9, 14, 0.65) 80%, var(--bg-dark) 100%);
+    pointer-events: none;
+  }
+
   .hero-grid-pattern {
     position: absolute;
     inset: 0;
@@ -258,6 +319,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     background-size: 60px 60px;
     mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
     -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
+    z-index: 3;
   }
 
   /* Hero Brand Logo (Phase 0) */
