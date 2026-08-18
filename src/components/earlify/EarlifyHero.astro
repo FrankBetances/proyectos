@@ -303,10 +303,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: min(1380px, 94vw);
-    height: auto;
-    aspect-ratio: 16 / 9;
-    max-height: 82vh;
+    width: 100vw;
+    height: 100vh;
+    max-width: 1920px;
+    max-height: 1080px;
     opacity: 0.70;
     pointer-events: none;
     z-index: 2;
@@ -320,6 +320,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     border-radius: var(--radius-lg);
     mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 92%);
     -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 92%);
@@ -329,7 +330,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .metaphor-overlay-gradient {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(7, 9, 14, 0.2) 0%, rgba(7, 9, 14, 0.65) 80%, var(--bg-dark) 100%);
+    background: radial-gradient(circle at 50% 50%, rgba(7, 9, 14, 0.2) 0%, rgba(7, 9, 14, 0.75) 80%, var(--bg-dark) 100%);
     pointer-events: none;
   }
 
@@ -712,6 +713,24 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   @media (max-width: 860px) {
     .hero-phase-panel {
       padding: 5rem 1rem 2rem 1rem;
+    }
+    .hero-metaphor-stage {
+      width: 100vw;
+      height: 100vh;
+      max-height: none;
+      opacity: 0.65;
+    }
+    .metaphor-artwork-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      border-radius: 0;
+      mask-image: radial-gradient(ellipse at 50% 50%, black 65%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 65%, transparent 100%);
+    }
+    .metaphor-overlay-gradient {
+      background: radial-gradient(circle at 50% 45%, rgba(7, 9, 14, 0.35) 0%, rgba(7, 9, 14, 0.88) 85%, var(--bg-dark) 100%);
     }
     .dual-product-capsule {
       grid-template-columns: 1fr;
