@@ -8,8 +8,20 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <section id="valeria-hero-scrub" class="hero-scrub-container">
   <div class="hero-sticky-viewport">
     
-    <!-- Deep Ambient Glow & Backdrop Graphic -->
+    <!-- Deep Ambient Glow & Lifestyle Backdrop Graphic with Parallax -->
     <div class="hero-background-canvas" aria-hidden="true">
+      <div id="v-hero-bg-stage" class="hero-lifestyle-bg-stage">
+        <img 
+          src={`${baseUrl}/assets/valeria-lua-hero-bg.jpg?v=1`} 
+          alt="Dispositivo interactivo de Lúa con pantalla circular mostrando a la gata Lúa en pixel art sobre mesa de madera, con adulto y niño celebrando con choque de manos" 
+          class="lifestyle-artwork-img"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="lifestyle-overlay-gradient"></div>
+      </div>
       <div class="glow-orb orb-purple"></div>
       <div class="glow-orb orb-cyan"></div>
       <div class="glow-orb orb-emerald"></div>
@@ -177,6 +189,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     const fill0 = document.getElementById('v-fill-0');
     const fill1 = document.getElementById('v-fill-1');
     const fill2 = document.getElementById('v-fill-2');
+    const bgStage = document.getElementById('v-hero-bg-stage');
 
     if (!heroSection || !phase0 || !phase1 || !phase2) return;
 
@@ -233,6 +246,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       phase2!.style.transform = `translateY(${(0.86 - targetProgress) * 35}px)`;
       phase2!.style.pointerEvents = op2 > 0.4 ? 'auto' : 'none';
 
+      // Lifestyle Background Dynamic Parallax
+      if (bgStage) {
+        const scale = 1 + currentProgress * 0.08;
+        const transY = currentProgress * -25;
+        const bgOpacity = Math.max(0.40, 0.72 - currentProgress * 0.25);
+        bgStage.style.transform = `translate(-50%, -50%) scale(${scale.toFixed(3)}) translateY(${transY.toFixed(1)}px)`;
+        bgStage.style.opacity = bgOpacity.toFixed(3);
+      }
+
       // Tracker visibility (fades in once scroll starts)
       if (tracker) {
         tracker.style.opacity = targetProgress > 0.02 ? '1' : '0';
@@ -283,6 +305,42 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     pointer-events: none;
     overflow: hidden;
     z-index: 1;
+  }
+
+  /* Lifestyle Artwork Background Parallax Stage */
+  .hero-lifestyle-bg-stage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    max-width: 1920px;
+    max-height: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    will-change: transform, opacity;
+    opacity: 0.72;
+    pointer-events: none;
+  }
+
+  .lifestyle-artwork-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 92%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 92%);
+    filter: brightness(0.85) contrast(1.12);
+  }
+
+  .lifestyle-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(7, 9, 14, 0.25) 0%, rgba(7, 9, 14, 0.72) 80%, var(--bg-dark) 100%);
+    pointer-events: none;
   }
 
   .glow-orb {
