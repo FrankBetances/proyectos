@@ -99,16 +99,16 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
             <div class="cv-feature-card">
               <div class="feature-icon-badge icon-cyan">🏥</div>
               <div class="feature-text">
-                <strong>Actividad Asistencial en Otorrinolaringología</strong>
-                <p>Facultativo Especialista de Área (FEA) en el <strong>Hospital Ribera Polusa</strong> (Lugo). Especialista en audiología y patología infantil.</p>
+                <span class="card-title">Actividad Asistencial en Otorrinolaringología</span>
+                <p class="card-desc">Facultativo Especialista de Área (FEA) en el Hospital Ribera Polusa (Lugo), con dedicación a la audiología y patología infantil.</p>
               </div>
             </div>
 
             <div class="cv-feature-card">
               <div class="feature-icon-badge icon-emerald">💡</div>
               <div class="feature-text">
-                <strong>Innovación & Salud Digital (SaMD)</strong>
-                <p>Co-Fundador y Co-PI en <strong>Earlify Health</strong>, <strong>Valeria+</strong>, <strong>VIA+</strong> y el proyecto <strong>Quisqueya Habla</strong> (FONDOCYT).</p>
+                <span class="card-title">Innovación & Salud Digital (SaMD)</span>
+                <p class="card-desc">Co-Fundador y Co-PI en Earlify Health, Valeria+, VIA+ y en el proyecto Quisqueya Habla (FONDOCYT).</p>
               </div>
             </div>
           </div>
@@ -661,7 +661,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: grid;
     grid-template-columns: 1.15fr 0.95fr;
     gap: 1.5rem;
-    align-items: stretch;
+    align-items: center;
     margin-top: 1.25rem;
     text-align: left;
   }
@@ -669,23 +669,23 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .showcase-cards-col {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
-    justify-content: space-between;
+    gap: 1rem;
+    justify-content: center;
   }
 
   .cv-feature-card {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.05rem 1.25rem;
-    background: rgba(15, 23, 42, 0.65);
+    align-items: center;
+    gap: 1.15rem;
+    padding: 1.15rem 1.35rem;
+    background: rgba(15, 23, 42, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-radius: var(--radius-lg);
     box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
     transition: transform 0.25s ease;
-    flex: 1;
+    text-align: left;
   }
 
   .cv-feature-card:hover {
@@ -694,15 +694,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .feature-icon-badge {
-    font-size: 1.4rem;
-    width: 44px;
-    height: 44px;
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-md);
     flex-shrink: 0;
-    margin-top: 2px;
   }
 
   .icon-cyan {
@@ -722,22 +721,27 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .feature-text {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: left;
   }
 
-  .feature-text strong {
-    display: block;
+  .card-title {
     font-size: 0.98rem;
     font-weight: 800;
     color: var(--text-main);
-    margin-bottom: 0.25rem;
-    line-height: 1.3;
+    line-height: 1.25;
+    text-align: left;
+    display: block;
   }
 
-  .feature-text p {
-    font-size: 0.84rem;
+  .card-desc {
+    font-size: 0.85rem;
     color: var(--text-muted);
-    margin: 0;
     line-height: 1.45;
+    margin: 0;
+    text-align: left;
   }
 
   /* Awards Showcase Card */
@@ -756,7 +760,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .awards-card-header {
