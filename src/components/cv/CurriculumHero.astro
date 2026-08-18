@@ -4,130 +4,441 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : import.meta.env.BASE_URL;
 ---
 
-<section class="cv-hero">
-  <div class="container">
-    <div class="hero-card glass-card">
-      <div class="hero-top">
-        <div class="avatar-wrapper">
-          <div class="avatar-ring">
-            <div class="avatar-content">
-              <img 
-                src={`${baseUrl}/assets/dr-frank-betances.jpg`} 
-                alt="Dr. Frank Alberto Betances Reinoso · Otorrinolaringólogo y Cirujano de Cabeza y Cuello" 
-                class="avatar-img"
-                width="600"
-                height="600"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </div>
+<!-- 320vh Sticky Scroll Hero Section for Dr. Frank Betances CV inspired by Creating-Oneshot-Hero-Landing-Pages -->
+<section id="cv-hero-scrub" class="hero-scrub-container">
+  <div class="hero-sticky-viewport">
+    
+    <!-- Deep Ambient Glow & Clinical Executive Backdrop Graphic with Parallax -->
+    <div class="hero-background-canvas" aria-hidden="true">
+      <div id="cv-hero-bg-stage" class="hero-cv-bg-stage">
+        <img 
+          src={`${baseUrl}/assets/dr-betances-hero-bg.jpg?v=1`} 
+          alt="Despacho médico e investigación clínica en otorrinolaringología con tablet, estetoscopio y publicaciones científicas" 
+          class="cv-artwork-img"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="cv-overlay-gradient"></div>
+      </div>
+      <div class="glow-orb orb-cyan"></div>
+      <div class="glow-orb orb-blue"></div>
+      <div class="glow-orb orb-purple"></div>
+      <div class="hero-grid-pattern"></div>
+    </div>
+
+    <!-- Progress & Stage Indicators (Discreet Editorial Line, invisible at 0 scroll) -->
+    <div class="hero-editorial-tracker" id="cv-tracker" aria-hidden="true">
+      <div class="tracker-segment" id="cv-track-0"><span>01</span><div class="track-bar"><div class="track-fill" id="cv-fill-0"></div></div><span>Perfil & Especialidad</span></div>
+      <div class="tracker-segment" id="cv-track-1"><span>02</span><div class="track-bar"><div class="track-fill" id="cv-fill-1"></div></div><span>Actividad & Ecosistema</span></div>
+      <div class="tracker-segment" id="cv-track-2"><span>03</span><div class="track-bar"><div class="track-fill" id="cv-fill-2"></div></div><span>Evidencia & Contacto</span></div>
+    </div>
+
+    <!-- Sutil indicador de ratón inicial abajo (desaparece al hacer scroll) -->
+    <div id="cv-scroll-starter" class="hero-scroll-starter" aria-hidden="true">
+      <span class="starter-text">Scroll para explorar el currículum</span>
+      <div class="hint-mouse">
+        <div class="mouse-wheel"></div>
+      </div>
+    </div>
+
+    <!-- PHASE 0: Perfil Principal & Especialidad Médica (2% - 36% Scroll) -->
+    <div id="cv-phase-0" class="hero-phase-panel">
+      <div class="phase-inner max-w-content">
+        <!-- Avatar Dr. Frank Betances -->
+        <div class="cv-avatar-wrapper">
+          <div class="cv-avatar-ring">
+            <img 
+              src={`${baseUrl}/assets/dr-frank-betances.jpg`} 
+              alt="Dr. Frank Alberto Betances Reinoso · Otorrinolaringólogo y Cirujano de Cabeza y Cuello" 
+              class="cv-avatar-img"
+              width="180"
+              height="180"
+              loading="eager"
+              fetchpriority="high"
+            />
           </div>
           <span class="status-dot" title="Activo profesionalmente"></span>
         </div>
 
-        <div class="hero-info">
-          <div class="badge-row">
-            <span class="badge badge-cyan">🩺 FEA Otorrinolaringología</span>
-            <span class="badge badge-purple">🔬 Audiología Infantil & Salud Digital</span>
-            <span class="badge badge-emerald">🏆 Ennova Health 2025 & 2023</span>
+        <div class="editorial-eyebrow eyebrow-cyan">
+          <span>Facultativo Especialista & Líder en Salud Digital</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Dr. Frank Alberto <span class="gradient-text-cyan">Betances Reinoso</span>
+        </h1>
+
+        <p class="hero-narrative-lead">
+          Médico Especialista en <strong>Otorrinolaringología y Cirugía de Cabeza y Cuello</strong>, Especialista en Audiología Infantil, Docente Universitario e Investigador Principal en Salud Digital y Rehabilitación del Lenguaje.
+        </p>
+
+        <div class="hero-badge-pill-row">
+          <span class="badge-pill pill-cyan">🩺 FEA Otorrinolaringología</span>
+          <span class="badge-pill pill-purple">🔬 Audiología Infantil & Salud Digital</span>
+          <span class="badge-pill pill-emerald">🏆 Ennova Health 2025 & 2023</span>
+          <span class="badge-pill pill-amber">🏛️ SERGAS & Ribera Polusa</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 1: Afiliaciones Clínicas & Ecosistema de Innovación (38% - 70% Scroll) -->
+    <div id="cv-phase-1" class="hero-phase-panel">
+      <div class="phase-inner max-w-showcase">
+        <div class="editorial-eyebrow eyebrow-purple">
+          <span>Afiliaciones Clínicas & Ecosistema de Investigación</span>
+        </div>
+        <h2 class="hero-headline gradient-text-cyan">
+          Otorrinolaringología, Docencia Universitaria & Liderazgo SaMD.
+        </h2>
+
+        <div class="cv-showcase-grid">
+          <!-- Left: Clinical & Academic Cards -->
+          <div class="showcase-cards-col">
+            <div class="cv-feature-card">
+              <div class="feature-icon-badge icon-cyan">🏥</div>
+              <div class="feature-text">
+                <strong>Actividad Asistencial en Otorrinolaringología</strong>
+                <p>FEA en el <strong>Hospital Ribera Polusa</strong> (Lugo) y experiencia clínica y quirúrgica en el <strong>CHUS (SERGAS)</strong>.</p>
+              </div>
+            </div>
+
+            <div class="cv-feature-card">
+              <div class="feature-icon-badge icon-purple">🎓</div>
+              <div class="feature-text">
+                <strong>Docencia Universitaria & Formación Médica</strong>
+                <p>Docente de Metodología de Investigación (<strong>UCATECI</strong>), formación de posgrado en <strong>UAH</strong>, <strong>USAL</strong> y doctorando en <strong>USC</strong>.</p>
+              </div>
+            </div>
+
+            <div class="cv-feature-card">
+              <div class="feature-icon-badge icon-emerald">💡</div>
+              <div class="feature-text">
+                <strong>Investigación & Ecosistema de Salud Digital</strong>
+                <p>Co-Fundador y Co-PI de <strong>Earlify Health</strong>, <strong>Valeria+</strong>, <strong>VIA+</strong> y el proyecto <strong>Quisqueya Habla</strong> (FONDOCYT).</p>
+              </div>
+            </div>
           </div>
 
-          <h1 class="hero-title">
-            Dr. Frank Alberto <span class="gradient-text">Betances Reinoso</span>
-          </h1>
-
-          <p class="hero-subtitle">
-            Médico Especialista en Otorrinolaringología y Cirugía de Cabeza y Cuello · Especialista en Audiología Infantil · Docente Universitario e Investigador en Salud Digital y Rehabilitación del Lenguaje.
-          </p>
-
-          <div class="hero-affiliations">
-            <div class="affiliation-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v14M21 7v14M6 11h12M6 15h12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg>
-              <span>Facultativo Especialista — <strong>Hospital Ribera Polusa</strong> (Lugo)</span>
+          <!-- Right: Awards & Distinction Showcase -->
+          <div class="showcase-metrics-col">
+            <div class="awards-showcase-card">
+              <div class="awards-card-header">
+                <span class="trophy-icon">🏆</span>
+                <strong>Premios & Sellos de Innovación</strong>
+              </div>
+              <div class="awards-sublist">
+                <div class="award-item">
+                  <span class="award-year">2025</span>
+                  <div class="award-desc">
+                    <strong>Premio Ennova Health</strong>
+                    <span>Transformación Digital en Salud</span>
+                  </div>
+                </div>
+                <div class="award-item">
+                  <span class="award-year">2024</span>
+                  <div class="award-desc">
+                    <strong>Sello de Calidad ITEMAS</strong>
+                    <span>Instituto de Salud Carlos III</span>
+                  </div>
+                </div>
+                <div class="award-item">
+                  <span class="award-year">2023</span>
+                  <div class="award-desc">
+                    <strong>1.er Lugar Innovación SERGAS</strong>
+                    <span>Premios Sanidade Pública Galicia</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="affiliation-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              <span>Docente Universitario de Metodología de la Investigación (UCATECI)</span>
-            </div>
-            <div class="affiliation-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              <span>Investigador Principal / Co-PI <strong>Earlify Health</strong>, <strong>VALERIA+</strong>, <strong>VIA+</strong> y <strong>FONDOCYT</strong></span>
-            </div>
-          </div>
-
-          <div class="hero-actions print-hide">
-            <button onclick="window.print()" class="btn-primary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-              <span>Imprimir / PDF</span>
-            </button>
-
-            <a href="https://www.researchgate.net/profile/Frank-Reinoso" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-              <span>ResearchGate</span>
-            </a>
-
-            <a href="https://orcid.org/0000-0002-6349-9537" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              <span class="orcid-icon">ID</span>
-              <span>ORCID</span>
-            </a>
-
-            <button id="open-contact-modal" class="btn-secondary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span>Contacto</span>
-            </button>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- PHASE 2: Evidencia Científica & Contacto (72% - 100% Scroll) -->
+    <div id="cv-phase-2" class="hero-phase-panel">
+      <div class="phase-inner max-w-content">
+        <div class="editorial-eyebrow eyebrow-emerald">
+          <span>Producción Científica & Contacto Profesional</span>
+        </div>
+        <h2 class="hero-headline">
+          <span class="quote-tagline-cyan">“Rigor médico, evidencia clínica y tecnología al servicio del paciente.”</span>
+        </h2>
+        <p class="hero-narrative-lead">
+          Investigación clínica y traslacional con publicaciones indexadas en <strong>ResearchGate</strong>, <strong>ORCID</strong> y comités de bioética, uniendo la otorrinolaringología quirúrgica con software médico de apoyo a la decisión clínica.
+        </p>
+
+        <div class="hero-cta-group print-hide">
+          <button onclick="window.print()" class="btn-cv-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Imprimir / Guardar PDF</span>
+          </button>
+
+          <a href="https://www.researchgate.net/profile/Frank-Reinoso" target="_blank" rel="noopener noreferrer" class="btn-cv-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>ResearchGate</span>
+          </a>
+
+          <a href="https://orcid.org/0000-0002-6349-9537" target="_blank" rel="noopener noreferrer" class="btn-cv-secondary">
+            <span class="orcid-badge">ID</span>
+            <span>ORCID</span>
+          </a>
+
+          <button id="open-contact-modal" class="btn-cv-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>Contactar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<script>
+  function initCurriculumHero() {
+    const heroSection = document.getElementById('cv-hero-scrub');
+    const scrollStarter = document.getElementById('cv-scroll-starter');
+    const tracker = document.getElementById('cv-tracker');
+    const phase0 = document.getElementById('cv-phase-0');
+    const phase1 = document.getElementById('cv-phase-1');
+    const phase2 = document.getElementById('cv-phase-2');
+
+    const fill0 = document.getElementById('cv-fill-0');
+    const fill1 = document.getElementById('cv-fill-1');
+    const fill2 = document.getElementById('cv-fill-2');
+    const bgStage = document.getElementById('cv-hero-bg-stage');
+
+    if (!heroSection || !phase0 || !phase1 || !phase2) return;
+
+    let targetProgress = 0;
+    let currentProgress = 0;
+
+    function calcOpacity(progress: number, enterStart: number, enterEnd: number, exitStart: number, exitEnd: number): number {
+      if (progress < enterStart || progress > exitEnd) return 0;
+      if (progress < enterEnd) return (progress - enterStart) / (enterEnd - enterStart);
+      if (progress > exitStart) return Math.max(0, 1 - (progress - exitStart) / (exitEnd - exitStart));
+      return 1.0;
+    }
+
+    function updateScroll() {
+      const rect = heroSection!.getBoundingClientRect();
+      const maxScroll = rect.height - window.innerHeight;
+      if (maxScroll > 0) {
+        targetProgress = Math.max(0, Math.min(1, -rect.top / maxScroll));
+      } else {
+        targetProgress = 0;
+      }
+    }
+
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    window.addEventListener('resize', updateScroll);
+    updateScroll();
+
+    function renderLoop() {
+      currentProgress += (targetProgress - currentProgress) * 0.18;
+
+      // Starter hint fades out immediately when scroll starts (> 0.005)
+      const opStarter = calcOpacity(targetProgress, 0.0, 0.002, 0.01, 0.025);
+      if (scrollStarter) {
+        scrollStarter.style.opacity = opStarter.toFixed(3);
+        scrollStarter.style.pointerEvents = opStarter > 0.4 ? 'auto' : 'none';
+      }
+
+      // Phase 0: Perfil & Especialidad (0.015 -> 0.04 reaches 1.0 -> stays until 0.32 -> exits at 0.38)
+      const op0 = calcOpacity(targetProgress, 0.015, 0.04, 0.32, 0.38);
+      // Phase 1: Afiliaciones & Ecosistema (0.37 -> reaches 1.0 at 0.42 -> stays until 0.68 -> exits at 0.73)
+      const op1 = calcOpacity(targetProgress, 0.37, 0.42, 0.68, 0.73);
+      // Phase 2: Evidencia & Contacto (0.72 -> reaches 1.0 at 0.76 -> stays until 1.00)
+      const op2 = calcOpacity(targetProgress, 0.72, 0.76, 0.98, 1.00);
+
+      phase0!.style.opacity = op0.toFixed(3);
+      phase0!.style.transform = `translateY(${(0.08 - targetProgress) * 25}px)`;
+      phase0!.style.pointerEvents = op0 > 0.4 ? 'auto' : 'none';
+
+      phase1!.style.opacity = op1.toFixed(3);
+      phase1!.style.transform = `translateY(${(0.48 - targetProgress) * 25}px)`;
+      phase1!.style.pointerEvents = op1 > 0.4 ? 'auto' : 'none';
+
+      phase2!.style.opacity = op2.toFixed(3);
+      phase2!.style.transform = `translateY(${(0.82 - targetProgress) * 25}px)`;
+      phase2!.style.pointerEvents = op2 > 0.4 ? 'auto' : 'none';
+
+      // Lifestyle Background Dynamic Parallax
+      if (bgStage) {
+        const scale = 1 + currentProgress * 0.08;
+        const transY = currentProgress * -25;
+        const bgOpacity = Math.max(0.35, 0.65 - currentProgress * 0.25);
+        bgStage.style.transform = `translate(-50%, -50%) scale(${scale.toFixed(3)}) translateY(${transY.toFixed(1)}px)`;
+        bgStage.style.opacity = bgOpacity.toFixed(3);
+      }
+
+      // Tracker visibility
+      if (tracker) {
+        tracker.style.opacity = targetProgress > 0.015 ? '1' : '0';
+      }
+
+      if (fill0) fill0.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.015) / 0.345) * 100))}%`;
+      if (fill1) fill1.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.36) / 0.36) * 100))}%`;
+      if (fill2) fill2.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.72) / 0.28) * 100))}%`;
+
+      requestAnimationFrame(renderLoop);
+    }
+
+    requestAnimationFrame(renderLoop);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCurriculumHero);
+  } else {
+    initCurriculumHero();
+  }
+  document.addEventListener('astro:page-load', initCurriculumHero);
+</script>
+
 <style>
-  .cv-hero {
-    padding: 7rem 0 3rem 0;
-  }
-
-  .hero-card {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.6) 100%);
-    border: 1px solid var(--border-glow);
-    padding: 3rem;
+  /* 320vh Hero Container */
+  .hero-scrub-container {
     position: relative;
-    overflow: hidden;
-  }
-
-  .hero-top {
-    display: flex;
-    gap: 2.5rem;
-    align-items: flex-start;
-  }
-
-  .avatar-wrapper {
-    position: relative;
-    flex-shrink: 0;
-  }
-
-  .avatar-ring {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-    padding: 4px;
-    box-shadow: 0 0 30px rgba(0, 242, 254, 0.35);
-  }
-
-  .avatar-content {
+    height: 320vh;
     width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: var(--bg-dark);
+    background-color: var(--bg-dark);
+  }
+
+  .hero-sticky-viewport {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
   }
 
-  .avatar-img {
+  /* Ambient Backdrop Canvas */
+  .hero-background-canvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  /* Artwork Background Parallax Stage */
+  .hero-cv-bg-stage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    max-width: 1920px;
+    max-height: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    will-change: transform, opacity;
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+  .cv-artwork-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    mask-image: radial-gradient(ellipse at 50% 50%, black 45%, transparent 90%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 45%, transparent 90%);
+    filter: brightness(0.65) contrast(1.15);
+  }
+
+  .cv-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(7, 9, 14, 0.45) 0%, rgba(7, 9, 14, 0.85) 75%, var(--bg-dark) 100%);
+    pointer-events: none;
+  }
+
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(95px);
+    opacity: 0.28;
+    pointer-events: none;
+  }
+
+  .orb-cyan {
+    top: 20%;
+    left: 18%;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, var(--accent-cyan) 0%, rgba(0, 242, 254, 0) 70%);
+  }
+
+  .orb-blue {
+    bottom: 20%;
+    right: 15%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, var(--accent-blue) 0%, rgba(79, 172, 254, 0) 70%);
+  }
+
+  .orb-purple {
+    top: 60%;
+    left: 45%;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, var(--accent-purple) 0%, rgba(168, 85, 247, 0) 70%);
+    opacity: 0.18;
+  }
+
+  .hero-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
+  }
+
+  /* Avatar Sizing & Ring */
+  .cv-avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 0.65rem auto;
+  }
+
+  .cv-avatar-ring {
+    width: clamp(76px, 9vw, 92px);
+    height: clamp(76px, 9vw, 92px);
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    padding: 3px;
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: subtleFloat 4s ease-in-out infinite alternate;
+  }
+
+  .cv-avatar-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -136,118 +447,518 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .status-dot {
     position: absolute;
-    bottom: 8px;
-    right: 8px;
-    width: 18px;
-    height: 18px;
+    bottom: 2px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: var(--accent-emerald);
-    border: 3px solid var(--bg-dark);
+    border: 3px solid #070B14;
     box-shadow: 0 0 10px var(--accent-emerald);
   }
 
-  .hero-info {
-    flex: 1;
+  @keyframes subtleFloat {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-5px); }
   }
 
-  .badge-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero-title {
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: var(--text-main);
-    margin-bottom: 0.8rem;
-    line-height: 1.1;
-  }
-
-  .hero-subtitle {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    max-width: 850px;
-    line-height: 1.6;
-  }
-
-  .hero-affiliations {
+  /* Sutil indicador de inicio abajo (desaparece con el scroll) */
+  .hero-scroll-starter {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.6rem;
+    z-index: 8;
+    will-change: opacity;
+    pointer-events: auto;
+    transition: opacity 0.2s ease;
+  }
+
+  .starter-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  /* Editorial Tracker */
+  .hero-editorial-tracker {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .tracker-segment {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .track-bar {
+    width: 48px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .track-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent-cyan);
+    transition: width 0.1s linear;
+  }
+
+  /* Phase Panels */
+  .hero-phase-panel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5.5rem 1.5rem 2rem 1.5rem;
+    z-index: 5;
+    will-change: opacity, transform;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .phase-inner {
+    text-align: center;
+    width: 100%;
+  }
+
+  .max-w-content {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .max-w-showcase {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .editorial-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.65rem;
+  }
+
+  .eyebrow-cyan {
+    color: var(--accent-cyan);
+  }
+
+  .eyebrow-purple {
+    color: #D8B4FE;
+  }
+
+  .eyebrow-emerald {
+    color: var(--accent-emerald);
+  }
+
+  .hero-headline {
+    font-size: clamp(1.85rem, 3.6vw, 3rem);
+    font-weight: 900;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+  }
+
+  .gradient-text-cyan {
+    color: var(--accent-cyan);
+    font-weight: 900;
+    text-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
+  }
+
+  .quote-tagline-cyan {
+    color: var(--accent-cyan);
+    font-weight: 900;
+    text-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
+    display: inline-block;
+  }
+
+  .hero-narrative-lead {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    color: #FFFFFF;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto 1.5rem auto;
+    font-weight: 600;
+    padding: 1.15rem 1.65rem;
+    background: #070B14;
+    border: 2px solid var(--accent-cyan);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 242, 254, 0.25);
+  }
+
+  .hero-narrative-lead strong {
+    color: var(--accent-cyan);
+    font-weight: 900;
+  }
+
+  /* Badge Pill Row */
+  .hero-badge-pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
     margin-bottom: 2rem;
   }
 
-  .affiliation-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--text-main);
-    font-size: 0.95rem;
+  .badge-pill {
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
   }
 
-  .affiliation-item svg {
+  .pill-cyan {
+    background: rgba(0, 242, 254, 0.12);
+    border: 1px solid rgba(0, 242, 254, 0.35);
     color: var(--accent-cyan);
-    flex-shrink: 0;
   }
 
-  .hero-actions {
+  .pill-purple {
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    color: #D8B4FE;
+  }
+
+  .pill-emerald {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: var(--accent-emerald);
+  }
+
+  .pill-amber {
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: var(--accent-amber);
+  }
+
+  /* Showcase Grid */
+  .cv-showcase-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin-top: 1.5rem;
+    text-align: left;
+  }
+
+  .showcase-cards-col {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 1rem;
   }
 
-  .orcid-icon {
+  .cv-feature-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.25s ease;
+  }
+
+  .cv-feature-card:hover {
+    transform: translateX(4px);
+    border-color: rgba(0, 242, 254, 0.4);
+  }
+
+  .feature-icon-badge {
+    font-size: 1.75rem;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+  }
+
+  .icon-cyan {
+    background: rgba(0, 242, 254, 0.12);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+  }
+
+  .icon-purple {
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+  }
+
+  .icon-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+  }
+
+  .feature-text strong {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+  }
+
+  .feature-text p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  /* Awards Showcase Card */
+  .showcase-metrics-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .awards-showcase-card {
+    width: 100%;
+    max-width: 380px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 2px solid rgba(0, 242, 254, 0.3);
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 242, 254, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+
+  .awards-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--accent-cyan);
+    font-weight: 800;
+  }
+
+  .trophy-icon {
+    font-size: 1.2rem;
+  }
+
+  .awards-sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .award-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: rgba(2, 6, 23, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 0.9rem;
+  }
+
+  .award-year {
+    font-size: 1rem;
+    font-weight: 900;
+    font-family: var(--font-heading);
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.12);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+  }
+
+  .award-desc strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .award-desc span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  /* CTAs */
+  .hero-cta-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.15rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .btn-cv-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.95rem 2.2rem;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+    color: #040914;
+    font-weight: 800;
+    font-size: 1.05rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 25px rgba(0, 242, 254, 0.4);
+    transition: all 0.25s ease;
+  }
+
+  .btn-cv-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 35px rgba(0, 242, 254, 0.6);
+  }
+
+  .btn-cv-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.85rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    backdrop-filter: blur(12px);
+    transition: all 0.25s ease;
+  }
+
+  .btn-cv-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .btn-cv-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.6rem;
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .btn-cv-ghost:hover {
+    color: var(--text-main);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .orcid-badge {
     font-weight: 800;
     font-size: 0.85rem;
     background: #A6CE39;
     color: #000;
     border-radius: 4px;
-    padding: 1px 4px;
+    padding: 1px 5px;
     line-height: 1;
   }
 
-  @media (max-width: 900px) {
-    .hero-top {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+  /* Hint Mouse */
+  .hint-mouse {
+    width: 22px;
+    height: 36px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    position: relative;
+  }
 
-    .badge-row, .hero-affiliations, .hero-actions {
+  .mouse-wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--accent-cyan);
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: wheelScroll 1.8s infinite ease-in-out;
+  }
+
+  @keyframes wheelScroll {
+    0% { transform: translate(-50%, 0); opacity: 1; }
+    80% { transform: translate(-50%, 12px); opacity: 0; }
+    100% { transform: translate(-50%, 0); opacity: 0; }
+  }
+
+  @media (max-width: 920px) {
+    .cv-showcase-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .showcase-metrics-col {
+      display: none;
+    }
+    .hero-editorial-tracker {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-headline {
+      font-size: 1.85rem;
+    }
+    .hero-narrative-lead {
+      font-size: 1rem;
+    }
+    .btn-cv-primary, .btn-cv-secondary, .btn-cv-ghost {
+      width: 100%;
       justify-content: center;
-    }
-
-    .affiliation-item {
-      justify-content: center;
-    }
-
-    .hero-title {
-      font-size: 2.1rem;
     }
   }
 
   @media print {
-    .cv-hero {
-      padding: 0;
+    .hero-scrub-container {
+      height: auto !important;
     }
-    .hero-card {
-      background: none !important;
-      border: none !important;
-      padding: 0 !important;
-      color: #000 !important;
+    .hero-sticky-viewport {
+      position: static !important;
+      height: auto !important;
     }
-    .hero-title {
-      color: #000 !important;
-    }
-    .gradient-text {
-      -webkit-text-fill-color: initial !important;
-      color: #000 !important;
-    }
-    .hero-subtitle, .affiliation-item {
-      color: #333 !important;
+    .hero-phase-panel {
+      position: static !important;
+      opacity: 1 !important;
+      padding: 1rem 0 !important;
     }
     .print-hide {
       display: none !important;
