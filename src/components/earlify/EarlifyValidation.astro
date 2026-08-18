@@ -130,8 +130,8 @@
 
   .validation-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
 
   .validation-card {
@@ -190,6 +190,13 @@
   @media (max-width: 768px) {
     .section-title {
       font-size: 2rem;
+    }
+    .validation-grid {
+      grid-template-columns: 1fr;
+    }
+    .validation-card {
+      padding: 1.25rem;
+      gap: 1rem;
     }
   }
 </style>

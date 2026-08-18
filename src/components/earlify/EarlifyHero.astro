@@ -479,7 +479,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1.5rem;
+    padding: 5.5rem 1.5rem 2rem 1.5rem;
     z-index: 5;
     will-change: opacity, transform;
     opacity: 0;
@@ -710,10 +710,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   @media (max-width: 860px) {
+    .hero-phase-panel {
+      padding: 5rem 1rem 2rem 1rem;
+    }
     .dual-product-capsule {
       grid-template-columns: 1fr;
-      gap: 1.25rem;
-      padding: 1.5rem;
+      gap: 1rem;
+      padding: 1.25rem 1rem;
     }
     .capsule-divider {
       transform: rotate(90deg);
@@ -725,15 +728,39 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   @media (max-width: 640px) {
+    .hero-phase-panel {
+      padding: 4.8rem 1rem 1.5rem 1rem;
+    }
+    .hero-brand-logo {
+      height: clamp(65px, 14vw, 95px);
+      margin-bottom: 0.75rem;
+    }
+    .editorial-eyebrow {
+      font-size: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
     .hero-headline {
-      font-size: 1.85rem;
+      font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+      line-height: 1.22;
+      margin-bottom: 0.75rem;
     }
     .hero-narrative-lead {
-      font-size: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      padding: 0 0.25rem;
+    }
+    .capsule-title {
+      font-size: 1.15rem;
+    }
+    .capsule-desc {
+      font-size: 0.85rem;
     }
     .btn-hero-primary, .btn-hero-secondary {
       width: 100%;
       justify-content: center;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.95rem;
     }
   }
 </style>
