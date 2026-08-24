@@ -63,10 +63,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           Valoración Interactiva de Audición y Lenguaje, <span class="gradient-text-cyan">en consulta médica y 100% offline</span>
         </h1>
 
-        <p class="hero-narrative-lead">
-          Software como Dispositivo Médico (<strong>SaMD Clase IIa</strong>, MDR 2017/745) de apoyo a la decisión clínica (CDSS) en otorrinolaringología, audiología y logopedia. 12 módulos de evaluación gamificada, DSP acústico validado contra Praat y privacidad Zero-PHI.
-        </p>
-
         <div class="hero-badge-pill-row">
           <span class="badge-pill pill-cyan">⚕️ SaMD Clase IIa · MDR 2017/745</span>
           <span class="badge-pill pill-purple">🛡️ IEC 62304 Clase B</span>
@@ -567,22 +563,16 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .hero-narrative-lead {
-    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-    color: #FFFFFF;
-    line-height: 1.75;
-    max-width: 860px;
+    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 820px;
     margin: 0 auto 2.25rem auto;
-    font-weight: 600;
-    padding: 1.35rem 1.85rem;
-    background: #070B14;
-    border: 2px solid #38BDF8;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 30px rgba(56, 189, 248, 0.25);
+    font-weight: 400;
   }
 
   .hero-narrative-lead strong {
-    color: #38BDF8;
-    font-weight: 900;
+    color: var(--text-main);
   }
 
   /* Badge Pill Row */
@@ -875,7 +865,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       font-size: 0.95rem;
       line-height: 1.55;
       margin-bottom: 1.25rem;
-      padding: 1rem 1.25rem;
+      padding: 0;
     }
     .btn-via-primary, .btn-via-secondary, .btn-via-ghost {
       width: 100%;
