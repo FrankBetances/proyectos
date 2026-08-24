@@ -43,8 +43,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       </div>
     </div>
 
-    <!-- PHASE 0: Identidad de Investigación & Marco FONDOCYT (Aparece al hacer scroll: 2% - 36%) -->
-    <div id="quisqueya-phase-0" class="hero-phase-panel">
+    <!-- PHASE 0: Identidad de Investigación & Marco FONDOCYT (Carga inmediata a scroll 0) -->
+    <div id="quisqueya-phase-0" class="hero-phase-panel phase-initial">
       <div class="phase-inner max-w-content">
         <!-- Official Quisqueya Habla Logo -->
         <div class="quisqueya-logo-wrapper">
@@ -210,8 +210,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
     function calcOpacity(progress: number, enterStart: number, enterEnd: number, exitStart: number, exitEnd: number): number {
       if (progress < enterStart || progress > exitEnd) return 0;
-      if (progress < enterEnd) return (progress - enterStart) / (enterEnd - enterStart);
-      if (progress > exitStart) return Math.max(0, 1 - (progress - exitStart) / (exitEnd - exitStart));
+      if (progress < enterEnd) {
+        if (enterEnd === enterStart) return 1.0;
+        return (progress - enterStart) / (enterEnd - enterStart);
+      }
+      if (progress > exitStart) {
+        if (exitEnd === exitStart) return 0.0;
+        return Math.max(0, 1 - (progress - exitStart) / (exitEnd - exitStart));
+      }
       return 1.0;
     }
 
@@ -232,30 +238,30 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     function renderLoop() {
       currentProgress += (targetProgress - currentProgress) * 0.18;
 
-      // Starter hint fades out immediately when scroll starts (> 0.005)
-      const opStarter = calcOpacity(targetProgress, 0.0, 0.002, 0.01, 0.025);
+      // Starter hint is visible on start and fades out as user scrolls
+      const opStarter = calcOpacity(targetProgress, 0.0, 0.0, 0.03, 0.08);
       if (scrollStarter) {
         scrollStarter.style.opacity = opStarter.toFixed(3);
         scrollStarter.style.pointerEvents = opStarter > 0.4 ? 'auto' : 'none';
       }
 
-      // Phase 0: Enters rapidly and stays 100% solid (0.015 -> 0.04 reaches 1.0 -> stays until 0.32 -> exits at 0.38)
-      const op0 = calcOpacity(targetProgress, 0.015, 0.04, 0.32, 0.38);
-      // Phase 1: Validación & Centros Piloto (0.37 -> reaches 1.0 at 0.42 -> stays until 0.68 -> exits at 0.73)
-      const op1 = calcOpacity(targetProgress, 0.37, 0.42, 0.68, 0.73);
-      // Phase 2: Bioética & Alianzas (0.72 -> reaches 1.0 at 0.76 -> stays until 1.00)
-      const op2 = calcOpacity(targetProgress, 0.72, 0.76, 0.98, 1.00);
+      // Phase 0: Fully visible at 0 scroll (1.0) -> exits between 0.18 and 0.35
+      const op0 = calcOpacity(targetProgress, 0.0, 0.0, 0.18, 0.35);
+      // Phase 1: Validación & Centros Piloto (enters 0.30 -> peaks at 0.40-0.62 -> exits at 0.72)
+      const op1 = calcOpacity(targetProgress, 0.30, 0.40, 0.62, 0.72);
+      // Phase 2: Bioética & Alianzas (enters 0.68 -> peaks at 0.78-1.00)
+      const op2 = calcOpacity(targetProgress, 0.68, 0.78, 1.0, 1.0);
 
       phase0!.style.opacity = op0.toFixed(3);
-      phase0!.style.transform = `translateY(${(0.08 - targetProgress) * 25}px)`;
+      phase0!.style.transform = `translateY(${-targetProgress * 25}px)`;
       phase0!.style.pointerEvents = op0 > 0.4 ? 'auto' : 'none';
 
       phase1!.style.opacity = op1.toFixed(3);
-      phase1!.style.transform = `translateY(${(0.48 - targetProgress) * 25}px)`;
+      phase1!.style.transform = `translateY(${(0.50 - targetProgress) * 25}px)`;
       phase1!.style.pointerEvents = op1 > 0.4 ? 'auto' : 'none';
 
       phase2!.style.opacity = op2.toFixed(3);
-      phase2!.style.transform = `translateY(${(0.82 - targetProgress) * 25}px)`;
+      phase2!.style.transform = `translateY(${(0.85 - targetProgress) * 25}px)`;
       phase2!.style.pointerEvents = op2 > 0.4 ? 'auto' : 'none';
 
       // Lifestyle Background Dynamic Parallax
@@ -269,12 +275,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
       // Tracker visibility
       if (tracker) {
-        tracker.style.opacity = targetProgress > 0.015 ? '1' : '0';
+        tracker.style.opacity = '1';
       }
 
-      if (fill0) fill0.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.015) / 0.345) * 100))}%`;
-      if (fill1) fill1.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.36) / 0.36) * 100))}%`;
-      if (fill2) fill2.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.72) / 0.28) * 100))}%`;
+      if (fill0) fill0.style.width = `${Math.min(100, Math.max(0, (targetProgress / 0.34) * 100))}%`;
+      if (fill1) fill1.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.34) / 0.34) * 100))}%`;
+      if (fill2) fill2.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.68) / 0.32) * 100))}%`;
 
       requestAnimationFrame(renderLoop);
     }
@@ -500,6 +506,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     will-change: opacity, transform;
     opacity: 0;
     pointer-events: none;
+  }
+
+  .hero-phase-panel.phase-initial {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .phase-inner {
@@ -898,11 +910,18 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   @media (max-width: 640px) {
+    .hero-phase-panel {
+      padding: 4.8rem 1rem 1.5rem 1rem;
+    }
     .hero-headline {
-      font-size: 1.85rem;
+      font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+      margin-bottom: 0.75rem;
     }
     .hero-narrative-lead {
-      font-size: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      padding: 1rem 1.25rem;
     }
     .btn-qh-primary, .btn-qh-secondary, .btn-qh-ghost {
       width: 100%;
