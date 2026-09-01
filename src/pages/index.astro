@@ -32,7 +32,15 @@ const valeriaJsonLd = {
       "provider": {
         "@type": "Organization",
         "name": "Earlify Health S.L.",
-        "url": "https://FrankBetances.github.io/proyectos/earlify"
+        "url": "https://FrankBetances.github.io/proyectos/earlify",
+        "memberOf": {
+          "@type": "ProgramMembership",
+          "programName": "startTIC - Incubadora de Alta Tecnología",
+          "hostingOrganization": {
+            "@type": "GovernmentOrganization",
+            "name": "Consorcio de la Zona Franca de Vigo"
+          }
+        }
       },
       "offers": {
         "@type": "Offer",
@@ -49,7 +57,8 @@ const valeriaJsonLd = {
         "5 variedades lingüísticas: Castellano (Sharvard), Galego (Celtia / Nós), Dominicano (es-DO), Euskara (HiTZ-TTS), US English (LJSpeech)",
         "Panel del Adulto para carga comunicativa manual (muro MDR)",
         "Reconocimiento de voz local en dispositivo (ASR Fase A)",
-        "Funcionamiento 100% offline y cifrado en reposo"
+        "Funcionamiento 100% offline y cifrado en reposo",
+        "Acelerada en la Incubadora de Alta Tecnología startTIC (Gradiant / Zona Franca de Vigo / FEDER)"
       ]
     }
   ]
@@ -57,9 +66,9 @@ const valeriaJsonLd = {
 ---
 
 <Layout 
-	title="Valeria+ v12 · Terapia Auditivo-Verbal y del Lenguaje Offline"
-	description="Plataforma móvil v12 para niños con hipoacusia, implante coclear, dislalias, TEA, dislexia y dificultades del lenguaje. 7 bloques de terapia, mascota Lúa y Realidad Aumentada 3D 100% offline."
-	keywords="Valeria+ v12, Lúa, Terapia Auditivo Verbal, Hipoacusia, Implante Coclear, Dislalias, Realidad Aumentada, Logopedia, Dr. Frank Betances, LSE, Test de Ling, Salud Digital"
+	title="Valeria+ · Terapia Auditivo-Verbal y del Lenguaje Offline"
+	description="Plataforma móvil de terapia auditivo-verbal y del lenguaje 100% offline para niños. 7 bloques clínicos, RA 3D y Lúa AIoT. Acelerada en startTIC (Gradiant)."
+	keywords="Valeria+, Lúa, Terapia Auditivo Verbal, Hipoacusia, Implante Coclear, Dislalias, Realidad Aumentada, startTIC, Gradiant, Zona Franca de Vigo, Logopedia, Dr. Frank Betances, Earlify Health"
 	jsonLd={valeriaJsonLd}
 >
 	<Header activeTab="home" />

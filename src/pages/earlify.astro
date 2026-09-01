@@ -14,8 +14,8 @@ import EarlifyValidation from '../components/earlify/EarlifyValidation.astro';
 import EarlifyDifferentiators from '../components/earlify/EarlifyDifferentiators.astro';
 import EarlifyCTA from '../components/earlify/EarlifyCTA.astro';
 
-const pageTitle = "Earlify Health · Conectando la Consulta Médica con el Hogar";
-const pageDescription = "Tras un diagnóstico, Earlify Health conecta la consulta médica con el hogar, convirtiendo la terapia en juegos de móvil con la seguridad y respaldo del criterio profesional.";
+const pageTitle = "Earlify Health · Terapia Digital & Neurodesarrollo Infantil";
+const pageDescription = "Earlify Health conecta la consulta médica con el hogar mediante terapia digital y hardware AIoT. Proyecto incubado en startTIC (Zona Franca / Gradiant).";
 
 const earlifyJsonLd = {
   "@context": "https://schema.org",
@@ -34,6 +34,28 @@ const earlifyJsonLd = {
         "sameAs": "https://orcid.org/0000-0002-6349-9537"
       },
       "description": pageDescription,
+      "memberOf": {
+        "@type": "ProgramMembership",
+        "programName": "startTIC - Incubadora de Alta Tecnología",
+        "hostingOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Consorcio de la Zona Franca de Vigo"
+        }
+      },
+      "funder": {
+        "@type": "Organization",
+        "name": "Fondo Europeo de Desarrollo Regional (FEDER) - Fundación INCYDE"
+      },
+      "sponsor": [
+        {
+          "@type": "Organization",
+          "name": "Fundación Centro Tecnológico de Telecomunicación de Galicia (GRADIANT)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Cámara Oficial de Comercio, Industria, Servicios y Navegación de Pontevedra, Vigo y Vilagarcía de Arousa"
+        }
+      ],
       "makesOffer": [
         {
           "@type": "Offer",
@@ -41,7 +63,7 @@ const earlifyJsonLd = {
             "@type": "SoftwareApplication",
             "name": "VIA+",
             "applicationCategory": "HealthApplication",
-            "description": "Herramienta de apoyo a la decisión clínica para profesionales sanitarios en audición, lenguaje y neurodesarrollo."
+            "description": "Herramienta de apoyo a la decisión clínica para profesionales sanitarios en audición, lenguaje y neurodesarrollo (SaMD Clase IIa)."
           }
         },
         {
@@ -50,7 +72,16 @@ const earlifyJsonLd = {
             "@type": "SoftwareApplication",
             "name": "Valeria+",
             "applicationCategory": "HealthApplication",
-            "description": "Aplicación de rehabilitación auditivo-verbal y del lenguaje para niños, acompañados por padres y cuidadores."
+            "description": "Aplicación de rehabilitación auditivo-verbal y del lenguaje para niños, acompañados por padres y cuidadores 100% offline."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Lúa (Mascota AIoT)",
+            "category": "Medical Device Accessory & Pediatric Neurodevelopment Hardware",
+            "description": "Compañera física interactiva ESP32-C3 con pantalla IPS circular 240x240 para espejo visual y asistencia en silencio clínico."
           }
         }
       ]
@@ -62,7 +93,7 @@ const earlifyJsonLd = {
 <Layout 
   title={pageTitle}
   description={pageDescription}
-  keywords="Earlify Health, VIA+ SaMD, Valeria+, Evaluar mejor Dar continuidad antes, Neurodesarrollo, Salud Digital, Dr. Frank Betances"
+  keywords="Earlify Health, VIA+ SaMD, Valeria+, Mascota Lúa, startTIC, Incubadora Alta Tecnología, Zona Franca de Vigo, Gradiant, Neurodesarrollo, Salud Digital, Dr. Frank Betances"
   jsonLd={earlifyJsonLd}
 >
   <Header activeTab="earlify" />

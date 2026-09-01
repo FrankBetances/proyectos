@@ -14,6 +14,18 @@
     </div>
 
     <div class="validation-grid">
+      <!-- Item 0: startTIC High-Tech Incubation -->
+      <div class="validation-card glass-card card-highlight-cyan">
+        <div class="card-icon-box">🚀</div>
+        <div class="card-content">
+          <span class="metric-title">startTIC · Alta Tecnología</span>
+          <span class="metric-label">Consorcio Zona Franca de Vigo · Gradiant · FEDER</span>
+          <p class="metric-desc">
+            Incubadora de Alta Tecnología en Vigo TIC Global HUB. Acompañamiento, mentoring tecnológico de Gradiant y cofinanciación al 60% por FEDER / Fundación INCYDE.
+          </p>
+        </div>
+      </div>
+
       <!-- Item 1: SUS 90/100 -->
       <div class="validation-card glass-card">
         <div class="card-icon-box">📊</div>
@@ -140,6 +152,24 @@
     gap: 1.25rem;
     align-items: flex-start;
     border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .validation-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .card-highlight-cyan {
+    border-color: rgba(0, 242, 254, 0.35);
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.08) 0%, rgba(15, 23, 42, 0.7) 100%);
+    box-shadow: 0 0 30px -10px rgba(0, 242, 254, 0.2);
+  }
+
+  .card-highlight-cyan:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 35px -5px rgba(0, 242, 254, 0.35);
   }
 
   .card-icon-box {

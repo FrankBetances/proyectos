@@ -138,6 +138,38 @@
       </div>
     </div>
 
+    <!-- startTIC & Gradiant IoT Hardware Validation Strip -->
+    <div class="starttic-lua-card glass-card">
+      <div class="starttic-lua-header">
+        <div class="starttic-icon-pill">🚀</div>
+        <div>
+          <span class="starttic-eyebrow">Incubadora de Alta Tecnología startTIC</span>
+          <h3 class="starttic-lua-title">Validación Tecnológica de Hardware & IoT con GRADIANT</h3>
+        </div>
+      </div>
+      <p class="starttic-lua-desc">
+        El desarrollo de la arquitectura embebida de Lúa (ESP32-C3 RISC-V, Bluetooth LE 5.0 y renderizado por DMA sobre bus SPI) se beneficia de la mentoría especializada de <strong>GRADIANT</strong> y los laboratorios avanzados del <strong>Consorcio de la Zona Franca de Vigo</strong> en el VgoTIC Global HUB, bajo el programa cofinanciado al 60% por <strong>FEDER</strong> a través de la Fundación INCYDE.
+      </p>
+      <div class="starttic-metrics-row">
+        <div class="starttic-metric">
+          <span class="m-val">BLE 5.0</span>
+          <span class="m-lbl">NimBLE Zero-PHI Validado</span>
+        </div>
+        <div class="starttic-metric">
+          <span class="m-val">0 dB</span>
+          <span class="m-lbl">Inmunidad Acústica Clínica</span>
+        </div>
+        <div class="starttic-metric">
+          <span class="m-val">VgoTIC</span>
+          <span class="m-lbl">HUB Tecnológico de Vigo</span>
+        </div>
+        <div class="starttic-metric">
+          <span class="m-val">FEDER 60%</span>
+          <span class="m-lbl">Programa Plurirregional</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -171,33 +203,28 @@
   }
 
   .section-title {
-    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-size: 2.6rem;
     font-weight: 800;
-    margin-bottom: 1.25rem;
-    color: var(--text-main);
-    line-height: 1.2;
+    margin-bottom: 1rem;
   }
 
   .section-description {
-    font-size: 1.12rem;
+    font-size: 1.15rem;
     color: var(--text-muted);
-    line-height: 1.65;
+    line-height: 1.6;
   }
 
   .arch-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
   }
 
   .arch-card {
-    background: rgba(15, 23, 42, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-lg);
     padding: 2.25rem;
-    display: flex;
-    flex-direction: column;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .card-header {
@@ -205,17 +232,18 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.75rem;
-    padding-bottom: 1.25rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .card-icon {
     width: 44px;
     height: 44px;
-    border-radius: var(--radius-md);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
   }
 
   .icon-orange {
@@ -231,7 +259,7 @@
   }
 
   .card-header h3 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--text-main);
     margin: 0;
@@ -240,66 +268,66 @@
   .tech-specs-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.1rem;
   }
 
   .spec-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.65rem 0.85rem;
-    background: rgba(2, 6, 23, 0.4);
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 0.95rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .spec-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
   .spec-name {
-    font-size: 0.9rem;
     color: var(--text-muted);
   }
 
   .spec-val {
-    font-size: 0.92rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-main);
+    font-family: monospace;
+    font-size: 0.9rem;
   }
 
   .highlight-orange {
     color: #fb923c;
-    font-family: monospace;
-    font-weight: 700;
   }
 
   .repo-layers {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .layer-item {
     display: flex;
-    align-items: flex-start;
     gap: 1rem;
-    padding: 0.75rem 0.85rem;
-    background: rgba(2, 6, 23, 0.4);
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    align-items: flex-start;
   }
 
   .layer-code {
     font-family: monospace;
     font-size: 0.85rem;
-    color: #38bdf8;
-    background: rgba(56, 189, 248, 0.12);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    white-space: nowrap;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    flex-shrink: 0;
   }
 
   .layer-desc {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: var(--text-muted);
-    line-height: 1.45;
+    line-height: 1.5;
   }
 
   .layer-desc strong {
@@ -308,19 +336,18 @@
 
   .inline-code {
     font-family: monospace;
-    font-size: 0.82em;
-    color: #fb923c;
-    background: rgba(255, 255, 255, 0.06);
-    padding: 0.1em 0.3em;
-    border-radius: 3px;
+    font-size: 0.82rem;
+    color: #fcd34d;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
   }
 
   /* Gates Container */
   .gates-container {
-    background: rgba(15, 23, 42, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-lg);
     padding: 2.25rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .gates-header {
@@ -330,16 +357,14 @@
     margin-bottom: 1.75rem;
     padding-bottom: 1.25rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    flex-wrap: wrap;
-    gap: 1rem;
   }
 
   .gates-badge {
     font-size: 0.78rem;
-    font-weight: 700;
+    font-weight: 800;
+    color: var(--accent-cyan);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #34d399;
+    letter-spacing: 0.08em;
     display: block;
     margin-bottom: 0.25rem;
   }
@@ -358,8 +383,8 @@
     padding: 0.35rem 0.85rem;
     border-radius: var(--radius-full);
     font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
+    font-weight: 800;
+    letter-spacing: 0.05em;
   }
 
   .status-green {
@@ -421,12 +446,108 @@
     border: 1px solid rgba(16, 185, 129, 0.4);
   }
 
+  /* startTIC Lua Card */
+  .starttic-lua-card {
+    margin-top: 2rem;
+    padding: 2.25rem;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.06) 0%, rgba(15, 23, 42, 0.75) 100%);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    box-shadow: 0 0 35px -10px rgba(0, 242, 254, 0.18);
+  }
+
+  .starttic-lua-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .starttic-icon-pill {
+    font-size: 2rem;
+    background: rgba(0, 242, 254, 0.12);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .starttic-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-cyan);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .starttic-lua-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .starttic-lua-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+  }
+
+  .starttic-lua-desc strong {
+    color: var(--text-main);
+  }
+
+  .starttic-metrics-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .starttic-metric {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .starttic-metric .m-val {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--accent-cyan);
+  }
+
+  .starttic-metric .m-lbl {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    font-weight: 600;
+  }
+
   @media (max-width: 768px) {
     .architecture-section {
       padding: 60px 0;
     }
     .arch-cards-grid {
       grid-template-columns: 1fr;
+    }
+    .starttic-lua-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .starttic-metrics-row {
+      grid-template-columns: 1fr 1fr;
     }
   }
 </style>

@@ -66,6 +66,24 @@
       <!-- Project 4 -->
       <div class="project-card glass-card">
         <div class="project-card-header">
+          <span class="badge badge-cyan">Incubadora de Alta Tecnología</span>
+          <span class="project-tag">Aceleración TIC & Salud</span>
+        </div>
+        <h3 class="project-title">startTIC · Incubadora de Alta Tecnología</h3>
+        <p class="project-subtitle">Consorcio Zona Franca de Vigo, Cámara PVV, GRADIANT y FEDER (INCYDE)</p>
+        <p class="project-desc">
+          Selección e incubación en el programa de alta tecnología en el VgoTIC Global HUB para la aceleración y escalado de Earlify Health, Valeria+ y la mascota física Lúa (AIoT). Mentoría tecnológica especializada con GRADIANT y cofinanciación FEDER al 60%.
+        </p>
+        <div class="project-distinctions">
+          <span>🚀 VgoTIC Global HUB</span>
+          <span>📡 Mentoría GRADIANT</span>
+          <span>🇪🇺 Fondos FEDER</span>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card glass-card">
+        <div class="project-card-header">
           <span class="badge badge-amber">Programa USC-INTEGRA 2025</span>
           <span class="project-tag">Emprendimiento Tecnológico</span>
         </div>
@@ -80,7 +98,7 @@
         </div>
       </div>
 
-      <!-- Project 5 -->
+      <!-- Project 6 -->
       <div class="project-card glass-card">
         <div class="project-card-header">
           <span class="badge badge-cyan">Spin-off Universidad de Zaragoza</span>
@@ -107,32 +125,68 @@
 
   .align-left {
     text-align: left;
-    max-width: 100%;
     margin-bottom: 2.5rem;
+  }
+
+  .section-header .tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(0, 242, 254, 0.15);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 700px;
   }
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 1.75rem;
   }
 
   .project-card {
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 242, 254, 0.4);
   }
 
   .project-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.85rem;
+    margin-bottom: 1rem;
   }
 
   .project-tag {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     font-weight: 600;
   }
 
@@ -140,14 +194,15 @@
     font-size: 1.4rem;
     font-weight: 800;
     color: var(--text-main);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
   }
 
   .project-subtitle {
     font-size: 0.95rem;
-    color: var(--accent-cyan);
     font-weight: 600;
-    margin-bottom: 0.85rem;
+    color: var(--accent-cyan);
+    margin-bottom: 1rem;
+    line-height: 1.4;
   }
 
   .project-desc {
@@ -155,44 +210,29 @@
     font-size: 0.925rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    flex-grow: 1;
   }
 
   .project-distinctions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: auto;
     padding-top: 1rem;
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .project-distinctions span {
-    font-size: 0.775rem;
-    font-weight: 600;
-    background: var(--bg-pill);
-    border: 1px solid var(--border-light);
+    font-size: 0.8rem;
     color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
     padding: 0.25rem 0.6rem;
     border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   @media (max-width: 640px) {
     .projects-grid {
       grid-template-columns: 1fr;
-    }
-  }
-
-  @media print {
-    .project-card {
-      background: none !important;
-      border: 1px solid #ddd !important;
-      break-inside: avoid;
-    }
-    .project-title, .project-subtitle {
-      color: #000 !important;
-    }
-    .project-desc {
-      color: #333 !important;
     }
   }
 </style>

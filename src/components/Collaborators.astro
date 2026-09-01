@@ -5,6 +5,17 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
 const collaborators = [
   {
+    id: "starttic",
+    name: "startTIC · Alta Tecnología",
+    badge: "Incubación & Aceleración TIC",
+    badgeColor: "cyan",
+    desc: "Iniciativa del Consorcio Zona Franca de Vigo, Cámara PVV y GRADIANT, cofinanciada por FEDER vía Fundación INCYDE. Aceleración de MVPs, conectividad y validación tecnológica.",
+    logo: "",
+    logoBg: "dark",
+    alt: "Logo startTIC - Incubadora de Alta Tecnología Vigo",
+    customMark: true
+  },
+  {
     id: "acopros",
     name: "ACOPROS",
     badge: "Validación Logopédica & Clínica",
@@ -53,21 +64,32 @@ const collaborators = [
       <span class="tag">Acreditación & Respaldo Sanitario</span>
       <h2>Entidades Colaboradoras & <span class="gradient-text">Sellos de Calidad</span></h2>
       <p>
-        Valeria+ cuenta con la validación de sociedades científicas, agencias de innovación en salud y entidades especializadas en discapacidad auditiva.
+        Valeria+ cuenta con la validación de sociedades científicas, incubadoras de alta tecnología y agencias de innovación en salud.
       </p>
     </div>
 
     <div class="collab-grid">
       {collaborators.map((c) => (
-        <div class="glass-card collab-card">
+        <div class={`glass-card collab-card ${c.id === 'starttic' ? 'collab-card-highlight' : ''}`}>
           <div class={`logo-container ${c.logoBg}`}>
-            <img 
-              src={c.logo} 
-              alt={c.alt} 
-              class={`collab-img img-${c.id}`} 
-              loading="lazy" 
-              decoding="async" 
-            />
+            {c.customMark ? (
+              <div class="starttic-brand-mark">
+                <div class="starttic-top-row">
+                  <span class="starttic-icon">🚀</span>
+                  <span class="starttic-title">start<span class="highlight-tic">TIC</span></span>
+                </div>
+                <span class="starttic-sub">INCUBADORA DE ALTA TECNOLOGÍA</span>
+                <span class="starttic-partners">CZFV · GRADIANT · CPVV · FEDER</span>
+              </div>
+            ) : (
+              <img 
+                src={c.logo} 
+                alt={c.alt} 
+                class={`collab-img img-${c.id}`} 
+                loading="lazy" 
+                decoding="async" 
+              />
+            )}
           </div>
 
           <div class="collab-body">
@@ -108,6 +130,60 @@ const collaborators = [
   .collab-card:hover {
     transform: translateY(-4px);
     border-color: rgba(0, 242, 254, 0.35);
+  }
+
+  .collab-card-highlight {
+    border-color: rgba(0, 242, 254, 0.35);
+    background: linear-gradient(180deg, rgba(0, 242, 254, 0.04) 0%, rgba(15, 23, 42, 0.6) 100%);
+  }
+
+  .starttic-brand-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+  }
+
+  .starttic-top-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .starttic-icon {
+    font-size: 1.3rem;
+  }
+
+  .starttic-title {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+  }
+
+  .highlight-tic {
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .starttic-sub {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+  }
+
+  .starttic-partners {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 0.15rem;
   }
 
   .logo-container {

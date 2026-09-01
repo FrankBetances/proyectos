@@ -12,8 +12,8 @@ import LuaProtocolTable from '../components/lua/LuaProtocolTable.astro';
 import LuaArchitecture from '../components/lua/LuaArchitecture.astro';
 import LuaCTA from '../components/lua/LuaCTA.astro';
 
-const pageTitle = "Lúa · Mascota AIoT para Rehabilitación (Valeria+) y Consulta (VIA+)";
-const pageDescription = "Lúa es una mascota física (ESP32-C3, IPS 240×240) que espeja el estímulo visual en rehabilitación foniátrica (Valeria+) y asiste en Silencio Clínico en VIA+.";
+const pageTitle = "Lúa · Mascota AIoT para Rehabilitación Pediátrica y Consulta";
+const pageDescription = "Mascota física AIoT (ESP32-C3, IPS circular 240×240, BLE 5.0) para Valeria+ y VIA+. Prototipada y validada tecnológicamente en la incubadora startTIC.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -57,6 +57,11 @@ const jsonLd = {
           "@type": "PropertyValue",
           "name": "Microphone",
           "value": "None (Zero Acoustic Interference / Zero-PHI)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "IncubatorProgram",
+          "value": "startTIC - Incubadora de Alta Tecnología (Zona Franca de Vigo / Gradiant / FEDER)"
         }
       ]
     }
@@ -67,7 +72,7 @@ const jsonLd = {
 <Layout 
   title={pageTitle}
   description={pageDescription}
-  keywords="Mascota Lúa, Mascota AIoT, ESP32-C3, GC9A01, Rehabilitación del Lenguaje, Valeria+, VIA+ SaMD, Silencio Clínico, Zero-PHI, Refuerzo Conductual Pediátrico, Dr. Frank Betances"
+  keywords="Mascota Lúa, Mascota AIoT, ESP32-C3, GC9A01, startTIC, Gradiant, Zona Franca de Vigo, Rehabilitación del Lenguaje, Valeria+, VIA+ SaMD, Silencio Clínico, Zero-PHI, Refuerzo Conductual Pediátrico, Dr. Frank Betances"
   jsonLd={jsonLd}
 >
   <Header activeTab="lua" />
