@@ -5,7 +5,7 @@ const languages = [
     name: "Castellano",
     code: "es",
     voice: "Voz Sharvard",
-    engine: "Neuronal pregenerada offline (878 locuciones)",
+    engine: "Neuronal pregenerada offline (881 locuciones)",
     asr: "Reconocedor de sistema es-ES con motor local",
     desc: "Banco normativo estándar para la terapia del lenguaje en territorio español."
   },
@@ -15,15 +15,15 @@ const languages = [
     code: "gl",
     project: "Proxecto Nós / ILENIA",
     voice: "Voz Celtia",
-    engine: "Neuronal Proxecto Nós (816 locuciones offline)",
+    engine: "Neuronal Proxecto Nós (819 locuciones offline)",
     asr: "Reconocedor gl-ES con recaída a expo-speech",
-    desc: "Cubre todos los bloques terapéuticos con banco propio gallego validado por logopedas de ACOPROS."
+    desc: "Cubre todos los bloques de ejercicios con banco propio gallego validado por logopedas de ACOPROS."
   },
   {
     type: "es-DO",
     name: "Dominicano",
     code: "es-DO",
-    project: "Quisqueya Habla",
+    project: "Quisqueya Habla (UFHEC)",
     voice: "Voz Latina",
     engine: "Catálogo latino del dispositivo (es-US/es-MX)",
     asr: "Reconocedor es-DO adaptado",
@@ -35,7 +35,7 @@ const languages = [
     code: "eu",
     project: "ILENIA / NEL-GAITU · HiTZ",
     voice: "HiTZ-TTS",
-    engine: "Aholab / UPV-EHU (744 locuciones offline)",
+    engine: "Aholab / UPV-EHU (747 locuciones offline)",
     asr: "Reconocedor eu-ES con pliegue vasco (⟨h⟩ muda)",
     desc: "Contenido íntegro en euskera batua sin mezclas de idiomas, cubriendo pares mínimos, Audición, Lenguaje, TEA y Dislexia."
   },
@@ -45,9 +45,19 @@ const languages = [
     code: "en-US",
     project: "Howard University SLP",
     voice: "LJSpeech · Piper",
-    engine: "Neuronal offline (614 locuciones empaquetadas)",
+    engine: "Neuronal offline (805 locuciones empaquetadas)",
     asr: "Reconocedor en-US con pista de tarea corta",
-    desc: "Primera variedad con catálogo de interfaz traducido completo (strings.en.ts) y guía dialectal bloqueante."
+    desc: "Primera variedad con interfaz traducida completa (strings.en.ts), banco clínico propio y guía dialectal bloqueante."
+  },
+  {
+    type: "ca",
+    name: "Català",
+    code: "ca",
+    project: "Projecte AINA · BSC",
+    voice: "Matxa-TTS",
+    engine: "Neuronal AINA / BSC (858 locuciones offline · 52,6 min)",
+    asr: "Reconocedor ca-ES con recaída a expo-speech",
+    desc: "Validado por logopeda catalanohablante de Barcelona, incorporando contrastes fonológicos propios (/s/–/z/, /ʃ/–/ʒ/, /ɔ/–/o/, /ʎ/–/l/)."
   }
 ];
 ---
@@ -56,8 +66,8 @@ const languages = [
   <div class="container">
     <div class="section-header">
       <span class="tag">Variedad Lingüística & Síntesis Neuronal</span>
-      <h2>5 Variedades Idiomáticas <span class="gradient-text">Offline</span></h2>
-      <p>Cada variedad cuenta con su propio banco de voz neuronal pregenerado en CI y empaquetado en el APK sin consumo de red.</p>
+      <h2>6 Variedades Idiomáticas <span class="gradient-text">Offline</span></h2>
+      <p>Más de <strong>4.110 locuciones neuronales</strong> empaquetadas en la propia app: cada lengua suena con naturalidad y respeto a su fonética sin necesidad de conexión a internet.</p>
     </div>
 
     <div class="screenshot-wrapper">

@@ -5,80 +5,100 @@ const blocks = [
     icon: "👂",
     title: "Test de Ling (6 Sonidos)",
     category: "Comprobación Previa",
-    desc: "Evaluación de detección auditiva básica con los 6 sonidos del Test de Ling [a, i, u, m, s, ʃ] previa a la sesión con audífono o implante coclear.",
-    badge: "Protocolo Clínico",
+    desc: "Chequeo rápido con los 6 sonidos [a, i, u, m, s, ʃ] para verificar que el audífono o implante coclear funciona antes de empezar la sesión.",
+    badge: "Comprobación Rápida",
     badgeColor: "amber",
-    items: ["Detección inmediata", "Registro de audífono/implante", "Sin fatiga auditiva"]
+    items: ["Detección de frecuencias clave", "Sin fatiga auditiva", "Imprescindible para audífonos e implantes"]
+  },
+  {
+    id: "sensorial",
+    icon: "🎧",
+    title: "Integración Sensorial Auditiva",
+    category: "Sobre-Responsividad Acústica (SOR)",
+    desc: "Para el niño que se tapa los oídos con la aspiradora, la batidora o el timbre del colegio. Desensibilización con 11 sonidos reales sintetizados propios y control adulto.",
+    badge: "Nuevo en v14 · 6 Actividades",
+    badgeColor: "cyan",
+    items: ["11 estímulos (aparatos, alertas y 3 ambientes reales)", "El adulto fija intensidad (1-5) y tiempo", "Pausar nunca resta: ¡siempre suma puntos!"]
   },
   {
     id: "pares",
     icon: "🗣️",
-    title: "Pares Mínimos",
-    category: "Dislalias Fonológicas",
-    desc: "15 pares contrastivos (rana/lana, rata/lata) en 6 grupos de consonantes. Evaluador D7 (vecino más cercano O2 con 35/35 contrastes) y sello doble adulto-niño.",
-    badge: "15 Pares · D7 (O2)",
-    badgeColor: "cyan",
-    items: ["Rotacismo y sigmatismo", "Evaluador O2 (35/35 contrastes)", "Sin frases portadoras redundantes"]
+    title: "Pares Mínimos (15 Pares)",
+    category: "Dislalias y Pronunciación",
+    desc: "15 pares de palabras casi iguales (rana/lana, rata/lata) en 6 grupos de sonidos. Evaluador inteligente D7 que reconoce aproximaciones del habla sin castigos.",
+    badge: "15 Pares · Evaluador D7",
+    badgeColor: "purple",
+    items: ["Rotacismo, sigmatismo y sonidos difíciles", "Misión física compartida en familia", "Sello doble de aprobación padre-hijo"]
   },
   {
     id: "expansion",
     icon: "🧩",
     title: "Expansión Semántica",
-    category: "Intervención Temprana",
-    desc: "Progresión léxica estructurada: 5 escenarios diarios, 5 categorías léxicas por familiaridad, 9 progresiones de campo semántico y 8 cápsulas de doble vuelta.",
-    badge: "Doble Vuelta (Comprensión + Producción)",
-    badgeColor: "purple",
-    items: ["66 pictogramas en píxel art 24×24", "Familiaridad adaptada por dialecto", "Antesala de material previa"]
+    category: "Intervención Temprana y Léxico",
+    desc: "Ampliación de vocabulario en 4 etapas: 5 escenarios de casa, 5 categorías por familiaridad, 9 familias de palabras y 8 contrastes con doble vuelta.",
+    badge: "Doble Vuelta (Comprensión + Habla)",
+    badgeColor: "emerald",
+    items: ["66 pictogramas en píxel art propio", "Primero tocar el dibujo, luego hablar", "Antesala con el material necesario"]
   },
   {
     id: "audicion",
     icon: "👂",
-    title: "Audición (18 Terapias)",
+    title: "Audición (18 Ejercicios)",
     category: "Protocolo ACOPROS",
-    desc: "Abordaje integral de fonética-fonología, semántica, morfosintaxis, pragmática y entrenamiento de escucha en ruido competitivo (RA-1 a RA-5).",
-    badge: "ACOPROS Certificado",
-    badgeColor: "emerald",
-    items: ["Escucha en ruido babble", "Discriminación fina", "Rotación de contenidos"]
+    desc: "Estimulación auditivo-verbal integral: reconocer sonidos, palabras, frases y aprender a escuchar con ruido de fondo como en una cafetería (RA-1 a RA-5).",
+    badge: "Validación ACOPROS",
+    badgeColor: "cyan",
+    items: ["Escucha en ruido babble graduable", "Discriminación fina de fonemas", "Hasta 3 rondas variadas por ejercicio"]
   },
   {
     id: "lenguaje",
     icon: "💬",
-    title: "Lenguaje (7 Terapias)",
+    title: "Lenguaje (7 Ejercicios)",
     category: "Protocolo Familiar",
-    desc: "Estimulación de atención conjunta (con formas alternativas), imitación vocal, comprensión instruccional, expresión libre, regulación emocional e interacción social.",
-    badge: "Rutina Diaria",
-    badgeColor: "cyan",
-    items: ["Atención triangulada", "Comunicación funcional", "Interacción en el hogar"]
+    desc: "Estimulación del habla en el hogar: mirar juntos (atención conjunta), imitar gestos y sonidos, comprender órdenes, expresar deseos y regularse.",
+    badge: "Rutina Diaria en Casa",
+    badgeColor: "purple",
+    items: ["Atención triangulada y juego compartido", "Comunicación funcional sin presiones", "Materiales cotidianos del hogar"]
   },
   {
     id: "tea",
     icon: "🧠",
-    title: "TEA (6 Terapias)",
+    title: "TEA (6 Ejercicios)",
     category: "Espectro Autista (PRT + TCC)",
-    desc: "Intervención basada en tiempo de respuesta, espejo asimétrico, quiebre pragmático con consentimiento y categorización bajo múltiples señales.",
-    badge: "Estresores 100% Manuales",
-    badgeColor: "purple",
-    items: ["Time Delay + Sello Doble", "Consentimiento informado", "Sin sobrecarga automatizada"]
+    desc: "Apoyo en comunicación y flexibilidad: atención conjunta, turnos de juego, transición entre tareas y quiebre pragmático con estresores 100% manuales.",
+    badge: "Estresores Manuales",
+    badgeColor: "amber",
+    items: ["Time Delay y sello doble", "Sin sobrecarga sensorial automática", "Anticipación visual estructurada"]
   },
   {
     id: "dislexia",
     icon: "📖",
-    title: "Dislexia (6 Terapias)",
+    title: "Dislexia (6 Ejercicios)",
     category: "Conciencia Fonológica",
-    desc: "Intruso fonológico auditivo puro, síntesis rítmica fonémica, criba de pseudopalabras y rastreo visual b/d · p/q con mapa de misclicks.",
-    badge: "Lectura Emergente",
-    badgeColor: "amber",
-    items: ["Acceso léxico rápido (RAN)", "Mapa de rotaciones visuales", "Ritmo por persecución dactilar"]
+    desc: "Juegos auditivos de sonidos intrusos, ritmo con palmadas, criba de palabras inventadas y rastreo visual para no confundir letras parecidas (b/d y p/q).",
+    badge: "Lectura y Conciencia Sonora",
+    badgeColor: "cyan",
+    items: ["Detección de giros b/d y p/q", "Ritmo dactilar guiado por el adulto", "Denominación rápida de objetos (RAN)"]
+  },
+  {
+    id: "grafomotricidad",
+    icon: "✏️",
+    title: "La Pizarra Mágica de Lúa (6 Trazos)",
+    category: "Grafomotricidad y Escritura",
+    desc: "Trazado guiado sobre lienzo con pauta Montessori y puntos numerados (1, 2, 3) que fijan el orden del trazo para evitar que confundan la 'b' y la 'd'.",
+    badge: "Puntos Numerados Anti-Inversión",
+    badgeColor: "emerald",
+    items: ["Letras críticas (b, d, p, m) y calentamiento", "Pauta Montessori regulable en pantalla", "Elogios locutados en 5 variedades"]
   },
   {
     id: "ar",
     icon: "🎯",
-    title: "Realidad Aumentada (3 Terapias)",
-    category: "Sensor Motor Pediátrico",
-    desc: "La cámara frontal actúa como sensor de conducta motora con micrófono apagado: AR-1 cinemática orofacial (boquita de beso), AR-2 localización instrumentada del sonido (latencia ms) y AR-3 selección semántica por fijación de mirada.",
-    badge: "Solo Android · Sensor 3D",
-    badgeColor: "cyan",
-    items: ["Refuerzo 3D con Filament", "Micrófono apagado", "Prueba de Aptitud del Dispositivo (A-D)"]
+    title: "Realidad Aumentada (6 Ejercicios)",
+    category: "Sensor Motor · Solo Android",
+    desc: "La cámara frontal funciona como sensor motor con micrófono apagado (ARCore + MediaPipe): el premio 3D sale solo cuando el niño hace la postura o gesto correcto.",
+    badge: "ARCore + MediaPipe 3D",
+    badgeColor: "purple",
+    items: ["Boquita de beso, giro de cabeza y fijación visual", "Cero fotos ni vídeos almacenados (privacidad)", "Prueba de aptitud del móvil"]
   }
 ];
 ---
@@ -87,14 +107,14 @@ const blocks = [
   <div class="container">
     <div class="section-header">
       <span class="tag">Módulos Especializados</span>
-      <h2>7 Bloques de Terapia + <span class="gradient-text">Test de Ling</span></h2>
-      <p>Diseñados para cubrir desde la criba auditiva inicial hasta intervenciones complejas en dislalias, TEA, dislexia y Realidad Aumentada.</p>
+      <h2>9 Bloques de Ejercicios + <span class="gradient-text">Test de Ling</span></h2>
+      <p>Un recorrido completo y respetuoso: desde la integración sensorial y los primeros sonidos hasta la pronunciación, la lectura y la Realidad Aumentada.</p>
     </div>
 
     <div class="screenshot-wrapper">
       <img 
         src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL}/assets/05-hub-bloques.png`} 
-        alt="Hub de Bloques de Terapia" 
+        alt="Hub de Bloques de Ejercicios en Valeria+" 
         class="manual-screenshot" 
         loading="lazy" 
         decoding="async"

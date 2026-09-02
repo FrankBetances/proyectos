@@ -1,12 +1,12 @@
 ---
 const academyDomains = [
-  { icon: "💬", title: "Lenguaje", desc: "Técnicas de 'serve and return', baño de lenguaje e interacción sin corrección punitiva (recast)." },
-  { icon: "💡", title: "Mitos y Verdades", desc: "Evidencia científica contrastada sobre el habla, autismo y dislexia para guiar a la familia." },
-  { icon: "👂", title: "Hipoacusia / Sordera", desc: "Manejo de audífonos, implantes cocleares y dispositivos osteointegrados." },
-  { icon: "🗣️", title: "Dislalias", desc: "Puntos de articulación y praxias para fonemas complejos (/r/, /s/)." },
-  { icon: "🔤", title: "Dislexia", desc: "Estrategias de conciencia fonológica y apoyo a la lectura emergente." },
-  { icon: "🧩", title: "TEA", desc: "Comunicación funcional, anticipación y regulación en el espectro autista." },
-  { icon: "🤟", title: "Lengua de Signos (LSE)", desc: "Abecedario dactilológico completo (27 configuraciones dactilológicas dibujadas y validadas)." }
+  { icon: "🧭", title: "Lenguaje y 'La Brújula'", desc: "Hitos normativos ASHA de 0 a 5 años (receptivo vs. expresivo), baño de lenguaje y técnicas de modelado positivo (recast)." },
+  { icon: "👂", title: "Hipoacusia / Sordera", desc: "Qué es la pérdida auditiva, pautas familiares y manejo práctico de audífonos e implantes cocleares." },
+  { icon: "🗣️", title: "Dislalias", desc: "Puntos de articulación de la boca y praxias para acompañar los sonidos difíciles (/r/, /s/, /l/)." },
+  { icon: "🔤", title: "Dislexia", desc: "Estrategias de conciencia fonológica, ritmo y trucos sencillos para apoyar la lectura emergente en casa." },
+  { icon: "🧩", title: "TEA (Autismo)", desc: "Comunicación funcional, anticipación visual y regulación respetuosa en el espectro autista." },
+  { icon: "🤟", title: "Lengua de Signos (LSE)", desc: "Abecedario dactilológico completo (27 configuraciones de mano dibujadas y validadas por ACOPROS)." },
+  { icon: "💡", title: "Mitos y Dudas Frecuentes", desc: "Respuestas con base científica que desmontan el 'ya hablará' y orientan con tranquilidad a la familia." }
 ];
 ---
 
@@ -15,16 +15,16 @@ const academyDomains = [
     <div class="academy-box glass-card">
       <div class="academy-header-content">
         <div class="academy-title-wrap">
-          <span class="badge badge-purple">Módulo Formativo Integrado</span>
-          <h2>Academy · <span class="gradient-text">Capacitación del Cuidador</span></h2>
+          <span class="badge badge-purple">Formación Previa Integrada</span>
+          <h2>Academy · <span class="gradient-text">Capacitación para Madres y Padres</span></h2>
           <p>
-            En la terapia auditivo-verbal el adulto es el motor clínico (MDR). 
-            <strong>Academy</strong> capacita a familias con <strong>49 Cápsulas de Conocimiento</strong> de consumo rápido (≈2 min) organizadas en 7 dominios con micro-quiz explicativo y progreso independiente.
+            Entender el desarrollo del lenguaje es el primer paso para acompañarlo bien. 
+            Por eso Valeria+ <strong>abre directamente en Academy</strong>: ofrece a las familias <strong>cápsulas de 2 minutos</strong> con explicaciones claras, ejemplos cotidianos y micro-preguntas para consolidar lo aprendido con puntos de experiencia (XP).
           </p>
         </div>
         <div class="academy-badge-large">
           <span class="academy-xp">⚡ XP por Dominio</span>
-          <span class="academy-status">49 Cápsulas · 7 Silos</span>
+          <span class="academy-status">Cápsulas de 2 min · 7 Silos</span>
         </div>
       </div>
 
@@ -40,14 +40,24 @@ const academyDomains = [
         ))}
       </div>
 
-      <div class="lse-spotlight">
-        <div class="lse-tag">🌟 Validación Oficial ACOPROS</div>
-        <h3>🤟 Módulo de Lengua de Signos Española (LSE)</h3>
-        <p>
-          Las <strong>27 configuraciones del abecedario dactilológico</strong> han sido revisadas y validadas directamente por 
-          <strong>la logopeda y personas sordas de ACOPROS</strong>. Enseña las posturas fijas de la mano con panel de consulta de pantalla única y remite a fuentes oficiales 
-          con personas sordas signantes para el léxico en movimiento.
-        </p>
+      <!-- Spotlight dual: La Brújula de las Palabras + Lengua de Signos -->
+      <div class="academy-spotlight-row">
+        <div class="lse-spotlight">
+          <div class="lse-tag">🧭 Hitos Normativos ASHA (0 a 5 años)</div>
+          <h3>La Brújula de las Palabras</h3>
+          <p>
+            Una guía clara por etapas de edad que separa <strong>lo que el niño comprende</strong> (lenguaje receptivo) de <strong>lo que es capaz de decir</strong> (lenguaje expresivo), ayudando a identificar a tiempo cuándo conviene consultar con el logopeda.
+          </p>
+        </div>
+
+        <div class="lse-spotlight lse-alt">
+          <div class="lse-tag text-purple">🤟 Validación Oficial ACOPROS</div>
+          <h3>Lengua de Signos Española (LSE)</h3>
+          <p>
+            Las <strong>27 configuraciones del abecedario dactilológico</strong> han sido revisadas y validadas directamente por 
+            <strong>la logopeda y personas sordas de ACOPROS</strong>, con panel de consulta rápida en una sola pantalla.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -167,6 +177,12 @@ const academyDomains = [
     margin: 0;
   }
 
+  .academy-spotlight-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
   .lse-spotlight {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(0, 242, 254, 0.2);
@@ -186,6 +202,14 @@ const academyDomains = [
     background: var(--accent-cyan);
   }
 
+  .lse-spotlight.lse-alt {
+    border-color: rgba(168, 85, 247, 0.25);
+  }
+
+  .lse-spotlight.lse-alt::before {
+    background: var(--accent-purple);
+  }
+
   .lse-tag {
     font-size: 0.75rem;
     font-weight: 700;
@@ -193,6 +217,10 @@ const academyDomains = [
     color: var(--accent-cyan);
     letter-spacing: 0.05em;
     margin-bottom: 0.5rem;
+  }
+
+  .lse-tag.text-purple {
+    color: #C084FC;
   }
 
   .lse-spotlight h3 {

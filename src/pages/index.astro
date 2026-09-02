@@ -19,10 +19,10 @@ const valeriaJsonLd = {
       "@type": "SoftwareApplication",
       "@id": "https://FrankBetances.github.io/proyectos/#software",
       "name": "Valeria+",
-      "softwareVersion": "12.0",
+      "softwareVersion": "14.2",
       "applicationCategory": "HealthApplication",
       "operatingSystem": "Android, iOS",
-      "description": "Plataforma móvil v12 para niñas y niños con hipoacusia, implante coclear, dislalias, TEA, dislexia y dificultades del lenguaje. 7 bloques de terapia incluyendo Realidad Aumentada 3D, evaluador de Pares Mínimos D7, mascota Lúa en píxel art y principio clínico MDR 100% offline.",
+      "description": "Plataforma móvil de formación para familias y ejercicios de lenguaje para niñas y niños con hipoacusia, implante coclear, dislalias, TEA, dislexia o dificultades del habla. 9 bloques de ejercicios, Realidad Aumentada 3D, mascota Lúa, 6 variedades de voz neuronal y funcionamiento 100% offline.",
       "author": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
@@ -48,17 +48,67 @@ const valeriaJsonLd = {
         "priceCurrency": "EUR"
       },
       "featureList": [
-        "Test de Ling de 6 sonidos con comprobación previa",
+        "Formación para familias con Academy: cápsulas de 2 minutos (incluye La Brújula de las Palabras con hitos ASHA 0-5 años)",
+        "Integración Sensorial Auditiva (SOR) con 11 sonidos sintetizados propios y control adulto",
         "Pares Mínimos D7 (vecino más cercano O2 con 35/35 contrastes detectados)",
-        "7 bloques de terapia (Pares Mínimos, Expansión Semántica, Audición, Lenguaje, TEA, Dislexia, Realidad Aumentada)",
-        "Realidad Aumentada 3D con sensor de conducta motora y micrófono apagado (Filament)",
-        "Mascota oficial Lúa en píxel art con 12 niveles de progreso y 18 insignias en 5 metales",
-        "Academy con 7 dominios de capacitación para cuidadores (incluye 27 configuraciones de LSE)",
-        "5 variedades lingüísticas: Castellano (Sharvard), Galego (Celtia / Nós), Dominicano (es-DO), Euskara (HiTZ-TTS), US English (LJSpeech)",
-        "Panel del Adulto para carga comunicativa manual (muro MDR)",
-        "Reconocimiento de voz local en dispositivo (ASR Fase A)",
-        "Funcionamiento 100% offline y cifrado en reposo",
-        "Acelerada en la Incubadora de Alta Tecnología startTIC (Gradiant / Zona Franca de Vigo / FEDER)"
+        "Expansión Semántica con 66 pictogramas propios en píxel art y doble vuelta (comprensión + producción)",
+        "Audición (18 ejercicios) según protocolo ACOPROS con escucha en ruido",
+        "Lenguaje (7 ejercicios) para estimulación temprana e interacción en el hogar",
+        "TEA (6 ejercicios) con estresores 100% manuales",
+        "Dislexia (6 ejercicios) con conciencia fonológica y mapa de rotaciones",
+        "Grafomotricidad y Escritura (La Pizarra Mágica de Lúa con pauta Montessori y puntos numerados)",
+        "Realidad Aumentada 3D con ARCore + MediaPipe (sensor de conducta motora sin micrófono)",
+        "Test de Ling previo de 6 sonidos para audífonos e implantes",
+        "Mascota Lúa en píxel art con 12 niveles, 18 insignias, armario de complementos y regla 20-20-20",
+        "6 variedades idiomáticas: Castellano (Sharvard), Galego (Celtia), Dominicano (es-DO), Euskara (HiTZ-TTS), US English (LJSpeech) y Català (Matxa-TTS)",
+        "4.110 locuciones neuronales empaquetadas offline",
+        "Funcionamiento 100% offline, privacidad Zero-PHI y control del adulto (MDR)"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://FrankBetances.github.io/proyectos/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es Valeria+ y cómo ayuda a mi hijo/a?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Valeria+ es una plataforma de apoyo para el desarrollo del lenguaje infantil. Primero capacita a madres, padres y cuidadores en cápsulas de 2 minutos (Academy) para entender cada trastorno, y luego ofrece 9 bloques de ejercicios prácticos para jugar en casa junto a la gata Lúa, reforzando la terapia logopédica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué funciona 100% offline y sin conexión a internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para proteger al máximo la privacidad de los menores (Zero-PHI) y garantizar que las familias puedan practicar en cualquier lugar. Todos los audios, voces neuronales y datos de progreso quedan cifrados dentro del propio dispositivo, sin enviar grabaciones a servidores externos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa que el adulto es el juez clínico (Principio MDR)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Significa que la aplicación nunca toma decisiones automáticas ni diagnostica por su cuenta. El reconocimiento de voz asiste, pero el padre, madre o logopeda siempre tiene la última palabra para validar o corregir el resultado de cada ejercicio con un toque."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué dificultades o trastornos del lenguaje cubre Valeria+?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cubre hipoacusia e implante coclear (audición y Test de Ling), sobre-responsividad auditiva (integración sensorial), dislalias y pronunciación (pares mínimos), retraso del lenguaje (expansión semántica), autismo (TEA), dificultades de lectura y escritura (dislexia y grafomotricidad) y motricidad orofacial (realidad aumentada)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En qué idiomas y variedades lingüísticas está disponible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dispone de 6 variedades con voces neuronales propias: Castellano, Galego (Proxecto Nós), Dominicano (Quisqueya Habla), Euskara (HiTZ), US English e Català (projecte AINA), con más de 4.110 locuciones grabadas y adaptadas a la realidad de cada lengua."
+          }
+        }
       ]
     }
   ]
@@ -66,9 +116,9 @@ const valeriaJsonLd = {
 ---
 
 <Layout 
-	title="Valeria+ · Terapia Auditivo-Verbal y del Lenguaje Offline"
-	description="Plataforma móvil de terapia auditivo-verbal y del lenguaje 100% offline para niños. 7 bloques clínicos, RA 3D y Lúa AIoT. Acelerada en startTIC (Gradiant)."
-	keywords="Valeria+, Lúa, Terapia Auditivo Verbal, Hipoacusia, Implante Coclear, Dislalias, Realidad Aumentada, startTIC, Gradiant, Zona Franca de Vigo, Logopedia, Dr. Frank Betances, Earlify Health"
+	title="Valeria+ · Formación y Ejercicios de Lenguaje en Casa (100% Offline)"
+	description="App de apoyo al lenguaje infantil para familias y logopedas. 9 bloques de ejercicios, formación Academy, mascota Lúa y Realidad Aumentada. 100% offline."
+	keywords="Valeria+, terapia del lenguaje en casa, logopedia infantil, hipoacusia, implante coclear, dislalia, dislexia infantil, TEA autismo, integración sensorial auditiva, Lúa mascota, Dr. Frank Betances, Earlify Health, startTIC"
 	jsonLd={valeriaJsonLd}
 >
 	<Header activeTab="home" />

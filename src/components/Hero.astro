@@ -32,14 +32,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
     <!-- Progress & Stage Indicators (Discreet Editorial Line, invisible at 0 scroll) -->
     <div class="hero-editorial-tracker" id="v-tracker" aria-hidden="true">
-      <div class="tracker-segment" id="v-track-0"><span>01</span><div class="track-bar"><div class="track-fill" id="v-fill-0"></div></div><span>Principio MDR</span></div>
-      <div class="tracker-segment" id="v-track-1"><span>02</span><div class="track-bar"><div class="track-fill" id="v-fill-1"></div></div><span>7 Bloques & RA</span></div>
-      <div class="tracker-segment" id="v-track-2"><span>03</span><div class="track-bar"><div class="track-fill" id="v-fill-2"></div></div><span>Lúa & Evidencia</span></div>
+      <div class="tracker-segment" id="v-track-0"><span>01</span><div class="track-bar"><div class="track-fill" id="v-fill-0"></div></div><span>Entender & Acompañar</span></div>
+      <div class="tracker-segment" id="v-track-1"><span>02</span><div class="track-bar"><div class="track-fill" id="v-fill-1"></div></div><span>9 Bloques & RA</span></div>
+      <div class="tracker-segment" id="v-track-2"><span>03</span><div class="track-bar"><div class="track-fill" id="v-fill-2"></div></div><span>Lúa & Academy</span></div>
     </div>
 
     <!-- Sutil indicador de ratón inicial abajo (desaparece al hacer scroll) -->
     <div id="v-scroll-starter" class="hero-scroll-starter" aria-hidden="true">
-      <span class="starter-text">Scroll para comenzar</span>
+      <span class="starter-text">Scroll para explorar</span>
       <div class="hint-mouse">
         <div class="mouse-wheel"></div>
       </div>
@@ -54,65 +54,63 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
             src={`${baseUrl}/assets/valeria_lua.png`} 
             alt="Logo Oficial de Valeria+ con la Mascota Lúa" 
             class="valeria-brand-icon" 
-            width="110"
-            height="110"
             loading="eager"
             fetchpriority="high"
           />
         </div>
 
         <h1 class="hero-headline">
-          Terapia auditivo‑verbal y del lenguaje, <span class="gradient-text-purple">en tu bolsillo y 100% offline</span>
+          Entiende su lenguaje, practica en casa: <span class="gradient-text-purple">formación y ejercicios con Lúa</span>
         </h1>
 
         <p class="hero-narrative-lead">
-          Diseñada para niñas y niños con hipoacusia, implante coclear, dislalias, TEA, dislexia o dificultades del lenguaje. 
-          Bajo el principio clínico <strong>MDR</strong>: el adulto es el motor de voz y el juez clínico definitivo de cada respuesta.
+          Diseñada para madres, padres y cuidadores de niñas y niños con dificultades del habla, hipoacusia, implante coclear, dislalias, TEA o dislexia. 
+          <strong>Primero forma</strong> con cápsulas de 2 minutos (Academy) y <strong>después facilita la práctica en casa</strong> en 9 bloques interactivos, 100% offline y bajo control del adulto (marco MDR).
         </p>
 
         <div class="hero-badge-pill-row">
-          <span class="badge-pill pill-cyan">🚀 Incubadora startTIC (Zona Franca / Gradiant)</span>
-          <span class="badge-pill pill-purple">🔒 100% Offline & ASR Local</span>
-          <span class="badge-pill pill-emerald">🩺 Sello ITEMAS 2024</span>
-          <span class="badge-pill pill-amber">🎓 Incubación USC-INTEGRA</span>
+          <span class="badge-pill pill-purple">🎓 Formación Academy + 9 Bloques</span>
+          <span class="badge-pill pill-cyan">🔒 100% Offline & Privacidad Total</span>
+          <span class="badge-pill pill-emerald">🐱 Mascota Lúa & Gamificación</span>
+          <span class="badge-pill pill-amber">🚀 Incubadora startTIC (Zona Franca / Gradiant)</span>
         </div>
       </div>
     </div>
 
-    <!-- PHASE 1: Los 7 Bloques Clínicos & Realidad Aumentada 3D (38% - 70% Scroll) -->
+    <!-- PHASE 1: Los 9 Bloques Clínicos & Realidad Aumentada 3D (38% - 70% Scroll) -->
     <div id="v-phase-1" class="hero-phase-panel">
       <div class="phase-inner max-w-showcase">
         <div class="editorial-eyebrow eyebrow-cyan">
-          <span>Arquitectura Terapéutica Multidominio</span>
+          <span>Intervención Estructurada y Amable</span>
         </div>
         <h2 class="hero-headline text-gradient-cyan">
-          7 Bloques de intervención médica con rigor fonoaudiológico.
+          9 Bloques de ejercicios prácticos con rigor clínico.
         </h2>
 
         <div class="valeria-showcase-grid">
           <!-- Left: Clinical Cards -->
           <div class="showcase-cards-col">
             <div class="valeria-feature-card">
-              <div class="feature-icon-badge icon-cyan">👂</div>
+              <div class="feature-icon-badge icon-cyan">🎧</div>
               <div class="feature-text">
-                <strong>Test de Ling & Audición en Ruido</strong>
-                <p>Comprobación previa de 6 sonidos [a, i, u, m, s, ʃ] y entrenamiento progresivo en ruido babble.</p>
+                <strong>Integración Sensorial SOR (11 Sonidos)</strong>
+                <p>Desensibilización para niños sensibles al ruido (aspiradora, secador, aula). Muro de control adulto.</p>
               </div>
             </div>
 
             <div class="valeria-feature-card">
-              <div class="feature-icon-badge icon-purple">🎯</div>
+              <div class="feature-icon-badge icon-purple">🗣️</div>
               <div class="feature-text">
-                <strong>Pares Mínimos D7</strong>
-                <p>Vecino más cercano O2 con 35/35 contrastes fonológicos detectados y carga comunicativa manual.</p>
+                <strong>Pares Mínimos & Pizarra Mágica</strong>
+                <p>Dislalias fonológicas (rana/lana) y trazado guiado numerado para evitar inversiones b/d y p/q.</p>
               </div>
             </div>
 
             <div class="valeria-feature-card">
-              <div class="feature-icon-badge icon-emerald">🕶️</div>
+              <div class="feature-icon-badge icon-emerald">🎯</div>
               <div class="feature-text">
-                <strong>Realidad Aumentada 3D (Filament)</strong>
-                <p>Sensor de conducta motora sin micrófono: el movimiento del cuerpo activa el refuerzo visual.</p>
+                <strong>Realidad Aumentada 3D (ARCore + MediaPipe)</strong>
+                <p>Cámara frontal como sensor de movimiento de boca y cabeza con micrófono apagado: refuerzo 3D por el gesto motor.</p>
               </div>
             </div>
           </div>
@@ -126,14 +124,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
               <div class="phone-screen-content">
                 <img 
                   src={`${baseUrl}/assets/05-hub-bloques.png`} 
-                  alt="Pantalla de Hub de Bloques de Valeria+ v12" 
+                  alt="Pantalla de Hub de Bloques de Valeria+ v14" 
                   class="phone-screen-img" 
-                  width="380"
-                  height="720"
                   loading="lazy" 
                 />
                 <div class="phone-screen-overlay">
-                  <span class="screen-pill">Hub de Bloques v12</span>
+                  <span class="screen-pill">Hub de 9 Bloques</span>
                 </div>
               </div>
             </div>
@@ -146,7 +142,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <div id="v-phase-2" class="hero-phase-panel">
       <div class="phase-inner max-w-showcase">
         <div class="editorial-eyebrow eyebrow-emerald">
-          <span>Refuerzo Afectivo & Evidencia Empírica</span>
+          <span>Acompañamiento Afectivo & Evidencia Empírica</span>
         </div>
         <h2 class="hero-headline gradient-text-emerald">
           La Mascota Lúa, Academy LSE y Respaldo Asistencial.
@@ -155,22 +151,23 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <div class="valeria-dual-showcase">
           <!-- Col 1: Lúa & Academy -->
           <div class="valeria-info-card glass-card">
-            <div class="card-accent-tag text-purple">🐱 Mascota Lúa & Academy</div>
-            <h3>Gamificación sin Castigo</h3>
+            <div class="card-accent-tag text-purple">🐱 Mascota Lúa & Formación Academy</div>
+            <h3>Jugar sin castigos y aprender a acompañar</h3>
             <p>
-              Lúa acompaña en píxel art canónico con 12 niveles y 18 insignias en 5 metales. Formación Academy en 7 dominios para cuidadores con 27 configuraciones dactilológicas en LSE.
+              Lúa acompaña en píxel art con 12 niveles, armario coleccionable y descansos visuales 20-20-20. Formación en 7 dominios con La Brújula ASHA (hitos 0-5 años) y 27 gestos en Lengua de Signos (LSE).
             </p>
             <div class="card-mini-badges">
               <span class="mini-tag">🐱 Lúa Píxel Art</span>
+              <span class="mini-tag">🧭 Brújula ASHA</span>
               <span class="mini-tag">🤟 27 Gestos LSE</span>
-              <span class="mini-tag">🌍 5 Variedades de Voz</span>
+              <span class="mini-tag">🌍 6 Variedades</span>
             </div>
           </div>
 
           <!-- Col 2: Evidencia & Avales -->
           <div class="valeria-info-card glass-card">
             <div class="card-accent-tag text-cyan">🩺 Validación Médica</div>
-            <h3>Sellos de Innovación</h3>
+            <h3>Sellos de Calidad e Innovación</h3>
             <p>
               Premio Ennova Health 2025 y 2023, Sello de Calidad ITEMAS-ISCIII 2024, 1.er Premio SERGAS y co-desarrollo con ACOPROS y la Sociedad Gallega de Otorrinolaringología (SGORL).
             </p>

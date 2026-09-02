@@ -12,8 +12,8 @@ const levels = [
 const badgeFamilies = [
   { name: "Huella", tiers: "5 Rangos (1, 10, 25, 50, 100 sesiones)", desc: "De «Primera huella» a «Centenaria»." },
   { name: "Llama", tiers: "4 Rangos (3, 7, 14, 30 días)", desc: "Racha viva sostenida de práctica diaria." },
-  { name: "Estrella", tiers: "3 Rangos (1, 5, 10 sesiones)", desc: "Sesiones perfectas (todas con ★★★)." },
-  { name: "De Ocasión", tiers: "6 Insignias Especiales", desc: "Práctica matutina, nocturna, fin de semana y reencuentro." }
+  { name: "Estrella", tiers: "3 Rangos (1, 5, 10 sesiones)", desc: "Sesiones excelentes completadas con éxito." },
+  { name: "Armario de Lúa", tiers: "5 Accesorios Coleccionables", desc: "Pescadito, pajarita, flor, cascabel y gorro de maga." }
 ];
 ---
 
@@ -29,29 +29,28 @@ const badgeFamilies = [
               src={`${baseUrl}/assets/valeria_lua.png`} 
               alt="Lúa, la gata negra de Valeria+ en Píxel Art" 
               class="lua-hero-img" 
-              width="180" 
-              height="180" 
               loading="lazy" 
               decoding="async"
             />
           </div>
-          <span class="lua-tag">Mascota Oficial de Marca & AIoT</span>
+          <span class="lua-tag">Mascota Oficial & Compañera de Juego</span>
           <h3 class="lua-name">Lúa</h3>
-          <p class="lua-role">Gata negra tipo <em>smoking</em> en píxel art nativo</p>
+          <p class="lua-role">Gata negra en píxel art (app y dispositivo físico)</p>
         </div>
 
         <!-- Details Column -->
         <div class="lua-content-col">
-          <span class="badge badge-orange">Identidad Visual & Gamificación v12</span>
-          <h2>Lúa: La Cara Amiga de la <span class="gradient-text-orange">Rehabilitación Diaria</span></h2>
+          <span class="badge badge-orange">Motivación sin Castigos ni Frustración</span>
+          <h2>Lúa: La Amiga que <span class="gradient-text-orange">Acompaña cada Logro</span></h2>
           <p class="lua-desc">
-            Desde la versión 12, <strong>Lúa</strong> encabeza toda la experiencia del menor: en el icono de la app, pantalla de bienvenida, tira de progreso del hub, distractora de doble tarea y celebración de sesión. 
-            El niño no asocia la terapia con una prueba médica, sino con el juego guiado junto a su compañera felina.
+            <strong>Lúa</strong> transforma cada sesión en un juego positivo. 
+            Ronronea al acariciarla en pantalla, celebra cada intento y nunca penaliza: no enferma ni se entristece si la familia se toma unos días de descanso. 
+            El niño practica con ganas para desbloquear nuevos accesorios en su armario.
           </p>
 
           <!-- 12 Levels Carousel / Grid -->
           <div class="levels-strip">
-            <span class="strip-label">🏆 Escalera de 12 Niveles de Progreso (100 XP/Nivel):</span>
+            <span class="strip-label">🏆 12 Niveles de Superación (Gatita → Gata Legendaria):</span>
             <div class="levels-pills">
               {levels.map((lvl, index) => (
                 <span class={`level-pill ${index >= 6 ? 'highlight' : ''}`}>{lvl}</span>
@@ -69,6 +68,26 @@ const badgeFamilies = [
               </div>
             ))}
           </div>
+
+          <!-- Regla 20-20-20 y Hardware de Lúa -->
+          <div class="lua-features-extra">
+            <div class="extra-pill">
+              <span class="extra-icon">👀</span>
+              <div class="extra-text">
+                <strong>Descanso Visual (Regla 20-20-20):</strong>
+                <span>Cada 20 min de juego, Lúa se echa una siesta de 20 segundos para recordar mirar lejos y cuidar la vista.</span>
+              </div>
+            </div>
+
+            <div class="extra-pill">
+              <span class="extra-icon">📟</span>
+              <div class="extra-text">
+                <strong>Dispositivo Físico Lúa (ESP32-C3):</strong>
+                <span>Mascota interactiva con pantalla redonda de 240×240 px que refleja las emociones de la app fuera del móvil.</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -260,6 +279,44 @@ const badgeFamilies = [
     color: var(--text-dim);
     margin: 0;
     line-height: 1.4;
+  }
+
+  .lua-features-extra {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .extra-pill {
+    background: rgba(249, 115, 22, 0.08);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .extra-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .extra-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  .extra-text strong {
+    color: var(--text-main);
+    font-size: 0.9rem;
   }
 
   @media (max-width: 900px) {

@@ -4,15 +4,15 @@
 <section id="que-es" class="what-section">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Principio Clínico & Filosofía</span>
-      <h2>¿Qué hace único a <span class="gradient-text">Valeria+</span>?</h2>
-      <p>Un enfoque basado en la evidencia clínica donde la tecnología sirve de facilitador y el adulto supervisa cada avance.</p>
+      <span class="tag">Principio Clínico & Familiar</span>
+      <h2>¿Cómo ayuda <span class="gradient-text">Valeria+</span> en el día a día?</h2>
+      <p>Un método en dos pasos: <strong>primero forma a la familia</strong> para saber cómo acompañar y <strong>después facilita ejercicios en casa</strong> para practicar jugando junto a la gata Lúa.</p>
     </div>
 
     <div class="screenshot-wrapper">
       <img 
         src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL}/assets/09-pares-veredicto.png`} 
-        alt="Veredicto de Pares Mínimos" 
+        alt="Veredicto de Pares Mínimos en Valeria+ con control de adulto" 
         class="manual-screenshot" 
         loading="lazy"
         decoding="async"
@@ -21,21 +21,34 @@
 
     <div class="features-grid">
       <div class="glass-card feature-card">
+        <div class="icon-wrapper purple">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </div>
+        <h3>1. Primero Formar (Academy)</h3>
+        <p>
+          Entender la dificultad va antes que ejercitarla. Academy ofrece a las familias <strong>cápsulas de 2 minutos</strong> con trucos prácticos: cómo modelar el lenguaje sin corregir con regañinas y cómo respetar los turnos de conversación.
+        </p>
+        <span class="card-tag">Aprender para Acompañar</span>
+      </div>
+
+      <div class="glass-card feature-card">
         <div class="icon-wrapper cyan">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
         </div>
-        <h3>Marco Regulatorio MDR</h3>
+        <h3>2. El Adulto Siempre al Mando (MDR)</h3>
         <p>
-          La aplicación <strong>nunca decide de forma automatizada</strong> sobre el diagnóstico o progreso del niño. 
-          El padre, madre o logopeda actúa siempre como el juez clínico definitivo, confirmando o rectificando el veredicto con un toque manual.
+          La aplicación <strong>nunca evalúa ni diagnostica sola</strong>. El micrófono ayuda a escuchar, pero el adulto (madre, padre o logopeda) es quien confirma el acierto con un toque, adaptando el ritmo a cada niña o niño.
         </p>
-        <span class="card-tag">Control Humano Garantizado</span>
+        <span class="card-tag">Seguridad y Criterio Humano</span>
       </div>
 
       <div class="glass-card feature-card">
-        <div class="icon-wrapper purple">
+        <div class="icon-wrapper emerald">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
             <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
@@ -43,16 +56,15 @@
             <line x1="6" y1="18" x2="6.01" y2="18"></line>
           </svg>
         </div>
-        <h3>Arquitectura 100% Offline</h3>
+        <h3>3. 100% Offline & Privacidad Zero-PHI</h3>
         <p>
-          Toda la app —incluyendo la síntesis de voz neuronal (Sharvard, Celtia, HiTZ-TTS), los audios, la telemetría y el almacenamiento cifrado— 
-          funciona <strong>sin conexión a Internet</strong> en reposo.
+          Todas las voces neuronales, audios y ejercicios funcionan <strong>sin conexión a internet</strong>. Las grabaciones nunca salen del teléfono ni se envían a servidores externos: máxima privacidad garantizada para los menores.
         </p>
-        <span class="card-tag">Privacidad Total</span>
+        <span class="card-tag">Sin Conexión Obligatoria</span>
       </div>
 
       <div class="glass-card feature-card">
-        <div class="icon-wrapper emerald">
+        <div class="icon-wrapper amber">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
@@ -60,12 +72,11 @@
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
         </div>
-        <h3>Doble Evaluación (Padre-Hijo)</h3>
+        <h3>4. Práctica en Doble Vuelta</h3>
         <p>
-          En módulos como Pares Mínimos o Expansión Semántica, la app separa claramente la <strong>comprensión auditiva</strong> (selección de imágenes) de la 
-          <strong>producción oral</strong> (repetición), evitando sesgos comunes en clínica.
+          Diferencia claramente <strong>lo que el niño comprende</strong> (tocar la imagen correcta) de <strong>lo que produce</strong> (hablar). Así se reduce la ansiedad y se evita etiquetar como falta de comprensión lo que es solo dificultad de articulación.
         </p>
-        <span class="card-tag">Validación en Doble Vuelta</span>
+        <span class="card-tag">Comprensión vs. Producción</span>
       </div>
     </div>
   </div>

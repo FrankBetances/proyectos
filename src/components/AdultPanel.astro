@@ -7,15 +7,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <section id="panel-adulto" class="adult-section section-padding">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Muro Regulatorio MDR</span>
-      <h2>Panel del Adulto · <span class="gradient-text">Carga Comunicativa</span></h2>
-      <p>Módulos de reto foniátrico y cognitivo accionables de forma estrictamente manual. La app nunca adapta ni altera parámetros de forma automática.</p>
+      <span class="tag">Muro de Control Adulto (Marco MDR)</span>
+      <h2>Panel del Adulto · <span class="gradient-text">Retos Adaptados y Manuales</span></h2>
+      <p>Herramientas que el padre, madre o logopeda activa a mano para entrenar la atención y la escucha sin que la app altere parámetros a espaldas de la familia.</p>
     </div>
 
     <div class="screenshot-wrapper">
       <img 
         src={`${baseUrl}/assets/23-panel-adulto.png`} 
-        alt="Panel del Adulto de Valeria+" 
+        alt="Panel del Adulto de Valeria+ con controles manuales" 
         class="manual-screenshot" 
         loading="lazy"
         decoding="async"
@@ -25,18 +25,18 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <div class="adult-grid">
       <div class="glass-card adult-card">
         <div class="adult-icon cyan">🔊</div>
-        <h3>Escucha en Ruido (0-10)</h3>
+        <h3>1. Escucha en Ruido (0 a 10)</h3>
         <p>
-          Reproducción dual con instrucción TTS sobre pista de <strong>ruido babble de cafetería</strong> en bucle. 
-          El slider manual permite al adulto simular entornos reales con interferencia sonora gradual.
+          Mezcla la voz de la app con <strong>ruido ambiental de cafetería</strong> en bucle. 
+          El adulto sube o baja el volumen manualmente para enseñar al niño a prestar atención incluso con ruido de fondo.
         </p>
         <div class="control-mockup">
-          <span class="control-label">Nivel de Ruido Babble:</span>
+          <span class="control-label">Ruido de Fondo:</span>
           <div class="slider-bar">
             <div class="slider-fill" style="width: 60%;"></div>
             <div class="slider-thumb" style="left: 60%;"></div>
           </div>
-          <span class="control-val">6 / 10</span>
+          <span class="control-val">Nivel 6</span>
         </div>
       </div>
 
@@ -46,31 +46,41 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
             src={`${baseUrl}/assets/valeria_lua.png`} 
             alt="Lúa Gata Distractora" 
             class="adult-cat-icon-img" 
-            width="32" 
-            height="32" 
           />
         </div>
-        <h3>Doble Tarea (Gata Distractora)</h3>
+        <h3>2. Doble Tarea (Gata Distractora)</h3>
         <p>
-          <strong>Lúa</strong> se asoma por la periferia sin ser interactiva (<code>pointerEvents="none"</code>), 
-          creando interferencia visual pura para entrenar el paradigma de carga cognitiva dual con animación en el hilo nativo.
+          <strong>Lúa</strong> se asoma por los bordes de la pantalla de forma no interactiva, 
+          entrenando la concentración del niño mientras escucha las instrucciones sin distraerse con facilidad.
         </p>
         <div class="control-mockup">
           <span class="control-label">Interferencia Visual:</span>
-          <span class="badge badge-purple">Lúa en Hilo Nativo</span>
+          <span class="badge badge-purple">Lúa en Segundo Plano</span>
         </div>
       </div>
 
       <div class="glass-card adult-card">
         <div class="adult-icon amber">💬</div>
-        <h3>Quiebre Pragmático</h3>
+        <h3>3. Quiebre Pragmático</h3>
         <p>
-          "Fallo deliberado": la app guarda silencio y es el adulto quien rompe la comunicación a propósito para evaluar cómo el niño 
-          aplica <strong>estrategias de reparación</strong> (con aviso previo de frustración útil).
+          La app guarda silencio y el adulto rompe la conversación a propósito para observar cómo el niño 
+          <strong>pide ayuda o aclara lo que necesita</strong>, reforzando la comunicación real del día a día.
         </p>
         <div class="control-mockup">
           <span class="control-label">Modo Quiebre:</span>
-          <span class="badge badge-amber">Consentimiento Requerido</span>
+          <span class="badge badge-amber">Control 100% Manual</span>
+        </div>
+      </div>
+
+      <div class="glass-card adult-card">
+        <div class="adult-icon emerald">🎧</div>
+        <h3>4. Control Sensorial Seguro (SOR)</h3>
+        <p>
+          El adulto elige el sonido, la <strong>intensidad (1 a 5)</strong> y los segundos (3, 7 o 15 s) <em>antes</em> de pasar la tableta al niño. El menor tiene su botón de pausa y <strong>detenerse siempre suma puntos</strong>.
+        </p>
+        <div class="control-mockup">
+          <span class="control-label">Muro Sensorial:</span>
+          <span class="badge badge-emerald">Intensidad Protegida</span>
         </div>
       </div>
     </div>

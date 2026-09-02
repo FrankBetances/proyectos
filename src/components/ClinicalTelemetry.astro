@@ -1,11 +1,12 @@
 ---
 const partners = [
   { name: "ACOPROS", desc: "Asociación de Padres y Madres de Niños Sordos de A Coruña (Validación Clínica y Logopédica)" },
-  { name: "Xunta de Galicia", desc: "Consellería de Política Social e Xuventude" },
-  { name: "Quisqueya Habla", desc: "UFHEC · Universidad Francisco Henríquez y Carvajal (República Dominicana)" },
+  { name: "startTIC · CZFV / Gradiant", desc: "Incubadora de Alta Tecnología en Salud Digital (Zona Franca de Vigo / FEDER)" },
+  { name: "Quisqueya Habla", desc: "UFHEC · Universidad Francisco Henríquez y Carvajal (FONDOCYT / MESCYT)" },
   { name: "USC", desc: "Universidade de Santiago de Compostela" },
-  { name: "Proxecto Nós", desc: "Tecnoloxías do Galego na Era Digital" },
-  { name: "HiTZ / UPV-EHU", desc: "Centro Vasco de Tecnología del Lenguaje (Aholab)" }
+  { name: "Proxecto Nós", desc: "Tecnoloxías do Galego na Era Dixital (Voz Celtia)" },
+  { name: "HiTZ / UPV-EHU", desc: "Centro Vasco de Tecnología del Lenguaje (Aholab · Voz HiTZ-TTS)" },
+  { name: "Projecte AINA / BSC", desc: "Barcelona Supercomputing Center (Voz Matxa-TTS Català)" }
 ];
 ---
 
@@ -16,29 +17,29 @@ const partners = [
         <span class="badge badge-emerald">Evidencia de Usabilidad</span>
         <h2>Telemetría del <span class="gradient-text-emerald">Piloto Clínico</span></h2>
         <p>
-          Para recabar evidencia científica y regulatoria sin interferir en la rutina de las familias, 
-          Valeria+ incluye una capa de telemetría <strong>offline, anónima y no bloqueante</strong>.
+          Para medir cómo responde la app y mejorarla sin invadir la privacidad de las familias, 
+          Valeria+ recoge datos de usabilidad <strong>100% anónimos, sin conexión y sin guardar grabaciones de voz</strong> (Zero-PHI).
         </p>
 
         <ul class="telemetry-list">
           <li>
-            <strong>⏱️ Tiempo activo por pantalla:</strong> Medición aritmética exacta del tiempo de permanencia.
+            <strong>⏱️ Tiempo activo por pantalla:</strong> Cuánto tiempo se dedica a cada juego o módulo formativo.
           </li>
           <li>
-            <strong>👆 Registro de misclicks:</strong> Detección de toques fuera de zonas interactivas (<code>ValeriaMisclickBoundary</code>).
+            <strong>👆 Registro de toques fuera de lugar:</strong> Detección de zonas confusas en la pantalla para hacer la interfaz más fácil e intuitiva.
           </li>
           <li>
-            <strong>💬 Encuesta SUS adaptada:</strong> Evaluación de usabilidad subjetiva con rate-limiting semanal.
+            <strong>💬 Encuesta rápida para familias (SUS):</strong> Preguntas sencillas semanales para saber cómo encaja la práctica en la rutina del hogar.
           </li>
           <li>
-            <strong>📱 Exportación Dual:</strong> Resumen mediante <strong>código QR</strong> sin conexión o envío del log completo por ShareSheet.
+            <strong>📱 Exportación por Código QR:</strong> El logopeda puede escanear en consulta un resumen sin necesidad de cables ni internet.
           </li>
         </ul>
       </div>
 
       <div class="glass-card partners-card">
         <h3>Instituciones Colaboradoras</h3>
-        <p class="partners-sub">Proyectos de investigación y entidades clínicas que hacen posible Valeria+:</p>
+        <p class="partners-sub">Proyectos de investigación y entidades científicas que hacen posible Valeria+:</p>
 
         <div class="partners-list">
           {partners.map((p) => (
