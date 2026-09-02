@@ -5,34 +5,34 @@ const languages = [
     name: "Castellano",
     flag: "🇪🇸",
     voice: "Piper (VITS) · sharvard-medium",
-    status: "Validado Clínicamente",
+    status: "Aprobado por ACOPROS",
     statusColor: "emerald",
-    bank: "38 láminas (Bandas A–D)",
-    corpus: "91 recortes empaquetados",
-    origin: "Modelo abierto calibrado (Valeria+ reference)",
+    bank: "Base: 38 láminas (Bandas A–D)",
+    corpus: "97 entradas completas",
+    origin: "Modelo de referencia de Valeria+",
     desc: "Banco normativo estándar con balance fonético completo y duración mínima garantizada de estímulo (≥350 ms)."
   },
   {
     code: "gl",
     name: "Galego",
     flag: "Galicia",
-    voice: "Celtia (Coqui TTS / VITS)",
+    voice: "Celtia (Coqui TTS / Proxecto Nós)",
     status: "Aprobado por ACOPROS",
     statusColor: "emerald",
     bank: "38 láminas propias",
-    corpus: "Locuciones de estímulo integradas",
+    corpus: "97 entradas completas",
     origin: "Proxecto Nós / ILENIA (Xunta de Galicia)",
-    desc: "Banco propio adaptado al inventario fonético gallego, auditado y aprobado formalmente por ACOPROS (28/07/2026)."
+    desc: "Banco propio adaptado al inventario fonético gallego, auditado y aprobado formalmente por ACOPROS."
   },
   {
     code: "eu",
     name: "Euskara",
     flag: "Euskadi",
     voice: "Maider (AhoTTS VITS)",
-    status: "Provisional (AhoTTS)",
-    statusColor: "amber",
+    status: "Firmado por Ulertuz",
+    statusColor: "emerald",
     bank: "37 láminas propias",
-    corpus: "Frontend fonético vasco",
+    corpus: "97 entradas completas",
     origin: "HiTZ / Aholab · UPV/EHU (NEL-GAITU)",
     desc: "Banco específico con distribución fonológica de sibilantes vascas (z, s, x, tz, ts, tx) y diptongos decrecientes."
   },
@@ -44,9 +44,45 @@ const languages = [
     status: "Aprobado (Quisqueya Habla)",
     statusColor: "emerald",
     bank: "37 láminas auditadas",
-    corpus: "86 recortes empaquetados",
+    corpus: "97 entradas completas",
     origin: "Ensayo Clínico Quisqueya Habla / FONDOCYT",
-    desc: "Variante caribeña auditada con 37/37 locuciones aprobadas, respetando los alófonos sin desvirtuar el inventario fonético."
+    desc: "Variante caribeña auditada con 37/37 locuciones aprobadas, respetando alófonos sin desvirtuar el inventario fonético."
+  },
+  {
+    code: "ca",
+    name: "Català",
+    flag: "Catalunya",
+    voice: "Matxa-TTS (projecte AINA / BSC)",
+    status: "Voz Firmada (Dra. María ORL)",
+    statusColor: "cyan",
+    bank: "Banco verbal en proceso",
+    corpus: "11 consignas locutadas",
+    origin: "Projecte AINA / Barcelona Supercomputing Center",
+    desc: "Interfaz íntegramente en catalán con síntesis neural Matxa-TTS para consignas y aviso transparente de banco verbal en adaptación."
+  },
+  {
+    code: "es-419",
+    name: "Español (Latinoamérica)",
+    flag: "LatAm",
+    voice: "Piper LatAm · Claude-High",
+    status: "Aprobado (Quisqueya Habla)",
+    statusColor: "emerald",
+    bank: "37/37 recortes propios",
+    corpus: "11 consignas locutadas",
+    origin: "rhasspy / piper-voices",
+    desc: "Variedad latinoamericana neutra para exploración en países hispanohablantes del continente americano."
+  },
+  {
+    code: "en",
+    name: "English (US)",
+    flag: "🇺🇸",
+    voice: "Piper · LJSpeech-High",
+    status: "Voz Firmada (Miguelina)",
+    statusColor: "cyan",
+    bank: "Banco verbal en proceso",
+    corpus: "11 consignas locutadas",
+    origin: "rhasspy / piper-voices",
+    desc: "Interfaz y consignas completas en inglés estadounidense con síntesis neural de alta definición para exploración bilingüe."
   }
 ];
 ---
@@ -56,9 +92,9 @@ const languages = [
     
     <div class="section-header">
       <span class="tag tag-purple">Capa de Voz Neuronal Multi-idioma</span>
-      <h2>Cuatro Lenguas de Sesión & <span class="gradient-text">Cero IA en Dispositivo</span></h2>
+      <h2>Siete Lenguas de Sesión & <span class="gradient-text">Cero IA en Dispositivo</span></h2>
       <p>
-        VIA+ adapta tanto las palabras presentadas (banco de estímulos) como los modelos hablados (locuciones). 
+        VIA+ adapta tanto las palabras presentadas (banco de estímulos) como los modelos hablados (421 locuciones empaquetadas). 
         Siguiendo el <strong>ADR de inferencia en dispositivo</strong>, los modelos neuronales corren en build-time: en la tablet la reproducción es 100% offline y determinista.
       </p>
     </div>

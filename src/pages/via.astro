@@ -13,8 +13,8 @@ import ViaTechStack from '../components/via/ViaTechStack.astro';
 import ViaEcosystem from '../components/via/ViaEcosystem.astro';
 import Footer from '../components/Footer.astro';
 
-const pageTitle = "VIA+ · Software Médico SaMD Clase IIa (12 Módulos & 4 Lenguas)";
-const pageDescription = "Software como Dispositivo Médico (SaMD Clase IIa, MDR 2017/745) para apoyo a la decisión clínica en audiología pediátrica, logoaudiometría, voz, disfagia y neurodesarrollo.";
+const pageTitle = "VIA+ · Software Médico SaMD Clase IIa (13 Módulos & 7 Lenguas)";
+const pageDescription = "Software como Dispositivo Médico (SaMD Clase IIa, MDR 2017/745) para apoyo diagnóstico en audiología pediátrica, análisis de voz con Praat, disfagia, neurodesarrollo e hitos ASHA.";
 
 const viaJsonLd = {
   "@context": "https://schema.org",
@@ -23,6 +23,7 @@ const viaJsonLd = {
       "@type": "SoftwareApplication",
       "@id": "https://FrankBetances.github.io/proyectos/via#software",
       "name": "VIA+ (Valoración Interactiva de Audición y Lenguaje)",
+      "softwareVersion": "2.4",
       "applicationCategory": "MedicalApplication",
       "operatingSystem": "iOS, Android",
       "description": pageDescription,
@@ -42,18 +43,68 @@ const viaJsonLd = {
         "audienceType": ["Physician", "Otorhinolaryngologist", "Audiologist", "Speech Language Pathologist", "Pediatrician"]
       },
       "featureList": [
-        "12 módulos de evaluación clínica y neurodesarrollo",
+        "13 módulos de evaluación clínica y neurodesarrollo adaptados a la infancia",
+        "Pre-screening clínico CAP (Certificado de Aptitud para la Prueba) bloqueante",
         "Sonómetro Ambiental en dB(A) con ponderación A con estado (IEC 61672)",
-        "Análisis Acústico de Voz (F0, jitter, shimmer, HNR) contrastado contra Praat",
-        "Análisis Prosódico descriptivo sobre habla conectada",
-        "Audiometría Tonal (Hughson-Westlake) y Condicionada (El Tren del Sonido)",
-        "Logoaudiometría Verbal en 4 lenguas (Castellano, Galego, Euskara, Dominicano)",
-        "Test de Disfagia MECV-V con pulsioximetría BLE (0x1822)",
-        "Cribado de Autismo M-CHAT-R/F y SAHS Infantil (PSQ Chervin)",
-        "Pre-screening clínico CAP (Certificado de Aptitud) bloqueante",
-        "Principio de Cero IA en el dispositivo (modelos en build-time)",
+        "Audiometría Tonal liminar (Hughson-Westlake) y Condicionada (El Tren del Sonido)",
+        "Análisis Acústico de Voz (F0, jitter, shimmer, HNR) contrastado matemáticamente contra Praat",
+        "Test de Disfagia MECV-V con pulsioximetría BLE (perfil 0x1822) para desaturación SpO₂",
+        "Cribado de Autismo M-CHAT-R/F y SAHS Infantil (PSQ de Chervin)",
+        "Articulación fonética T.A.R. (registro SODA) con modelo hablado y reconocedor local",
+        "Logoaudiometría Verbal en campo libre con 7 lenguas de sesión registradas",
+        "Funciones Ejecutivas con 5 mini-juegos estructurados por franjas de edad",
+        "Análisis Prosódico descriptivo sobre habla conectada espontánea",
+        "Cribado normativo de Hitos del Lenguaje ASHA (0 a 5 años) con 8 banderas rojas",
+        "Principio de Cero IA en el dispositivo (modelos neuronales confinados a build-time)",
         "Telemetría de usabilidad Zero-PHI con código QR anónimo (IEC 62366-1)",
-        "Operación 100% offline y persistencia local en SQLite (AES-256)"
+        "Operación 100% offline y persistencia local en SQLite",
+        "Integración con mascota física Lúa (ESP32-C3) bajo estricto silencio clínico durante la exploración"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://FrankBetances.github.io/proyectos/via#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es VIA+ y para qué sirve en consulta médica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VIA+ es un Software como Dispositivo Médico (SaMD Clase IIa) diseñado para tablets que asiste a médicos otorrinolaringólogos, audiólogos y logopedas en la valoración integral de la audición, la voz, la articulación, la deglución y el neurodesarrollo infantil de forma interactiva y gamificada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa que VIA+ aplica el principio de 'Cero IA en el dispositivo'?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Significa que la aplicación no utiliza modelos de inteligencia artificial de 'caja negra' en tiempo real. Todas las mediciones acústicas y algoritmos de evaluación son matemáticamente deterministas, auditables y validados (como contra el estándar Praat), lo que garantiza máxima fiabilidad y cumplimiento con el Reglamento de IA de la UE."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué VIA+ no emite diagnósticos automáticos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Por mandato de seguridad y regulación sanitaria (MDR 2017/745 Clase IIa y IEC 62304 Clase B). VIA+ es un sistema de apoyo a la decisión clínica (CDSS): proporciona datos precisos, pero el diagnóstico y la decisión médica siempre corresponden en exclusiva al facultativo especialista."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo protege la privacidad de los niños y sus datos de salud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Todos los datos clínicos y grabaciones de audio se guardan exclusivamente en la memoria local de la tablet (SQLite) y nunca se suben a la nube. La telemetría de usabilidad es anónima (Zero-PHI) y se exporta mediante un código QR sin internet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En qué idiomas y lenguas se puede realizar la evaluación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cuenta con 7 lenguas de sesión: Castellano, Galego (Proxecto Nós), Euskara (HiTZ/Aholab), Dominicano (Quisqueya Habla), Català (projecte AINA), Español Latinoamericano y US English, con bancos de voz neuronal y adaptaciones fonéticas validadas."
+          }
+        }
       ]
     }
   ]
@@ -63,7 +114,7 @@ const viaJsonLd = {
 <Layout 
 	title={pageTitle}
 	description={pageDescription}
-	keywords="VIA+, SaMD, Dispositivo Médico Clase IIa, MDR 2017/745, Audiología Pediátrica, Logoaudiometría, Análisis Acústico de Voz, Análisis Prosódico, Disfagia MECV-V, M-CHAT-R, Telemetría Zero-PHI, Dr. Frank Betances"
+	keywords="VIA+, SaMD, Dispositivo Médico Clase IIa, MDR 2017/745, Audiología Pediátrica, Logoaudiometría, Análisis Acústico de Voz Praat, Disfagia MECV-V, M-CHAT-R, Hitos ASHA, Telemetría Zero-PHI, Dr. Frank Betances, Earlify Health"
 	jsonLd={viaJsonLd}
 >
 	<Header activeTab="via" />
