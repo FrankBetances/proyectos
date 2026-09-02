@@ -14,23 +14,25 @@ import EarlifyValidation from '../components/earlify/EarlifyValidation.astro';
 import EarlifyDifferentiators from '../components/earlify/EarlifyDifferentiators.astro';
 import EarlifyCTA from '../components/earlify/EarlifyCTA.astro';
 
-const pageTitle = "Earlify Health · Terapia Digital & Neurodesarrollo Infantil";
-const pageDescription = "Earlify Health conecta la consulta médica con el hogar mediante terapia digital y hardware AIoT. Proyecto incubado en startTIC (Zona Franca / Gradiant).";
+const pageTitle = "Earlify Health · Ecosistema Pediátrico: Consulta, Hogar y Lúa";
+const pageDescription = "Conectamos la consulta médica con el hogar para el desarrollo infantil: VIA+ (apoyo diagnóstico), Valeria+ (terapia y formación familiar) y Lúa (mascota AIoT).";
 
 const earlifyJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": "MedicalOrganization",
       "@id": "https://FrankBetances.github.io/proyectos/earlify#organization",
       "name": "Earlify Health S.L.",
       "legalName": "Earlify Health S.L.",
       "url": "https://FrankBetances.github.io/proyectos/earlify",
-      "slogan": "Conectando la consulta médica con el hogar mediante terapia digital.",
+      "logo": "https://FrankBetances.github.io/proyectos/assets/earlify-logo.png",
+      "slogan": "Uniendo la precisión médica con la calidez del hogar para el desarrollo infantil.",
       "founder": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
-        "jobTitle": "Fundador y CEO",
+        "jobTitle": "Médico Otorrinolaringólogo y Especialista en Salud Digital",
+        "url": "https://FrankBetances.github.io/proyectos/cv",
         "sameAs": "https://orcid.org/0000-0002-6349-9537"
       },
       "description": pageDescription,
@@ -62,8 +64,8 @@ const earlifyJsonLd = {
           "itemOffered": {
             "@type": "SoftwareApplication",
             "name": "VIA+",
-            "applicationCategory": "HealthApplication",
-            "description": "Herramienta de apoyo a la decisión clínica para profesionales sanitarios en audición, lenguaje y neurodesarrollo (SaMD Clase IIa)."
+            "applicationCategory": "MedicalApplication",
+            "description": "Software como Dispositivo Médico (SaMD Clase IIa) con 13 módulos de evaluación clínica de audición, voz (validada con Praat), deglución y neurodesarrollo."
           }
         },
         {
@@ -72,16 +74,46 @@ const earlifyJsonLd = {
             "@type": "SoftwareApplication",
             "name": "Valeria+",
             "applicationCategory": "HealthApplication",
-            "description": "Aplicación de rehabilitación auditivo-verbal y del lenguaje para niños, acompañados por padres y cuidadores 100% offline."
+            "description": "Plataforma de apoyo al lenguaje infantil con formación para familias (Academy) y 9 bloques de ejercicios 100% offline."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Product",
-            "name": "Lúa (Mascota AIoT)",
-            "category": "Medical Device Accessory & Pediatric Neurodevelopment Hardware",
-            "description": "Compañera física interactiva ESP32-C3 con pantalla IPS circular 240x240 para espejo visual y asistencia en silencio clínico."
+            "name": "Lúa",
+            "category": "Pediatric Health Companion & AIoT Hardware",
+            "description": "Mascota física en ESP32-C3 y digital en pixel art que ofrece refuerzo lúdico y acompaña en estricto silencio clínico durante las pruebas médicas."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://FrankBetances.github.io/proyectos/earlify#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es Earlify Health y cuál es su misión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Earlify Health es una empresa de salud digital pediátrica incubada en startTIC (Zona Franca de Vigo / Gradiant / FEDER). Su misión es eliminar la soledad y la incertidumbre que sufren las familias tras un diagnóstico de audición o lenguaje, uniendo la precisión de la consulta médica con la terapia diaria en casa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se integran VIA+, Valeria+ y Lúa en un solo ecosistema?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VIA+ realiza la evaluación clínica en consulta con 13 módulos objetivos; Valeria+ traslada las pautas al hogar con formación para padres (Academy) y 9 bloques de juego; y Lúa es la mascota física y digital que motiva al niño y respeta el silencio clínico en consulta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué las soluciones de Earlify funcionan 100% offline y con Cero IA en el dispositivo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para garantizar la máxima protección de la privacidad de los menores (Zero-PHI) y cumplir estrictamente con el marco regulatorio europeo (MDR 2017/745 y Reglamento de IA). Los datos quedan en el dispositivo y los cálculos acústicos son transparentes y deterministas."
           }
         }
       ]
@@ -93,7 +125,7 @@ const earlifyJsonLd = {
 <Layout 
   title={pageTitle}
   description={pageDescription}
-  keywords="Earlify Health, VIA+ SaMD, Valeria+, Mascota Lúa, startTIC, Incubadora Alta Tecnología, Zona Franca de Vigo, Gradiant, Neurodesarrollo, Salud Digital, Dr. Frank Betances"
+  keywords="Earlify Health, VIA+ SaMD, Valeria+, Mascota Lúa, startTIC, Incubadora Alta Tecnología, Zona Franca de Vigo, Gradiant, Neurodesarrollo Infantil, Logopedia en Casa, Salud Digital, Dr. Frank Betances"
   jsonLd={earlifyJsonLd}
 >
   <Header activeTab="earlify" />

@@ -4,59 +4,80 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : import.meta.env.BASE_URL;
 ---
 
-<section id="dos-productos" class="solution-section section-padding">
+<section id="ecosistema-completo" class="solution-section section-padding">
   <div class="container">
     <div class="solution-header">
-      <span class="section-badge badge-green">Nuestra Solución</span>
+      <span class="section-badge badge-green">Nuestra Trilogía Asistencial</span>
       <h2 class="solution-title">
-        Un ecosistema continuo: <span class="text-green">De la clínica al hogar</span>
+        Un ecosistema continuo: <span class="text-green">De la consulta médica al corazón del hogar</span>
       </h2>
       <p class="solution-subtitle">
-        Earlify Health no vende software aislado. Ofrecemos dos productos que se sincronizan perfectamente para garantizar que la terapia nunca se detenga al salir de consulta.
+        Earlify Health no crea aplicaciones aisladas. Unimos tres piezas sincronizadas que acompañan a la infancia y a sus familias en cada etapa: evaluación médica precisa, estimulación diaria en casa y una compañera entrañable.
       </p>
     </div>
 
     <div class="products-container">
       
-      <!-- Producto: VIA+ -->
+      <!-- Producto 1: VIA+ -->
       <div class="product-box via-box glass-card">
         <div class="product-content">
           <div class="product-logo">
             <img src={`${baseUrl}/assets/via-logo.png`} alt="Logo VIA+" class="brand-logo" />
           </div>
-          <h3>VIA+ : Apoyo a la Decisión Clínica</h3>
+          <h3>VIA+ · Precisión en Consulta</h3>
           <p class="product-description">
-            Software como Dispositivo Médico (SaMD) exclusivo para profesionales. Permite realizar evaluaciones estandarizadas, precisas y gamificadas de audición y lenguaje, reduciendo el ruido clínico y generando datos objetivos.
+            Software como Dispositivo Médico (SaMD Clase IIa) diseñado para tablets que asiste a especialistas en otorrinolaringología, audiología y logopedia. Evalúa audición, voz y neurodesarrollo mediante 13 módulos gamificados sin cajas negras ni diagnósticos automatizados.
           </p>
           <ul class="product-benefits">
-            <li>Evaluación clínica estructurada (SaMD IIa)</li>
-            <li>Generación de informes automáticos</li>
-            <li>Seguimiento de la evolución del paciente</li>
+            <li>13 módulos de evaluación clínica (audiometría tonal, voz con Praat, disfagia y ASHA)</li>
+            <li>7 lenguas de sesión con procesamiento determinista y Cero IA en runtime</li>
+            <li>Telemetría de usabilidad Zero-PHI exportable en código QR anónimo (IEC 62366-1)</li>
           </ul>
         </div>
         <div class="product-image">
-          <img src={`${baseUrl}/assets/via-app-1.png`} alt="Interfaz de VIA+" />
+          <img src={`${baseUrl}/assets/via-app-1.png`} alt="Interfaz clínica de VIA+ SaMD en tablet" />
         </div>
       </div>
 
-      <!-- Producto: Valeria+ -->
+      <!-- Producto 2: Valeria+ -->
       <div class="product-box valeria-box glass-card">
         <div class="product-content">
           <div class="product-logo">
             <img src={`${baseUrl}/assets/valeria_lua.png`} alt="Logo Valeria+" class="brand-logo" />
           </div>
-          <h3>Valeria+ : Rehabilitación en el Hogar</h3>
+          <h3>Valeria+ · Terapia y Formación en Casa</h3>
           <p class="product-description">
-            Aplicación terapéutica diseñada para las familias. Convierte los objetivos clínicos de VIA+ en rutinas y juegos diarios adaptados para el hogar, guiando a los padres paso a paso para estimular el neurodesarrollo.
+            Aplicación de apoyo al lenguaje infantil diseñada para familias y educadores. Primero forma a los cuidadores en cápsulas de 2 minutos (Academy) para entender cada trastorno, y después ofrece 9 bloques de ejercicios prácticos 100% offline donde el adulto siempre tiene el control clínico.
           </p>
           <ul class="product-benefits">
-            <li>Actividades guiadas paso a paso para padres</li>
-            <li>Sincronización directa con los objetivos del clínico</li>
-            <li>Métricas de adherencia en tiempo real</li>
+            <li>Formación Academy con La Brújula de las Palabras (ASHA) y Lengua de Signos (LSE)</li>
+            <li>9 bloques clínicos: sensorial SOR, pares mínimos, Pizarra Mágica y Realidad Aumentada</li>
+            <li>4.110 locuciones neuronales en 6 variedades idiomáticas (100% offline)</li>
           </ul>
         </div>
         <div class="product-image">
-          <img src={`${baseUrl}/assets/valeria-app-1.png`} alt="Interfaz de Valeria+" />
+          <img src={`${baseUrl}/assets/valeria-app-1.png`} alt="Interfaz de estimulación del lenguaje de Valeria+" />
+        </div>
+      </div>
+
+      <!-- Producto 3: Lúa -->
+      <div class="product-box lua-box glass-card">
+        <div class="product-content">
+          <div class="product-logo">
+            <img src={`${baseUrl}/assets/valeria_lua.png`} alt="Logo Lúa" class="brand-logo" />
+          </div>
+          <h3>Lúa · El Puente Afectivo & Hardware AIoT</h3>
+          <p class="product-description">
+            Una gata negra en píxel art y un dispositivo físico con pantalla circular (ESP32-C3) que actúa como hilo conductor de confianza. En consulta médica permanece en estricto <strong>Silencio Clínico</strong> para no interferir con las mediciones, y en casa premia el esfuerzo, ronronea con caricias y cuida el descanso visual (20-20-20).
+          </p>
+          <ul class="product-benefits">
+            <li>Doble modalidad: compañera digital en la app y dispositivo físico AIoT de 240x240 px</li>
+            <li>Garantía de Silencio Clínico: sin micrófonos ni interferencias acústicas en consulta médica</li>
+            <li>Gamificación amable: armario con 5 accesorios, 18 insignias y cero castigos</li>
+          </ul>
+        </div>
+        <div class="product-image">
+          <img src={`${baseUrl}/assets/lua-pixel-art.png`} alt="Mascota Lúa en pixel art y dispositivo circular" />
         </div>
       </div>
 
@@ -138,6 +159,11 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     flex-direction: row-reverse;
   }
 
+  .lua-box {
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-left: 4px solid #fb923c;
+  }
+
   .product-content {
     flex: 1;
   }
@@ -179,6 +205,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     color: var(--accent-purple);
   }
 
+  .lua-box h3 {
+    color: #fb923c;
+  }
+
   .product-description {
     font-size: 1.1rem;
     color: var(--text-muted);
@@ -215,8 +245,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     font-size: 1.2rem;
   }
 
+  .lua-box .product-benefits li::before {
+    content: "✓";
+    color: #fb923c;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
   @media (max-width: 992px) {
-    .product-box, .valeria-box {
+    .product-box, .valeria-box, .lua-box {
       flex-direction: column;
       padding: 2rem;
       gap: 2rem;

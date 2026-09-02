@@ -4,15 +4,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : import.meta.env.BASE_URL;
 ---
 
-<section id="dos-productos" class="earlify-brands section-padding">
+<section id="portafolio-asistencial" class="earlify-brands section-padding">
   <div class="container">
     <div class="section-header">
       <span class="section-badge">Portafolio Asistencial</span>
       <h2 class="section-title">
-        Dos productos. <span class="gradient-text">Un recorrido continuo.</span>
+        Tres soluciones. <span class="gradient-text">Un solo camino para cada familia.</span>
       </h2>
       <p class="section-description">
-        Earlify desarrolla dos soluciones digitales complementarias para conectar la evaluación en consulta con la continuidad en el hogar.
+        Earlify desarrolla tecnología pediátrica complementaria para conectar la evaluación especializada en consulta con la continuidad diaria en casa y el apoyo emocional.
       </p>
     </div>
 
@@ -25,37 +25,52 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         </div>
         
         <h3 class="brand-name">VIA+</h3>
-        <p class="brand-tagline">Herramienta de apoyo a la decisión clínica</p>
+        <p class="brand-tagline">Software como Dispositivo Médico en consulta</p>
         
         <p class="brand-desc">
-          VIA+ es una herramienta de apoyo a la decisión clínica para profesionales sanitarios cualificados que estructura la evaluación en neurodesarrollo.
-          <br /><br />
-          Ayuda a recoger y organizar información relevante, aplicar un criterio de trabajo más consistente y orientar los siguientes pasos asistenciales, siempre bajo estricta supervisión profesional.
+          Herramienta en tablet para otorrinolaringólogos, audiólogos y logopedas. Integra 13 módulos de valoración (audiometría tonal y condicionada, análisis de voz validado con Praat, disfagia MECV-V y 21 hitos ASHA) sin emitir diagnósticos automáticos ni requerir internet.
         </p>
 
         <div class="card-footer">
-          <a href={`${baseUrl}/via`} class="link-btn">Ver Detalles Técnicos de VIA+ &rarr;</a>
+          <a href={`${baseUrl}/via`} class="link-btn">Explorar Módulos de VIA+ &rarr;</a>
         </div>
       </div>
 
       <!-- 2. VALERIA+ Card -->
       <div class="brand-card glass-card">
         <div class="card-top">
-          <div class="brand-badge badge-emerald">CONTINUIDAD EN CASA</div>
-          <span class="cert-pill">Español e Inglés · Participación Familiar</span>
+          <div class="brand-badge badge-emerald">TERAPIA EN CASA</div>
+          <span class="cert-pill">Formación Academy · 100% Offline</span>
         </div>
         
         <h3 class="brand-name">Valeria+</h3>
-        <p class="brand-tagline">Rehabilitación auditivo-verbal y del lenguaje</p>
+        <p class="brand-tagline">Formación familiar y 9 bloques de estimulación</p>
         
         <p class="brand-desc">
-          Valeria+ es una aplicación de rehabilitación auditivo-verbal y del lenguaje para niños, diseñados para utilizarse acompañados por padres y cuidadores en el hogar.
-          <br /><br />
-          Ofrece actividades estructuradas en español e inglés. No sustituye al profesional ni toma decisiones autónomas: da continuidad al trabajo definido en consulta manteniendo al adulto como responsable de la valoración final.
+          Plataforma que empodera a las familias con cápsulas de 2 minutos (Academy) y ofrece 9 bloques de ejercicios (sensorial SOR, pares mínimos, Pizarra Mágica y Realidad Aumentada) con 4.110 locuciones en 6 variedades idiomáticas.
         </p>
 
         <div class="card-footer">
-          <a href={`${baseUrl}/`} class="link-btn">Ver Plataforma Valeria+ &rarr;</a>
+          <a href={`${baseUrl}/`} class="link-btn">Conocer Valeria+ &rarr;</a>
+        </div>
+      </div>
+
+      <!-- 3. LÚA Card -->
+      <div class="brand-card glass-card">
+        <div class="card-top">
+          <div class="brand-badge badge-orange">REFUERZO & COMPAÑÍA</div>
+          <span class="cert-pill">Hardware ESP32-C3 · Silencio Clínico</span>
+        </div>
+        
+        <h3 class="brand-name">Lúa</h3>
+        <p class="brand-tagline">Mascota interactiva física y digital</p>
+        
+        <p class="brand-desc">
+          Compañera en pixel art y dispositivo circular BLE que une ambos mundos: guarda estricto silencio en la consulta médica para no interferir en las pruebas acústicas, y en casa acompaña y premia al niño reduciendo el estrés.
+        </p>
+
+        <div class="card-footer">
+          <a href={`${baseUrl}/lua`} class="link-btn">Descubrir a Lúa (Hardware) &rarr;</a>
         </div>
       </div>
     </div>
@@ -158,6 +173,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     background: rgba(16, 185, 129, 0.1);
     border: 1px solid rgba(16, 185, 129, 0.3);
     color: var(--accent-emerald);
+  }
+
+  .badge-orange {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    color: #fb923c;
   }
 
   .brand-name {
