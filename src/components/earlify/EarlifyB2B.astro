@@ -4,130 +4,180 @@
 <section id="implantacion" class="earlify-b2b section-padding">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">Modelo B2B · Hospitales y Centros</span>
+      <span class="section-badge">Modelo B2B · Hospitales y Redes Asistenciales</span>
       <h2 class="section-title">
-        Onboarding, implantación <span class="gradient-text">y soporte</span>
+        Onboarding, implantación <span class="gradient-text">y soporte continuado</span>
       </h2>
       <p class="section-description">
-        Earlify se asocia con hospitales, clínicas especializadas y redes asistenciales mediante un modelo de acompañamiento continuo. No vendemos certificaciones aisladas; aseguramos que nuestras soluciones se integren eficientemente en tu flujo clínico.
+        Earlify Health se asocia con hospitales, clínicas especializadas y redes asistenciales mediante un modelo integral de transferencia y acompañamiento. No entregamos software sin contexto: garantizamos su integración en los circuitos asistenciales y acreditamos la excelencia de tu institución.
       </p>
     </div>
 
     <div class="b2b-grid">
-      <div class="b2b-card glass-card">
+      <!-- Card 1: Onboarding Clínico -->
+      <article class="b2b-card glass-card">
         <div class="b2b-icon">🎓</div>
-        <h3>Onboarding Estratégico</h3>
-        <p>Formación inicial previa a la puesta en marcha para comprender los límites de uso, responsabilidades y encaje de la herramienta en el circuito de tu centro.</p>
-      </div>
+        <h3>Onboarding Clínico y Estratégico</h3>
+        <p>
+          Formación especializada previa a la puesta en marcha para facultativos (ORL, pediatría, logopedia y audiología). Definición clara de los límites de uso, responsabilidades clínicas bajo normativas MDR y encaje en las consultas de alta resolución.
+        </p>
+      </article>
 
-      <div class="b2b-card glass-card">
+      <!-- Card 2: Configuración e Implantación -->
+      <article class="b2b-card glass-card">
         <div class="b2b-icon">⚙️</div>
         <h3>Configuración e Implantación</h3>
-        <p>Adaptación del flujo clínico, selección de perfiles, registro de pacientes e inicio de evaluaciones con acompañamiento especializado.</p>
-      </div>
+        <p>
+          Adaptación del circuito de evaluación en tablets médicas, verificación del sonómetro ambiental dB(A) (IEC 61672) en cabina o consulta, registro local de pacientes (SQLite <code>viaplus.db</code>) e inicio guiado de exploraciones clínicas con telemetría Zero-PHI.
+        </p>
+      </article>
 
-      <div class="b2b-card glass-card">
+      <!-- Card 3: Soporte Continuado -->
+      <article class="b2b-card glass-card">
         <div class="b2b-icon">🤝</div>
-        <h3>Soporte Continuado</h3>
-        <p>Acompañamiento a largo plazo para resolver incidencias, mantener la adopción y asegurar una correcta utilización operativa de VIA+ y Valeria+.</p>
-      </div>
+        <h3>Soporte Técnico y Clínico Continuado</h3>
+        <p>
+          Acompañamiento a largo plazo para monitorizar la adopción, actualizar bancos fonológicos y resolver incidencias operativas, asegurando una utilización rigurosa y sostenida de VIA+ y Valeria+ en el centro asistencial.
+        </p>
+      </article>
+
+      <!-- Card 4: Sello Future for Kids -->
+      <article class="b2b-card glass-card card-highlight-purple">
+        <div class="b2b-icon">⭐</div>
+        <h3>Sello Future for Kids</h3>
+        <p>
+          Acreditación de excelencia pediátrica que certifica que la institución cumple los protocolos estándar de evaluación y rehabilitación neurofuncional. Ancla el conocimiento y el valor regulatorio en el hospital o clínica, blindando la capacidad asistencial ante la rotación de profesionales.
+        </p>
+      </article>
     </div>
   </div>
 </section>
 
 <style>
   .earlify-b2b {
-    padding: 90px 0;
+    padding: 95px 0 115px 0;
     position: relative;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.4) 100%);
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.45) 100%);
   }
 
   .section-header {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 3.5rem auto;
+    max-width: 860px;
+    margin: 0 auto 4rem auto;
   }
 
   .section-badge {
     display: inline-block;
-    padding: 0.35rem 1rem;
+    padding: 0.4rem 1.15rem;
     border-radius: var(--radius-full);
-    background: rgba(0, 242, 254, 0.1);
-    border: 1px solid rgba(0, 242, 254, 0.3);
+    background: rgba(0, 242, 254, 0.12);
+    border: 1px solid rgba(0, 242, 254, 0.35);
     color: var(--accent-cyan);
     font-size: 0.85rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
   }
 
   .section-title {
-    font-size: 2.6rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
+    font-size: 2.75rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
   }
 
   .section-description {
-    font-size: 1.15rem;
+    font-size: 1.18rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   .b2b-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .b2b-card {
-    padding: 2rem;
-    text-align: center;
+    padding: 2.5rem 2.25rem;
+    text-align: left;
     border: 1px solid var(--border-light);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border-radius: var(--radius-lg);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .b2b-card:hover {
     transform: translateY(-5px);
     border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  }
+
+  .card-highlight-purple {
+    border-color: rgba(168, 85, 247, 0.35);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(15, 23, 42, 0.7) 100%);
+  }
+
+  .card-highlight-purple:hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 35px -5px rgba(168, 85, 247, 0.35);
   }
 
   .b2b-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.25rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.35rem;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
     background: rgba(168, 85, 247, 0.1);
-    border-radius: 50%;
+    border-radius: 16px;
     border: 1px solid rgba(168, 85, 247, 0.3);
   }
 
   .b2b-card h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.35rem;
+    font-weight: 800;
     color: var(--text-main);
     margin-bottom: 1rem;
+    line-height: 1.3;
   }
 
   .b2b-card p {
-    font-size: 1rem;
+    font-size: 0.96rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.65;
     margin: 0;
   }
 
-  @media (max-width: 768px) {
-    .section-title {
-      font-size: 2rem;
-    }
+  .b2b-card code {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    color: var(--accent-cyan);
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 992px) {
     .b2b-grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  @media (max-width: 640px) {
+    .section-title {
+      font-size: 2.1rem;
+    }
     .b2b-card {
-      padding: 1.5rem 1.25rem;
+      padding: 1.85rem 1.4rem;
+    }
+    .b2b-card h3 {
+      font-size: 1.2rem;
     }
   }
 </style>

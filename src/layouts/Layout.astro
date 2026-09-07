@@ -19,8 +19,15 @@ const {
   jsonLd
 } = Astro.props;
 
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+
 const siteUrl = "https://FrankBetances.github.io/proyectos";
 const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = image.startsWith('http') 
+  ? image 
+  : `${siteUrl}${image.startsWith('/') ? '' : '/'}${image}`;
 
 const defaultJsonLd = {
   "@context": "https://schema.org",
@@ -58,7 +65,7 @@ const defaultJsonLd = {
   ]
 };
 
-const finalJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : defaultJsonLd;
+const finalJsonLd = jsonLd || defaultJsonLd;
 ---
 
 <!doctype html>
@@ -77,7 +84,7 @@ const finalJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : defau
     <link rel="canonical" href={canonicalURL} />
     
     <!-- Favicon & Sitemap -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href={`${baseUrl}/assets/earlify-logo.png`} />
     <link rel="sitemap" href={`${siteUrl}/sitemap-index.xml`} />
 
     <!-- Open Graph / Facebook / LinkedIn -->
@@ -87,7 +94,7 @@ const finalJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : defau
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:alt" content={title} />
 
     <!-- Twitter -->
@@ -95,10 +102,10 @@ const finalJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : defau
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- JSON-LD Structured Data for Google Search & Medical Knowledge Graph -->
-    <script type="application/ld+json" set:html={JSON.stringify(finalJsonLd)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(finalJsonLd)} />
   </head>
   <body>
     <div class="ambient-glow-1"></div>

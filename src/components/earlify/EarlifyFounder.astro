@@ -18,8 +18,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
         <div class="founder-info">
           <div class="badge-row">
-            <span class="badge badge-purple">👨‍⚕️ Fundador & CEO · Earlify Health S.L.</span>
-            <span class="badge badge-cyan">🩺 FEA Otorrinolaringología</span>
+            <span class="badge badge-purple">👨‍⚕️ Fundador &amp; CEO · Earlify Health S.L.</span>
+            <span class="badge badge-cyan">🩺 FEA Otorrinolaringología Infantil</span>
             <span class="badge badge-emerald">🔬 Doctorando USC</span>
           </div>
 
@@ -28,33 +28,41 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           </h2>
 
           <p class="founder-lead">
-            "La Tríada" que sostiene la ventaja competitiva de Earlify Health: visión médica asistencial de trinchera hospitalaria, rigor de investigación científica y ejecución en tecnología de salud digital.
+            FEA de Otorrinolaringología Infantil (Hospital Ribera Polusa Lugo / CHUO Ourense), Doctorando e Investigador en Salud Digital (USC). Frank encarna <strong>"La Tríada"</strong> que sostiene la ventaja competitiva y el rigor sanitario de Earlify Health:
           </p>
 
           <div class="triad-grid">
             <div class="triad-item">
               <div class="triad-num">1</div>
               <div class="triad-text">
-                <strong>Médico Asistencial</strong>
-                <p>Otorrinolaringólogo infantil (Hospital Ribera Polusa). Conoce de primera mano la sobrecarga asistencial y las listas de espera.</p>
+                <strong>1. Médico Asistencial</strong>
+                <p>Otorrinolaringólogo pediátrico en trinchera hospitalaria. Conoce de primera mano la sobrecarga asistencial, las limitaciones temporales de exploración y la angustia de las familias atrapadas en listas de espera de atención temprana.</p>
               </div>
             </div>
 
             <div class="triad-item">
               <div class="triad-num">2</div>
               <div class="triad-text">
-                <strong>Investigador Clínico</strong>
-                <p>Doctorando en la Universidade de Santiago de Compostela (USC), enfocado en la rehabilitación digital del lenguaje.</p>
+                <strong>2. Investigador Clínico</strong>
+                <p>Doctorando en la Universidade de Santiago de Compostela (USC), centrado en la rehabilitación digital del lenguaje, biomarcadores acústicos y evaluación de software médico conforme al marco regulatorio MDR e IEC 62304.</p>
               </div>
             </div>
 
             <div class="triad-item">
               <div class="triad-num">3</div>
               <div class="triad-text">
-                <strong>Emprendedor HealthTech</strong>
-                <p>Liderazgo técnico y estratégico para escalar soluciones SaaS y SaMD validadas con impacto clínico global.</p>
+                <strong>3. Emprendedor HealthTech</strong>
+                <p>Fundador y CEO de Earlify Health S.L. Liderazgo y capacidad técnica de ejecución para transformar la necesidad médica empírica en soluciones SaMD y dispositivos AIoT rigurosos, escalables y auditables.</p>
               </div>
             </div>
+          </div>
+
+          <!-- Cierre Canónico del Fundador -->
+          <div class="founder-quote-box">
+            <div class="founder-tagline">“Menos ruido. Más criterio.”</div>
+            <p class="founder-quote">
+              “Conocemos el problema porque lo padecemos todos los días.”
+            </p>
           </div>
 
           <div class="founder-actions">
@@ -75,12 +83,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <style>
   .earlify-founder {
     position: relative;
+    padding: 80px 0 110px 0;
   }
 
   .founder-card {
     padding: 3.5rem;
     border: 1px solid var(--border-glow);
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%);
+    border-radius: var(--radius-lg);
   }
 
   .founder-top {
@@ -94,8 +104,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .avatar-ring {
-    width: 160px;
-    height: 160px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
     padding: 4px;
@@ -128,30 +138,39 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .founder-title {
-    font-size: 2.6rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    line-height: 1.1;
+    font-size: 2.65rem;
+    font-weight: 900;
+    margin-bottom: 1.15rem;
+    line-height: 1.15;
+    color: var(--text-main);
   }
 
   .founder-lead {
     font-size: 1.15rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.65;
     margin-bottom: 2rem;
+  }
+
+  .founder-lead strong {
+    color: var(--accent-cyan);
   }
 
   .triad-grid {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .triad-item {
     display: flex;
     gap: 1.25rem;
     align-items: flex-start;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .triad-num {
@@ -161,7 +180,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     background: rgba(168, 85, 247, 0.15);
     border: 1px solid rgba(168, 85, 247, 0.4);
     color: var(--accent-purple);
-    font-weight: 800;
+    font-weight: 900;
     font-size: 1.1rem;
     display: flex;
     align-items: center;
@@ -173,19 +192,46 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     color: var(--text-main);
     font-size: 1.05rem;
     display: block;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
   }
 
   .triad-text p {
     color: var(--text-muted);
-    font-size: 0.925rem;
-    line-height: 1.5;
+    font-size: 0.94rem;
+    line-height: 1.55;
     margin: 0;
+  }
+
+  .founder-quote-box {
+    background: rgba(0, 242, 254, 0.06);
+    border-left: 4px solid var(--accent-cyan);
+    padding: 1rem 1.5rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin-bottom: 2.25rem;
+  }
+
+  .founder-tagline {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+    display: block;
+  }
+
+  .founder-quote {
+    font-size: 1.18rem;
+    font-weight: 800;
+    font-style: italic;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.4;
   }
 
   .founder-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     flex-wrap: wrap;
   }
 
@@ -202,20 +248,20 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       text-align: left;
     }
     .founder-card {
-      padding: 2rem;
+      padding: 2.25rem 1.75rem;
     }
   }
 
   @media (max-width: 640px) {
     .founder-card {
-      padding: 1.5rem 1rem;
+      padding: 1.75rem 1.2rem;
     }
     .founder-title {
-      font-size: 1.85rem;
+      font-size: 1.95rem;
     }
     .avatar-ring {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
     }
     .founder-actions a {
       width: 100%;

@@ -12,74 +12,379 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         Un ecosistema continuo: <span class="text-green">De la consulta médica al corazón del hogar</span>
       </h2>
       <p class="solution-subtitle">
-        Earlify Health no crea aplicaciones aisladas. Unimos tres piezas sincronizadas que acompañan a la infancia y a sus familias en cada etapa: evaluación médica precisa, estimulación diaria en casa y una compañera entrañable.
+        Earlify Health no crea aplicaciones aisladas. Unimos tres soluciones sincronizadas que responden al neurodesarrollo infantil con rigor clínico innegociable: evaluación diagnóstica objetiva en consulta, estimulación adaptativa diaria en casa y un dispositivo físico AIoT de acompañamiento afectivo.
       </p>
     </div>
 
     <div class="products-container">
       
-      <!-- Producto 1: VIA+ -->
-      <div class="product-box via-box glass-card">
+      <!-- ==========================================
+           PRODUCTO 1: VIA+ (SaMD Clase IIa)
+           ========================================== -->
+      <article class="product-box via-box glass-card">
         <div class="product-content">
-          <div class="product-logo">
-            <img src={`${baseUrl}/assets/via-logo.png`} alt="Logo VIA+" class="brand-logo" />
+          <div class="product-header-row">
+            <div class="product-logo">
+              <img src={`${baseUrl}/assets/via-logo.png`} alt="Logo oficial VIA+ Software como Dispositivo Médico" class="brand-logo" />
+            </div>
+            <div class="product-badges">
+              <span class="sub-badge badge-cyan">SaMD Clase IIa · MDR 2017/745 Regla 11</span>
+              <span class="sub-badge badge-muted">IEC 62304 Clase B · ISO 14971 (Art. 62)</span>
+            </div>
           </div>
-          <h3>VIA+ · Precisión en Consulta</h3>
-          <p class="product-description">
-            Software como Dispositivo Médico (SaMD Clase IIa) diseñado para tablets que asiste a especialistas en otorrinolaringología, audiología y logopedia. Evalúa audición, voz y neurodesarrollo mediante 13 módulos gamificados sin cajas negras ni diagnósticos automatizados.
-          </p>
-          <ul class="product-benefits">
-            <li>13 módulos de evaluación clínica (audiometría tonal, voz con Praat, disfagia y ASHA)</li>
-            <li>7 lenguas de sesión con procesamiento determinista y Cero IA en runtime</li>
-            <li>Telemetría de usabilidad Zero-PHI exportable en código QR anónimo (IEC 62366-1)</li>
-          </ul>
-        </div>
-        <div class="product-image">
-          <img src={`${baseUrl}/assets/via-app-1.png`} alt="Interfaz clínica de VIA+ SaMD en tablet" />
-        </div>
-      </div>
 
-      <!-- Producto 2: Valeria+ -->
-      <div class="product-box valeria-box glass-card">
-        <div class="product-content">
-          <div class="product-logo">
-            <img src={`${baseUrl}/assets/valeria_lua.png`} alt="Logo Valeria+" class="brand-logo" />
-          </div>
-          <h3>Valeria+ · Terapia y Formación en Casa</h3>
+          <h3>VIA+ · Precisión Diagnóstica en Consulta Médica</h3>
           <p class="product-description">
-            Aplicación de apoyo al lenguaje infantil diseñada para familias y educadores. Primero forma a los cuidadores en cápsulas de 2 minutos (Academy) para entender cada trastorno, y después ofrece 9 bloques de ejercicios prácticos 100% offline donde el adulto siempre tiene el control clínico.
+            Sistema de Apoyo a la Decisión Clínica (CDSS) para tablet pediátrica que asiste a especialistas en otorrinolaringología, pediatría y logopedia. Proporciona una valoración objetiva, reproducible y libre de sesgos mediante pruebas neurofuncionales estandarizadas, sin algoritmos de caja negra ni diagnósticos automatizados en runtime.
           </p>
-          <ul class="product-benefits">
-            <li>Formación Academy con La Brújula de las Palabras (ASHA) y Lengua de Signos (LSE)</li>
-            <li>9 bloques clínicos: sensorial SOR, pares mínimos, Pizarra Mágica y Realidad Aumentada</li>
-            <li>4.110 locuciones neuronales en 6 variedades idiomáticas (100% offline)</li>
-          </ul>
-        </div>
-        <div class="product-image">
-          <img src={`${baseUrl}/assets/valeria-app-1.png`} alt="Interfaz de estimulación del lenguaje de Valeria+" />
-        </div>
-      </div>
 
-      <!-- Producto 3: Lúa -->
-      <div class="product-box lua-box glass-card">
-        <div class="product-content">
-          <div class="product-logo">
-            <img src={`${baseUrl}/assets/valeria_lua.png`} alt="Logo Lúa" class="brand-logo" />
+          <!-- Desglose de los 13 Módulos Clínicos Objetivos -->
+          <div class="clinical-details-block">
+            <h4 class="details-heading">
+              <span class="heading-icon">🩺</span>
+              13 Módulos Clínicos Objetivos de Evaluación:
+            </h4>
+            <div class="modules-grid">
+              <div class="module-item">
+                <span class="module-num">01</span>
+                <div>
+                  <strong>Evaluación Previa (CAP)</strong>
+                  <p>Otoscopia clínica (cerumen, OMA, perforación) y checklist de aptitud visual, verbal y motora fina. Bloqueante con firma digital del tutor.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">02</span>
+                <div>
+                  <strong>Autismo M-CHAT-R</strong>
+                  <p>Cribado validado para 16–30 meses con 20 ítems y cálculo de bandas de riesgo clínico del neurodesarrollo.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">03</span>
+                <div>
+                  <strong>Sonómetro Ambiental dB(A)</strong>
+                  <p>Medición calibrada según norma IEC 61672 (LAeq, percentiles L10/L90, umbral &lt;45 dB(A)) para garantizar validez acústica en consulta.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">04</span>
+                <div>
+                  <strong>Audiometría Infantil</strong>
+                  <p>Audiometría tonal liminar por vía aérea mediante algoritmo Hughson-Westlake guiado (250–4000 Hz a 48 kHz).</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">05</span>
+                <div>
+                  <strong>Audiometría Condicionada</strong>
+                  <p>'El Tren del Sonido': audiometría condicionada por el juego (CRA) con refuerzo visual animado y latencia controlada.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">06</span>
+                <div>
+                  <strong>Análisis Acústico de Voz</strong>
+                  <p>Extracción foniátrica en C++ JSI sobre vocal /a/ (F0, Jitter, Shimmer ciclo a ciclo, HNR y formantes F1–F3 LPC orden 20) validada contra Praat (ensayo clínico en curso).</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">07</span>
+                <div>
+                  <strong>Disfagia Pediátrica MECV-V</strong>
+                  <p>Método de exploración volumen-viscosidad en 9 bolos con monitorización continua de desaturación SpO₂ (≥3%) vía pulsioxímetro BLE.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">08</span>
+                <div>
+                  <strong>Cribado SAHS Infantil</strong>
+                  <p>Cuestionario del sueño pediátrico de Chervin (SRBD-22) cruzado con escala faríngea de Brodsky e índice de masa corporal.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">09</span>
+                <div>
+                  <strong>Articulación Fonética T.A.R.</strong>
+                  <p>Registro de dislalias SODA (Sustitución, Omisión, Distorsión, Adición) sobre 86 ítems con reconocimiento de voz (ASR) estrictamente local.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">10</span>
+                <div>
+                  <strong>Audiometría Verbal</strong>
+                  <p>Logoaudiometría infantil en campo libre mediante conjunto cerrado de tarjetas en 7 bancos fonológicos estandarizados.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">11</span>
+                <div>
+                  <strong>Funciones Ejecutivas</strong>
+                  <p>Batería de 5 subtests neurocognitivos adaptados por edad (atención focalizada, inhibición DCCS, flexibilidad, memoria operativa y planificación).</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">12</span>
+                <div>
+                  <strong>Análisis Prosódico</strong>
+                  <p>Evaluación objetiva de habla conectada (30–60 s con lámina temática): rango tonal en semitonos, pausas y tasa articulatoria sin sesgos normativos.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">13</span>
+                <div>
+                  <strong>Cribado de Hitos ASHA</strong>
+                  <p>CDSS determinista de 21 hitos del neurodesarrollo en 7 tramos de edad (0–5 años) en percentil 75 normativo ASHA por observación directa.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3>Lúa · El Puente Afectivo & Hardware AIoT</h3>
-          <p class="product-description">
-            Una gata negra en píxel art y un dispositivo físico con pantalla circular (ESP32-C3) que actúa como hilo conductor de confianza. En consulta médica permanece en estricto <strong>Silencio Clínico</strong> para no interferir con las mediciones, y en casa premia el esfuerzo, ronronea con caricias y cuida el descanso visual (20-20-20).
-          </p>
-          <ul class="product-benefits">
-            <li>Doble modalidad: compañera digital en la app y dispositivo físico AIoT de 240x240 px</li>
-            <li>Garantía de Silencio Clínico: sin micrófonos ni interferencias acústicas en consulta médica</li>
-            <li>Gamificación amable: armario con 5 accesorios, 18 insignias y cero castigos</li>
-          </ul>
+
+          <!-- Pilares de Soberanía Lingüística y Privacidad -->
+          <div class="architecture-highlights">
+            <div class="arch-pill">
+              <span class="pill-icon">🌐</span>
+              <div>
+                <strong>Soberanía en 7 Lenguas de Sesión</strong>
+                <span>Castellano (Sharvard), Galego (Celtia / Nós), Euskara (Maider / Ulertuz), Dominicano (Quisqueya Habla / FONDOCYT), Català (Matxa-TTS / AINA), LatAm y English US.</span>
+              </div>
+            </div>
+            <div class="arch-pill">
+              <span class="pill-icon">🔒</span>
+              <div>
+                <strong>Cero IA en Runtime & Telemetría Zero-PHI</strong>
+                <span>Conforme al AI Act UE 2024/1689: síntesis neuronal solo en build-time, runtime determinista. Datos locales en SQLite (<code>viaplus.db</code>) y exportación por QR anónimo (IEC 62366-1) con compresión LZString.</span>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="product-image">
-          <img src={`${baseUrl}/assets/lua-pixel-art.png`} alt="Mascota Lúa en pixel art y dispositivo circular" />
+          <img src={`${baseUrl}/assets/via-app-1.png`} alt="Interfaz médica de VIA+ SaMD en tablet de exploración clínica" />
         </div>
-      </div>
+      </article>
+
+      <!-- ==========================================
+           PRODUCTO 2: Valeria+ (DM Clase I)
+           ========================================== -->
+      <article class="product-box valeria-box glass-card">
+        <div class="product-content">
+          <div class="product-header-row">
+            <div class="product-logo">
+              <img src={`${baseUrl}/assets/valeria-logo.png`} alt="Logo oficial Valeria+ Estimulación del Lenguaje" class="brand-logo" />
+            </div>
+            <div class="product-badges">
+              <span class="sub-badge badge-purple">Dispositivo Médico Clase I · MDR 2017/745</span>
+              <span class="sub-badge badge-muted">Método TPR · 100% Offline</span>
+            </div>
+          </div>
+
+          <h3>Valeria+ · Estimulación del Lenguaje y Formación Parental</h3>
+          <p class="product-description">
+            Plataforma de estimulación y rehabilitación domiciliaria del lenguaje y la audición para niñas y niños con hipoacusia, dislalias, dislexia o TEA. Basada en el enfoque TPR (Respuesta Física Total), capacita primero a los cuidadores y garantiza que el adulto sea siempre el juez clínico final de cada respuesta (Muro Regulatorio MDR).
+          </p>
+
+          <!-- Academy y Formación Parental -->
+          <div class="academy-highlight-box">
+            <div class="academy-header">
+              <span class="academy-icon">🎓</span>
+              <div>
+                <strong>Academy: Capacitación Familiar en Cápsulas de 2 Minutos</strong>
+                <p>Formación estructurada en 7 dominios clínicos (Lenguaje, Hipoacusia, Dislalias, Dislexia, TEA, LSE e Integración Sensorial).</p>
+              </div>
+            </div>
+            <ul class="academy-features">
+              <li><strong>La Brújula de las Palabras:</strong> Hitos normativos ASHA de 0 a 5 años (receptivo vs. expresivo) con criterios de derivación temprana.</li>
+              <li><strong>Lengua de Signos Española (LSE):</strong> 27 configuraciones del abecedario dactilológico validadas por personas sordas y la asociación ACOPROS.</li>
+            </ul>
+          </div>
+
+          <!-- Desglose de los 9 Bloques Clínicos 100% Offline -->
+          <div class="clinical-details-block">
+            <h4 class="details-heading">
+              <span class="heading-icon">🧩</span>
+              9 Bloques Clínicos de Terapia 100% Offline:
+            </h4>
+            <div class="modules-grid blocks-grid">
+              <div class="module-item">
+                <span class="module-num">01</span>
+                <div>
+                  <strong>Integración Sensorial SOR</strong>
+                  <p>Desensibilización sistemática con 11 ruidos sintetizados a −20 dBFS RMS y pausa segura que suma puntos (XP).</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">02</span>
+                <div>
+                  <strong>Pares Mínimos</strong>
+                  <p>Discriminación fonológica con algoritmo D7 O2 (35/35 contrastes) que previene falsos positivos delegando en el tutor.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">03</span>
+                <div>
+                  <strong>Expansión Semántica</strong>
+                  <p>5 escenarios cotidianos y 5 categorías léxicas ES-08 con doble vuelta obligatoria (comprensión y producción).</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">04</span>
+                <div>
+                  <strong>Audición en Ruido</strong>
+                  <p>Protocolo auditivo-verbal ACOPROS con entrenamiento de habla inmersa en ruido babble competitivo continuo.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">05</span>
+                <div>
+                  <strong>Lenguaje Funcional</strong>
+                  <p>Atención conjunta, imitación gesto-sílaba-palabra, comunicación pragmática y regulación conductual visual.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">06</span>
+                <div>
+                  <strong>TEA Estructurado</strong>
+                  <p>Intervención basada en PRT (Pivotal Response Treatment) y TCC con control parental riguroso de estresores sensoriales.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">07</span>
+                <div>
+                  <strong>Dislexia &amp; Conciencia Fonológica</strong>
+                  <p>Intrusos acústicos puros, síntesis fonémica temporizada, denominación rápida (RAN) y criba de rotaciones b/d y p/q.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">08</span>
+                <div>
+                  <strong>Grafomotricidad: 'La Pizarra Mágica'</strong>
+                  <p>Lienzo SVG con pauta Montessori y puntos de control numerados que fijan el orden del trazo para erradicar inversiones.</p>
+                </div>
+              </div>
+              <div class="module-item">
+                <span class="module-num">09</span>
+                <div>
+                  <strong>Realidad Aumentada Nativa</strong>
+                  <p>Cinemática orofacial con ARCore + MediaPipe (52 blendshapes) como sensor motor sin almacenar ni transmitir imagen ni audio.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Voces y Variedades -->
+          <div class="architecture-highlights">
+            <div class="arch-pill">
+              <span class="pill-icon">🗣️</span>
+              <div>
+                <strong>4.110 Locuciones en 6 Variedades Lingüísticas</strong>
+                <span>Castellano (Sharvard), Galego (Celtia / Proxecto Nós), Dominicano (Quisqueya Habla / es-DO), Euskara (HiTZ / Aholab), US English (LJSpeech) y Català (Matxa-TTS / AINA). UI desacoplada en 3 idiomas (<code>es</code>, <code>en</code>, <code>ca</code>).</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-image">
+          <img src={`${baseUrl}/assets/valeria-app-1.png`} alt="Interfaz de estimulación del lenguaje de Valeria+ con la gata Lúa" />
+        </div>
+      </article>
+
+      <!-- ==========================================
+           PRODUCTO 3: Lúa (Hardware AIoT V1)
+           ========================================== -->
+      <article class="product-box lua-box glass-card">
+        <div class="product-content">
+          <div class="product-header-row">
+            <div class="product-logo">
+              <img src={`${baseUrl}/assets/valeria_lua.png`} alt="Logo e icono oficial de Lúa Mascota" class="brand-logo" />
+            </div>
+            <div class="product-badges">
+              <span class="sub-badge badge-orange">Placa Oficial V1 Redonda (ESP32-C3)</span>
+              <span class="sub-badge badge-muted">Fabricación USC OpenSCAD · Cero Micrófonos</span>
+            </div>
+          </div>
+
+          <h3>Lúa · Dispositivo AIoT Pediátrico &amp; Mascota de Acompañamiento</h3>
+          <p class="product-description">
+            Mascota física y compañera digital que actúa como anclaje afectivo y motivacional entre la clínica y la vida diaria. Diseñada para calmar la ansiedad médica y estimular la constancia en el hogar bajo la premisa esencial de la salud digital: la tecnología pediátrica debe tranquilizar, nunca sobreestimular.
+          </p>
+
+          <!-- Especificaciones Técnicas Hardware V1 -->
+          <div class="clinical-details-block">
+            <h4 class="details-heading">
+              <span class="heading-icon">⚙️</span>
+              Especificaciones de Hardware Oficial (Placa V1 de Trabajo):
+            </h4>
+            <div class="hardware-specs-grid">
+              <div class="spec-card">
+                <span class="spec-label">Microcontrolador</span>
+                <strong>ESP32-C3 RISC-V</strong>
+                <p>160 MHz rev v0.4, conectividad Bluetooth LE de ultrabajo consumo para telemetría binaria.</p>
+              </div>
+              <div class="spec-card">
+                <span class="spec-label">Pantalla Circular</span>
+                <strong>Panel IPS GC9A01 1.28"</strong>
+                <p>Diámetro Φ 32.4 mm, resolución nítida de 240×240 px a 27 fps con renderizado en franjas DMA.</p>
+              </div>
+              <div class="spec-card">
+                <span class="spec-label">Táctil &amp; Batería</span>
+                <strong>CST816 &amp; Conector MX1.25</strong>
+                <p>Controlador táctil capacitivo y conector de 1.25 mm para batería LiPo recargable de 3.7V.</p>
+              </div>
+              <div class="spec-card">
+                <span class="spec-label">Laboratorio USC</span>
+                <strong>Carcasa OpenSCAD</strong>
+                <p>Modelado paramétrico (<code>cad/lua-muneco.scad</code>) e impresión 3D en Creality Ender-3 S1 Pro con cesta de carga integrada.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seguridad Clínica y Cero PHI -->
+          <div class="clinical-safety-box">
+            <h4 class="details-heading">
+              <span class="heading-icon">🛡️</span>
+              Seguridad Clínica y Privacidad por Diseño (Cero PHI):
+            </h4>
+            <div class="safety-grid">
+              <div class="safety-item">
+                <span class="safety-icon">🔇</span>
+                <div>
+                  <strong>Sin Micrófonos por Hardware y Firmware</strong>
+                  <p>Carece de cápsula microfónica. La compilación está verificada mediante scripts de CI (<code>check-lua-mute.js</code>) que impiden la inclusión de audio.</p>
+                </div>
+              </div>
+              <div class="safety-item">
+                <span class="safety-icon">🛑</span>
+                <div>
+                  <strong>Silencio Clínico en Consulta (<code>SAFE 1</code>)</strong>
+                  <p>Durante las pruebas diagnósticas con VIA+, la tablet emite una orden binaria de Silencio Clínico que apaga la pantalla de Lúa para evitar cualquier interferencia médica.</p>
+                </div>
+              </div>
+              <div class="safety-item">
+                <span class="safety-icon">👁️</span>
+                <div>
+                  <strong>Descanso Visual 20-20-20 (<code>RELAX 0x0D</code>)</strong>
+                  <p>Tras 20 minutos continuos de interacción, la mascota induce automáticamente la pose de reposo para proteger la salud visual del menor.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gamificación Amable y Arte Voxel -->
+          <div class="architecture-highlights">
+            <div class="arch-pill">
+              <span class="pill-icon">🐱</span>
+              <div>
+                <strong>Dirección de Arte: 120 Pictogramas Voxel &amp; 45 Insignias</strong>
+                <span>Catálogo en matrices de 24×24 px en paleta clínica calibrada de 33 colores. 45 insignias en 5 rangos y 28 expresiones canónicas sin caras de tristeza o frustración: el fallo siempre devuelve serenamente a la pose atenta.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-image">
+          <img src={`${baseUrl}/assets/lua-pixel-art.png`} alt="Mascota Lúa en pixel art y pantalla circular de 240x240 px" />
+        </div>
+      </article>
 
     </div>
   </div>
@@ -88,37 +393,37 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <style>
   .solution-section { 
     position: relative;
-    padding: 60px 0 100px 0;
+    padding: 70px 0 110px 0;
   }
 
   .solution-header {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
+    max-width: 860px;
+    margin: 0 auto 4.5rem auto;
   }
 
   .section-badge {
     display: inline-block;
-    padding: 0.35rem 1rem;
+    padding: 0.4rem 1.15rem;
     border-radius: var(--radius-full);
     font-size: 0.9rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
   }
 
   .badge-green {
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.3);
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.35);
     color: #10b981;
   }
 
   .solution-title {
-    font-size: 2.8rem;
+    font-size: 2.85rem;
     font-weight: 900;
     line-height: 1.2;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.35rem;
     color: var(--text-main);
   }
 
@@ -127,67 +432,99 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .solution-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.18rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   .products-container {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 3.5rem;
   }
 
   .product-box {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 3rem;
     padding: 3rem;
     border-radius: var(--radius-lg);
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(14px);
   }
 
   .via-box {
-    border: 1px solid rgba(0, 242, 254, 0.2);
-    border-left: 4px solid var(--accent-cyan);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    border-left: 5px solid var(--accent-cyan);
   }
 
   .valeria-box {
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    border-left: 4px solid var(--accent-purple);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-left: 5px solid var(--accent-purple);
     flex-direction: row-reverse;
   }
 
   .lua-box {
-    border: 1px solid rgba(249, 115, 22, 0.2);
-    border-left: 4px solid #fb923c;
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    border-left: 5px solid #fb923c;
   }
 
   .product-content {
-    flex: 1;
+    flex: 1.25;
   }
 
-  .product-image {
-    flex: 1;
+  .product-header-row {
     display: flex;
-    justify-content: center;
     align-items: center;
-  }
-
-  .product-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--radius-md);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    max-height: 350px;
-    object-fit: contain;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .brand-logo {
     height: 48px;
     width: auto;
-    margin-bottom: 1rem;
+    object-fit: contain;
+  }
+
+  .product-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .sub-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  .badge-cyan {
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: var(--accent-cyan);
+  }
+
+  .badge-purple {
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: var(--accent-purple);
+  }
+
+  .badge-orange {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    color: #fb923c;
+  }
+
+  .badge-muted {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-muted);
   }
 
   .product-box h3 {
@@ -195,6 +532,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     font-weight: 800;
     color: var(--text-main);
     margin-bottom: 1rem;
+    line-height: 1.25;
   }
 
   .via-box h3 {
@@ -210,56 +548,281 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .product-description {
-    font-size: 1.1rem;
+    font-size: 1.08rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.65;
     margin-bottom: 2rem;
   }
 
-  .product-benefits {
-    list-style: none;
-    padding: 0;
+  /* Sub-bloques clínicos */
+  .clinical-details-block {
+    background: rgba(10, 15, 30, 0.55);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.6rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .details-heading {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .heading-icon {
+    font-size: 1.3rem;
+  }
+
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .module-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .module-num {
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--text-muted);
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .via-box .module-num {
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.1);
+  }
+
+  .valeria-box .module-num {
+    color: var(--accent-purple);
+    background: rgba(168, 85, 247, 0.1);
+  }
+
+  .module-item strong {
+    color: var(--text-main);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .module-item p {
+    color: var(--text-muted);
+    line-height: 1.45;
     margin: 0;
   }
 
-  .product-benefits li {
-    font-size: 1.05rem;
-    color: var(--text-main);
-    margin-bottom: 0.85rem;
+  /* Academy box */
+  .academy-highlight-box {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(15, 23, 42, 0.6) 100%);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: var(--radius-md);
+    padding: 1.35rem 1.6rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .academy-header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    margin-bottom: 0.85rem;
   }
 
-  .via-box .product-benefits li::before {
-    content: "✓";
-    color: var(--accent-cyan);
-    font-weight: bold;
-    font-size: 1.2rem;
+  .academy-icon {
+    font-size: 1.8rem;
   }
 
-  .valeria-box .product-benefits li::before {
-    content: "✓";
+  .academy-header strong {
     color: var(--accent-purple);
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
+    display: block;
   }
 
-  .lua-box .product-benefits li::before {
-    content: "✓";
+  .academy-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .academy-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .academy-features li strong {
+    color: var(--text-main);
+  }
+
+  /* Hardware specs grid */
+  .hardware-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .spec-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1rem;
+  }
+
+  .spec-label {
+    display: block;
+    font-size: 0.75rem;
     color: #fb923c;
-    font-weight: bold;
-    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
   }
 
-  @media (max-width: 992px) {
+  .spec-card strong {
+    color: var(--text-main);
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .spec-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Safety box */
+  .clinical-safety-box {
+    background: rgba(10, 15, 30, 0.55);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .safety-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .safety-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .safety-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .safety-item strong {
+    color: var(--text-main);
+    font-size: 0.92rem;
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .safety-item p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* Architecture highlights pills */
+  .architecture-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .arch-pill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.9rem 1.15rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    font-size: 0.88rem;
+  }
+
+  .pill-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .arch-pill strong {
+    color: var(--text-main);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .arch-pill span {
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  .arch-pill code {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    color: var(--accent-cyan);
+    font-size: 0.82rem;
+  }
+
+  .product-image {
+    flex: 0.85;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 100px;
+  }
+
+  .product-image img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    max-height: 480px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 1100px) {
     .product-box, .valeria-box, .lua-box {
       flex-direction: column;
-      padding: 2rem;
-      gap: 2rem;
+      padding: 2.25rem 1.85rem;
+      gap: 2.25rem;
+    }
+    .product-image {
+      position: static;
+      width: 100%;
     }
     .product-image img {
-      max-height: 250px;
+      max-height: 320px;
     }
   }
 
@@ -268,23 +831,16 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       font-size: 2.2rem;
     }
     .product-box h3 {
-      font-size: 1.6rem;
+      font-size: 1.65rem;
+    }
+    .modules-grid, .hardware-specs-grid {
+      grid-template-columns: 1fr;
     }
     .brand-logo {
-      height: 36px;
+      height: 38px;
     }
-  }
-
-  @media (max-width: 640px) {
-    .product-box, .valeria-box {
-      padding: 1.5rem 1.15rem;
-      gap: 1.5rem;
-    }
-    .product-benefits li {
-      font-size: 0.92rem;
-    }
-    .product-description {
-      font-size: 0.95rem;
+    .clinical-details-block, .academy-highlight-box, .clinical-safety-box {
+      padding: 1.2rem;
     }
   }
 </style>
