@@ -40,6 +40,7 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
   const scene = new THREE.Scene();
 
   const isMobile = window.innerWidth <= 768;
+  const initialCamY = isMobile ? -0.65 : 0.0;
   const initialCamZ = isMobile ? 6.2 : 4.8;
 
   const camera = new THREE.PerspectiveCamera(
@@ -48,7 +49,8 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
     0.1,
     50
   );
-  camera.position.set(0, 0, initialCamZ);
+  camera.position.set(0, initialCamY, initialCamZ);
+  camera.lookAt(0, initialCamY, 0);
 
   const renderer = new THREE.WebGLRenderer({
     canvas,
@@ -101,26 +103,26 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
     opacity: 0.0,
   });
 
-  // 14 subtle polyhedral boundary nodes representing institutional silos
+  // 14 subtle polyhedral boundary nodes positioned on the right and center (Act 2)
   const boundaryMeshes: THREE.Mesh[] = [];
   const geomTetra = new THREE.TetrahedronGeometry(0.32);
   const geomOcta = new THREE.OctahedronGeometry(0.35);
 
   const siloPositions = [
-    [-2.2, 1.2, -0.6],
-    [-1.6, 0.4, -0.4],
-    [-2.4, 0.2, 0.1],
-    [-1.2, 1.5, 0.3],
-    [2.1, 1.3, 0.1],
-    [1.5, 0.6, -0.3],
-    [2.5, 0.2, 0.4],
-    [1.3, 1.6, -0.2],
-    [0.3, -1.8, 0.5],
-    [-0.4, -1.4, 0.2],
-    [0.6, -1.2, -0.3],
-    [-0.2, -2.1, 0.1],
-    [-1.1, -0.6, -0.8],
-    [1.0, -0.5, 0.6],
+    [0.8, 1.3, -0.5],
+    [1.4, 0.6, -0.3],
+    [0.5, 0.3, 0.2],
+    [1.1, 1.6, 0.1],
+    [2.1, 1.2, 0.1],
+    [1.6, -0.2, -0.2],
+    [2.3, 0.4, 0.3],
+    [1.8, 1.5, -0.2],
+    [0.9, -1.5, 0.4],
+    [0.4, -1.2, 0.1],
+    [1.3, -1.0, -0.3],
+    [0.7, -1.8, 0.2],
+    [1.9, -0.8, 0.5],
+    [1.2, -0.4, 0.4],
   ];
 
   siloPositions.forEach(([x, y, z], i) => {
@@ -140,7 +142,6 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
   const targetHoverPos = new THREE.Vector3(999, 999, 999);
   const currentHoverPos = new THREE.Vector3(999, 999, 999);
   const virtualPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
-  let isPointerActive = false;
   let targetHoverIntensity = 0.0;
   let currentHoverIntensity = 0.0;
 
@@ -163,44 +164,66 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
     if (raycaster.ray.intersectPlane(virtualPlane, intersectPoint)) {
       targetHoverPos.copy(intersectPoint);
       targetHoverIntensity = 1.0;
-      isPointerActive = true;
     }
   };
 
   const onPointerLeave = () => {
     targetHoverIntensity = 0.0;
-    isPointerActive = false;
   };
 
   window.addEventListener('mousemove', onPointerMove, { passive: true });
   window.addEventListener('touchmove', onPointerMove, { passive: true });
   window.addEventListener('mouseleave', onPointerLeave);
+  window.addEventListener('touchend', onPointerLeave, { passive: true });
+  window.addEventListener('touchcancel', onPointerLeave, { passive: true });
 
   // --- View-Space Typography Repulsion Tracker ---
   const textPanels = Array.from(
     container.querySelectorAll<HTMLElement>('.act-panel-content')
   );
+  const panels = [
+    document.getElementById('act-panel-1'),
+    document.getElementById('act-panel-2'),
+    document.getElementById('act-panel-3'),
+    document.getElementById('act-panel-4'),
+  ];
+  const telemetryBar = document.querySelector<HTMLElement>('.clinical-telemetry-bar');
 
   function updateTypographyRepulsion() {
     const activeRects: THREE.Vector4[] = [];
-    textPanels.forEach((panel) => {
-      const rect = panel.getBoundingClientRect();
-      // Check if panel is currently visible inside the viewport
-      if (
-        rect.bottom > 0 &&
-        rect.top < window.innerHeight &&
-        rect.right > 0 &&
-        rect.left < window.innerWidth
-      ) {
-        // Convert to Normalized Device Coordinates (NDC) [-1, 1]
+
+    // 1. Only query currently active/visible text cards (opacity > 0.05)
+    textPanels.forEach((panel, idx) => {
+      const parentPanel = panels[idx];
+      const opacity = parentPanel ? parseFloat(parentPanel.style.opacity || '0') : 0;
+      if (opacity > 0.05) {
+        const rect = panel.getBoundingClientRect();
+        if (
+          rect.bottom > 0 &&
+          rect.top < window.innerHeight &&
+          rect.right > 0 &&
+          rect.left < window.innerWidth
+        ) {
+          const minX = (rect.left / window.innerWidth) * 2 - 1;
+          const maxX = (rect.right / window.innerWidth) * 2 - 1;
+          const minY = -((rect.bottom / window.innerHeight) * 2 - 1);
+          const maxY = -((rect.top / window.innerHeight) * 2 - 1);
+          activeRects.push(new THREE.Vector4(minX, minY, maxX, maxY));
+        }
+      }
+    });
+
+    // 2. Protect top clinical telemetry bar if room permits
+    if (telemetryBar && activeRects.length < 4) {
+      const rect = telemetryBar.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < window.innerHeight) {
         const minX = (rect.left / window.innerWidth) * 2 - 1;
         const maxX = (rect.right / window.innerWidth) * 2 - 1;
         const minY = -((rect.bottom / window.innerHeight) * 2 - 1);
         const maxY = -((rect.top / window.innerHeight) * 2 - 1);
-
         activeRects.push(new THREE.Vector4(minX, minY, maxX, maxY));
       }
-    });
+    }
 
     uniforms.uRepelCount.value = Math.min(activeRects.length, 4);
     for (let i = 0; i < 4; i++) {
@@ -212,14 +235,7 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
     }
   }
 
-  // --- Scrollytelling Timeline with GSAP ScrollTrigger ---
-  const panels = [
-    document.getElementById('act-panel-1'),
-    document.getElementById('act-panel-2'),
-    document.getElementById('act-panel-3'),
-    document.getElementById('act-panel-4'),
-  ];
-
+  // --- Scrollytracker Rail References ---
   const trackerSegments = [
     document.getElementById('track-act-1'),
     document.getElementById('track-act-2'),
@@ -243,23 +259,31 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
     end: '+=400%',
     pin: true,
     scrub: 0.8,
+    onLeave: () => {
+      canvas.style.transition = 'opacity 0.4s ease';
+      canvas.style.opacity = '0';
+    },
+    onEnterBack: () => {
+      canvas.style.transition = 'opacity 0.4s ease';
+      canvas.style.opacity = '1';
+    },
     onUpdate: (self) => {
-      // Progress drives 0.0 -> 4.0
-      const prog = self.progress * 3.8;
+      // Progress drives normalized 0.0 -> 4.0 spanning all 4 Clinical Acts
+      const prog = self.progress * 4.0;
       uniforms.uProgress.value = prog;
 
-      // Update Scrollytracker Rail segments & fills
-      const actIndex = Math.min(Math.floor(prog), 3);
-      const actFraction = prog - Math.floor(prog);
-
+      // Update Scrollytracker Rail segments & continuous fills
       trackerSegments.forEach((seg, idx) => {
         if (!seg) return;
-        if (idx === actIndex) {
+        const segStart = idx;
+        const segEnd = idx + 1;
+        if (prog >= segStart && prog <= segEnd) {
           seg.classList.add('active');
           if (trackerFills[idx]) {
-            trackerFills[idx]!.style.width = `${Math.min(100, Math.max(0, actFraction * 100))}%`;
+            const frac = (prog - segStart) / (segEnd - segStart);
+            trackerFills[idx]!.style.width = `${Math.min(100, Math.max(0, frac * 100))}%`;
           }
-        } else if (idx < actIndex) {
+        } else if (prog > segEnd) {
           seg.classList.add('active');
           if (trackerFills[idx]) {
             trackerFills[idx]!.style.width = '100%';
@@ -272,15 +296,15 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
         }
       });
 
-      // Panel cross-fades
-      // Act 1: [0.0, 0.75]
-      // Act 2: [0.9, 1.75]
-      // Act 3: [1.9, 2.75]
-      // Act 4: [2.9, 3.8]
-      const op1 = calcPanelOpacity(prog, 0.0, 0.0, 0.65, 0.85);
-      const op2 = calcPanelOpacity(prog, 0.85, 1.05, 1.65, 1.85);
-      const op3 = calcPanelOpacity(prog, 1.85, 2.05, 2.65, 2.85);
-      const op4 = calcPanelOpacity(prog, 2.85, 3.05, 3.8, 3.8);
+      // Panel cross-fades matching calibrated dwell and transition zones:
+      // Act 1: Dwell [0.00, 0.65], fade out [0.65, 0.90]
+      // Act 2: Fade in [0.85, 1.10], dwell [1.10, 1.65], fade out [1.65, 1.90]
+      // Act 3: Fade in [1.85, 2.10], dwell [2.10, 2.65], fade out [2.65, 2.90]
+      // Act 4: Fade in [2.85, 3.10], dwell [3.10, 4.00]
+      const op1 = calcPanelOpacity(prog, 0.0, 0.0, 0.65, 0.90);
+      const op2 = calcPanelOpacity(prog, 0.85, 1.10, 1.65, 1.90);
+      const op3 = calcPanelOpacity(prog, 1.85, 2.10, 2.65, 2.90);
+      const op4 = calcPanelOpacity(prog, 2.85, 3.10, 4.00, 4.00);
 
       if (panels[0]) panels[0].style.opacity = op1.toString();
       if (panels[1]) panels[1].style.opacity = op2.toString();
@@ -292,10 +316,10 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
         scrollStarter.style.opacity = Math.max(0, 1 - prog * 3.5).toString();
       }
 
-      // Wireframes visibility in Act 2 (Entropy & Void)
+      // Wireframes visibility in Act 2 (Entropy & Void: [0.80, 1.90])
       const wireframeOpacity = Math.max(
         0,
-        Math.min(0.22, (prog - 0.7) * 0.4) * (1.0 - Math.max(0, (prog - 1.8) * 1.5))
+        Math.min(0.24, (prog - 0.75) * 0.45) * (1.0 - Math.max(0, (prog - 1.75) * 1.8))
       );
       boundaryMeshes.forEach((mesh) => {
         (mesh.material as THREE.MeshBasicMaterial).opacity = wireframeOpacity;
@@ -330,7 +354,9 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
     const mobile = width <= 768;
 
     camera.aspect = width / height;
-    camera.position.z = mobile ? 6.2 : 4.8;
+    const camY = mobile ? -0.65 : 0.0;
+    camera.position.set(0, camY, mobile ? 6.2 : 4.8);
+    camera.lookAt(0, camY, 0);
     camera.updateProjectionMatrix();
 
     renderer.setSize(width, height);
@@ -343,11 +369,44 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
   window.addEventListener('resize', onResize, { passive: true });
   updateTypographyRepulsion();
 
+  // --- Intersection Observer for 0 Battery Drain when Out of View ---
+  let isIntersecting = true;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const wasIntersecting = isIntersecting;
+        isIntersecting = entry.isIntersecting;
+        if (isIntersecting && !wasIntersecting) {
+          lastTime = performance.now();
+          renderLoop();
+        }
+      });
+    },
+    { threshold: 0.01 }
+  );
+  observer.observe(container);
+
+  // --- WebGL Context Loss Recovery ---
+  const onContextLost = (e: Event) => {
+    e.preventDefault();
+    cancelAnimationFrame(animationFrameId);
+  };
+  const onContextRestored = () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    lastTime = performance.now();
+    renderLoop();
+  };
+  canvas.addEventListener('webglcontextlost', onContextLost, false);
+  canvas.addEventListener('webglcontextrestored', onContextRestored, false);
+
   // --- Render Loop (performance.now() for zero WebGL warnings) ---
   let animationFrameId: number;
   let lastTime = performance.now();
 
   const renderLoop = () => {
+    if (!isIntersecting) {
+      return;
+    }
     animationFrameId = requestAnimationFrame(renderLoop);
 
     const now = performance.now();
@@ -356,23 +415,11 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
 
     uniforms.uTime.value += delta;
 
-    // Smooth lerp for hover lift ("Goosebumps" effect)
+    // Smooth lerp for hover lift ("Goosebumps" effect) - stable camera, no toy tilts
     currentHoverPos.lerp(targetHoverPos, 0.12);
     currentHoverIntensity += (targetHoverIntensity - currentHoverIntensity) * 0.1;
     uniforms.uHoverPos.value.copy(currentHoverPos);
     uniforms.uHoverIntensity.value = currentHoverIntensity;
-
-    // Gentle organic camera drift (subtle parallax without tilting like a toy)
-    if (isPointerActive) {
-      const targetCamX = pointerNDC.x * 0.12;
-      const targetCamY = pointerNDC.y * 0.08;
-      camera.position.x += (targetCamX - camera.position.x) * 0.04;
-      camera.position.y += (targetCamY - camera.position.y) * 0.04;
-    } else {
-      camera.position.x += (0 - camera.position.x) * 0.04;
-      camera.position.y += (0 - camera.position.y) * 0.04;
-    }
-    camera.lookAt(0, 0, 0);
 
     // Subtle rotation of wireframe boundaries in Act 2
     if (wireframesGroup.visible) {
@@ -389,10 +436,15 @@ export function initEarlifyScrollytelling(): ScrollytellingInstance | null {
   return {
     destroy: () => {
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
       window.removeEventListener('mousemove', onPointerMove);
       window.removeEventListener('touchmove', onPointerMove);
       window.removeEventListener('mouseleave', onPointerLeave);
+      window.removeEventListener('touchend', onPointerLeave);
+      window.removeEventListener('touchcancel', onPointerLeave);
       window.removeEventListener('resize', onResize);
+      canvas.removeEventListener('webglcontextlost', onContextLost);
+      canvas.removeEventListener('webglcontextrestored', onContextRestored);
       gsap.ticker.remove(tickerCallback);
       st.kill();
       lenis.destroy();

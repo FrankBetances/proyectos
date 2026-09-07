@@ -313,8 +313,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     const modal = document.getElementById('contact-modal');
     if (contactBtn && modal) {
       contactBtn.addEventListener('click', () => {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
       });
     }
   }
@@ -374,13 +374,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   /* Top Clinical Telemetry Bar */
   .clinical-telemetry-bar {
     position: fixed;
-    top: 0;
+    top: 76px;
     left: 0;
     width: 100%;
     z-index: 30;
     padding: 0.65rem 2rem;
-    background: linear-gradient(180deg, rgba(18, 19, 20, 0.85) 0%, rgba(18, 19, 20, 0) 100%);
+    background: linear-gradient(180deg, rgba(18, 19, 20, 0.95) 0%, rgba(18, 19, 20, 0.65) 75%, rgba(18, 19, 20, 0) 100%);
     pointer-events: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .telemetry-inner {
@@ -1021,6 +1022,11 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   @media (max-width: 768px) {
+    .clinical-telemetry-bar {
+      top: 76px;
+      padding: 0.4rem 1rem;
+    }
+
     .scrolly-tracker-rail {
       display: none; /* Hidden on mobile to maximize viewport clarity */
     }
@@ -1030,21 +1036,28 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     }
 
     .act-panel {
-      padding: 0 1.25rem;
+      padding: 0 1rem;
+      align-items: flex-end;
+      padding-bottom: 2.2rem;
     }
 
     .act-panel-content {
-      padding: 1.85rem 1.4rem;
+      padding: 1.5rem 1.25rem;
       max-width: 100%;
       margin: 0 !important;
+      max-height: 58vh;
+      overflow-y: auto;
+      border-radius: 16px;
     }
 
     .act-headline {
-      font-size: 1.85rem;
+      font-size: 1.7rem;
+      margin-bottom: 0.85rem;
     }
 
     .act-lead {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
     }
 
     .clinical-badges-grid,
@@ -1052,6 +1065,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     .canonical-verbs-row {
       grid-template-columns: 1fr;
       flex-direction: column;
+      gap: 0.75rem;
     }
 
     .verb-arrow {
@@ -1062,11 +1076,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     .act4-cta-wrapper {
       flex-direction: column;
       width: 100%;
+      gap: 0.75rem;
     }
 
     .scrolly-btn {
       width: 100%;
       justify-content: center;
+      padding: 0.8rem 1.4rem;
+      font-size: 0.88rem;
     }
   }
 </style>

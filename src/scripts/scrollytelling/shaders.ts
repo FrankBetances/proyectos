@@ -121,25 +121,29 @@ vec3 curlNoise(vec3 p) {
 void main() {
   vSeed = aSeed;
 
-  // --- Smoothstep Multi-Stage Interpolation (4 Acts) ---
-  float t01 = smoothstep(0.0, 1.0, clamp(uProgress, 0.0, 1.0));
-  float t12 = smoothstep(1.0, 2.0, clamp(uProgress, 1.0, 2.0));
-  float t23 = smoothstep(2.0, 3.0, clamp(uProgress, 2.0, 3.0));
+  // --- Smoothstep Multi-Stage Interpolation (4 Clinical Acts) ---
+  // Act 1 Dwell [0.00, 0.70] -> Transition 1 [0.70, 1.20]
+  // Act 2 Dwell [1.20, 1.75] -> Transition 2 [1.75, 2.25]
+  // Act 3 Dwell [2.25, 2.75] -> Transition 3 [2.75, 3.25]
+  // Act 4 Dwell [3.25, 4.00] with synchronized longitudinal pulse
+  float t01 = smoothstep(0.70, 1.20, uProgress);
+  float t12 = smoothstep(1.75, 2.25, uProgress);
+  float t23 = smoothstep(2.75, 3.25, uProgress);
 
-  // Base positions
+  // Base positions interpolated across stages
   vec3 pos = mix(position, aPosChaos, t01);
   pos = mix(pos, aPosLua, t12);
   pos = mix(pos, aPosEco, t23);
 
-  // Surface normals
+  // Surface normals interpolated across stages
   vec3 norm = mix(aNormStage1, vec3(0.0, 0.0, 1.0), t01);
   norm = mix(norm, aNormStage3, t12);
-  vec3 ecoNorm = normalize(pos + vec3(0.001));
+  vec3 ecoNorm = normalize(vec3(pos.x, pos.y, pos.z * 1.5) + vec3(0.001));
   norm = mix(norm, ecoNorm, t23);
   norm = normalize(norm);
   vNormal = normalMatrix * norm;
 
-  // Colors
+  // Colors interpolated across stages
   vec3 col = mix(aColor1, aColor2, t01);
   col = mix(col, aColor3, t12);
   col = mix(col, aColor4.rgb, t23);
@@ -148,23 +152,28 @@ void main() {
   // Base alpha
   vAlpha = 0.94;
 
-  // --- Curl Noise Aerodynamic Transitions ---
-  // Modulate transitions with 3D curl noise proportional to sin(fract(uProgress) * PI)
-  float stageFraction = fract(uProgress);
-  if (uProgress >= 3.0) {
-    stageFraction = 0.0;
-  }
-  float transitionWeight = sin(stageFraction * 3.14159265359);
-  if (transitionWeight > 0.005) {
-    vec3 curl = curlNoise(pos * 0.55 + vec3(uTime * 0.12, uTime * 0.08, aSeed.y * 2.0));
-    pos += curl * (transitionWeight * 0.68);
+  // --- Act 1 Acoustic Tonotopic Standing Wave ---
+  if (uProgress < 0.70) {
+    float acousticFreq = sin(aSeed.y * 16.0 - uTime * 3.2) * 0.022 * (1.0 - uProgress / 0.70);
+    pos += norm * acousticFreq;
   }
 
-  // --- Longitudinal Ecosystem Pulse (Act 4: progress >= 2.8) ---
-  if (uProgress >= 2.7) {
-    float ecoBlend = smoothstep(2.7, 3.0, uProgress);
+  // --- Curl Noise Aerodynamic Transitions ---
+  // Modulate transitions with 3D curl noise proportional to sin(t * PI)
+  float w1 = sin(t01 * 3.14159265359);
+  float w2 = sin(t12 * 3.14159265359);
+  float w3 = sin(t23 * 3.14159265359);
+  float transitionWeight = max(max(w1, w2), w3);
+  if (transitionWeight > 0.005) {
+    vec3 curl = curlNoise(pos * 0.55 + vec3(uTime * 0.12, uTime * 0.08, aSeed.y * 2.0));
+    pos += curl * (transitionWeight * 0.72);
+  }
+
+  // --- Longitudinal Ecosystem Synchronized Wave (Act 4: progress >= 2.8) ---
+  if (uProgress >= 2.8) {
+    float ecoBlend = smoothstep(2.8, 3.25, uProgress);
     float angle = atan(pos.y, pos.x);
-    float pulse = sin(angle * 3.0 - uTime * 2.0 + aSeed.z * 6.28) * 0.045;
+    float pulse = sin(angle * 4.0 - uTime * 2.8 + aSeed.z * 6.28) * 0.042;
     pos += norm * (pulse * ecoBlend);
   }
 
@@ -185,7 +194,7 @@ void main() {
   vec4 clipPos = projectionMatrix * mvPosition;
   vec2 ndc = clipPos.xy / clipPos.w; // [-1, 1]
 
-  // Test against active text containers bounding boxes
+  // Test against active text containers and regulatory telemetry bounding boxes
   for (int i = 0; i < 4; i++) {
     if (i < uRepelCount) {
       vec4 rect = uRepelRects[i]; // [minX, minY, maxX, maxY]
@@ -198,15 +207,16 @@ void main() {
         float insideDist = min(max(delta.x, delta.y), 0.0);
         float distToBox = outsideDist + insideDist;
 
-        float repelRadius = 0.22;
+        float repelRadius = 0.24;
         if (distToBox < repelRadius) {
           vec2 repelDir = normalize(ndc - center + vec2(0.0001, 0.0001));
-          float repelStrength = 0.42;
+          float repelStrength = 0.45;
           float factor = smoothstep(repelRadius, 0.0, distToBox);
           
-          // Displace outward in view-space and push backwards in z
-          mvPosition.xy += repelDir * (repelStrength * factor * abs(mvPosition.z) * 0.35);
+          // Displace outward in view-space, push backwards in depth, and soften alpha
+          mvPosition.xy += repelDir * (repelStrength * factor * abs(mvPosition.z) * 0.38);
           mvPosition.z -= 15.0 * factor;
+          vAlpha *= (1.0 - 0.70 * factor);
         }
       }
     }
@@ -261,12 +271,12 @@ void main() {
     float wireDist = abs(triDist) - 0.06;
     alpha = 1.0 - smoothstep(0.0, 0.08, wireDist);
   } else {
-    // 3. Specular 4-point star glint SDF
+    // 3. Specular 4-point star glint SDF (pinched concave astroid beams)
     vec2 sp = abs(p);
-    float starDist = (sp.x + sp.y) - 0.40;
-    float coreDist = length(p) - 0.14;
-    float starA = 1.0 - smoothstep(0.0, 0.07, starDist);
-    float coreA = 1.0 - smoothstep(0.0, 0.05, coreDist);
+    float starDist = (sqrt(sp.x) + sqrt(sp.y)) - 0.56;
+    float coreDist = length(p) - 0.12;
+    float starA = 1.0 - smoothstep(0.0, 0.08, starDist);
+    float coreA = 1.0 - smoothstep(0.0, 0.06, coreDist);
     alpha = max(starA, coreA);
   }
 

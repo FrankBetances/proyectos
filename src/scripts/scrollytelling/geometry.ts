@@ -12,6 +12,7 @@ const COLOR_TURQUOISE = new THREE.Color('#00C4BE');
 const COLOR_CHAMPAGNE = new THREE.Color('#F5E6C8');
 const COLOR_CHAOS_DARK = new THREE.Color('#2A2E33');
 const COLOR_CHAOS_SLATE = new THREE.Color('#4A525A');
+const COLOR_DISC_SCREEN = new THREE.Color('#282E34'); // Distinct GC9A01 LCD screen lattice
 
 /**
  * Pseudo-random generator with deterministic seed
@@ -49,7 +50,8 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
   const rng = seededRandom(42);
 
   // --- ACT 1: VIA+ Cochlear & Craniofacial Mesh ---
-  // Split 18,000 for cochlea spiral, 18,000 for craniofacial/auricular mesh
+  // Offset to left (x = -0.85) to cleanly balance the right-side text panel
+  const xOffsetAct1 = -0.85;
   const cochleaCount = 18000;
   const cranialCount = PARTICLE_COUNT - cochleaCount;
 
@@ -74,7 +76,7 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
     const ny = Math.sin(theta);
 
     // Point on tube surface
-    const px = cx + currentRTube * Math.cos(phi) * nx - 0.45;
+    const px = cx + currentRTube * Math.cos(phi) * nx - 0.45 + xOffsetAct1;
     const py = cy + currentRTube * Math.cos(phi) * ny + 0.15;
     const pz = cz + currentRTube * Math.sin(phi);
 
@@ -126,7 +128,7 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
     if (isEar) {
       // Auricle (Pinna)
       const earSpread = 0.15 * (rng() - 0.5);
-      px = 0.48 + (rEar + earSpread) * Math.cos(u) * 0.85;
+      px = 0.48 + (rEar + earSpread) * Math.cos(u) * 0.85 + xOffsetAct1;
       py = 0.10 + (rEar + earSpread) * Math.sin(u) * 1.15;
       pz = 0.35 * Math.sin(2 * u) + 0.2 * (v - 0.5) - 0.15;
 
@@ -138,7 +140,7 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
       const jawU = (i - 11000) / (cranialCount - 11000);
       const angle = -Math.PI * 0.5 + jawU * Math.PI * 1.1;
       const jawR = 2.1 + 0.25 * Math.sin(jawU * 3.0);
-      px = 0.35 + jawR * Math.cos(angle) * 0.95 + (rng() - 0.5) * 0.12;
+      px = 0.35 + jawR * Math.cos(angle) * 0.95 + (rng() - 0.5) * 0.12 + xOffsetAct1;
       py = -0.15 + jawR * Math.sin(angle) * 1.05 + (rng() - 0.5) * 0.12;
       pz = -0.45 + 0.55 * Math.cos(jawU * Math.PI) + (rng() - 0.5) * 0.1;
 
@@ -169,11 +171,11 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
   }
 
   // --- ACT 2: The Care Continuum Gap (Entropy & Fragmentation) ---
-  // 3 Disconnected Orbital Vortices (7,500 + 7,500 + 7,500) + 13,500 Volumetric Drift Cloud
+  // Positioned on the RIGHT and CENTER (x = 0.6 .. 2.2) to balance the left-side text panel
   const vortexCenters = [
-    { x: -1.9, y: 0.95, z: -0.3, spin: 1.0 }, // Hospital consultation
-    { x: 1.85, y: 1.1, z: 0.25, spin: -1.0 }, // Logopedia / Early intervention
-    { x: 0.1, y: -1.65, z: 0.38, spin: 1.2 }, // Family home solitude
+    { x: 0.85, y: 1.15, z: -0.25, spin: 1.0 }, // Hospital consultation
+    { x: 2.10, y: 0.15, z: 0.30, spin: -1.0 }, // Logopedia / Early intervention
+    { x: 1.10, y: -1.35, z: 0.20, spin: 1.2 }, // Family home solitude
   ];
 
   for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -205,11 +207,10 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
       }
     } else {
       // Volumetric Drift Cloud in the disconnect void
-      px = (rng() - 0.5) * 6.2;
-      py = (rng() - 0.5) * 4.4;
-      pz = (rng() - 0.5) * 2.8;
+      px = 0.6 + (rng() - 0.5) * 4.2;
+      py = (rng() - 0.5) * 3.8;
+      pz = (rng() - 0.5) * 2.5;
 
-      // Subtle clustering along boundaries
       if (rng() < 0.7) {
         c = COLOR_CHAOS_DARK;
       } else {
@@ -227,8 +228,8 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
   }
 
   // --- ACT 3: Caregiver-Led Continuity (Valeria+ & Lúa Companion) ---
-  // Circular matrix disc (GC9A01 32.4mm / 240x240 display)
-  // Ring: 6,000 | Disc lattice: 13,000 | Lúa tuxedo cat silhouette: 17,000
+  // Offset to left (x = -0.85) to cleanly balance the right-side text panel
+  const xOffsetAct3 = -0.85;
   const ringCount = 6000;
   const matrixCount = 13000;
   const luaCount = PARTICLE_COUNT - ringCount - matrixCount;
@@ -244,7 +245,7 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
     const isGap = (segment % 1.0) > 0.88;
     const radius = isGap ? r - 0.05 : r;
 
-    posLua[idx] = radius * Math.cos(angle);
+    posLua[idx] = xOffsetAct3 + radius * Math.cos(angle);
     posLua[idx + 1] = radius * Math.sin(angle);
     posLua[idx + 2] = 0.02 * Math.sin(angle * 9.0);
 
@@ -267,7 +268,7 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
     const r = 1.95 * Math.sqrt(rng());
     const angle = rng() * Math.PI * 2;
 
-    posLua[idx] = r * Math.cos(angle);
+    posLua[idx] = xOffsetAct3 + r * Math.cos(angle);
     posLua[idx + 1] = r * Math.sin(angle);
     posLua[idx + 2] = 0.015 * Math.cos(r * 4.0);
 
@@ -275,9 +276,9 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
     normStage3[idx + 1] = 0.0;
     normStage3[idx + 2] = 1.0;
 
-    col3[idx] = COLOR_OBSIDIAN.r;
-    col3[idx + 1] = COLOR_OBSIDIAN.g;
-    col3[idx + 2] = COLOR_OBSIDIAN.b;
+    col3[idx] = COLOR_DISC_SCREEN.r;
+    col3[idx + 1] = COLOR_DISC_SCREEN.g;
+    col3[idx + 2] = COLOR_DISC_SCREEN.b;
   }
 
   // 3. Lúa Tuxedo Cat Silhouette & Features (17,000)
@@ -364,7 +365,7 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
       c = COLOR_OBSIDIAN;
     }
 
-    posLua[idx] = px;
+    posLua[idx] = xOffsetAct3 + px;
     posLua[idx + 1] = py;
     posLua[idx + 2] = pz;
 
@@ -379,12 +380,12 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
 
   // --- ACT 4: The Closed-Loop Ecosystem (Longitudinal Continuum) ---
   // Double-helix closed loop (toroidal ribbon with bridge rungs)
-  // Strand A: 14,000 | Strand B: 14,000 | Synchronized Wave Bridges: 8,000
+  // Centered at (0, 0, -0.4) to frame the centered act 4 card
   const strandACount = 14000;
   const strandBCount = 14000;
   const bridgeCount = PARTICLE_COUNT - strandACount - strandBCount;
 
-  const torusR = 2.1;
+  const torusR = 2.45;
   const tubeR = 0.52;
   const numTwists = 3.0;
 
@@ -394,7 +395,7 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
 
     let px = 0;
     let py = 0;
-    let pz = 0;
+    let pz = -0.4;
     let c = COLOR_SLATE;
     let glint = 0.0;
 
@@ -407,7 +408,7 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
 
       px = (torusR + currentR * Math.cos(twist)) * Math.cos(alpha);
       py = (torusR + currentR * Math.cos(twist)) * Math.sin(alpha);
-      pz = currentR * Math.sin(twist);
+      pz += currentR * Math.sin(twist);
 
       if (rng() < 0.4) {
         c = COLOR_TURQUOISE;
@@ -427,7 +428,7 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
 
       px = (torusR + currentR * Math.cos(twist)) * Math.cos(alpha);
       py = (torusR + currentR * Math.cos(twist)) * Math.sin(alpha);
-      pz = currentR * Math.sin(twist);
+      pz += currentR * Math.sin(twist);
 
       if (rng() < 0.35) {
         c = COLOR_CHAMPAGNE;
@@ -458,7 +459,7 @@ export function createClinicalPointCloudGeometry(): THREE.BufferGeometry {
 
       px = ptAx + (ptBx - ptAx) * interp + (rng() - 0.5) * 0.08;
       py = ptAy + (ptBy - ptAy) * interp + (rng() - 0.5) * 0.08;
-      pz = ptAz + (ptBz - ptAz) * interp + (rng() - 0.5) * 0.08;
+      pz += ptAz + (ptBz - ptAz) * interp + (rng() - 0.5) * 0.08;
 
       if (rng() < 0.5) {
         c = COLOR_TURQUOISE;
