@@ -3,12 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
-import EarlifyHero from '../components/earlify/EarlifyHero.astro';
+import EarlifyScrollytelling from '../components/earlify/EarlifyScrollytelling.astro';
 import EarlifyBrands from '../components/earlify/EarlifyBrands.astro';
 import EarlifyWorkflow from '../components/earlify/EarlifyWorkflow.astro';
 import EarlifyB2B from '../components/earlify/EarlifyB2B.astro';
 import EarlifyFounder from '../components/earlify/EarlifyFounder.astro';
-import ProblemSection from '../components/earlify/ProblemSection.astro';
 import SolutionSection from '../components/earlify/SolutionSection.astro';
 import EarlifyValidation from '../components/earlify/EarlifyValidation.astro';
 import EarlifyDifferentiators from '../components/earlify/EarlifyDifferentiators.astro';
@@ -131,8 +130,7 @@ const earlifyJsonLd = {
   <Header activeTab="earlify" />
 
   <main id="main-content">
-    <EarlifyHero />
-    <ProblemSection />
+    <EarlifyScrollytelling />
     <SolutionSection />
     <EarlifyDifferentiators />
     <EarlifyValidation />

@@ -6,5 +6,10 @@ export default defineConfig({
   base: '/proyectos',
   build: {
     format: 'file'
+  },
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 1000
+    }
   }
 });

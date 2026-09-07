@@ -1,0 +1,1072 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+
+<!-- Fixed full-screen WebGL Canvas for Vanilla Three.js & GLSL Shaders -->
+<canvas id="webgl-canvas" class="earlify-webgl-canvas" aria-hidden="true"></canvas>
+
+<!-- Top Editorial Clinical Telemetry Bar -->
+<div class="clinical-telemetry-bar" aria-label="Telemetría y Estado Regulatorio">
+  <div class="telemetry-inner">
+    <div class="telemetry-item">
+      <span class="pulse-indicator"></span>
+      <span class="mono-label">ESTADO REGULATORIO:</span>
+      <span class="mono-value">SaMD Clase IIa en implementación · MDR Regla 11</span>
+    </div>
+    <div class="telemetry-separator">/</div>
+    <div class="telemetry-item hide-mobile">
+      <span class="mono-label">ARQUITECTURA:</span>
+      <span class="mono-value">Zero-PHI · Offline-First · Cero Cajas Negras</span>
+    </div>
+    <div class="telemetry-separator hide-mobile">/</div>
+    <div class="telemetry-item hide-mobile">
+      <span class="mono-label">CONSORCIO:</span>
+      <span class="mono-value">startTIC · Zona Franca Vigo · Gradiant · FEDER</span>
+    </div>
+  </div>
+</div>
+
+<!-- Scrollytelling Timeline Container (Pinned by GSAP ScrollTrigger) -->
+<section id="earlify-scrolly-container" class="scrolly-container">
+  <div class="scrolly-sticky-viewport">
+
+    <!-- Fixed Vertical Scrollytracker Rail (Right side with clearance gutter) -->
+    <nav class="scrolly-tracker-rail" id="scrolly-tracker" aria-label="Navegación de los 4 Actos Clínicos">
+      <div class="tracker-segment active" id="track-act-1">
+        <span class="track-num">01</span>
+        <div class="track-bar"><div class="track-fill" id="fill-act-1"></div></div>
+        <span class="track-title">Evaluación Clínica</span>
+      </div>
+      <div class="tracker-segment" id="track-act-2">
+        <span class="track-num">02</span>
+        <div class="track-bar"><div class="track-fill" id="fill-act-2"></div></div>
+        <span class="track-title">La Brecha</span>
+      </div>
+      <div class="tracker-segment" id="track-act-3">
+        <span class="track-num">03</span>
+        <div class="track-bar"><div class="track-fill" id="fill-act-3"></div></div>
+        <span class="track-title">Mediación & Lúa</span>
+      </div>
+      <div class="tracker-segment" id="track-act-4">
+        <span class="track-num">04</span>
+        <div class="track-bar"><div class="track-fill" id="fill-act-4"></div></div>
+        <span class="track-title">Continuidad</span>
+      </div>
+    </nav>
+
+    <!-- Scroll Starter Hint (Fades out on initial scroll) -->
+    <div id="scrolly-starter" class="scrolly-starter-prompt" aria-hidden="true">
+      <span class="starter-label">Desliza para explorar la continuidad clínica</span>
+      <div class="starter-mouse">
+        <div class="mouse-dot"></div>
+      </div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- ACT 1 (Progress 0.0 → 1.0): The Clinical Evaluation (VIA+ Mesh)     -->
+    <!-- =================================================================== -->
+    <article id="act-panel-1" class="act-panel act-panel-1 act-active" aria-label="Acto 1: Evaluación Clínica Unificada">
+      <div class="act-panel-content act-panel-right">
+        
+        <div class="brand-hero-header">
+          <img 
+            src={`${baseUrl}/assets/earlify-logo.png?v=9`} 
+            alt="Logo de Earlify Health" 
+            class="brand-logo-img"
+            width="200"
+            height="200"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <div class="brand-title-group">
+            <span class="act-eyebrow">ACT 01 // VINCULACIÓN AUDITIVA Y VALORACIÓN CLÍNICA</span>
+            <span class="sub-brand-tag">Earlify Health · Ecosistema Pediátrico</span>
+          </div>
+        </div>
+
+        <h1 class="act-headline">
+          Unified Clinical <span class="text-linen">Evaluation.</span>
+        </h1>
+
+        <p class="act-lead">
+          Baterías estandarizadas digitalizadas para el soporte a la decisión médica en audición, voz y neurodesarrollo. Rigor foniátrico objetivo sin automatismos de caja negra.
+        </p>
+
+        <!-- Clinical Telemetry Badges -->
+        <div class="clinical-badges-grid">
+          <div class="clinical-badge-card">
+            <span class="badge-icon">🩺</span>
+            <div>
+              <strong class="badge-title">VIA+ CDSS (SaMD IIa)</strong>
+              <span class="badge-detail">13 módulos clínicos objetivos · Vía MDR Regla 11</span>
+            </div>
+          </div>
+          <div class="clinical-badge-card">
+            <span class="badge-icon">📊</span>
+            <div>
+              <strong class="badge-title">Validación Acústica Praat</strong>
+              <span class="badge-detail">Jitter, Shimmer y HNR deterministas en C++ JSI</span>
+            </div>
+          </div>
+          <div class="clinical-badge-card">
+            <span class="badge-icon">🔒</span>
+            <div>
+              <strong class="badge-title">Silencio Clínico & Zero-PHI</strong>
+              <span class="badge-detail">Cero interferencias acústicas · Datos en dispositivo</span>
+            </div>
+          </div>
+          <div class="clinical-badge-card">
+            <span class="badge-icon">🏆</span>
+            <div>
+              <strong class="badge-title">Percentil 96 SUS (90/100)</strong>
+              <span class="badge-detail">Presentado en el 52.º Congreso SGORL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- =================================================================== -->
+    <!-- ACT 2 (Progress 1.0 → 2.0): The Care Continuum Gap (Entropy)        -->
+    <!-- =================================================================== -->
+    <article id="act-panel-2" class="act-panel act-panel-2" aria-label="Acto 2: La Brecha entre Consultas">
+      <div class="act-panel-content act-panel-left">
+        
+        <span class="act-eyebrow eyebrow-amber">ACT 02 // ENTROPÍA Y SILOS ASISTENCIALES</span>
+        
+        <h2 class="act-headline">
+          The Void Between <span class="text-amber">Consultations.</span>
+        </h2>
+
+        <p class="act-lead">
+          Sin una infraestructura continua, la rehabilitación pediátrica pierde adherencia en el hogar y carece de trazabilidad objetiva entre visitas especializadas.
+        </p>
+
+        <!-- Friction & Disconnect Cards -->
+        <div class="friction-cards-grid">
+          <div class="friction-card">
+            <span class="friction-stat">83%</span>
+            <strong class="friction-title">Incertidumbre Familiar</strong>
+            <p class="friction-desc">De las familias refieren soledad y desconcierto al intentar aplicar pautas logopédicas sin guía interactiva estructurada.</p>
+          </div>
+          <div class="friction-card">
+            <span class="friction-stat">24 sem</span>
+            <strong class="friction-title">Silencio Longitudinal</strong>
+            <p class="friction-desc">Tiempo promedio entre revisiones hospitalarias en el que el especialista desconoce la evolución real del menor.</p>
+          </div>
+          <div class="friction-card">
+            <span class="friction-stat">TRL 5</span>
+            <strong class="friction-title">Ventanas Críticas</strong>
+            <p class="friction-desc">La neuroplasticidad auditiva temprana exige estimulación diaria verificada para evitar retrasos permanentes.</p>
+          </div>
+        </div>
+
+        <div class="clinical-quote-box">
+          <p class="quote-text">
+            «El problema de la salud infantil no es la falta de talento clínico en consulta, sino el abismo de meses en el que la familia se queda sola en casa.»
+          </p>
+          <span class="quote-author">— Dr. Frank Alberto Betances Reinoso · ORL Infantil (USC / SERGAS)</span>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- =================================================================== -->
+    <!-- ACT 3 (Progress 2.0 → 3.0): Caregiver Continuity (Valeria+ & Lúa)   -->
+    <!-- =================================================================== -->
+    <article id="act-panel-3" class="act-panel act-panel-3" aria-label="Acto 3: Mediación Familiar y Mascota Lúa">
+      <div class="act-panel-content act-panel-right">
+        
+        <span class="act-eyebrow eyebrow-turquoise">ACT 03 // MEDIACIÓN FAMILIAR Y REFUERZO FÍSICO</span>
+
+        <h2 class="act-headline">
+          Mediation & Engagement <span class="text-turquoise">at Home.</span>
+        </h2>
+
+        <p class="act-lead">
+          Actividades prescritas por especialistas clínicos, ejecutadas en familia mediante rutinas de Respuesta Física Total (TPR) y reforzadas por un compañero físico sin pantallas adictivas.
+        </p>
+
+        <!-- Valeria+ and Lua Features Grid -->
+        <div class="continuity-features-grid">
+          <div class="continuity-card">
+            <div class="continuity-header">
+              <span class="card-pill pill-turquoise">App Terapéutica</span>
+              <strong class="card-title">Valeria+ · Lenguaje Offline</strong>
+            </div>
+            <p class="card-desc">
+              9 bloques de ejercicios clínicos (ASHA, SOR, discriminación auditiva y Pizarra Mágica). El adulto verifica cada respuesta del menor con 4.110 locuciones neuronales en 6 variedades lingüísticas.
+            </p>
+          </div>
+
+          <div class="continuity-card">
+            <div class="continuity-header">
+              <span class="card-pill pill-linen">Microformación</span>
+              <strong class="card-title">Academy · Guía Parental</strong>
+            </div>
+            <p class="card-desc">
+              Cápsulas de 2 minutos que capacitan a los cuidadores en fundamentos foniátricos, reduciendo la ansiedad familiar sin jerga técnica incomprensible.
+            </p>
+          </div>
+
+          <div class="continuity-card">
+            <div class="continuity-header">
+              <span class="card-pill pill-amber">Hardware AIoT</span>
+              <strong class="card-title">Lúa · Mascota GC9A01 (ESP32-C3)</strong>
+            </div>
+            <p class="card-desc">
+              Periférico táctil redondo de 240×240 px. Acompaña con pixel-art sin micrófonos (Zero-PHI), silenciándose en consulta médica y premiando la constancia en casa.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- =================================================================== -->
+    <!-- ACT 4 (Progress 3.0 → 4.0): The Longitudinal Continuum             -->
+    <!-- =================================================================== -->
+    <article id="act-panel-4" class="act-panel act-panel-4" aria-label="Acto 4: Continuidad Longitudinal y Ecosistema Integral">
+      <div class="act-panel-content act-panel-center">
+        
+        <span class="act-eyebrow eyebrow-champagne">ACT 04 // CRITERIO COMPARTIDO Y CONTINUIDAD LONGITUDINAL</span>
+
+        <h2 class="act-headline">
+          One Shared Criterion. <span class="text-champagne">Better Care Continuity.</span>
+        </h2>
+
+        <p class="act-lead max-w-lead">
+          Infraestructura digital trazable que une el diagnóstico médico, la capacitación parental y la rehabilitación diaria bajo cuatro funciones clínicas explícitas:
+        </p>
+
+        <!-- The 4 Canonical Functions of Earlify Health -->
+        <div class="canonical-verbs-row">
+          <div class="verb-capsule">
+            <span class="verb-step">01</span>
+            <strong class="verb-name">Evaluamos</strong>
+            <span class="verb-sub">VIA+ SaMD Clase IIa</span>
+            <p class="verb-desc">13 baterías foniátricas objetivas con Cero IA en runtime.</p>
+          </div>
+          <div class="verb-arrow">➔</div>
+          <div class="verb-capsule">
+            <span class="verb-step">02</span>
+            <strong class="verb-name">Formamos</strong>
+            <span class="verb-sub">Academy para Familias</span>
+            <p class="verb-desc">Capacitación parental concisa basada en La Brújula ASHA.</p>
+          </div>
+          <div class="verb-arrow">➔</div>
+          <div class="verb-capsule">
+            <span class="verb-step">03</span>
+            <strong class="verb-name">Certificamos</strong>
+            <span class="verb-sub">Sello ARTEL & Telemetría</span>
+            <p class="verb-desc">Exportación en QR anónimo sin servidores externos (IEC 62366-1).</p>
+          </div>
+          <div class="verb-arrow">➔</div>
+          <div class="verb-capsule">
+            <span class="verb-step">04</span>
+            <strong class="verb-name">Rehabilitamos</strong>
+            <span class="verb-sub">Valeria+ & Lúa AIoT</span>
+            <p class="verb-desc">Rutinas diarias en casa supervisadas por el logopeda.</p>
+          </div>
+        </div>
+
+        <div class="act4-cta-wrapper">
+          <a href="#ecosistema-completo" class="scrolly-btn btn-primary-clinical">
+            <span>Ver Especificación Técnica</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17l9.2-9.2M17 17V7H7"/>
+            </svg>
+          </a>
+          <button id="open-contact-modal-scrolly" class="scrolly-btn btn-ghost-clinical">
+            <span>Contacto Profesional e Inversión</span>
+          </button>
+        </div>
+
+        <div class="canonical-closure">
+          <span class="closure-tagline">"Menos ruido. Más criterio."</span>
+          <span class="closure-motto">Conocemos el problema porque lo padecemos todos los días.</span>
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<script>
+  import { initEarlifyScrollytelling } from '../../scripts/scrollytelling/experience';
+
+  let instance: { destroy: () => void } | null = null;
+
+  function setup() {
+    if (instance) {
+      instance.destroy();
+      instance = null;
+    }
+    instance = initEarlifyScrollytelling();
+
+    // Hook contact button to existing modal
+    const contactBtn = document.getElementById('open-contact-modal-scrolly');
+    const modal = document.getElementById('contact-modal');
+    if (contactBtn && modal) {
+      contactBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+  }
+
+  // Lifecycle handling for Astro transitions
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+
+  document.addEventListener('astro:page-load', setup);
+  document.addEventListener('astro:before-swap', () => {
+    if (instance) {
+      instance.destroy();
+      instance = null;
+    }
+  });
+</script>
+
+<style>
+  /* =====================================================================
+     EDITION A: CLINICAL STONE & ESPRESSO DESIGN SYSTEM
+     Deep espresso/slate stone #121314. Strictly no #000000 pitch black.
+     Frosted glass panels: background rgba(255, 255, 255, 0.03), blur(18px)
+     Clearance gutter for right-aligned text blocks: clamp(6rem, 10vw, 12rem)
+     ===================================================================== */
+
+  :global(:root) {
+    --bg-clinical-espresso: #121314;
+    --card-frosted-bg: rgba(255, 255, 255, 0.03);
+    --card-frosted-border: 1px solid rgba(255, 255, 255, 0.07);
+    --card-frosted-blur: blur(18px);
+
+    --color-slate-mineral: #5C646B;
+    --color-linen-sand: #D8D0C5;
+    --color-amber-threshold: #D9822B;
+    --color-obsidian-deep: #18191B;
+    --color-turquoise-earlify: #00C4BE;
+    --color-champagne-rim: #F5E6C8;
+
+    --font-editorial-display: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-editorial-mono: 'JetBrains Mono', monospace, ui-monospace;
+  }
+
+  /* Fixed full-screen WebGL Canvas */
+  .earlify-webgl-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Top Clinical Telemetry Bar */
+  .clinical-telemetry-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+    padding: 0.65rem 2rem;
+    background: linear-gradient(180deg, rgba(18, 19, 20, 0.85) 0%, rgba(18, 19, 20, 0) 100%);
+    pointer-events: none;
+  }
+
+  .telemetry-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    font-family: var(--font-editorial-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+  }
+
+  .telemetry-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pulse-indicator {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-turquoise-earlify);
+    box-shadow: 0 0 10px var(--color-turquoise-earlify);
+    animation: telemetryPulse 2.2s infinite ease-in-out;
+  }
+
+  @keyframes telemetryPulse {
+    0%, 100% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.15); }
+  }
+
+  .mono-label {
+    color: var(--color-slate-mineral);
+    font-weight: 500;
+  }
+
+  .mono-value {
+    color: var(--color-linen-sand);
+    font-weight: 600;
+  }
+
+  .telemetry-separator {
+    color: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Scrollytelling Container */
+  .scrolly-container {
+    position: relative;
+    width: 100%;
+    height: 480vh; /* Controlled pinned height for 4 continuous acts */
+    background-color: var(--bg-clinical-espresso);
+    color: var(--color-linen-sand);
+  }
+
+  .scrolly-sticky-viewport {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Scrollytracker Rail (Fixed right side with clearance gutter) */
+  .scrolly-tracker-rail {
+    position: absolute;
+    right: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    pointer-events: auto;
+  }
+
+  .tracker-segment {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-family: var(--font-editorial-mono);
+    font-size: 0.72rem;
+    color: var(--color-slate-mineral);
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+
+  .tracker-segment.active {
+    color: var(--color-linen-sand);
+  }
+
+  .track-num {
+    font-weight: 600;
+  }
+
+  .track-bar {
+    width: 38px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-radius: 1px;
+  }
+
+  .track-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--color-turquoise-earlify);
+    transition: width 0.15s ease-out;
+  }
+
+  .track-title {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.68rem;
+    opacity: 0.7;
+  }
+
+  .tracker-segment.active .track-title {
+    opacity: 1;
+    color: #FFFFFF;
+  }
+
+  /* Scroll Starter Prompt */
+  .scrolly-starter-prompt {
+    position: absolute;
+    bottom: 2.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 35;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .starter-label {
+    font-family: var(--font-editorial-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--color-slate-mineral);
+    text-transform: uppercase;
+  }
+
+  .starter-mouse {
+    width: 20px;
+    height: 32px;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .mouse-dot {
+    width: 3px;
+    height: 6px;
+    background-color: var(--color-turquoise-earlify);
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: mouseWheelMove 1.8s infinite ease-in-out;
+  }
+
+  @keyframes mouseWheelMove {
+    0% { opacity: 0; transform: translate(-50%, 0); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, 12px); }
+  }
+
+  /* Act Panels Layout & Typography Protection */
+  .act-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4rem;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+    pointer-events: none;
+  }
+
+  .act-panel.act-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .act-panel-content {
+    position: relative;
+    max-width: 680px;
+    padding: 2.5rem 2.8rem;
+    background: var(--card-frosted-bg);
+    backdrop-filter: var(--card-frosted-blur);
+    -webkit-backdrop-filter: var(--card-frosted-blur);
+    border: var(--card-frosted-border);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    pointer-events: auto;
+  }
+
+  /* Clearance gutter safeguard: margin-right clamp(6rem, 10vw, 12rem) */
+  .act-panel-right {
+    margin-left: auto;
+    margin-right: clamp(6rem, 10vw, 12rem);
+  }
+
+  .act-panel-left {
+    margin-right: auto;
+    margin-left: clamp(3rem, 6vw, 8rem);
+    max-width: 720px;
+  }
+
+  .act-panel-center {
+    margin: 0 auto;
+    max-width: 960px;
+    text-align: center;
+  }
+
+  /* Eyebrows and Badges */
+  .act-eyebrow {
+    display: block;
+    font-family: var(--font-editorial-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    color: var(--color-slate-mineral);
+    margin-bottom: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .eyebrow-amber {
+    color: var(--color-amber-threshold);
+  }
+
+  .eyebrow-turquoise {
+    color: var(--color-turquoise-earlify);
+  }
+
+  .eyebrow-champagne {
+    color: var(--color-champagne-rim);
+  }
+
+  /* Headlines */
+  .act-headline {
+    font-family: var(--font-editorial-display);
+    font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin-bottom: 1.25rem;
+  }
+
+  .text-linen {
+    color: var(--color-linen-sand);
+  }
+
+  .text-amber {
+    color: var(--color-amber-threshold);
+  }
+
+  .text-turquoise {
+    color: var(--color-turquoise-earlify);
+  }
+
+  .text-champagne {
+    color: var(--color-champagne-rim);
+  }
+
+  /* Narrative Leads */
+  .act-lead {
+    font-family: var(--font-editorial-display);
+    font-size: 1.08rem;
+    line-height: 1.62;
+    color: var(--color-linen-sand);
+    opacity: 0.92;
+    margin-bottom: 2rem;
+  }
+
+  .max-w-lead {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Brand Header in Act 1 */
+  .brand-hero-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .brand-logo-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .brand-title-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sub-brand-tag {
+    font-family: var(--font-editorial-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-linen-sand);
+  }
+
+  /* Act 1: Clinical Badges Grid */
+  .clinical-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .clinical-badge-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+  }
+
+  .badge-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .badge-title {
+    display: block;
+    font-family: var(--font-editorial-display);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 0.2rem;
+  }
+
+  .badge-detail {
+    display: block;
+    font-family: var(--font-editorial-mono);
+    font-size: 0.68rem;
+    color: var(--color-slate-mineral);
+    line-height: 1.35;
+  }
+
+  /* Act 2: Friction & Disconnect Grid */
+  .friction-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .friction-card {
+    padding: 1.2rem 1.1rem;
+    background: rgba(217, 130, 43, 0.04);
+    border: 1px solid rgba(217, 130, 43, 0.22);
+    border-radius: 12px;
+  }
+
+  .friction-stat {
+    display: block;
+    font-family: var(--font-editorial-mono);
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--color-amber-threshold);
+    margin-bottom: 0.4rem;
+  }
+
+  .friction-title {
+    display: block;
+    font-family: var(--font-editorial-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 0.4rem;
+  }
+
+  .friction-desc {
+    font-family: var(--font-editorial-display);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--color-linen-sand);
+    opacity: 0.85;
+    margin: 0;
+  }
+
+  .clinical-quote-box {
+    padding: 1.1rem 1.4rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--color-amber-threshold);
+    border-radius: 0 10px 10px 0;
+  }
+
+  .quote-text {
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--color-linen-sand);
+    line-height: 1.55;
+    margin-bottom: 0.4rem;
+  }
+
+  .quote-author {
+    display: block;
+    font-family: var(--font-editorial-mono);
+    font-size: 0.72rem;
+    color: var(--color-slate-mineral);
+  }
+
+  /* Act 3: Continuity Features Grid */
+  .continuity-features-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .continuity-card {
+    padding: 1.15rem 1.3rem;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+  }
+
+  .continuity-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-pill {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    font-family: var(--font-editorial-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .pill-turquoise {
+    background: rgba(0, 196, 190, 0.12);
+    border: 1px solid rgba(0, 196, 190, 0.35);
+    color: var(--color-turquoise-earlify);
+  }
+
+  .pill-linen {
+    background: rgba(216, 208, 197, 0.1);
+    border: 1px solid rgba(216, 208, 197, 0.25);
+    color: var(--color-linen-sand);
+  }
+
+  .pill-amber {
+    background: rgba(217, 130, 43, 0.12);
+    border: 1px solid rgba(217, 130, 43, 0.35);
+    color: var(--color-amber-threshold);
+  }
+
+  .card-title {
+    font-family: var(--font-editorial-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .card-desc {
+    font-family: var(--font-editorial-display);
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--color-linen-sand);
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  /* Act 4: The Canonical Verbs Row */
+  .canonical-verbs-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .verb-capsule {
+    flex: 1;
+    padding: 1.25rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .verb-capsule:hover {
+    border-color: rgba(245, 230, 200, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .verb-step {
+    display: block;
+    font-family: var(--font-editorial-mono);
+    font-size: 0.68rem;
+    color: var(--color-slate-mineral);
+    margin-bottom: 0.3rem;
+  }
+
+  .verb-name {
+    display: block;
+    font-family: var(--font-editorial-display);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 0.25rem;
+  }
+
+  .verb-sub {
+    display: block;
+    font-family: var(--font-editorial-mono);
+    font-size: 0.68rem;
+    color: var(--color-champagne-rim);
+    margin-bottom: 0.5rem;
+  }
+
+  .verb-desc {
+    font-family: var(--font-editorial-display);
+    font-size: 0.74rem;
+    line-height: 1.4;
+    color: var(--color-linen-sand);
+    opacity: 0.85;
+    margin: 0;
+  }
+
+  .verb-arrow {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 1.1rem;
+    user-select: none;
+  }
+
+  .act4-cta-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .scrolly-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.85rem;
+    border-radius: 9999px;
+    font-family: var(--font-editorial-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .btn-primary-clinical {
+    background: linear-gradient(135deg, var(--color-turquoise-earlify) 0%, #009995 100%);
+    color: #0c1214;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 196, 190, 0.3);
+  }
+
+  .btn-primary-clinical:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 196, 190, 0.45);
+  }
+
+  .btn-ghost-clinical {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #FFFFFF;
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-ghost-clinical:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .canonical-closure {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-family: var(--font-editorial-mono);
+    font-size: 0.78rem;
+  }
+
+  .closure-tagline {
+    color: var(--color-champagne-rim);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .closure-motto {
+    color: var(--color-slate-mineral);
+  }
+
+  /* Responsive Design & Mobile Adaptations */
+  @media (max-width: 1024px) {
+    .act-panel-right {
+      margin-right: clamp(2rem, 5vw, 4rem);
+    }
+    .act-panel-left {
+      margin-left: clamp(2rem, 5vw, 4rem);
+    }
+    .scrolly-tracker-rail {
+      right: 1.25rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .scrolly-tracker-rail {
+      display: none; /* Hidden on mobile to maximize viewport clarity */
+    }
+
+    .hide-mobile {
+      display: none;
+    }
+
+    .act-panel {
+      padding: 0 1.25rem;
+    }
+
+    .act-panel-content {
+      padding: 1.85rem 1.4rem;
+      max-width: 100%;
+      margin: 0 !important;
+    }
+
+    .act-headline {
+      font-size: 1.85rem;
+    }
+
+    .act-lead {
+      font-size: 0.95rem;
+    }
+
+    .clinical-badges-grid,
+    .friction-cards-grid,
+    .canonical-verbs-row {
+      grid-template-columns: 1fr;
+      flex-direction: column;
+    }
+
+    .verb-arrow {
+      transform: rotate(90deg);
+      margin: -0.2rem 0;
+    }
+
+    .act4-cta-wrapper {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .scrolly-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
