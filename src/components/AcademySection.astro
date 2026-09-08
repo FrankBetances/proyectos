@@ -1,12 +1,12 @@
 ---
 const academyDomains = [
-  { icon: "🧭", title: "Lenguaje y 'La Brújula'", desc: "Hitos normativos ASHA de 0 a 5 años (receptivo vs. expresivo), baño de lenguaje y técnicas de modelado positivo (recast)." },
-  { icon: "👂", title: "Hipoacusia / Sordera", desc: "Qué es la pérdida auditiva, pautas familiares y manejo práctico de audífonos e implantes cocleares." },
-  { icon: "🗣️", title: "Dislalias", desc: "Puntos de articulación de la boca y praxias para acompañar los sonidos difíciles (/r/, /s/, /l/)." },
-  { icon: "🔤", title: "Dislexia", desc: "Estrategias de conciencia fonológica, ritmo y trucos sencillos para apoyar la lectura emergente en casa." },
-  { icon: "🧩", title: "TEA (Autismo)", desc: "Comunicación funcional, anticipación visual y regulación respetuosa en el espectro autista." },
-  { icon: "🤟", title: "Lengua de Signos (LSE)", desc: "Abecedario dactilológico completo (27 configuraciones de mano dibujadas y validadas por ACOPROS)." },
-  { icon: "💡", title: "Mitos y Dudas Frecuentes", desc: "Respuestas con base científica que desmontan el 'ya hablará' y orientan con tranquilidad a la familia." }
+  { icon: "🧭", title: "Lenguaje & 'La Brújula'", desc: "Hitos normativos ASHA 0-5 años (receptivo vs. expresivo) y modelado positivo (recast)." },
+  { icon: "👂", title: "Hipoacusia & Implantes", desc: "Pérdida auditiva, pautas familiares y manejo práctico de audífonos e implantes cocleares." },
+  { icon: "🗣️", title: "Dislalias & Articulación", desc: "Puntos de articulación de la boca y praxias para fonemas difíciles (/r/, /s/, /l/)." },
+  { icon: "🔤", title: "Dislexia & Fonología", desc: "Conciencia fonológica, ritmo auditivo y trucos para apoyar la lectura emergente en casa." },
+  { icon: "🧩", title: "TEA (Espectro Autista)", desc: "Comunicación funcional, anticipación estructurada y regulación respetuosa en el hogar." },
+  { icon: "🤟", title: "Lengua de Signos (LSE)", desc: "Abecedario dactilológico con 27 configuraciones de mano dibujadas y validadas por ACOPROS." },
+  { icon: "🎧", title: "Integración Sensorial", desc: "Estrategias para sobre-responsividad auditiva (SOR) ante electrodomésticos y ruidos fuertes." }
 ];
 ---
 
@@ -15,19 +15,20 @@ const academyDomains = [
     <div class="academy-box glass-card">
       <div class="academy-header-content">
         <div class="academy-title-wrap">
-          <span class="badge badge-purple">Formación Previa Integrada</span>
-          <h2>Academy · <span class="gradient-text">Capacitación para Madres y Padres</span></h2>
+          <span class="badge badge-purple">Pestaña Inicial por Defecto</span>
+          <h2>Academy · <span class="gradient-text">Formación Parental en 2 Minutos</span></h2>
           <p>
-            Entender el desarrollo del lenguaje es el primer paso para acompañarlo bien. 
-            Por eso Valeria+ <strong>abre directamente en Academy</strong>: ofrece a las familias <strong>cápsulas de 2 minutos</strong> con explicaciones claras, ejemplos cotidianos y micro-preguntas para consolidar lo aprendido con puntos de experiencia (XP).
+            Comprender el desarrollo del lenguaje es imprescindible antes de ejercitarlo. 
+            Valeria+ abre en Academy para formar a madres y padres mediante <strong>cápsulas breves de 2 minutos</strong> con micro-preguntas que suman puntos XP.
           </p>
         </div>
         <div class="academy-badge-large">
           <span class="academy-xp">⚡ XP por Dominio</span>
-          <span class="academy-status">Cápsulas de 2 min · 7 Silos</span>
+          <span class="academy-status">7 Silos Formativos · Cero Jerga</span>
         </div>
       </div>
 
+      <!-- 7 Domains Grid -->
       <div class="domains-grid">
         {academyDomains.map((d) => (
           <div class="domain-card">
@@ -46,7 +47,7 @@ const academyDomains = [
           <div class="lse-tag">🧭 Hitos Normativos ASHA (0 a 5 años)</div>
           <h3>La Brújula de las Palabras</h3>
           <p>
-            Una guía clara por etapas de edad que separa <strong>lo que el niño comprende</strong> (lenguaje receptivo) de <strong>lo que es capaz de decir</strong> (lenguaje expresivo), ayudando a identificar a tiempo cuándo conviene consultar con el logopeda.
+            Guía clínica por edades que deslinda <strong>lo que el niño comprende</strong> (lenguaje receptivo) de <strong>lo que expresa</strong> (lenguaje expresivo), orientando a la familia sobre cuándo consultar al logopeda.
           </p>
         </div>
 
@@ -55,7 +56,7 @@ const academyDomains = [
           <h3>Lengua de Signos Española (LSE)</h3>
           <p>
             Las <strong>27 configuraciones del abecedario dactilológico</strong> han sido revisadas y validadas directamente por 
-            <strong>la logopeda y personas sordas de ACOPROS</strong>, con panel de consulta rápida en una sola pantalla.
+            <strong>la logopeda y personas sordas de ACOPROS</strong>, disponibles en un panel de consulta rápida.
           </p>
         </div>
       </div>
@@ -65,12 +66,13 @@ const academyDomains = [
 
 <style>
   .academy-section {
-    padding: 100px 0;
+    padding: 85px 0;
     position: relative;
+    border-top: 1px solid var(--border-light);
   }
 
   .academy-box {
-    padding: 3.5rem 3rem;
+    padding: 3rem 2.5rem;
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.4) 100%);
     border: 1px solid rgba(138, 43, 226, 0.3);
     box-shadow: var(--shadow-purple);
@@ -81,20 +83,21 @@ const academyDomains = [
     justify-content: space-between;
     align-items: flex-start;
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .academy-title-wrap h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
     font-weight: 800;
-    margin: 0.75rem 0 1rem 0;
+    margin: 0.6rem 0 0.8rem 0;
   }
 
   .academy-title-wrap p {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1rem;
     max-width: 680px;
     line-height: 1.6;
+    margin: 0;
   }
 
   .academy-title-wrap strong {
@@ -105,43 +108,44 @@ const academyDomains = [
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    flex-shrink: 0;
   }
 
   .academy-xp {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: var(--accent-purple);
     background: rgba(168, 85, 247, 0.1);
-    padding: 0.5rem 1rem;
+    padding: 0.45rem 0.9rem;
     border-radius: var(--radius-md);
     border: 1px solid rgba(168, 85, 247, 0.3);
   }
 
   .academy-status {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-dim);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
   .domains-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
   }
 
   .domain-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 1.5rem;
+    padding: 1.25rem;
     display: flex;
     align-items: flex-start;
-    gap: 1.25rem;
+    gap: 1rem;
     transition: transform var(--transition-fast);
   }
 
@@ -152,10 +156,10 @@ const academyDomains = [
   }
 
   .domain-icon {
-    font-size: 2rem;
+    font-size: 1.6rem;
     background: rgba(255, 255, 255, 0.05);
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,22 +168,22 @@ const academyDomains = [
   }
 
   .domain-body h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
     color: var(--text-main);
   }
 
   .domain-body p {
-    font-size: 0.875rem;
+    font-size: 0.825rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.45;
     margin: 0;
   }
 
   .academy-spotlight-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
   }
 
@@ -187,7 +191,7 @@ const academyDomains = [
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(0, 242, 254, 0.2);
     border-radius: var(--radius-md);
-    padding: 1.75rem;
+    padding: 1.5rem;
     position: relative;
     overflow: hidden;
   }
@@ -211,12 +215,12 @@ const academyDomains = [
   }
 
   .lse-tag {
-    font-size: 0.75rem;
+    font-size: 0.725rem;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--accent-cyan);
     letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 
   .lse-tag.text-purple {
@@ -224,15 +228,15 @@ const academyDomains = [
   }
 
   .lse-spotlight h3 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
   }
 
   .lse-spotlight p {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
   }
 
@@ -242,11 +246,11 @@ const academyDomains = [
 
   @media (max-width: 768px) {
     .academy-box {
-      padding: 2rem 1.5rem;
+      padding: 2rem 1.25rem;
     }
     .academy-header-content {
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
     .academy-badge-large {
       align-items: flex-start;

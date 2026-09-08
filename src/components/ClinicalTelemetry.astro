@@ -1,12 +1,12 @@
 ---
 const partners = [
-  { name: "ACOPROS", desc: "Asociación de Padres y Madres de Niños Sordos de A Coruña (Validación Clínica y Logopédica)" },
-  { name: "startTIC · CZFV / Gradiant", desc: "Incubadora de Alta Tecnología en Salud Digital (Zona Franca de Vigo / FEDER)" },
-  { name: "Quisqueya Habla", desc: "UFHEC · Universidad Francisco Henríquez y Carvajal (FONDOCYT / MESCYT)" },
+  { name: "ACOPROS", desc: "Asociación de Familias de Niños Sordos (A Coruña)" },
+  { name: "startTIC", desc: "Incubadora Alta Tecnología (CZFV / Gradiant / FEDER)" },
+  { name: "Quisqueya Habla", desc: "UFHEC / MESCYT (FONDOCYT)" },
   { name: "USC", desc: "Universidade de Santiago de Compostela" },
-  { name: "Proxecto Nós", desc: "Tecnoloxías do Galego na Era Dixital (Voz Celtia)" },
-  { name: "HiTZ / UPV-EHU", desc: "Centro Vasco de Tecnología del Lenguaje (Aholab · Voz HiTZ-TTS)" },
-  { name: "Projecte AINA / BSC", desc: "Barcelona Supercomputing Center (Voz Matxa-TTS Català)" }
+  { name: "Proxecto Nós", desc: "Tecnoloxías do Galego na Era Dixital" },
+  { name: "HiTZ / UPV-EHU", desc: "Centro Vasco de Tecnología del Lenguaje" },
+  { name: "Projecte AINA", desc: "Barcelona Supercomputing Center (BSC)" }
 ];
 ---
 
@@ -15,31 +15,49 @@ const partners = [
     <div class="telemetry-grid">
       <div class="glass-card telemetry-info">
         <span class="badge badge-emerald">Evidencia de Usabilidad</span>
-        <h2>Telemetría del <span class="gradient-text-emerald">Piloto Clínico</span></h2>
+        <h2>Telemetría Zero-PHI · <span class="gradient-text-emerald">Privacidad Absoluta</span></h2>
         <p>
-          Para medir cómo responde la app y mejorarla sin invadir la privacidad de las familias, 
-          Valeria+ recoge datos de usabilidad <strong>100% anónimos, sin conexión y sin guardar grabaciones de voz</strong> (Zero-PHI).
+          Para perfeccionar la app sin vulnerar la intimidad familiar, Valeria+ registra métricas de usabilidad <strong>100% anónimas, sin conexión y sin guardar audios ni fotos</strong>:
         </p>
 
-        <ul class="telemetry-list">
-          <li>
-            <strong>⏱️ Tiempo activo por pantalla:</strong> Cuánto tiempo se dedica a cada juego o módulo formativo.
-          </li>
-          <li>
-            <strong>👆 Registro de toques fuera de lugar:</strong> Detección de zonas confusas en la pantalla para hacer la interfaz más fácil e intuitiva.
-          </li>
-          <li>
-            <strong>💬 Encuesta rápida para familias (SUS):</strong> Preguntas sencillas semanales para saber cómo encaja la práctica en la rutina del hogar.
-          </li>
-          <li>
-            <strong>📱 Exportación por Código QR:</strong> El logopeda puede escanear en consulta un resumen sin necesidad de cables ni internet.
-          </li>
-        </ul>
+        <div class="telemetry-bento">
+          <div class="telemetry-chip">
+            <span class="chip-icon">⏱️</span>
+            <div>
+              <strong>Tiempo Activo</strong>
+              <p>Permanencia por módulo para prevenir fatiga.</p>
+            </div>
+          </div>
+
+          <div class="telemetry-chip">
+            <span class="chip-icon">👆</span>
+            <div>
+              <strong>Mapa de Toques</strong>
+              <p>Detección de pulsaciones erróneas para pulir la interfaz.</p>
+            </div>
+          </div>
+
+          <div class="telemetry-chip">
+            <span class="chip-icon">📋</span>
+            <div>
+              <strong>Cuestionario SUS</strong>
+              <p>Encuesta semanal breve para medir satisfacción en el hogar.</p>
+            </div>
+          </div>
+
+          <div class="telemetry-chip">
+            <span class="chip-icon">📱</span>
+            <div>
+              <strong>Código QR Offline</strong>
+              <p>El logopeda escanea los avances en consulta sin cables ni nube.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="glass-card partners-card">
-        <h3>Instituciones Colaboradoras</h3>
-        <p class="partners-sub">Proyectos de investigación y entidades científicas que hacen posible Valeria+:</p>
+        <h3>Alianzas de Investigación</h3>
+        <p class="partners-sub">Red académica y tecnológica de soporte:</p>
 
         <div class="partners-list">
           {partners.map((p) => (
@@ -56,101 +74,130 @@ const partners = [
 
 <style>
   .telemetry-section {
-    padding: 100px 0;
+    padding: 80px 0;
     position: relative;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid var(--border-light);
   }
 
   .telemetry-grid {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 2.5rem;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2rem;
+  }
+
+  .telemetry-info {
+    padding: 2.25rem;
   }
 
   .telemetry-info h2 {
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
     font-weight: 800;
-    margin: 1rem 0 1.2rem 0;
+    margin: 0.75rem 0 1rem 0;
   }
 
   .telemetry-info p {
     color: var(--text-muted);
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-
-  .telemetry-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .telemetry-list li {
     font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
   }
 
-  .telemetry-list strong {
+  .telemetry-info strong {
     color: var(--text-main);
   }
 
-  .telemetry-list code {
-    color: var(--accent-cyan);
-    background: rgba(0, 242, 254, 0.08);
-    padding: 0.1rem 0.35rem;
-    border-radius: 4px;
+  .telemetry-bento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .telemetry-chip {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .chip-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .telemetry-chip strong {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--text-main);
+    margin-bottom: 0.15rem;
+  }
+
+  .telemetry-chip p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
   }
 
   .partners-card {
+    padding: 2.25rem;
     display: flex;
     flex-direction: column;
   }
 
   .partners-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
   }
 
   .partners-sub {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .partners-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.6rem;
   }
 
   .partner-item {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-light);
-    border-radius: var(--radius-md);
-    padding: 0.85rem 1.1rem;
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.9rem;
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.1rem;
   }
 
   .partner-name {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--accent-cyan);
   }
 
   .partner-desc {
-    font-size: 0.825rem;
+    font-size: 0.78rem;
     color: var(--text-muted);
   }
 
   @media (max-width: 900px) {
     .telemetry-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .telemetry-bento {
       grid-template-columns: 1fr;
     }
   }

@@ -1,131 +1,170 @@
 ---
+
+const lingCheck = {
+  id: "ling",
+  icon: "⚡",
+  title: "Test de Ling (6 Sonidos)",
+  category: "Comprobación Previa",
+  desc: "Chequeo rápido con los 6 fonemas [a, i, u, m, s, ʃ] para verificar audífonos e implantes cocleares antes de ejercitar.",
+  badge: "Pre-Sesión",
+  badgeColor: "amber",
+  bullets: ["Detección de espectro frecuencial", "Cero fatiga auditiva", "Vital para hipoacusia e implante"]
+};
+
 const blocks = [
   {
-    id: "ling",
-    icon: "👂",
-    title: "Test de Ling (6 Sonidos)",
-    category: "Comprobación Previa",
-    desc: "Chequeo rápido con los 6 sonidos [a, i, u, m, s, ʃ] para verificar que el audífono o implante coclear funciona antes de empezar la sesión.",
-    badge: "Comprobación Rápida",
-    badgeColor: "amber",
-    items: ["Detección de frecuencias clave", "Sin fatiga auditiva", "Imprescindible para audífonos e implantes"]
+    id: "sensorial",
+    num: "01",
+    icon: "🎧",
+    title: "Integración Sensorial SOR",
+    category: "Sobre-Responsividad Acústica",
+    desc: "Desensibilización progresiva para hipersensibilidad sonora (aspiradora, secador, aula). Muro de control adulto.",
+    badge: "6 Actividades · SOR",
+    badgeColor: "cyan",
+    bullets: ["11 estímulos sintetizados (−20 dBFS)", "Volumen (1-5) y tiempo (3/7/15s) fijado por adulto", "Pausar siempre suma puntos XP"]
   },
   {
-    id: "sensorial",
-    icon: "🎧",
-    title: "Integración Sensorial Auditiva",
-    category: "Sobre-Responsividad Acústica (SOR)",
-    desc: "Para el niño que se tapa los oídos con la aspiradora, la batidora o el timbre del colegio. Desensibilización con 11 sonidos reales sintetizados propios y control adulto.",
-    badge: "Nuevo en v14 · 6 Actividades",
-    badgeColor: "cyan",
-    items: ["11 estímulos (aparatos, alertas y 3 ambientes reales)", "El adulto fija intensidad (1-5) y tiempo", "Pausar nunca resta: ¡siempre suma puntos!"]
+    id: "aventuras-lua",
+    num: "02",
+    icon: "🐱",
+    title: "Aventuras con Lúa",
+    category: "Lúa y las Palabras",
+    desc: "105 actividades en 6 franjas de edad (0-2 a 7-10): juegos de selección, preguntas, cuentos y canciones habladas a pulso.",
+    badge: "105 Actividades",
+    badgeColor: "purple",
+    bullets: ["25 juegos de selección y 60 preguntas", "10 cuentos universales ilustrados", "10 canciones habladas sobre metrónomo visual"]
   },
   {
     id: "pares",
+    num: "03",
     icon: "🗣️",
-    title: "Pares Mínimos (15 Pares)",
+    title: "Pares Mínimos D7",
     category: "Dislalias y Pronunciación",
-    desc: "15 pares de palabras casi iguales (rana/lana, rata/lata) en 6 grupos de sonidos. Evaluador inteligente D7 que reconoce aproximaciones del habla sin castigos.",
-    badge: "15 Pares · Evaluador D7",
-    badgeColor: "purple",
-    items: ["Rotacismo, sigmatismo y sonidos difíciles", "Misión física compartida en familia", "Sello doble de aprobación padre-hijo"]
+    desc: "15 pares contrastados en 6 grupos (rotacismo, sigmatismo...). Algoritmo D7 O2 que detecta 35/35 contrastes.",
+    badge: "Algoritmo O2 · 15 Pares",
+    badgeColor: "cyan",
+    bullets: ["Compara contra ambas palabras del par", "Cero falsos positivos de error", "Sello doble de aprobación familiar"]
   },
   {
     id: "expansion",
+    num: "04",
     icon: "🧩",
     title: "Expansión Semántica",
-    category: "Intervención Temprana y Léxico",
-    desc: "Ampliación de vocabulario en 4 etapas: 5 escenarios de casa, 5 categorías por familiaridad, 9 familias de palabras y 8 contrastes con doble vuelta.",
-    badge: "Doble Vuelta (Comprensión + Habla)",
+    category: "Léxico y Comprensión",
+    desc: "Ampliación de vocabulario en 4 etapas: 5 escenarios de casa, 5 categorías por familiaridad y 8 contrastes con doble vuelta.",
+    badge: "Doble Vuelta",
     badgeColor: "emerald",
-    items: ["66 pictogramas en píxel art propio", "Primero tocar el dibujo, luego hablar", "Antesala con el material necesario"]
+    bullets: ["66 pictogramas propios en píxel art", "Primero señalar, luego hablar", "Antesala de preparación de material"]
   },
   {
     id: "audicion",
+    num: "05",
     icon: "👂",
-    title: "Audición (18 Ejercicios)",
-    category: "Protocolo ACOPROS",
-    desc: "Estimulación auditivo-verbal integral: reconocer sonidos, palabras, frases y aprender a escuchar con ruido de fondo como en una cafetería (RA-1 a RA-5).",
+    title: "Audición (ACOPROS)",
+    category: "Protocolo Auditivo-Verbal",
+    desc: "Reconocimiento y discriminación fonética, semántica y pragmática. Escucha en ruido babble graduable (RA-1 a RA-5).",
     badge: "Validación ACOPROS",
-    badgeColor: "cyan",
-    items: ["Escucha en ruido babble graduable", "Discriminación fina de fonemas", "Hasta 3 rondas variadas por ejercicio"]
+    badgeColor: "purple",
+    bullets: ["Ruido de cafetería en bucle manual", "Discriminación fina de fonemas", "Hasta 3 rondas por ejercicio"]
   },
   {
     id: "lenguaje",
+    num: "06",
     icon: "💬",
-    title: "Lenguaje (7 Ejercicios)",
-    category: "Protocolo Familiar",
-    desc: "Estimulación del habla en el hogar: mirar juntos (atención conjunta), imitar gestos y sonidos, comprender órdenes, expresar deseos y regularse.",
-    badge: "Rutina Diaria en Casa",
-    badgeColor: "purple",
-    items: ["Atención triangulada y juego compartido", "Comunicación funcional sin presiones", "Materiales cotidianos del hogar"]
+    title: "Lenguaje Temprano",
+    category: "Estimulación en el Hogar",
+    desc: "Atención conjunta triangulada, imitación progresiva (gesto → sílaba → palabra), comunicación funcional y agenda visual.",
+    badge: "Rutina Diaria",
+    badgeColor: "cyan",
+    bullets: ["Mirada compartida y triangulación", "Modelado verbal sin regañinas", "Materiales cotidianos del hogar"]
   },
   {
     id: "tea",
+    num: "07",
     icon: "🧠",
-    title: "TEA (6 Ejercicios)",
-    category: "Espectro Autista (PRT + TCC)",
-    desc: "Apoyo en comunicación y flexibilidad: atención conjunta, turnos de juego, transición entre tareas y quiebre pragmático con estresores 100% manuales.",
+    title: "TEA (Espectro Autista)",
+    category: "PRT + TCC Conductual",
+    desc: "Atención conjunta con Time Delay, turnos de juego, transición estructurada y quiebre pragmático con estresores 100% manuales.",
     badge: "Estresores Manuales",
     badgeColor: "amber",
-    items: ["Time Delay y sello doble", "Sin sobrecarga sensorial automática", "Anticipación visual estructurada"]
+    bullets: ["Cero sobrecarga sensorial automática", "Anticipación visual estructurada", "Sello doble adulto-menor"]
   },
   {
     id: "dislexia",
+    num: "08",
     icon: "📖",
-    title: "Dislexia (6 Ejercicios)",
+    title: "Dislexia y Fonología",
     category: "Conciencia Fonológica",
-    desc: "Juegos auditivos de sonidos intrusos, ritmo con palmadas, criba de palabras inventadas y rastreo visual para no confundir letras parecidas (b/d y p/q).",
-    badge: "Lectura y Conciencia Sonora",
-    badgeColor: "cyan",
-    items: ["Detección de giros b/d y p/q", "Ritmo dactilar guiado por el adulto", "Denominación rápida de objetos (RAN)"]
+    desc: "Intruso fonológico auditivo puro, criba de pseudopalabras, mapa de rotaciones b/d · p/q y denominación rápida (RAN).",
+    badge: "Criba Fonológica",
+    badgeColor: "purple",
+    bullets: ["Detección de inversiones b/d y p/q", "Síntesis fonémica rítmica (500 ms)", "Rastreo léxico con interferencia"]
   },
   {
     id: "grafomotricidad",
+    num: "09",
     icon: "✏️",
-    title: "La Pizarra Mágica de Lúa (6 Trazos)",
-    category: "Grafomotricidad y Escritura",
-    desc: "Trazado guiado sobre lienzo con pauta Montessori y puntos numerados (1, 2, 3) que fijan el orden del trazo para evitar que confundan la 'b' y la 'd'.",
-    badge: "Puntos Numerados Anti-Inversión",
+    title: "La Pizarra Mágica",
+    category: "Grafomotricidad Guiada",
+    desc: "18 trazos sobre lienzo SVG con pauta Montessori y puntos numerados (1, 2, 3) que fijan el orden exacto del trazo.",
+    badge: "18 Trazos · SVG",
     badgeColor: "emerald",
-    items: ["Letras críticas (b, d, p, m) y calentamiento", "Pauta Montessori regulable en pantalla", "Elogios locutados en 5 variedades"]
+    bullets: ["12 letras críticas (b/d, p/q, m/n)", "6 lazos de calentamiento motor", "Pauta Montessori regulable en pantalla"]
   },
   {
     id: "ar",
+    num: "10",
     icon: "🎯",
-    title: "Realidad Aumentada (6 Ejercicios)",
-    category: "Sensor Motor · Solo Android",
-    desc: "La cámara frontal funciona como sensor motor con micrófono apagado (ARCore + MediaPipe): el premio 3D sale solo cuando el niño hace la postura o gesto correcto.",
-    badge: "ARCore + MediaPipe 3D",
-    badgeColor: "purple",
-    items: ["Boquita de beso, giro de cabeza y fijación visual", "Cero fotos ni vídeos almacenados (privacidad)", "Prueba de aptitud del móvil"]
+    title: "Realidad Aumentada 3D",
+    category: "Sensor Motor · Android",
+    desc: "Cámara frontal como sensor de conducta motora sin micrófono: ARCore + MediaPipe (52 blendshapes) + Filament 3D.",
+    badge: "ARCore + MediaPipe",
+    badgeColor: "cyan",
+    bullets: ["Cinemática orofacial y fijación visual", "Cero fotos ni vídeos grabados", "Modelos 3D de refuerzo motor"]
   }
 ];
 ---
 
-<section id="terapias" class="therapy-section section-padding">
+<section id="bloques-clinicos" class="therapy-section section-padding">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Módulos Especializados</span>
-      <h2>9 Bloques de Ejercicios + <span class="gradient-text">Test de Ling</span></h2>
-      <p>Un recorrido completo y respetuoso: desde la integración sensorial y los primeros sonidos hasta la pronunciación, la lectura y la Realidad Aumentada.</p>
+      <span class="tag">Intervención Estructurada</span>
+      <h2>10 Bloques Clínicos + <span class="gradient-text">Test de Ling</span></h2>
+      <p>Progresión clínica integral: desde el chequeo rápido de prótesis auditivas hasta la pronunciación, la lectura y la Realidad Aumentada 3D.</p>
     </div>
 
-    <div class="screenshot-wrapper">
-      <img 
-        src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL}/assets/05-hub-bloques.png`} 
-        alt="Hub de Bloques de Ejercicios en Valeria+" 
-        class="manual-screenshot" 
-        loading="lazy" 
-        decoding="async"
-      />
+    <!-- Ling Check Highlight Bar -->
+    <div class="ling-banner glass-card" id="terapias">
+      <div class="ling-left">
+        <span class="ling-icon">{lingCheck.icon}</span>
+        <div>
+          <div class="ling-tag-row">
+            <span class="badge badge-amber">{lingCheck.badge}</span>
+            <span class="ling-cat">{lingCheck.category}</span>
+          </div>
+          <h3>{lingCheck.title}</h3>
+          <p>{lingCheck.desc}</p>
+        </div>
+      </div>
+      <div class="ling-bullets">
+        {lingCheck.bullets.map((b) => (
+          <div class="ling-bullet-item">
+            <span class="check-bullet">✓</span>
+            <span>{b}</span>
+          </div>
+        ))}
+      </div>
     </div>
 
+    <!-- 10 Blocks Grid -->
     <div class="blocks-grid">
       {blocks.map((block) => (
         <div class="glass-card block-card">
           <div class="block-top">
-            <span class="block-icon">{block.icon}</span>
+            <div class="block-id-group">
+              <span class="block-num">{block.num}</span>
+              <span class="block-icon">{block.icon}</span>
+            </div>
             <span class={`badge badge-${block.badgeColor}`}>{block.badge}</span>
           </div>
 
@@ -134,9 +173,9 @@ const blocks = [
           <p class="block-desc">{block.desc}</p>
 
           <ul class="block-items">
-            {block.items.map((item) => (
+            {block.bullets.map((item) => (
               <li>
-                <span class="check-icon">✓</span>
+                <span class="check-bullet">✓</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -149,72 +188,148 @@ const blocks = [
 
 <style>
   .therapy-section {
-    padding: 100px 0;
+    padding: 85px 0;
     position: relative;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.15);
+    border-top: 1px solid var(--border-light);
   }
 
-  .screenshot-wrapper {
-    max-width: 320px;
-    margin: 0 auto 3rem auto;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-light);
+  /* Ling Banner */
+  .ling-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(15, 23, 42, 0.7) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.3);
   }
 
-  .manual-screenshot {
-    width: 100%;
-    height: auto;
-    display: block;
+  .ling-left {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 650px;
   }
 
+  .ling-icon {
+    font-size: 2rem;
+    background: rgba(245, 158, 11, 0.15);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ling-tag-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .ling-cat {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-amber);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .ling-left h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+  }
+
+  .ling-left p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .ling-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .ling-bullet-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-main);
+  }
+
+  /* Blocks Grid */
   .blocks-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 1.5rem;
   }
 
   .block-card {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 1.5rem;
     position: relative;
-    overflow: hidden;
   }
 
   .block-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .block-id-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .block-num {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
   }
 
   .block-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .block-category {
-    font-size: 0.8rem;
+    font-size: 0.725rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--accent-cyan);
     letter-spacing: 0.05em;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
   }
 
   .block-card h3 {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     color: var(--text-main);
   }
 
   .block-desc {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
     flex-grow: 1;
   }
 
@@ -223,22 +338,35 @@ const blocks = [
     padding: 0;
     margin: 0;
     border-top: 1px solid var(--border-light);
-    padding-top: 1.25rem;
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.45rem;
   }
 
   .block-items li {
     display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.875rem;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.82rem;
     color: var(--text-main);
+    line-height: 1.4;
   }
 
-  .check-icon {
+  .check-bullet {
     color: var(--accent-emerald);
     font-weight: bold;
+    font-size: 0.85rem;
+    line-height: 1;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 900px) {
+    .ling-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
   }
 </style>

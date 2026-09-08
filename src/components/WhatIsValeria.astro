@@ -1,82 +1,94 @@
 ---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
 ---
 
-<section id="que-es" class="what-section">
+<section id="metodo" class="what-section">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Principio Clínico & Familiar</span>
-      <h2>¿Cómo ayuda <span class="gradient-text">Valeria+</span> en el día a día?</h2>
-      <p>Un método en dos pasos: <strong>primero forma a la familia</strong> para saber cómo acompañar y <strong>después facilita ejercicios en casa</strong> para practicar jugando junto a la gata Lúa.</p>
+      <span class="tag">Principio Clínico & Método en 2 Pasos</span>
+      <h2>El Método Valeria+: <span class="gradient-text">Aprender antes de ejercitar</span></h2>
+      <p>Primero capacita al cuidador para modelar el habla en el hogar y después facilita la práctica lúdica en casa guiada por Lúa.</p>
     </div>
 
-    <div class="screenshot-wrapper">
-      <img 
-        src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL}/assets/09-pares-veredicto.png`} 
-        alt="Veredicto de Pares Mínimos en Valeria+ con control de adulto" 
-        class="manual-screenshot" 
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-
-    <div class="features-grid">
-      <div class="glass-card feature-card">
-        <div class="icon-wrapper purple">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-          </svg>
+    <div class="what-content-layout">
+      <!-- Screenshot Phone Mockup -->
+      <div class="screenshot-col">
+        <div class="device-frame">
+          <img 
+            src={`${baseUrl}/assets/09-pares-veredicto.png`} 
+            alt="Pantalla de veredicto en Pares Mínimos con validación del adulto" 
+            class="manual-screenshot" 
+            width="280"
+            height="606"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="screenshot-chip">Veredicto del Juez Adulto</span>
         </div>
-        <h3>1. Primero Formar (Academy)</h3>
-        <p>
-          Entender la dificultad va antes que ejercitarla. Academy ofrece a las familias <strong>cápsulas de 2 minutos</strong> con trucos prácticos: cómo modelar el lenguaje sin corregir con regañinas y cómo respetar los turnos de conversación.
-        </p>
-        <span class="card-tag">Aprender para Acompañar</span>
       </div>
 
-      <div class="glass-card feature-card">
-        <div class="icon-wrapper cyan">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          </svg>
+      <!-- 4 Core Pillars Bento Grid -->
+      <div class="features-grid">
+        <div class="glass-card feature-card">
+          <div class="icon-wrapper purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3>1. Primero Formar (Academy)</h3>
+          <p>
+            Cápsulas de <strong>2 minutos</strong> para madres y padres. Técnicas de modelado verbal positivo (<em>recast</em>) y turnos de habla sin regañinas.
+          </p>
+          <span class="card-tag">Aprender para Acompañar</span>
         </div>
-        <h3>2. El Adulto Siempre al Mando (MDR)</h3>
-        <p>
-          La aplicación <strong>nunca evalúa ni diagnostica sola</strong>. El micrófono ayuda a escuchar, pero el adulto (madre, padre o logopeda) es quien confirma el acierto con un toque, adaptando el ritmo a cada niña o niño.
-        </p>
-        <span class="card-tag">Seguridad y Criterio Humano</span>
-      </div>
 
-      <div class="glass-card feature-card">
-        <div class="icon-wrapper emerald">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-            <line x1="6" y1="6" x2="6.01" y2="6"></line>
-            <line x1="6" y1="18" x2="6.01" y2="18"></line>
-          </svg>
+        <div class="glass-card feature-card">
+          <div class="icon-wrapper cyan">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>2. Adulto al Mando (MDR Clase I)</h3>
+          <p>
+            Cero diagnósticos automáticos. La app asiste con ASR local, pero el adulto siempre <strong>valida o matiza</strong> el acierto con un toque.
+          </p>
+          <span class="card-tag">Criterio Humano Innegociable</span>
         </div>
-        <h3>3. 100% Offline & Privacidad Zero-PHI</h3>
-        <p>
-          Todas las voces neuronales, audios y ejercicios funcionan <strong>sin conexión a internet</strong>. Las grabaciones nunca salen del teléfono ni se envían a servidores externos: máxima privacidad garantizada para los menores.
-        </p>
-        <span class="card-tag">Sin Conexión Obligatoria</span>
-      </div>
 
-      <div class="glass-card feature-card">
-        <div class="icon-wrapper amber">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
+        <div class="glass-card feature-card">
+          <div class="icon-wrapper emerald">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3>3. 100% Offline (Zero-PHI)</h3>
+          <p>
+            Retiro total de Firebase y servidores. Voces neuronales y modelos operan en local: las grabaciones <strong>nunca se almacenan ni viajan a la nube</strong>.
+          </p>
+          <span class="card-tag">Privacidad Infantil Estricta</span>
         </div>
-        <h3>4. Práctica en Doble Vuelta</h3>
-        <p>
-          Diferencia claramente <strong>lo que el niño comprende</strong> (tocar la imagen correcta) de <strong>lo que produce</strong> (hablar). Así se reduce la ansiedad y se evita etiquetar como falta de comprensión lo que es solo dificultad de articulación.
-        </p>
-        <span class="card-tag">Comprensión vs. Producción</span>
+
+        <div class="glass-card feature-card">
+          <div class="icon-wrapper amber">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>4. Práctica en Doble Vuelta</h3>
+          <p>
+            Diferencia <strong>comprensión</strong> (señalar la imagen correcta) de <strong>producción</strong> (hablar). Cero frustración si aún hay dificultad motora.
+          </p>
+          <span class="card-tag">Comprensión vs. Articulación</span>
+        </div>
       </div>
     </div>
   </div>
@@ -84,30 +96,68 @@
 
 <style>
   .what-section {
-    padding: 100px 0;
+    padding: 80px 0;
     position: relative;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .what-content-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .screenshot-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .device-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .manual-screenshot {
+    width: 280px;
+    height: auto;
+    border-radius: 28px;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 242, 254, 0.12);
+  }
+
+  .screenshot-chip {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
 
   .feature-card {
     display: flex;
     flex-direction: column;
+    padding: 1.5rem;
     height: 100%;
   }
 
   .icon-wrapper {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
   }
 
   .icon-wrapper.cyan {
@@ -117,9 +167,9 @@
   }
 
   .icon-wrapper.purple {
-    background: rgba(138, 43, 226, 0.12);
+    background: rgba(168, 85, 247, 0.12);
     color: #C084FC;
-    border: 1px solid rgba(138, 43, 226, 0.3);
+    border: 1px solid rgba(168, 85, 247, 0.3);
   }
 
   .icon-wrapper.emerald {
@@ -128,40 +178,43 @@
     border: 1px solid rgba(16, 185, 129, 0.3);
   }
 
+  .icon-wrapper.amber {
+    background: rgba(245, 158, 11, 0.12);
+    color: #FCD34D;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+  }
+
   .feature-card h3 {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
   }
 
   .feature-card p {
     color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.925rem;
+    line-height: 1.55;
     flex-grow: 1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .card-tag {
-    font-size: 0.775rem;
+    font-size: 0.725rem;
     font-weight: 700;
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
-  .screenshot-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
-  }
+  @media (max-width: 960px) {
+    .what-content-layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
 
-  .manual-screenshot {
-    max-width: 100%;
-    width: 300px;
-    height: auto;
-    border-radius: 18px;
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-glow);
+    .screenshot-col {
+      order: -1;
+    }
   }
 </style>

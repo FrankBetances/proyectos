@@ -8,79 +8,87 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   <div class="container">
     <div class="section-header">
       <span class="tag">Muro de Control Adulto (Marco MDR)</span>
-      <h2>Panel del Adulto · <span class="gradient-text">Retos Adaptados y Manuales</span></h2>
+      <h2>Panel del Adulto · <span class="gradient-text">Retos Manuales y Seguros</span></h2>
       <p>Herramientas que el padre, madre o logopeda activa a mano para entrenar la atención y la escucha sin que la app altere parámetros a espaldas de la familia.</p>
     </div>
 
-    <div class="screenshot-wrapper">
-      <img 
-        src={`${baseUrl}/assets/23-panel-adulto.png`} 
-        alt="Panel del Adulto de Valeria+ con controles manuales" 
-        class="manual-screenshot" 
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-
-    <div class="adult-grid">
-      <div class="glass-card adult-card">
-        <div class="adult-icon cyan">🔊</div>
-        <h3>1. Escucha en Ruido (0 a 10)</h3>
-        <p>
-          Mezcla la voz de la app con <strong>ruido ambiental de cafetería</strong> en bucle. 
-          El adulto sube o baja el volumen manualmente para enseñar al niño a prestar atención incluso con ruido de fondo.
-        </p>
-        <div class="control-mockup">
-          <span class="control-label">Ruido de Fondo:</span>
-          <div class="slider-bar">
-            <div class="slider-fill" style="width: 60%;"></div>
-            <div class="slider-thumb" style="left: 60%;"></div>
-          </div>
-          <span class="control-val">Nivel 6</span>
-        </div>
-      </div>
-
-      <div class="glass-card adult-card">
-        <div class="adult-icon purple cat-icon-box">
+    <div class="adult-content-layout">
+      <!-- Screenshot Phone Mockup -->
+      <div class="adult-screenshot-col">
+        <div class="device-frame">
           <img 
-            src={`${baseUrl}/assets/valeria_lua.png`} 
-            alt="Lúa Gata Distractora" 
-            class="adult-cat-icon-img" 
+            src={`${baseUrl}/assets/23-panel-adulto.png`} 
+            alt="Panel del Adulto de Valeria+ con controles manuales" 
+            class="manual-screenshot" 
+            width="280"
+            height="606"
+            loading="lazy"
+            decoding="async"
           />
-        </div>
-        <h3>2. Doble Tarea (Gata Distractora)</h3>
-        <p>
-          <strong>Lúa</strong> se asoma por los bordes de la pantalla de forma no interactiva, 
-          entrenando la concentración del niño mientras escucha las instrucciones sin distraerse con facilidad.
-        </p>
-        <div class="control-mockup">
-          <span class="control-label">Interferencia Visual:</span>
-          <span class="badge badge-purple">Lúa en Segundo Plano</span>
+          <span class="screenshot-chip">Control 100% Manual MDR</span>
         </div>
       </div>
 
-      <div class="glass-card adult-card">
-        <div class="adult-icon amber">💬</div>
-        <h3>3. Quiebre Pragmático</h3>
-        <p>
-          La app guarda silencio y el adulto rompe la conversación a propósito para observar cómo el niño 
-          <strong>pide ayuda o aclara lo que necesita</strong>, reforzando la comunicación real del día a día.
-        </p>
-        <div class="control-mockup">
-          <span class="control-label">Modo Quiebre:</span>
-          <span class="badge badge-amber">Control 100% Manual</span>
+      <!-- 4 Controls Grid -->
+      <div class="adult-grid">
+        <div class="glass-card adult-card">
+          <div class="adult-icon cyan">🔊</div>
+          <h3>1. Escucha en Ruido (0 a 10)</h3>
+          <p>
+            Mezcla la voz con <strong>ruido ambiental de cafetería</strong> en bucle. El adulto regula el nivel para entrenar discriminación sonora en entornos con ruido.
+          </p>
+          <div class="control-mockup">
+            <span class="control-label">Ruido Babble:</span>
+            <div class="slider-bar" aria-hidden="true">
+              <div class="slider-fill" style="width: 60%;"></div>
+              <div class="slider-thumb" style="left: 60%;"></div>
+            </div>
+            <span class="control-val">Nivel 6</span>
+          </div>
         </div>
-      </div>
 
-      <div class="glass-card adult-card">
-        <div class="adult-icon emerald">🎧</div>
-        <h3>4. Control Sensorial Seguro (SOR)</h3>
-        <p>
-          El adulto elige el sonido, la <strong>intensidad (1 a 5)</strong> y los segundos (3, 7 o 15 s) <em>antes</em> de pasar la tableta al niño. El menor tiene su botón de pausa y <strong>detenerse siempre suma puntos</strong>.
-        </p>
-        <div class="control-mockup">
-          <span class="control-label">Muro Sensorial:</span>
-          <span class="badge badge-emerald">Intensidad Protegida</span>
+        <div class="glass-card adult-card">
+          <div class="adult-icon purple cat-icon-box">
+            <img 
+              src={`${baseUrl}/assets/valeria_lua.png`} 
+              alt="Lúa Gata Distractora" 
+              class="adult-cat-icon-img" 
+              width="32"
+              height="32"
+            />
+          </div>
+          <h3>2. Doble Tarea (Gata Distractora)</h3>
+          <p>
+            <strong>Lúa</strong> se asoma por los bordes de la pantalla de forma pasiva (<code>pointerEvents: none</code>), entrenando la concentración sin interrumpir el juego.
+          </p>
+          <div class="control-mockup">
+            <span class="control-label">Interferencia:</span>
+            <span class="badge badge-purple">Lúa en Fondo</span>
+          </div>
+        </div>
+
+        <div class="glass-card adult-card">
+          <div class="adult-icon amber">💬</div>
+          <h3>3. Quiebre Pragmático</h3>
+          <p>
+            Silencio intencionado para observar si el niño <strong>pide aclaración o ayuda</strong>, fortaleciendo la iniciativa y reparación conversacional diaria.
+          </p>
+          <div class="control-mockup">
+            <span class="control-label">Modo Quiebre:</span>
+            <span class="badge badge-amber">Activación Manual</span>
+          </div>
+        </div>
+
+        <div class="glass-card adult-card">
+          <div class="adult-icon emerald">🎧</div>
+          <h3>4. Muro Sensorial SOR</h3>
+          <p>
+            Selección previa de sonido, <strong>intensidad (1-5)</strong> y tiempo (3, 7 o 15 s). El menor tiene botón de pausa y <strong>detenerse siempre suma puntos</strong>.
+          </p>
+          <div class="control-mockup">
+            <span class="control-label">Exposición:</span>
+            <span class="badge badge-emerald">Intensidad Segura</span>
+          </div>
         </div>
       </div>
     </div>
@@ -89,47 +97,70 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
 <style>
   .adult-section {
-    padding: 100px 0;
+    padding: 80px 0;
     position: relative;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.15);
+    border-top: 1px solid var(--border-light);
   }
 
-  .screenshot-wrapper {
-    max-width: 320px;
-    margin: 0 auto 3rem auto;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-light);
+  .adult-content-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .adult-screenshot-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .device-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .manual-screenshot {
-    width: 100%;
+    width: 280px;
     height: auto;
-    display: block;
+    border-radius: 28px;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(168, 85, 247, 0.12);
+  }
+
+  .screenshot-chip {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-purple);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .adult-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
 
   .adult-card {
     display: flex;
     flex-direction: column;
+    padding: 1.5rem;
     height: 100%;
   }
 
   .adult-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
-    margin-bottom: 1.25rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
   }
 
   .adult-icon.cyan {
@@ -147,48 +178,65 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     border: 1px solid rgba(245, 158, 11, 0.3);
   }
 
+  .adult-icon.emerald {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
   .adult-cat-icon-img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     image-rendering: pixelated;
     object-fit: contain;
   }
 
   .adult-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.45rem;
     color: var(--text-main);
   }
 
   .adult-card p {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
     flex-grow: 1;
+  }
+
+  .adult-card strong {
+    color: var(--text-main);
+  }
+
+  .adult-card code {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--accent-purple);
   }
 
   .control-mockup {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
   .control-label {
-    font-size: 0.825rem;
+    font-size: 0.78rem;
     color: var(--text-dim);
     font-weight: 600;
   }
 
   .slider-bar {
     flex-grow: 1;
-    height: 6px;
+    height: 5px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-full);
     position: relative;
@@ -201,20 +249,31 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .slider-thumb {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     background: #fff;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px var(--accent-cyan);
+    box-shadow: 0 0 8px var(--accent-cyan);
   }
 
   .control-val {
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--accent-cyan);
+  }
+
+  @media (max-width: 960px) {
+    .adult-content-layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .adult-screenshot-col {
+      order: -1;
+    }
   }
 </style>

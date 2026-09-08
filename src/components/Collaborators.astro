@@ -7,9 +7,9 @@ const collaborators = [
   {
     id: "starttic",
     name: "startTIC · Alta Tecnología",
-    badge: "Incubación & Aceleración TIC",
+    badge: "Incubación TIC",
     badgeColor: "cyan",
-    desc: "Iniciativa del Consorcio Zona Franca de Vigo, Cámara PVV y GRADIANT, cofinanciada por FEDER vía Fundación INCYDE. Aceleración de MVPs, conectividad y validación tecnológica.",
+    desc: "Zona Franca de Vigo, GRADIANT y Cámara PVV (FEDER / INCYDE). Aceleración, conectividad y validación tecnológica.",
     logo: "",
     logoBg: "dark",
     alt: "Logo startTIC - Incubadora de Alta Tecnología Vigo",
@@ -18,54 +18,60 @@ const collaborators = [
   {
     id: "acopros",
     name: "ACOPROS",
-    badge: "Validación Logopédica & Clínica",
+    badge: "Validación Logopédica",
     badgeColor: "amber",
-    desc: "Asociación de Colaboración y Promoción del Sordo (A Coruña). Revisión del corpus de voz, pares mínimos y módulo de LSE.",
+    desc: "Asociación de Familias de Niños Sordos (A Coruña). Revisión del corpus auditivo-verbal y validación de LSE.",
     logo: `${baseUrl}/assets/collaborators/logo-acopros.png`,
     logoBg: "light",
-    alt: "Logo ACOPROS - Asociación de Colaboración y Promoción del Sordo"
+    alt: "Logo ACOPROS - Asociación de Familias de Niños Sordos",
+    width: 671,
+    height: 183
   },
   {
     id: "itemas",
     name: "ITEMAS / ISCIII",
     badge: "Sello de Calidad 2024",
     badgeColor: "cyan",
-    desc: "Plataforma de dinamización e innovación de las capacidades industriales del Sistema Nacional de Salud (Instituto de Salud Carlos III).",
+    desc: "Plataforma de dinamización e innovación del Sistema Nacional de Salud (Instituto de Salud Carlos III).",
     logo: `${baseUrl}/assets/collaborators/logo-itemas.png`,
     logoBg: "light",
-    alt: "Sello de Calidad ITEMAS ISCIII 2024 - Instituto de Salud Carlos III"
+    alt: "Sello de Calidad ITEMAS ISCIII 2024 - Instituto de Salud Carlos III",
+    width: 659,
+    height: 906
   },
   {
     id: "sgorl",
     name: "SGORL",
-    badge: "Sociedad Científica Médica",
+    badge: "Sociedad Científica",
     badgeColor: "purple",
-    desc: "Sociedad Gallega de Otorrinolaringología y Cirugía de Cabeza y Cuello. Aval científico y clínico en salud auditiva.",
+    desc: "Sociedad Gallega de Otorrinolaringología y Cirugía de Cabeza y Cuello. Aval clínico en salud auditiva infantil.",
     logo: `${baseUrl}/assets/collaborators/logo-sgorl.png`,
     logoBg: "dark",
-    alt: "Logo SGORL - Sociedad Gallega de Otorrinolaringología"
+    alt: "Logo SGORL - Sociedad Gallega de Otorrinolaringología",
+    width: 558,
+    height: 549
   },
   {
     id: "acis",
     name: "ACIS - SERGAS",
-    badge: "Agencia de Salud Pública",
+    badge: "1.er Premio Innovación",
     badgeColor: "emerald",
-    desc: "Axencia de Coñecemento en Saúde (Servizo Galego de Saúde). Promoción del conocimiento e innovación asistencial en salud.",
+    desc: "Axencia de Coñecemento en Saúde. 1.er Premio de Innovación en Salud del Servizo Galego de Saúde.",
     logo: `${baseUrl}/assets/collaborators/logo-acis.png`,
     logoBg: "light",
-    alt: "Logo ACIS - Axencia de Coñecemento en Saúde (Servizo Galego de Saúde)"
+    alt: "Logo ACIS - Axencia de Coñecemento en Saúde (Servizo Galego de Saúde)",
+    width: 1024,
+    height: 260
   }
 ];
 ---
 
-<section id="colaboradores" class="collaborators-section">
-  <div class="container">
+<section id="avales" class="collaborators-section">
+  <div class="container" id="colaboradores">
     <div class="section-header">
       <span class="tag">Acreditación & Respaldo Sanitario</span>
-      <h2>Entidades Colaboradoras & <span class="gradient-text">Sellos de Calidad</span></h2>
-      <p>
-        Valeria+ cuenta con la validación de sociedades científicas, incubadoras de alta tecnología y agencias de innovación en salud.
-      </p>
+      <h2>Avales Institucionales & <span class="gradient-text">Sellos de Calidad</span></h2>
+      <p>Validación continua de sociedades científicas, incubadoras de alta tecnología y agencias públicas de salud.</p>
     </div>
 
     <div class="collab-grid">
@@ -78,7 +84,7 @@ const collaborators = [
                   <span class="starttic-icon">🚀</span>
                   <span class="starttic-title">start<span class="highlight-tic">TIC</span></span>
                 </div>
-                <span class="starttic-sub">INCUBADORA DE ALTA TECNOLOGÍA</span>
+                <span class="starttic-sub">INCUBADORA ALTA TECNOLOGÍA</span>
                 <span class="starttic-partners">CZFV · GRADIANT · CPVV · FEDER</span>
               </div>
             ) : (
@@ -86,6 +92,8 @@ const collaborators = [
                 src={c.logo} 
                 alt={c.alt} 
                 class={`collab-img img-${c.id}`} 
+                width={c.width}
+                height={c.height}
                 loading="lazy" 
                 decoding="async" 
               />
@@ -107,7 +115,7 @@ const collaborators = [
 
 <style>
   .collaborators-section {
-    padding: 90px 0;
+    padding: 80px 0;
     position: relative;
     background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(10, 15, 26, 0.9) 100%);
     border-top: 1px solid var(--border-light);
@@ -115,8 +123,8 @@ const collaborators = [
 
   .collab-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
   }
 
   .collab-card {
@@ -124,11 +132,12 @@ const collaborators = [
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    padding: 0;
+    transition: transform 0.25s ease, border-color 0.25s ease;
   }
 
   .collab-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     border-color: rgba(0, 242, 254, 0.35);
   }
 
@@ -143,23 +152,23 @@ const collaborators = [
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 0.25rem;
+    gap: 0.2rem;
     padding: 0.5rem;
   }
 
   .starttic-top-row {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
 
   .starttic-icon {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   .starttic-title {
     font-family: var(--font-heading);
-    font-size: 1.55rem;
+    font-size: 1.45rem;
     font-weight: 900;
     letter-spacing: -0.03em;
     color: #FFFFFF;
@@ -172,7 +181,7 @@ const collaborators = [
   }
 
   .starttic-sub {
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     color: var(--accent-cyan);
@@ -180,18 +189,17 @@ const collaborators = [
   }
 
   .starttic-partners {
-    font-size: 0.65rem;
+    font-size: 0.625rem;
     color: var(--text-muted);
     font-weight: 500;
-    margin-top: 0.15rem;
   }
 
   .logo-container {
-    height: 135px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.85rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     border-bottom: 1px solid var(--border-light);
   }
 
@@ -204,7 +212,7 @@ const collaborators = [
   }
 
   .collab-img {
-    max-height: 85px;
+    max-height: 70px;
     max-width: 85%;
     width: auto;
     object-fit: contain;
@@ -216,26 +224,23 @@ const collaborators = [
   }
 
   .img-itemas {
-    max-height: 110px;
-    max-width: 90%;
+    max-height: 90px;
   }
 
   .img-acis {
-    max-height: 64px;
-    max-width: 85%;
+    max-height: 55px;
   }
 
   .img-acopros {
-    max-height: 75px;
-    max-width: 90%;
+    max-height: 60px;
   }
 
   .img-sgorl {
-    max-height: 95px;
+    max-height: 75px;
   }
 
   .collab-body {
-    padding: 1.4rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -245,20 +250,20 @@ const collaborators = [
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.4rem;
-    margin-bottom: 0.75rem;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
   }
 
   .collab-name {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 800;
     color: var(--text-main);
   }
 
   .collab-desc {
-    font-size: 0.875rem;
+    font-size: 0.825rem;
     color: var(--text-muted);
-    line-height: 1.55;
+    line-height: 1.5;
     margin: 0;
   }
 
