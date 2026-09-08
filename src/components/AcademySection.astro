@@ -221,11 +221,55 @@ const academyDomains = [
   }
 
   @media (max-width: 768px) {
-    .academy-box {
-      padding: 2rem 1.25rem;
+    .academy-section {
+      padding: 50px 0;
     }
+
+    .academy-box {
+      padding: 1.5rem 1rem;
+      border-radius: var(--radius-md);
+    }
+
+    .domains-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .domain-card {
+      padding: 1.15rem 1rem;
+    }
+
+    .domain-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.4rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .domain-body h4 {
+      font-size: 1rem;
+    }
+
+    .domain-body p {
+      font-size: 0.84rem;
+    }
+
     .academy-spotlight-row {
       grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .lse-spotlight {
+      padding: 1.35rem 1.15rem;
+    }
+
+    .lse-spotlight h3 {
+      font-size: 1.1rem;
+    }
+
+    .lse-spotlight p {
+      font-size: 0.88rem;
     }
   }
 </style>

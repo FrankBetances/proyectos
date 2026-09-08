@@ -118,8 +118,32 @@ const telemetryItems = [
   }
 
   @media (max-width: 768px) {
+    .telemetry-section {
+      padding: 50px 0;
+    }
+
     .telemetry-grid {
       grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .telemetry-card {
+      padding: 1.35rem 1.15rem;
+    }
+
+    .telemetry-icon {
+      width: 44px;
+      height: 44px;
+      font-size: 1.4rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .telemetry-body h3 {
+      font-size: 1.1rem;
+    }
+
+    .telemetry-body p {
+      font-size: 0.86rem;
     }
   }
 </style>

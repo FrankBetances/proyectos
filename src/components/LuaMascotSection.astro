@@ -195,11 +195,45 @@ const luaPillars = [
   }
 
   @media (max-width: 768px) {
-    .lua-box {
-      padding: 2rem 1.25rem;
+    .lua-mascot-section {
+      padding: 50px 0;
     }
+
+    .lua-box {
+      padding: 1.5rem 1rem;
+      border-radius: var(--radius-md);
+    }
+
     .lua-features-grid {
       grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .lua-feature-card {
+      padding: 1.15rem 1rem;
+    }
+
+    .lua-icon {
+      width: 44px;
+      height: 44px;
+      font-size: 1.4rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .lua-card-body h4 {
+      font-size: 1.05rem;
+    }
+
+    .lua-card-body p {
+      font-size: 0.85rem;
+    }
+
+    .btn-pill-link {
+      width: 100%;
+      max-width: 320px;
+      justify-content: center;
+      min-height: 48px;
     }
   }
 </style>
