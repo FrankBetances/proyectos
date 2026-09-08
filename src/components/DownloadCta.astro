@@ -1,0 +1,342 @@
+---
+const playStoreUrl = "https://play.google.com/store/apps/details?id=health.earlify.valeria";
+---
+
+<!-- Centered High-Impact Pre-Footer CTA: Download & Try Valeria+ -->
+<section id="descargar" class="download-cta-section" aria-label="Descargar y probar Valeria+">
+  <div class="container">
+    <div class="download-cta-card glass-card">
+      <div class="cta-glow-bg" aria-hidden="true"></div>
+
+      <div class="download-cta-content">
+        <!-- Eyebrow Pill -->
+        <div class="cta-eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          <span>DISPONIBLE PARA ANDROID · ACCESO GRATUITO</span>
+        </div>
+
+        <h2 class="download-cta-title">
+          Comienza la estimulación en casa con <span class="gradient-text-purple">Valeria+</span>
+        </h2>
+
+        <p class="download-cta-lead">
+          Descarga la versión oficial en Google Play para tablet o móvil. 10 bloques clínicos de estimulación del lenguaje, gata Lúa en píxel art y 4.711 locuciones 100% offline bajo control familiar.
+        </p>
+
+        <!-- CTA Buttons Row -->
+        <div class="download-cta-actions">
+          <!-- Google Play Store Button -->
+          <a 
+            href={playStoreUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn-playstore-large"
+            aria-label="Descargar Valeria+ en Google Play Store"
+          >
+            <svg class="play-svg-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3.609 1.814L13.792 12 3.61 22.186A2.02 2.02 0 0 1 3.39 21.8C3.14 21.28 3 20.67 3 19.98V4.02c0-.69.14-1.3.39-1.82.065-.137.14-.268.219-.386z" fill="#00D2FF"/>
+              <path d="M17.472 8.448L5.037.824 13.792 12l3.68-3.552z" fill="#00E676"/>
+              <path d="M17.472 15.552L13.792 12 5.037 23.176l12.435-7.624z" fill="#FF5252"/>
+              <path d="M20.803 10.428l-3.331-2.043-3.68 3.615 3.68 3.552 3.331-2.043c.96-.588.96-2.493 0-3.081z" fill="#FFD600"/>
+            </svg>
+            <span class="btn-play-content">
+              <span class="btn-play-sub">DISPONIBLE EN</span>
+              <span class="btn-play-main">Google Play</span>
+            </span>
+          </a>
+
+          <!-- Pilot / Professional Access Button -->
+          <button 
+            type="button" 
+            class="btn-pilot-access" 
+            data-open-contact 
+            aria-label="Solicitar piloto clínico para centros sanitarios o logopedas"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>Solicitar Piloto Clínico</span>
+          </button>
+        </div>
+
+        <!-- Trust Badges Strip -->
+        <div class="download-trust-strip" aria-label="Garantías clínicas y privacidad">
+          <div class="trust-item">
+            <span class="trust-icon">🔒</span>
+            <span class="trust-text"><strong>100% Offline</strong> · Zero-PHI</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">⚖️</span>
+            <span class="trust-text"><strong>Marco MDR</strong> · Control Adulto</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🩺</span>
+            <span class="trust-text"><strong>ITEMAS</strong> & ACOPROS</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🚫</span>
+            <span class="trust-text"><strong>Sin Publicidad</strong> ni microcompras</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .download-cta-section {
+    padding: 70px 0 85px 0;
+    position: relative;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .download-cta-card {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3.75rem 2.5rem;
+    border-radius: var(--radius-lg);
+    background: radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.14) 0%, rgba(15, 23, 42, 0.85) 75%);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 40px rgba(168, 85, 247, 0.15);
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .cta-glow-bg {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.2) 0%, rgba(168, 85, 247, 0.2) 50%, transparent 80%);
+    filter: blur(50px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .download-cta-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .cta-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: var(--accent-cyan);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.35rem;
+  }
+
+  .eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #00F2FE;
+    box-shadow: 0 0 8px #00F2FE;
+    animation: pulseGlow 2s infinite ease-in-out;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.3); }
+  }
+
+  .download-cta-title {
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+    margin: 0 auto 1.15rem auto;
+  }
+
+  .gradient-text-purple {
+    background: linear-gradient(135deg, #C084FC 0%, #00F2FE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .download-cta-lead {
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin: 0 auto 2.25rem auto;
+  }
+
+  .download-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.15rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+  }
+
+  /* Play Store Large Button */
+  .btn-playstore-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1.65rem;
+    border-radius: 14px;
+    background: #090D16;
+    border: 1.5px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 242, 254, 0.16);
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    min-height: 52px;
+  }
+
+  .btn-playstore-large:hover {
+    border-color: rgba(0, 242, 254, 0.7);
+    background: #0D1322;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 242, 254, 0.3);
+  }
+
+  .play-svg-icon {
+    flex-shrink: 0;
+  }
+
+  .btn-play-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    line-height: 1.15;
+  }
+
+  .btn-play-sub {
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .btn-play-main {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+  }
+
+  /* Secondary Pilot Button */
+  .btn-pilot-access {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.85rem 1.65rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid var(--border-light);
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    min-height: 52px;
+  }
+
+  .btn-pilot-access:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--accent-cyan);
+    transform: translateY(-2px);
+  }
+
+  /* Trust Badges Strip */
+  .download-trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+  }
+
+  .trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .trust-item strong {
+    color: var(--text-main);
+  }
+
+  .trust-icon {
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 640px) {
+    .download-cta-section {
+      padding: 50px 0 65px 0;
+    }
+
+    .download-cta-card {
+      padding: 2.5rem 1.25rem;
+      border-radius: var(--radius-md);
+    }
+
+    .download-cta-actions {
+      flex-direction: column;
+      gap: 0.85rem;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-playstore-large,
+    .btn-pilot-access {
+      width: 100%;
+      justify-content: center;
+      min-height: 48px;
+    }
+
+    .download-trust-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      text-align: center;
+    }
+
+    .trust-item {
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .download-trust-strip {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

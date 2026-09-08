@@ -10,6 +10,7 @@ import LuaMascotSection from '../components/LuaMascotSection.astro';
 import LocalesLanguages from '../components/LocalesLanguages.astro';
 import Collaborators from '../components/Collaborators.astro';
 import ClinicalTelemetry from '../components/ClinicalTelemetry.astro';
+import DownloadCta from '../components/DownloadCta.astro';
 import ValeriaFaq from '../components/ValeriaFaq.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import Footer from '../components/Footer.astro';
@@ -23,7 +24,10 @@ const valeriaJsonLd = {
       "name": "Valeria+",
       "softwareVersion": "14.2",
       "applicationCategory": "HealthApplication",
-      "operatingSystem": "Android, iOS",
+      "applicationSubCategory": "Speech Therapy",
+      "operatingSystem": "Android 8.0+",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=health.earlify.valeria",
+      "installUrl": "https://play.google.com/store/apps/details?id=health.earlify.valeria",
       "description": "Plataforma de apoyo al lenguaje infantil en casa. 10 bloques clínicos de ejercicios, formación Academy en 2 minutos, mascota Lúa en píxel art, 4.711 locuciones offline y privacidad Zero-PHI bajo control del adulto (marco MDR).",
       "author": {
         "@type": "Person",
@@ -136,6 +140,7 @@ const valeriaJsonLd = {
 		<LocalesLanguages />
 		<Collaborators />
 		<ClinicalTelemetry />
+		<DownloadCta />
 		<ValeriaFaq />
 	</main>
 	<Footer />
