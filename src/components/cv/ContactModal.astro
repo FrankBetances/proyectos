@@ -1,7 +1,7 @@
 ---
 ---
 
-<div id="contact-modal" class="modal-overlay print-hide" aria-hidden="true">
+<div id="contact-modal" class="modal-overlay print-hide" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
   <div class="modal-card glass-card">
     <button id="close-modal" class="close-btn" aria-label="Cerrar modal">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -9,7 +9,7 @@
 
     <div class="modal-header">
       <div class="modal-icon">✉️</div>
-      <h3>Contacto Profesional & Académico</h3>
+      <h3 id="contact-modal-title">Contacto Profesional & Académico</h3>
       <p>Canales oficiales de investigación, transferencia tecnológica y consultas médico-académicas.</p>
     </div>
 
@@ -61,10 +61,9 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  function initContactModal() {
     const modal = document.getElementById('contact-modal');
-    const openBtn = document.getElementById('open-contact-modal');
-    const openFooterBtn = document.getElementById('open-contact-modal-footer');
+    const openBtns = document.querySelectorAll('#open-contact-modal, #open-contact-modal-footer, [data-open-contact]');
     const closeBtn = document.getElementById('close-modal');
     const form = document.getElementById('contact-direct-form');
 
@@ -82,8 +81,7 @@
       }
     }
 
-    if (openBtn) openBtn.addEventListener('click', openModal);
-    if (openFooterBtn) openFooterBtn.addEventListener('click', openModal);
+    openBtns.forEach((btn) => btn.addEventListener('click', openModal));
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
     if (form) {
@@ -99,7 +97,19 @@
         if (e.target === modal) closeModal();
       });
     }
-  });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactModal);
+  } else {
+    initContactModal();
+  }
 </script>
 
 <style>

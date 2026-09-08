@@ -25,9 +25,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
 const siteUrl = "https://FrankBetances.github.io/proyectos";
 const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
+const cleanPath = image.startsWith('/') ? image : `/${image}`;
 const ogImage = image.startsWith('http') 
   ? image 
-  : `${siteUrl}${image.startsWith('/') ? '' : '/'}${image}`;
+  : cleanPath.startsWith(baseUrl)
+    ? `https://FrankBetances.github.io${cleanPath}`
+    : `${siteUrl}${cleanPath}`;
 
 const defaultJsonLd = {
   "@context": "https://schema.org",

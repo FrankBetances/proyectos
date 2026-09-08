@@ -26,7 +26,7 @@ const faqs = [
 <section id="faq" class="faq-section section-padding">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Preguntas Frecuentes · Google Rich Results</span>
+      <span class="tag">Preguntas Frecuentes · Dudas y Respuestas Clínicas</span>
       <h2>Preguntas Clave sobre <span class="gradient-text">Valeria+</span></h2>
       <p>Respuestas directas y concisas sobre el funcionamiento clínico, la privacidad y el uso en el hogar.</p>
     </div>
@@ -90,6 +90,12 @@ const faqs = [
     list-style: none;
     user-select: none;
     gap: 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .faq-question:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: -2px;
   }
 
   .faq-question::-webkit-details-marker {
