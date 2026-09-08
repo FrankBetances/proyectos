@@ -1,34 +1,26 @@
 ---
 const academyDomains = [
-  { icon: "🧭", title: "Lenguaje & 'La Brújula'", desc: "Hitos normativos ASHA 0-5 años (receptivo vs. expresivo) y modelado positivo (recast)." },
-  { icon: "👂", title: "Hipoacusia & Implantes", desc: "Pérdida auditiva, pautas familiares y manejo práctico de audífonos e implantes cocleares." },
-  { icon: "🗣️", title: "Dislalias & Articulación", desc: "Puntos de articulación de la boca y praxias para fonemas difíciles (/r/, /s/, /l/)." },
-  { icon: "🔤", title: "Dislexia & Fonología", desc: "Conciencia fonológica, ritmo auditivo y trucos para apoyar la lectura emergente en casa." },
-  { icon: "🧩", title: "TEA (Espectro Autista)", desc: "Comunicación funcional, anticipación estructurada y regulación respetuosa en el hogar." },
-  { icon: "🤟", title: "Lengua de Signos (LSE)", desc: "Abecedario dactilológico con 27 configuraciones de mano dibujadas y validadas por ACOPROS." },
-  { icon: "🎧", title: "Integración Sensorial", desc: "Estrategias para sobre-responsividad auditiva (SOR) ante electrodomésticos y ruidos fuertes." }
+  { icon: "🧭", title: "Lenguaje & Hitos ASHA", desc: "Hitos normativos de 0 a 5 años (receptivo vs. expresivo) y técnicas de modelado positivo (recast)." },
+  { icon: "👂", title: "Hipoacusia & Implantes", desc: "Pautas familiares prácticas para el cuidado y aprovechamiento de audífonos e implantes cocleares." },
+  { icon: "🗣️", title: "Dislalias & Articulación", desc: "Puntos de articulación orofacial y praxias lúdicas para fonemas complejos (/r/, /s/, /l/)." },
+  { icon: "🔤", title: "Dislexia & Fonología", desc: "Conciencia fonológica, ritmo auditivo y claves para consolidar la lectura emergente en el hogar." },
+  { icon: "🧩", title: "TEA (Espectro Autista)", desc: "Estrategias de comunicación funcional, turnos compartidos y rutinas de anticipación visual." },
+  { icon: "🎧", title: "Integración Sensorial", desc: "Regulación progresiva ante la sobre-responsividad acústica (SOR) frente a electrodomésticos." }
 ];
 ---
 
-<section id="academy" class="academy-section section-padding">
+<section id="academy" class="academy-section">
   <div class="container">
     <div class="academy-box glass-card">
-      <div class="academy-header-content">
-        <div class="academy-title-wrap">
-          <span class="badge badge-purple">Pestaña Inicial por Defecto</span>
-          <h2>Academy · <span class="gradient-text">Formación Parental en 2 Minutos</span></h2>
-          <p>
-            Comprender el desarrollo del lenguaje es imprescindible antes de ejercitarlo. 
-            Valeria+ abre en Academy para formar a madres y padres mediante <strong>cápsulas breves de 2 minutos</strong> con micro-preguntas que suman puntos XP.
-          </p>
-        </div>
-        <div class="academy-badge-large">
-          <span class="academy-xp">⚡ XP por Dominio</span>
-          <span class="academy-status">7 Silos Formativos · Cero Jerga</span>
-        </div>
+      <div class="section-header academy-header">
+        <span class="tag">Formación Parental Previa</span>
+        <h2>Academy · <span class="gradient-text">Micro-cápsulas en 2 Minutos</span></h2>
+        <p>
+          Comprender el desarrollo del lenguaje antes de ejercitarlo. Valeria+ capacita a las familias mediante <strong>pautas clínicas directas de 2 minutos</strong> con preguntas que refuerzan el aprendizaje.
+        </p>
       </div>
 
-      <!-- 7 Domains Grid -->
+      <!-- 6 Key Domains Grid - Symmetrical & Clean -->
       <div class="domains-grid">
         {academyDomains.map((d) => (
           <div class="domain-card">
@@ -41,13 +33,13 @@ const academyDomains = [
         ))}
       </div>
 
-      <!-- Spotlight dual: La Brújula de las Palabras + Lengua de Signos -->
+      <!-- Spotlight dual: La Brújula + Lengua de Signos (LSE) -->
       <div class="academy-spotlight-row">
         <div class="lse-spotlight">
           <div class="lse-tag">🧭 Hitos Normativos ASHA (0 a 5 años)</div>
           <h3>La Brújula de las Palabras</h3>
           <p>
-            Guía clínica por edades que deslinda <strong>lo que el niño comprende</strong> (lenguaje receptivo) de <strong>lo que expresa</strong> (lenguaje expresivo), orientando a la familia sobre cuándo consultar al logopeda.
+            Guía clínica que diferencia <strong>lo que el menor comprende</strong> de <strong>lo que expresa</strong>, orientando a la familia con claridad sobre cuándo consultar con el especialista.
           </p>
         </div>
 
@@ -55,8 +47,7 @@ const academyDomains = [
           <div class="lse-tag text-purple">🤟 Validación Oficial ACOPROS</div>
           <h3>Lengua de Signos Española (LSE)</h3>
           <p>
-            Las <strong>27 configuraciones del abecedario dactilológico</strong> han sido revisadas y validadas directamente por 
-            <strong>la logopeda y personas sordas de ACOPROS</strong>, disponibles en un panel de consulta rápida.
+            Las <strong>27 configuraciones del abecedario dactilológico</strong> han sido revisadas y validadas directamente por <strong>la logopeda y personas sordas de ACOPROS</strong>.
           </p>
         </div>
       </div>
@@ -72,70 +63,28 @@ const academyDomains = [
   }
 
   .academy-box {
-    padding: 3rem 2.5rem;
+    padding: 3rem;
+    max-width: 1060px;
+    margin: 0 auto;
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.4) 100%);
     border: 1px solid rgba(138, 43, 226, 0.3);
     box-shadow: var(--shadow-purple);
   }
 
-  .academy-header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
+  .academy-header {
     margin-bottom: 2.5rem;
   }
 
-  .academy-title-wrap h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
-    font-weight: 800;
-    margin: 0.6rem 0 0.8rem 0;
-  }
-
-  .academy-title-wrap p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    max-width: 680px;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .academy-title-wrap strong {
-    color: var(--text-main);
-  }
-
-  .academy-badge-large {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.4rem;
-    flex-shrink: 0;
-  }
-
-  .academy-xp {
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: var(--accent-purple);
-    background: rgba(168, 85, 247, 0.1);
-    padding: 0.45rem 0.9rem;
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(168, 85, 247, 0.3);
-  }
-
-  .academy-status {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .academy-header p {
+    max-width: 720px;
+    margin: 0 auto;
   }
 
   .domains-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.25rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .domain-card {
@@ -146,7 +95,7 @@ const academyDomains = [
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    transition: transform var(--transition-fast);
+    transition: transform 0.2s ease, border-color 0.2s ease;
   }
 
   .domain-card:hover {
@@ -156,10 +105,10 @@ const academyDomains = [
   }
 
   .domain-icon {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,7 +124,7 @@ const academyDomains = [
   }
 
   .domain-body p {
-    font-size: 0.825rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     line-height: 1.45;
     margin: 0;
@@ -183,7 +132,7 @@ const academyDomains = [
 
   .academy-spotlight-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
@@ -248,12 +197,8 @@ const academyDomains = [
     .academy-box {
       padding: 2rem 1.25rem;
     }
-    .academy-header-content {
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-    .academy-badge-large {
-      align-items: flex-start;
+    .academy-spotlight-row {
+      grid-template-columns: 1fr;
     }
   }
 </style>

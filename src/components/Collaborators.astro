@@ -9,7 +9,7 @@ const collaborators = [
     name: "startTIC · Alta Tecnología",
     badge: "Incubación TIC",
     badgeColor: "cyan",
-    desc: "Zona Franca de Vigo, GRADIANT y Cámara PVV (FEDER / INCYDE). Aceleración, conectividad y validación tecnológica.",
+    desc: "Zona Franca de Vigo, GRADIANT y Cámara PVV (FEDER / INCYDE). Aceleración y validación tecnológica.",
     logo: "",
     logoBg: "dark",
     alt: "Logo startTIC - Incubadora de Alta Tecnología Vigo",
@@ -44,7 +44,7 @@ const collaborators = [
     name: "SGORL",
     badge: "Sociedad Científica",
     badgeColor: "purple",
-    desc: "Sociedad Gallega de Otorrinolaringología y Cirugía de Cabeza y Cuello. Aval clínico en salud auditiva infantil.",
+    desc: "Sociedad Gallega de Otorrinolaringología. Aval científico en salud auditiva y patología de la voz infantil.",
     logo: `${baseUrl}/assets/collaborators/logo-sgorl.png`,
     logoBg: "dark",
     alt: "Logo SGORL - Sociedad Gallega de Otorrinolaringología",
@@ -71,9 +71,10 @@ const collaborators = [
     <div class="section-header">
       <span class="tag">Acreditación & Respaldo Sanitario</span>
       <h2>Avales Institucionales & <span class="gradient-text">Sellos de Calidad</span></h2>
-      <p>Validación continua de sociedades científicas, incubadoras de alta tecnología y agencias públicas de salud.</p>
+      <p>Validación continua por sociedades científicas, incubadoras de alta tecnología y agencias públicas de salud.</p>
     </div>
 
+    <!-- Collaborators Grid - Centered & Balanced -->
     <div class="collab-grid">
       {collaborators.map((c) => (
         <div class={`glass-card collab-card ${c.id === 'starttic' ? 'collab-card-highlight' : ''}`}>
@@ -85,7 +86,7 @@ const collaborators = [
                   <span class="starttic-title">start<span class="highlight-tic">TIC</span></span>
                 </div>
                 <span class="starttic-sub">INCUBADORA ALTA TECNOLOGÍA</span>
-                <span class="starttic-partners">CZFV · GRADIANT · CPVV · FEDER</span>
+                <span class="starttic-partners">CZFV · GRADIANT · FEDER</span>
               </div>
             ) : (
               <img 
@@ -110,37 +111,12 @@ const collaborators = [
         </div>
       ))}
     </div>
-
-    <!-- In-App Proof Spotlight: Real App Credits & Endorsements -->
-    <div class="app-proof-banner glass-card">
-      <div class="proof-content">
-        <span class="badge badge-cyan">Verificación en la App · Transparencia</span>
-        <h3>Créditos y Avales Oficiales dentro de Valeria+</h3>
-        <p>
-          En la propia app, las familias y profesionales pueden verificar el desarrollo liderado por el <strong>Dr. Frank Betances</strong> (Otorrinolaringólogo infantil), la colaboración de <strong>ACOPROS</strong> y <strong>Quisqueya Habla</strong>, y el <strong>Sello de Calidad ITEMAS (Instituto de Salud Carlos III - 2024)</strong>.
-        </p>
-      </div>
-      <div class="proof-device">
-        <div class="device-frame">
-          <img 
-            src={`${baseUrl}/assets/valeria-screen-creditos.png`} 
-            alt="Pantalla real de Créditos y Reconocimientos en la app Valeria+" 
-            class="manual-screenshot proof-screenshot"
-            width="460"
-            height="1024"
-            loading="lazy" 
-            decoding="async" 
-          />
-          <span class="screenshot-chip">Pantalla de Créditos de Valeria+</span>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
 <style>
   .collaborators-section {
-    padding: 80px 0;
+    padding: 85px 0;
     position: relative;
     background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(10, 15, 26, 0.9) 100%);
     border-top: 1px solid var(--border-light);
@@ -148,8 +124,10 @@ const collaborators = [
 
   .collab-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    max-width: 1060px;
+    margin: 0 auto;
   }
 
   .collab-card {
@@ -171,14 +149,30 @@ const collaborators = [
     background: linear-gradient(180deg, rgba(0, 242, 254, 0.04) 0%, rgba(15, 23, 42, 0.6) 100%);
   }
 
+  .logo-container {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .logo-container.light {
+    background: #FFFFFF;
+  }
+
+  .logo-container.dark {
+    background: linear-gradient(135deg, #090E17 0%, #0F172A 100%);
+  }
+
   .starttic-brand-mark {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 0.2rem;
-    padding: 0.5rem;
+    gap: 0.15rem;
   }
 
   .starttic-top-row {
@@ -188,14 +182,13 @@ const collaborators = [
   }
 
   .starttic-icon {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .starttic-title {
     font-family: var(--font-heading);
-    font-size: 1.45rem;
+    font-size: 1.4rem;
     font-weight: 900;
-    letter-spacing: -0.03em;
     color: #FFFFFF;
   }
 
@@ -214,31 +207,14 @@ const collaborators = [
   }
 
   .starttic-partners {
-    font-size: 0.625rem;
+    font-size: 0.62rem;
     color: var(--text-muted);
     font-weight: 500;
   }
 
-  .logo-container {
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.25rem;
-    border-bottom: 1px solid var(--border-light);
-  }
-
-  .logo-container.light {
-    background: #FFFFFF;
-  }
-
-  .logo-container.dark {
-    background: linear-gradient(135deg, #090E17 0%, #0F172A 100%);
-  }
-
   .collab-img {
-    max-height: 70px;
-    max-width: 85%;
+    max-height: 60px;
+    max-width: 80%;
     width: auto;
     object-fit: contain;
     transition: transform 0.25s ease;
@@ -249,23 +225,23 @@ const collaborators = [
   }
 
   .img-itemas {
-    max-height: 90px;
-  }
-
-  .img-acis {
-    max-height: 55px;
-  }
-
-  .img-acopros {
-    max-height: 60px;
-  }
-
-  .img-sgorl {
     max-height: 75px;
   }
 
+  .img-acis {
+    max-height: 50px;
+  }
+
+  .img-acopros {
+    max-height: 55px;
+  }
+
+  .img-sgorl {
+    max-height: 65px;
+  }
+
   .collab-body {
-    padding: 1.25rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -276,88 +252,20 @@ const collaborators = [
     flex-direction: column;
     align-items: flex-start;
     gap: 0.35rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
 
   .collab-name {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: var(--text-main);
   }
 
   .collab-desc {
-    font-size: 0.825rem;
+    font-size: 0.875rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
     margin: 0;
-  }
-
-  /* In-App Proof Banner */
-  .app-proof-banner {
-    margin-top: 3rem;
-    padding: 2.5rem 3rem;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 3rem;
-    align-items: center;
-    border: 1px solid rgba(0, 242, 254, 0.25);
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(6, 78, 59, 0.25) 100%);
-    box-shadow: 0 10px 40px rgba(0, 242, 254, 0.08);
-    border-radius: var(--radius-lg);
-  }
-
-  .proof-content h3 {
-    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-    font-weight: 800;
-    margin: 0.8rem 0 1rem 0;
-    color: var(--text-main);
-  }
-
-  .proof-content p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .proof-content strong {
-    color: var(--text-main);
-  }
-
-  .proof-device {
-    display: flex;
-    justify-content: center;
-  }
-
-  .device-frame {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .manual-screenshot.proof-screenshot {
-    width: 220px;
-    height: auto;
-    border-radius: 26px;
-    border: 2px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 242, 254, 0.15);
-  }
-
-  .screenshot-chip {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--accent-cyan);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  @media (max-width: 900px) {
-    .app-proof-banner {
-      grid-template-columns: 1fr;
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
   }
 
   @media (max-width: 768px) {

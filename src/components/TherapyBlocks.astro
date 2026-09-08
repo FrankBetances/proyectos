@@ -1,144 +1,121 @@
 ---
-
 const lingCheck = {
-  id: "ling",
   icon: "⚡",
   title: "Test de Ling (6 Sonidos)",
   category: "Comprobación Previa",
   desc: "Chequeo rápido con los 6 fonemas [a, i, u, m, s, ʃ] para verificar audífonos e implantes cocleares antes de ejercitar.",
   badge: "Pre-Sesión",
-  badgeColor: "amber",
-  bullets: ["Detección de espectro frecuencial", "Cero fatiga auditiva", "Vital para hipoacusia e implante"]
+  tags: ["6 Fonemas Ling", "Frecuencias Espectrales", "Vital en Hipoacusia"]
 };
 
 const blocks = [
   {
-    id: "sensorial",
     num: "01",
     icon: "🎧",
     title: "Integración Sensorial SOR",
-    category: "Sobre-Responsividad Acústica",
-    desc: "Desensibilización progresiva para hipersensibilidad sonora (aspiradora, secador, aula). Muro de control adulto.",
-    badge: "6 Actividades · SOR",
-    badgeColor: "cyan",
-    bullets: ["11 estímulos sintetizados (−20 dBFS)", "Volumen (1-5) y tiempo (3/7/15s) fijado por adulto", "Pausar siempre suma puntos XP"]
+    category: "Sobre-Responsividad",
+    desc: "Desensibilización progresiva ante ruidos cotidianos fuertes (aspiradora, secador, aula). Muro de control adulto donde pausar siempre suma puntos.",
+    badge: "SOR Acústico",
+    badgeColor: "cyan"
   },
   {
-    id: "aventuras-lua",
     num: "02",
     icon: "🐱",
     title: "Aventuras con Lúa",
     category: "Lúa y las Palabras",
-    desc: "105 actividades en 6 franjas de edad (0-2 a 7-10): juegos de selección, preguntas, cuentos y canciones habladas a pulso.",
+    desc: "105 actividades en 6 franjas de edad (0-2 a 7-10): juegos de selección, preguntas interactivas, cuentos ilustrados y canciones habladas a pulso.",
     badge: "105 Actividades",
-    badgeColor: "purple",
-    bullets: ["25 juegos de selección y 60 preguntas", "10 cuentos universales ilustrados", "10 canciones habladas sobre metrónomo visual"]
+    badgeColor: "purple"
   },
   {
-    id: "pares",
     num: "03",
     icon: "🗣️",
     title: "Pares Mínimos D7",
-    category: "Dislalias y Pronunciación",
-    desc: "15 pares contrastados en 6 grupos (rotacismo, sigmatismo...). Algoritmo D7 O2 que detecta 35/35 contrastes.",
-    badge: "Algoritmo O2 · 15 Pares",
-    badgeColor: "cyan",
-    bullets: ["Compara contra ambas palabras del par", "Cero falsos positivos de error", "Sello doble de aprobación familiar"]
+    category: "Dislalias y Habla",
+    desc: "15 pares contrastados en 6 grupos de articulación. Algoritmo D7 O2 que compara contra ambas palabras para eliminar falsos positivos de error.",
+    badge: "Algoritmo O2",
+    badgeColor: "cyan"
   },
   {
-    id: "expansion",
     num: "04",
     icon: "🧩",
     title: "Expansión Semántica",
     category: "Léxico y Comprensión",
-    desc: "Ampliación de vocabulario en 4 etapas: 5 escenarios de casa, 5 categorías por familiaridad y 8 contrastes con doble vuelta.",
+    desc: "66 pictogramas propios en píxel art. Práctica en doble vuelta: el menor primero señala la imagen correcta y luego articula la palabra.",
     badge: "Doble Vuelta",
-    badgeColor: "emerald",
-    bullets: ["66 pictogramas propios en píxel art", "Primero señalar, luego hablar", "Antesala de preparación de material"]
+    badgeColor: "emerald"
   },
   {
-    id: "audicion",
     num: "05",
     icon: "👂",
     title: "Audición (ACOPROS)",
-    category: "Protocolo Auditivo-Verbal",
-    desc: "Reconocimiento y discriminación fonética, semántica y pragmática. Escucha en ruido babble graduable (RA-1 a RA-5).",
-    badge: "Validación ACOPROS",
-    badgeColor: "purple",
-    bullets: ["Ruido de cafetería en bucle manual", "Discriminación fina de fonemas", "Hasta 3 rondas por ejercicio"]
+    category: "Auditivo-Verbal",
+    desc: "Protocolo clínico auditivo-verbal: discriminación fonética fina y comprensión en ruido babble graduable simulando entornos escolares reales.",
+    badge: "Validado ACOPROS",
+    badgeColor: "purple"
   },
   {
-    id: "lenguaje",
     num: "06",
     icon: "💬",
     title: "Lenguaje Temprano",
-    category: "Estimulación en el Hogar",
-    desc: "Atención conjunta triangulada, imitación progresiva (gesto → sílaba → palabra), comunicación funcional y agenda visual.",
+    category: "Estimulación Familiar",
+    desc: "Atención conjunta triangulada, imitación progresiva (gesto → sílaba → palabra) y rutinas comunicativas funcionales con objetos del hogar.",
     badge: "Rutina Diaria",
-    badgeColor: "cyan",
-    bullets: ["Mirada compartida y triangulación", "Modelado verbal sin regañinas", "Materiales cotidianos del hogar"]
+    badgeColor: "cyan"
   },
   {
-    id: "tea",
     num: "07",
     icon: "🧠",
     title: "TEA (Espectro Autista)",
-    category: "PRT + TCC Conductual",
-    desc: "Atención conjunta con Time Delay, turnos de juego, transición estructurada y quiebre pragmático con estresores 100% manuales.",
+    category: "PRT + Conductual",
+    desc: "Atención conjunta con Time Delay, quiebres pragmáticos y anticipación estructurada con estresores 100% regulados a mano por la familia.",
     badge: "Estresores Manuales",
-    badgeColor: "amber",
-    bullets: ["Cero sobrecarga sensorial automática", "Anticipación visual estructurada", "Sello doble adulto-menor"]
+    badgeColor: "amber"
   },
   {
-    id: "dislexia",
     num: "08",
     icon: "📖",
     title: "Dislexia y Fonología",
     category: "Conciencia Fonológica",
-    desc: "Intruso fonológico auditivo puro, criba de pseudopalabras, mapa de rotaciones b/d · p/q y denominación rápida (RAN).",
+    desc: "Intruso fonológico puramente auditivo, criba de pseudopalabras, mapa visual de rotaciones b/d · p/q y denominación rápida automatizada.",
     badge: "Criba Fonológica",
-    badgeColor: "purple",
-    bullets: ["Detección de inversiones b/d y p/q", "Síntesis fonémica rítmica (500 ms)", "Rastreo léxico con interferencia"]
+    badgeColor: "purple"
   },
   {
-    id: "grafomotricidad",
     num: "09",
     icon: "✏️",
     title: "La Pizarra Mágica",
-    category: "Grafomotricidad Guiada",
-    desc: "18 trazos sobre lienzo SVG con pauta Montessori y puntos numerados (1, 2, 3) que fijan el orden exacto del trazo.",
-    badge: "18 Trazos · SVG",
-    badgeColor: "emerald",
-    bullets: ["12 letras críticas (b/d, p/q, m/n)", "6 lazos de calentamiento motor", "Pauta Montessori regulable en pantalla"]
+    category: "Grafomotricidad",
+    desc: "18 trazos guiados en SVG sobre pauta Montessori con puntos numerados (1, 2, 3) que fijan el orden motriz exacto de letras críticas.",
+    badge: "18 Trazos SVG",
+    badgeColor: "emerald"
   },
   {
-    id: "ar",
     num: "10",
     icon: "🎯",
     title: "Realidad Aumentada 3D",
-    category: "Sensor Motor · Android",
-    desc: "Cámara frontal como sensor de conducta motora sin micrófono: ARCore + MediaPipe (52 blendshapes) + Filament 3D.",
+    category: "Sensor Orofacial",
+    desc: "Cámara frontal como sensor cinemático orofacial sin micrófono activo (ARCore + MediaPipe + Filament 3D), garantizando privacidad absoluta.",
     badge: "ARCore + MediaPipe",
-    badgeColor: "cyan",
-    bullets: ["Cinemática orofacial y fijación visual", "Cero fotos ni vídeos grabados", "Modelos 3D de refuerzo motor"]
+    badgeColor: "cyan"
   }
 ];
 ---
 
-<section id="bloques-clinicos" class="therapy-section section-padding">
+<section id="bloques-clinicos" class="therapy-section">
   <div class="container">
     <div class="section-header">
       <span class="tag">Intervención Estructurada</span>
       <h2>10 Bloques Clínicos + <span class="gradient-text">Test de Ling</span></h2>
-      <p>Progresión clínica integral: desde el chequeo rápido de prótesis auditivas hasta la pronunciación, la lectura y la Realidad Aumentada 3D.</p>
+      <p>Progresión clínica integral: desde el chequeo rápido de prótesis auditivas hasta la pronunciación, la lectura y la motricidad 3D.</p>
     </div>
 
-    <!-- Ling Check Highlight Bar -->
+    <!-- Ling Check Highlight Bar - Centered & Balanced -->
     <div class="ling-banner glass-card" id="terapias">
-      <div class="ling-left">
+      <div class="ling-main">
         <span class="ling-icon">{lingCheck.icon}</span>
-        <div>
-          <div class="ling-tag-row">
+        <div class="ling-text">
+          <div class="ling-header-row">
             <span class="badge badge-amber">{lingCheck.badge}</span>
             <span class="ling-cat">{lingCheck.category}</span>
           </div>
@@ -146,17 +123,14 @@ const blocks = [
           <p>{lingCheck.desc}</p>
         </div>
       </div>
-      <div class="ling-bullets">
-        {lingCheck.bullets.map((b) => (
-          <div class="ling-bullet-item">
-            <span class="check-bullet">✓</span>
-            <span>{b}</span>
-          </div>
+      <div class="ling-tags">
+        {lingCheck.tags.map((tag) => (
+          <span class="ling-tag-item">{tag}</span>
         ))}
       </div>
     </div>
 
-    <!-- 10 Blocks Grid -->
+    <!-- 10 Blocks Grid - Clean, Centered & Minimalist -->
     <div class="blocks-grid">
       {blocks.map((block) => (
         <div class="glass-card block-card">
@@ -171,15 +145,6 @@ const blocks = [
           <span class="block-category">{block.category}</span>
           <h3>{block.title}</h3>
           <p class="block-desc">{block.desc}</p>
-
-          <ul class="block-items">
-            {block.bullets.map((item) => (
-              <li>
-                <span class="check-bullet">✓</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       ))}
     </div>
@@ -202,19 +167,21 @@ const blocks = [
     gap: 2rem;
     padding: 1.5rem 2rem;
     margin-bottom: 2.5rem;
+    max-width: 1060px;
+    margin-left: auto;
+    margin-right: auto;
     background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(15, 23, 42, 0.7) 100%);
     border: 1px solid rgba(245, 158, 11, 0.3);
   }
 
-  .ling-left {
+  .ling-main {
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    max-width: 650px;
   }
 
   .ling-icon {
-    font-size: 2rem;
+    font-size: 1.75rem;
     background: rgba(245, 158, 11, 0.15);
     width: 48px;
     height: 48px;
@@ -225,11 +192,16 @@ const blocks = [
     flex-shrink: 0;
   }
 
-  .ling-tag-row {
+  .ling-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .ling-header-row {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    margin-bottom: 0.25rem;
   }
 
   .ling-cat {
@@ -240,48 +212,58 @@ const blocks = [
     letter-spacing: 0.04em;
   }
 
-  .ling-left h3 {
-    font-size: 1.25rem;
+  .ling-text h3 {
+    font-size: 1.2rem;
     font-weight: 800;
     color: var(--text-main);
-    margin-bottom: 0.2rem;
-  }
-
-  .ling-left p {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    line-height: 1.45;
     margin: 0;
   }
 
-  .ling-bullets {
+  .ling-text p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .ling-tags {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
     flex-shrink: 0;
   }
 
-  .ling-bullet-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.82rem;
+  .ling-tag-item {
+    font-size: 0.78rem;
     color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-light);
+    text-align: center;
+    white-space: nowrap;
   }
 
   /* Blocks Grid */
   .blocks-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
+    max-width: 1060px;
+    margin: 0 auto;
   }
 
   .block-card {
     display: flex;
     flex-direction: column;
-    height: 100%;
     padding: 1.5rem;
-    position: relative;
+    height: 100%;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .block-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.18);
   }
 
   .block-top {
@@ -306,7 +288,7 @@ const blocks = [
   }
 
   .block-icon {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .block-category {
@@ -319,47 +301,18 @@ const blocks = [
   }
 
   .block-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.45rem;
     color: var(--text-main);
   }
 
   .block-desc {
     color: var(--text-muted);
-    font-size: 0.88rem;
-    line-height: 1.5;
-    margin-bottom: 1.25rem;
-    flex-grow: 1;
-  }
-
-  .block-items {
-    list-style: none;
-    padding: 0;
+    font-size: 0.875rem;
+    line-height: 1.55;
     margin: 0;
-    border-top: 1px solid var(--border-light);
-    padding-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-  }
-
-  .block-items li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    font-size: 0.82rem;
-    color: var(--text-main);
-    line-height: 1.4;
-  }
-
-  .check-bullet {
-    color: var(--accent-emerald);
-    font-weight: bold;
-    font-size: 0.85rem;
-    line-height: 1;
-    margin-top: 0.15rem;
-    flex-shrink: 0;
+    flex-grow: 1;
   }
 
   @media (max-width: 900px) {
@@ -367,6 +320,10 @@ const blocks = [
       flex-direction: column;
       align-items: flex-start;
       gap: 1.25rem;
+    }
+    .ling-tags {
+      flex-direction: row;
+      flex-wrap: wrap;
     }
   }
 </style>
