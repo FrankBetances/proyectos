@@ -10,7 +10,13 @@ import LuaMascotSection from '../components/LuaMascotSection.astro';
 import LocalesLanguages from '../components/LocalesLanguages.astro';
 import Collaborators from '../components/Collaborators.astro';
 import ClinicalTelemetry from '../components/ClinicalTelemetry.astro';
+import ValeriaFaq from '../components/ValeriaFaq.astro';
+import ContactModal from '../components/cv/ContactModal.astro';
 import Footer from '../components/Footer.astro';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
 
 const valeriaJsonLd = {
   "@context": "https://schema.org",
@@ -119,6 +125,7 @@ const valeriaJsonLd = {
 <Layout 
 	title="Valeria+ · Terapia del Lenguaje en Casa 100% Offline"
 	description="App clínica de terapia del lenguaje infantil en casa. 10 bloques prácticos, formación Academy, gata Lúa y 4.711 locuciones offline con control adulto."
+	image={`${baseUrl}/assets/valeria-lua-hero-bg.jpg`}
 	keywords="Valeria+, terapia del lenguaje en casa, logopedia infantil, hipoacusia, implante coclear, dislalia, dislexia infantil, TEA autismo, integracion sensorial auditiva, Lua mascota, Dr. Frank Betances, Earlify Health, startTIC, MDR SaMD"
 	jsonLd={valeriaJsonLd}
 >
@@ -133,6 +140,8 @@ const valeriaJsonLd = {
 		<LocalesLanguages />
 		<Collaborators />
 		<ClinicalTelemetry />
+		<ValeriaFaq />
 	</main>
 	<Footer />
+	<ContactModal />
 </Layout>
