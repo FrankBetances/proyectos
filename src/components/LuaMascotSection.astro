@@ -22,22 +22,20 @@ const badgeFamilies = [
     <div class="glass-card lua-box">
       
       <div class="lua-grid">
-        <!-- Visual Column -->
+        <!-- Visual Column: Real In-App Screenshot -->
         <div class="lua-visual-col">
-          <div class="lua-avatar-frame">
+          <div class="device-frame">
             <img 
-              src={`${baseUrl}/assets/valeria_lua.png`} 
-              alt="Lúa, la gata negra de Valeria+ en Píxel Art" 
-              class="lua-hero-img" 
-              width="160"
-              height="160"
+              src={`${baseUrl}/assets/valeria-screen-conoce-lua.png`} 
+              alt="Pantalla Conoce a Lúa y Selección de Paciente en Valeria+" 
+              class="manual-screenshot" 
+              width="460"
+              height="1024"
               loading="lazy" 
               decoding="async"
             />
+            <span class="screenshot-chip">Conoce a Lúa & Dispositivo</span>
           </div>
-          <span class="lua-tag">Mascota Oficial</span>
-          <h3 class="lua-name">Lúa</h3>
-          <p class="lua-role">Píxel art 24×24 · 33 colores</p>
         </div>
 
         <!-- Details Column -->
@@ -116,7 +114,7 @@ const badgeFamilies = [
 
   .lua-grid {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 260px 1fr;
     gap: 3rem;
     align-items: center;
   }
@@ -128,39 +126,27 @@ const badgeFamilies = [
     text-align: center;
   }
 
-  .lua-avatar-frame {
-    width: 170px;
-    height: 170px;
-    border-radius: 28px;
-    background: rgba(2, 6, 23, 0.6);
-    border: 2px solid rgba(249, 115, 22, 0.4);
-    box-shadow: 0 0 35px rgba(249, 115, 22, 0.2);
+  .device-frame {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    overflow: hidden;
+    gap: 0.75rem;
   }
 
-  .lua-hero-img {
-    width: 150px;
-    height: 150px;
-    image-rendering: pixelated;
-    object-fit: contain;
-    transition: transform 0.25s ease;
+  .manual-screenshot {
+    width: 250px;
+    height: auto;
+    border-radius: 28px;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(249, 115, 22, 0.18);
   }
 
-  .lua-hero-img:hover {
-    transform: scale(1.05);
-  }
-
-  .lua-tag {
+  .screenshot-chip {
     font-size: 0.75rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #fb923c;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.2rem;
+    letter-spacing: 0.05em;
   }
 
   .lua-name {

@@ -147,17 +147,64 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           <div class="device-notch"></div>
           <div class="device-screen">
             <img 
-              src={`${baseUrl}/assets/05-hub-bloques.png`} 
-              alt="Captura real del Hub de Bloques de Valeria+ v14" 
+              id="hero-phone-img"
+              src={`${baseUrl}/assets/valeria-screen-bienvenida.png`} 
+              alt="Pantalla de Bienvenida de Valeria+ v14 con la mascota Lúa" 
               class="device-screen-img"
-              width="780"
-              height="1688"
-              loading="lazy"
+              width="460"
+              height="1024"
+              loading="eager"
               decoding="async"
             />
           </div>
           <div class="device-caption">
-            <span class="caption-chip">Hub Clínico de 10 Bloques</span>
+            <span id="hero-phone-caption" class="caption-chip">Pantalla de Inicio · Valeria+ v14</span>
+          </div>
+          <div class="device-tabs" role="tablist" aria-label="Capturas de pantalla de Valeria+">
+            <button 
+              type="button" 
+              role="tab" 
+              aria-selected="true" 
+              class="device-tab-btn active" 
+              data-src={`${baseUrl}/assets/valeria-screen-bienvenida.png`}
+              data-alt="Pantalla de Bienvenida de Valeria+ v14 con la mascota Lúa"
+              data-caption="Pantalla de Inicio · Valeria+ v14"
+            >
+              Inicio
+            </button>
+            <button 
+              type="button" 
+              role="tab" 
+              aria-selected="false" 
+              class="device-tab-btn" 
+              data-src={`${baseUrl}/assets/valeria-screen-academy.png`}
+              data-alt="Pestaña de Formación Academy en Valeria+ v14"
+              data-caption="1.º Formación · Academy en 2 min"
+            >
+              Academy
+            </button>
+            <button 
+              type="button" 
+              role="tab" 
+              aria-selected="false" 
+              class="device-tab-btn" 
+              data-src={`${baseUrl}/assets/valeria-screen-conoce-lua.png`}
+              data-alt="Pantalla Conoce a Lúa y Pacientes en Valeria+ v14"
+              data-caption="Mascota Lúa & Dispositivo Físico"
+            >
+              Lúa
+            </button>
+            <button 
+              type="button" 
+              role="tab" 
+              aria-selected="false" 
+              class="device-tab-btn" 
+              data-src={`${baseUrl}/assets/valeria-screen-creditos.png`}
+              data-alt="Créditos y Avales Clínicos en Valeria+ v14 (ITEMAS, ACOPROS)"
+              data-caption="Avales Clínicos · ITEMAS & ACOPROS"
+            >
+              Avales
+            </button>
           </div>
         </div>
       </div>
@@ -580,6 +627,45 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     letter-spacing: 0.05em;
   }
 
+  .device-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.35rem;
+    margin-top: 0.8rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .device-tab-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .device-tab-btn:hover {
+    background: rgba(0, 242, 254, 0.12);
+    border-color: rgba(0, 242, 254, 0.3);
+    color: var(--text-main);
+  }
+
+  .device-tab-btn.active {
+    background: rgba(0, 242, 254, 0.2);
+    border-color: var(--accent-cyan);
+    color: #fff;
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
+  }
+
+  .device-tab-btn:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 2px;
+  }
+
   @media (max-width: 960px) {
     .hero-showcase-grid {
       grid-template-columns: 1fr;
@@ -607,3 +693,38 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     }
   }
 </style>
+
+<script>
+  function setupHeroPhoneSwitcher() {
+    const phoneImg = document.getElementById('hero-phone-img') as HTMLImageElement | null;
+    const captionSpan = document.getElementById('hero-phone-caption');
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.device-tab-btn');
+
+    if (!phoneImg || !captionSpan || tabs.length === 0) return;
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const newSrc = tab.getAttribute('data-src');
+        const newAlt = tab.getAttribute('data-alt');
+        const newCaption = tab.getAttribute('data-caption');
+
+        if (newSrc) phoneImg.src = newSrc;
+        if (newAlt) phoneImg.alt = newAlt;
+        if (newCaption) captionSpan.textContent = newCaption;
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupHeroPhoneSwitcher);
+  } else {
+    setupHeroPhoneSwitcher();
+  }
+</script>
