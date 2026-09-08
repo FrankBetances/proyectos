@@ -74,11 +74,11 @@ const collaborators = [
       <p>Validación continua por sociedades científicas, incubadoras de alta tecnología y agencias públicas de salud.</p>
     </div>
 
-    <!-- Collaborators Grid - Centered & Balanced -->
+    <!-- Collaborators Grid - Symmetrical & Centered -->
     <div class="collab-grid">
       {collaborators.map((c) => (
         <div class={`glass-card collab-card ${c.id === 'starttic' ? 'collab-card-highlight' : ''}`}>
-          <div class={`logo-container ${c.logoBg}`}>
+          <div class="logo-container">
             {c.customMark ? (
               <div class="starttic-brand-mark">
                 <div class="starttic-top-row">
@@ -87,6 +87,18 @@ const collaborators = [
                 </div>
                 <span class="starttic-sub">INCUBADORA ALTA TECNOLOGÍA</span>
                 <span class="starttic-partners">CZFV · GRADIANT · FEDER</span>
+              </div>
+            ) : c.logoBg === 'light' ? (
+              <div class="logo-badge-light">
+                <img 
+                  src={c.logo} 
+                  alt={c.alt} 
+                  class={`collab-img img-${c.id}`} 
+                  width={c.width}
+                  height={c.height}
+                  loading="lazy" 
+                  decoding="async" 
+                />
               </div>
             ) : (
               <img 
@@ -102,10 +114,8 @@ const collaborators = [
           </div>
 
           <div class="collab-body">
-            <div class="collab-top">
-              <h3 class="collab-name">{c.name}</h3>
-              <span class={`badge badge-${c.badgeColor}`}>{c.badge}</span>
-            </div>
+            <h3 class="collab-name">{c.name}</h3>
+            <span class={`badge badge-${c.badgeColor}`}>{c.badge}</span>
             <p class="collab-desc">{c.desc}</p>
           </div>
         </div>
@@ -133,6 +143,8 @@ const collaborators = [
   .collab-card {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     height: 100%;
     overflow: hidden;
     padding: 0;
@@ -150,20 +162,24 @@ const collaborators = [
   }
 
   .logo-container {
-    height: 110px;
+    height: 100px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.25rem;
+    padding: 1rem 1.5rem;
+    background: rgba(10, 15, 26, 0.6);
     border-bottom: 1px solid var(--border-light);
   }
 
-  .logo-container.light {
+  .logo-badge-light {
     background: #FFFFFF;
-  }
-
-  .logo-container.dark {
-    background: linear-gradient(135deg, #090E17 0%, #0F172A 100%);
+    border-radius: var(--radius-md);
+    padding: 0.4rem 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
   }
 
   .starttic-brand-mark {
@@ -213,10 +229,12 @@ const collaborators = [
   }
 
   .collab-img {
-    max-height: 60px;
-    max-width: 80%;
+    max-height: 48px;
+    max-width: 180px;
     width: auto;
     object-fit: contain;
+    margin: 0 auto;
+    display: block;
     transition: transform 0.25s ease;
   }
 
@@ -225,47 +243,45 @@ const collaborators = [
   }
 
   .img-itemas {
-    max-height: 75px;
+    max-height: 44px;
   }
 
   .img-acis {
-    max-height: 50px;
+    max-height: 38px;
   }
 
   .img-acopros {
-    max-height: 55px;
+    max-height: 40px;
   }
 
   .img-sgorl {
-    max-height: 65px;
+    max-height: 52px;
   }
 
   .collab-body {
-    padding: 1.5rem;
+    padding: 1.75rem 1.5rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     flex-grow: 1;
-  }
-
-  .collab-top {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
-    margin-bottom: 0.6rem;
+    width: 100%;
+    gap: 0.4rem;
   }
 
   .collab-name {
     font-size: 1.15rem;
     font-weight: 800;
     color: var(--text-main);
+    text-align: center;
   }
 
   .collab-desc {
     font-size: 0.875rem;
     color: var(--text-muted);
     line-height: 1.55;
-    margin: 0;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
   }
 
   @media (max-width: 768px) {

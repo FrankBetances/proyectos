@@ -110,18 +110,16 @@ const blocks = [
       <p>Progresión clínica integral: desde el chequeo rápido de prótesis auditivas hasta la pronunciación, la lectura y la motricidad 3D.</p>
     </div>
 
-    <!-- Ling Check Highlight Bar - Centered & Balanced -->
+    <!-- Ling Check Highlight Bar - Perfectly Centered -->
     <div class="ling-banner glass-card" id="terapias">
-      <div class="ling-main">
-        <span class="ling-icon">{lingCheck.icon}</span>
-        <div class="ling-text">
-          <div class="ling-header-row">
-            <span class="badge badge-amber">{lingCheck.badge}</span>
-            <span class="ling-cat">{lingCheck.category}</span>
-          </div>
-          <h3>{lingCheck.title}</h3>
-          <p>{lingCheck.desc}</p>
+      <div class="ling-icon">{lingCheck.icon}</div>
+      <div class="ling-text">
+        <div class="ling-header-row">
+          <span class="badge badge-amber">{lingCheck.badge}</span>
+          <span class="ling-cat">{lingCheck.category}</span>
         </div>
+        <h3>{lingCheck.title}</h3>
+        <p>{lingCheck.desc}</p>
       </div>
       <div class="ling-tags">
         {lingCheck.tags.map((tag) => (
@@ -135,13 +133,11 @@ const blocks = [
       {blocks.map((block) => (
         <div class="glass-card block-card">
           <div class="block-top">
-            <div class="block-id-group">
-              <span class="block-num">{block.num}</span>
-              <span class="block-icon">{block.icon}</span>
-            </div>
+            <span class="block-num">BLOQUE {block.num}</span>
             <span class={`badge badge-${block.badgeColor}`}>{block.badge}</span>
           </div>
 
+          <div class="block-icon">{block.icon}</div>
           <span class="block-category">{block.category}</span>
           <h3>{block.title}</h3>
           <p class="block-desc">{block.desc}</p>
@@ -159,48 +155,48 @@ const blocks = [
     border-top: 1px solid var(--border-light);
   }
 
-  /* Ling Banner */
+  /* Ling Banner - Centered */
   .ling-banner {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    padding: 1.5rem 2rem;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 2rem 2.5rem;
     margin-bottom: 2.5rem;
-    max-width: 1060px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(15, 23, 42, 0.7) 100%);
     border: 1px solid rgba(245, 158, 11, 0.3);
   }
 
-  .ling-main {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-  }
-
   .ling-icon {
-    font-size: 1.75rem;
+    font-size: 2rem;
     background: rgba(245, 158, 11, 0.15);
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
     flex-shrink: 0;
   }
 
   .ling-text {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    max-width: 680px;
   }
 
   .ling-header-row {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.6rem;
   }
 
@@ -213,38 +209,40 @@ const blocks = [
   }
 
   .ling-text h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--text-main);
     margin: 0;
+    text-align: center;
   }
 
   .ling-text p {
-    font-size: 0.9rem;
+    font-size: 0.925rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
     margin: 0;
+    text-align: center;
   }
 
   .ling-tags {
     display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
   .ling-tag-item {
     font-size: 0.78rem;
     color: var(--text-main);
     background: rgba(255, 255, 255, 0.05);
-    padding: 0.25rem 0.65rem;
+    padding: 0.3rem 0.75rem;
     border-radius: var(--radius-full);
     border: 1px solid var(--border-light);
     text-align: center;
     white-space: nowrap;
   }
 
-  /* Blocks Grid */
+  /* Blocks Grid - Centered Cards */
   .blocks-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -256,7 +254,9 @@ const blocks = [
   .block-card {
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    align-items: center;
+    text-align: center;
+    padding: 1.75rem;
     height: 100%;
     transition: transform 0.25s ease, border-color 0.25s ease;
   }
@@ -270,25 +270,21 @@ const blocks = [
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.85rem;
-  }
-
-  .block-id-group {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 1.25rem;
   }
 
   .block-num {
     font-family: var(--font-heading);
-    font-size: 0.75rem;
+    font-size: 0.725rem;
     font-weight: 800;
     color: var(--text-dim);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
   }
 
   .block-icon {
-    font-size: 1.4rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
   }
 
   .block-category {
@@ -298,13 +294,15 @@ const blocks = [
     color: var(--accent-cyan);
     letter-spacing: 0.05em;
     margin-bottom: 0.35rem;
+    text-align: center;
   }
 
   .block-card h3 {
     font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.5rem;
     color: var(--text-main);
+    text-align: center;
   }
 
   .block-desc {
@@ -313,17 +311,12 @@ const blocks = [
     line-height: 1.55;
     margin: 0;
     flex-grow: 1;
+    text-align: center;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     .ling-banner {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.25rem;
-    }
-    .ling-tags {
-      flex-direction: row;
-      flex-wrap: wrap;
+      padding: 1.5rem;
     }
   }
 </style>

@@ -66,9 +66,10 @@ const telemetryItems = [
 
   .telemetry-card {
     display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    padding: 1.75rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
     height: 100%;
     transition: transform 0.25s ease, border-color 0.25s ease;
   }
@@ -79,23 +80,32 @@ const telemetryItems = [
   }
 
   .telemetry-icon {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     background: rgba(16, 185, 129, 0.12);
     border: 1px solid rgba(16, 185, 129, 0.25);
-    width: 46px;
-    height: 46px;
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+    border-radius: 14px;
+    margin: 0 auto 1.25rem auto;
     flex-shrink: 0;
   }
 
+  .telemetry-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .telemetry-body h3 {
-    font-size: 1.15rem;
+    font-size: 1.18rem;
     font-weight: 700;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.45rem;
     color: var(--text-main);
+    text-align: center;
   }
 
   .telemetry-body p {
@@ -103,6 +113,8 @@ const telemetryItems = [
     color: var(--text-muted);
     line-height: 1.55;
     margin: 0;
+    text-align: center;
+    max-width: 440px;
   }
 
   @media (max-width: 768px) {

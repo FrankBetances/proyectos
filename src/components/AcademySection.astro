@@ -20,7 +20,7 @@ const academyDomains = [
         </p>
       </div>
 
-      <!-- 6 Key Domains Grid - Symmetrical & Clean -->
+      <!-- 6 Key Domains Grid - Symmetrical & Centered -->
       <div class="domains-grid">
         {academyDomains.map((d) => (
           <div class="domain-card">
@@ -33,13 +33,13 @@ const academyDomains = [
         ))}
       </div>
 
-      <!-- Spotlight dual: La Brújula + Lengua de Signos (LSE) -->
+      <!-- Spotlight dual: La Brújula + Lengua de Signos (LSE) - Symmetrical & Centered -->
       <div class="academy-spotlight-row">
         <div class="lse-spotlight">
           <div class="lse-tag">🧭 Hitos Normativos ASHA (0 a 5 años)</div>
           <h3>La Brújula de las Palabras</h3>
           <p>
-            Guía clínica que diferencia <strong>lo que el menor comprende</strong> de <strong>lo que expresa</strong>, orientando a la familia con claridad sobre cuándo consultar con el especialista.
+            Guía clínica que diferencia <strong>comprensión</strong> de <strong>expresión</strong>, orientando a la familia sobre cuándo consultar con el especialista.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ const academyDomains = [
           <div class="lse-tag text-purple">🤟 Validación Oficial ACOPROS</div>
           <h3>Lengua de Signos Española (LSE)</h3>
           <p>
-            Las <strong>27 configuraciones del abecedario dactilológico</strong> han sido revisadas y validadas directamente por <strong>la logopeda y personas sordas de ACOPROS</strong>.
+            Las <strong>27 configuraciones dactilológicas</strong> han sido revisadas y validadas directamente por la logopeda y personas sordas de <strong>ACOPROS</strong>.
           </p>
         </div>
       </div>
@@ -63,21 +63,26 @@ const academyDomains = [
   }
 
   .academy-box {
-    padding: 3rem;
+    padding: 3rem 2.5rem;
     max-width: 1060px;
     margin: 0 auto;
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.4) 100%);
     border: 1px solid rgba(138, 43, 226, 0.3);
     box-shadow: var(--shadow-purple);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .academy-header {
     margin-bottom: 2.5rem;
+    text-align: center;
   }
 
   .academy-header p {
     max-width: 720px;
     margin: 0 auto;
+    text-align: center;
   }
 
   .domains-grid {
@@ -85,16 +90,18 @@ const academyDomains = [
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.25rem;
     margin-bottom: 2rem;
+    width: 100%;
   }
 
   .domain-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 1.25rem;
+    padding: 1.5rem;
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     transition: transform 0.2s ease, border-color 0.2s ease;
   }
 
@@ -105,44 +112,59 @@ const academyDomains = [
   }
 
   .domain-icon {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     background: rgba(255, 255, 255, 0.05);
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-md);
+    margin: 0 auto 0.85rem auto;
     flex-shrink: 0;
   }
 
+  .domain-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .domain-body h4 {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
     color: var(--text-main);
+    text-align: center;
   }
 
   .domain-body p {
-    font-size: 0.85rem;
+    font-size: 0.86rem;
     color: var(--text-muted);
-    line-height: 1.45;
+    line-height: 1.5;
     margin: 0;
+    text-align: center;
   }
 
   .academy-spotlight-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    width: 100%;
   }
 
   .lse-spotlight {
     background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(0, 242, 254, 0.2);
+    border: 1px solid rgba(0, 242, 254, 0.25);
     border-radius: var(--radius-md);
-    padding: 1.5rem;
+    padding: 1.75rem;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .lse-spotlight::before {
@@ -150,13 +172,13 @@ const academyDomains = [
     position: absolute;
     top: 0;
     left: 0;
-    width: 4px;
-    height: 100%;
+    right: 0;
+    height: 3px;
     background: var(--accent-cyan);
   }
 
   .lse-spotlight.lse-alt {
-    border-color: rgba(168, 85, 247, 0.25);
+    border-color: rgba(168, 85, 247, 0.3);
   }
 
   .lse-spotlight.lse-alt::before {
@@ -169,7 +191,8 @@ const academyDomains = [
     text-transform: uppercase;
     color: var(--accent-cyan);
     letter-spacing: 0.05em;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
   }
 
   .lse-tag.text-purple {
@@ -177,16 +200,20 @@ const academyDomains = [
   }
 
   .lse-spotlight h3 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: var(--text-main);
   }
 
   .lse-spotlight p {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
     margin: 0;
+    text-align: center;
+    max-width: 440px;
   }
 
   .lse-spotlight strong {

@@ -4,27 +4,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : import.meta.env.BASE_URL;
 ---
 
-<!-- Centered High-Impact Hero for Valeria+ (LCP < 0.8s, CLS = 0, Centered & Minimalist) -->
+<!-- Centered High-Impact Hero for Valeria+ (Minimalist, Clean, Perfectly Centered) -->
 <section id="valeria-hero" class="hero-native-section">
-  <!-- Ambient Backdrop with Visual Metaphor & Glows -->
+  <!-- Subtle Ambient Backdrop Glows (No Distracting Wallpaper) -->
   <div class="hero-backdrop-layer" aria-hidden="true">
     <div class="ambient-glow glow-purple"></div>
     <div class="ambient-glow glow-cyan"></div>
     <div class="ambient-glow glow-emerald"></div>
-
-    <div class="backdrop-artwork-wrapper">
-      <img 
-        src={`${baseUrl}/assets/valeria-lua-hero-bg.jpg`} 
-        alt="Entorno de estimulación de Valeria+ con dispositivo de Lúa y apoyo familiar en el hogar" 
-        class="backdrop-artwork-img"
-        width="1376"
-        height="768"
-        loading="eager"
-        fetchpriority="high"
-      />
-      <div class="backdrop-gradient-mask"></div>
-    </div>
-
     <div class="hero-grid-overlay"></div>
   </div>
 
@@ -51,22 +37,18 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
     <!-- Centered Main Editorial Content -->
     <div class="hero-main-content">
-      <div class="hero-brand-header">
-        <div class="brand-avatar-box">
-          <img 
-            src={`${baseUrl}/assets/valeria_lua.png`} 
-            alt="Logotipo de Valeria+ con la gata Lúa en píxel art" 
-            class="brand-lua-avatar"
-            width="88"
-            height="88"
-            loading="eager"
-            fetchpriority="high"
-          />
-        </div>
-        <div class="brand-eyebrow">
-          <span class="eyebrow-pill">PLATAFORMA PEDIÁTRICA V14.2</span>
-          <span class="eyebrow-sub">Dr. Frank Betances · ORL Pediátrico</span>
-        </div>
+      <!-- Centered Brand Eyebrow Pill -->
+      <div class="hero-brand-pill">
+        <img 
+          src={`${baseUrl}/assets/valeria_lua.png`} 
+          alt="Lúa" 
+          class="brand-lua-avatar" 
+          width="24" 
+          height="24" 
+          loading="eager"
+          fetchpriority="high"
+        />
+        <span>PLATAFORMA PEDIÁTRICA V14.2 · DR. FRANK BETANCES</span>
       </div>
 
       <!-- TITULAR ORIGINAL INTOCADO -->
@@ -75,7 +57,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       </h1>
 
       <p class="hero-lead">
-        Estimulación clínica estructurada para dificultades del habla, hipoacusia, implante coclear, TEA y dislexia. Formación parental en <strong>2 minutos (Academy)</strong> y práctica lúdica en <strong>10 bloques</strong> bajo control del adulto (MDR Clase I · 100% offline).
+        Estimulación clínica estructurada para dificultades del habla, hipoacusia, TEA y dislexia. Formación parental en <strong>2 minutos (Academy)</strong> y práctica lúdica en <strong>10 bloques</strong> 100% offline bajo control del adulto.
       </p>
 
       <!-- Centered Actions -->
@@ -84,10 +66,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           <span>Explorar los 10 Bloques</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
-        <a href="#academy" class="btn-secondary">
-          <span>Formación Academy</span>
+        <a href="#metodo" class="btn-secondary">
+          <span>El Método Clínico</span>
         </a>
-        <a href="#lua-mascota" class="btn-pill-link">
+        <a href={`${baseUrl}/lua`} class="btn-pill-link">
           <span>🐱 Mascota Lúa</span>
         </a>
       </div>
@@ -107,8 +89,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           <span class="kpi-label">Variedades de Voz</span>
         </div>
         <div class="kpi-item">
-          <span class="kpi-num">100%</span>
-          <span class="kpi-label">Privacidad Zero-PHI</span>
+          <span class="kpi-num">Zero-PHI</span>
+          <span class="kpi-label">Privacidad Total</span>
         </div>
       </div>
     </div>
@@ -180,7 +162,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -201,61 +182,35 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     overflow: hidden;
   }
 
-  .backdrop-artwork-wrapper {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1200px;
-    height: 85%;
-    opacity: 0.22;
-    mask-image: radial-gradient(circle at 50% 35%, black 20%, transparent 75%);
-    -webkit-mask-image: radial-gradient(circle at 50% 35%, black 20%, transparent 75%);
-  }
-
-  .backdrop-artwork-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  .backdrop-gradient-mask {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(7, 9, 14, 0.2) 0%, rgba(7, 9, 14, 0.95) 100%);
-  }
-
   .ambient-glow {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.35;
+    filter: blur(110px);
+    opacity: 0.3;
   }
 
   .glow-purple {
     top: 5%;
-    left: 20%;
-    width: 420px;
-    height: 420px;
+    left: 25%;
+    width: 450px;
+    height: 450px;
     background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, transparent 70%);
   }
 
   .glow-cyan {
-    top: 15%;
-    right: 15%;
+    top: 12%;
+    right: 20%;
     width: 480px;
     height: 480px;
     background: radial-gradient(circle, rgba(0, 242, 254, 0.18) 0%, transparent 70%);
   }
 
   .glow-emerald {
-    bottom: 0;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
-    width: 380px;
-    height: 380px;
+    width: 400px;
+    height: 400px;
     background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
   }
 
@@ -265,9 +220,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     background-image: 
       linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 85%);
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 85%);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(circle at 50% 40%, black 25%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 40%, black 25%, transparent 80%);
   }
 
   .hero-container {
@@ -277,7 +232,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 2.5rem;
+    gap: 2.25rem;
   }
 
   /* Centered Badges Strip */
@@ -287,6 +242,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     align-items: center;
     justify-content: center;
     gap: 0.65rem;
+    margin: 0 auto;
   }
 
   .hero-badge {
@@ -327,7 +283,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     background: rgba(245, 158, 11, 0.06);
   }
 
-  /* Centered Brand Header */
+  /* Centered Main Content */
   .hero-main-content {
     display: flex;
     flex-direction: column;
@@ -338,63 +294,37 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     margin: 0 auto;
   }
 
-  .hero-brand-header {
-    display: flex;
+  /* Centered Brand Eyebrow Pill */
+  .hero-brand-pill {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .brand-avatar-box {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.25) 0%, rgba(15, 23, 42, 0.8) 100%);
-    border: 1.5px solid rgba(168, 85, 247, 0.5);
-    box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    flex-shrink: 0;
+    gap: 0.55rem;
+    padding: 0.4rem 1.1rem;
+    border-radius: var(--radius-full);
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: #C084FC;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 auto 1.25rem auto;
   }
 
   .brand-lua-avatar {
-    width: 50px;
-    height: 50px;
+    width: 22px;
+    height: 22px;
     image-rendering: pixelated;
     object-fit: contain;
   }
 
-  .brand-eyebrow {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.15rem;
-    text-align: left;
-  }
-
-  .eyebrow-pill {
-    font-family: var(--font-heading);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    color: var(--accent-cyan);
-    text-transform: uppercase;
-  }
-
-  .eyebrow-sub {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
-
   /* Headings */
   .hero-title {
-    font-size: clamp(2.1rem, 4.8vw, 3.4rem);
+    font-size: clamp(2.1rem, 4.6vw, 3.35rem);
     font-weight: 800;
-    line-height: 1.15;
+    line-height: 1.16;
     letter-spacing: -0.03em;
     color: var(--text-main);
     text-align: center;
@@ -409,11 +339,11 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .hero-lead {
-    font-size: clamp(1rem, 1.8vw, 1.18rem);
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
     line-height: 1.6;
     color: var(--text-muted);
     text-align: center;
-    max-width: 760px;
+    max-width: 740px;
     margin: 0 auto 1.75rem auto;
   }
 
@@ -428,7 +358,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem auto;
   }
 
   .btn-pill-link {
@@ -473,6 +403,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     gap: 0.2rem;
   }
@@ -492,6 +423,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    text-align: center;
   }
 
   /* Centered Showcase Mockup */
@@ -537,6 +469,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     width: 100%;
     height: auto;
     display: block;
+    margin: 0 auto;
   }
 
   .device-caption {
@@ -551,6 +484,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     color: var(--accent-cyan);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    text-align: center;
   }
 
   .device-tabs {
@@ -595,16 +529,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   @media (max-width: 640px) {
     .hero-native-section {
       padding-top: 90px;
-    }
-
-    .hero-brand-header {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .brand-eyebrow {
-      align-items: center;
-      text-align: center;
     }
 
     .hero-kpi-strip {
