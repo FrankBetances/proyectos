@@ -35,9 +35,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <span class="nav-pill nav-amber">Quisqueya Habla</span>
       </a>
       <a href={`${baseUrl}/cv`} class={activeTab === 'cv' ? 'active' : ''}>Currículum (CV)</a>
-      <a href="https://play.google.com/store/apps/details?id=health.earlify.valeria" target="_blank" rel="noopener noreferrer" class="nav-playstore-mobile">
-        <span class="nav-pill nav-play">📲 Google Play</span>
-      </a>
     </nav>
 
     <div class="header-actions">
@@ -238,18 +235,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     background: rgba(245, 158, 11, 0.3);
     color: #FEF3C7;
     border-color: rgba(245, 158, 11, 0.6);
-  }
-
-  .nav-play {
-    background: rgba(0, 242, 254, 0.12);
-    color: var(--accent-cyan);
-    border: 1px solid rgba(0, 242, 254, 0.35);
-  }
-
-  .nav-play:hover {
-    background: rgba(0, 242, 254, 0.25);
-    color: #FFFFFF;
-    border-color: rgba(0, 242, 254, 0.6);
   }
 
   .header-actions {
