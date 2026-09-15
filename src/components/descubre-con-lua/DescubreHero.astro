@@ -13,38 +13,50 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <!-- Institutional Origin Banner -->
     <div class="origin-banner">
       <div class="origin-logos">
-        <img 
-          src={`${baseUrl}/assets/descubre-con-lua/dr-betances-crest.png`} 
-          alt="Escudo del Dr. Frank Alberto Betances Reinoso" 
-          class="crest-logo" 
-          width="40" 
-          height="40" 
-        />
-        <div class="origin-separator"></div>
-        <img 
-          src={`${baseUrl}/assets/descubre-con-lua/startic.png`} 
-          alt="Incubadora de Alta Tecnoloxía startTIC" 
-          class="partner-logo" 
-          height="28" 
-        />
-        <div class="origin-separator"></div>
-        <img 
-          src={`${baseUrl}/assets/descubre-con-lua/zona-franca-vigo.png`} 
-          alt="Consorcio da Zona Franca de Vigo" 
-          class="partner-logo" 
-          height="32" 
-        />
-        <div class="origin-separator"></div>
-        <img 
-          src={`${baseUrl}/assets/descubre-con-lua/concello-vigo.png`} 
-          alt="Escolas infantís municipais do Concello de Vigo" 
-          class="partner-logo" 
-          height="26" 
-        />
+        <!-- Dr. Frank Betances Emblem -->
+        <div class="logo-item emblem-wrapper" title="Dr. Frank Alberto Betances Reinoso">
+          <img 
+            src={`${baseUrl}/assets/descubre-con-lua/dr-betances-emblem.jpg`} 
+            alt="Emblema do Dr. Frank Alberto Betances Reinoso" 
+            class="emblem-img" 
+            width="56" 
+            height="56" 
+            loading="eager" 
+            decoding="async"
+          />
+        </div>
+
+        <div class="origin-separator" aria-hidden="true"></div>
+
+        <!-- startTIC Logo inside clean white pill -->
+        <div class="logo-item partner-pill" title="Incubadora de Alta Tecnoloxía startTIC">
+          <img 
+            src={`${baseUrl}/assets/descubre-con-lua/startic-logo.png`} 
+            alt="Incubadora de Alta Tecnoloxía startTIC" 
+            class="partner-img startic-img" 
+            height="34" 
+            loading="eager" 
+            decoding="async"
+          />
+        </div>
+
+        <div class="origin-separator" aria-hidden="true"></div>
+
+        <!-- Consorcio da Zona Franca de Vigo Logo inside clean white pill -->
+        <div class="logo-item partner-pill" title="Consorcio da Zona Franca de Vigo">
+          <img 
+            src={`${baseUrl}/assets/descubre-con-lua/zona-franca-vigo-logo.png`} 
+            alt="Consorcio da Zona Franca de Vigo" 
+            class="partner-img zona-franca-img" 
+            height="42" 
+            loading="eager" 
+            decoding="async"
+          />
+        </div>
       </div>
-      <span class="origin-text">
-        Proxecto xurdido na <strong>Incubadora de Alta Tecnoloxía startTIC</strong> · <strong>Consorcio da Zona Franca de Vigo</strong>
-      </span>
+      <p class="origin-text">
+        <strong>Dr. Frank Alberto Betances Reinoso</strong> · Incubadora de Alta Tecnoloxía <strong>startTIC</strong> · <strong>Consorcio da Zona Franca de Vigo</strong>
+      </p>
     </div>
 
     <!-- Editorial Badge -->
@@ -220,46 +232,90 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1.1rem;
     background: rgba(15, 23, 42, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: var(--radius-lg);
-    padding: 0.85rem 1.75rem;
-    margin-bottom: 2rem;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 1.25rem 2.25rem;
+    margin-bottom: 2.25rem;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 25px rgba(20, 184, 166, 0.1);
   }
 
   .origin-logos {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
   }
 
-  .crest-logo {
-    background: #0B1220;
-    border-radius: 8px;
-    padding: 4px;
-    object-fit: contain;
+  .emblem-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .partner-logo {
+  .emblem-img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid rgba(45, 212, 191, 0.7);
+    box-shadow: 0 0 18px rgba(45, 212, 191, 0.35);
+    background: #00A896;
+    display: block;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .emblem-img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 24px rgba(45, 212, 191, 0.6);
+  }
+
+  .partner-pill {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 7px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .partner-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  }
+
+  .startic-img {
+    height: 32px;
+    width: auto;
     object-fit: contain;
-    filter: brightness(1.05);
+    display: block;
+  }
+
+  .zona-franca-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    display: block;
   }
 
   .origin-separator {
     width: 1px;
-    height: 24px;
-    background: rgba(255, 255, 255, 0.15);
+    height: 34px;
+    background: rgba(255, 255, 255, 0.16);
   }
 
   .origin-text {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     letter-spacing: 0.01em;
+    margin: 0;
+    line-height: 1.4;
   }
 
   .origin-text strong {
@@ -553,12 +609,33 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       padding: 6rem 0 3.5rem 0;
     }
 
+    .origin-banner {
+      padding: 1rem 1.25rem;
+    }
+
     .origin-logos {
-      gap: 0.75rem;
+      gap: 0.85rem;
     }
 
     .origin-separator {
       display: none;
+    }
+
+    .emblem-img {
+      width: 46px;
+      height: 46px;
+    }
+
+    .partner-pill {
+      padding: 5px 12px;
+    }
+
+    .startic-img {
+      height: 24px;
+    }
+
+    .zona-franca-img {
+      height: 30px;
     }
 
     .device-pair {
