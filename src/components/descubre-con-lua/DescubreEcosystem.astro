@@ -1,0 +1,489 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
+<section id="pilares" class="ecosystem-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-pill">Arquitectura Pedagóxica</span>
+      <h2 class="section-title">
+        Catro Pilares de Conexión <span class="gradient-text-teal">Escola · Fogar</span>
+      </h2>
+      <p class="section-subtitle">
+        Un ecosistema integral para o primeiro ciclo de educación infantil (0-3 anos) deseñado para empoderar ás persoas adultas sen expor as crianzas ao uso directo da pantalla.
+      </p>
+    </div>
+
+    <div class="pillars-grid">
+      <!-- Pilar 1: Juega con Lúa · Aula -->
+      <article class="pillar-card">
+        <div class="pillar-badge badge-teal">AULA · DOCENTES</div>
+        <h3 class="pillar-title">1. Xoga con Lúa · Aula</h3>
+        <p class="pillar-desc">
+          Concebida para a persoa docente na asamblea matinal. Estruturada en <strong>seis fases de oito minutos</strong> que dinamizan o grupo mediante a palabra, o movemento e a mirada compartida:
+        </p>
+        
+        <ul class="pillar-phases-list">
+          <li><strong>1. Benvida & Rutina:</strong> Saúdo do día e recoñecemento grupal.</li>
+          <li><strong>2. O Conto de Lúa:</strong> Narración con 30 láminas ilustradas como escenas vectoriais.</li>
+          <li><strong>3. Exploración do Léxico:</strong> 50 láminas temáticas asociadas á unidade.</li>
+          <li><strong>4. Canción a Pulso:</strong> Metrónomo rítmico visual que non satura con ruído.</li>
+          <li><strong>5. Conceptos & Matemáticas:</strong> Xogo lúdico manipulativo de clasificación.</li>
+          <li><strong>6. Ponte co Fogar:</strong> Mensaxe estruturada que cruza da aula á familia.</li>
+        </ul>
+
+        <div class="pillar-capsule-highlight">
+          <span class="highlight-icon">💡</span>
+          <div>
+            <strong>Formación · Aula Integrada:</strong> Unha cápsula formativa de 3 minutos por cada fase da asamblea para acompañar a calquera docente na metodoloxía sen manuais externos.
+          </div>
+        </div>
+
+        <div class="pillar-mockup-wrapper">
+          <img 
+            src={`${baseUrl}/assets/descubre-con-lua/aula-formacion-gl.png`} 
+            alt="Módulo de Formación para a docente na aula de Descubre con Lúa" 
+            class="pillar-preview-img"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </article>
+
+      <!-- Pilar 2: Academy · Familias -->
+      <article class="pillar-card">
+        <div class="pillar-badge badge-blue">FOGAR · FAMILIAS</div>
+        <h3 class="pillar-title">2. Academy · Familias</h3>
+        <p class="pillar-desc">
+          O soporte diario para nais, pais e titores na casa. Cápsulas concisas de <strong>tres minutos</strong> con consellos científicos sobre estimulación do desenvolvemento na primeira infancia.
+        </p>
+
+        <div class="academy-structure">
+          <div class="structure-step">
+            <span class="step-num">A</span>
+            <div>
+              <strong>Lectura Breve:</strong> Catro fragmentos claros sobre atención conxunta, rutinas e interacción.
+            </div>
+          </div>
+          <div class="structure-step">
+            <span class="step-num">B</span>
+            <div>
+              <strong>Afirmacións Guía:</strong> Síntese de aprendizaxe activa para reforzar pautas positivas.
+            </div>
+          </div>
+          <div class="structure-step">
+            <span class="step-num">C</span>
+            <div>
+              <strong>O Cierre de Lúa (luaDice):</strong> A frase final da gata que traduce o consello nun <em>xesto concreto para hoxe</em> na cociña, no parque ou na hora do baño.
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar-mockup-wrapper">
+          <img 
+            src={`${baseUrl}/assets/descubre-con-lua/academy-bloques-gl.png`} 
+            alt="Hub de bloques de formación familiar en Academy de Descubre con Lúa" 
+            class="pillar-preview-img"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </article>
+
+      <!-- Pilar 3: Calendario Escola · Fogar -->
+      <article class="pillar-card">
+        <div class="pillar-badge badge-emerald">SINCRONIZACIÓN</div>
+        <h3 class="pillar-title">3. Calendario Escola · Fogar</h3>
+        <p class="pillar-desc">
+          Unha ponte directa que abarca os <strong>dez meses do curso escolar</strong>, de setembro a xuño. Acompaña o ritmo natural das escolas infantís municipais:
+        </p>
+
+        <div class="calendar-features">
+          <div class="cal-feature-item">
+            <span class="cal-icon">🏫</span>
+            <div>
+              <strong>Rexistro da Asamblea:</strong> A docente marca cun toque o avance da asamblea do día.
+            </div>
+          </div>
+          <div class="cal-feature-item">
+            <span class="cal-icon">🏡</span>
+            <div>
+              <strong>Rexistro de 3 Minutos:</strong> A familia rexistra o xogo ou conversa realizada na casa.
+            </div>
+          </div>
+          <div class="cal-feature-item">
+            <span class="cal-icon">🔗</span>
+            <div>
+              <strong>Día Enlazado:</strong> Se escola e fogar coinciden no mesmo día, a data queda marcada con enlace especial de sincronía pedagóxica.
+            </div>
+          </div>
+          <div class="cal-feature-item">
+            <span class="cal-icon">🇬🇧</span>
+            <div>
+              <strong>Inglés de Oído:</strong> Cada mes inclúe a frase, léxico e ordes TPR en inglés gravadas con audio para que o adulto as escoite antes de decilas.
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar-mockup-wrapper">
+          <img 
+            src={`${baseUrl}/assets/descubre-con-lua/academy-lector-gl.png`} 
+            alt="Lector de contido e orientación de Descubre con Lúa" 
+            class="pillar-preview-img"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </article>
+
+      <!-- Pilar 4: Os Premios de Lúa -->
+      <article class="pillar-card">
+        <div class="pillar-badge badge-purple">GAMIFICACIÓN ÉTICA</div>
+        <h3 class="pillar-title">4. Os Premios de Lúa</h3>
+        <p class="pillar-desc">
+          Gamificación conductual dirixida con rigor absoluto: <strong>premia exclusivamente á persoa adulta</strong> polo seu compromiso coa crianza, nunca ao neno nin á nena.
+        </p>
+
+        <div class="awards-specs">
+          <div class="award-stat">
+            <span class="stat-val">6</span>
+            <span class="stat-lbl">Niveis de Mestría</span>
+          </div>
+          <div class="award-stat">
+            <span class="stat-val">9</span>
+            <span class="stat-lbl">Insignias Temáticas</span>
+          </div>
+          <div class="award-stat">
+            <span class="stat-val">6</span>
+            <span class="stat-lbl">Medallas de Calendario</span>
+          </div>
+        </div>
+
+        <div class="ethics-box">
+          <strong>Cero Adicción Infantil:</strong> A criatura de 0 a 3 anos nunca debe interactuar cunha pantalla para recibir recompensas virtuais nin picos de dopamina. A app motiva á persoa adulta (docente ou nai/pai) a manter o hábito e a constancia do diálogo presencial.
+        </div>
+
+        <div class="pillar-mockup-wrapper">
+          <img 
+            src={`${baseUrl}/assets/descubre-con-lua/premios-gl.png`} 
+            alt="Pantalla dos Premios de Lúa con niveis, XP e insignias do adulto" 
+            class="pillar-preview-img"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ecosystem-section {
+    padding: 5rem 0;
+    position: relative;
+    background: rgba(10, 15, 26, 0.4);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .section-pill {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    background: rgba(20, 184, 166, 0.12);
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    border-radius: var(--radius-full);
+    color: #2DD4BF;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.8vw, 2.8rem);
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  /* Grid Layout */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .pillar-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(16px);
+  }
+
+  .pillar-card:hover {
+    border-color: rgba(20, 184, 166, 0.35);
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(20, 184, 166, 0.12);
+    transform: translateY(-3px);
+  }
+
+  .pillar-badge {
+    align-self: flex-start;
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem;
+  }
+
+  .badge-teal {
+    background: rgba(20, 184, 166, 0.15);
+    color: #2DD4BF;
+    border: 1px solid rgba(20, 184, 166, 0.35);
+  }
+
+  .badge-blue {
+    background: rgba(14, 165, 233, 0.15);
+    color: #38BDF8;
+    border: 1px solid rgba(14, 165, 233, 0.35);
+  }
+
+  .badge-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34D399;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+  }
+
+  .badge-purple {
+    background: rgba(168, 85, 247, 0.15);
+    color: #C084FC;
+    border: 1px solid rgba(168, 85, 247, 0.35);
+  }
+
+  .pillar-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.85rem;
+  }
+
+  .pillar-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .pillar-desc strong {
+    color: var(--text-main);
+  }
+
+  .pillar-phases-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .pillar-phases-list li {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .pillar-phases-list li::before {
+    content: "•";
+    color: #2DD4BF;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+  }
+
+  .pillar-phases-list strong {
+    color: var(--text-main);
+  }
+
+  .pillar-capsule-highlight {
+    display: flex;
+    gap: 0.75rem;
+    background: rgba(20, 184, 166, 0.08);
+    border: 1px solid rgba(20, 184, 166, 0.2);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.75rem;
+  }
+
+  .pillar-capsule-highlight strong {
+    color: #2DD4BF;
+  }
+
+  /* Academy structure */
+  .academy-structure {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .structure-step {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(14, 165, 233, 0.2);
+    color: #38BDF8;
+    font-weight: 800;
+    font-size: 0.78rem;
+    flex-shrink: 0;
+  }
+
+  .structure-step strong {
+    color: var(--text-main);
+  }
+
+  /* Calendar features */
+  .calendar-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .cal-feature-item {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .cal-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .cal-feature-item strong {
+    color: var(--text-main);
+  }
+
+  /* Awards specs */
+  .awards-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .award-stat {
+    background: rgba(168, 85, 247, 0.08);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 0.5rem;
+    text-align: center;
+  }
+
+  .stat-val {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #C084FC;
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  .stat-lbl {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .ethics-box {
+    background: rgba(168, 85, 247, 0.06);
+    border-left: 3px solid #A855F7;
+    padding: 0.85rem 1rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.75rem;
+  }
+
+  .ethics-box strong {
+    color: #F3E8FF;
+  }
+
+  /* Mockup preview wrapper */
+  .pillar-mockup-wrapper {
+    margin-top: auto;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #060910;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .pillar-preview-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .pillar-card:hover .pillar-preview-img {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 960px) {
+    .pillars-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

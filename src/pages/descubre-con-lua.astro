@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactModal from '../components/cv/ContactModal.astro';
+
+import DescubreHero from '../components/descubre-con-lua/DescubreHero.astro';
+import DescubreEcosystem from '../components/descubre-con-lua/DescubreEcosystem.astro';
+import DescubrePedagogyVoice from '../components/descubre-con-lua/DescubrePedagogyVoice.astro';
+import DescubrePrivacyGates from '../components/descubre-con-lua/DescubrePrivacyGates.astro';
+import DescubreLicensingFAQ from '../components/descubre-con-lua/DescubreLicensingFAQ.astro';
+
+const pageTitle = "Descubre con Lúa · Edición Vigo | App Educativa 0-3 Anos";
+const pageDescription = "Aplicación Android educativa 100% sen conexión para escolas municipais de Vigo e familias (0-3 anos). Desenvolvida por Frank Betances en startTIC.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://FrankBetances.github.io/proyectos/descubre-con-lua#software",
+      "name": "Descubre con Lúa · Edición Vigo",
+      "operatingSystem": "Android 7.0+ (minSdk 24, targetSdk 36)",
+      "applicationCategory": "EducationalApplication",
+      "description": pageDescription,
+      "inLanguage": ["gl-ES", "es-ES"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "category": "Gratis para familias"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Frank Alberto Betances Reinoso",
+        "jobTitle": "ORL & Especialista en Saúde Dixital",
+        "url": "https://FrankBetances.github.io/proyectos/cv"
+      },
+      "sponsor": [
+        {
+          "@type": "Organization",
+          "name": "Consorcio da Zona Franca de Vigo"
+        },
+        {
+          "@type": "Organization",
+          "name": "Incubadora de Alta Tecnoloxía startTIC"
+        }
+      ],
+      "featureList": [
+        "10 unidades de aula (unha por mes de curso escolar)",
+        "11 cápsulas formativas (5 de Academy + 6 de formación docente)",
+        "1.020 locucións neuronais gravadas offline (Celtia / Proxecto Nós, Sharvard, LJSpeech)",
+        "80 láminas vectoriais debuxadas como datos (50 vocabulario + 30 escenas)",
+        "Pulso rítmico visual para nenos con audiófono ou implante coclear",
+        "Premios e gamificación ética dirixida exclusivamente á persoa adulta",
+        "Cero permisos de rede e total protección da privacidade infantil",
+        "A criatura de 0 a 3 anos non interactúa coa pantalla",
+        "Pipeline de calidade estrito con 16 gates automáticos de compilación"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://FrankBetances.github.io/proyectos/descubre-con-lua#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Por que a criatura non debe mirar nin tocar a pantalla nesta idade (0-3 anos)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As directrices da OMS e da AEP desaconsellan a exposición a pantallas en menores de 2 anos. A app é un guión instrumental para o adulto; a criatura interactúa cara a cara coa persoa que lle fala."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Como funciona o inglés na aplicación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O inglés é contido que se escoita antes de falar. O adulto preme a pastilla con voz neuronal nativa, escoita a modulación correcta e logo pronúnciaa con seguridade diante da criatura."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Que diferenza hai entre Descubre con Lúa e Valeria+ ou VIA+?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Descubre con Lúa ten finalidade exclusivamente educativa e comunitaria (0-3 anos). Non é un produto sanitario. Valeria+ é terapia domiciliaria para dificultades da linguaxe e VIA+ é un SaMD Clase IIa de diagnóstico médico."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  image="/assets/descubre-con-lua/bienvenida-gl.png"
+  keywords="Descubre con Lúa, Lúa Vigo, Escolas Infantís Vigo, startTIC, Zona Franca de Vigo, Educación Infantil 0-3 anos, Proxecto Nós, Celtia voz neuronal, Dr. Frank Betances, Aprendizaxe sen conexión, Cero pantallas"
+  jsonLd={jsonLd}
+>
+  <Header activeTab="descubre-con-lua" />
+
+  <main id="main-content">
+    <DescubreHero />
+    <DescubreEcosystem />
+    <DescubrePedagogyVoice />
+    <DescubrePrivacyGates />
+    <DescubreLicensingFAQ />
+  </main>
+
+  <Footer />
+  <ContactModal />
+</Layout>

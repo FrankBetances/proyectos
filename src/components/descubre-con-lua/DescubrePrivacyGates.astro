@@ -1,0 +1,351 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
+<section class="privacy-gates-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-pill">Enxeñaría e Seguridade</span>
+      <h2 class="section-title">
+        Privacidade Radical e <span class="gradient-text-teal">16 Gates de Calidade</span>
+      </h2>
+      <p class="section-subtitle">
+        Unha arquitectura de software estrita onde a seguridade dos menores e a integridade do código son auditadas matematicamente en cada compilación.
+      </p>
+    </div>
+
+    <div class="privacy-gates-grid">
+      <!-- Left Column: Zero-Network & Privacy by Design -->
+      <div class="privacy-col">
+        <div class="glass-card-feature">
+          <div class="feature-badge">PRIVACIDADE ABSOLUTA</div>
+          <h3 class="feature-title">Cero Conexión e Protección Infantil</h3>
+          <p class="feature-desc">
+            A aplicación non solicita nin declara <strong>nin un só permiso de rede</strong> no sistema Android. Isto é verificado no código binario final compiled mediante <code class="code-inline">aapt2</code>, non nun simple manifesto fonte que podería enganar.
+          </p>
+
+          <div class="security-points">
+            <div class="sec-item">
+              <span class="sec-icon">🔒</span>
+              <div>
+                <strong>Cero Datos da Crianza:</strong> Ningún nome, fotografía nin rexistro biométrico do menor gárdase nin se procesa.
+              </div>
+            </div>
+            <div class="sec-item">
+              <span class="sec-icon">🚫</span>
+              <div>
+                <strong>Cero SDKs de Terceiros:</strong> Sen Google Analytics, sen Firebase, sen Meta SDK nin rastrexadores publicitarios.
+              </div>
+            </div>
+            <div class="sec-item">
+              <span class="sec-icon">📱</span>
+              <div>
+                <strong>A Criatura Non Usa a Pantalla:</strong> A ferramenta serve exclusivamente para que a persoa adulta guíe o xogo interactivo presencial.
+              </div>
+            </div>
+            <div class="sec-item">
+              <span class="sec-icon">💾</span>
+              <div>
+                <strong>Persistencia 100% Local:</strong> Só se almacenan os contadores de asambleas dirixidas e racha da persoa adulta no almacenamento privado do aparello.
+              </div>
+            </div>
+          </div>
+
+          <div class="non-medical-disclaimer">
+            <strong>Finalidade Exclusivamente Educativa:</strong> Descubre con Lúa non é un produto sanitario (SaMD). Non avalía, non diagnostica e non trata ningunha patoloxía. É un recurso lúdico e didáctico para escolas infantís e fogares.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: The 16 CI Gates -->
+      <div class="gates-col">
+        <div class="glass-card-feature">
+          <div class="feature-badge badge-teal">INTEGRACIÓN CONTINUA (CI)</div>
+          <h3 class="feature-title">Pipeline de 16 Gates Automatizados</h3>
+          <p class="feature-desc">
+            Cada commit compílase e audítase mediante <code class="code-inline">tools/gates.sh</code>. Ningún binario se asina nin se publica se un só gate resulta fallido:
+          </p>
+
+          <div class="gates-scroll-list">
+            <div class="gate-row">
+              <span class="gate-status">PASS</span>
+              <div class="gate-info">
+                <strong>dart format & flutter analyze & test</strong>
+                <span>Formato rigoroso, análise estática con cero warnings e suite de tests unitarios.</span>
+              </div>
+            </div>
+
+            <div class="gate-row">
+              <span class="gate-status">PASS</span>
+              <div class="gate-info">
+                <strong>check_bundled_assets.py</strong>
+                <span>Comproba que todo recurso chamado no código viaxe empaquetado no APK.</span>
+              </div>
+            </div>
+
+            <div class="gate-row">
+              <span class="gate-status">PASS</span>
+              <div class="gate-info">
+                <strong>check_laminas.py</strong>
+                <span>Verifica que as 80 láminas se rendericen de verdade sen formas baleiras nin erros.</span>
+              </div>
+            </div>
+
+            <div class="gate-row">
+              <span class="gate-status">PASS</span>
+              <div class="gate-info">
+                <strong>check_voice_coverage.py & levels.py</strong>
+                <span>Garante que ningunha locución quede sen gravación e que o volume acústico non sature.</span>
+              </div>
+            </div>
+
+            <div class="gate-row">
+              <span class="gate-status">PASS</span>
+              <div class="gate-info">
+                <strong>check_pulse_bpm.py & markers.py</strong>
+                <span>Mide os compases directamente do son do audio para asegurar pulso exacto.</span>
+              </div>
+            </div>
+
+            <div class="gate-row">
+              <span class="gate-status">PASS</span>
+              <div class="gate-info">
+                <strong>check_no_emoji.py</strong>
+                <span>Prohibición de emojis de sistema como iconografía para evitar discrepancias visuais entre marcas.</span>
+              </div>
+            </div>
+
+            <div class="gate-row">
+              <span class="gate-status">PASS</span>
+              <div class="gate-info">
+                <strong>Auditoría de Permisos do APK</strong>
+                <span>aapt2 le o binario final compilado para verificar a ausencia total de permisos de rede.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ci-summary-pill">
+            <span>✓ Suite Rápida: 14 de 14 gates</span> · <span>✓ Run Completo Android: 16 de 16 gates</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .privacy-gates-section {
+    padding: 5rem 0;
+    position: relative;
+    background: rgba(10, 15, 26, 0.5);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .section-pill {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    background: rgba(20, 184, 166, 0.12);
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    border-radius: var(--radius-full);
+    color: #2DD4BF;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.8vw, 2.8rem);
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  /* Grid layout */
+  .privacy-gates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .glass-card-feature {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    backdrop-filter: blur(16px);
+  }
+
+  .feature-badge {
+    align-self: flex-start;
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem;
+    background: rgba(239, 68, 68, 0.15);
+    color: #F87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+
+  .badge-teal {
+    background: rgba(20, 184, 166, 0.15);
+    color: #2DD4BF;
+    border: 1px solid rgba(20, 184, 166, 0.3);
+  }
+
+  .feature-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.85rem;
+  }
+
+  .feature-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .code-inline {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #2DD4BF;
+  }
+
+  /* Security points */
+  .security-points {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .sec-item {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .sec-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .sec-item strong {
+    color: var(--text-main);
+  }
+
+  .non-medical-disclaimer {
+    margin-top: auto;
+    background: rgba(20, 184, 166, 0.06);
+    border-left: 3px solid #2DD4BF;
+    padding: 0.85rem 1rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .non-medical-disclaimer strong {
+    color: #2DD4BF;
+  }
+
+  /* Gates list */
+  .gates-scroll-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 1.5rem;
+    max-height: 380px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+
+  .gate-row {
+    display: flex;
+    gap: 0.85rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    padding: 0.65rem 0.85rem;
+  }
+
+  .gate-status {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34D399;
+    font-weight: 800;
+    font-size: 0.68rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  .gate-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.82rem;
+  }
+
+  .gate-info strong {
+    color: var(--text-main);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+  }
+
+  .gate-info span {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .ci-summary-pill {
+    margin-top: auto;
+    text-align: center;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: var(--radius-full);
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    color: #34D399;
+    font-weight: 600;
+  }
+
+  @media (max-width: 960px) {
+    .privacy-gates-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

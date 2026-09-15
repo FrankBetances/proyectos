@@ -1,0 +1,409 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
+<section class="pedagogy-voice-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-pill">Rigor Acústico e Pedagóxico</span>
+      <h2 class="section-title">
+        Voz Neuronal, Pulso Visual e <span class="gradient-text-teal">Ilustración Vectorial</span>
+      </h2>
+      <p class="section-subtitle">
+        Tecnoloxía invisible que serve á persoa que acompaña: modelos de voz xerados en compilación, sincronización rítmica accesible e láminas optimizadas.
+      </p>
+    </div>
+
+    <!-- 3 Core Technical & Clinical Features -->
+    <div class="features-trio">
+      <!-- Feature 1: Voz Neuronal -->
+      <div class="trio-card">
+        <div class="card-icon-wrapper icon-teal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="23"></line>
+            <line x1="8" y1="23" x2="16" y2="23"></line>
+          </svg>
+        </div>
+        <h3 class="card-title">1.020 Locucións Neuronais Gravadas</h3>
+        <p class="card-text">
+          O audio xenérase durante a compilación mediante modelos neuronais de vangarda e viaxa empaquetado no binario. <strong>Ningún modelo de IA corre no dispositivo móbil</strong>, garantindo resposta instantánea e cero consumo excesivo de batería.
+        </p>
+
+        <div class="voice-models-box">
+          <div class="model-row">
+            <span class="lang-tag">Galego</span>
+            <span class="model-name"><strong>Celtia</strong> (Proxecto Nós · USC)</span>
+          </div>
+          <div class="model-row">
+            <span class="lang-tag">Castelán</span>
+            <span class="model-name"><strong>Sharvard</strong> (Piper Voices)</span>
+          </div>
+          <div class="model-row">
+            <span class="lang-tag">Inglés</span>
+            <span class="model-name"><strong>LJSpeech</strong> (Apoio auditivo docente)</span>
+          </div>
+        </div>
+
+        <div class="rule-box">
+          <strong>Integridade Absoluta:</strong> Se un texto non dispón de gravación no paquete, o botón de altofalante non se pinta. O identificador do son é o hash do seu propio texto: se cambia unha letra, a compilación detecta a gravación pendente.
+        </div>
+      </div>
+
+      <!-- Feature 2: Pulso Visual -->
+      <div class="trio-card">
+        <div class="card-icon-wrapper icon-orange">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h3 class="card-title">O Pulso Vese, Non se Ouve</h3>
+        <p class="card-text">
+          O metrónomo da canción a compás é <strong>exclusivamente visual</strong>. Non é unha elección caprichosa de deseño, senón unha esixencia clínica para a inclusión:
+        </p>
+
+        <div class="clinical-reasoning">
+          <div class="reason-bullet">
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>Respecto á Diversidade Auditiva:</strong> Moitas crianzas empregan audiófonos ou implantes cocleares. Un metrónomo sonoro estridente competiría coa voz humana que precisan escoitar e imitar.
+            </div>
+          </div>
+          <div class="reason-bullet">
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>Marcas Naturais na Letra:</strong> Os tempos do compás derivan directamente dos marcadores asterisco (*) no texto pedagóxico, asegurando que a persoa docente sincronice a lectura co ritmo sen desfasamento.
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-metronome-demo">
+          <div class="pulse-bar">
+            <span class="pulse-tick active">1</span>
+            <span class="pulse-tick">2</span>
+            <span class="pulse-tick">3</span>
+            <span class="pulse-tick">4</span>
+          </div>
+          <span class="pulse-label">Compás visual rítmico non invasivo</span>
+        </div>
+      </div>
+
+      <!-- Feature 3: Láminas vectoriales -->
+      <div class="trio-card">
+        <div class="card-icon-wrapper icon-blue">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+        </div>
+        <h3 class="card-title">80 Láminas Propias Debuxadas como Datos</h3>
+        <p class="card-text">
+          Ilustracións orixinais de alta resolución integradas directamente como estruturas de código, sen ficheiros externos vulnerables nin renderizados lentos:
+        </p>
+
+        <div class="laminas-stats">
+          <div class="lamina-stat-item">
+            <span class="stat-number">50</span>
+            <span class="stat-text">Láminas de Léxico Contextualizado para traballar obxectos, animais, accións e emocións.</span>
+          </div>
+          <div class="lamina-stat-item">
+            <span class="stat-number">30</span>
+            <span class="stat-text">Escenas do Conto de Lúa que narran as aventuras mensuais ao longo do curso escolar.</span>
+          </div>
+        </div>
+
+        <div class="lua-grid-note">
+          <strong>A gata Lúa como símbolo:</strong> Lúa ríndese sempre desde a mesma rella matricial de caracteres oficial, preservando a identidade visual corporativa en iconas, pantallas e materiais impresos.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pedagogy-voice-section {
+    padding: 5rem 0;
+    position: relative;
+    background: #07090E;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .section-pill {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    background: rgba(20, 184, 166, 0.12);
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    border-radius: var(--radius-full);
+    color: #2DD4BF;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.8vw, 2.8rem);
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  /* Features Trio */
+  .features-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+
+  .trio-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(16px);
+  }
+
+  .trio-card:hover {
+    border-color: rgba(20, 184, 166, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6);
+  }
+
+  .card-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .icon-teal {
+    background: rgba(20, 184, 166, 0.12);
+    color: #2DD4BF;
+    border: 1px solid rgba(20, 184, 166, 0.3);
+  }
+
+  .icon-orange {
+    background: rgba(249, 115, 22, 0.12);
+    color: #FB923C;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+  }
+
+  .icon-blue {
+    background: rgba(14, 165, 233, 0.12);
+    color: #38BDF8;
+    border: 1px solid rgba(14, 165, 233, 0.3);
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .card-text {
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-text strong {
+    color: var(--text-main);
+  }
+
+  /* Voice models box */
+  .voice-models-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .model-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+  }
+
+  .lang-tag {
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: rgba(20, 184, 166, 0.15);
+    color: #2DD4BF;
+    font-weight: 700;
+    font-size: 0.75rem;
+  }
+
+  .model-name {
+    color: var(--text-muted);
+  }
+
+  .model-name strong {
+    color: var(--text-main);
+  }
+
+  .rule-box {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    background: rgba(20, 184, 166, 0.06);
+    border-left: 3px solid #2DD4BF;
+    padding: 0.75rem 0.85rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    line-height: 1.5;
+    margin-top: auto;
+  }
+
+  .rule-box strong {
+    color: #2DD4BF;
+  }
+
+  /* Clinical reasoning */
+  .clinical-reasoning {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .reason-bullet {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .check-icon {
+    color: #FB923C;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .reason-bullet strong {
+    color: var(--text-main);
+  }
+
+  .visual-metronome-demo {
+    margin-top: auto;
+    background: rgba(249, 115, 22, 0.06);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .pulse-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pulse-tick {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .pulse-tick.active {
+    background: #FB923C;
+    color: #0B0E14;
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.6);
+  }
+
+  .pulse-label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+
+  /* Laminas stats */
+  .laminas-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lamina-stat-item {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 0.85rem;
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #38BDF8;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .stat-text {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .lua-grid-note {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    background: rgba(14, 165, 233, 0.06);
+    border-left: 3px solid #38BDF8;
+    padding: 0.75rem 0.85rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    line-height: 1.5;
+    margin-top: auto;
+  }
+
+  .lua-grid-note strong {
+    color: #38BDF8;
+  }
+
+  @media (max-width: 960px) {
+    .features-trio {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

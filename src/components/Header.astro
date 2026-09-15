@@ -1,6 +1,6 @@
 ---
 interface Props {
-  activeTab?: 'home' | 'cv' | 'via' | 'earlify' | 'quisqueya' | 'lua';
+  activeTab?: 'home' | 'cv' | 'via' | 'earlify' | 'quisqueya' | 'lua' | 'descubre-con-lua';
 }
 
 const { activeTab = 'home' } = Astro.props;
@@ -21,6 +21,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     </a>
 
     <nav class="nav-links" id="main-navigation" aria-label="Navegación principal">
+      <a href={`${baseUrl}/descubre-con-lua`} class={activeTab === 'descubre-con-lua' ? 'active' : ''}>
+        <span class="nav-pill nav-teal">Descubre con Lúa</span>
+      </a>
       <a href={`${baseUrl}/earlify`} class={activeTab === 'earlify' ? 'active' : ''}>
         <span class="nav-pill nav-purple">Earlify Health</span>
       </a>
@@ -183,6 +186,19 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     font-size: 0.8rem;
     font-weight: 600;
     transition: all 0.2s ease;
+  }
+
+  .nav-teal {
+    background: rgba(20, 184, 166, 0.15);
+    color: #2DD4BF;
+    border: 1px solid rgba(20, 184, 166, 0.35);
+  }
+
+  .nav-teal:hover,
+  .active .nav-teal {
+    background: rgba(20, 184, 166, 0.35);
+    color: #F0FDFA;
+    border-color: rgba(20, 184, 166, 0.7);
   }
 
   .nav-purple {
