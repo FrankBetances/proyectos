@@ -1,0 +1,202 @@
+---
+// DengueCTA.astro - Llamada a la acción cívica, canales y gobernanza del proyecto
+---
+
+<section class="dengue-cta-section" id="contacto">
+  <div class="container">
+    <div class="cta-banner">
+      <div class="cta-inner">
+        <div class="cta-badge font-mono">
+          <span>PARTICIPACIÓN CIUDADANA Y SALUD PÚBLICA</span>
+        </div>
+
+        <h2 class="cta-title">
+          Únete a la Red de Vigilancia Activa en <span class="gradient-text-red">Telegram</span>
+        </h2>
+
+        <p class="cta-lead">
+          Reportar un criadero en tu calle toma menos de 30 segundos. Si presentas fiebre, recibe orientación clínica y signos de alarma al instante sin registrar datos personales.
+        </p>
+
+        <div class="cta-buttons-row">
+          <a href="https://t.me/AlertaDengueRDbot" target="_blank" rel="noopener noreferrer" class="btn-cta-telegram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+            </svg>
+            <span>Iniciar Bot @AlertaDengueRDbot</span>
+          </a>
+
+          <a href="https://x.com/AlertaDengueRD" target="_blank" rel="noopener noreferrer" class="btn-cta-x">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            <span>Seguir en X (@AlertaDengueRD)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel de Gobernanza y Créditos Institucionales -->
+    <div class="governance-grid">
+      <div class="gov-card">
+        <span class="gov-label font-mono">COORDINACIÓN Y DESARROLLO</span>
+        <h3 class="gov-name">Dr. Frank Alberto Betances Reinoso</h3>
+        <p class="gov-role">Médico Otorrinolaringólogo Infantil & Especialista en Salud Digital</p>
+        <p class="gov-detail">Co-Investigador Principal FONDOCYT · Fundador de Earlify Health & Plataforma Valeria+</p>
+      </div>
+
+      <div class="gov-card">
+        <span class="gov-label font-mono">EQUIPO DE INVESTIGACIÓN MÉDICA</span>
+        <h3 class="gov-name">Estudiantes de Medicina UCATECI</h3>
+        <p class="gov-role">Universidad Católica del Cibao · La Vega, República Dominicana</p>
+        <p class="gov-detail">Validación comunitaria en terreno, seguimiento epidemiológico y sensibilización en centros de salud.</p>
+      </div>
+
+      <div class="gov-card">
+        <span class="gov-label font-mono">MARCO LEGAL & BIOÉTICA</span>
+        <h3 class="gov-name">Ley 172-13 sobre Protección de Datos</h3>
+        <p class="gov-role">Confidencialidad Médica y Vigilancia Sanitaria No Invasiva</p>
+        <p class="gov-detail">Este sistema complementa la vigilancia epidemiológica oficial del Ministerio de Salud Pública (MISPAS) sin sustituir la consulta médica profesional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dengue-cta-section {
+    padding: 5.5rem 0 4rem;
+    background: #0B0E17;
+  }
+
+  .cta-banner {
+    background: radial-gradient(circle at 50% 30%, rgba(239, 68, 68, 0.15) 0%, rgba(15, 23, 42, 0.95) 75%);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 3.5rem 2rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .cta-inner {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .cta-badge {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: var(--radius-full);
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #F87171;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+  }
+
+  .cta-lead {
+    font-size: 1.08rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2.25rem;
+  }
+
+  .cta-buttons-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .btn-cta-telegram {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.95rem 2rem;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, #EF4444 0%, #B91C1C 100%);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+    transition: all 0.25s ease;
+  }
+
+  .btn-cta-telegram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(239, 68, 68, 0.6);
+  }
+
+  .btn-cta-x {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.95rem 1.85rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.98rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-cta-x:hover {
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateY(-2px);
+  }
+
+  /* Governance Grid */
+  .governance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .gov-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 1.75rem 1.5rem;
+  }
+
+  .gov-label {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .gov-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.35rem;
+  }
+
+  .gov-role {
+    font-size: 0.88rem;
+    color: var(--accent-cyan);
+    margin-bottom: 0.6rem;
+  }
+
+  .gov-detail {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+</style>

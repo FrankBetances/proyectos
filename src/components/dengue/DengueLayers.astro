@@ -1,0 +1,260 @@
+---
+// DengueLayers.astro - Explicación de las dos capas desacopladas del proyecto
+---
+
+<section class="dengue-layers-section" id="capas">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-eyebrow font-mono">ARQUITECTURA DE VIGILANCIA DUAL</span>
+      <h2 class="section-title">
+        Dos Capas Separadas <span class="gradient-text-red">por Diseño</span>
+      </h2>
+      <p class="section-lead">
+        Para garantizar la máxima utilidad operativa municipal sin comprometer la confidencialidad médica, AlertaDengue separa estrictamente el mapa ambiental de criaderos del monitoreo epidemiológico de fiebre.
+      </p>
+    </div>
+
+    <div class="layers-grid">
+      <!-- CAPA 1: CRIADEROS -->
+      <div class="layer-card layer-criaderos">
+        <div class="layer-badge">
+          <span class="badge-icon">🪣</span>
+          <span class="badge-text font-mono">CAPA 1 · PÚBLICA & OPERATIVA</span>
+        </div>
+
+        <h3 class="layer-title">Vigilancia de Criaderos</h3>
+        <p class="layer-desc">
+          Recoge reportes ciudadanos geolocalizados de acumulación de agua estancada, neumáticos o vertederos. Es información de acción directa para el Ayuntamiento y brigadas de saneamiento ambiental.
+        </p>
+
+        <ul class="layer-features">
+          <li>
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            <div>
+              <strong>Validación Cruzada a 30 Metros:</strong>
+              <span>Un reporte se valida cuando otro usuario lo confirma en un radio de 30m o un validador comunitario lo verifica.</span>
+            </div>
+          </li>
+          <li>
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            <div>
+              <strong>Fotografía Opcional y Coordenadas:</strong>
+              <span>Registra latitud y longitud redondeadas a 4 decimales. Fotos en carpeta privada de Drive.</span>
+            </div>
+          </li>
+          <li>
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            <div>
+              <strong>Cero Datos de Salud:</strong>
+              <span>No recopila ningún dato clínico, haciendo su publicación y gestión 100% segura para las autoridades locales.</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="layer-footer">
+          <span class="layer-tag">Canal: Telegram / Web</span>
+          <span class="layer-tag">Estado: Pendiente / Validado / Atendido</span>
+        </div>
+      </div>
+
+      <!-- CAPA 2: PROCESOS FEBRILES -->
+      <div class="layer-card layer-fiebre">
+        <div class="layer-badge">
+          <span class="badge-icon">🌡️</span>
+          <span class="badge-text font-mono">CAPA 2 · ANÓNIMA & CLÍNICA</span>
+        </div>
+
+        <h3 class="layer-title">Monitoreo de Procesos Febriles</h3>
+        <p class="layer-desc">
+          Notificaciones ciudadanas anónimas de fiebre para detectar zonas comunitarias en tensión antes de que colapsen las urgencias hospitalarias. Devuelve signos de alarma inmediatos al paciente.
+        </p>
+
+        <ul class="layer-features">
+          <li>
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            <div>
+              <strong>Privacidad Estricta (Ley 172-13):</strong>
+              <span>Hash SHA-256 con sal del ID de usuario. Las coordenadas GPS se descartan inmediatamente tras asignar el sector territorial.</span>
+            </div>
+          </li>
+          <li>
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            <div>
+              <strong>Supresión de Celdas Pequeñas (k &ge; 5):</strong>
+              <span>Los recuentos menores a 5 nunca se publican para imposibilitar cualquier reidentificación de pacientes.</span>
+            </div>
+          </li>
+          <li>
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            <div>
+              <strong>Umbrales Estadísticos de Poisson:</strong>
+              <span>Alerta de vigilancia si \(N_7 > \mu + 1\sigma\) y de tensión prioritaria si \(N_7 > \mu + 2\sigma\), comparado con hasta 8 ventanas previas.</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="layer-footer">
+          <span class="layer-tag">Algoritmo: Poisson + DE</span>
+          <span class="layer-tag">Respuesta: Signos de alarma en tiempo real</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dengue-layers-section {
+    padding: 5.5rem 0;
+    background: #0B0E17;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .section-header {
+    max-width: 780px;
+    margin: 0 auto 3.5rem;
+  }
+
+  .section-eyebrow {
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .section-lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .layers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+
+  .layer-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .layer-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .layer-criaderos:hover {
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.1);
+  }
+
+  .layer-fiebre:hover {
+    border-color: rgba(239, 68, 68, 0.4);
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.1);
+  }
+
+  .layer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    align-self: flex-start;
+    margin-bottom: 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  .layer-criaderos .badge-text { color: #FCD34D; }
+  .layer-fiebre .badge-text { color: #FCA5A5; }
+
+  .layer-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+    color: var(--text-main);
+  }
+
+  .layer-desc {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .layer-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  .layer-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.92rem;
+  }
+
+  .layer-criaderos .check-icon {
+    color: #F59E0B;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+
+  .layer-fiebre .check-icon {
+    color: #EF4444;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+
+  .layer-features strong {
+    display: block;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .layer-features span {
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .layer-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .layer-tag {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  @media (max-width: 640px) {
+    .layers-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

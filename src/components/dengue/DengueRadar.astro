@@ -1,0 +1,609 @@
+---
+// DengueRadar.astro - Radar Geoespacial Interactivo del Piloto La Vega
+---
+
+<section class="dengue-radar-section" id="radar">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-950/60 border border-red-500/30 rounded-full mb-3">
+        <span class="w-2 h-2 rounded-full bg-alert-hemodynamic animate-ping"></span>
+        <span class="font-mono text-xs text-red-400 font-bold uppercase tracking-wider">GEO-TELEMETRÍA EN TIEMPO REAL</span>
+      </div>
+      <h2 class="section-title">
+        Radar de Zonas y Sectores <span class="gradient-text-red">Piloto La Vega</span>
+      </h2>
+      <p class="section-lead">
+        Capa territorial de 9 sectores provisionales calculada mediante polígonos de Voronoi sobre nodos OSM. Detección automatizada de zonas en tensión epidemiológica y focos de criaderos comunitarios.
+      </p>
+    </div>
+
+    <!-- Panel Interactivo de Control Geoespacial -->
+    <div class="radar-console">
+      <!-- Selector de Sectores (Columna Izquierda) -->
+      <div class="sectors-sidebar">
+        <div class="sidebar-top">
+          <span class="font-mono text-xs text-text-dim">SECTORES ACTIVOS (9)</span>
+          <button id="btn-detect-local" class="btn-geo-detect" title="Detectar sector localmente sin enviar coordenadas">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>Mi Zona (Local)</span>
+          </button>
+        </div>
+
+        <div id="local-geo-msg" class="local-msg-box hidden font-mono text-xs"></div>
+
+        <div class="sectors-list" role="tablist">
+          <!-- Sector 1: Arenoso -->
+          <button class="sector-tab active" data-sector="ARENOSO" data-name="Arenoso" data-level="tension" data-n7="14" data-criaderos="9" data-lat="19.242" data-lon="-70.528" role="tab">
+            <div class="sector-tab-main">
+              <span class="sector-name">Arenoso</span>
+              <span class="pill-status pill-tension">Tensión</span>
+            </div>
+            <div class="sector-tab-meta font-mono">
+              <span>N7: 14 reportes</span>
+              <span>•</span>
+              <span>Criaderos: 9</span>
+            </div>
+          </button>
+
+          <!-- Sector 2: Don Bosco -->
+          <button class="sector-tab" data-sector="DON_BOSCO" data-name="Don Bosco" data-level="vigilancia" data-n7="8" data-criaderos="5" data-lat="19.215" data-lon="-70.526" role="tab">
+            <div class="sector-tab-main">
+              <span class="sector-name">Don Bosco</span>
+              <span class="pill-status pill-vigilancia">Vigilancia</span>
+            </div>
+            <div class="sector-tab-meta font-mono">
+              <span>N7: 8 reportes</span>
+              <span>•</span>
+              <span>Criaderos: 5</span>
+            </div>
+          </button>
+
+          <!-- Sector 3: El Hatico -->
+          <button class="sector-tab" data-sector="EL_HATICO" data-name="El Hatico" data-level="tension" data-n7="11" data-criaderos="7" data-lat="19.227" data-lon="-70.548" role="tab">
+            <div class="sector-tab-main">
+              <span class="sector-name">El Hatico</span>
+              <span class="pill-status pill-tension">Tensión</span>
+            </div>
+            <div class="sector-tab-meta font-mono">
+              <span>N7: 11 reportes</span>
+              <span>•</span>
+              <span>Criaderos: 7</span>
+            </div>
+          </button>
+
+          <!-- Sector 4: Juan Pablo Duarte -->
+          <button class="sector-tab" data-sector="JUAN_PABLO_DUARTE" data-name="Juan Pablo Duarte" data-level="vigilancia" data-n7="7" data-criaderos="4" data-lat="19.212" data-lon="-70.545" role="tab">
+            <div class="sector-tab-main">
+              <span class="sector-name">Juan Pablo Duarte</span>
+              <span class="pill-status pill-vigilancia">Vigilancia</span>
+            </div>
+            <div class="sector-tab-meta font-mono">
+              <span>N7: 7 reportes</span>
+              <span>•</span>
+              <span>Criaderos: 4</span>
+            </div>
+          </button>
+
+          <!-- Sector 5: La Laguna -->
+          <button class="sector-tab" data-sector="LA_LAGUNA" data-name="La Laguna" data-level="normal" data-n7="< 5" data-criaderos="3" data-lat="19.243" data-lon="-70.552" role="tab">
+            <div class="sector-tab-main">
+              <span class="sector-name">La Laguna</span>
+              <span class="pill-status pill-normal">Normal</span>
+            </div>
+            <div class="sector-tab-meta font-mono">
+              <span>N7: &lt; 5 (Supresión)</span>
+              <span>•</span>
+              <span>Criaderos: 3</span>
+            </div>
+          </button>
+
+          <!-- Sector 6: La Sabana -->
+          <button class="sector-tab" data-sector="LA_SABANA" data-name="La Sabana" data-level="normal" data-n7="< 5" data-criaderos="2" data-lat="19.211" data-lon="-70.512" role="tab">
+            <div class="sector-tab-main">
+              <span class="sector-name">La Sabana</span>
+              <span class="pill-status pill-normal">Normal</span>
+            </div>
+            <div class="sector-tab-meta font-mono">
+              <span>N7: &lt; 5 (Supresión)</span>
+              <span>•</span>
+              <span>Criaderos: 2</span>
+            </div>
+          </button>
+
+          <!-- Sector 7: Las Maras -->
+          <button class="sector-tab" data-sector="LAS_MARAS" data-name="Las Maras" data-level="vigilancia" data-n7="6" data-criaderos="5" data-lat="19.238" data-lon="-70.505" role="tab">
+            <div class="sector-tab-main">
+              <span class="sector-name">Las Maras</span>
+              <span class="pill-status pill-vigilancia">Vigilancia</span>
+            </div>
+            <div class="sector-tab-meta font-mono">
+              <span>N7: 6 reportes</span>
+              <span>•</span>
+              <span>Criaderos: 5</span>
+            </div>
+          </button>
+
+          <!-- Sector 8: Los Pomos -->
+          <button class="sector-tab" data-sector="LOS_POMOS" data-name="Los Pomos" data-level="normal" data-n7="< 5" data-criaderos="2" data-lat="19.216" data-lon="-70.504" role="tab">
+            <div class="sector-tab-main">
+              <span class="sector-name">Los Pomos</span>
+              <span class="pill-status pill-normal">Normal</span>
+            </div>
+            <div class="sector-tab-meta font-mono">
+              <span>N7: &lt; 5 (Supresión)</span>
+              <span>•</span>
+              <span>Criaderos: 2</span>
+            </div>
+          </button>
+
+          <!-- Sector 9: San Antonio -->
+          <button class="sector-tab" data-sector="SAN_ANTONIO" data-name="San Antonio" data-level="tension" data-n7="13" data-criaderos="8" data-lat="19.225" data-lon="-70.525" role="tab">
+            <div class="sector-tab-main">
+              <span class="sector-name">San Antonio</span>
+              <span class="pill-status pill-tension">Tensión</span>
+            </div>
+            <div class="sector-tab-meta font-mono">
+              <span>N7: 13 reportes</span>
+              <span>•</span>
+              <span>Criaderos: 8</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Consola de Telemetría del Sector Seleccionado (Columna Derecha) -->
+      <div class="sector-telemetry-view">
+        <div class="view-header">
+          <div>
+            <span class="font-mono text-xs text-text-dim">DETALLE DE VIGILANCIA SECTORIAL</span>
+            <h3 id="detail-sector-name" class="detail-name">Arenoso</h3>
+          </div>
+          <div id="detail-badge" class="pill-status pill-tension">
+            ZONA PRIORITARIA EN TENSIÓN
+          </div>
+        </div>
+
+        <!-- Telemetría Dinámica -->
+        <div class="detail-stats-grid font-mono">
+          <div class="detail-stat-box">
+            <span class="stat-label">NOTIFICACIONES 7 DÍAS (N7)</span>
+            <span id="detail-n7" class="stat-val text-red">14</span>
+            <span class="stat-sub">Umbral superado: &gt; &mu; + 2&sigma;</span>
+          </div>
+
+          <div class="detail-stat-box">
+            <span class="stat-label">CRIADEROS CONFIRMADOS</span>
+            <span id="detail-criaderos" class="stat-val text-amber">9</span>
+            <span class="stat-sub">Validación comunitaria 30m</span>
+          </div>
+
+          <div class="detail-stat-box">
+            <span class="stat-label">COORDENADAS CENTROIDE</span>
+            <span id="detail-coords" class="stat-val text-cyan">19.242° N, 70.528° W</span>
+            <span class="stat-sub">Geometría Voronoi (OSM)</span>
+          </div>
+
+          <div class="detail-stat-box">
+            <span class="stat-label">NIVEL DE PRIVACIDAD</span>
+            <span class="stat-val text-emerald">Cumple k &ge; 5</span>
+            <span class="stat-sub">Conforme a Ley 172-13</span>
+          </div>
+        </div>
+
+        <!-- Directiva de Acción y Contingencia Sanitaria -->
+        <div class="contingency-box">
+          <h4 class="contingency-title font-mono text-xs uppercase text-text-dim flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            DIRECTIVA OPERATIVA Y RECOMENDACIÓN PARA ESTE SECTOR
+          </h4>
+          <p id="detail-directive" class="contingency-text">
+            <strong>Prioridad Alta de Intervención:</strong> Se recomienda fumigación focalizada y descacharrización inmediata coordinada con el Ayuntamiento de La Vega. Población vecinal debe reforzar el uso de mosquiteros y tapado hermético de tinacos y tanques de agua con cloro untado.
+          </p>
+        </div>
+
+        <!-- Canales Directos -->
+        <div class="detail-actions">
+          <a href="https://t.me/AlertaDengueRDbot" target="_blank" rel="noopener noreferrer" class="btn-dengue-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/></svg>
+            <span>Reportar Criadero en este Sector (@AlertaDengueRDbot)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dengue-radar-section {
+    padding: 5.5rem 0;
+    background: radial-gradient(circle at 50% 10%, rgba(245, 158, 11, 0.05) 0%, rgba(7, 9, 14, 0.98) 75%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .section-header {
+    max-width: 800px;
+    margin: 0 auto 3.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .section-lead {
+    font-size: 1.08rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* Radar Console */
+  .radar-console {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 1.75rem;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    backdrop-filter: blur(16px);
+  }
+
+  /* Sidebar */
+  .sectors-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sidebar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .btn-geo-detect {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: var(--accent-cyan);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-geo-detect:hover {
+    background: rgba(0, 242, 254, 0.2);
+  }
+
+  .local-msg-box {
+    padding: 0.6rem 0.8rem;
+    border-radius: var(--radius-sm);
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    color: var(--accent-cyan);
+    line-height: 1.4;
+  }
+
+  .sectors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 520px;
+    overflow-y: auto;
+    padding-right: 0.35rem;
+  }
+
+  .sectors-list::-webkit-scrollbar {
+    width: 4px;
+  }
+  .sectors-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+  }
+
+  .sector-tab {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .sector-tab:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .sector-tab.active {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.45);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+  }
+
+  .sector-tab-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sector-name {
+    font-family: var(--font-heading);
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .sector-tab-meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .pill-status {
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .pill-tension {
+    background: rgba(239, 68, 68, 0.2);
+    color: #FCA5A5;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+  }
+
+  .pill-vigilancia {
+    background: rgba(245, 158, 11, 0.2);
+    color: #FCD34D;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+  }
+
+  .pill-normal {
+    background: rgba(16, 185, 129, 0.15);
+    color: #6EE7B7;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
+  /* Telemetry View */
+  .sector-telemetry-view {
+    background: rgba(7, 9, 14, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.75rem;
+  }
+
+  .view-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 1.25rem;
+  }
+
+  .detail-name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.1;
+    margin-top: 0.2rem;
+  }
+
+  .detail-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .detail-stat-box {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    padding: 1.1rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .stat-val {
+    font-size: 1.45rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-val.text-red { color: #EF4444; }
+  .stat-val.text-amber { color: #F59E0B; }
+  .stat-val.text-cyan { color: var(--accent-cyan); }
+  .stat-val.text-emerald { color: #10B981; }
+
+  .stat-sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    display: block;
+  }
+
+  .contingency-box {
+    background: rgba(239, 68, 68, 0.06);
+    border-left: 4px solid #EF4444;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .contingency-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .contingency-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .contingency-text strong {
+    color: var(--text-main);
+  }
+
+  .detail-actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn-dengue-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.65rem;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, #EF4444 0%, #B91C1C 100%);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .btn-dengue-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(239, 68, 68, 0.4);
+  }
+
+  @media (max-width: 900px) {
+    .radar-console {
+      grid-template-columns: 1fr;
+    }
+
+    .detail-stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  // Directivas de contingencia por nivel
+  const DIRECTIVES = {
+    tension: "Prioridad Alta de Intervención: Se recomienda fumigación focalizada y descacharrización comunitaria inmediata coordinada con el Ayuntamiento de La Vega. Población vecinal debe reforzar el uso de mosquiteros y tapado hermético de tinacos y tanques de agua con cloro untado.",
+    vigilancia: "Vigilancia Epidemiológica Activa: Reportes febriles por encima del promedio móvil. Brigadas deben inspeccionar patios, gomas acumuladas y canaletas. Evitar automedicación con AINEs en la población febril.",
+    normal: "Situación Basal Estable: Sin incremento significativo de reportes de fiebre esta semana. Continuar con medidas domiciliarias habituales de volteo de envases y lavado periódico de recipientes."
+  };
+
+  const BADGES = {
+    tension: { text: "ZONA PRIORITARIA EN TENSIÓN", class: "pill-status pill-tension" },
+    vigilancia: { text: "SECTOR EN VIGILANCIA ACTIVA", class: "pill-status pill-vigilancia" },
+    normal: { text: "ESTADO BASAL NORMAL", class: "pill-status pill-normal" }
+  };
+
+  const tabs = document.querySelectorAll('.sector-tab');
+  const detailName = document.getElementById('detail-sector-name');
+  const detailBadge = document.getElementById('detail-badge');
+  const detailN7 = document.getElementById('detail-n7');
+  const detailCriaderos = document.getElementById('detail-criaderos');
+  const detailCoords = document.getElementById('detail-coords');
+  const detailDirective = document.getElementById('detail-directive');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const name = tab.getAttribute('data-name') || '';
+      const level = (tab.getAttribute('data-level') || 'normal') as keyof typeof DIRECTIVES;
+      const n7 = tab.getAttribute('data-n7') || '';
+      const criaderos = tab.getAttribute('data-criaderos') || '';
+      const lat = tab.getAttribute('data-lat') || '';
+      const lon = tab.getAttribute('data-lon') || '';
+
+      if (detailName) detailName.textContent = name;
+      if (detailN7) detailN7.textContent = n7;
+      if (detailCriaderos) detailCriaderos.textContent = criaderos;
+      if (detailCoords) detailCoords.textContent = `${lat}° N, ${lon}° W`;
+
+      if (detailBadge) {
+        detailBadge.textContent = BADGES[level]?.text || 'DESCONOCIDO';
+        detailBadge.className = BADGES[level]?.class || 'pill-status';
+      }
+
+      if (detailDirective) {
+        detailDirective.innerHTML = `<strong>${level === 'tension' ? 'Prioridad Alta' : level === 'vigilancia' ? 'Vigilancia Activa' : 'Situación Estable'}:</strong> ${DIRECTIVES[level]}`;
+      }
+    });
+  });
+
+  // Detección local de sector (privada e inocua)
+  const btnDetect = document.getElementById('btn-detect-local');
+  const geoMsg = document.getElementById('local-geo-msg');
+
+  if (btnDetect && geoMsg) {
+    btnDetect.addEventListener('click', () => {
+      geoMsg.classList.remove('hidden');
+      geoMsg.textContent = "Calculando sector más cercano en tu dispositivo...";
+
+      if (!navigator.geolocation) {
+        geoMsg.textContent = "Geolocalización no disponible en este navegador.";
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const userLat = pos.coords.latitude;
+          const userLon = pos.coords.longitude;
+
+          // Encontrar el sector más cercano entre los 9 sectores de La Vega
+          let closestTab: Element | null = null;
+          let minDist = Infinity;
+
+          tabs.forEach(tab => {
+            const lat = parseFloat(tab.getAttribute('data-lat') || '0');
+            const lon = parseFloat(tab.getAttribute('data-lon') || '0');
+            const dist = Math.hypot(userLat - lat, userLon - lon);
+            if (dist < minDist) {
+              minDist = dist;
+              closestTab = tab;
+            }
+          });
+
+          if (closestTab) {
+            (closestTab as HTMLElement).click();
+            const sectorName = closestTab.getAttribute('data-name');
+            geoMsg.innerHTML = `✓ Sector detectado en tu dispositivo: <strong>${sectorName}</strong>. (Tus coordenadas no fueron enviadas al servidor).`;
+          }
+        },
+        (err) => {
+          geoMsg.textContent = "Permiso de ubicación denegado o no disponible. Puedes seleccionar tu sector manualmente en la lista.";
+        },
+        { enableHighAccuracy: false, timeout: 6000 }
+      );
+    });
+  }
+</script>

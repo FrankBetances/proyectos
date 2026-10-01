@@ -1,6 +1,6 @@
 ---
 interface Props {
-  activeTab?: 'home' | 'cv' | 'via' | 'earlify' | 'quisqueya' | 'lua' | 'descubre-con-lua';
+  activeTab?: 'home' | 'cv' | 'via' | 'earlify' | 'quisqueya' | 'lua' | 'descubre-con-lua' | 'alerta-dengue';
 }
 
 const { activeTab = 'home' } = Astro.props;
@@ -36,6 +36,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       </a>
       <a href={`${baseUrl}/quisqueya-habla`} class={activeTab === 'quisqueya' ? 'active' : ''}>
         <span class="nav-pill nav-amber">Quisqueya Habla</span>
+      </a>
+      <a href={`${baseUrl}/alerta-dengue`} class={activeTab === 'alerta-dengue' ? 'active' : ''}>
+        <span class="nav-pill nav-red">Alerta Dengue</span>
       </a>
       <a href={`${baseUrl}/cv`} class={activeTab === 'cv' ? 'active' : ''}>Currículum (CV)</a>
     </nav>
@@ -251,6 +254,19 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     background: rgba(245, 158, 11, 0.3);
     color: #FEF3C7;
     border-color: rgba(245, 158, 11, 0.6);
+  }
+
+  .nav-red {
+    background: rgba(239, 68, 68, 0.15);
+    color: #F87171;
+    border: 1px solid rgba(239, 68, 68, 0.35);
+  }
+
+  .nav-red:hover,
+  .active .nav-red {
+    background: rgba(239, 68, 68, 0.35);
+    color: #FEF2F2;
+    border-color: rgba(239, 68, 68, 0.7);
   }
 
   .header-actions {

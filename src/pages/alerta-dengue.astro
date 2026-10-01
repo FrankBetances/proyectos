@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactModal from '../components/cv/ContactModal.astro';
+import DengueHero from '../components/dengue/DengueHero.astro';
+import DengueLayers from '../components/dengue/DengueLayers.astro';
+import DengueRadar from '../components/dengue/DengueRadar.astro';
+import DengueTriage from '../components/dengue/DengueTriage.astro';
+import DengueArchitecture from '../components/dengue/DengueArchitecture.astro';
+import DenguePrevention from '../components/dengue/DenguePrevention.astro';
+import DengueCTA from '../components/dengue/DengueCTA.astro';
+
+const pageTitle = "Alerta Dengue RD · Vigilancia Participativa & Triaje Clínico · Dr. Frank Betances & UCATECI";
+const pageDescription = "Plataforma de vigilancia epidemiológica comunitaria, detección temprana de zonas en tensión febril y triaje clínico rápido frente al dengue (Aedes aegypti) en República Dominicana. Piloto en La Vega.";
+
+const dengueJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SpecialAnnouncement",
+      "@id": "https://FrankBetances.github.io/proyectos/alerta-dengue#announcement",
+      "name": "Alerta Dengue RD — Vigilancia Participativa y Triaje de Alarma",
+      "text": pageDescription,
+      "datePosted": "2026-09-30T00:00:00Z",
+      "category": "https://schema.org/MedicalSpecialty",
+      "spatialCoverage": {
+        "@type": "AdministrativeArea",
+        "name": "La Vega, República Dominicana"
+      },
+      "url": "https://FrankBetances.github.io/proyectos/alerta-dengue"
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://FrankBetances.github.io/proyectos/alerta-dengue#medical",
+      "name": "Triaje Comunitario y Protocolo de Signos de Alarma del Dengue (MISPAS)",
+      "about": {
+        "@type": "MedicalCondition",
+        "name": "Dengue",
+        "code": {
+          "@type": "MedicalCode",
+          "code": "A90",
+          "codingSystem": "ICD-10"
+        }
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Frank Alberto Betances Reinoso",
+        "jobTitle": "Médico Otorrinolaringólogo Infantil & Especialista en Salud Digital",
+        "url": "https://FrankBetances.github.io/proyectos/cv"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords="Alerta Dengue RD, Dengue República Dominicana, Aedes aegypti, Triaje Dengue, Signos de Alarma Dengue, MISPAS, La Vega, Dr. Frank Betances, UCATECI, Salud Digital RD, Vigilancia Epidemiológica"
+  jsonLd={dengueJsonLd}
+>
+  <Header activeTab="alerta-dengue" />
+
+  <main id="main-content">
+    <DengueHero />
+    <DengueLayers />
+    <DengueRadar />
+    <DengueTriage />
+    <DengueArchitecture />
+    <DenguePrevention />
+    <DengueCTA />
+  </main>
+
+  <Footer />
+  <ContactModal />
+</Layout>
