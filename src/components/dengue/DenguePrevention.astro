@@ -10,7 +10,7 @@
         Operación <span class="gradient-text-red">Descacharrización</span>
       </h2>
       <p class="section-lead">
-        El 80% de los criaderos de <em>Aedes aegypti</em> se encuentran dentro o alrededor de los propios hogares. Estas 4 acciones de impacto comprobado eliminan los focos larvarios antes de que emerja el mosquito adulto.
+        El 80% de los criaderos se originan en el entorno doméstico. Cuatro acciones directas para cortar el ciclo del mosquito:
       </p>
     </div>
 
@@ -21,9 +21,9 @@
         <div class="card-icon">🧴</div>
         <h3 class="card-title">Cloro Untado y Tapado Hermético</h3>
         <p class="card-desc">
-          Cepillar las paredes internas de tanques, tinacos y cubetas con un paño empapado en cloro blanqueador por encima del nivel del agua, dejar actuar 15 minutos y tapar de forma hermética.
+          Untar cloro en los bordes internos de tanques y tinacos, dejar secar 15 minutos y tapar herméticamente.
         </p>
-        <div class="card-tag font-mono">Destruye los huevos adheridos a los bordes</div>
+        <div class="card-tag font-mono">Destruye los huevos adheridos a las paredes</div>
       </div>
 
       <!-- Acción 2: Neumáticos -->
@@ -32,9 +32,9 @@
         <div class="card-icon">🛞</div>
         <h3 class="card-title">Perforar o Desechar Neumáticos</h3>
         <p class="card-desc">
-          Las gomas viejas a la intemperie retienen calor y agua de lluvia, constituyendo el hábitat reproductor preferido del mosquito. Perforarlas con orificios de drenaje o entregarlas para reciclaje.
+          Perforar las gomas viejas a la intemperie para drenaje o entregarlas para recogida municipal.
         </p>
-        <div class="card-tag font-mono">Mayor productor de vectores en áreas periurbanas</div>
+        <div class="card-tag font-mono">Elimina el foco más común en patios</div>
       </div>
 
       <!-- Acción 3: Volteo -->
@@ -43,20 +43,20 @@
         <div class="card-icon">🔄</div>
         <h3 class="card-title">Volteo Sistemático de Envases</h3>
         <p class="card-desc">
-          Colocar boca abajo botellas, latas, platos de macetas y baldes vacíos en patios y azoteas. Revisar que los comederos de animales domésticos se laven y renueven diariamente.
+          Colocar boca abajo botellas, cubetas y platos de macetas. Cambiar a diario el agua de mascotas.
         </p>
-        <div class="card-tag font-mono">Revisión recomendada cada 5 a 7 días</div>
+        <div class="card-tag font-mono">Revisión preventiva cada 5 días</div>
       </div>
 
       <!-- Acción 4: Floreros y Arena -->
       <div class="prevention-card">
-        <div class="card-step-badge font-mono">04 · FLORARES Y CEMENTERIOS</div>
+        <div class="card-step-badge font-mono">04 · FLOREROS Y CEMENTERIOS</div>
         <div class="card-icon">🪴</div>
         <h3 class="card-title">Sustituir Agua por Arena Húmeda</h3>
         <p class="card-desc">
-          En floreros de interior, altares y nichos en cementerios, sustituir el agua estancada por arena húmeda. Mantiene la hidratación de las plantas vivas pero impide completamente el ciclo de la larva.
+          Sustituir el agua estancada por arena húmeda en floreros, altares y nichos de cementerios.
         </p>
-        <div class="card-tag font-mono">Cero proliferación larvaria garantizada</div>
+        <div class="card-tag font-mono">Cero proliferación larvaria en flores</div>
       </div>
     </div>
   </div>
@@ -105,52 +105,53 @@
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-md);
-    padding: 2rem 1.75rem;
+    padding: 2rem 1.5rem;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     transition: all 0.25s ease;
   }
 
   .prevention-card:hover {
     border-color: rgba(245, 158, 11, 0.4);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
 
   .card-step-badge {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     color: var(--accent-amber);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     margin-bottom: 1rem;
+    display: block;
   }
 
   .card-icon {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
   }
 
   .card-title {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-main);
     line-height: 1.25;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.65rem;
   }
 
   .card-desc {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.55;
     margin-bottom: 1.5rem;
     flex-grow: 1;
   }
 
   .card-tag {
-    font-size: 0.75rem;
-    color: var(--accent-cyan);
-    background: rgba(0, 242, 254, 0.06);
+    font-size: 0.72rem;
+    color: var(--text-dim);
     padding: 0.35rem 0.65rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--radius-sm);
-    line-height: 1.3;
   }
 </style>

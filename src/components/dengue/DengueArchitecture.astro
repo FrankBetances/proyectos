@@ -10,7 +10,7 @@
         Arquitectura Serverless <span class="gradient-text-red">a Coste Cero</span>
       </h2>
       <p class="section-lead">
-        Diseñada para ser robusta, escalable y 100% gratuita, resolviendo las limitaciones de latencia mediante computación perimetral (Edge Computing) y almacenamiento en la nube de Google.
+        Infraestructura escalable a coste cero: computación perimetral (Edge) y almacenamiento serverless en la nube de Google.
       </p>
     </div>
 
@@ -22,18 +22,18 @@
         <div class="flow-icon">🤖</div>
         <h3 class="flow-title">Telegram Bot</h3>
         <p class="flow-code font-mono">@AlertaDengueRDbot</p>
-        <p class="flow-desc">Interfaz conversacional rápida que guía a ciudadanos en reportes de criaderos y fiebres sin fricción.</p>
+        <p class="flow-desc">Canal conversacional para reportar criaderos y fiebres en segundos.</p>
       </div>
 
       <div class="flow-arrow font-mono">&rarr;</div>
 
       <!-- 2. Cloudflare Worker -->
       <div class="flow-step">
-        <div class="flow-badge font-mono">EDGE INTERMEDIARY</div>
+        <div class="flow-badge font-mono">EDGE WORKER</div>
         <div class="flow-icon">⚡</div>
         <h3 class="flow-title">Cloudflare Worker</h3>
         <p class="flow-code font-mono">alerta-dengue-bot</p>
-        <p class="flow-desc">Responde HTTP 200 inmediato a Telegram en &lt;50ms, evitando el fallo de redirección 302 y reenviando con <code>ctx.waitUntil</code>.</p>
+        <p class="flow-desc">Respuesta HTTP 200 en &lt;50ms a Telegram. Reenvío seguro a Apps Script sin fallas de 302.</p>
       </div>
 
       <div class="flow-arrow font-mono">&rarr;</div>
@@ -44,7 +44,7 @@
         <div class="flow-icon">⚙️</div>
         <h3 class="flow-title">Google Apps Script</h3>
         <p class="flow-code font-mono">doPost / doGet / V8</p>
-        <p class="flow-desc">Motor analítico que aplica deduplicación 30m, anonimización por hash con sal, y disparadores automáticos horarios.</p>
+        <p class="flow-desc">Deduplicación a 30 m, anonimización por hash y agregación estadística horaria.</p>
       </div>
 
       <div class="flow-arrow font-mono">&rarr;</div>
@@ -55,7 +55,7 @@
         <div class="flow-icon">📊</div>
         <h3 class="flow-title">Sheets & Drive</h3>
         <p class="flow-code font-mono">k &ge; 5 Supresión</p>
-        <p class="flow-desc">Almacenamiento tabular de criaderos validados, procesos febriles agregados y capas poligonales de Voronoi.</p>
+        <p class="flow-desc">Almacenamiento tabular, supresión de celda (\(k \ge 5\)) y geometrías Voronoi.</p>
       </div>
     </div>
 
@@ -67,7 +67,7 @@
         </div>
         <h4 class="arch-card-title">Privacidad por Diseño (Ley 172-13)</h4>
         <p class="arch-card-text">
-          Los identificadores de usuario se convierten en hashes SHA-256 con sal secreta. Las coordenadas GPS del reporte de fiebre se eliminan de la memoria tan pronto se calcula el sector territorial de pertenencia.
+          Hashes SHA-256 con sal secreta. Las coordenadas GPS del reporte de fiebre se eliminan tras clasificar el sector territorial.
         </p>
       </div>
 
@@ -75,9 +75,9 @@
         <div class="arch-icon-pill">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
         </div>
-        <h4 class="arch-card-title">Algoritmo de Detección de Poisson</h4>
+        <h4 class="arch-card-title">Detección con Suelo de Poisson</h4>
         <p class="arch-card-text">
-          El script de agregación horaria compara la tasa de notificación febril semanal \(N_7\) contra la media histórica de hasta 8 semanas previas, calculando una desviación estándar con piso de Poisson para evitar falsas alarmas.
+          Alerta de tensión automática cuando \(N_7 > \mu + 2\sigma\) frente a 8 ventanas históricas previas, evitando falsas alarmas.
         </p>
       </div>
 
@@ -85,10 +85,11 @@
         <div class="arch-icon-pill">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
         </div>
-        <h4 class="arch-card-title">API Pública con Caché de 10 Minutos</h4>
+        <h4 class="arch-card-title">API Pública en Caché (10 Min)</h4>
         <p class="arch-card-text">
-          El endpoint público <code>doGet</code> devuelve un archivo GeoJSON agregado y protegido que alimenta el mapa web en GitHub Pages sin saturar las cuotas gratuitas de Google Workspace.
+          Endpoint GeoJSON optimizado que alimenta el mapa web en GitHub Pages con alta disponibilidad y cero coste de servidor.
         </p>
+      </div>
       </div>
     </div>
   </div>
@@ -108,65 +109,74 @@
 
   .section-eyebrow {
     font-size: 0.8rem;
-    color: var(--accent-cyan);
+    color: var(--accent-purple);
     letter-spacing: 0.08em;
     display: block;
     margin-bottom: 0.5rem;
   }
 
   .section-title {
-    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 800;
     line-height: 1.15;
     margin-bottom: 1rem;
   }
 
   .section-lead {
-    font-size: 1.08rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     line-height: 1.6;
   }
 
-  /* Pipeline */
   .pipeline-flow {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
   }
 
   .flow-step {
-    background: rgba(15, 23, 42, 0.65);
+    flex: 1;
+    min-width: 200px;
+    background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-md);
     padding: 1.75rem 1.25rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
     transition: all 0.25s ease;
   }
 
   .flow-step:hover {
     border-color: rgba(0, 242, 254, 0.4);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
 
   .flow-badge {
-    font-size: 0.7rem;
-    color: var(--text-dim);
-    letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    background: #0B0E17;
+    padding: 0.15rem 0.55rem;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    white-space: nowrap;
   }
 
   .flow-icon {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-bottom: 0.75rem;
   }
 
   .flow-title {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-main);
     margin-bottom: 0.25rem;
@@ -174,78 +184,70 @@
 
   .flow-code {
     font-size: 0.75rem;
-    color: var(--accent-cyan);
-    background: rgba(0, 242, 254, 0.08);
-    padding: 0.2rem 0.5rem;
-    border-radius: var(--radius-sm);
-    margin-bottom: 0.75rem;
+    color: var(--accent-amber);
+    margin-bottom: 0.5rem;
   }
 
   .flow-desc {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    line-height: 1.45;
+    line-height: 1.4;
   }
 
   .flow-arrow {
     font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
   }
 
-  /* Arch Details Grid */
   .arch-details-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
 
   .arch-card {
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--radius-md);
-    padding: 2rem;
-    transition: all 0.25s ease;
-  }
-
-  .arch-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.15);
+    padding: 1.6rem;
   }
 
   .arch-icon-pill {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-md);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
     background: rgba(0, 242, 254, 0.1);
     color: var(--accent-cyan);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .arch-card-title {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-main);
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.5rem;
   }
 
   .arch-card-text {
-    font-size: 0.92rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.55;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 860px) {
     .pipeline-flow {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+      flex-direction: column;
+      overflow-x: visible;
     }
-
     .flow-arrow {
       transform: rotate(90deg);
-      margin: -0.5rem auto;
+    }
+    .flow-step {
+      width: 100%;
     }
   }
 </style>
