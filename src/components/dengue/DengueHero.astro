@@ -22,18 +22,18 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <div class="hud-coords font-mono">
         <span>PILOTO: LA VEGA</span>
         <span class="divider">|</span>
-        <span>LAT: 19.2220° N · LON: 70.5296° W</span>
+        <span>LAT: 19.2220° N · LONG: 70.5296° O</span>
       </div>
     </div>
 
     <!-- Main Title & Narrative -->
     <div class="hero-content">
       <div class="badges-row">
-        <span class="badge-pill pill-red">🦟 Vector Aedes aegypti</span>
-        <span class="badge-pill pill-amber">🇩🇴 Piloto La Vega (9 Sectores)</span>
-        <span class="badge-pill pill-cyan">🔬 Protocolo Oficial MISPAS</span>
-        <span class="badge-pill pill-purple">🤖 Bot @AlertaDengueRDbot</span>
-        <span class="badge-pill pill-emerald">🔒 Ley 172-13 (Zero-PHI)</span>
+        <span class="badge-pill pill-red">🦟 Vector <em>Aedes aegypti</em></span>
+        <span class="badge-pill pill-amber">🇩🇴 Piloto La Vega (9 sectores)</span>
+        <span class="badge-pill pill-cyan">🔬 Protocolo oficial del MISPAS</span>
+        <span class="badge-pill pill-purple">🤖 Bot de Telegram</span>
+        <span class="badge-pill pill-emerald">🔒 Ley 172-13 (Datos protegidos)</span>
       </div>
 
       <h1 class="hero-title">
@@ -41,7 +41,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       </h1>
 
       <p class="hero-subtitle">
-        Vigilancia comunitaria del vector <em>Aedes aegypti</em>, detección temprana de zonas en tensión febril y triaje clínico según protocolo oficial <strong>MISPAS</strong>. Piloto La Vega coordinado por el <strong>Dr. Frank Betances</strong> y estudiantes de medicina de <strong>UCATECI</strong>.
+        Vigilancia comunitaria del vector <em>Aedes aegypti</em>, detección temprana de zonas en tensión febril y triaje clínico según el protocolo oficial del <strong>MISPAS</strong>. Piloto La Vega coordinado por el <strong>Dr. Frank Betances</strong> y estudiantes de Medicina de <strong>UCATECI</strong>.
       </p>
 
       <!-- Action CTAs -->
@@ -50,7 +50,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
           </svg>
-          <span>Iniciar Triaje de Signos de Alarma</span>
+          <span>Iniciar triaje de signos de alarma</span>
         </a>
 
         <a href="#radar" class="btn-dengue-secondary">
@@ -61,14 +61,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
             <path d="m14.83 14.83 4.24 4.24"></path>
             <path d="m9.17 14.83-4.24 4.24"></path>
           </svg>
-          <span>Radar de Sectores</span>
+          <span>Radar de sectores</span>
         </a>
 
         <a href="https://t.me/AlertaDengueRDbot" target="_blank" rel="noopener noreferrer" class="btn-dengue-telegram">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
           </svg>
-          <span>Bot en Telegram</span>
+          <span>Bot de Telegram</span>
         </a>
       </div>
     </div>
@@ -76,39 +76,39 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <!-- Live Telemetry HUD Metrics -->
     <div class="telemetry-hud">
       <div class="telemetry-card">
-        <span class="hud-label font-mono">SECTORES MONITOREADOS</span>
+        <span class="hud-label font-mono">SECTORES EN VIGILANCIA</span>
         <div class="hud-value">
           <span class="val-num">9</span>
-          <span class="val-sub">Voronoi (La Vega)</span>
+          <span class="val-sub">Sectores de La Vega</span>
         </div>
-        <p class="hud-desc">Detección temprana y línea base estable por sector.</p>
+        <p class="hud-desc">Monitorización activa y detección temprana de brotes por sector.</p>
       </div>
 
       <div class="telemetry-card">
-        <span class="hud-label font-mono">UMBRAL DE PRIVACIDAD</span>
+        <span class="hud-label font-mono">PROTECCIÓN DE DATOS</span>
         <div class="hud-value text-cyan">
-          <span class="val-num">k &ge; 5</span>
-          <span class="val-sub">Ley 172-13</span>
+          <span class="val-num">100 %</span>
+          <span class="val-sub">Ley núm. 172-13</span>
         </div>
-        <p class="hud-desc">Cero datos individuales. Supresión de celdas pequeñas.</p>
+        <p class="hud-desc">Sin registro de nombres ni datos personales. Totalmente confidencial.</p>
       </div>
 
       <div class="telemetry-card">
         <span class="hud-label font-mono">VENTANA CRÍTICA DE ALERTA</span>
         <div class="hud-value text-red">
-          <span class="val-num">DÍAS 3–5</span>
-          <span class="val-sub">Caída de Fiebre</span>
+          <span class="val-num">Días 3 a 5</span>
+          <span class="val-sub">Descenso febril</span>
         </div>
-        <p class="hud-desc">Mayor riesgo de choque cuando desaparece la fiebre.</p>
+        <p class="hud-desc">Mayor riesgo de choque y extravasación cuando desaparece la fiebre.</p>
       </div>
 
       <div class="telemetry-card">
         <span class="hud-label font-mono">VALIDACIÓN COMUNITARIA</span>
         <div class="hud-value text-amber">
           <span class="val-num">30 m</span>
-          <span class="val-sub">Radio de Cruce</span>
+          <span class="val-sub">Radio de proximidad</span>
         </div>
-        <p class="hud-desc">Deduplicación automática y validación por vecinos.</p>
+        <p class="hud-desc">Eliminación automática de reportes duplicados y confirmación vecinal.</p>
       </div>
     </div>
   </div>

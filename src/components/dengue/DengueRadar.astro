@@ -7,13 +7,13 @@
     <div class="section-header text-center">
       <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-950/60 border border-red-500/30 rounded-full mb-3">
         <span class="w-2 h-2 rounded-full bg-alert-hemodynamic animate-ping"></span>
-        <span class="font-mono text-xs text-red-400 font-bold uppercase tracking-wider">GEO-TELEMETRÍA EN TIEMPO REAL</span>
+        <span class="font-mono text-xs text-red-400 font-bold uppercase tracking-wider">GEOTELEMETRÍA EN TIEMPO REAL</span>
       </div>
       <h2 class="section-title">
-        Radar de Sectores <span class="gradient-text-red">La Vega</span>
+        Radar de sectores <span class="gradient-text-red">· La Vega</span>
       </h2>
       <p class="section-lead">
-        Monitoreo en 9 sectores territoriales con polígonos Voronoi. Detección automática de zonas en tensión epidemiológica y criaderos activos.
+        Vigilancia en 9 sectores territoriales de La Vega. Detección automática de zonas en tensión febril y criaderos activos.
       </p>
     </div>
 
@@ -25,7 +25,7 @@
           <span class="font-mono text-xs text-text-dim">SECTORES ACTIVOS (9)</span>
           <button id="btn-detect-local" class="btn-geo-detect" title="Detectar sector localmente sin enviar coordenadas">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
-            <span>Mi Zona (Local)</span>
+            <span>Mi sector (Local)</span>
           </button>
         </div>
 
@@ -91,7 +91,7 @@
               <span class="pill-status pill-normal">Normal</span>
             </div>
             <div class="sector-tab-meta font-mono">
-              <span>N7: &lt; 5 (Supresión)</span>
+              <span>N7: &lt; 5 (Protegido)</span>
               <span>•</span>
               <span>Criaderos: 3</span>
             </div>
@@ -104,7 +104,7 @@
               <span class="pill-status pill-normal">Normal</span>
             </div>
             <div class="sector-tab-meta font-mono">
-              <span>N7: &lt; 5 (Supresión)</span>
+              <span>N7: &lt; 5 (Protegido)</span>
               <span>•</span>
               <span>Criaderos: 2</span>
             </div>
@@ -143,7 +143,7 @@
               <span class="pill-status pill-normal">Normal</span>
             </div>
             <div class="sector-tab-meta font-mono">
-              <span>N7: &lt; 5 (Supresión)</span>
+              <span>N7: &lt; 5 (Protegido)</span>
               <span>•</span>
               <span>Criaderos: 1</span>
             </div>
@@ -158,7 +158,7 @@
           <div class="display-title-group">
             <span class="display-badge font-mono" id="selected-level-badge">ZONA EN TENSIÓN EPIDEMIOLÓGICA</span>
             <h3 class="display-sector-name" id="selected-sector-title">Sector Arenoso</h3>
-            <p class="display-coords font-mono" id="selected-coords">Centroide: 19.2420° N, -70.5280° W</p>
+            <p class="display-coords font-mono" id="selected-coords">Centroide: 19.2420° N, 70.5280° O</p>
           </div>
 
           <div class="display-stats-row font-mono">
@@ -247,13 +247,13 @@
         <div class="display-directive" id="selected-directive-box">
           <div class="directive-icon" id="directive-icon-el">⚠️</div>
           <div class="directive-content">
-            <h4 class="directive-title" id="directive-title-el">Directiva Operativa: Sector Arenoso</h4>
+            <h4 class="directive-title" id="directive-title-el">Directiva operativa: Sector Arenoso</h4>
             <p class="directive-text" id="directive-text-el">
-              Alta tensión febril comunitaria combinada con densidad de criaderos. Prioridad máxima de descacharrización y vigilancia domiciliaria.
+              Alta tensión febril y criaderos activos. Prioridad de descacharrización y vigilancia domiciliaria.
             </p>
           </div>
           <a href="https://t.me/AlertaDengueRDbot" target="_blank" rel="noopener noreferrer" class="btn-sector-report">
-            Reportar en este Sector
+            Reportar en este sector
           </a>
         </div>
       </div>
@@ -628,9 +628,9 @@
       badge: "ZONA EN TENSIÓN EPIDEMIOLÓGICA",
       n7: "14",
       criaderos: 9,
-      coords: "Centroide: 19.2420° N, -70.5280° W",
+      coords: "Centroide: 19.2420° N, 70.5280° O",
       icon: "🚨",
-      title: "Directiva Operativa: Sector Arenoso",
+      title: "Directiva operativa: Sector Arenoso",
       desc: "Alta tensión febril y criaderos activos. Prioridad de descacharrización y vigilancia domiciliaria."
     },
     DON_BOSCO: {
@@ -639,9 +639,9 @@
       badge: "VIGILANCIA EPIDEMIOLÓGICA ACTIVA",
       n7: "8",
       criaderos: 5,
-      coords: "Centroide: 19.2150° N, -70.5260° W",
+      coords: "Centroide: 19.2150° N, 70.5260° O",
       icon: "⚠️",
-      title: "Directiva Operativa: Don Bosco",
+      title: "Directiva operativa: Don Bosco",
       desc: "Incidencia moderada. Revisión sistemática de tanques y recipientes para evitar picos."
     },
     EL_HATICO: {
@@ -650,9 +650,9 @@
       badge: "ZONA EN TENSIÓN EPIDEMIOLÓGICA",
       n7: "11",
       criaderos: 7,
-      coords: "Centroide: 19.2270° N, -70.5480° W",
+      coords: "Centroide: 19.2270° N, 70.5480° O",
       icon: "🚨",
-      title: "Directiva Operativa: El Hatico",
+      title: "Directiva operativa: El Hatico",
       desc: "Dispersión sostenida de fiebre. Inspección comunitaria y saneamiento de solares baldíos."
     },
     JUAN_PABLO_DUARTE: {
@@ -661,9 +661,9 @@
       badge: "VIGILANCIA EPIDEMIOLÓGICA ACTIVA",
       n7: "7",
       criaderos: 4,
-      coords: "Centroide: 19.2120° N, -70.5450° W",
+      coords: "Centroide: 19.2120° N, 70.5450° O",
       icon: "⚠️",
-      title: "Directiva Operativa: Juan Pablo Duarte",
+      title: "Directiva operativa: Juan Pablo Duarte",
       desc: "Parámetros estables con focos aislados. Jornada barrial preventiva recomendada."
     },
     LA_LAGUNA: {
@@ -672,9 +672,9 @@
       badge: "NIVEL DE BASE ESTABLE",
       n7: "< 5 (k ≥ 5)",
       criaderos: 3,
-      coords: "Centroide: 19.2430° N, -70.5520° W",
+      coords: "Centroide: 19.2430° N, 70.5520° O",
       icon: "✅",
-      title: "Directiva Operativa: La Laguna",
+      title: "Directiva operativa: La Laguna",
       desc: "Incidencia bajo la línea base. Mantener tanques tapados y floreros con arena."
     },
     LA_SABANA: {
@@ -683,9 +683,9 @@
       badge: "NIVEL DE BASE ESTABLE",
       n7: "< 5 (k ≥ 5)",
       criaderos: 2,
-      coords: "Centroide: 19.2110° N, -70.5120° W",
+      coords: "Centroide: 19.2110° N, 70.5120° O",
       icon: "✅",
-      title: "Directiva Operativa: La Sabana",
+      title: "Directiva operativa: La Sabana",
       desc: "Bajo riesgo relativo. Mantener el volteo periódico de recipientes."
     },
     LAS_MARAS: {
@@ -694,9 +694,9 @@
       badge: "VIGILANCIA EPIDEMIOLÓGICA ACTIVA",
       n7: "6",
       criaderos: 5,
-      coords: "Centroide: 19.2380° N, -70.5050° W",
+      coords: "Centroide: 19.2380° N, 70.5050° O",
       icon: "⚠️",
-      title: "Directiva Operativa: Las Maras",
+      title: "Directiva operativa: Las Maras",
       desc: "Criaderos activos en márgenes fluviales. Eliminación prioritaria de neumáticos a la intemperie."
     },
     PALMARITO: {
@@ -705,9 +705,9 @@
       badge: "ZONA EN TENSIÓN EPIDEMIOLÓGICA",
       n7: "13",
       criaderos: 8,
-      coords: "Centroide: 19.2310° N, -70.5180° W",
+      coords: "Centroide: 19.2310° N, 70.5180° O",
       icon: "🚨",
-      title: "Directiva Operativa: Palmarito",
+      title: "Directiva operativa: Palmarito",
       desc: "Foco de alta densidad febril y criaderos. Intervención focalizada y triaje clínico temprano."
     },
     VILLA_ROSA: {
@@ -716,9 +716,9 @@
       badge: "NIVEL DE BASE ESTABLE",
       n7: "< 5 (k ≥ 5)",
       criaderos: 1,
-      coords: "Centroide: 19.2040° N, -70.5310° W",
+      coords: "Centroide: 19.2040° N, 70.5310° O",
       icon: "✅",
-      title: "Directiva Operativa: Villa Rosa",
+      title: "Directiva operativa: Villa Rosa",
       desc: "Sin alertas activas. Mantener medidas de higiene doméstica."
     }
   };
@@ -802,7 +802,7 @@
       });
     });
 
-    // Geolocalización local en cliente (Zero-PHI)
+    // Geolocalización local en cliente (100% privado)
     const btnDetect = document.getElementById('btn-detect-local');
     const geoMsg = document.getElementById('local-geo-msg');
 
@@ -810,7 +810,7 @@
       btnDetect.addEventListener('click', () => {
         if (geoMsg) {
           geoMsg.classList.remove('hidden');
-          geoMsg.textContent = 'Detectando centroide localmente...';
+          geoMsg.textContent = 'Detectando sector más cercano en tu dispositivo...';
         }
 
         navigator.geolocation.getCurrentPosition(
@@ -846,7 +846,7 @@
 
             selectSector(closestSector);
             if (geoMsg) {
-              geoMsg.textContent = `Asignado localmente a Sector ${SECTOR_DATA[closestSector].name} (Zero-PHI: GPS no transmitido).`;
+              geoMsg.textContent = `Asignado en tu dispositivo al sector ${SECTOR_DATA[closestSector].name} (Tus coordenadas no se transmiten al servidor).`;
             }
           },
           (err) => {

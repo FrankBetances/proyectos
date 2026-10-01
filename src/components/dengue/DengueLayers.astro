@@ -7,7 +7,7 @@
     <div class="section-header text-center">
       <span class="section-eyebrow font-mono">ARQUITECTURA DE VIGILANCIA DUAL</span>
       <h2 class="section-title">
-        Dos Capas Separadas <span class="gradient-text-red">por Diseño</span>
+        Dos capas separadas <span class="gradient-text-red">por diseño</span>
       </h2>
       <p class="section-lead">
         Para máxima eficacia operativa sin comprometer la confidencialidad médica, el sistema separa el mapa ambiental de criaderos del monitoreo epidemiológico de fiebre.
@@ -19,7 +19,7 @@
       <div class="layer-card layer-criaderos">
         <div class="layer-badge">
           <span class="badge-icon">🪣</span>
-          <span class="badge-text font-mono">CAPA 1 · PÚBLICA & OPERATIVA</span>
+          <span class="badge-text font-mono">CAPA 1 · PÚBLICA Y OPERATIVA</span>
         </div>
 
         <h3 class="layer-title">Vigilancia de Criaderos</h3>
@@ -31,22 +31,22 @@
           <li>
             <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
             <div>
-              <strong>Validación Cruzada a 30 Metros:</strong>
+              <strong>Validación cruzada a 30 metros:</strong>
               <span>Confirmación comunitaria en proximidad por vecinos o validadores.</span>
             </div>
           </li>
           <li>
             <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
             <div>
-              <strong>Geolocalización Precisa:</strong>
+              <strong>Geolocalización precisa:</strong>
               <span>Coordenadas protegidas a 4 decimales y fotos en almacenamiento seguro.</span>
             </div>
           </li>
           <li>
             <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
             <div>
-              <strong>Cero Datos Clínicos:</strong>
-              <span>Información ambiental pura para acción de ayuntamientos y brigadas.</span>
+              <strong>Sin datos clínicos:</strong>
+              <span>Información ambiental pura para la acción de ayuntamientos y brigadas comunitarias.</span>
             </div>
           </li>
         </ul>
@@ -61,7 +61,7 @@
       <div class="layer-card layer-fiebre">
         <div class="layer-badge">
           <span class="badge-icon">🌡️</span>
-          <span class="badge-text font-mono">CAPA 2 · ANÓNIMA & CLÍNICA</span>
+          <span class="badge-text font-mono">CAPA 2 · ANÓNIMA Y CLÍNICA</span>
         </div>
 
         <h3 class="layer-title">Monitoreo de Fiebre</h3>
@@ -73,28 +73,28 @@
           <li>
             <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
             <div>
-              <strong>Privacidad Estricta (Ley 172-13):</strong>
-              <span>Hash con sal secreta. Coordenadas descartadas al asignar el sector.</span>
+              <strong>Privacidad estricta (Ley núm. 172-13):</strong>
+              <span>Cifrado unidireccional y eliminación de coordenadas GPS tras asignar el sector territorial.</span>
             </div>
           </li>
           <li>
             <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
             <div>
-              <strong>Supresión de Celdas (k &ge; 5):</strong>
-              <span>Los sectores con menos de 5 casos nunca se publican para blindar la identidad.</span>
+              <strong>Anonimato por sectores (k ≥ 5):</strong>
+              <span>Los sectores con menos de 5 reportes no se publican para proteger la identidad de los vecinos.</span>
             </div>
           </li>
           <li>
             <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
             <div>
-              <strong>Umbrales Estadísticos de Poisson:</strong>
-              <span>Detección temprana cuando la incidencia supera la media histórica (\(N_7 > \mu + 2\sigma\)).</span>
+              <strong>Detección estadística temprana:</strong>
+              <span>Alerta automática cuando la incidencia febril supera la media histórica del sector.</span>
             </div>
           </li>
         </ul>
 
         <div class="layer-footer">
-          <span class="layer-tag">Algoritmo: Poisson + DE</span>
+          <span class="layer-tag">Método: Modelo estadístico</span>
           <span class="layer-tag">Respuesta: Signos de alarma inmediatos</span>
         </div>
       </div>

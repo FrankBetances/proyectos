@@ -5,12 +5,12 @@
 <section class="dengue-arch-section" id="arquitectura">
   <div class="container">
     <div class="section-header text-center">
-      <span class="section-eyebrow font-mono">INGENIERÍA CLÍNICA & DATOS DE SALUD</span>
+      <span class="section-eyebrow font-mono">INGENIERÍA CLÍNICA Y DATOS DE SALUD</span>
       <h2 class="section-title">
-        Arquitectura Serverless <span class="gradient-text-red">a Coste Cero</span>
+        Arquitectura serverless <span class="gradient-text-red">sin coste de servidor</span>
       </h2>
       <p class="section-lead">
-        Infraestructura escalable a coste cero: computación perimetral (Edge) y almacenamiento serverless en la nube de Google.
+        Infraestructura escalable y ligera: computación perimetral (Edge) y almacenamiento estructurado en la nube de Google.
       </p>
     </div>
 
@@ -44,18 +44,18 @@
         <div class="flow-icon">⚙️</div>
         <h3 class="flow-title">Google Apps Script</h3>
         <p class="flow-code font-mono">doPost / doGet / V8</p>
-        <p class="flow-desc">Deduplicación a 30 m, anonimización por hash y agregación estadística horaria.</p>
+        <p class="flow-desc">Eliminación de duplicados a 30 m, anonimización criptográfica y agregación horaria.</p>
       </div>
 
       <div class="flow-arrow font-mono">&rarr;</div>
 
       <!-- 4. Sheets & Drive -->
       <div class="flow-step">
-        <div class="flow-badge font-mono">DATA & GEOJSON</div>
+        <div class="flow-badge font-mono">DATOS Y GEOJSON</div>
         <div class="flow-icon">📊</div>
         <h3 class="flow-title">Sheets & Drive</h3>
-        <p class="flow-code font-mono">k &ge; 5 Supresión</p>
-        <p class="flow-desc">Almacenamiento tabular, supresión de celda (\(k \ge 5\)) y geometrías Voronoi.</p>
+        <p class="flow-code font-mono">k-anonimato (k ≥ 5)</p>
+        <p class="flow-desc">Almacenamiento tabular, supresión de sectores con menos de 5 casos y polígonos territoriales.</p>
       </div>
     </div>
 
@@ -65,9 +65,9 @@
         <div class="arch-icon-pill">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h4 class="arch-card-title">Privacidad por Diseño (Ley 172-13)</h4>
+        <h4 class="arch-card-title">Privacidad por diseño (Ley núm. 172-13)</h4>
         <p class="arch-card-text">
-          Hashes SHA-256 con sal secreta. Las coordenadas GPS del reporte de fiebre se eliminan tras clasificar el sector territorial.
+          Cifrado unidireccional SHA-256. Las coordenadas GPS del reporte de fiebre se eliminan tras clasificar el sector territorial.
         </p>
       </div>
 
@@ -75,9 +75,9 @@
         <div class="arch-icon-pill">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
         </div>
-        <h4 class="arch-card-title">Detección con Suelo de Poisson</h4>
+        <h4 class="arch-card-title">Detección con umbrales estadísticos</h4>
         <p class="arch-card-text">
-          Alerta de tensión automática cuando \(N_7 > \mu + 2\sigma\) frente a 8 ventanas históricas previas, evitando falsas alarmas.
+          Alerta automática de tensión cuando los reportes febriles superan significativamente la media histórica del sector, evitando falsas alarmas.
         </p>
       </div>
 
@@ -85,7 +85,7 @@
         <div class="arch-icon-pill">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
         </div>
-        <h4 class="arch-card-title">API Pública en Caché (10 Min)</h4>
+        <h4 class="arch-card-title">API pública en caché (10 min)</h4>
         <p class="arch-card-text">
           Endpoint GeoJSON optimizado que alimenta el mapa web en GitHub Pages con alta disponibilidad y cero coste de servidor.
         </p>
