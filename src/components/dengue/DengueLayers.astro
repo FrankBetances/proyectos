@@ -104,14 +104,14 @@
 
 <style>
   .dengue-layers-section {
-    padding: 5.5rem 0;
+    padding: clamp(4rem, 7vw, 6rem) 0;
     background: #0B0E17;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .section-header {
     max-width: 780px;
-    margin: 0 auto 3.5rem;
+    margin: 0 auto clamp(2rem, 4vw, 3.5rem);
   }
 
   .section-eyebrow {
@@ -130,25 +130,25 @@
   }
 
   .section-lead {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
     color: var(--text-muted);
     line-height: 1.6;
   }
 
   .layers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 1.75rem;
   }
 
   .layer-card {
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
-    padding: 2.25rem;
+    padding: clamp(1.5rem, 3.5vw, 2.5rem);
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .layer-card:hover {
@@ -182,7 +182,7 @@
   .layer-fiebre .badge-text { color: #FCA5A5; }
 
   .layer-title {
-    font-size: 1.7rem;
+    font-size: clamp(1.4rem, 2.4vw, 1.75rem);
     font-weight: 700;
     margin-bottom: 0.85rem;
     color: var(--text-main);
@@ -190,7 +190,7 @@
 
   .layer-desc {
     color: var(--text-muted);
-    font-size: 0.98rem;
+    font-size: clamp(0.9rem, 1.4vw, 0.98rem);
     line-height: 1.6;
     margin-bottom: 1.75rem;
   }
@@ -245,15 +245,14 @@
 
   .layer-tag {
     font-family: var(--font-heading);
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     color: var(--text-dim);
     padding: 0.25rem 0.65rem;
     border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.03);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     .layers-grid {
       grid-template-columns: 1fr;
     }

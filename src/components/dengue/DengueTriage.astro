@@ -6,7 +6,7 @@
   <div class="container">
     <div class="section-header text-center">
       <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-950/60 border border-red-500/30 rounded-full mb-3">
-        <span class="w-2 h-2 rounded-full bg-alert-hemodynamic"></span>
+        <span class="w-2 h-2 rounded-full bg-alert-hemodynamic animate-ping"></span>
         <span class="font-mono text-xs text-red-400 font-bold uppercase tracking-wider">PROTOCOLO DE BOLSILLO · MISPAS</span>
       </div>
       <h2 class="section-title">
@@ -20,12 +20,24 @@
     <!-- Contenedor del Triaje Interactivo -->
     <div class="triage-wrapper">
       <div class="triage-card">
-        <!-- Barra de Progreso y Ley 172-13 -->
+        <!-- Stepper Visual e Indicador de Progreso -->
+        <div class="triage-stepper" aria-hidden="true">
+          <div class="stepper-track">
+            <div id="triage-progress-bar" class="stepper-fill" style="width: 33%;"></div>
+          </div>
+          <div class="stepper-steps font-mono text-xs">
+            <span class="step-node active" id="step-node-1">01 FIEBRE</span>
+            <span class="step-node" id="step-node-2">02 SIGNOS DE ALARMA</span>
+            <span class="step-node" id="step-node-3">03 VULNERABILIDAD</span>
+          </div>
+        </div>
+
+        <!-- Barra de Estado y Ley 172-13 -->
         <div class="triage-status-bar font-mono text-xs">
-          <span id="triage-step-label">PASO 1 DE 3: DURACIÓN DE LA FIEBRE</span>
+          <span id="triage-step-label">PASO 1 DE 3: TEMPORALIDAD DE LA FIEBRE</span>
           <span class="text-cyan flex items-center gap-1.5">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            100 % confidencial (Ley núm. 172-13 · Sin envío de datos)
+            100 % confidencial (Ley núm. 172-13)
           </span>
         </div>
 
@@ -35,27 +47,27 @@
             ¿Cuántos días continuos de fiebre tiene la persona?
           </h3>
           <p class="panel-explanation">
-            La fase crítica de escape de plasma ocurre con mayor frecuencia entre el <strong>3.er y 5.º día</strong>, al descender la temperatura.
+            La fase crítica de escape de plasma ocurre con mayor frecuencia entre el <strong>3.er y 5.º día</strong>, al descender la temperatura corporal.
           </p>
 
           <div class="fever-options-grid">
             <button type="button" class="fever-card" data-fever="1-2">
               <span class="fever-stage font-mono">FASE INICIAL</span>
               <span class="fever-days">1 a 2 días</span>
-              <span class="fever-note">Fiebre alta repentina, dolor de cabeza, dolor retroocular y malestar general.</span>
+              <span class="fever-note">Fiebre alta repentina, cefalea, dolor retroocular y malestar general.</span>
             </button>
 
             <button type="button" class="fever-card fever-critical" data-fever="3-5">
               <div class="critical-pill font-mono">MÁXIMA ATENCIÓN</div>
               <span class="fever-stage font-mono">FASE CRÍTICA</span>
               <span class="fever-days">3 a 5 días</span>
-              <span class="fever-note">La temperatura comienza a bajar, pero es el momento de mayor riesgo de extravasación de plasma.</span>
+              <span class="fever-note">La temperatura desciende, pero es la ventana de mayor riesgo de extravasación y choque.</span>
             </button>
 
             <button type="button" class="fever-card" data-fever="6+">
               <span class="fever-stage font-mono">FASE PROLONGADA</span>
               <span class="fever-days">6 días o más</span>
-              <span class="fever-note">Requiere consulta médica presencial para descartar coinfecciones o complicaciones hematológicas.</span>
+              <span class="fever-note">Requiere consulta presencial para descartar complicaciones o coinfecciones.</span>
             </button>
           </div>
         </div>
@@ -75,7 +87,7 @@
               <input type="checkbox" name="alarm" value="abdominal" class="checkbox-input" />
               <div class="check-content">
                 <span class="check-title">Dolor abdominal intenso y continuo</span>
-                <span class="check-desc font-body">Dolor fuerte y constante en el abdomen que no alivia con reposo.</span>
+                <span class="check-desc font-body">Dolor fuerte y persistente en el abdomen que no cede.</span>
               </div>
             </label>
 
@@ -83,15 +95,15 @@
               <input type="checkbox" name="alarm" value="vomiting" class="checkbox-input" />
               <div class="check-content">
                 <span class="check-title">Vómitos persistentes o incoercibles</span>
-                <span class="check-desc font-body">Tres o más vómitos en 1 hora, o cuatro o más episodios en 6 horas.</span>
+                <span class="check-desc font-body">Tres o más vómitos en 1 hora, o cuatro o más en 6 horas.</span>
               </div>
             </label>
 
             <label class="check-item">
               <input type="checkbox" name="alarm" value="bleeding" class="checkbox-input" />
               <div class="check-content">
-                <span class="check-title">Sangrado espontáneo de mucosas o hematomas</span>
-                <span class="check-desc font-body">Sangrado de encías, hemorragia nasal, sangrado vaginal anormal o manchas rojas en la piel.</span>
+                <span class="check-title">Sangrado espontáneo de mucosas o petequias</span>
+                <span class="check-desc font-body">Sangrado de encías, epistaxis, sangrado genital anormal o puntos rojos en piel.</span>
               </div>
             </label>
 
@@ -99,22 +111,22 @@
               <input type="checkbox" name="alarm" value="lethargy" class="checkbox-input" />
               <div class="check-content">
                 <span class="check-title">Letargo, somnolencia extrema o irritabilidad</span>
-                <span class="check-desc font-body">Dificultad marcada para despertar al niño o adulto, confusión o mareo al ponerse de pie.</span>
+                <span class="check-desc font-body">Dificultad marcada para despertar, confusión o mareo súbito al incorporarse.</span>
               </div>
             </label>
 
             <label class="check-item">
               <input type="checkbox" name="alarm" value="fluid" class="checkbox-input" />
               <div class="check-content">
-                <span class="check-title">Dificultad respiratoria o hinchazón súbita</span>
-                <span class="check-desc font-body">Respiración rápida, sensación de ahogo o abdomen distendido por acumulación de líquidos.</span>
+                <span class="check-title">Dificultad respiratoria o acumulación de líquidos</span>
+                <span class="check-desc font-body">Respiración rápida, sensación de ahogo o abdomen distendido.</span>
               </div>
             </label>
           </div>
 
           <div class="panel-nav">
             <button type="button" id="btn-back-p1" class="btn-triage-back font-mono">
-              &larr; Volver a días de fiebre
+              &larr; Días de fiebre
             </button>
             <button type="button" id="btn-go-p3" class="btn-triage-next font-mono">
               Continuar a factores de riesgo &rarr;
@@ -128,7 +140,7 @@
             Factores de vulnerabilidad (Grupo B1 del MISPAS)
           </h3>
           <p class="panel-explanation">
-            Aun sin signos de alarma, estos grupos requieren evaluación médica presencial hoy mismo.
+            Aun sin signos de alarma activos, estos grupos requieren evaluación médica presencial en el día.
           </p>
 
           <div class="checklist-grid font-mono">
@@ -163,23 +175,23 @@
 
           <div class="panel-nav">
             <button type="button" id="btn-back-p2" class="btn-triage-back font-mono">
-              &larr; Volver a signos de alarma
+              &larr; Signos de alarma
             </button>
             <button type="button" id="btn-eval" class="btn-dengue-primary font-mono">
-              CALCULAR EVALUACIÓN DE TRIAJE
+              CALCULAR DICTAMEN DE TRIAJE
             </button>
           </div>
         </div>
 
         <!-- RESULTADOS CLÍNICOS -->
-        <!-- 1. ALERTA ROJA (ALARMA HOSPITALARIA) -->
+        <!-- 1. ALERTA ROJA (CÓDIGO ROJO) -->
         <div id="triage-res-red" class="triage-result hidden">
           <div class="result-box result-red">
             <div class="result-header">
-              <span class="result-badge-red font-mono">CÓDIGO ROJO · ATENCIÓN MÉDICA INMEDIATA</span>
+              <span class="result-badge-red font-mono">CÓDIGO ROJO · TRASLADO URGENTE A EMERGENCIAS</span>
               <h4 class="result-title">Signos de alarma detectados</h4>
               <p class="result-lead font-body">
-                Criterios compatibles con <strong>dengue con signos de alarma</strong>. Requiere traslado urgente a emergencias para hidratación endovenosa y vigilancia de choque. <strong>No espere a mañana.</strong>
+                Criterios compatibles con <strong>dengue con signos de alarma</strong>. Requiere traslado inmediato a emergencias para hidratación endovenosa supervisada y monitorización hemodinámica. <strong>No espere a mañana.</strong>
               </p>
             </div>
 
@@ -188,11 +200,16 @@
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 <span>Llamar al Sistema 9-1-1</span>
               </a>
-              <button type="button" class="btn-triage-reset font-mono">Reiniciar Evaluación</button>
+
+              <button type="button" class="btn-copy-summary font-mono" id="btn-copy-red">
+                Copiar resumen para el médico
+              </button>
+
+              <button type="button" class="btn-triage-reset font-mono">Reiniciar</button>
             </div>
 
             <div class="contraindication-banner font-mono">
-              <strong>ADVERTENCIA ESTRICTA MISPAS:</strong> PROHIBIDO administrar aspirina, ibuprofeno, metamizol (dipirona), AINE o inyecciones intramusculares por riesgo de hemorragia grave.
+              <strong>ADVERTENCIA ESTRICTA MISPAS:</strong> PROHIBIDO administrar aspirina, ibuprofeno, metamizol (dipirona), AINE o inyecciones intramusculares por riesgo inminente de hemorragia grave.
             </div>
           </div>
         </div>
@@ -204,18 +221,21 @@
               <span class="result-badge-amber font-mono">CÓDIGO ÁMBAR · VALORACIÓN MÉDICA HOY MISMO</span>
               <h4 class="result-title">Grupo vulnerable o ventana crítica (días 3 a 5)</h4>
               <p class="result-lead font-body">
-                Criterio del <strong>Grupo B1 o ventana crítica (días 3 a 5)</strong>. Requiere valoración médica presencial hoy en un centro de salud para evaluación y hemograma.
+                Criterio del <strong>Grupo B1 o ventana crítica (días 3 a 5)</strong>. Requiere valoración médica presencial hoy en un centro de salud para evaluación clínica y control de hemograma.
               </p>
             </div>
 
             <div class="clinical-guidance-list font-mono">
-              <div>• <strong>Hidratación inmediata:</strong> sales de rehidratación oral (SRO) o agua de coco en pequeños sorbos.</div>
+              <div>• <strong>Hidratación inmediata:</strong> sales de rehidratación oral (SRO) o agua de coco en pequeños sorbos continuos.</div>
               <div>• <strong>Mosquitero permanente:</strong> reposo bajo mosquitero para cortar la transmisión a convivientes.</div>
-              <div>• <strong>Vigilancia extrema:</strong> ante vómitos persistentes o dolor abdominal, acuda al hospital de inmediato.</div>
-              <div>• <strong>Antipiréticos:</strong> únicamente acetaminofén (paracetamol) en la dosis indicada por el médico.</div>
+              <div>• <strong>Vigilancia extrema:</strong> ante vómitos persistentes, mareo o dolor abdominal, acuda al hospital de inmediato.</div>
+              <div>• <strong>Antipiréticos:</strong> únicamente acetaminofén (paracetamol) en la dosis indicada por el profesional de la salud.</div>
             </div>
 
             <div class="emergency-cta-row">
+              <button type="button" class="btn-copy-summary font-mono" id="btn-copy-amber">
+                Copiar resumen para el centro de salud
+              </button>
               <button type="button" class="btn-triage-reset font-mono">Evaluar a Otra Persona</button>
             </div>
           </div>
@@ -228,14 +248,14 @@
               <span class="result-badge-green font-mono">CÓDIGO VERDE · VIGILANCIA DOMICILIARIA ACTIVA</span>
               <h4 class="result-title">Sin signos de alarma identificados</h4>
               <p class="result-lead font-body">
-                Sin signos de alarma ni factores de riesgo identificados. Reposo en el hogar, hidratación abundante, mosquitero permanente y vigilar con atención en el momento en que caiga la fiebre.
+                Sin signos de alarma ni factores de vulnerabilidad identificados. Reposo en el hogar, hidratación abundante, mosquitero permanente y vigilar atentamente en el momento en que descienda la fiebre.
               </p>
             </div>
 
             <div class="clinical-guidance-list font-mono">
-              <div>• <strong>Líquidos abundantes:</strong> agua, caldos, jugos naturales no ácidos y suero oral para mantener una hidratación adecuada.</div>
-              <div>• <strong>Uso de mosquitero:</strong> durante todo el proceso febril para cortar la cadena de transmisión vectorial intradomiciliaria.</div>
-              <div>• <strong>Atención a los días 3 a 5:</strong> el momento de mayor riesgo del dengue es cuando la fiebre desaparece. Si nota vómitos, mareo o dolor abdominal, acuda de inmediato a urgencias.</div>
+              <div>• <strong>Líquidos abundantes:</strong> agua, caldos y suero oral para mantener una hidratación fisiológica adecuada.</div>
+              <div>• <strong>Uso de mosquitero:</strong> durante todo el proceso febril para evitar la transmisión intradomiciliaria del vector.</div>
+              <div>• <strong>Atención a los días 3 a 5:</strong> el momento de mayor riesgo del dengue es cuando la fiebre desaparece. Si nota dolor abdominal, mareos o vómitos, acuda de inmediato a urgencias.</div>
             </div>
 
             <div class="emergency-cta-row">
@@ -251,14 +271,14 @@
 
 <style>
   .dengue-triage-section {
-    padding: 5.5rem 0;
+    padding: clamp(4rem, 7vw, 6rem) 0;
     background: #07090E;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .section-header {
     max-width: 800px;
-    margin: 0 auto 3.5rem;
+    margin: 0 auto clamp(2rem, 4vw, 3.5rem);
   }
 
   .section-title {
@@ -269,7 +289,7 @@
   }
 
   .section-lead {
-    font-size: 1.08rem;
+    font-size: clamp(0.95rem, 1.6vw, 1.08rem);
     color: var(--text-muted);
     line-height: 1.6;
   }
@@ -283,8 +303,50 @@
     background: rgba(15, 23, 42, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-lg);
-    padding: 2.5rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    padding: clamp(1.25rem, 3.5vw, 2.5rem);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* Stepper Visual */
+  .triage-stepper {
+    margin-bottom: 1.5rem;
+  }
+
+  .stepper-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.85rem;
+  }
+
+  .stepper-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00F2FE 0%, #EF4444 100%);
+    border-radius: 4px;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .stepper-steps {
+    display: flex;
+    justify-content: space-between;
+    font-size: clamp(0.68rem, 1.2vw, 0.75rem);
+    color: var(--text-dim);
+  }
+
+  .step-node {
+    transition: color 0.25s ease;
+  }
+
+  .step-node.active {
+    color: var(--accent-cyan);
+    font-weight: 700;
+  }
+
+  .step-node.done {
+    color: var(--text-main);
   }
 
   .triage-status-bar {
@@ -292,98 +354,94 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.75rem;
-    padding-bottom: 1.5rem;
+    gap: 0.65rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    margin-bottom: 2rem;
-    color: var(--text-dim);
+    margin-bottom: 1.75rem;
+    color: var(--text-muted);
   }
 
   .panel-question {
-    font-size: clamp(1.35rem, 2.5vw, 1.8rem);
-    font-weight: 700;
+    font-size: clamp(1.3rem, 2.8vw, 1.65rem);
+    font-weight: 800;
     color: var(--text-main);
     line-height: 1.25;
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.5rem;
   }
 
   .panel-explanation {
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 1.4vw, 0.98rem);
     color: var(--text-muted);
-    line-height: 1.55;
-    margin-bottom: 2rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
   }
 
-  .panel-explanation strong {
-    color: var(--text-main);
-  }
-
-  /* Grid Paso 1: Opciones de Fiebre */
+  /* Grid Paso 1: Fiebre */
   .fever-options-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.25rem;
-    margin-bottom: 1.5rem;
   }
 
   .fever-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 1.6rem 1.4rem;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-md);
+    padding: 1.65rem 1.35rem;
+    text-align: left;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    position: relative;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .fever-card:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 242, 254, 0.4);
     transform: translateY(-2px);
   }
 
-  .fever-card.selected {
-    border-color: var(--accent-cyan);
-    background: rgba(0, 242, 254, 0.08);
+  .fever-card:active {
+    transform: scale(0.97);
   }
 
-  .fever-card.fever-critical {
-    border-color: rgba(239, 68, 68, 0.4);
-    background: rgba(239, 68, 68, 0.06);
+  .fever-critical {
+    border-color: rgba(245, 158, 11, 0.45);
+    background: rgba(245, 158, 11, 0.04);
   }
 
-  .fever-card.fever-critical:hover {
-    background: rgba(239, 68, 68, 0.12);
-    border-color: rgba(239, 68, 68, 0.6);
+  .fever-critical:hover {
+    border-color: #F59E0B;
+    background: rgba(245, 158, 11, 0.08);
   }
 
   .critical-pill {
     position: absolute;
-    top: -10px;
-    right: 14px;
-    padding: 0.2rem 0.55rem;
-    background: #EF4444;
-    color: #FFFFFF;
+    top: 1rem;
+    right: 1rem;
     font-size: 0.65rem;
-    font-weight: 700;
+    padding: 0.2rem 0.5rem;
     border-radius: var(--radius-full);
+    background: #F59E0B;
+    color: #040914;
+    font-weight: 700;
   }
 
   .fever-stage {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: var(--text-dim);
     letter-spacing: 0.05em;
-    margin-bottom: 0.35rem;
   }
 
   .fever-days {
-    font-size: 1.4rem;
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
     font-weight: 800;
     color: var(--text-main);
-    margin-bottom: 0.5rem;
   }
 
   .fever-note {
@@ -397,36 +455,38 @@
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
-    margin-bottom: 2.25rem;
+    margin-bottom: 2rem;
   }
 
   .check-item {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
-    padding: 1.15rem 1.25rem;
-    background: rgba(255, 255, 255, 0.02);
+    gap: 0.85rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: all 0.2s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .check-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(239, 68, 68, 0.35);
   }
 
-  .check-item:has(.checkbox-input:checked) {
-    background: rgba(239, 68, 68, 0.1);
-    border-color: rgba(239, 68, 68, 0.45);
+  .check-item:active {
+    transform: scale(0.99);
   }
 
   .checkbox-input {
-    margin-top: 0.3rem;
-    width: 18px;
-    height: 18px;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-top: 0.15rem;
     accent-color: #EF4444;
+    flex-shrink: 0;
     cursor: pointer;
   }
 
@@ -437,152 +497,143 @@
   }
 
   .check-title {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 700;
     color: var(--text-main);
   }
 
   .check-desc {
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
     line-height: 1.45;
   }
 
-  /* Navegación entre Paneles */
   .panel-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
-    padding-top: 1.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .btn-triage-next, .btn-triage-submit {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.85rem 1.75rem;
-    border-radius: var(--radius-full);
-    background: linear-gradient(135deg, #EF4444 0%, #B91C1C 100%);
-    color: #FFFFFF;
-    font-weight: 700;
-    font-size: 0.92rem;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .btn-triage-next:hover, .btn-triage-submit:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+    padding-top: 1.5rem;
   }
 
   .btn-triage-back {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--text-muted);
-    padding: 0.8rem 1.4rem;
-    border-radius: var(--radius-full);
-    font-size: 0.88rem;
+    border: none;
+    color: var(--text-dim);
+    font-size: 0.85rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease;
+    padding: 0.5rem;
+    touch-action: manipulation;
   }
 
   .btn-triage-back:hover {
     color: var(--text-main);
-    border-color: rgba(255, 255, 255, 0.3);
   }
 
-  /* Estilos de las Cajas de Resultado */
-  .triage-result {
-    animation: fadeInResult 0.3s ease;
+  .btn-triage-next {
+    padding: 0.85rem 1.75rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
   }
 
-  @keyframes fadeInResult {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+  .btn-triage-next:hover {
+    background: rgba(255, 255, 255, 0.2);
   }
 
+  .btn-triage-next:active {
+    transform: scale(0.97);
+  }
+
+  /* Resultados */
   .result-box {
-    border-radius: var(--radius-md);
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid transparent;
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .result-red {
-    background: rgba(239, 68, 68, 0.1);
-    border-color: rgba(239, 68, 68, 0.35);
+    background: rgba(239, 68, 68, 0.08);
+    border: 2px solid #EF4444;
   }
 
   .result-amber {
-    background: rgba(245, 158, 11, 0.1);
-    border-color: rgba(245, 158, 11, 0.35);
+    background: rgba(245, 158, 11, 0.08);
+    border: 2px solid #F59E0B;
   }
 
   .result-green {
-    background: rgba(16, 185, 129, 0.1);
-    border-color: rgba(16, 185, 129, 0.35);
+    background: rgba(16, 185, 129, 0.08);
+    border: 2px solid #10B981;
   }
 
   .result-badge-red {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: rgba(239, 68, 68, 0.2);
-    border: 1px solid rgba(239, 68, 68, 0.4);
-    color: #F87171;
-    font-size: 0.72rem;
-    font-weight: 700;
+    padding: 0.35rem 0.85rem;
     border-radius: var(--radius-full);
+    background: #EF4444;
+    color: #FFFFFF;
+    font-size: 0.78rem;
+    font-weight: 800;
     margin-bottom: 0.85rem;
   }
 
   .result-badge-amber {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: rgba(245, 158, 11, 0.2);
-    border: 1px solid rgba(245, 158, 11, 0.4);
-    color: #FCD34D;
-    font-size: 0.72rem;
-    font-weight: 700;
+    padding: 0.35rem 0.85rem;
     border-radius: var(--radius-full);
+    background: #F59E0B;
+    color: #040914;
+    font-size: 0.78rem;
+    font-weight: 800;
     margin-bottom: 0.85rem;
   }
 
   .result-badge-green {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: rgba(16, 185, 129, 0.2);
-    border: 1px solid rgba(16, 185, 129, 0.4);
-    color: #6EE7B7;
-    font-size: 0.72rem;
-    font-weight: 700;
+    padding: 0.35rem 0.85rem;
     border-radius: var(--radius-full);
+    background: #10B981;
+    color: #040914;
+    font-size: 0.78rem;
+    font-weight: 800;
     margin-bottom: 0.85rem;
   }
 
   .result-title {
-    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+    font-size: clamp(1.5rem, 3vw, 1.85rem);
     font-weight: 800;
     color: var(--text-main);
     line-height: 1.2;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .result-lead {
-    font-size: 0.98rem;
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
     color: var(--text-muted);
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+  }
+
+  .result-lead strong {
+    color: var(--text-main);
   }
 
   .emergency-cta-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
     align-items: center;
-    margin-bottom: 1.5rem;
+    gap: 0.85rem;
   }
 
   .btn-emergency-call {
@@ -595,144 +646,275 @@
     color: #FFFFFF;
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 1.05rem;
     text-decoration: none;
-    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.45);
-    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+    transition: all 0.25s ease;
+    touch-action: manipulation;
   }
 
   .btn-emergency-call:hover {
+    background: #DC2626;
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(239, 68, 68, 0.6);
   }
 
-  .btn-triage-reset {
-    background: rgba(255, 255, 255, 0.06);
+  .btn-emergency-call:active {
+    transform: scale(0.97);
+  }
+
+  .btn-copy-summary {
+    padding: 0.75rem 1.35rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: var(--text-main);
-    padding: 0.85rem 1.5rem;
-    border-radius: var(--radius-full);
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.2s ease;
+    touch-action: manipulation;
+  }
+
+  .btn-copy-summary:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-copy-summary:active {
+    transform: scale(0.97);
+  }
+
+  .btn-triage-reset {
+    padding: 0.75rem 1.35rem;
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
   }
 
   .btn-triage-reset:hover {
-    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-main);
+    border-color: rgba(255, 255, 255, 0.3);
   }
 
   .contraindication-banner {
-    padding: 0.85rem 1rem;
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.35);
     color: #FCA5A5;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     line-height: 1.5;
   }
 
   .clinical-guidance-list {
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
-    margin-bottom: 1.5rem;
-    font-size: 0.82rem;
+    gap: 0.75rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
     line-height: 1.5;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .clinical-guidance-list strong {
+    color: var(--text-main);
+  }
+
+  @media (max-width: 640px) {
+    .panel-nav {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn-triage-next {
+      text-align: center;
+      padding: 0.95rem;
+    }
+
+    .btn-triage-back {
+      text-align: center;
+    }
+
+    .emergency-cta-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn-emergency-call, .btn-copy-summary, .btn-triage-reset {
+      justify-content: center;
+      text-align: center;
+    }
   }
 </style>
 
 <script>
-  // Lógica interactiva del triaje clínico MISPAS
-  const p1 = document.getElementById('triage-p1');
-  const p2 = document.getElementById('triage-p2');
-  const p3 = document.getElementById('triage-p3');
+  let selectedFeverDays: string | null = null;
+
+  const stepLabel = document.getElementById('triage-step-label');
+  const progressBar = document.getElementById('triage-progress-bar');
+  const node1 = document.getElementById('step-node-1');
+  const node2 = document.getElementById('step-node-2');
+  const node3 = document.getElementById('step-node-3');
+
+  const panelP1 = document.getElementById('triage-p1');
+  const panelP2 = document.getElementById('triage-p2');
+  const panelP3 = document.getElementById('triage-p3');
+
   const resRed = document.getElementById('triage-res-red');
   const resAmber = document.getElementById('triage-res-amber');
   const resGreen = document.getElementById('triage-res-green');
-  const stepLabel = document.getElementById('triage-step-label');
 
-  let selectedFever = '';
+  // Micro-vibración háptica ergonómica (dispositivos compatibles)
+  const triggerHaptic = (ms = 15) => {
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+      try { navigator.vibrate(ms); } catch {}
+    }
+  };
 
-  // Paso 1: Selección de fiebre
+  // Selección de fiebre en Paso 1
   const feverCards = document.querySelectorAll('.fever-card');
   feverCards.forEach(card => {
     card.addEventListener('click', () => {
-      feverCards.forEach(c => c.classList.remove('selected'));
-      card.classList.add('selected');
-      selectedFever = card.getAttribute('data-fever') || '';
+      triggerHaptic(20);
+      selectedFeverDays = card.getAttribute('data-fever');
+      panelP1?.classList.add('hidden');
+      panelP2?.classList.remove('hidden');
 
-      setTimeout(() => {
-        if (p1 && p2 && stepLabel) {
-          p1.classList.add('hidden');
-          p2.classList.remove('hidden');
-          stepLabel.textContent = "PASO 2 DE 3: IDENTIFICACIÓN DE SIGNOS DE ALARMA";
-        }
-      }, 180);
+      if (progressBar) progressBar.style.width = "66%";
+      node1?.classList.remove('active');
+      node1?.classList.add('done');
+      node2?.classList.add('active');
+
+      if (stepLabel) stepLabel.textContent = "PASO 2 DE 3: VERIFICACIÓN DE SIGNOS DE ALARMA CARDINALES";
     });
   });
 
-  // Navegación P2 -> P1
+  // Checkbox micro-haptics
+  document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]').forEach(box => {
+    box.addEventListener('change', () => {
+      triggerHaptic(10);
+    });
+  });
+
+  // Volver de 2 a 1
   document.getElementById('btn-back-p1')?.addEventListener('click', () => {
-    if (p1 && p2 && stepLabel) {
-      p2.classList.add('hidden');
-      p1.classList.remove('hidden');
-      stepLabel.textContent = "PASO 1 DE 3: DURACIÓN DE LA FIEBRE";
-    }
+    triggerHaptic(10);
+    panelP2?.classList.add('hidden');
+    panelP1?.classList.remove('hidden');
+
+    if (progressBar) progressBar.style.width = "33%";
+    node2?.classList.remove('active');
+    node1?.classList.remove('done');
+    node1?.classList.add('active');
+
+    if (stepLabel) stepLabel.textContent = "PASO 1 DE 3: TEMPORALIDAD DE LA FIEBRE";
   });
 
-  // Navegación P2 -> P3
+  // Avanzar de 2 a 3
   document.getElementById('btn-go-p3')?.addEventListener('click', () => {
-    if (p2 && p3 && stepLabel) {
-      p2.classList.add('hidden');
-      p3.classList.remove('hidden');
-      stepLabel.textContent = "PASO 3 DE 3: FACTORES DE VULNERABILIDAD Y RIESGO";
-    }
+    triggerHaptic(20);
+    panelP2?.classList.add('hidden');
+    panelP3?.classList.remove('hidden');
+
+    if (progressBar) progressBar.style.width = "100%";
+    node2?.classList.remove('active');
+    node2?.classList.add('done');
+    node3?.classList.add('active');
+
+    if (stepLabel) stepLabel.textContent = "PASO 3 DE 3: FACTORES DE VULNERABILIDAD Y RIESGO";
   });
 
-  // Navegación P3 -> P2
+  // Volver de 3 a 2
   document.getElementById('btn-back-p2')?.addEventListener('click', () => {
-    if (p2 && p3 && stepLabel) {
-      p3.classList.add('hidden');
-      p2.classList.remove('hidden');
-      stepLabel.textContent = "PASO 2 DE 3: IDENTIFICACIÓN DE SIGNOS DE ALARMA";
-    }
+    triggerHaptic(10);
+    panelP3?.classList.add('hidden');
+    panelP2?.classList.remove('hidden');
+
+    if (progressBar) progressBar.style.width = "66%";
+    node3?.classList.remove('active');
+    node2?.classList.remove('done');
+    node2?.classList.add('active');
+
+    if (stepLabel) stepLabel.textContent = "PASO 2 DE 3: VERIFICACIÓN DE SIGNOS DE ALARMA CARDINALES";
   });
 
-  // Evaluación final
+  // Calcular Dictamen Clínico
   document.getElementById('btn-eval')?.addEventListener('click', () => {
-    if (!p3 || !stepLabel) return;
-    p3.classList.add('hidden');
+    triggerHaptic(35);
+    const alarmChecks = document.querySelectorAll<HTMLInputElement>('input[name="alarm"]:checked');
+    const riskChecks = document.querySelectorAll<HTMLInputElement>('input[name="risk"]:checked');
 
-    const alarms = Array.from(document.querySelectorAll('input[name="alarm"]:checked')).length;
-    const risks = Array.from(document.querySelectorAll('input[name="risk"]:checked')).length;
+    const hasAlarms = alarmChecks.length > 0;
+    const hasRisks = riskChecks.length > 0;
+    const isCriticalTime = selectedFeverDays === '3-5' || selectedFeverDays === '6+';
 
-    stepLabel.textContent = "EVALUACIÓN CLÍNICA FINALIZADA · MISPAS";
+    panelP3?.classList.add('hidden');
+    node3?.classList.remove('active');
+    node3?.classList.add('done');
+    if (stepLabel) stepLabel.textContent = "DICTAMEN CLÍNICO PROCESADO CON ÉXITO";
 
-    if (alarms > 0) {
+    if (hasAlarms) {
       resRed?.classList.remove('hidden');
-    } else if (risks > 0 || selectedFever === '3-5') {
+      if (progressBar) progressBar.style.background = "#EF4444";
+    } else if (hasRisks || isCriticalTime) {
       resAmber?.classList.remove('hidden');
+      if (progressBar) progressBar.style.background = "#F59E0B";
     } else {
       resGreen?.classList.remove('hidden');
+      if (progressBar) progressBar.style.background = "#10B981";
     }
   });
 
-  // Reiniciar
-  document.querySelectorAll('.btn-triage-reset').forEach(btn => {
-    btn.addEventListener('click', () => {
-      resRed?.classList.add('hidden');
-      resAmber?.classList.add('hidden');
-      resGreen?.classList.add('hidden');
-      if (p1 && stepLabel) {
-        p1.classList.remove('hidden');
-        stepLabel.textContent = "PASO 1 DE 3: DURACIÓN DE LA FIEBRE";
-      }
-      feverCards.forEach(c => c.classList.remove('selected'));
-      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-        (cb as HTMLInputElement).checked = false;
-      });
-      selectedFever = '';
+  // Copiar resumen para el médico / hospital
+  const copyRedBtn = document.getElementById('btn-copy-red');
+  const copyAmberBtn = document.getElementById('btn-copy-amber');
+
+  const handleCopySummary = (btn: HTMLElement, code: string) => {
+    const summary = `[ALERTA DENGUE RD - TRIAJE CLÍNICO MISPAS]\nEstado: ${code}\nFiebre: ${selectedFeverDays || 'No especificada'} días continuos.\nFecha: ${new Date().toLocaleDateString('es-DO', { dateStyle: 'full' })}\nProtocolo oficial MISPAS: https://FrankBetances.github.io/proyectos/alerta-dengue#triaje`;
+    navigator.clipboard.writeText(summary).then(() => {
+      const originalText = btn.textContent;
+      btn.textContent = "✓ Resumen copiado";
+      setTimeout(() => {
+        btn.textContent = originalText;
+      }, 2500);
     });
+  };
+
+  if (copyRedBtn) copyRedBtn.addEventListener('click', () => handleCopySummary(copyRedBtn, 'CÓDIGO ROJO - TRASLADO URGENTE A EMERGENCIAS'));
+  if (copyAmberBtn) copyAmberBtn.addEventListener('click', () => handleCopySummary(copyAmberBtn, 'CÓDIGO ÁMBAR - VALORACIÓN MÉDICA HOY'));
+
+  // Reiniciar Triaje
+  function resetAllTriage() {
+    triggerHaptic(10);
+    selectedFeverDays = null;
+    document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]').forEach(c => c.checked = false);
+
+    resRed?.classList.add('hidden');
+    resAmber?.classList.add('hidden');
+    resGreen?.classList.add('hidden');
+    panelP2?.classList.add('hidden');
+    panelP3?.classList.add('hidden');
+    panelP1?.classList.remove('hidden');
+
+    if (progressBar) {
+      progressBar.style.width = "33%";
+      progressBar.style.background = "linear-gradient(90deg, #00F2FE 0%, #EF4444 100%)";
+    }
+    node1?.classList.remove('done');
+    node1?.classList.add('active');
+    node2?.classList.remove('active', 'done');
+    node3?.classList.remove('active', 'done');
+
+    if (stepLabel) stepLabel.textContent = "PASO 1 DE 3: TEMPORALIDAD DE LA FIEBRE";
+  }
+
+  document.querySelectorAll('.btn-triage-reset').forEach(btn => {
+    btn.addEventListener('click', resetAllTriage);
   });
 </script>

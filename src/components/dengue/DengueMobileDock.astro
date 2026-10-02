@@ -1,0 +1,163 @@
+---
+// DengueMobileDock.astro - Dock Ergonómico Flotante para Dispositivos Móviles
+---
+
+<nav class="dengue-mobile-dock print-hide" id="dengue-mobile-dock" aria-label="Acciones rápidas de emergencia">
+  <div class="dock-container">
+    <a href="#triaje" class="dock-item dock-triage" id="dock-btn-triage" aria-label="Ir al triaje de signos de alarma">
+      <span class="dock-pulse-dot"></span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+      </svg>
+      <span>Triaje</span>
+    </a>
+
+    <a href="#radar" class="dock-item" aria-label="Ver radar geoespacial de La Vega">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="m4.93 4.93 4.24 4.24"></path>
+        <path d="m14.83 9.17 4.24-4.24"></path>
+        <path d="m14.83 14.83 4.24 4.24"></path>
+        <path d="m9.17 14.83-4.24 4.24"></path>
+      </svg>
+      <span>Radar</span>
+    </a>
+
+    <a href="#prevencion" class="dock-item" aria-label="Ver protocolo de prevención">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+      <span>Prevención</span>
+    </a>
+
+    <a href="https://t.me/AlertaDengueRDbot" target="_blank" rel="noopener noreferrer" class="dock-item dock-telegram" aria-label="Abrir bot de Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+      </svg>
+      <span>Bot</span>
+    </a>
+  </div>
+</nav>
+
+<style>
+  .dengue-mobile-dock {
+    display: none;
+    position: fixed;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    left: 1rem;
+    right: 1rem;
+    z-index: 95;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .dock-container {
+    pointer-events: auto;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.45rem 0.65rem;
+    background: rgba(10, 14, 23, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(239, 68, 68, 0.15);
+  }
+
+  .dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 9999px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .dock-item:active {
+    transform: scale(0.92);
+  }
+
+  .dock-triage {
+    color: #FCA5A5;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+  }
+
+  .dock-pulse-dot {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #EF4444;
+    box-shadow: 0 0 6px #EF4444;
+    animation: dockPulse 1.8s infinite;
+  }
+
+  @keyframes dockPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.7); }
+  }
+
+  .dock-telegram {
+    color: var(--accent-cyan);
+  }
+
+  .dock-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .dengue-mobile-dock {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  // Ocultar dock sutilmente al final de la página para no tapar el footer
+  function setupMobileDock() {
+    const dock = document.getElementById('dengue-mobile-dock');
+    if (!dock) return;
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPosition = window.innerHeight + window.scrollY;
+          const bodyHeight = document.documentElement.scrollHeight;
+          // Si estamos a menos de 120px del final de la página, ocultar
+          if (bodyHeight - scrollPosition < 120) {
+            dock.classList.add('dock-hidden');
+          } else {
+            dock.classList.remove('dock-hidden');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileDock);
+  } else {
+    setupMobileDock();
+  }
+</script>

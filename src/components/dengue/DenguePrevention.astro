@@ -1,5 +1,5 @@
 ---
-// DenguePrevention.astro - Operación Descacharrización y Prevención Domiciliaria
+// DenguePrevention.astro - Operación Descacharrización y Checklist Domiciliario Interactivo
 ---
 
 <section class="dengue-prevention-section" id="prevencion">
@@ -12,51 +12,90 @@
       <p class="section-lead">
         El 80 % de los criaderos se originan en el entorno doméstico. Cuatro acciones directas para cortar el ciclo del mosquito:
       </p>
+
+      <!-- Indicador Interactivo de Inspección Ciudadana -->
+      <div class="inspection-meter-box font-mono" id="inspection-meter">
+        <div class="meter-header">
+          <span class="meter-title">ESTADO DE SANEAMIENTO EN TU HOGAR:</span>
+          <span class="meter-counter" id="meter-counter-text">0 / 4 ACCIONES COMPLETADAS (0 %)</span>
+        </div>
+        <div class="meter-track" aria-hidden="true">
+          <div class="meter-bar" id="meter-progress-bar" style="width: 0%;"></div>
+        </div>
+      </div>
     </div>
 
-    <div class="prevention-grid">
+    <div class="prevention-grid" role="list">
       <!-- Acción 1: Cloro Untado -->
-      <div class="prevention-card">
-        <div class="card-step-badge font-mono">01 · ACCIÓN CARDINAL</div>
-        <div class="card-icon">🧴</div>
-        <h3 class="card-title">Cloro untado y tapado hermético</h3>
-        <p class="card-desc">
-          Untar cloro en los bordes internos de tanques y tinacos, dejar secar 15 minutos y tapar herméticamente.
-        </p>
-        <div class="card-tag font-mono">Destruye los huevos adheridos a las paredes</div>
+      <div class="prevention-card" data-step="1">
+        <span class="card-bg-num font-mono" aria-hidden="true">01</span>
+        <div class="card-content">
+          <div class="card-step-badge font-mono">01 · ACCIÓN CARDINAL</div>
+          <div class="card-icon">🧴</div>
+          <h3 class="card-title">Cloro untado y tapado hermético</h3>
+          <p class="card-desc">
+            Untar cloro en los bordes internos de tanques y tinacos, dejar secar 15 minutos y tapar herméticamente.
+          </p>
+          <div class="card-tag font-mono">Destruye los huevos adheridos a las paredes</div>
+        </div>
+        <button type="button" class="btn-check-step font-mono" data-step-btn="1" aria-label="Marcar cloro untado como realizado en mi hogar">
+          <span class="check-box-icon"></span>
+          <span class="check-btn-text">Marcar como realizado</span>
+        </button>
       </div>
 
       <!-- Acción 2: Neumáticos -->
-      <div class="prevention-card">
-        <div class="card-step-badge font-mono">02 · ELIMINACIÓN DE GOMAS</div>
-        <div class="card-icon">🛞</div>
-        <h3 class="card-title">Perforar o desechar neumáticos</h3>
-        <p class="card-desc">
-          Perforar las gomas viejas a la intemperie para drenaje o entregarlas para recogida municipal.
-        </p>
-        <div class="card-tag font-mono">Elimina el foco más común en patios</div>
+      <div class="prevention-card" data-step="2">
+        <span class="card-bg-num font-mono" aria-hidden="true">02</span>
+        <div class="card-content">
+          <div class="card-step-badge font-mono">02 · ELIMINACIÓN DE GOMAS</div>
+          <div class="card-icon">🛞</div>
+          <h3 class="card-title">Perforar o desechar neumáticos</h3>
+          <p class="card-desc">
+            Perforar las gomas viejas a la intemperie para drenaje o entregarlas para recogida municipal.
+          </p>
+          <div class="card-tag font-mono">Elimina el foco más común en patios</div>
+        </div>
+        <button type="button" class="btn-check-step font-mono" data-step-btn="2" aria-label="Marcar eliminación de neumáticos como realizada">
+          <span class="check-box-icon"></span>
+          <span class="check-btn-text">Marcar como realizado</span>
+        </button>
       </div>
 
       <!-- Acción 3: Volteo -->
-      <div class="prevention-card">
-        <div class="card-step-badge font-mono">03 · CONTROL PERIÓDICO</div>
-        <div class="card-icon">🔄</div>
-        <h3 class="card-title">Volteo sistemático de recipientes</h3>
-        <p class="card-desc">
-          Colocar boca abajo botellas, cubetas y platos de macetas. Cambiar a diario el agua de mascotas.
-        </p>
-        <div class="card-tag font-mono">Revisión preventiva cada 5 días</div>
+      <div class="prevention-card" data-step="3">
+        <span class="card-bg-num font-mono" aria-hidden="true">03</span>
+        <div class="card-content">
+          <div class="card-step-badge font-mono">03 · CONTROL PERIÓDICO</div>
+          <div class="card-icon">🔄</div>
+          <h3 class="card-title">Volteo sistemático de recipientes</h3>
+          <p class="card-desc">
+            Colocar boca abajo botellas, cubetas y platos de macetas. Cambiar a diario el agua de mascotas.
+          </p>
+          <div class="card-tag font-mono">Revisión preventiva cada 5 días</div>
+        </div>
+        <button type="button" class="btn-check-step font-mono" data-step-btn="3" aria-label="Marcar volteo sistemático como realizado">
+          <span class="check-box-icon"></span>
+          <span class="check-btn-text">Marcar como realizado</span>
+        </button>
       </div>
 
       <!-- Acción 4: Floreros y Arena -->
-      <div class="prevention-card">
-        <div class="card-step-badge font-mono">04 · FLOREROS Y CEMENTERIOS</div>
-        <div class="card-icon">🪴</div>
-        <h3 class="card-title">Sustituir agua por arena húmeda</h3>
-        <p class="card-desc">
-          Sustituir el agua estancada por arena húmeda en floreros, altares y nichos de cementerios.
-        </p>
-        <div class="card-tag font-mono">Cero proliferación larvaria en flores</div>
+      <div class="prevention-card" data-step="4">
+        <span class="card-bg-num font-mono" aria-hidden="true">04</span>
+        <div class="card-content">
+          <div class="card-step-badge font-mono">04 · FLOREROS Y CEMENTERIOS</div>
+          <div class="card-icon">🪴</div>
+          <h3 class="card-title">Sustituir agua por arena húmeda</h3>
+          <p class="card-desc">
+            Sustituir el agua estancada por arena húmeda en floreros, altares y nichos de cementerios.
+          </p>
+          <div class="card-tag font-mono">Cero proliferación larvaria en flores</div>
+        </div>
+        <button type="button" class="btn-check-step font-mono" data-step-btn="4" aria-label="Marcar sustitución de agua por arena como realizada">
+          <span class="check-box-icon"></span>
+          <span class="check-btn-text">Marcar como realizado</span>
+        </button>
       </div>
     </div>
   </div>
@@ -64,14 +103,14 @@
 
 <style>
   .dengue-prevention-section {
-    padding: 5.5rem 0;
+    padding: clamp(4rem, 7vw, 6rem) 0;
     background: #07090E;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .section-header {
     max-width: 800px;
-    margin: 0 auto 3.5rem;
+    margin: 0 auto clamp(2rem, 4vw, 3.5rem);
   }
 
   .section-eyebrow {
@@ -90,11 +129,58 @@
   }
 
   .section-lead {
-    font-size: 1.08rem;
+    font-size: clamp(0.95rem, 1.6vw, 1.08rem);
     color: var(--text-muted);
     line-height: 1.6;
+    margin-bottom: 2rem;
   }
 
+  /* Meter de Inspección */
+  .inspection-meter-box {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.5rem;
+    max-width: 580px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .meter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.78rem;
+  }
+
+  .meter-title {
+    color: var(--text-dim);
+  }
+
+  .meter-counter {
+    color: var(--accent-amber);
+    font-weight: 700;
+  }
+
+  .meter-track {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .meter-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #F59E0B 0%, #10B981 100%);
+    border-radius: 9999px;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Grid de Prevención */
   .prevention-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -105,11 +191,13 @@
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-md);
-    padding: 2rem 1.5rem;
-    position: relative;
+    padding: 2rem 1.75rem;
     display: flex;
     flex-direction: column;
-    transition: all 0.25s ease;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .prevention-card:hover {
@@ -117,21 +205,44 @@
     transform: translateY(-2px);
   }
 
+  .prevention-card.is-completed {
+    background: rgba(16, 185, 129, 0.06);
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.12);
+  }
+
+  .card-bg-num {
+    position: absolute;
+    top: -8px;
+    right: 8px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.025);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+
   .card-step-badge {
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     color: var(--accent-amber);
-    letter-spacing: 0.06em;
-    margin-bottom: 1rem;
-    display: block;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.85rem;
   }
 
   .card-icon {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+    font-size: 2.3rem;
+    margin-bottom: 0.85rem;
   }
 
   .card-title {
-    font-size: 1.25rem;
+    font-size: clamp(1.15rem, 2vw, 1.3rem);
     font-weight: 700;
     color: var(--text-main);
     line-height: 1.25;
@@ -139,19 +250,140 @@
   }
 
   .card-desc {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    line-height: 1.55;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
   }
 
   .card-tag {
-    font-size: 0.72rem;
-    color: var(--text-dim);
+    font-size: 0.75rem;
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.06);
     padding: 0.35rem 0.65rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--radius-sm);
+    line-height: 1.3;
+    display: inline-block;
+  }
+
+  .btn-check-step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-main);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-check-step:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .btn-check-step:active {
+    transform: scale(0.97);
+  }
+
+  .check-box-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    transition: all 0.2s ease;
+  }
+
+  .prevention-card.is-completed .check-box-icon {
+    background: #10B981;
+    border-color: #10B981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+  }
+
+  .prevention-card.is-completed .btn-check-step {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #6EE7B7;
+  }
+
+  @media (max-width: 640px) {
+    .prevention-grid {
+      grid-template-columns: 1fr;
+      gap: 1.15rem;
+    }
+
+    .prevention-card {
+      padding: 1.5rem 1.25rem;
+    }
+
+    .btn-check-step {
+      padding: 0.85rem;
+    }
   }
 </style>
+
+<script>
+  // Checklist Interactivo de Prevención Ciudadana en el Hogar
+  function setupPreventionChecklist() {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.btn-check-step');
+    const progressBar = document.getElementById('meter-progress-bar');
+    const counterText = document.getElementById('meter-counter-text');
+
+    let completedCount = 0;
+    const totalCount = buttons.length;
+
+    const triggerHaptic = (ms = 15) => {
+      if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+        try { navigator.vibrate(ms); } catch {}
+      }
+    };
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        triggerHaptic(20);
+        const card = btn.closest('.prevention-card');
+        const textSpan = btn.querySelector('.check-btn-text');
+        if (!card) return;
+
+        const isCompleted = card.classList.toggle('is-completed');
+
+        if (isCompleted) {
+          completedCount++;
+          if (textSpan) textSpan.textContent = "✓ Completado en el hogar";
+        } else {
+          completedCount--;
+          if (textSpan) textSpan.textContent = "Marcar como realizado";
+        }
+
+        const percentage = Math.round((completedCount / totalCount) * 100);
+
+        if (progressBar) {
+          progressBar.style.width = `${percentage}%`;
+        }
+
+        if (counterText) {
+          if (completedCount === totalCount) {
+            counterText.textContent = `¡100 %! HOGAR PROTEGIDO CONTRA CRIADEROS`;
+            counterText.style.color = "#10B981";
+          } else {
+            counterText.textContent = `${completedCount} / ${totalCount} ACCIONES COMPLETADAS (${percentage} %)`;
+            counterText.style.color = "var(--accent-amber)";
+          }
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupPreventionChecklist);
+  } else {
+    setupPreventionChecklist();
+  }
+</script>
