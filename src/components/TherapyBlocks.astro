@@ -1,367 +1,589 @@
 ---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+
+const clinicalDomains = [
+  { id: "all", label: "Todos los Bloques", count: "10 + Ling" },
+  { id: "audicion", label: "Audición & Sensorial", count: "3 módulos" },
+  { id: "habla", label: "Habla & Fonología", count: "3 módulos" },
+  { id: "neuro", label: "Neurodesarrollo & Motricidad", count: "5 módulos" }
+];
+
 const lingCheck = {
-  icon: "⚡",
+  id: "ling",
+  domain: "audicion",
   title: "Test de Ling (6 Sonidos)",
   category: "Comprobación Previa",
-  desc: "Chequeo rápido con los 6 fonemas [a, i, u, m, s, ʃ] para verificar audífonos e implantes cocleares antes de ejercitar.",
-  badge: "Pre-Sesión",
-  tags: ["6 Fonemas Ling", "Frecuencias Espectrales", "Vital en Hipoacusia"]
+  desc: "Criba rápida de los 6 fonemas [a, i, u, m, s, ʃ] para verificar la calibración de implantes cocleares o audífonos antes de cada sesión.",
+  badge: "Pre-Sesión Clave",
+  badgeColor: "amber",
+  img: `${baseUrl}/assets/15-ling-test.png`,
+  tags: ["6 Fonemas Espectrales", "Hipoacusia & Implantes", "Validación Inmediata"]
 };
 
 const blocks = [
   {
     num: "01",
-    icon: "🎧",
+    domain: "audicion",
     title: "Integración Sensorial SOR",
     category: "Sobre-Responsividad",
-    desc: "Desensibilización progresiva ante ruidos cotidianos fuertes (aspiradora, secador, aula). Muro de control adulto donde pausar siempre suma puntos.",
+    desc: "Desensibilización sonora ante ruidos fuertes (aspirador, secador, aula). Muro de control adulto donde pausar la sesión suma puntos.",
     badge: "SOR Acústico",
     badgeColor: "cyan"
   },
   {
     num: "02",
-    icon: "🐱",
+    domain: "habla",
     title: "Aventuras con Lúa",
     category: "Lúa y las Palabras",
-    desc: "105 actividades en 6 franjas de edad (0-2 a 7-10): juegos de selección, preguntas interactivas, cuentos ilustrados y canciones habladas a pulso.",
+    desc: "105 actividades en 6 franjas de edad (0 a 10 años): preguntas interactivas, cuentos ilustrados y canciones habladas a pulso.",
     badge: "105 Actividades",
     badgeColor: "purple"
   },
   {
     num: "03",
-    icon: "🗣️",
+    domain: "habla",
     title: "Pares Mínimos D7",
     category: "Dislalias y Habla",
-    desc: "15 pares contrastados en 6 grupos de articulación. Algoritmo D7 O2 que compara contra ambas palabras para eliminar falsos positivos de error.",
+    desc: "15 pares contrastados en 6 grupos articulatorios. Algoritmo O2 que coteja ambas palabras evitando falsos positivos de error.",
     badge: "Algoritmo O2",
-    badgeColor: "cyan"
+    badgeColor: "cyan",
+    img: `${baseUrl}/assets/08-pares-juego.png`
   },
   {
     num: "04",
-    icon: "🧩",
+    domain: "habla",
     title: "Expansión Semántica",
     category: "Léxico y Comprensión",
-    desc: "66 pictogramas propios en píxel art. Práctica en doble vuelta: el menor primero señala la imagen correcta y luego articula la palabra.",
+    desc: "66 pictogramas propios en píxel art. Práctica en doble vuelta: el menor primero señala la imagen y luego articula la palabra.",
     badge: "Doble Vuelta",
-    badgeColor: "emerald"
+    badgeColor: "emerald",
+    img: `${baseUrl}/assets/12-expansion-juego.png`
   },
   {
     num: "05",
-    icon: "👂",
+    domain: "audicion",
     title: "Audición (ACOPROS)",
     category: "Auditivo-Verbal",
-    desc: "Protocolo clínico auditivo-verbal: discriminación fonética fina y comprensión en ruido babble graduable simulando entornos escolares reales.",
-    badge: "Validado ACOPROS",
+    desc: "Discriminación fonética fina y comprensión en ruido babble graduable simulando el aula real, validado por logopedas de ACOPROS.",
+    badge: "Protocolo ACOPROS",
     badgeColor: "purple"
   },
   {
     num: "06",
-    icon: "💬",
+    domain: "neuro",
     title: "Lenguaje Temprano",
     category: "Estimulación Familiar",
-    desc: "Atención conjunta triangulada, imitación progresiva (gesto → sílaba → palabra) y rutinas comunicativas funcionales con objetos del hogar.",
+    desc: "Atención conjunta triangulada, imitación progresiva (gesto → sílaba → palabra) y rutinas comunicativas funcionales en el hogar.",
     badge: "Rutina Diaria",
     badgeColor: "cyan"
   },
   {
     num: "07",
-    icon: "🧠",
+    domain: "neuro",
     title: "TEA (Espectro Autista)",
     category: "PRT + Conductual",
-    desc: "Atención conjunta con Time Delay, quiebres pragmáticos y anticipación estructurada con estresores 100% regulados a mano por la familia.",
+    desc: "Atención conjunta con Time Delay, quiebres pragmáticos y anticipación estructurada con estresores regulados a mano por el adulto.",
     badge: "Estresores Manuales",
     badgeColor: "amber"
   },
   {
     num: "08",
-    icon: "📖",
+    domain: "neuro",
     title: "Dislexia y Fonología",
     category: "Conciencia Fonológica",
-    desc: "Intruso fonológico puramente auditivo, criba de pseudopalabras, mapa visual de rotaciones b/d · p/q y denominación rápida automatizada.",
+    desc: "Intruso fonológico auditivo, criba de pseudopalabras y mapa de rotaciones críticas (b/d · p/q) con denominación rápida automatizada.",
     badge: "Criba Fonológica",
     badgeColor: "purple"
   },
   {
     num: "09",
-    icon: "✏️",
+    domain: "neuro",
     title: "La Pizarra Mágica",
     category: "Grafomotricidad",
-    desc: "18 trazos guiados en SVG sobre pauta Montessori con puntos numerados (1, 2, 3) que fijan el orden motriz exacto de letras críticas.",
+    desc: "18 trazos guiados en SVG sobre pauta Montessori con puntos numerados (1, 2, 3) que fijan la secuencia motriz de grafías complejas.",
     badge: "18 Trazos SVG",
     badgeColor: "emerald"
   },
   {
     num: "10",
-    icon: "🎯",
+    domain: "neuro",
     title: "Realidad Aumentada 3D",
     category: "Sensor Orofacial",
-    desc: "Cámara frontal como sensor cinemático orofacial sin micrófono activo (ARCore + MediaPipe + Filament 3D), garantizando privacidad absoluta.",
+    desc: "Cámara frontal como sensor cinemático de praxias faciales sin micrófono activo (ARCore + MediaPipe + Filament 3D), garantizando privacidad.",
     badge: "ARCore + MediaPipe",
     badgeColor: "cyan"
   }
 ];
 ---
 
+<!-- Showcase Clínico de los 10 Bloques con Capturas Reales & Tabs Táctiles -->
 <section id="bloques-clinicos" class="therapy-section">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Intervención Estructurada</span>
+      <span class="tag">Intervención Médica Integral</span>
       <h2>10 Bloques Clínicos + <span class="gradient-text">Test de Ling</span></h2>
-      <p>Progresión clínica integral: desde el chequeo rápido de prótesis auditivas hasta la pronunciación, la lectura y la motricidad 3D.</p>
+      <p>Progresión clínica desde la criba rápida de prótesis auditivas hasta la pronunciación precisa, la lectura y la grafomotricidad 3D.</p>
     </div>
 
-    <!-- Ling Check Highlight Bar - Perfectly Centered -->
-    <div class="ling-banner glass-card" id="terapias">
-      <div class="ling-icon">{lingCheck.icon}</div>
-      <div class="ling-text">
-        <div class="ling-header-row">
-          <span class="badge badge-amber">{lingCheck.badge}</span>
-          <span class="ling-cat">{lingCheck.category}</span>
-        </div>
-        <h3>{lingCheck.title}</h3>
-        <p>{lingCheck.desc}</p>
-      </div>
-      <div class="ling-tags">
-        {lingCheck.tags.map((tag) => (
-          <span class="ling-tag-item">{tag}</span>
+    <!-- Interactive Domain Filter Tabs (Mobile Scroll-Snap) -->
+    <div class="domains-filter-container">
+      <div class="domains-filter-tabs scroll-snap-x" role="tablist" aria-label="Filtrar por dominio clínico">
+        {clinicalDomains.map((tab, idx) => (
+          <button 
+            type="button" 
+            class={`tab-btn touch-target scroll-snap-item ${idx === 0 ? 'active' : ''}`}
+            data-domain={tab.id}
+            role="tab"
+            aria-selected={idx === 0 ? "true" : "false"}
+          >
+            <span class="tab-label">{tab.label}</span>
+            <span class="tab-count">{tab.count}</span>
+          </button>
         ))}
       </div>
     </div>
 
-    <!-- 10 Blocks Grid - Clean, Centered & Minimalist -->
-    <div class="blocks-grid">
+    <!-- Interactive App Showcase Grid: Featured Live Capture + Ling Banner -->
+    <div class="showcase-bento-hero">
+      <!-- Ling Banner Card -->
+      <article class="glass-card ling-banner-card" data-domain="audicion">
+        <div class="ling-card-header">
+          <div class="ling-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div>
+            <div class="badge-row">
+              <span class="badge badge-amber">{lingCheck.badge}</span>
+              <span class="ling-cat">{lingCheck.category}</span>
+            </div>
+            <h3>{lingCheck.title}</h3>
+          </div>
+        </div>
+
+        <p class="ling-desc">{lingCheck.desc}</p>
+
+        <div class="ling-tags-row">
+          {lingCheck.tags.map((tag) => (
+            <span class="ling-tag-item">{tag}</span>
+          ))}
+        </div>
+      </article>
+
+      <!-- Real Screenshot Showcase Frame -->
+      <div class="app-screenshot-showcase glass-card">
+        <div class="screenshot-header">
+          <div class="screenshot-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="screenshot-caption">Captura Real en Dispositivo · Valeria+ v14</span>
+          <span class="badge badge-cyan">Hub Clínico</span>
+        </div>
+        <div class="screenshot-viewport">
+          <img 
+            src={`${baseUrl}/assets/05-hub-bloques.png`} 
+            alt="Hub de navegación de los 10 bloques clínicos en Valeria+ v14" 
+            class="real-app-img"
+            width="460"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 Blocks Bento Grid (Filterable via Tabs) -->
+    <div class="blocks-bento-grid" id="blocks-grid-container">
       {blocks.map((block) => (
-        <div class="glass-card block-card">
-          <div class="block-top">
-            <span class="block-num">BLOQUE {block.num}</span>
+        <article class="glass-card block-bento-card" data-domain={block.domain}>
+          <div class="block-card-top">
+            <span class="block-num-pill">BLOQUE {block.num}</span>
             <span class={`badge badge-${block.badgeColor}`}>{block.badge}</span>
           </div>
 
-          <div class="block-icon">{block.icon}</div>
-          <span class="block-category">{block.category}</span>
-          <h3>{block.title}</h3>
-          <p class="block-desc">{block.desc}</p>
-        </div>
+          <div class="block-card-body">
+            <span class="block-category-label">{block.category}</span>
+            <h4>{block.title}</h4>
+            <p>{block.desc}</p>
+          </div>
+
+          {block.img && (
+            <div class="block-preview-thumb">
+              <img 
+                src={block.img} 
+                alt={`Pantalla del Bloque ${block.num} - ${block.title}`} 
+                class="thumb-img" 
+                loading="lazy" 
+                decoding="async"
+                width="320"
+                height="180"
+              />
+            </div>
+          )}
+        </article>
       ))}
     </div>
   </div>
 </section>
 
+<!-- Lightweight Zero-Dependency Tab Filtering Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const cards = document.querySelectorAll('.block-bento-card, .ling-banner-card');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const domain = tab.getAttribute('data-domain');
+
+        cards.forEach((card) => {
+          const cardDomain = card.getAttribute('data-domain');
+          if (domain === 'all' || cardDomain === domain) {
+            (card as HTMLElement).style.display = 'flex';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+
 <style>
   .therapy-section {
     padding: 85px 0;
     position: relative;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.2);
     border-top: 1px solid var(--border-light);
   }
 
-  /* Ling Banner - Centered */
-  .ling-banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.25rem;
-    padding: 2rem 2.5rem;
-    margin-bottom: 2.5rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(15, 23, 42, 0.7) 100%);
-    border: 1px solid rgba(245, 158, 11, 0.3);
+  /* Filter Tabs */
+  .domains-filter-container {
+    max-width: 880px;
+    margin: 0 auto 2.5rem auto;
   }
 
-  .ling-icon {
-    font-size: 2rem;
-    background: rgba(245, 158, 11, 0.15);
-    width: 54px;
-    height: 54px;
+  .domains-filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.65rem;
+    padding: 0.35rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-full);
+  }
+
+  .tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.15rem;
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .tab-btn:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .tab-btn.active {
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(138, 43, 226, 0.15) 100%);
+    border-color: rgba(0, 242, 254, 0.4);
+    color: #FFFFFF;
+    box-shadow: 0 4px 16px rgba(0, 242, 254, 0.15);
+  }
+
+  .tab-count {
+    font-size: 0.72rem;
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.1);
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--radius-full);
+  }
+
+  /* Showcase Bento Hero */
+  .showcase-bento-hero {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.5rem;
+    max-width: 1120px;
+    margin: 0 auto 2.5rem auto;
+    align-items: stretch;
+  }
+
+  .ling-banner-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.25rem 2rem;
+    background: linear-gradient(145deg, rgba(30, 25, 15, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+  }
+
+  .ling-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .ling-icon-wrap {
+    width: 48px;
+    height: 48px;
     border-radius: 14px;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: var(--accent-amber);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
     flex-shrink: 0;
   }
 
-  .ling-text {
+  .badge-row {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 0.5rem;
-    max-width: 680px;
-  }
-
-  .ling-header-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
+    margin-bottom: 0.35rem;
   }
 
   .ling-cat {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--accent-amber);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
   }
 
-  .ling-text h3 {
-    font-size: 1.25rem;
+  .ling-card-header h3 {
+    font-size: 1.35rem;
     font-weight: 800;
     color: var(--text-main);
-    margin: 0;
-    text-align: center;
   }
 
-  .ling-text p {
-    font-size: 0.925rem;
+  .ling-desc {
     color: var(--text-muted);
-    line-height: 1.55;
-    margin: 0;
-    text-align: center;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 
-  .ling-tags {
+  .ling-tags-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 0.5rem;
   }
 
   .ling-tag-item {
     font-size: 0.78rem;
+    font-weight: 600;
     color: var(--text-main);
     background: rgba(255, 255, 255, 0.05);
-    padding: 0.3rem 0.75rem;
-    border-radius: var(--radius-full);
     border: 1px solid var(--border-light);
-    text-align: center;
-    white-space: nowrap;
+    border-radius: var(--radius-full);
+    padding: 0.3rem 0.75rem;
   }
 
-  /* Blocks Grid - Centered Cards */
-  .blocks-grid {
+  /* Screenshot Frame */
+  .app-screenshot-showcase {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: rgba(10, 15, 26, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .screenshot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .screenshot-dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  .screenshot-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .screenshot-caption {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    font-weight: 600;
+  }
+
+  .screenshot-viewport {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+    max-height: 250px;
+    background: #020617;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .real-app-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+  /* 10 Blocks Bento Grid */
+  .blocks-bento-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
-    max-width: 1060px;
+    max-width: 1120px;
     margin: 0 auto;
   }
 
-  .block-card {
+  .block-bento-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     padding: 1.75rem;
     height: 100%;
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
-  .block-card:hover {
+  .block-bento-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.5);
   }
 
-  .block-top {
+  .block-card-top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
-  .block-num {
+  .block-num-pill {
     font-family: var(--font-heading);
-    font-size: 0.725rem;
+    font-size: 0.72rem;
     font-weight: 800;
     color: var(--text-dim);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
   }
 
-  .block-icon {
-    font-size: 2.2rem;
-    margin-bottom: 0.75rem;
+  .block-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: 1rem;
   }
 
-  .block-category {
-    font-size: 0.725rem;
+  .block-category-label {
+    font-size: 0.72rem;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--accent-cyan);
+    text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 0.35rem;
-    text-align: center;
   }
 
-  .block-card h3 {
+  .block-card-body h4 {
     font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
     color: var(--text-main);
-    text-align: center;
+    margin-bottom: 0.5rem;
   }
 
-  .block-desc {
+  .block-card-body p {
     color: var(--text-muted);
-    font-size: 0.875rem;
+    font-size: 0.88rem;
     line-height: 1.55;
     margin: 0;
-    flex-grow: 1;
-    text-align: center;
   }
 
-  @media (max-width: 768px) {
+  .block-preview-thumb {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-top: 0.75rem;
+    border: 1px solid var(--border-light);
+    max-height: 140px;
+  }
+
+  .thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .block-bento-card:hover .thumb-img {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 960px) {
+    .showcase-bento-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .domains-filter-tabs {
+      justify-content: flex-start;
+      border-radius: var(--radius-md);
+    }
+  }
+
+  @media (max-width: 640px) {
     .therapy-section {
       padding: 50px 0;
     }
 
-    .ling-banner {
-      padding: 1.35rem 1.15rem;
-      gap: 0.9rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .ling-text h3 {
-      font-size: 1.15rem;
-    }
-
-    .ling-text p {
-      font-size: 0.88rem;
-    }
-
-    .ling-tags {
-      gap: 0.35rem;
-    }
-
-    .ling-tag-item {
-      font-size: 0.72rem;
-      padding: 0.25rem 0.55rem;
-    }
-
-    .blocks-grid {
+    .blocks-bento-grid {
       grid-template-columns: 1fr;
       gap: 1rem;
     }
 
-    .block-card {
+    .ling-banner-card {
+      padding: 1.5rem 1.25rem;
+    }
+
+    .ling-card-header h3 {
+      font-size: 1.15rem;
+    }
+
+    .ling-desc {
+      font-size: 0.88rem;
+    }
+
+    .block-bento-card {
       padding: 1.35rem 1.15rem;
-    }
-
-    .block-icon {
-      font-size: 1.85rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .block-card h3 {
-      font-size: 1.08rem;
-    }
-
-    .block-desc {
-      font-size: 0.86rem;
     }
   }
 </style>
