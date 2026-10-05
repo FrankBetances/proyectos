@@ -1,0 +1,193 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+
+<!-- Fixed Mobile Action Bar (< 768px) with Quick Download & Exploration -->
+<aside class="mobile-bottom-bar" aria-label="Acciones rápidas para móvil">
+  <div class="mobile-bar-container">
+    <div class="mobile-bar-meta">
+      <span class="offline-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text">100% Offline · Zero-PHI</span>
+      </span>
+      <a href={`${baseUrl}/lua`} class="mobile-lua-link" aria-label="Ver mascota Lúa">
+        <span>🐱 Lúa</span>
+      </a>
+    </div>
+
+    <div class="mobile-bar-actions">
+      <a 
+        href="https://play.google.com/store/apps/details?id=eu.futureforkids.valeria" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="mobile-bar-btn-play touch-target"
+        aria-label="Descargar Valeria+ en Google Play"
+      >
+        <svg class="play-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3.609 1.814L13.792 12 3.61 22.186A2.02 2.02 0 0 1 3.39 21.8C3.14 21.28 3 20.67 3 19.98V4.02c0-.69.14-1.3.39-1.82.065-.137.14-.268.219-.386z" fill="#00D2FF"/>
+          <path d="M17.472 8.448L5.037.824 13.792 12l3.68-3.552z" fill="#00E676"/>
+          <path d="M17.472 15.552L13.792 12 5.037 23.176l12.435-7.624z" fill="#FF5252"/>
+          <path d="M20.803 10.428l-3.331-2.043-3.68 3.615 3.68 3.552 3.331-2.043c.96-.588.96-2.493 0-3.081z" fill="#FFD600"/>
+        </svg>
+        <span class="play-text">
+          <span class="play-sub">INSTALAR DESDE</span>
+          <span class="play-main">Google Play</span>
+        </span>
+      </a>
+
+      <a href="#bloques-clinicos" class="mobile-bar-btn-explore touch-target" aria-label="Explorar bloques clínicos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>10 Bloques</span>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .mobile-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: rgba(7, 9, 14, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6);
+    padding: 0.55rem 1rem calc(0.55rem + env(safe-area-inset-bottom, 0px)) 1rem;
+    display: none;
+  }
+
+  .mobile-bar-container {
+    max-width: 540px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .mobile-bar-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.25rem;
+  }
+
+  .offline-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #6EE7B7;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #10B981;
+    box-shadow: 0 0 8px #10B981;
+    display: inline-block;
+  }
+
+  .mobile-lua-link {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #fdba74;
+    text-decoration: none;
+    padding: 0.15rem 0.5rem;
+    background: rgba(249, 115, 22, 0.12);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: var(--radius-full);
+    transition: all 0.2s ease;
+  }
+
+  .mobile-bar-actions {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .mobile-bar-btn-play {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border: 1px solid rgba(0, 242, 254, 0.4);
+    border-radius: 12px;
+    padding: 0.45rem 0.85rem;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 242, 254, 0.18);
+  }
+
+  .play-icon {
+    flex-shrink: 0;
+  }
+
+  .play-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+  }
+
+  .play-sub {
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #94A3B8;
+  }
+
+  .play-main {
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+  }
+
+  .mobile-bar-btn-explore {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 0.45rem 0.75rem;
+    color: var(--text-main);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-bottom-bar {
+      display: block;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .mobile-bar-actions {
+      grid-template-columns: 1fr;
+    }
+
+    .mobile-bar-btn-explore {
+      display: none;
+    }
+  }
+</style>
