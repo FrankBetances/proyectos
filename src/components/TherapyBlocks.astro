@@ -77,7 +77,8 @@ const blocks = [
     category: "Estimulación Familiar",
     desc: "Atención conjunta triangulada, imitación progresiva (gesto → sílaba → palabra) y rutinas comunicativas funcionales en el hogar.",
     badge: "Rutina Diaria",
-    badgeColor: "cyan"
+    badgeColor: "cyan",
+    img: `${baseUrl}/assets/10-expansion-escenarios.png`
   },
   {
     num: "07",
@@ -119,7 +120,7 @@ const blocks = [
 ---
 
 <!-- Showcase Clínico de los 10 Bloques con Capturas Reales & Tabs Táctiles -->
-<section id="bloques-clinicos" class="therapy-section">
+<section id="bloques-clinicos" class="therapy-section" data-base-url={baseUrl}>
   <div class="container">
     <div class="section-header">
       <span class="tag">Intervención Médica Integral</span>
@@ -179,11 +180,12 @@ const blocks = [
           <div class="screenshot-dots" aria-hidden="true">
             <span></span><span></span><span></span>
           </div>
-          <span class="screenshot-caption">Captura Real en Dispositivo · Valeria+ v14</span>
-          <span class="badge badge-cyan">Hub Clínico</span>
+          <span class="screenshot-caption" id="showcase-caption">Hub de 10 Bloques Clínicos · Valeria+ v14</span>
+          <span class="badge badge-cyan" id="showcase-badge">Hub Clínico</span>
         </div>
         <div class="screenshot-viewport">
           <img 
+            id="showcase-img"
             src={`${baseUrl}/assets/05-hub-bloques.png`} 
             alt="Hub de navegación de los 10 bloques clínicos en Valeria+ v14" 
             class="real-app-img"
@@ -230,11 +232,43 @@ const blocks = [
   </div>
 </section>
 
-<!-- Lightweight Zero-Dependency Tab Filtering Script -->
+<!-- Lightweight Zero-Dependency Tab Filtering & Showcase Switcher Script -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    const section = document.getElementById('bloques-clinicos');
+    const baseUrl = section?.getAttribute('data-base-url') || '';
     const tabs = document.querySelectorAll('.tab-btn');
     const cards = document.querySelectorAll('.block-bento-card, .ling-banner-card');
+    const showcaseImg = document.getElementById('showcase-img') as HTMLImageElement | null;
+    const showcaseCaption = document.getElementById('showcase-caption');
+    const showcaseBadge = document.getElementById('showcase-badge');
+
+    const domainShowcases: Record<string, { src: string; alt: string; caption: string; badge: string }> = {
+      all: {
+        src: `${baseUrl}/assets/05-hub-bloques.png`,
+        alt: 'Hub clínico oficial con los 10 bloques de estimulación en Valeria+ v14',
+        caption: 'Hub Clínico Integrado · Valeria+ v14',
+        badge: 'Hub Clínico'
+      },
+      audicion: {
+        src: `${baseUrl}/assets/15-ling-test.png`,
+        alt: 'Test de Ling de 6 fonemas para criba espectral de implantes y audífonos',
+        caption: 'Test de Ling Espectral · Criba Auditiva Previa',
+        badge: 'Audición & Sensorial'
+      },
+      habla: {
+        src: `${baseUrl}/assets/08-pares-juego.png`,
+        alt: 'Pares Mínimos D7 con algoritmo de discriminación fonética O2',
+        caption: 'Pares Mínimos D7 · Algoritmo O2 sin Falsos Positivos',
+        badge: 'Habla & Fonología'
+      },
+      neuro: {
+        src: `${baseUrl}/assets/10-expansion-escenarios.png`,
+        alt: 'Escenarios estructurados de estimulación del lenguaje y neurodesarrollo',
+        caption: 'Escenarios Clínicos Estructurados · Intervención Guiada',
+        badge: 'Neurodesarrollo'
+      }
+    };
 
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
@@ -246,6 +280,18 @@ const blocks = [
         tab.setAttribute('aria-selected', 'true');
 
         const domain = tab.getAttribute('data-domain');
+
+        // Dynamically swap featured screenshot showcase with smooth transition
+        if (domain && domainShowcases[domain] && showcaseImg) {
+          showcaseImg.style.opacity = '0.3';
+          setTimeout(() => {
+            showcaseImg.src = domainShowcases[domain].src;
+            showcaseImg.alt = domainShowcases[domain].alt;
+            if (showcaseCaption) showcaseCaption.textContent = domainShowcases[domain].caption;
+            if (showcaseBadge) showcaseBadge.textContent = domainShowcases[domain].badge;
+            showcaseImg.style.opacity = '1';
+          }, 150);
+        }
 
         cards.forEach((card) => {
           const cardDomain = card.getAttribute('data-domain');
@@ -457,6 +503,7 @@ const blocks = [
     object-fit: cover;
     object-position: top;
     display: block;
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
   /* 10 Blocks Bento Grid */

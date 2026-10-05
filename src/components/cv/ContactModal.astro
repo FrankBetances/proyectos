@@ -8,7 +8,12 @@
     </button>
 
     <div class="modal-header">
-      <div class="modal-icon">✉️</div>
+      <div class="modal-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+      </div>
       <h3 id="contact-modal-title">Contacto Profesional & Académico</h3>
       <p>Canales oficiales de investigación, transferencia tecnológica y consultas médico-académicas.</p>
     </div>
@@ -16,7 +21,12 @@
     <div class="modal-body">
       <div class="contact-links">
         <a href="https://www.researchgate.net/profile/Frank-Reinoso" target="_blank" rel="noopener noreferrer" class="contact-card">
-          <div class="contact-icon">🔬</div>
+          <div class="contact-icon contact-icon-rg">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
           <div>
             <h4>ResearchGate Profile</h4>
             <p>Acceso a preprints, publicaciones y red de investigación médica.</p>
@@ -32,7 +42,12 @@
         </a>
 
         <a href="https://github.com/FrankBetances" target="_blank" rel="noopener noreferrer" class="contact-card">
-          <div class="contact-icon">💻</div>
+          <div class="contact-icon contact-icon-gh">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
           <div>
             <h4>GitHub Developer & Code Repositories</h4>
             <p>Proyectos de software médico y código fuente de salud digital.</p>
@@ -171,8 +186,11 @@
   }
 
   .modal-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-cyan);
+    margin-bottom: 0.75rem;
   }
 
   .modal-header h3 {
@@ -211,7 +229,28 @@
   }
 
   .contact-icon {
-    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+    flex-shrink: 0;
+  }
+
+  .contact-icon-rg {
+    color: var(--accent-purple);
+    background: rgba(168, 85, 247, 0.1);
+    border-color: rgba(168, 85, 247, 0.3);
+  }
+
+  .contact-icon-gh {
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.1);
+    border-color: rgba(0, 242, 254, 0.3);
   }
 
   .contact-icon.id-orcid {

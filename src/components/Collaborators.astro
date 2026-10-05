@@ -82,7 +82,9 @@ const collaborators = [
             {c.customMark ? (
               <div class="starttic-brand-mark">
                 <div class="starttic-top-row">
-                  <span class="starttic-icon">🚀</span>
+                  <svg class="starttic-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
                   <span class="starttic-title">start<span class="highlight-tic">TIC</span></span>
                 </div>
                 <span class="starttic-sub">INCUBADORA ALTA TECNOLOGÍA</span>
@@ -198,7 +200,8 @@ const collaborators = [
   }
 
   .starttic-icon {
-    font-size: 1.2rem;
+    color: var(--accent-cyan);
+    flex-shrink: 0;
   }
 
   .starttic-title {

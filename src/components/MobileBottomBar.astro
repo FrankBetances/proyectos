@@ -13,7 +13,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <span class="status-text">100% Offline · Zero-PHI</span>
       </span>
       <a href={`${baseUrl}/lua`} class="mobile-lua-link" aria-label="Ver mascota Lúa">
-        <span>🐱 Lúa</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="m9 9 1 1"/>
+          <path d="m15 9-1 1"/>
+          <path d="M9.5 15a3.5 3.5 0 0 0 5 0"/>
+        </svg>
+        <span>Lúa</span>
       </a>
     </div>
 
@@ -102,6 +108,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .mobile-lua-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     font-size: 0.72rem;
     font-weight: 700;
     color: #fdba74;

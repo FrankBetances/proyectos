@@ -1,22 +1,22 @@
 ---
 const telemetryItems = [
   {
-    icon: "⏱️",
+    iconType: "clock",
     title: "Tiempo Activo y Dosificación",
     desc: "Permanencia por bloque clínico para monitorizar la atención y prevenir la fatiga auditiva o visual del menor."
   },
   {
-    icon: "👆",
+    iconType: "target",
     title: "Accesibilidad Motora",
     desc: "Detección de pulsaciones erróneas para perfeccionar el área táctil y adaptar los ejercicios a manos infantiles."
   },
   {
-    icon: "📋",
+    iconType: "clipboard",
     title: "Cuestionario de Usabilidad SUS",
     desc: "Métrica breve y validada para medir la satisfacción y claridad de las pautas en el entorno del hogar."
   },
   {
-    icon: "📱",
+    iconType: "qr",
     title: "Traspaso Clínico por QR Offline",
     desc: "El logopeda o médico escanea la progresión en consulta mediante un código QR sin dependencia de nube ni cables."
   }
@@ -37,7 +37,38 @@ const telemetryItems = [
     <div class="telemetry-grid">
       {telemetryItems.map((item) => (
         <div class="glass-card telemetry-card">
-          <span class="telemetry-icon">{item.icon}</span>
+          <div class="telemetry-icon" aria-hidden="true">
+            {item.iconType === 'clock' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            )}
+            {item.iconType === 'target' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            )}
+            {item.iconType === 'clipboard' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                <path d="m9 14 2 2 4-4"/>
+              </svg>
+            )}
+            {item.iconType === 'qr' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+                <line x1="7" y1="17" x2="7" y2="17.01"/>
+                <line x1="17" y1="7" x2="17.01" y2="7"/>
+              </svg>
+            )}
+          </div>
           <div class="telemetry-body">
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
@@ -80,9 +111,9 @@ const telemetryItems = [
   }
 
   .telemetry-icon {
-    font-size: 1.8rem;
     background: rgba(16, 185, 129, 0.12);
-    border: 1px solid rgba(16, 185, 129, 0.25);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: var(--accent-emerald);
     width: 52px;
     height: 52px;
     display: flex;
@@ -91,6 +122,12 @@ const telemetryItems = [
     border-radius: 14px;
     margin: 0 auto 1.25rem auto;
     flex-shrink: 0;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .telemetry-card:hover .telemetry-icon {
+    transform: scale(1.05);
+    border-color: rgba(16, 185, 129, 0.6);
   }
 
   .telemetry-body {
