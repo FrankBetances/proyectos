@@ -744,7 +744,7 @@
           let closestTab: Element | null = null;
           let minDist = Infinity;
 
-          for (const tab of tabs) {
+          tabs.forEach(tab => {
             const lat = parseFloat(tab.getAttribute('data-lat') || '0');
             const lon = parseFloat(tab.getAttribute('data-lon') || '0');
             const dist = Math.hypot(userLat - lat, userLon - lon);
@@ -752,7 +752,7 @@
               minDist = dist;
               closestTab = tab;
             }
-          }
+          });
 
           if (closestTab) {
             (closestTab as HTMLElement).click();

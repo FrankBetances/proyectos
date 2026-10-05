@@ -1,165 +1,55 @@
 ---
-const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
-  ? import.meta.env.BASE_URL.slice(0, -1) 
-  : import.meta.env.BASE_URL;
-
 const academyDomains = [
-  { 
-    iconType: "compass", 
-    title: "Hitos Normativos ASHA", 
-    desc: "Evolución receptiva y expresiva de 0 a 5 años con pautas claras sobre cuándo acudir al especialista." 
-  },
-  { 
-    iconType: "ear", 
-    title: "Hipoacusia & Prótesis", 
-    desc: "Pautas prácticas para la optimización y cuidado diario de audífonos e implantes cocleares." 
-  },
-  { 
-    iconType: "speech", 
-    title: "Dislalias & Praxias", 
-    desc: "Colocación orofacial y juegos motrices guiados para fonemas complejos (/r/, /s/, /l/)." 
-  },
-  { 
-    iconType: "book", 
-    title: "Dislexia & Fonología", 
-    desc: "Ritmo fonológico, descarte de intrusos acústicos y apoyo a la lectura emergente en casa." 
-  },
-  { 
-    iconType: "puzzle", 
-    title: "TEA & Pragmática", 
-    desc: "Comunicación funcional, espera estructurada (Time Delay) y turnos conversacionales compartidos." 
-  },
-  { 
-    iconType: "sound", 
-    title: "Integración Sensorial", 
-    desc: "Estrategias de regulación frente a la sobre-responsividad sonora (SOR) en ambientes ruidosos." 
-  }
+  { icon: "🧭", title: "Lenguaje & Hitos ASHA", desc: "Hitos normativos de 0 a 5 años (receptivo vs. expresivo) y técnicas de modelado positivo (recast)." },
+  { icon: "👂", title: "Hipoacusia & Implantes", desc: "Pautas familiares prácticas para el cuidado y aprovechamiento de audífonos e implantes cocleares." },
+  { icon: "🗣️", title: "Dislalias & Articulación", desc: "Puntos de articulación orofacial y praxias lúdicas para fonemas complejos (/r/, /s/, /l/)." },
+  { icon: "🔤", title: "Dislexia & Fonología", desc: "Conciencia fonológica, ritmo auditivo y claves para consolidar la lectura emergente en el hogar." },
+  { icon: "🧩", title: "TEA (Espectro Autista)", desc: "Estrategias de comunicación funcional, turnos compartidos y rutinas de anticipación visual." },
+  { icon: "🎧", title: "Integración Sensorial", desc: "Regulación progresiva ante la sobre-responsividad acústica (SOR) frente a electrodomésticos." }
 ];
 ---
 
-<!-- Academy Section: Formación Parental Previa & Transferencia al Hogar -->
 <section id="academy" class="academy-section">
   <div class="container">
     <div class="academy-box glass-card">
       <div class="section-header academy-header">
-        <span class="tag">Capacitación Familiar Previa</span>
-        <h2>Academy: <span class="gradient-text">Comprender antes de Practicar</span></h2>
+        <span class="tag">Formación Parental Previa</span>
+        <h2>Academy · <span class="gradient-text">Micro-cápsulas en 2 Minutos</span></h2>
         <p>
-          Micro-formación clínica condensada para familias. Cada cápsula enseña qué observar, cómo modelar el habla y cuándo celebrar el esfuerzo.
+          Comprender el desarrollo del lenguaje antes de ejercitarlo. Valeria+ capacita a las familias mediante <strong>pautas clínicas directas de 2 minutos</strong> con preguntas que refuerzan el aprendizaje.
         </p>
       </div>
 
-      <!-- Live Academy Screenshot + Spotlight Row -->
-      <div class="academy-showcase-row">
-        <!-- Visual Screenshot Frame -->
-        <div class="academy-screen-card">
-          <div class="screen-badge-bar">
-            <span class="badge badge-purple">Hub Academy Oficial</span>
-            <span class="screen-meta-txt">Micro-cápsulas ilustradas</span>
-          </div>
-          <div class="academy-img-viewport">
-            <img 
-              src={`${baseUrl}/assets/27-academy-hub.png`} 
-              alt="Interfaz oficial de Valeria+ Academy con catálogo de módulos formativos" 
-              class="academy-hub-img"
-              width="460"
-              height="1024"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
-
-        <!-- Spotlight Dual: La Brújula + LSE ACOPROS -->
-        <div class="academy-spotlight-column">
-          <!-- Spotlight 1: La Brújula ASHA -->
-          <div class="lse-spotlight">
-            <div class="lse-tag">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-              </svg>
-              <span>Hitos Normativos ASHA (0 a 5 años)</span>
-            </div>
-            <h3>La Brújula de las Palabras</h3>
-            <p>
-              Guía pediátrica que ayuda a los cuidadores a diferenciar <strong>comprensión</strong> de <strong>articulación</strong>, ofreciendo señales claras para la estimulación temprana oportuna.
-            </p>
-            <div class="spotlight-chips">
-              <span class="spotlight-chip">Etapas 0 a 5 años</span>
-              <span class="spotlight-chip">Criterio clínico ASHA</span>
-            </div>
-          </div>
-
-          <!-- Spotlight 2: LSE ACOPROS -->
-          <div class="lse-spotlight lse-alt">
-            <div class="lse-tag text-purple">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
-                <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
-                <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
-                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
-              </svg>
-              <span>Validación Oficial ACOPROS</span>
-            </div>
-            <h3>Lengua de Signos Española (LSE)</h3>
-            <p>
-              Las <strong>27 configuraciones dactilológicas</strong> del alfabeto LSE han sido auditadas y validadas con la logopeda clínica y personas sordas de la asociación <strong>ACOPROS</strong>.
-            </p>
-            <div class="spotlight-chips">
-              <span class="spotlight-chip">27 Letras Dactilológicas</span>
-              <span class="spotlight-chip">Revisión Comunidad Sorda</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6 Domains Grid (Micro-Vectors) -->
+      <!-- 6 Key Domains Grid - Symmetrical & Centered -->
       <div class="domains-grid">
         {academyDomains.map((d) => (
           <div class="domain-card">
-            <div class="domain-icon-wrap">
-              {d.iconType === 'compass' && (
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-                </svg>
-              )}
-              {d.iconType === 'ear' && (
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"></path>
-                  <path d="M15 8.5a2.5 2.5 0 0 0-5 0v2a2 2 0 0 0 4 0"></path>
-                </svg>
-              )}
-              {d.iconType === 'speech' && (
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-              )}
-              {d.iconType === 'book' && (
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                </svg>
-              )}
-              {d.iconType === 'puzzle' && (
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M19.439 7.85c-.049-.322.059-.648.289-.878l1.568-1.568a1.5 1.5 0 0 0-2.121-2.121l-1.568 1.568c-.23.23-.556.338-.878.29A4 4 0 0 0 12 6.5a4 4 0 0 0-4.729-1.359c-.322.049-.648-.059-.878-.289L4.825 3.284a1.5 1.5 0 0 0-2.121 2.121l1.568 1.568c.23.23.338.556.29.878A4 4 0 0 0 6 12a4 4 0 0 0-1.359 4.729c-.049.322.059.648.289.878l1.568 1.568a1.5 1.5 0 0 0 2.121-2.121l-1.568-1.568c-.23-.23-.338-.556-.29-.878A4 4 0 0 0 12 13.5a4 4 0 0 0 4.729 1.359c.322-.049.648.059.878.289l1.568 1.568a1.5 1.5 0 0 0 2.121-2.121l-1.568-1.568c-.23-.23-.338-.556-.29-.878A4 4 0 0 0 18 12a4 4 0 0 0 1.439-4.15z"></path>
-                </svg>
-              )}
-              {d.iconType === 'sound' && (
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                </svg>
-              )}
-            </div>
+            <span class="domain-icon">{d.icon}</span>
             <div class="domain-body">
               <h4>{d.title}</h4>
               <p>{d.desc}</p>
             </div>
           </div>
         ))}
+      </div>
+
+      <!-- Spotlight dual: La Brújula + Lengua de Signos (LSE) - Symmetrical & Centered -->
+      <div class="academy-spotlight-row">
+        <div class="lse-spotlight">
+          <div class="lse-tag">🧭 Hitos Normativos ASHA (0 a 5 años)</div>
+          <h3>La Brújula de las Palabras</h3>
+          <p>
+            Guía clínica que diferencia <strong>comprensión</strong> de <strong>expresión</strong>, orientando a la familia sobre cuándo consultar con el especialista.
+          </p>
+        </div>
+
+        <div class="lse-spotlight lse-alt">
+          <div class="lse-tag text-purple">🤟 Validación Oficial ACOPROS</div>
+          <h3>Lengua de Signos Española (LSE)</h3>
+          <p>
+            Las <strong>27 configuraciones dactilológicas</strong> han sido revisadas y validadas directamente por la logopeda y personas sordas de <strong>ACOPROS</strong>.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -173,91 +63,108 @@ const academyDomains = [
   }
 
   .academy-box {
-    padding: 3.5rem 3rem;
-    max-width: 1120px;
+    padding: 3rem 2.5rem;
+    max-width: 1060px;
     margin: 0 auto;
-    background: linear-gradient(145deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 27, 75, 0.35) 100%);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.4) 100%);
     border: 1px solid rgba(138, 43, 226, 0.3);
     box-shadow: var(--shadow-purple);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .academy-header {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     text-align: center;
   }
 
   .academy-header p {
     max-width: 720px;
     margin: 0 auto;
+    text-align: center;
   }
 
-  /* Live Screenshot + Spotlight Column Layout */
-  .academy-showcase-row {
+  .domains-grid {
     display: grid;
-    grid-template-columns: 1fr 1.35fr;
-    gap: 2rem;
-    margin-bottom: 2.75rem;
-    align-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    width: 100%;
   }
 
-  .academy-screen-card {
-    background: rgba(10, 15, 26, 0.8);
-    border: 1px solid rgba(168, 85, 247, 0.25);
+  .domain-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
   }
 
-  .screen-badge-bar {
+  .domain-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(168, 85, 247, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .domain-icon {
+    font-size: 1.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    width: 46px;
+    height: 46px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
-  }
-
-  .screen-meta-txt {
-    font-size: 0.72rem;
-    color: var(--text-dim);
-    font-weight: 600;
-  }
-
-  .academy-img-viewport {
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    background: #020617;
-    flex-grow: 1;
-    display: flex;
     justify-content: center;
-    align-items: flex-start;
-    max-height: 320px;
+    border-radius: var(--radius-md);
+    margin: 0 auto 0.85rem auto;
+    flex-shrink: 0;
   }
 
-  .academy-hub-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-  }
-
-  .academy-spotlight-column {
+  .domain-body {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  .domain-body h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    color: var(--text-main);
+    text-align: center;
+  }
+
+  .domain-body p {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+  }
+
+  .academy-spotlight-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
   }
 
   .lse-spotlight {
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(0, 242, 254, 0.25);
     border-radius: var(--radius-md);
-    padding: 1.5rem 1.6rem;
+    padding: 1.75rem;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .lse-spotlight::before {
@@ -279,25 +186,24 @@ const academyDomains = [
   }
 
   .lse-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.72rem;
+    font-size: 0.725rem;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--accent-cyan);
     letter-spacing: 0.05em;
     margin-bottom: 0.5rem;
+    text-align: center;
   }
 
   .lse-tag.text-purple {
-    color: #c084fc;
+    color: #C084FC;
   }
 
   .lse-spotlight h3 {
-    font-size: 1.25rem;
-    font-weight: 800;
-    margin-bottom: 0.45rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
     color: var(--text-main);
   }
 
@@ -305,108 +211,65 @@ const academyDomains = [
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.55;
-    margin: 0 0 1rem 0;
-  }
-
-  .spotlight-chips {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .spotlight-chip {
-    font-size: 0.74rem;
-    font-weight: 600;
-    color: var(--text-main);
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-full);
-    padding: 0.25rem 0.65rem;
-  }
-
-  /* 6 Domains Grid */
-  .domains-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 1.25rem;
-    width: 100%;
-  }
-
-  .domain-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-md);
-    padding: 1.4rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
-
-  .domain-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(168, 85, 247, 0.4);
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .domain-icon-wrap {
-    width: 44px;
-    height: 44px;
-    background: rgba(168, 85, 247, 0.12);
-    border: 1px solid rgba(168, 85, 247, 0.3);
-    color: #c084fc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    flex-shrink: 0;
-  }
-
-  .domain-body h4 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-    color: var(--text-main);
-  }
-
-  .domain-body p {
-    font-size: 0.86rem;
-    color: var(--text-muted);
-    line-height: 1.5;
     margin: 0;
+    text-align: center;
+    max-width: 440px;
   }
 
-  @media (max-width: 960px) {
-    .academy-showcase-row {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+  .lse-spotlight strong {
+    color: var(--text-main);
+  }
+
+  @media (max-width: 768px) {
+    .academy-section {
+      padding: 50px 0;
     }
 
     .academy-box {
-      padding: 2rem 1.5rem;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .academy-section {
-      padding: 50px 0;
+      padding: 1.5rem 1rem;
+      border-radius: var(--radius-md);
     }
 
     .domains-grid {
       grid-template-columns: 1fr;
       gap: 0.75rem;
+      margin-bottom: 1.5rem;
     }
 
     .domain-card {
-      padding: 1.15rem;
+      padding: 1.15rem 1rem;
+    }
+
+    .domain-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.4rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .domain-body h4 {
+      font-size: 1rem;
+    }
+
+    .domain-body p {
+      font-size: 0.84rem;
+    }
+
+    .academy-spotlight-row {
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
     .lse-spotlight {
-      padding: 1.25rem 1.15rem;
+      padding: 1.35rem 1.15rem;
     }
 
     .lse-spotlight h3 {
       font-size: 1.1rem;
+    }
+
+    .lse-spotlight p {
+      font-size: 0.88rem;
     }
   }
 </style>
