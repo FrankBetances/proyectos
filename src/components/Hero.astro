@@ -51,27 +51,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         Rehabilitación del lenguaje en casa: <span class="gradient-text-purple">la familia acompaña, Lúa refuerza</span>
       </h1>
 
-      <!-- Visual Device Mockup with Real In-App Screenshot -->
-      <div class="hero-showcase-center">
-        <div class="device-mockup-wrap">
-          <div class="device-ambient-halo" aria-hidden="true"></div>
-          <div class="device-mockup">
-            <div class="device-notch"></div>
-            <div class="device-screen">
-              <img 
-                src={`${baseUrl}/assets/valeria-screen-bienvenida.png`} 
-                alt="Pantalla oficial de Bienvenida de Valeria+ v14 con la gata Lúa" 
-                class="device-screen-img"
-                width="340"
-                height="756"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Concise, Non-Redundant Value Proposition -->
       <p class="hero-lead">
         Estimulación clínica estructurada para dificultades del habla, hipoacusia, TEA y dislexia. Capacitación parental previa con Academy y práctica lúdica adaptada en el hogar, sin publicidad ni recolección de datos infantiles.
@@ -132,6 +111,27 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <div class="kpi-item">
           <span class="kpi-num">Zero-PHI</span>
           <span class="kpi-label">Privacidad Estricta</span>
+        </div>
+      </div>
+
+      <!-- Visual Device Mockup with Real In-App Screenshot -->
+      <div class="hero-showcase-center">
+        <div class="device-mockup-wrap">
+          <div class="device-ambient-halo" aria-hidden="true"></div>
+          <div class="device-mockup">
+            <div class="device-notch"></div>
+            <div class="device-screen">
+              <img 
+                src={`${baseUrl}/assets/valeria-screen-bienvenida.png`} 
+                alt="Pantalla oficial de Bienvenida de Valeria+ v14 con la gata Lúa" 
+                class="device-screen-img"
+                width="340"
+                height="756"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -309,7 +309,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 0.5rem auto 1.5rem auto;
+    margin: 2.25rem auto 0.5rem auto;
   }
 
   .device-mockup-wrap {
@@ -331,9 +331,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .device-mockup {
     position: relative;
     z-index: 1;
-    width: 180px;
-    padding: 7px;
-    border-radius: 26px;
+    width: 210px;
+    padding: 8px;
+    border-radius: 28px;
     background: linear-gradient(145deg, #1e293b, #090d16);
     border: 2px solid rgba(255, 255, 255, 0.16);
     box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.75), 0 0 35px rgba(0, 242, 254, 0.18);

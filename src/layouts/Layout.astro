@@ -7,6 +7,7 @@ interface Props {
   image?: string;
   type?: 'website' | 'article' | 'profile';
   keywords?: string;
+  favicon?: string;
   jsonLd?: object | object[];
 }
 
@@ -16,12 +17,15 @@ const {
   image = "https://FrankBetances.github.io/proyectos/assets/valeria-preview.png",
   type = "website",
   keywords = "Dr. Frank Betances, Otorrinolaringología, Audiología Infantil, Valeria+, VIA+ SaMD, Rehabilitación del Lenguaje, Hipoacusia, Implante Coclear, FONDOCYT, Salud Digital",
+  favicon,
   jsonLd
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
   ? import.meta.env.BASE_URL.slice(0, -1) 
   : import.meta.env.BASE_URL;
+
+const currentFavicon = favicon || `${baseUrl}/assets/valeria-logo.png`;
 
 const siteUrl = "https://FrankBetances.github.io/proyectos";
 const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
@@ -87,7 +91,8 @@ const finalJsonLd = jsonLd || defaultJsonLd;
     <link rel="canonical" href={canonicalURL} />
     
     <!-- Favicon & Sitemap -->
-    <link rel="icon" type="image/png" href={`${baseUrl}/assets/earlify-logo.png`} />
+    <link rel="icon" type="image/png" href={currentFavicon} />
+    <link rel="apple-touch-icon" href={currentFavicon} />
     <link rel="sitemap" href={`${siteUrl}/sitemap-index.xml`} />
 
     <!-- Open Graph / Facebook / LinkedIn -->
