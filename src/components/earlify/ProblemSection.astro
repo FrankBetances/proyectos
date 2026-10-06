@@ -5,7 +5,7 @@
 <section id="problema-clinico" class="problem-section" aria-labelledby="problem-title">
   <div class="problem-ambient-glow" aria-hidden="true"></div>
 
-  <div class="container">
+  <div class="container problem-container">
     <div class="problem-header">
       <div class="section-badge badge-rose">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -55,7 +55,7 @@
         <span class="card-kicker">En el Aula Escolar</span>
         <h3 class="card-title">Falta de Adaptación Acústica</h3>
         <p class="card-text">
-          En las asambleas y rutinas infantiles, el ruido ambiental compite contra los audífonos e implantes cocleares. Los metrónomos o pautas auditivas saturan la prótesis, impidiendo que el niño discrimine el lenguaje de su educadora.
+          En las asambleas infantiles, el ruido ambiental compite contra los audífonos e implantes cocleares. Los metrónomos o pautas auditivas saturan la prótesis, impidiendo que el niño discrimine el lenguaje de su educadora.
         </p>
         <div class="card-tag">
           <span>Sobrecarga sonora · Barreras de inclusión</span>
@@ -115,7 +115,7 @@
         </p>
       </div>
       <div class="bridge-action-col">
-        <a href="#ecosistema-completo" class="bridge-btn" aria-label="Descubrir cómo resolvemos la brecha asistencial">
+        <a href="#explorador-interactivo" class="bridge-btn" aria-label="Descubrir cómo resolvemos la brecha asistencial">
           <span>Ver la Solución</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 5v14M19 12l-7 7-7-7"/>
@@ -129,10 +129,11 @@
 <style>
   .problem-section {
     position: relative;
-    padding: clamp(70px, 11vw, 120px) 0;
+    padding: clamp(60px, 9vw, 110px) 0;
     background-color: var(--bg-dark, #07090e);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     overflow: hidden;
+    width: 100%;
   }
 
   .problem-ambient-glow {
@@ -140,33 +141,46 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
-    height: 400px;
+    width: min(700px, 90vw);
+    height: 350px;
     background: radial-gradient(circle, rgba(244, 63, 94, 0.06) 0%, transparent 70%);
-    filter: blur(90px);
+    filter: blur(80px);
     pointer-events: none;
     z-index: 0;
+  }
+
+  .problem-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    box-sizing: border-box;
   }
 
   .problem-header {
     text-align: center;
     max-width: 860px;
-    margin: 0 auto 3.5rem auto;
-    position: relative;
-    z-index: 1;
+    margin: 0 auto 3rem auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .section-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.4rem 1rem;
+    padding: 0.35rem 0.9rem;
     border-radius: 9999px;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
   }
 
   .badge-rose {
@@ -176,12 +190,13 @@
   }
 
   .problem-title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.75rem, 4vw, 2.8rem);
     font-weight: 800;
     line-height: 1.2;
     color: var(--text-main, #f8fafc);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     letter-spacing: -0.02em;
+    word-break: break-word;
   }
 
   .text-rose-glow {
@@ -191,31 +206,33 @@
   }
 
   .problem-lead {
-    font-size: clamp(1rem, 1.8vw, 1.18rem);
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
     color: var(--text-muted, #94a3b8);
-    line-height: 1.65;
+    line-height: 1.6;
+    word-break: break-word;
   }
 
   /* 4 Dimensions Grid */
   .problem-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 3.5rem;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .problem-card {
     display: flex;
     flex-direction: column;
-    padding: 1.8rem;
+    padding: 1.6rem;
     border-radius: 18px;
     background: rgba(15, 23, 42, 0.55);
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: transform 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
   }
 
   .problem-card:hover {
@@ -224,41 +241,41 @@
   }
 
   .card-icon-wrapper {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
-  .icon-rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
-  .icon-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-  .icon-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-  .icon-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+  .icon-rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; }
+  .icon-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+  .icon-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+  .icon-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
 
   .card-kicker {
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     color: var(--text-muted, #94a3b8);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.35rem;
   }
 
   .card-title {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: var(--text-main, #f8fafc);
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.75rem;
     line-height: 1.3;
   }
 
   .card-text {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     color: var(--text-secondary, #cbd5e1);
     line-height: 1.55;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     flex-grow: 1;
   }
 
@@ -266,7 +283,7 @@
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--text-muted, #94a3b8);
-    padding: 0.3rem 0.65rem;
+    padding: 0.25rem 0.6rem;
     background: rgba(255, 255, 255, 0.04);
     border-radius: 6px;
     width: fit-content;
@@ -277,14 +294,14 @@
   .problem-bridge-banner {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
-    padding: 1.8rem 2.2rem;
+    gap: 1.5rem;
+    padding: 1.75rem 2rem;
     border-radius: 18px;
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
     border: 1px solid rgba(139, 92, 246, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    position: relative;
-    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .bridge-icon-col {
@@ -292,9 +309,9 @@
   }
 
   .bridge-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     background: rgba(139, 92, 246, 0.2);
     border: 1px solid rgba(139, 92, 246, 0.4);
     display: flex;
@@ -304,18 +321,18 @@
   }
 
   .bridge-content-col {
-    flex-grow: 1;
+    flex: 1;
   }
 
   .bridge-title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 800;
     color: var(--text-main, #f8fafc);
     margin-bottom: 0.35rem;
   }
 
   .bridge-desc {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: var(--text-secondary, #cbd5e1);
     line-height: 1.55;
     margin: 0;
@@ -329,13 +346,13 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.85rem 1.6rem;
+    padding: 0.8rem 1.4rem;
     min-height: 48px;
     border-radius: 12px;
     background: #a855f7;
     color: #ffffff;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     text-decoration: none;
     transition: all 0.25s ease;
     white-space: nowrap;
@@ -354,29 +371,18 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
+    .problem-container {
+      padding: 0 1rem;
+    }
     .problem-grid {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
+      grid-template-columns: 1fr;
       gap: 1rem;
-      padding-bottom: 1rem;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .problem-grid::-webkit-scrollbar {
-      display: none;
-    }
-    .problem-card {
-      min-width: 280px;
-      max-width: 280px;
-      scroll-snap-align: center;
-      flex-shrink: 0;
     }
     .problem-bridge-banner {
       flex-direction: column;
       text-align: center;
-      padding: 1.5rem;
+      padding: 1.25rem 1rem;
     }
     .bridge-action-col {
       width: 100%;
