@@ -572,16 +572,28 @@ const blocks = [
     opacity: 0.8;
   }
 
+  .workspace-cards-column {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
   .blocks-carousel-scroller {
     display: flex;
     flex-direction: column;
     gap: 1.1rem;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Responsive & Mobile-First Carousel */
   @media (max-width: 900px) {
     .clinical-workspace-grid {
       grid-template-columns: 1fr;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .workspace-preview-stage {
@@ -598,6 +610,9 @@ const blocks = [
       padding-bottom: 1rem;
       gap: 1rem;
       -webkit-overflow-scrolling: touch;
+      min-width: 0;
+      max-width: 100%;
+      width: 100%;
     }
 
     .clinical-card {
