@@ -756,7 +756,7 @@
 
           if (closestTab) {
             (closestTab as HTMLElement).click();
-            const sectorName = closestTab.getAttribute('data-name');
+            const sectorName = (closestTab as HTMLElement).getAttribute('data-name');
             geoMsg.innerHTML = `✓ Sector detectado en tu dispositivo: <strong>${sectorName}</strong>. (Tus coordenadas no fueron enviadas al servidor).`;
           }
         },

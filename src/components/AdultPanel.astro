@@ -1,58 +1,105 @@
 ---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+
+const adultControls = [
+  {
+    iconType: "volume",
+    badge: "Graduable 0-10",
+    badgeColor: "cyan",
+    title: "1. Escucha en Ruido Babble",
+    desc: "Introduce ruido de fondo ambiental graduable para entrenar la discriminación fonética simulando el aula real."
+  },
+  {
+    iconType: "distract",
+    badge: "Doble Tarea",
+    badgeColor: "purple",
+    title: "2. Estímulo Distractor",
+    desc: "Lúa se asoma suavemente por los márgenes de la pantalla para medir la concentración selectiva durante la tarea."
+  },
+  {
+    iconType: "chat",
+    badge: "Interacción Diaria",
+    badgeColor: "amber",
+    title: "3. Quiebre Pragmático",
+    desc: "Silencio clínico intencionado que fomenta la iniciativa comunicativa del menor para solicitar ayuda o aclaración."
+  },
+  {
+    iconType: "shield",
+    badge: "Muro Seguro SOR",
+    badgeColor: "emerald",
+    title: "4. Regulación Sensorial",
+    desc: "Selección manual del estímulo y volumen. El menor dispone de botón de pausa libre y detenerse siempre suma refuerzo positivo."
+  }
+];
 ---
 
+<!-- Panel del Adulto: Muro de Control Manual bajo Marco MDR -->
 <section id="panel-adulto" class="adult-section">
   <div class="container">
     <div class="section-header">
       <span class="tag">Muro de Control Adulto · Marco MDR</span>
-      <h2>Panel del Adulto · <span class="gradient-text">Retos Manuales y Seguros</span></h2>
-      <p>Herramientas que la familia o el logopeda activan a mano para entrenar la atención y la escucha sin automatismos ocultos.</p>
+      <h2>Panel del Adulto: <span class="gradient-text">Retos Manuales y Seguros</span></h2>
+      <p>
+        Herramientas clínicas que la familia o el logopeda activan a mano para entrenar la escucha y la pragmática sin automatismos opacos.
+      </p>
     </div>
 
-    <!-- 4 Controls Grid - Symmetrical & Centered -->
-    <div class="adult-grid">
-      <div class="glass-card adult-card">
-        <div class="adult-top">
-          <span class="badge badge-cyan">Graduable 0-10</span>
+    <!-- Live Adult Panel Showcase + 4 Controls Bento Grid -->
+    <div class="adult-showcase-container">
+      <!-- Screenshot of Real App Adult Panel -->
+      <div class="adult-screenshot-frame glass-card">
+        <div class="frame-bar">
+          <span class="frame-tag">Panel Clínico del Adulto</span>
+          <span class="badge badge-cyan">Captura Real en App</span>
         </div>
-        <div class="adult-icon cyan">🔊</div>
-        <h3>1. Escucha en Ruido</h3>
-        <p>
-          Mezcla la voz con ruido ambiental de cafetería graduable para entrenar discriminación fonética en entornos ruidosos.
-        </p>
+        <div class="frame-viewport">
+          <img 
+            src={`${baseUrl}/assets/23-panel-adulto.png`} 
+            alt="Panel de control del adulto en Valeria+ v14 mostrando opciones de modulación" 
+            class="adult-panel-img"
+            width="340"
+            height="740"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
 
-      <div class="glass-card adult-card">
-        <div class="adult-top">
-          <span class="badge badge-purple">Doble Tarea</span>
-        </div>
-        <div class="adult-icon purple">🐱</div>
-        <h3>2. Gata Distractora</h3>
-        <p>
-          Lúa se asoma por los bordes de la pantalla para entrenar la concentración selectiva sin interrumpir la interacción.
-        </p>
-      </div>
-
-      <div class="glass-card adult-card">
-        <div class="adult-top">
-          <span class="badge badge-amber">Interacción Diaria</span>
-        </div>
-        <div class="adult-icon amber">💬</div>
-        <h3>3. Quiebre Pragmático</h3>
-        <p>
-          Silencio intencionado para observar si el niño pide ayuda o aclaración, fortaleciendo la iniciativa conversacional.
-        </p>
-      </div>
-
-      <div class="glass-card adult-card">
-        <div class="adult-top">
-          <span class="badge badge-emerald">Muro Seguro</span>
-        </div>
-        <div class="adult-icon emerald">🎧</div>
-        <h3>4. Muro Sensorial SOR</h3>
-        <p>
-          Selección previa de estímulo y volumen. El menor dispone de pausa libre y detenerse siempre suma puntos positivos.
-        </p>
+      <!-- 4 Controls Grid -->
+      <div class="adult-controls-grid">
+        {adultControls.map((control) => (
+          <div class="glass-card adult-control-card">
+            <div class="control-header">
+              <span class={`badge badge-${control.badgeColor}`}>{control.badge}</span>
+              <div class="control-icon-box">
+                {control.iconType === 'volume' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                  </svg>
+                )}
+                {control.iconType === 'distract' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/>
+                  </svg>
+                )}
+                {control.iconType === 'chat' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+                  </svg>
+                )}
+                {control.iconType === 'shield' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                )}
+              </div>
+            </div>
+            <h3>{control.title}</h3>
+            <p>{control.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </div>
@@ -60,119 +107,130 @@
 
 <style>
   .adult-section {
-    padding: 85px 0;
+    padding: 90px 0;
     position: relative;
-    background: rgba(0, 0, 0, 0.15);
     border-top: 1px solid var(--border-light);
+    background: rgba(0, 0, 0, 0.2);
   }
 
-  .adult-grid {
+  .adult-showcase-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    max-width: 1060px;
-    margin: 0 auto;
+    grid-template-columns: 320px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 3rem auto 0 auto;
   }
 
-  .adult-card {
+  /* Screenshot Frame */
+  .adult-screenshot-frame {
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    background: rgba(11, 15, 25, 0.85);
+    box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    height: 100%;
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    gap: 0.85rem;
   }
 
-  .adult-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(255, 255, 255, 0.18);
-  }
-
-  .adult-top {
+  .frame-bar {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 0.75rem;
+    justify-content: space-between;
+    padding: 0 0.25rem;
   }
 
-  .adult-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    margin: 0 auto 1.25rem auto;
-    flex-shrink: 0;
-  }
-
-  .adult-icon.cyan {
-    background: rgba(0, 242, 254, 0.1);
-    border: 1px solid rgba(0, 242, 254, 0.3);
-  }
-
-  .adult-icon.purple {
-    background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.3);
-  }
-
-  .adult-icon.amber {
-    background: rgba(245, 158, 11, 0.1);
-    border: 1px solid rgba(245, 158, 11, 0.3);
-  }
-
-  .adult-icon.emerald {
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-  }
-
-  .adult-card h3 {
-    font-size: 1.2rem;
+  .frame-tag {
+    font-size: 0.72rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .frame-viewport {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #030712;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .adult-panel-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 340 / 740;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Controls Grid */
+  .adult-controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .adult-control-card {
+    padding: 1.5rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    border-radius: var(--radius-md);
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-light);
+    transition: all 0.22s ease;
+  }
+
+  .adult-control-card:hover {
+    background: rgba(22, 32, 54, 0.8);
+    border-color: rgba(0, 242, 254, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .control-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .control-icon-box {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--text-main);
-    text-align: center;
   }
 
-  .adult-card p {
+  .adult-control-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .adult-control-card p {
+    font-size: 0.88rem;
+    line-height: 1.55;
     color: var(--text-muted);
-    font-size: 0.925rem;
-    line-height: 1.6;
-    margin: 0;
-    flex-grow: 1;
-    text-align: center;
-    max-width: 440px;
   }
 
-  @media (max-width: 768px) {
-    .adult-section {
-      padding: 50px 0;
+  @media (max-width: 900px) {
+    .adult-showcase-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
-    .adult-grid {
+    .adult-screenshot-frame {
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    .adult-controls-grid {
       grid-template-columns: 1fr;
       gap: 1rem;
-    }
-
-    .adult-card {
-      padding: 1.35rem 1.15rem;
-    }
-
-    .adult-icon {
-      width: 44px;
-      height: 44px;
-      font-size: 1.3rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .adult-card h3 {
-      font-size: 1.1rem;
-    }
-
-    .adult-card p {
-      font-size: 0.88rem;
     }
   }
 </style>

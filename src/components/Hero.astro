@@ -4,65 +4,76 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : import.meta.env.BASE_URL;
 ---
 
-<!-- Centered High-Impact Hero for Valeria+ (Minimalist, Clean, Perfectly Centered) -->
+<!-- Cinematic Medical Hero for Valeria+ (Dynamic Motion, Acoustic Waves & Mobile-First Precision) -->
 <section id="valeria-hero" class="hero-native-section">
-  <!-- Subtle Ambient Backdrop Glows (No Distracting Wallpaper) -->
+  <!-- Dynamic Acoustic Waveform & Ambient Stage -->
   <div class="hero-backdrop-layer" aria-hidden="true">
     <div class="ambient-glow glow-purple"></div>
     <div class="ambient-glow glow-cyan"></div>
-    <div class="ambient-glow glow-emerald"></div>
     <div class="hero-grid-overlay"></div>
+    
+    <!-- SVG Bio-Acoustic Spectrum Waveform -->
+    <svg class="acoustic-wave-canvas" viewBox="0 0 1440 280" fill="none" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#8A2BE2" stop-opacity="0.25"/>
+          <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#8A2BE2" stop-opacity="0.15"/>
+        </linearGradient>
+        <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.15"/>
+          <stop offset="50%" stop-color="#8A2BE2" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#00F2FE" stop-opacity="0.1"/>
+        </linearGradient>
+      </defs>
+      <path class="wave-path wave-1" d="M0,140 C240,60 480,220 720,130 C960,40 1200,200 1440,120 L1440,280 L0,280 Z" fill="url(#waveGrad1)"/>
+      <path class="wave-path wave-2" d="M0,160 C320,240 640,80 960,180 C1180,230 1340,110 1440,150 L1440,280 L0,280 Z" fill="url(#waveGrad2)"/>
+    </svg>
   </div>
 
   <div class="container hero-container">
-    <!-- Centered Institutional Badges Strip -->
-    <div class="hero-badges-row" aria-label="Acreditaciones y sellos de calidad">
-      <span class="hero-badge badge-starttic">
-        <span class="badge-icon">🚀</span>
+    <!-- Institutional Badges Strip (Pure Micro-SVG, Zero Emojis) -->
+    <div class="hero-badges-row" aria-label="Acreditaciones institucionales y regulatorias">
+      <div class="hero-badge badge-starttic">
+        <svg class="micro-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
         <span><strong>startTIC</strong> · Alta Tecnología</span>
-      </span>
-      <span class="hero-badge badge-itemas">
-        <span class="badge-icon">🩺</span>
+      </div>
+      <div class="hero-badge badge-itemas">
+        <svg class="micro-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path>
+          <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path>
+          <circle cx="20" cy="10" r="2"></circle>
+        </svg>
         <span><strong>ITEMAS-ISCIII 2024</strong></span>
-      </span>
-      <span class="hero-badge badge-offline">
-        <span class="badge-icon">🔒</span>
+      </div>
+      <div class="hero-badge badge-offline">
+        <svg class="micro-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
         <span><strong>100% Offline</strong> · Zero-PHI</span>
-      </span>
-      <span class="hero-badge badge-mdr">
-        <span class="badge-icon">⚖️</span>
+      </div>
+      <div class="hero-badge badge-mdr">
+        <svg class="micro-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
         <span><strong>Marco MDR</strong> · Control Adulto</span>
-      </span>
+      </div>
     </div>
 
-    <!-- Centered Main Editorial Content (Text and Mockup) -->
+    <!-- Editorial Hierarchy: Title & Value Proposition -->
     <div class="hero-main-content">
-      <!-- Big Title -->
       <h1 class="hero-title">
         Rehabilitación del lenguaje en casa: <span class="gradient-text-purple">la familia acompaña, Lúa refuerza</span>
       </h1>
 
-      <!-- Visual Showcase: Clean Phone Device Mockup placed directly below the title -->
-      <div class="hero-showcase-center">
-        <div class="device-mockup">
-          <div class="device-notch"></div>
-          <div class="device-screen">
-            <img 
-              src={`${baseUrl}/assets/valeria-screen-bienvenida.png`} 
-              alt="Pantalla de Bienvenida de Valeria+ v14 con la mascota Lúa" 
-              class="device-screen-img"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
-        </div>
-      </div>
-
       <p class="hero-lead">
-        Ejercicios de estimulación estructurada para dificultades del habla, hipoacusia, TEA y dislexia. Formación previa para los padres (Academy) y rehabilitación centrada en prácticas lúdicas en <strong>10 bloques</strong> 100% offline y siempre bajo control del adulto.
+        Estimulación clínica estructurada para dificultades del habla, hipoacusia, TEA y dislexia. Capacitación parental previa con Academy y práctica lúdica adaptada en el hogar, sin publicidad ni recolección de datos infantiles.
       </p>
 
-      <!-- Centered Actions -->
+      <!-- Clean Action Row (Ergonomic Touch Targets) -->
       <div class="hero-actions-row">
         <a 
           href="https://play.google.com/store/apps/details?id=eu.futureforkids.valeria" 
@@ -84,36 +95,78 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         </a>
 
         <a href="#bloques-clinicos" class="btn-primary">
-          <span>Explorar 10 Bloques</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          <span>Explorar los Bloques</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
         </a>
 
-        <a href="#metodo" class="btn-secondary">
-          <span>El Método</span>
-        </a>
-
-        <a href={`${baseUrl}/lua`} class="btn-pill-link">
-          <span>🐱 Lúa</span>
+        <a href="#lua-mascota" class="btn-lua-link">
+          <img 
+            src={`${baseUrl}/assets/lua-mascota-valeria.png`} 
+            alt="Mascota Lúa" 
+            class="lua-btn-avatar" 
+            width="22" 
+            height="22"
+          />
+          <span>Conoce a Lúa</span>
         </a>
       </div>
 
-      <!-- Centered KPI Metrics Strip -->
-      <div class="hero-kpi-strip" aria-label="Cifras clave del proyecto">
+      <!-- Essential KPI Strip -->
+      <div class="hero-kpi-strip" aria-label="Cifras clave de Valeria+">
         <div class="kpi-item">
           <span class="kpi-num">10</span>
           <span class="kpi-label">Bloques Clínicos</span>
         </div>
+        <div class="kpi-divider" aria-hidden="true"></div>
         <div class="kpi-item">
           <span class="kpi-num">4.711</span>
           <span class="kpi-label">Locuciones Offline</span>
         </div>
+        <div class="kpi-divider" aria-hidden="true"></div>
         <div class="kpi-item">
           <span class="kpi-num">6</span>
           <span class="kpi-label">Variedades de Voz</span>
         </div>
+        <div class="kpi-divider" aria-hidden="true"></div>
         <div class="kpi-item">
           <span class="kpi-num">Zero-PHI</span>
-          <span class="kpi-label">Privacidad Total</span>
+          <span class="kpi-label">Privacidad Estricta</span>
+        </div>
+      </div>
+
+      <!-- Cinematic Product Stage: Device Screen Placed Gracefully Below the Content -->
+      <div class="hero-showcase-stage">
+        <div class="stage-ambient-glow" aria-hidden="true"></div>
+        <div class="device-mockup">
+          <div class="device-notch"></div>
+          <div class="device-screen">
+            <img 
+              src={`${baseUrl}/assets/valeria-screen-bienvenida.png`} 
+              alt="Pantalla oficial de Bienvenida de Valeria+ v14 con la mascota Lúa" 
+              class="device-screen-img"
+              width="340"
+              height="756"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+        </div>
+        <!-- Floating Interactive Mascot Pill -->
+        <div class="stage-floating-pill">
+          <img 
+            src={`${baseUrl}/assets/lua-mascota-valeria.png`} 
+            alt="Lúa la gata oficial de Valeria+" 
+            class="stage-lua-icon" 
+            width="32" 
+            height="32"
+          />
+          <div class="stage-pill-text">
+            <strong>Lúa · Mascota Pediátrica</strong>
+            <span>Ronroneo y refuerzo positivo sin castigo</span>
+          </div>
         </div>
       </div>
     </div>
@@ -124,7 +177,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .hero-native-section {
     position: relative;
     padding-top: 110px;
-    padding-bottom: 70px;
+    padding-bottom: 60px;
     overflow: hidden;
     background-color: var(--bg-dark);
   }
@@ -140,33 +193,24 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .ambient-glow {
     position: absolute;
     border-radius: 50%;
-    filter: blur(110px);
-    opacity: 0.3;
+    filter: blur(120px);
+    opacity: 0.25;
   }
 
   .glow-purple {
     top: 5%;
-    left: 25%;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, transparent 70%);
+    left: 20%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.28) 0%, transparent 70%);
   }
 
   .glow-cyan {
     top: 12%;
-    right: 20%;
-    width: 480px;
-    height: 480px;
-    background: radial-gradient(circle, rgba(0, 242, 254, 0.18) 0%, transparent 70%);
-  }
-
-  .glow-emerald {
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+    right: 18%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.22) 0%, transparent 70%);
   }
 
   .hero-grid-overlay {
@@ -175,9 +219,46 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     background-image: 
       linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 44px 44px;
-    mask-image: radial-gradient(circle at 50% 40%, black 25%, transparent 80%);
-    -webkit-mask-image: radial-gradient(circle at 50% 40%, black 25%, transparent 80%);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at 50% 35%, black 25%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 35%, black 25%, transparent 80%);
+  }
+
+  /* SVG Acoustic Waveform Motion */
+  .acoustic-wave-canvas {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  .wave-path {
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  .wave-1 {
+    animation: wavePulse1 12s infinite;
+  }
+
+  .wave-2 {
+    animation: wavePulse2 16s infinite;
+  }
+
+  @keyframes wavePulse1 {
+    0% { transform: translateY(0) scaleY(1); }
+    50% { transform: translateY(-8px) scaleY(1.05); }
+    100% { transform: translateY(4px) scaleY(0.96); }
+  }
+
+  @keyframes wavePulse2 {
+    0% { transform: translateY(0) scaleY(0.95); }
+    50% { transform: translateY(10px) scaleY(1.04); }
+    100% { transform: translateY(-6px) scaleY(1); }
   }
 
   .hero-container {
@@ -187,58 +268,77 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 2.25rem;
+    gap: 1.75rem;
   }
 
-  /* Centered Badges Strip */
+  /* Badges Strip */
   .hero-badges-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 0.65rem;
+    gap: 0.5rem;
     margin: 0 auto;
+    max-width: 880px;
   }
 
   .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
-    padding: 0.35rem 0.85rem;
+    gap: 0.4rem;
+    padding: 0.32rem 0.8rem;
     border-radius: var(--radius-full);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 500;
     color: var(--text-muted);
     background: rgba(15, 23, 42, 0.7);
     border: 1px solid var(--border-light);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease, border-color 0.2s ease;
   }
+
+  .hero-badge:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .micro-icon {
+    flex-shrink: 0;
+  }
+
+  .badge-starttic {
+    border-color: rgba(0, 242, 254, 0.25);
+    background: rgba(0, 242, 254, 0.05);
+    color: #e0f2fe;
+  }
+  .badge-starttic .micro-icon { color: var(--accent-cyan); }
+
+  .badge-itemas {
+    border-color: rgba(168, 85, 247, 0.25);
+    background: rgba(168, 85, 247, 0.05);
+    color: #f3e8ff;
+  }
+  .badge-itemas .micro-icon { color: #c084fc; }
+
+  .badge-offline {
+    border-color: rgba(16, 185, 129, 0.25);
+    background: rgba(16, 185, 129, 0.05);
+    color: #ecfdf5;
+  }
+  .badge-offline .micro-icon { color: #34d399; }
+
+  .badge-mdr {
+    border-color: rgba(245, 158, 11, 0.25);
+    background: rgba(245, 158, 11, 0.05);
+    color: #fffbeb;
+  }
+  .badge-mdr .micro-icon { color: #fbbf24; }
 
   .hero-badge strong {
     color: var(--text-main);
   }
 
-  .badge-starttic {
-    border-color: rgba(0, 242, 254, 0.3);
-    background: rgba(0, 242, 254, 0.06);
-  }
-
-  .badge-itemas {
-    border-color: rgba(168, 85, 247, 0.3);
-    background: rgba(168, 85, 247, 0.06);
-  }
-
-  .badge-offline {
-    border-color: rgba(16, 185, 129, 0.3);
-    background: rgba(16, 185, 129, 0.06);
-  }
-
-  .badge-mdr {
-    border-color: rgba(245, 158, 11, 0.3);
-    background: rgba(245, 158, 11, 0.06);
-  }
-
-  /* Centered Main Content */
+  /* Main Editorial Content */
   .hero-main-content {
     display: flex;
     flex-direction: column;
@@ -249,70 +349,60 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     margin: 0 auto;
   }
 
-  /* Headings */
   .hero-title {
-    font-size: clamp(2.1rem, 4.6vw, 3.35rem);
+    font-size: clamp(2.1rem, 4.4vw, 3.6rem);
     font-weight: 800;
-    line-height: 1.16;
+    line-height: 1.15;
     letter-spacing: -0.03em;
     color: var(--text-main);
     text-align: center;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 1.25rem auto;
     max-width: 920px;
   }
 
   .gradient-text-purple {
-    background: linear-gradient(135deg, #C084FC 0%, #00F2FE 100%);
+    background: linear-gradient(135deg, #c084fc 0%, #38bdf8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .hero-lead {
-    font-size: clamp(1rem, 1.6vw, 1.15rem);
-    line-height: 1.6;
+    font-size: clamp(0.95rem, 1.4vw, 1.125rem);
+    line-height: 1.65;
     color: var(--text-muted);
     text-align: center;
-    max-width: 740px;
-    margin: 0 auto 1.75rem auto;
+    max-width: 720px;
+    margin: 0 auto 2rem auto;
   }
 
-  .hero-lead strong {
-    color: var(--text-main);
-  }
-
-  /* Centered Actions Row */
+  /* Actions Row */
   .hero-actions-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    margin: 0 auto 2rem auto;
+    gap: 0.85rem;
+    margin: 0 auto 2.25rem auto;
   }
 
-  /* Play Store Hero Button */
   .btn-playstore {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.55rem 1.25rem;
+    padding: 0.55rem 1.35rem;
     border-radius: 14px;
     background: #090D16;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), 0 0 16px rgba(0, 242, 254, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), 0 0 16px rgba(0, 242, 254, 0.12);
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
   }
 
   .btn-playstore:hover {
-    border-color: rgba(0, 242, 254, 0.65);
+    border-color: rgba(0, 242, 254, 0.6);
     background: #0D1322;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 28px rgba(0, 242, 254, 0.3);
-  }
-
-  .play-svg-icon {
-    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 26px rgba(0, 242, 254, 0.3);
   }
 
   .btn-play-content {
@@ -333,57 +423,71 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .btn-play-main {
     font-family: var(--font-heading);
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     font-weight: 800;
     color: #FFFFFF;
     letter-spacing: -0.01em;
   }
 
-  .btn-pill-link {
+  .btn-lua-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.85rem 1.4rem;
+    gap: 0.5rem;
+    padding: 0.8rem 1.3rem;
     border-radius: var(--radius-full);
     background: rgba(249, 115, 22, 0.12);
     border: 1px solid rgba(249, 115, 22, 0.35);
     color: #fdba74;
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     text-decoration: none;
     transition: all 0.2s ease;
   }
 
-  .btn-pill-link:hover {
+  .btn-lua-link:hover {
     background: rgba(249, 115, 22, 0.22);
     border-color: rgba(249, 115, 22, 0.6);
     color: #fff;
     transform: translateY(-2px);
   }
 
-  /* Centered KPI Strip */
+  .lua-btn-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    object-fit: cover;
+    image-rendering: pixelated;
+  }
+
+  /* KPI Metrics Strip */
   .hero-kpi-strip {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     width: 100%;
-    max-width: 760px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 1.25rem 1.75rem;
-    border-radius: var(--radius-md);
-    background: rgba(15, 23, 42, 0.55);
+    padding: 1.1rem 1.75rem;
+    border-radius: var(--radius-lg);
+    background: rgba(15, 23, 42, 0.6);
     border: 1px solid var(--border-light);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.4);
   }
 
   .kpi-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
     gap: 0.2rem;
+    flex: 1;
+  }
+
+  .kpi-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .kpi-num {
@@ -393,172 +497,213 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     line-height: 1;
     color: var(--accent-cyan);
     letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
   }
 
   .kpi-label {
-    font-size: 0.75rem;
-    color: var(--text-dim);
+    font-size: 0.72rem;
+    color: var(--text-muted);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    text-align: center;
+    letter-spacing: 0.05em;
   }
 
-  /* Centered Showcase Mockup placed directly below title */
-  .hero-showcase-center {
+  /* Cinematic Product Stage */
+  .hero-showcase-stage {
+    position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 0.5rem auto 1.5rem auto;
+    margin-top: 2.5rem;
+  }
+
+  .stage-ambient-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, rgba(0, 242, 254, 0.12) 50%, transparent 75%);
+    filter: blur(35px);
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 40px;
   }
 
   .device-mockup {
     position: relative;
-    width: 170px;
-    padding: 6px;
-    border-radius: 24px;
-    background: #0D131F;
+    z-index: 1;
+    width: 210px;
+    padding: 8px;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #1e293b, #090d16);
     border: 2px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 12px 32px -6px rgba(0, 0, 0, 0.7), 0 0 28px rgba(168, 85, 247, 0.16);
-    margin: 0 auto;
+    box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.75), 0 0 30px rgba(0, 242, 254, 0.14);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .device-mockup:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -6px rgba(0, 0, 0, 0.85), 0 0 40px rgba(168, 85, 247, 0.25);
   }
 
   .device-notch {
     position: absolute;
-    top: 8px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
-    height: 8px;
+    width: 48px;
+    height: 9px;
     border-radius: var(--radius-full);
-    background: #05080E;
+    background: #030712;
     z-index: 2;
   }
 
   .device-screen {
-    border-radius: 18px;
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
-    background: #07090E;
+    background: #050811;
   }
 
   .device-screen-img {
     width: 100%;
     height: auto;
-    aspect-ratio: 460 / 1024;
+    aspect-ratio: 340 / 756;
     object-fit: cover;
     display: block;
-    margin: 0 auto;
+  }
+
+  /* Floating Mascot Badge on Device Stage */
+  .stage-floating-pill {
+    position: relative;
+    z-index: 2;
+    margin-top: -14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.45rem 1rem;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(249, 115, 22, 0.15);
+    transition: transform 0.2s ease;
+  }
+
+  .stage-floating-pill:hover {
+    transform: translateY(-2px);
+    border-color: rgba(249, 115, 22, 0.6);
+  }
+
+  .stage-lua-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    image-rendering: pixelated;
+    border: 1.5px solid rgba(249, 115, 22, 0.5);
+  }
+
+  .stage-pill-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    line-height: 1.15;
+  }
+
+  .stage-pill-text strong {
+    font-size: 0.78rem;
+    color: #fdba74;
+    font-weight: 700;
+  }
+
+  .stage-pill-text span {
+    font-size: 0.68rem;
+    color: var(--text-muted);
   }
 
   @media (max-width: 768px) {
     .hero-native-section {
-      padding-top: 105px;
-      padding-bottom: 50px;
-    }
-
-    .hero-container {
-      gap: 1.75rem;
-    }
-
-    .hero-title {
-      font-size: clamp(1.85rem, 5.5vw, 2.5rem);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .hero-native-section {
-      padding-top: 96px;
+      padding-top: 95px;
       padding-bottom: 45px;
     }
 
-    .hero-badges-strip {
-      gap: 0.4rem;
+    .hero-container {
+      gap: 1.25rem;
+    }
+
+    .hero-badges-row {
+      gap: 0.35rem;
     }
 
     .hero-badge {
       font-size: 0.72rem;
-      padding: 0.28rem 0.65rem;
+      padding: 0.26rem 0.6rem;
     }
 
     .hero-title {
-      font-size: clamp(1.65rem, 7vw, 2.1rem);
-      line-height: 1.2;
+      font-size: 2.1rem;
     }
 
     .hero-lead {
-      font-size: 0.925rem;
+      font-size: 0.92rem;
       line-height: 1.55;
       margin-bottom: 1.5rem;
-      padding: 0 0.25rem;
+      padding: 0 0.5rem;
     }
 
     .hero-actions-row {
       flex-direction: column;
       width: 100%;
-      max-width: 320px;
-      gap: 0.7rem;
-      margin-bottom: 1.75rem;
+      max-width: 300px;
+      gap: 0.65rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero-actions-row .btn-playstore,
     .hero-actions-row .btn-primary,
-    .hero-actions-row .btn-secondary,
-    .hero-actions-row .btn-pill-link {
+    .hero-actions-row .btn-lua-link {
       width: 100%;
       justify-content: center;
-      min-height: 48px;
     }
 
     .hero-kpi-strip {
+      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      padding: 0.9rem 0.75rem;
-      border-radius: var(--radius-md);
+      gap: 0.85rem;
+      padding: 0.9rem;
+    }
+
+    .kpi-divider {
+      display: none;
     }
 
     .kpi-num {
       font-size: 1.45rem;
     }
 
-    .kpi-label {
-      font-size: 0.7rem;
-    }
-
-    .hero-showcase-center {
-      margin: 0.35rem auto 1.25rem auto;
-    }
-
     .device-mockup {
-      width: min(150px, 52vw);
-      padding: 5px;
-      border-radius: 20px;
+      width: 165px;
+      padding: 6px;
+      border-radius: 22px;
     }
 
-    .device-notch {
-      width: 34px;
-      height: 7px;
-      top: 7px;
+    .stage-floating-pill {
+      padding: 0.35rem 0.75rem;
+      margin-top: -10px;
     }
 
-    .device-screen {
-      border-radius: 15px;
-    }
-  }
-
-  @media (max-width: 380px) {
-    .hero-badges-strip {
-      gap: 0.3rem;
+    .stage-lua-icon {
+      width: 24px;
+      height: 24px;
     }
 
-    .hero-badge {
-      font-size: 0.68rem;
-      padding: 0.25rem 0.5rem;
+    .stage-pill-text strong {
+      font-size: 0.72rem;
     }
 
-    .device-mockup {
-      width: min(135px, 56vw);
+    .stage-pill-text span {
+      font-size: 0.62rem;
     }
   }
 </style>

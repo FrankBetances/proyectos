@@ -5,56 +5,113 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
 const luaPillars = [
   {
-    icon: "🐱",
+    iconName: "heart",
     title: "Cero Castigo ni Frustración",
-    desc: "Celebra cada intento con ronroneo en pantalla y nunca se entristece ni resta puntos si la familia se toma un descanso."
+    desc: "Refuerzo positivo incondicional con ronroneo animado en pantalla. Lúa jamás resta puntos ni entristece ante pausas o dificultades de articulación."
   },
   {
-    icon: "👀",
+    iconName: "eye",
     title: "Descanso Visual (Regla 20-20-20)",
-    desc: "Cada 20 minutos de uso, Lúa duerme una siesta de 20 segundos para invitar al menor a relajar la vista mirando a lo lejos."
+    desc: "Cada 20 minutos de estimulación, Lúa duerme una siesta programada de 20 segundos invitando al menor a mirar a lo lejos para relajar la vista."
   },
   {
-    icon: "🏆",
+    iconName: "award",
     title: "Gamificación con Propósito",
-    desc: "12 niveles evolutivos y recompensas para su armario (pescadito, flor, cascabel) que refuerzan la constancia."
+    desc: "12 niveles evolutivos, 18 insignias de superación y complementos para su armario (flores, cascabel, lazo) sin compras dentro de la app."
   },
   {
-    icon: "📟",
-    title: "Hardware Oficial (ESP32-C3)",
-    desc: "Dispositivo físico con pantalla circular GC9A01, enlace BLE y silencio clínico total sin micrófonos."
+    iconName: "cpu",
+    title: "Dispositivo Hardware startTIC",
+    desc: "Mascota física complementaria con microcontrolador ESP32-C3, pantalla redonda GC9A01, enlace BLE y silencio acústico estricto sin micrófonos."
   }
 ];
 ---
 
+<!-- Lúa: Acompañamiento Pediátrico & Neuroeducación -->
 <section id="lua-mascota" class="lua-mascot-section">
   <div class="container">
     <div class="glass-card lua-box">
+      <!-- Section Header -->
       <div class="section-header lua-header">
-        <span class="tag tag-orange">Acompañamiento Pediátrico</span>
-        <h2>Lúa: La Amiga que <span class="gradient-text-orange">Acompaña cada Logro</span></h2>
+        <span class="tag tag-orange">Acompañamiento Pediátrico & Neuroeducación</span>
+        <h2>Lúa: La Amiga que <span class="gradient-text-orange">Celebra cada Logro</span></h2>
         <p>
-          Transforma la terapia en una experiencia positiva: refuerzo motivacional, descanso visual y respeto absoluto al ritmo infantil.
+          Convierte la intervención clínica en una experiencia lúdica segura: motivación afectiva, respeto al descanso visual y cero ansiedad para la infancia.
         </p>
       </div>
 
-      <!-- 4 Pillars Grid - Centered & Symmetrical -->
-      <div class="lua-features-grid">
-        {luaPillars.map((item) => (
-          <div class="lua-feature-card">
-            <span class="lua-icon">{item.icon}</span>
-            <div class="lua-card-body">
-              <h4>{item.title}</h4>
-              <p>{item.desc}</p>
+      <!-- Layout: Mascot Art Showcase + 4 Pillars -->
+      <div class="lua-grid-layout">
+        <!-- Visual Column: Lúa Official Pixel Art -->
+        <div class="lua-art-card">
+          <div class="lua-ambient-glow" aria-hidden="true"></div>
+          <div class="lua-art-frame">
+            <img 
+              src={`${baseUrl}/assets/lua-mascota-valeria.png`} 
+              alt="Lúa la mascota oficial de Valeria+ en píxel art de alta resolución" 
+              class="lua-pixel-img"
+              width="360"
+              height="360"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="lua-art-meta">
+              <span class="lua-meta-pill">Matriz 24×24 Pixel Art</span>
+              <span class="lua-meta-pill">28 Expresiones Afectivas</span>
             </div>
           </div>
-        ))}
+        </div>
+
+        <!-- Pillars Column: 4 Core Principles -->
+        <div class="lua-pillars-column">
+          {luaPillars.map((item) => (
+            <div class="lua-pillar-item">
+              <div class="pillar-icon-box">
+                {item.iconName === 'heart' && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                  </svg>
+                )}
+                {item.iconName === 'eye' && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                )}
+                {item.iconName === 'award' && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="8" r="6"/>
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                  </svg>
+                )}
+                {item.iconName === 'cpu' && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect width="16" height="16" x="4" y="4" rx="2"/>
+                    <rect width="6" height="6" x="9" y="9" rx="1"/>
+                    <path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/>
+                  </svg>
+                )}
+              </div>
+              <div class="pillar-text-box">
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <!-- Centered Link to Hardware -->
+      <!-- Action Link to Hardware Project -->
       <div class="lua-cta-row">
-        <a href={`${baseUrl}/lua`} class="btn-pill-link">
-          <span>Ver Dispositivo y Hardware de Lúa →</span>
+        <a href={`${baseUrl}/lua`} class="btn-hardware-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="3" rx="2"/>
+            <path d="M7 7h10v10H7z"/>
+          </svg>
+          <span>Explorar el Dispositivo Físico de Lúa (startTIC)</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
         </a>
       </div>
     </div>
@@ -63,25 +120,22 @@ const luaPillars = [
 
 <style>
   .lua-mascot-section {
-    padding: 85px 0;
+    padding: 90px 0;
     position: relative;
     border-top: 1px solid var(--border-light);
   }
 
   .lua-box {
-    padding: 3rem 2.5rem;
-    max-width: 1060px;
+    padding: 3.5rem 2.75rem;
+    max-width: 1100px;
     margin: 0 auto;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(67, 20, 7, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(67, 20, 7, 0.25) 100%);
     border: 1px solid rgba(249, 115, 22, 0.35);
-    box-shadow: 0 10px 40px rgba(249, 115, 22, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 15px 45px -10px rgba(249, 115, 22, 0.12);
   }
 
   .lua-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     text-align: center;
   }
 
@@ -98,142 +152,189 @@ const luaPillars = [
   .lua-header p {
     max-width: 720px;
     margin: 0 auto;
-    text-align: center;
   }
 
-  .lua-features-grid {
+  /* Grid Layout: Art Showcase + Pillars */
+  .lua-grid-layout {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-    width: 100%;
+    grid-template-columns: 380px 1fr;
+    gap: 3rem;
+    align-items: center;
   }
 
-  .lua-feature-card {
-    background: rgba(2, 6, 23, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: var(--radius-md);
-    padding: 1.75rem;
+  /* Art Showcase Card */
+  .lua-art-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .lua-ambient-glow {
+    position: absolute;
+    inset: -15px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.25) 0%, rgba(244, 63, 94, 0.15) 50%, transparent 75%);
+    filter: blur(30px);
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 40px;
+  }
+
+  .lua-art-frame {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    background: rgba(11, 15, 25, 0.85);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6);
   }
 
-  .lua-feature-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(249, 115, 22, 0.4);
-    background: rgba(2, 6, 23, 0.65);
+  .lua-pixel-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 20px;
+    image-rendering: pixelated;
+    transition: transform 0.3s ease;
   }
 
-  .lua-icon {
-    font-size: 1.8rem;
+  .lua-art-frame:hover .lua-pixel-img {
+    transform: scale(1.03) rotate(-1deg);
+  }
+
+  .lua-art-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .lua-meta-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
     background: rgba(249, 115, 22, 0.12);
-    border: 1px solid rgba(249, 115, 22, 0.25);
-    width: 50px;
-    height: 50px;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    color: #fdba74;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Pillars Column */
+  .lua-pillars-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .lua-pillar-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem 1.35rem;
+    border-radius: var(--radius-md);
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.22s ease;
+  }
+
+  .lua-pillar-item:hover {
+    background: rgba(25, 33, 52, 0.75);
+    border-color: rgba(249, 115, 22, 0.35);
+    transform: translateX(4px);
+  }
+
+  .pillar-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(249, 115, 22, 0.12);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    color: #fb923c;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 14px;
-    margin: 0 auto 1rem auto;
     flex-shrink: 0;
   }
 
-  .lua-card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .lua-card-body h4 {
-    font-size: 1.15rem;
+  .pillar-text-box h4 {
+    font-size: 1.05rem;
     font-weight: 700;
-    margin-bottom: 0.4rem;
     color: var(--text-main);
-    text-align: center;
+    margin-bottom: 0.25rem;
   }
 
-  .lua-card-body p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
+  .pillar-text-box p {
+    font-size: 0.88rem;
     line-height: 1.55;
-    margin: 0;
-    text-align: center;
-    max-width: 420px;
+    color: var(--text-muted);
   }
 
+  /* Action Row */
   .lua-cta-row {
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    width: 100%;
   }
 
-  .btn-pill-link {
+  .btn-hardware-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.85rem 1.6rem;
+    gap: 0.65rem;
+    padding: 0.85rem 1.75rem;
     border-radius: var(--radius-full);
-    background: rgba(249, 115, 22, 0.15);
+    background: rgba(249, 115, 22, 0.12);
     border: 1px solid rgba(249, 115, 22, 0.4);
     color: #fdba74;
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 0.95rem;
     text-decoration: none;
-    transition: all 0.2s ease;
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.1);
+    transition: all 0.25s ease;
   }
 
-  .btn-pill-link:hover {
+  .btn-hardware-link:hover {
     background: rgba(249, 115, 22, 0.25);
     border-color: rgba(249, 115, 22, 0.7);
-    color: #fff;
+    color: #FFFFFF;
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.25);
     transform: translateY(-2px);
   }
 
-  @media (max-width: 768px) {
-    .lua-mascot-section {
-      padding: 50px 0;
-    }
-
+  @media (max-width: 900px) {
     .lua-box {
-      padding: 1.5rem 1rem;
-      border-radius: var(--radius-md);
+      padding: 2.5rem 1.5rem;
     }
 
-    .lua-features-grid {
+    .lua-grid-layout {
       grid-template-columns: 1fr;
-      gap: 0.75rem;
-      margin-bottom: 1.75rem;
+      gap: 2rem;
     }
 
-    .lua-feature-card {
-      padding: 1.15rem 1rem;
+    .lua-art-frame {
+      max-width: 280px;
+      margin: 0 auto;
     }
 
-    .lua-icon {
-      width: 44px;
-      height: 44px;
-      font-size: 1.4rem;
-      margin-bottom: 0.65rem;
+    .lua-pillar-item:hover {
+      transform: none;
     }
 
-    .lua-card-body h4 {
-      font-size: 1.05rem;
-    }
-
-    .lua-card-body p {
-      font-size: 0.85rem;
-    }
-
-    .btn-pill-link {
+    .btn-hardware-link {
       width: 100%;
-      max-width: 320px;
       justify-content: center;
-      min-height: 48px;
+      text-align: center;
+      font-size: 0.88rem;
     }
   }
 </style>

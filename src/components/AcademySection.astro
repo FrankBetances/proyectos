@@ -1,53 +1,126 @@
 ---
 const academyDomains = [
-  { icon: "🧭", title: "Lenguaje & Hitos ASHA", desc: "Hitos normativos de 0 a 5 años (receptivo vs. expresivo) y técnicas de modelado positivo (recast)." },
-  { icon: "👂", title: "Hipoacusia & Implantes", desc: "Pautas familiares prácticas para el cuidado y aprovechamiento de audífonos e implantes cocleares." },
-  { icon: "🗣️", title: "Dislalias & Articulación", desc: "Puntos de articulación orofacial y praxias lúdicas para fonemas complejos (/r/, /s/, /l/)." },
-  { icon: "🔤", title: "Dislexia & Fonología", desc: "Conciencia fonológica, ritmo auditivo y claves para consolidar la lectura emergente en el hogar." },
-  { icon: "🧩", title: "TEA (Espectro Autista)", desc: "Estrategias de comunicación funcional, turnos compartidos y rutinas de anticipación visual." },
-  { icon: "🎧", title: "Integración Sensorial", desc: "Regulación progresiva ante la sobre-responsividad acústica (SOR) frente a electrodomésticos." }
+  {
+    iconType: "compass",
+    badge: "0 a 5 Años",
+    badgeColor: "cyan",
+    title: "La Brújula ASHA",
+    desc: "Hitos normativos de desarrollo comunicativo diferenciando comprensión de expresión y técnicas de modelado positivo (recast)."
+  },
+  {
+    iconType: "ear",
+    badge: "Auditivo",
+    badgeColor: "purple",
+    title: "Hipoacusia & Implantes",
+    desc: "Pautas prácticas para la familia en el cuidado, mantenimiento y aprovechamiento diario de audífonos e implantes cocleares."
+  },
+  {
+    iconType: "voice",
+    badge: "Articulatorio",
+    badgeColor: "cyan",
+    title: "Dislalias & Fonética",
+    desc: "Puntos de articulación orofacial y praxias lúdicas para fonemas críticos (/r/, /s/, /l/) sin frustración ni corrección punitiva."
+  },
+  {
+    iconType: "book",
+    badge: "Lectura Inicial",
+    badgeColor: "purple",
+    title: "Dislexia & Fonología",
+    desc: "Conciencia fonológica, ritmo auditivo y claves para consolidar la ruta fonológica de la lectura emergente en casa."
+  },
+  {
+    iconType: "puzzle",
+    badge: "Pragmática",
+    badgeColor: "amber",
+    title: "TEA & Comunicación",
+    desc: "Estrategias de comunicación funcional, triangulación de turnos y rutinas estructuradas con anticipación visual."
+  },
+  {
+    iconType: "shield",
+    badge: "Sensorial SOR",
+    badgeColor: "emerald",
+    title: "Integración Sensorial",
+    desc: "Pautas de desensibilización progresiva ante ruidos cotidianos molestos, empoderando el botón de pausa infantil."
+  }
 ];
 ---
 
+<!-- Academy: Formación Parental Previa en 2 Minutos -->
 <section id="academy" class="academy-section">
   <div class="container">
     <div class="academy-box glass-card">
       <div class="section-header academy-header">
-        <span class="tag">Formación Parental Previa</span>
-        <h2>Academy · <span class="gradient-text">Micro-cápsulas en 2 Minutos</span></h2>
+        <span class="tag">Capacitación Familiar Previa</span>
+        <h2>Academy: <span class="gradient-text">Formar Antes de Ejercitar</span></h2>
         <p>
-          Comprender el desarrollo del lenguaje antes de ejercitarlo. Valeria+ capacita a las familias mediante <strong>pautas clínicas directas de 2 minutos</strong> con preguntas que refuerzan el aprendizaje.
+          Micro-cápsulas clínicas directas de 2 minutos para que madres, padres y cuidadores dominen las técnicas de estimulación del lenguaje en la rutina diaria.
         </p>
       </div>
 
-      <!-- 6 Key Domains Grid - Symmetrical & Centered -->
+      <!-- Grid: 6 Clinical Domains -->
       <div class="domains-grid">
         {academyDomains.map((d) => (
           <div class="domain-card">
-            <span class="domain-icon">{d.icon}</span>
-            <div class="domain-body">
-              <h4>{d.title}</h4>
-              <p>{d.desc}</p>
+            <div class="domain-card-header">
+              <div class="domain-icon-box">
+                {d.iconType === 'compass' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                  </svg>
+                )}
+                {d.iconType === 'ear' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a2 2 0 1 1-4 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 0 4 0"/>
+                  </svg>
+                )}
+                {d.iconType === 'voice' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/>
+                  </svg>
+                )}
+                {d.iconType === 'book' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/>
+                  </svg>
+                )}
+                {d.iconType === 'puzzle' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M19.439 7.85c0-1.571-.944-2.85-2.109-2.85s-2.11 1.279-2.11 2.85a3.86 3.86 0 0 1-.22 1.3H9.001a3.86 3.86 0 0 1-.22-1.3c0-1.571-.944-2.85-2.11-2.85-1.164 0-2.109 1.279-2.109 2.85 0 .463.082.9.23 1.3H3v10h18V9.15h-1.791c.148-.4.23-.837.23-1.3Z"/>
+                  </svg>
+                )}
+                {d.iconType === 'shield' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                )}
+              </div>
+              <span class={`badge badge-${d.badgeColor}`}>{d.badge}</span>
             </div>
+            <h4>{d.title}</h4>
+            <p>{d.desc}</p>
           </div>
         ))}
       </div>
 
-      <!-- Spotlight dual: La Brújula + Lengua de Signos (LSE) - Symmetrical & Centered -->
+      <!-- Spotlight Showcase: La Brújula + Lengua de Signos (LSE) Validada por ACOPROS -->
       <div class="academy-spotlight-row">
-        <div class="lse-spotlight">
-          <div class="lse-tag">🧭 Hitos Normativos ASHA (0 a 5 años)</div>
+        <div class="spotlight-card">
+          <div class="spotlight-meta">
+            <span class="badge badge-cyan">Hitos Normativos ASHA</span>
+          </div>
           <h3>La Brújula de las Palabras</h3>
           <p>
-            Guía clínica que diferencia <strong>comprensión</strong> de <strong>expresión</strong>, orientando a la familia sobre cuándo consultar con el especialista.
+            Guía clínica que diferencia <strong>comprensión</strong> de <strong>expresión</strong> de 0 a 5 años, orientando a la familia con absoluta claridad sobre cuándo acudir a consulta especializada.
           </p>
         </div>
 
-        <div class="lse-spotlight lse-alt">
-          <div class="lse-tag text-purple">🤟 Validación Oficial ACOPROS</div>
+        <div class="spotlight-card spotlight-alt">
+          <div class="spotlight-meta">
+            <span class="badge badge-purple">Validación Oficial ACOPROS</span>
+          </div>
           <h3>Lengua de Signos Española (LSE)</h3>
           <p>
-            Las <strong>27 configuraciones dactilológicas</strong> han sido revisadas y validadas directamente por la logopeda y personas sordas de <strong>ACOPROS</strong>.
+            Las <strong>27 configuraciones dactilológicas</strong> han sido supervisadas y validadas por profesionales de la logopedia y personas sordas de la asociación <strong>ACOPROS</strong>.
           </p>
         </div>
       </div>
@@ -63,19 +136,16 @@ const academyDomains = [
   }
 
   .academy-box {
-    padding: 3rem 2.5rem;
-    max-width: 1060px;
+    padding: 3.5rem 2.5rem;
+    max-width: 1100px;
     margin: 0 auto;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.4) 100%);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.35) 100%);
     border: 1px solid rgba(138, 43, 226, 0.3);
-    box-shadow: var(--shadow-purple);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 15px 40px -10px rgba(138, 43, 226, 0.15);
   }
 
   .academy-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.75rem;
     text-align: center;
   }
 
@@ -87,172 +157,99 @@ const academyDomains = [
 
   .domains-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.25rem;
     width: 100%;
   }
 
   .domain-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(15, 23, 42, 0.55);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 1.5rem;
+    padding: 1.35rem 1.4rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    gap: 0.6rem;
+    transition: all 0.22s ease;
   }
 
   .domain-card:hover {
-    transform: translateY(-2px);
+    background: rgba(25, 33, 56, 0.75);
     border-color: rgba(168, 85, 247, 0.4);
-    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
   }
 
-  .domain-icon {
-    font-size: 1.75rem;
-    background: rgba(255, 255, 255, 0.05);
-    width: 46px;
-    height: 46px;
+  .domain-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .domain-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: #c084fc;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-md);
-    margin: 0 auto 0.85rem auto;
     flex-shrink: 0;
   }
 
-  .domain-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .domain-body h4 {
+  .domain-card h4 {
     font-size: 1.05rem;
     font-weight: 700;
-    margin-bottom: 0.35rem;
     color: var(--text-main);
-    text-align: center;
   }
 
-  .domain-body p {
-    font-size: 0.86rem;
+  .domain-card p {
+    font-size: 0.88rem;
+    line-height: 1.55;
     color: var(--text-muted);
-    line-height: 1.5;
-    margin: 0;
-    text-align: center;
   }
 
+  /* Spotlight Dual */
   .academy-spotlight-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     width: 100%;
   }
 
-  .lse-spotlight {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(0, 242, 254, 0.25);
+  .spotlight-card {
+    padding: 1.75rem 2rem;
     border-radius: var(--radius-md);
-    padding: 1.75rem;
-    position: relative;
-    overflow: hidden;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(0, 242, 254, 0.25);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    gap: 0.65rem;
   }
 
-  .lse-spotlight::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--accent-cyan);
-  }
-
-  .lse-spotlight.lse-alt {
+  .spotlight-card.spotlight-alt {
     border-color: rgba(168, 85, 247, 0.3);
   }
 
-  .lse-spotlight.lse-alt::before {
-    background: var(--accent-purple);
-  }
-
-  .lse-tag {
-    font-size: 0.725rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--accent-cyan);
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  .lse-tag.text-purple {
-    color: #C084FC;
-  }
-
-  .lse-spotlight h3 {
+  .spotlight-card h3 {
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-align: center;
     color: var(--text-main);
   }
 
-  .lse-spotlight p {
+  .spotlight-card p {
     font-size: 0.9rem;
+    line-height: 1.6;
     color: var(--text-muted);
-    line-height: 1.55;
-    margin: 0;
-    text-align: center;
-    max-width: 440px;
   }
 
-  .lse-spotlight strong {
-    color: var(--text-main);
-  }
-
-  @media (max-width: 768px) {
-    .academy-section {
-      padding: 50px 0;
-    }
-
-    .academy-box {
-      padding: 1.5rem 1rem;
-      border-radius: var(--radius-md);
-    }
-
+  @media (max-width: 900px) {
     .domains-grid {
       grid-template-columns: 1fr;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .domain-card {
-      padding: 1.15rem 1rem;
-    }
-
-    .domain-icon {
-      width: 40px;
-      height: 40px;
-      font-size: 1.4rem;
-      margin-bottom: 0.55rem;
-    }
-
-    .domain-body h4 {
-      font-size: 1rem;
-    }
-
-    .domain-body p {
-      font-size: 0.84rem;
+      gap: 1rem;
     }
 
     .academy-spotlight-row {
@@ -260,16 +257,8 @@ const academyDomains = [
       gap: 1rem;
     }
 
-    .lse-spotlight {
-      padding: 1.35rem 1.15rem;
-    }
-
-    .lse-spotlight h3 {
-      font-size: 1.1rem;
-    }
-
-    .lse-spotlight p {
-      font-size: 0.88rem;
+    .academy-box {
+      padding: 2.25rem 1.25rem;
     }
   }
 </style>
