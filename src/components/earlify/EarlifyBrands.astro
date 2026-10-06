@@ -1,24 +1,26 @@
 ---
-const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
-  ? import.meta.env.BASE_URL.slice(0, -1) 
-  : import.meta.env.BASE_URL;
+// EarlifyBrands.astro - Portafolio de Soluciones de Earlify Health
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<section id="portafolio-asistencial" class="earlify-brands section-padding">
+<section id="portafolio-asistencial" class="earlify-brands section-padding" aria-labelledby="brands-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">Portafolio Asistencial</span>
-      <h2 class="section-title">
-        Tres soluciones. <span class="gradient-text">Un solo camino para cada familia.</span>
+      <div class="section-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>PORTAFOLIO ASISTENCIAL &amp; EDUCATIVO</span>
+      </div>
+      <h2 id="brands-title" class="section-title">
+        Cuatro soluciones. <span class="gradient-text">Un solo camino continuo para cada menor.</span>
       </h2>
       <p class="section-description">
-        Earlify desarrolla tecnología pediátrica complementaria para conectar la evaluación especializada en consulta con la continuidad diaria en casa y el apoyo emocional.
+        Earlify desarrolla tecnología pediátrica complementaria para conectar la evaluación especializada en consulta con la inclusión en el aula, la continuidad diaria en casa y el anclaje afectivo.
       </p>
     </div>
 
     <div class="brands-grid">
       <!-- 1. VIA+ Card -->
-      <div class="brand-card glass-card">
+      <div class="brand-card glass-card card-accent-cyan">
         <div class="card-top">
           <div class="brand-badge badge-cyan">EVALUACIÓN CLÍNICA</div>
           <span class="cert-pill">SaMD Clase IIa · Apoyo a la Decisión</span>
@@ -28,37 +30,65 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <p class="brand-tagline">Software como Dispositivo Médico en consulta</p>
         
         <p class="brand-desc">
-          Herramienta en tablet para otorrinolaringólogos, audiólogos y logopedas. Integra 13 módulos de valoración (audiometría tonal y condicionada, análisis de voz validado con Praat, disfagia MECV-V y 21 hitos ASHA) sin emitir diagnósticos automáticos ni requerir internet.
+          Herramienta en tablet para otorrinolaringólogos, audiólogos y logopedas. Integra 13 módulos de valoración (audiometría tonal y condicionada, análisis acústico de voz con Praat C++, disfagia MECV-V y cribado ASHA) con Cero IA en runtime y código QR anónimo.
         </p>
 
         <div class="card-footer">
-          <a href={`${baseUrl}/via`} class="link-btn">Explorar Módulos de VIA+ &rarr;</a>
+          <a href={`${baseUrl}/via`} class="link-btn link-cyan">
+            <span>Explorar Módulos de VIA+</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
         </div>
       </div>
 
-      <!-- 2. VALERIA+ Card -->
-      <div class="brand-card glass-card">
+      <!-- 2. DESCUBRE CON LÚA Card -->
+      <div class="brand-card glass-card card-accent-emerald">
         <div class="card-top">
-          <div class="brand-badge badge-emerald">TERAPIA EN CASA</div>
-          <span class="cert-pill">Formación Academy · 100% Offline</span>
+          <div class="brand-badge badge-emerald">EL AULA ESCOLAR</div>
+          <span class="cert-pill">startTIC · Educación 0–3 Años</span>
+        </div>
+        
+        <h3 class="brand-name">Descubre con Lúa</h3>
+        <p class="brand-tagline">Inclusión en escuelas infantiles y asambleas</p>
+        
+        <p class="brand-desc">
+          Aplicación para docentes y escuelas infantiles con 10 unidades curriculares, 1.020 locuciones offline y metrónomo visual silencioso para niñas y niños con audífonos o implante coclear. Cero pantallas directas para el menor.
+        </p>
+
+        <div class="card-footer">
+          <a href={`${baseUrl}/descubre-con-lua`} class="link-btn link-emerald">
+            <span>Descubrir Edición Aula</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. VALERIA+ Card -->
+      <div class="brand-card glass-card card-accent-purple">
+        <div class="card-top">
+          <div class="brand-badge badge-purple">TERAPIA EN CASA</div>
+          <span class="cert-pill">DM Clase I · 100% Offline</span>
         </div>
         
         <h3 class="brand-name">Valeria+</h3>
-        <p class="brand-tagline">Formación familiar y 9 bloques de estimulación</p>
+        <p class="brand-tagline">Formación familiar y 10 bloques de estimulación</p>
         
         <p class="brand-desc">
-          Plataforma que empodera a las familias con cápsulas de 2 minutos (Academy) y ofrece 9 bloques de ejercicios (sensorial SOR, pares mínimos, Pizarra Mágica y Realidad Aumentada) con 4.110 locuciones en 6 variedades idiomáticas.
+          Plataforma domiciliaria basada en el método TPR que capacita a las familias en 2 minutos (Academy ASHA y LSE) y ofrece 10 bloques de rehabilitación interactiva con 4.711 locuciones neuronales en 6 variedades lingüísticas.
         </p>
 
         <div class="card-footer">
-          <a href={`${baseUrl}/`} class="link-btn">Conocer Valeria+ &rarr;</a>
+          <a href={`${baseUrl}/`} class="link-btn link-purple">
+            <span>Conocer Valeria+</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
         </div>
       </div>
 
-      <!-- 3. LÚA Card -->
-      <div class="brand-card glass-card">
+      <!-- 4. LÚA Card -->
+      <div class="brand-card glass-card card-accent-orange">
         <div class="card-top">
-          <div class="brand-badge badge-orange">REFUERZO & COMPAÑÍA</div>
+          <div class="brand-badge badge-orange">REFUERZO &amp; COMPAÑÍA</div>
           <span class="cert-pill">Hardware ESP32-C3 · Silencio Clínico</span>
         </div>
         
@@ -66,11 +96,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <p class="brand-tagline">Mascota interactiva física y digital</p>
         
         <p class="brand-desc">
-          Compañera en pixel art y dispositivo circular BLE que une ambos mundos: guarda estricto silencio en la consulta médica para no interferir en las pruebas acústicas, y en casa acompaña y premia al niño reduciendo el estrés.
+          Compañera en píxel art y dispositivo circular BLE (pantalla IPS GC9A01) que une los tres mundos: guarda estricto silencio en la consulta médica para no interferir en pruebas, y en casa acompaña y premia al menor promoviendo la regla visual 20-20-20.
         </p>
 
         <div class="card-footer">
-          <a href={`${baseUrl}/lua`} class="link-btn">Descubrir a Lúa (Hardware) &rarr;</a>
+          <a href={`${baseUrl}/lua`} class="link-btn link-orange">
+            <span>Descubrir a Lúa</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -80,25 +113,27 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <style>
   .earlify-brands {
     background: rgba(15, 23, 42, 0.4);
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
-    padding: 90px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: clamp(70px, 10vw, 110px) 0;
   }
 
   .section-header {
     text-align: center;
-    max-width: 800px;
+    max-width: 860px;
     margin: 0 auto 3.5rem auto;
   }
 
   .section-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.35rem 1rem;
-    border-radius: var(--radius-full);
+    border-radius: 9999px;
     background: rgba(168, 85, 247, 0.1);
     border: 1px solid rgba(168, 85, 247, 0.3);
-    color: var(--accent-purple);
-    font-size: 0.85rem;
+    color: #c084fc;
+    font-size: 0.78rem;
     font-weight: 700;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -106,129 +141,146 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .section-title {
-    font-size: 2.6rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 800;
     margin-bottom: 1rem;
+    color: var(--text-main, #f8fafc);
+    letter-spacing: -0.02em;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #a855f7 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .section-description {
-    font-size: 1.15rem;
-    color: var(--text-muted);
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: var(--text-muted, #94a3b8);
     line-height: 1.6;
   }
 
   .brands-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
   }
 
   .brand-card {
-    padding: 2.25rem;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    position: relative;
-    border: 1px solid var(--border-light);
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
   }
 
   .brand-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(0, 242, 254, 0.4);
+    transform: translateY(-5px);
   }
+
+  .card-accent-cyan:hover { border-color: rgba(0, 242, 254, 0.4); box-shadow: 0 16px 36px rgba(0, 242, 254, 0.12); }
+  .card-accent-emerald:hover { border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 16px 36px rgba(16, 185, 129, 0.12); }
+  .card-accent-purple:hover { border-color: rgba(168, 85, 247, 0.4); box-shadow: 0 16px 36px rgba(168, 85, 247, 0.12); }
+  .card-accent-orange:hover { border-color: rgba(245, 158, 11, 0.4); box-shadow: 0 16px 36px rgba(245, 158, 11, 0.12); }
 
   .card-top {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.25rem;
+    flex-direction: column;
     gap: 0.5rem;
-    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
   }
 
   .brand-badge {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 800;
-    padding: 0.35rem 0.8rem;
-    border-radius: var(--radius-full);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
+    padding: 0.3rem 0.65rem;
+    border-radius: 9999px;
+    width: fit-content;
   }
+  .badge-cyan { background: rgba(0, 242, 254, 0.12); color: #00f2fe; }
+  .badge-emerald { background: rgba(16, 185, 129, 0.12); color: #34d399; }
+  .badge-purple { background: rgba(168, 85, 247, 0.12); color: #c084fc; }
+  .badge-orange { background: rgba(245, 158, 11, 0.12); color: #fbbf24; }
 
   .cert-pill {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.25rem 0.6rem;
-    border-radius: var(--radius-sm);
-  }
-
-  .badge-cyan {
-    background: rgba(0, 242, 254, 0.1);
-    border: 1px solid rgba(0, 242, 254, 0.3);
-    color: var(--accent-cyan);
-  }
-
-  .badge-emerald {
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    color: var(--accent-emerald);
-  }
-
-  .badge-orange {
-    background: rgba(249, 115, 22, 0.1);
-    border: 1px solid rgba(249, 115, 22, 0.3);
-    color: #fb923c;
+    font-size: 0.72rem;
+    color: var(--text-muted, #94a3b8);
+    font-weight: 500;
   }
 
   .brand-name {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 800;
-    color: var(--text-main);
-    margin-bottom: 0.3rem;
+    color: var(--text-main, #f8fafc);
+    margin-bottom: 0.35rem;
   }
 
   .brand-tagline {
-    font-size: 0.95rem;
-    color: var(--accent-cyan);
-    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-muted, #94a3b8);
     margin-bottom: 1.25rem;
+    font-weight: 600;
   }
 
   .brand-desc {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.6;
+    font-size: 0.92rem;
+    color: var(--text-secondary, #cbd5e1);
+    line-height: 1.55;
     margin-bottom: 2rem;
     flex-grow: 1;
   }
 
   .card-footer {
-    padding-top: 1.2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: auto;
   }
 
   .link-btn {
-    color: var(--accent-cyan);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
     font-weight: 700;
-    font-size: 0.95rem;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: gap 0.2s ease, opacity 0.2s ease;
+  }
+  .link-btn:hover {
+    gap: 0.75rem;
   }
 
-  .link-btn:hover {
-    color: #fff;
+  .link-cyan { color: #00f2fe; }
+  .link-emerald { color: #34d399; }
+  .link-purple { color: #c084fc; }
+  .link-orange { color: #fbbf24; }
+
+  @media (max-width: 1024px) {
+    .brands-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 768px) {
-    .section-title {
-      font-size: 2rem;
-    }
     .brands-grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .brands-grid::-webkit-scrollbar {
+      display: none;
     }
     .brand-card {
-      padding: 1.5rem 1.25rem;
+      min-width: 280px;
+      max-width: 280px;
+      scroll-snap-align: center;
+      flex-shrink: 0;
     }
   }
 </style>

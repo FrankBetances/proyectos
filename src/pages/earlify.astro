@@ -5,17 +5,18 @@ import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import EarlifyHero from '../components/earlify/EarlifyHero.astro';
 import ProblemSection from '../components/earlify/ProblemSection.astro';
-import EarlifyBrands from '../components/earlify/EarlifyBrands.astro';
+import EarlifyInteractiveEcosystem from '../components/earlify/EarlifyInteractiveEcosystem.astro';
+import SolutionSection from '../components/earlify/SolutionSection.astro';
+import EarlifyDifferentiators from '../components/earlify/EarlifyDifferentiators.astro';
+import EarlifyValidation from '../components/earlify/EarlifyValidation.astro';
 import EarlifyWorkflow from '../components/earlify/EarlifyWorkflow.astro';
 import EarlifyB2B from '../components/earlify/EarlifyB2B.astro';
+import EarlifyBrands from '../components/earlify/EarlifyBrands.astro';
 import EarlifyFounder from '../components/earlify/EarlifyFounder.astro';
-import SolutionSection from '../components/earlify/SolutionSection.astro';
-import EarlifyValidation from '../components/earlify/EarlifyValidation.astro';
-import EarlifyDifferentiators from '../components/earlify/EarlifyDifferentiators.astro';
 import EarlifyCTA from '../components/earlify/EarlifyCTA.astro';
 
-const pageTitle = "Earlify Health · Ecosistema Pediátrico: Consulta, Hogar y Lúa";
-const pageDescription = "Conectamos la consulta médica con el hogar para el desarrollo infantil: VIA+ (apoyo diagnóstico), Valeria+ (terapia y formación familiar) y Lúa (mascota AIoT).";
+const pageTitle = "Earlify Health · Ecosistema Pediátrico: Consulta, Aula, Hogar y Lúa";
+const pageDescription = "Conectamos la consulta médica con el aula escolar y el hogar para el neurodesarrollo infantil: VIA+ (apoyo diagnóstico SaMD IIa), Descubre con Lúa (escuela 0-3 años), Valeria+ (rehabilitación familiar 10 bloques) y Lúa (mascota AIoT).";
 
 const earlifyJsonLd = {
   "@context": "https://schema.org",
@@ -28,8 +29,8 @@ const earlifyJsonLd = {
       "url": "https://FrankBetances.github.io/proyectos/earlify",
       "logo": "https://FrankBetances.github.io/proyectos/assets/earlify-logo.png",
       "image": "https://FrankBetances.github.io/proyectos/assets/earlify-logo.png",
-      "description": "Ecosistema de salud digital y neurodesarrollo infantil que une la evaluación médica objetiva en consulta con la rehabilitación guiada en el hogar.",
-      "slogan": "Uniendo la precisión médica con la calidez del hogar para el desarrollo infantil.",
+      "description": "Ecosistema de salud digital y neurodesarrollo infantil que une la evaluación médica objetiva en consulta con la inclusión en el aula escolar y la rehabilitación guiada en el hogar bajo un mismo criterio.",
+      "slogan": "Un mismo criterio. Mejor continuidad. Earlify no sustituye el juicio profesional ni el de la familia. Lo ordena y le da continuidad.",
       "founder": {
         "@type": "Person",
         "@id": "https://FrankBetances.github.io/proyectos/cv#founder",
@@ -83,6 +84,12 @@ const earlifyJsonLd = {
         {
           "@type": "Offer",
           "itemOffered": {
+            "@id": "https://FrankBetances.github.io/proyectos/earlify#descubre-con-lua"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
             "@id": "https://FrankBetances.github.io/proyectos/earlify#valeria-plus"
           }
         },
@@ -100,7 +107,7 @@ const earlifyJsonLd = {
       "name": "VIA+ (Valoración Interactiva de Audición y Lenguaje)",
       "applicationCategory": "HealthApplication",
       "operatingSystem": "Tablet Pediátrica Android / iOS",
-      "description": "Software como Dispositivo Médico (SaMD Clase IIa MDR 2017/745 Regla 11, IEC 62304 Clase B, ISO 14971) para apoyo a la decisión clínica (CDSS) en consulta pediátrica. Incluye 13 módulos clínicos objetivos, DSP Praat en C++ JSI, 7 lenguas de sesión, Cero IA en runtime, base de datos SQLite local cifrada y código QR anónimo Zero-PHI.",
+      "description": "Software como Dispositivo Médico (SaMD Clase IIa MDR 2017/745 Regla 11, IEC 62304 Clase B, ISO 14971) para apoyo a la decisión clínica (CDSS) en consulta pediátrica. Incluye 13 módulos clínicos objetivos, DSP Praat en C++ JSI, 7 lenguas de sesión, Cero IA en runtime y código QR anónimo Zero-PHI.",
       "url": "https://FrankBetances.github.io/proyectos/via",
       "author": {
         "@type": "Person",
@@ -108,15 +115,23 @@ const earlifyJsonLd = {
       },
       "provider": {
         "@id": "https://FrankBetances.github.io/proyectos/earlify#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://FrankBetances.github.io/proyectos/earlify#descubre-con-lua",
+      "name": "Descubre con Lúa (Edición Aula)",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Android",
+      "description": "Herramienta pedagógica comunitaria para escuelas infantiles (0-3 años) desarrollada en startTIC. Incluye 10 unidades didácticas de aula, metrónomo visual silencioso para hipoacusia, 1.020 locuciones neuronales offline y cero exposición a pantallas directas para el menor.",
+      "url": "https://FrankBetances.github.io/proyectos/descubre-con-lua",
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Frank Alberto Betances Reinoso"
       },
-      "featureList": [
-        "13 módulos clínicos objetivos: Evaluación Previa CAP, Autismo M-CHAT-R, Sonómetro Ambiental dB(A) IEC 61672, Audiometría Infantil, Audiometría Condicionada, Análisis Acústico de Voz, Disfagia MECV-V, Cribado SAHS Chervin, Articulación T.A.R., Audiometría Verbal, Funciones Ejecutivas, Análisis Prosódico y Cribado Hitos ASHA",
-        "DSP Praat validado matemáticamente en C++ JSI ciclo a ciclo (F0, Jitter, Shimmer, HNR)",
-        "7 lenguas de sesión: Castellano, Galego (Proxecto Nós/Celtia), Euskara (Ulertuz/Maider), Dominicano (Quisqueya Habla/FONDOCYT), Català (Projecte AINA/Matxa-TTS), LatAm y English US",
-        "Cero IA en runtime: modelos neuronales solo en build-time, inferencia determinista sin alucinaciones",
-        "Zero-PHI: arquitectura médica 100% offline con base de datos SQLite local cifrada y exportación mediante código QR anónimo (IEC 62366-1)",
-        "Conformidad regulatoria MDR 2017/745 Clase IIa Regla 11, IEC 62304 Clase B e ISO 14971"
-      ]
+      "provider": {
+        "@id": "https://FrankBetances.github.io/proyectos/earlify#organization"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -124,7 +139,7 @@ const earlifyJsonLd = {
       "name": "Valeria+ (Terapia Adaptativa del Lenguaje y Audición)",
       "applicationCategory": "HealthApplication",
       "operatingSystem": "iOS, Android",
-      "description": "Dispositivo Médico Clase I bajo MDR 2017/745 para rehabilitación guiada del lenguaje y la audición en el hogar. Basado en micro-rutinas TPR (Respuesta Física Total), 9 bloques de estimulación 100% offline, formación para familias (Academy con hitos ASHA y LSE) y 4.110 locuciones neuronales en 6 variedades lingüísticas.",
+      "description": "Dispositivo Médico Clase I bajo MDR 2017/745 para rehabilitación guiada del lenguaje y la audición en el hogar. Basado en micro-rutinas TPR (Respuesta Física Total), 10 bloques de estimulación 100% offline, formación para familias (Academy con hitos ASHA y LSE dactilológica) y 4.711 locuciones neuronales en 6 variedades lingüísticas.",
       "url": "https://FrankBetances.github.io/proyectos/",
       "author": {
         "@type": "Person",
@@ -132,14 +147,7 @@ const earlifyJsonLd = {
       },
       "provider": {
         "@id": "https://FrankBetances.github.io/proyectos/earlify#organization"
-      },
-      "featureList": [
-        "9 bloques de estimulación TPR 100% offline para el hogar sin dependencia de servidores ni nube",
-        "Academy: microformación parental en 2 minutos basada en hitos ASHA y Lengua de Signos Española (LSE con 27 figuras dactilológicas)",
-        "4.110 locuciones neuronales de alta fidelidad en 6 variedades lingüísticas (Castellano, Galego, Dominicano, Euskera, US English, Català)",
-        "Muro Regulatorio MDR y protección integral pediátrica Zero-PHI",
-        "Acompañamiento gamificado y espejo digital con la mascota Lúa"
-      ]
+      }
     },
     {
       "@type": "Product",
@@ -164,23 +172,23 @@ const earlifyJsonLd = {
           "name": "¿Qué es Earlify Health y cuál es su misión médica y tecnológica?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Earlify Health S.L. es un ecosistema de salud digital y neurodesarrollo infantil incubado en startTIC (Consorcio de la Zona Franca de Vigo, Centro Tecnológico GRADIANT, Fondo Europeo FEDER y Fundación INCYDE) con Sello ITEMAS-ISCIII 2024. Su misión es eliminar la brecha asistencial entre la consulta médica de otorrinolaringología y el hogar, uniendo la evaluación clínica objetiva con la estimulación auditivo-verbal diaria y guiada para las familias."
+            "text": "Earlify Health S.L. es un ecosistema de salud digital y neurodesarrollo infantil incubado en startTIC (Consorcio de la Zona Franca de Vigo, Centro Tecnológico GRADIANT, Fondo Europeo FEDER y Fundación INCYDE) con Sello ITEMAS-ISCIII 2024. Su misión es eliminar la brecha asistencial entre la consulta médica, el aula escolar y el hogar, articulando un mismo criterio fónico y sensorial continuo para que ningún menor se quede atrás."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Cómo se articulan VIA+, Valeria+ y la mascota Lúa dentro de la plataforma?",
+          "name": "¿Cómo se articulan VIA+, Descubre con Lúa, Valeria+ y la mascota Lúa?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "VIA+ realiza la evaluación clínica en consulta pediátrica mediante 13 módulos objetivos y DSP Praat; Valeria+ traslada las pautas de rehabilitación al hogar mediante 9 bloques de juego TPR y formación para padres (Academy); y Lúa acompaña como mascota física AIoT en ESP32-C3 y gemelo digital en pantalla, garantizando el silencio clínico durante las exploraciones médicas y promoviendo el descanso visual 20-20-20."
+            "text": "VIA+ realiza la evaluación clínica en consulta pediátrica mediante 13 módulos objetivos y DSP Praat; Descubre con Lúa traslada la inclusión y rutinas de habla al aula escolar (0-3 años) con metrónomo visual silencioso; Valeria+ guía la estimulación diaria en el hogar mediante 10 bloques TPR y formación para padres (Academy); y Lúa acompaña como mascota física AIoT en ESP32-C3 y gemelo digital, garantizando el silencio clínico en consulta y el descanso visual 20-20-20."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Por qué las soluciones de Earlify funcionan 100% offline y con Cero IA en el dispositivo?",
+          "name": "¿Por qué las soluciones de Earlify funcionan 100% offline y con Cero IA en runtime?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Para asegurar la máxima privacidad de los menores (Zero-PHI) y cumplir estrictamente con el marco regulatorio europeo (MDR 2017/745 y el Reglamento de Inteligencia Artificial de la UE). Los datos clínicos y biométricos permanecen en la base de datos SQLite local cifrada del dispositivo sin transmisión a la nube, la sincronización entre consulta y hogar se realiza mediante código QR anónimo (IEC 62366-1), y los algoritmos acústicos (DSP Praat en C++ JSI) son deterministas y matemáticamente auditables sin riesgo de alucinaciones."
+            "text": "Para asegurar la máxima privacidad de los menores (Zero-PHI) y cumplir estrictamente con el marco regulatorio europeo (MDR 2017/745 y el AI Act UE 2024/1689). Los datos clínicos y biométricos permanecen en la base de datos SQLite local cifrada del dispositivo sin transmisión a servidores, la sincronización entre consulta y hogar se realiza mediante código QR anónimo (IEC 62366-1), y los algoritmos acústicos (DSP Praat en C++ JSI) son deterministas y matemáticamente auditables sin riesgo de alucinaciones."
           }
         },
         {
@@ -201,7 +209,7 @@ const earlifyJsonLd = {
   title={pageTitle}
   description={pageDescription}
   image="https://FrankBetances.github.io/proyectos/assets/earlify-logo.png"
-  keywords="Earlify Health, VIA+ SaMD, Valeria+, Mascota Lúa, startTIC, Incubadora Alta Tecnología, Zona Franca de Vigo, Gradiant, Neurodesarrollo Infantil, Logopedia en Casa, Salud Digital, Dr. Frank Betances"
+  keywords="Earlify Health, VIA+ SaMD, Descubre con Lúa, Valeria+, Mascota Lúa, startTIC, Incubadora Alta Tecnología, Zona Franca de Vigo, Gradiant, Neurodesarrollo Infantil, Metrónomo Visual, Logopedia en Casa, Salud Digital, Dr. Frank Betances"
   jsonLd={earlifyJsonLd}
 >
   <Header activeTab="earlify" />
@@ -209,6 +217,7 @@ const earlifyJsonLd = {
   <main id="main-content">
     <EarlifyHero />
     <ProblemSection />
+    <EarlifyInteractiveEcosystem />
     <SolutionSection />
     <EarlifyDifferentiators />
     <EarlifyValidation />

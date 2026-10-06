@@ -1,22 +1,31 @@
 ---
+// EarlifyDifferentiators.astro - Pilares de Rigor Innegociable
 ---
 
-<section id="diferenciadores" class="differentiators-section section-padding">
+<section id="diferenciadores" class="differentiators-section section-padding" aria-labelledby="diff-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge badge-cyan">Por Qué Earlify Health</span>
-      <h2 class="section-title">
+      <div class="section-badge badge-cyan">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <span>POR QUÉ EARLIFY HEALTH</span>
+      </div>
+      <h2 id="diff-title" class="section-title">
         Cuatro pilares de <span class="gradient-text">rigor innegociable</span>
       </h2>
       <p class="section-description">
-        No creamos aplicaciones comerciales ni experiencias de entretenimiento genéricas. Desarrollamos tecnología sanitaria y dispositivos médicos diseñados para responder con solvencia en los entornos clínicos y familiares más exigentes.
+        No creamos aplicaciones comerciales ni experiencias de entretenimiento genéricas. Desarrollamos tecnología sanitaria y herramientas educativas diseñadas para responder con solvencia en los entornos clínicos, escolares y familiares más exigentes.
       </p>
     </div>
 
     <div class="diff-grid">
       <!-- Pilar 1: 100% Offline & Privacidad Zero-PHI -->
       <article class="diff-card glass-card">
-        <div class="diff-icon">🔒</div>
+        <div class="diff-icon-wrap icon-cyan">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
         <h3>100% Offline &amp; Privacidad Zero-PHI</h3>
         <p>
           Los datos clínicos, las evaluaciones y las grabaciones vocales nunca viajan a servidores en la nube. Todo reside cifrado en el propio dispositivo (base SQLite local <code>viaplus.db</code>). La telemetría de usabilidad se exporta mediante código QR anónimo (IEC 62366-1) comprimido con LZString, eliminando cualquier vector de filtración de información médica protegida.
@@ -25,17 +34,27 @@
 
       <!-- Pilar 2: Rigor Sanitario & Cero Cajas Negras -->
       <article class="diff-card glass-card">
-        <div class="diff-icon">🛡️</div>
+        <div class="diff-icon-wrap icon-emerald">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
         <h3>Rigor Sanitario &amp; Cero Cajas Negras</h3>
         <p>
-          VIA+ es un Software como Dispositivo Médico (SaMD Clase IIa bajo Regla 11 del MDR 2017/745). Incorpora análisis acústico de voz con DSP en C++ JSI validado matemáticamente contra <strong>Praat</strong> (ensayo clínico del biomarcador vocal en curso). Cumplimos con Cero IA en runtime (AI Act UE 2024/1689): el clínico mantiene siempre el control y la total explicabilidad médica.
+          VIA+ es un Software como Dispositivo Médico (SaMD Clase IIa bajo Regla 11 del MDR 2017/745). Incorpora análisis acústico de voz con DSP en C++ JSI validado matemáticamente contra <strong>Praat</strong>. Cumplimos con Cero IA en runtime (AI Act UE 2024/1689): el clínico y la educadora mantienen siempre el control y la total explicabilidad.
         </p>
       </article>
 
       <!-- Pilar 3: Soberanía Lingüística en 7 Lenguas -->
       <article class="diff-card glass-card">
-        <div class="diff-icon">🌐</div>
-        <h3>Soberanía Lingüística en 7 Lenguas</h3>
+        <div class="diff-icon-wrap icon-purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <h3>Soberanía Lingüística Multilingüe</h3>
         <p>
           Modelos neuronales de síntesis empaquetados en build-time y bancos fonológicos propios aprobados por sociedades y entidades de referencia: Castellano (Sharvard / ACOPROS), Galego (Celtia / Proxecto Nós), Euskara (Maider / HiTZ / Ulertuz), Dominicano (<em>Quisqueya Habla</em> / FONDOCYT), Català (Matxa-TTS / Projecte AINA), Español LatAm y English US.
         </p>
@@ -43,10 +62,14 @@
 
       <!-- Pilar 4: Continuidad Asistencial con Lúa -->
       <article class="diff-card glass-card">
-        <div class="diff-icon">🐱</div>
-        <h3>Continuidad Asistencial con Lúa</h3>
+        <div class="diff-icon-wrap icon-amber">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </div>
+        <h3>Continuidad y Anclaje Afectivo</h3>
         <p>
-          Unimos la consulta (VIA+), la rehabilitación domiciliaria (Valeria+) y el anclaje afectivo pediátrico con el hardware físico AIoT Lúa (ESP32-C3 V1). Respeto absoluto del Silencio Clínico durante las pruebas diagnósticas (<code>SAFE 1</code>), gamificación amable sin frustración ni castigo visual y descanso visual programado mediante la regla 20-20-20 (<code>RELAX 0x0D</code>).
+          Unimos la consulta (VIA+), la inclusión escolar (Descubre con Lúa), la rehabilitación domiciliaria (Valeria+) y el anclaje afectivo con el hardware físico AIoT Lúa (ESP32-C3 V1). Respeto absoluto del Silencio Clínico en consulta (<code>SAFE 1</code>), metrónomo visual en el aula y descanso 20-20-20.
         </p>
       </article>
     </div>
@@ -56,120 +79,107 @@
 <style>
   .differentiators-section {
     position: relative;
-    padding: 95px 0 115px 0;
+    padding: clamp(70px, 10vw, 115px) 0;
+    background-color: var(--bg-dark, #07090e);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .section-header {
     text-align: center;
     max-width: 860px;
-    margin: 0 auto 4.5rem auto;
+    margin: 0 auto 3.5rem auto;
   }
 
   .section-badge {
-    display: inline-block;
-    padding: 0.4rem 1.15rem;
-    border-radius: var(--radius-full);
-    font-size: 0.85rem;
-    font-weight: 800;
-    margin-bottom: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
   }
 
   .badge-cyan {
-    background: rgba(0, 242, 254, 0.12);
-    border: 1px solid rgba(0, 242, 254, 0.35);
-    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    color: #00f2fe;
   }
 
   .section-title {
-    font-size: 2.75rem;
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 1.25rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text-main, #f8fafc);
+    letter-spacing: -0.02em;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #00f2fe 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .section-description {
-    font-size: 1.18rem;
-    color: var(--text-muted);
-    line-height: 1.65;
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.6;
   }
 
   .diff-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.75rem;
   }
 
   .diff-card {
-    padding: 2.5rem 2.25rem;
-    border-radius: var(--radius-lg);
-    background: rgba(15, 23, 42, 0.6);
+    padding: 2.25rem;
+    border-radius: 20px;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
-    border: 1px solid var(--border-light);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
   }
 
   .diff-card:hover {
-    transform: translateY(-5px);
-    background: rgba(15, 23, 42, 0.8);
-    border-color: rgba(0, 242, 254, 0.35);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
-  .diff-icon {
-    font-size: 2.4rem;
-    margin-bottom: 1.5rem;
-    display: inline-flex;
+  .diff-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 64px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.25rem;
   }
+  .icon-cyan { background: rgba(0, 242, 254, 0.12); color: #00f2fe; }
+  .icon-emerald { background: rgba(16, 185, 129, 0.12); color: #34d399; }
+  .icon-purple { background: rgba(168, 85, 247, 0.12); color: #c084fc; }
+  .icon-amber { background: rgba(245, 158, 11, 0.12); color: #fbbf24; }
 
   .diff-card h3 {
     font-size: 1.35rem;
     font-weight: 800;
-    color: var(--text-main);
-    margin-bottom: 1.15rem;
-    line-height: 1.3;
+    color: var(--text-main, #f8fafc);
+    margin-bottom: 0.85rem;
   }
 
   .diff-card p {
-    font-size: 0.96rem;
-    color: var(--text-muted);
-    line-height: 1.65;
+    font-size: 0.95rem;
+    color: var(--text-secondary, #cbd5e1);
+    line-height: 1.6;
     margin: 0;
   }
 
-  .diff-card code {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 0.1rem 0.35rem;
-    border-radius: 4px;
-    color: var(--accent-cyan);
-    font-size: 0.88rem;
-  }
-
-  @media (max-width: 992px) {
+  @media (max-width: 768px) {
     .diff-grid {
       grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .section-title {
-      font-size: 2.1rem;
-    }
-    .diff-card {
-      padding: 1.85rem 1.4rem;
-    }
-    .diff-card h3 {
-      font-size: 1.2rem;
     }
   }
 </style>

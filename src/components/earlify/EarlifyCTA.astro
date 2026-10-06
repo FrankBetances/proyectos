@@ -1,25 +1,32 @@
 ---
+// EarlifyCTA.astro - Llamada a la acción final para centros y profesionales
 ---
 
-<section class="cta-section section-padding">
+<section class="cta-section section-padding" aria-labelledby="cta-title">
   <div class="container">
     <div class="cta-box glass-card">
       <div class="cta-content">
-        <h2 class="cta-title">¿Listo para transformar la evaluación clínica en tu centro?</h2>
+        <h2 id="cta-title" class="cta-title">
+          ¿Listo para transformar la evaluación clínica y el neurodesarrollo en tu centro?
+        </h2>
         <p class="cta-description">
-          Da el primer paso hacia una evaluación auditivo-verbal estandarizada y asegura la continuidad terapéutica de tus pacientes desde la consulta hasta su hogar.
+          Da el primer paso hacia una evaluación auditivo-verbal estandarizada y asegura la continuidad terapéutica y pedagógica de tus pacientes y alumnos desde la consulta médica hasta la escuela y el hogar.
         </p>
         <div class="cta-actions">
-          <button class="btn-primary btn-large" onclick="document.getElementById('contact-modal')?.classList.add('open'); document.getElementById('contact-modal')?.setAttribute('aria-hidden', 'false');">
-            <span>Agendar Demo o Piloto Clínico</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <button 
+            type="button" 
+            class="btn-primary btn-large btn-cta-main" 
+            onclick="document.getElementById('contact-modal')?.classList.add('open'); document.getElementById('contact-modal')?.setAttribute('aria-hidden', 'false');"
+          >
+            <span>Agendar Demo o Piloto Asistencial</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </button>
         </div>
       </div>
-      <div class="cta-decoration">
+      <div class="cta-decoration" aria-hidden="true">
         <div class="glow-circle"></div>
       </div>
     </div>
@@ -28,40 +35,43 @@
 
 <style>
   .cta-section {
-    padding: 60px 0 100px 0;
+    padding: clamp(60px, 9vw, 110px) 0;
+    position: relative;
+    background-color: var(--bg-dark, #07090e);
   }
 
   .cta-box {
     position: relative;
-    padding: 4rem 3rem;
-    border-radius: var(--radius-lg);
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.9) 100%);
+    padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.95) 100%);
     border: 1px solid rgba(0, 242, 254, 0.3);
     text-align: center;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
   }
 
   .cta-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
+    max-width: 760px;
     margin: 0 auto;
   }
 
   .cta-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     font-weight: 800;
-    color: var(--text-main);
+    color: var(--text-main, #f8fafc);
     margin-bottom: 1.25rem;
-    line-height: 1.2;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
   }
 
   .cta-description {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: var(--text-secondary, #cbd5e1);
     line-height: 1.6;
+    margin-bottom: 2.25rem;
   }
 
   .cta-actions {
@@ -69,20 +79,31 @@
     justify-content: center;
   }
 
-  .btn-large {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    border-radius: var(--radius-md);
+  .btn-cta-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2.2rem;
+    min-height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    color: #041017;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(0, 242, 254, 0.4);
+    transition: all 0.25s ease;
+  }
+
+  .btn-cta-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(0, 242, 254, 0.6);
   }
 
   .cta-decoration {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    inset: 0;
     pointer-events: none;
     overflow: hidden;
   }
@@ -90,34 +111,16 @@
   .glow-circle {
     position: absolute;
     top: -50%;
-    left: 20%;
-    width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
     height: 400px;
     background: radial-gradient(circle, rgba(0, 242, 254, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(40px);
+    filter: blur(80px);
   }
 
-  .glow-circle::after {
-    content: '';
-    position: absolute;
-    bottom: -20%;
-    right: -60%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(40px);
-  }
-
-  @media (max-width: 768px) {
-    .cta-box {
-      padding: 3rem 1.5rem;
-    }
-    .cta-title {
-      font-size: 1.8rem;
-    }
-    .btn-large {
+  @media (max-width: 640px) {
+    .btn-cta-main {
       width: 100%;
       justify-content: center;
     }

@@ -1,34 +1,47 @@
 ---
-const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
-  ? import.meta.env.BASE_URL.slice(0, -1) 
-  : import.meta.env.BASE_URL;
+// EarlifyFounder.astro - Fundador & CEO: Dr. Frank Alberto Betances Reinoso
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<section id="fundador" class="earlify-founder section-padding">
+<section id="fundador" class="earlify-founder section-padding" aria-labelledby="founder-title">
   <div class="container">
     <div class="founder-card glass-card">
       <div class="founder-top">
         <div class="avatar-wrapper">
           <div class="avatar-ring">
             <div class="avatar-content">
-              <img src={`${baseUrl}/assets/dr-frank-betances.jpg`} alt="Dr. Frank Alberto Betances Reinoso · Fundador & CEO de Earlify Health S.L." class="avatar-img" />
+              <img 
+                src={`${baseUrl}/assets/dr-frank-betances.jpg`} 
+                alt="Dr. Frank Alberto Betances Reinoso · Fundador & CEO de Earlify Health S.L." 
+                class="avatar-img"
+                loading="lazy" 
+              />
             </div>
           </div>
         </div>
 
         <div class="founder-info">
           <div class="badge-row">
-            <span class="badge badge-purple">👨‍⚕️ Fundador &amp; CEO · Earlify Health S.L.</span>
-            <span class="badge badge-cyan">🩺 FEA Otorrinolaringología Infantil</span>
-            <span class="badge badge-emerald">🔬 Doctorando USC</span>
+            <span class="badge badge-purple">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span>Fundador &amp; CEO · Earlify Health S.L.</span>
+            </span>
+            <span class="badge badge-cyan">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span>FEA Otorrinolaringología Infantil</span>
+            </span>
+            <span class="badge badge-emerald">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path></svg>
+              <span>Doctorando USC</span>
+            </span>
           </div>
 
-          <h2 class="founder-title">
+          <h2 id="founder-title" class="founder-title">
             Dr. Frank Alberto <span class="gradient-text">Betances Reinoso</span>
           </h2>
 
           <p class="founder-lead">
-            FEA de Otorrinolaringología Infantil (Hospital Ribera Polusa Lugo / CHUO Ourense), Doctorando e Investigador en Salud Digital (USC). Frank encarna <strong>"La Tríada"</strong> que sostiene la ventaja competitiva y el rigor sanitario de Earlify Health:
+            FEA de Otorrinolaringología Infantil (Hospital Ribera Polusa Lugo / CHUO Ourense), Doctorando e Investigador en Salud Digital (Universidade de Santiago de Compostela). Frank encarna <strong>"La Tríada"</strong> que sostiene la ventaja competitiva y el rigor sanitario de Earlify Health:
           </p>
 
           <div class="triad-grid">
@@ -61,17 +74,18 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           <div class="founder-quote-box">
             <div class="founder-tagline">“Menos ruido. Más criterio.”</div>
             <p class="founder-quote">
-              “Conocemos el problema porque lo padecemos todos los días.”
+              «Conocemos el problema porque lo padecemos todos los días. Earlify no sustituye el juicio profesional ni el de la familia: lo ordena y le da continuidad.»
             </p>
           </div>
 
           <div class="founder-actions">
-            <a href={`${baseUrl}/cv`} class="btn-primary">
+            <a href={`${baseUrl}/cv`} class="btn-primary-founder">
               <span>Ver Currículum Vítae Completo (CV)</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="https://orcid.org/0000-0002-6349-9537" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <a href="https://orcid.org/0000-0002-6349-9537" target="_blank" rel="noopener noreferrer" class="btn-secondary-founder">
               <span>ORCID 0000-0002-6349-9537</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
           </div>
         </div>
@@ -83,41 +97,46 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 <style>
   .earlify-founder {
     position: relative;
-    padding: 80px 0 110px 0;
+    padding: clamp(70px, 10vw, 115px) 0;
+    background-color: var(--bg-dark, #07090e);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .founder-card {
-    padding: 3.5rem;
-    border: 1px solid var(--border-glow);
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%);
-    border-radius: var(--radius-lg);
+    padding: clamp(2rem, 4vw, 3.5rem);
+    border-radius: 24px;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
   }
 
   .founder-top {
-    display: flex;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3.5rem;
     align-items: flex-start;
   }
 
   .avatar-wrapper {
-    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .avatar-ring {
-    width: 170px;
-    height: 170px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
-    padding: 4px;
-    box-shadow: 0 0 35px rgba(168, 85, 247, 0.35);
+    padding: 6px;
+    background: linear-gradient(135deg, #00f2fe 0%, #a855f7 50%, #f59e0b 100%);
+    box-shadow: 0 12px 36px rgba(139, 92, 246, 0.3);
   }
 
   .avatar-content {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: var(--bg-dark);
     overflow: hidden;
+    background: #0b1120;
   }
 
   .avatar-img {
@@ -126,147 +145,173 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     object-fit: cover;
   }
 
-  .founder-info {
-    flex-grow: 1;
-  }
-
   .badge-row {
     display: flex;
-    gap: 0.6rem;
     flex-wrap: wrap;
+    gap: 0.6rem;
     margin-bottom: 1.25rem;
   }
 
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+  .badge-purple { background: rgba(168, 85, 247, 0.12); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.25); }
+  .badge-cyan { background: rgba(0, 242, 254, 0.12); color: #00f2fe; border: 1px solid rgba(0, 242, 254, 0.25); }
+  .badge-emerald { background: rgba(16, 185, 129, 0.12); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.25); }
+
   .founder-title {
-    font-size: 2.65rem;
-    font-weight: 900;
-    margin-bottom: 1.15rem;
-    line-height: 1.15;
-    color: var(--text-main);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--text-main, #f8fafc);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #00f2fe 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .founder-lead {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    line-height: 1.65;
+    font-size: 1.05rem;
+    color: var(--text-secondary, #cbd5e1);
+    line-height: 1.6;
     margin-bottom: 2rem;
   }
 
-  .founder-lead strong {
-    color: var(--accent-cyan);
-  }
-
   .triad-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
     margin-bottom: 2rem;
   }
 
   .triad-item {
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-    background: rgba(255, 255, 255, 0.02);
-    padding: 1rem 1.25rem;
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.25rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .triad-num {
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: rgba(168, 85, 247, 0.15);
-    border: 1px solid rgba(168, 85, 247, 0.4);
-    color: var(--accent-purple);
-    font-weight: 900;
-    font-size: 1.1rem;
+    background: rgba(0, 242, 254, 0.15);
+    color: #00f2fe;
+    font-weight: 700;
+    font-size: 0.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    margin-bottom: 0.75rem;
   }
 
   .triad-text strong {
-    color: var(--text-main);
-    font-size: 1.05rem;
     display: block;
-    margin-bottom: 0.25rem;
+    font-size: 0.92rem;
+    color: var(--text-main, #f8fafc);
+    margin-bottom: 0.35rem;
   }
 
   .triad-text p {
-    color: var(--text-muted);
-    font-size: 0.94rem;
-    line-height: 1.55;
+    font-size: 0.82rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.5;
     margin: 0;
   }
 
   .founder-quote-box {
-    background: rgba(0, 242, 254, 0.06);
-    border-left: 4px solid var(--accent-cyan);
-    padding: 1rem 1.5rem;
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    margin-bottom: 2.25rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.08);
+    border-left: 3px solid #a855f7;
+    margin-bottom: 2rem;
   }
 
   .founder-tagline {
-    font-size: 1.15rem;
-    font-weight: 900;
-    color: var(--accent-cyan);
+    font-size: 0.78rem;
+    font-weight: 700;
     text-transform: uppercase;
+    color: #c084fc;
     letter-spacing: 0.05em;
     margin-bottom: 0.35rem;
-    display: block;
   }
 
   .founder-quote {
-    font-size: 1.18rem;
-    font-weight: 800;
+    font-size: 0.95rem;
     font-style: italic;
-    color: var(--text-main);
+    color: #f1f5f9;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
   .founder-actions {
     display: flex;
-    gap: 1.25rem;
+    gap: 1rem;
     flex-wrap: wrap;
   }
 
-  @media (max-width: 900px) {
+  .btn-primary-founder {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.6rem;
+    min-height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    color: #041017;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+  .btn-primary-founder:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+  }
+
+  .btn-secondary-founder {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.4rem;
+    min-height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-main, #f8fafc);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+  .btn-secondary-founder:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 960px) {
     .founder-top {
-      flex-direction: column;
-      align-items: center;
+      grid-template-columns: 1fr;
       text-align: center;
+      gap: 2rem;
     }
     .badge-row, .founder-actions {
       justify-content: center;
     }
-    .triad-item {
+    .triad-grid {
+      grid-template-columns: 1fr;
       text-align: left;
     }
-    .founder-card {
-      padding: 2.25rem 1.75rem;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .founder-card {
-      padding: 1.75rem 1.2rem;
-    }
-    .founder-title {
-      font-size: 1.95rem;
-    }
-    .avatar-ring {
-      width: 130px;
-      height: 130px;
-    }
-    .founder-actions a {
-      width: 100%;
-      justify-content: center;
-      text-align: center;
+    .founder-quote-box {
+      text-align: left;
     }
   }
 </style>
