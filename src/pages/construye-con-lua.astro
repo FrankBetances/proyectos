@@ -5,17 +5,14 @@ import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 
 import ConstruyeHero from '../components/construye-con-lua/ConstruyeHero.astro';
-import ConstruyeEcosystemBridge from '../components/construye-con-lua/ConstruyeEcosystemBridge.astro';
-import ConstruyeMechanicalSpecs from '../components/construye-con-lua/ConstruyeMechanicalSpecs.astro';
-import ConstruyeBlenderPipeline from '../components/construye-con-lua/ConstruyeBlenderPipeline.astro';
-import ConstruyeMatrixCatalog from '../components/construye-con-lua/ConstruyeMatrixCatalog.astro';
-import ConstruyeSoftwareArchitecture from '../components/construye-con-lua/ConstruyeSoftwareArchitecture.astro';
-import ConstruyeRoadmapViability from '../components/construye-con-lua/ConstruyeRoadmapViability.astro';
-import ConstruyeNormativeFAQ from '../components/construye-con-lua/ConstruyeNormativeFAQ.astro';
-import ConstruyeCTA from '../components/construye-con-lua/ConstruyeCTA.astro';
+import ConstruyeHowItWorks from '../components/construye-con-lua/ConstruyeHowItWorks.astro';
+import ConstruyeDualLine from '../components/construye-con-lua/ConstruyeDualLine.astro';
+import ConstruyeExperiences from '../components/construye-con-lua/ConstruyeExperiences.astro';
+import ConstruyeInstitutionalValue from '../components/construye-con-lua/ConstruyeInstitutionalValue.astro';
+import ConstruyeLicensingFAQ from '../components/construye-con-lua/ConstruyeLicensingFAQ.astro';
 
-const pageTitle = "Lúa Construye · Robótica Manipulativa 3D y Estándar Duplo (31,80 mm)";
-const pageDescription = "Sistema modular tangible de robótica manipulativa y construcción educativa-clínica (0-6 años). Modelado procedural en Blender (Python bpy) para impresión 3D y sincronizado con Descubre con Lúa y Valeria+.";
+const pageTitle = "Lúa Construye · Juego Manipulativo y Estimulación Infantil Sin Pantallas";
+const pageDescription = "Sistema de juego tangible, pensamiento espacial y estimulación neurofuncional para primera infancia (0 a 6 años). Cero pantallas para el menor, conectado con Descubre con Lúa y Valeria+.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -23,13 +20,13 @@ const jsonLd = {
     {
       "@type": "Product",
       "@id": "https://FrankBetances.github.io/proyectos/construye-con-lua#product",
-      "name": "Lúa Construye (Sistema Modular Tangible Duplo 31,80 mm)",
+      "name": "Lúa Construye · Aprendizaje Manipulativo y Estimulación Sensorial (0-6 años)",
       "description": pageDescription,
       "brand": {
         "@type": "Organization",
         "name": "Earlify Health S.L."
       },
-      "category": "Educational Toy & Tangible Computing Robotics Hardware",
+      "category": "Educational & Pediatric Neurodevelopment System",
       "manufacturer": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
@@ -48,30 +45,8 @@ const jsonLd = {
       ],
       "audience": {
         "@type": "Audience",
-        "audienceType": "Educadores de Infantil (0 a 6 años), Terapeutas Ocupacionales, Logopedas y Familias"
-      },
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "MechanicalStandard",
-          "value": "Duplo Compatible (Stud Pitch 31.80 mm, Stud Diameter 9.40 mm, Height 19.20 mm)"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "ChildSafetyStandard",
-          "value": "EN 71-1 (> 31.75 mm anti-choking test cylinder compliant for < 36 months)"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "ModelingPipeline",
-          "value": "Blender 4.x Headless (Python bpy) with Manifold 2-manifold exact kernel"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "SoftwareIntegration",
-          "value": "Flutter CustomPainter (Zero-Network, Zero external UI packages, Zero-PHI)"
-        }
-      ]
+        "audienceType": "Escuelas Infantiles, Colegios, Logopedas, Terapeutas Ocupacionales y Familias"
+      }
     },
     {
       "@type": "FAQPage",
@@ -79,26 +54,26 @@ const jsonLd = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Por qué se eligió el estándar Duplo (31,80 mm) en lugar de LEGO clásico (8 mm)?",
+          "name": "¿Para qué edades está recomendado Lúa Construye?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Por estricto cumplimiento de la normativa europea EN 71-1. Las piezas con cota menor a 31,75 mm presentan riesgo de asfixia en menores de 36 meses. El paso modular Duplo de 31,80 mm asegura seguridad total y adaptación a la motricidad bimanual temprana."
+            "text": "El sistema abarca toda la etapa de primera infancia, de 0 a 6 años, cumpliendo con la normativa europea de seguridad infantil EN 71-1 tanto para aulas de 0-3 años como para 3-6 años y gabinetes clínicos."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Por qué se rechazó un visor 3D interactivo dentro de la aplicación móvil?",
+          "name": "¿Por qué las niñas y niños no interactúan con ninguna pantalla?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "En asambleas de aula de 5 a 8 minutos, un visor 3D embebido infla el bundle del APK con librerías pesadas WebGL y distrae a la docente. El trazado procedural 2D con CustomPainter es instantáneo y pedagógicamente idóneo."
+            "text": "Siguiendo las directrices de la OMS y la Asociación Española de Pediatría, la aplicación sirve exclusivamente como guión para la persona adulta. Los menores aprenden manipulando piezas reales y dialogando cara a cara."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué diferencia hay entre la Gama Lúa y la Gama Valeria?",
+          "name": "¿Cómo solicitar una demostración o proyecto piloto para una escuela o clínica?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ambas comparten el acople de 31,80 mm. La Gama Lúa está dirigida a pensamiento computacional y algoritmos en el aula LOMLOE; la Gama Valeria incorpora caras superiores funcionalizadas para terapia somatosensorial palmar, cilindros de prensión gradual y resonadores acústicos."
+            "text": "A través del formulario de contacto profesional de la página o escribiendo directamente al equipo del Dr. Frank Betances para acordar una demostración o convenio institucional."
           }
         }
       ]
@@ -111,21 +86,18 @@ const jsonLd = {
   title={pageTitle}
   description={pageDescription}
   image="/assets/lua-mascota-valeria.png"
-  keywords="Lúa Construye, Robótica Manipulativa, Estándar Duplo 31.8 mm, Blender bpy, Impresión 3D FDM, EN 71-1, Pensamiento Computacional Infantil, Descubre con Lúa, Valeria+, Earlify Health, Dr. Frank Betances, startTIC, Zona Franca de Vigo"
+  keywords="Lúa Construye, Juego Manipulativo Infantil, Educación Sin Pantallas, Atención Temprana, Estimulación Sensorial, Descubre con Lúa, Valeria+, Earlify Health, Dr. Frank Betances, startTIC, Zona Franca de Vigo"
   jsonLd={jsonLd}
 >
   <Header activeTab="construye-con-lua" />
 
   <main id="main-content">
     <ConstruyeHero />
-    <ConstruyeEcosystemBridge />
-    <ConstruyeMechanicalSpecs />
-    <ConstruyeBlenderPipeline />
-    <ConstruyeMatrixCatalog />
-    <ConstruyeSoftwareArchitecture />
-    <ConstruyeRoadmapViability />
-    <ConstruyeNormativeFAQ />
-    <ConstruyeCTA />
+    <ConstruyeHowItWorks />
+    <ConstruyeDualLine />
+    <ConstruyeExperiences />
+    <ConstruyeInstitutionalValue />
+    <ConstruyeLicensingFAQ />
   </main>
 
   <Footer />

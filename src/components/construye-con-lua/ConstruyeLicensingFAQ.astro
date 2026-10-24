@@ -1,0 +1,511 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
+<section id="contacto-faq" class="licensing-faq-section">
+  <div class="container">
+    <!-- Collaboration Pathways -->
+    <div class="licensing-block">
+      <div class="section-header">
+        <span class="section-pill">Implantación y Alianzas</span>
+        <h2 class="section-title">
+          ¿Cómo Incorporar <span class="gradient-text-orange">Lúa Construye</span> en tu Centro o Municipio?
+        </h2>
+        <p class="section-subtitle">
+          Ofrecemos programas de implantación personalizados para instituciones educativas, centros sanitarios, ayuntamientos y entidades interesadas en innovación pediátrica.
+        </p>
+      </div>
+
+      <div class="licensing-cards-grid">
+        <!-- Card 1: Schools & Municipalities -->
+        <div class="license-card school-card">
+          <div class="license-header">
+            <span class="license-tag tag-teal">EDUCACIÓN Y CONCELLOS</span>
+            <h3>Escuelas Infantiles y Colegios</h3>
+          </div>
+          <p class="license-intro">
+            Para redes de escuelas municipales, centros de educación infantil (0-3 y 3-6 años) y administraciones educativas:
+          </p>
+          <ul class="license-checklist">
+            <li>✓ Kits físicos de aula con piezas de recorrido, curvas y figura de Lúa.</li>
+            <li>✓ Integración completa con la aplicación offline <strong>Descubre con Lúa</strong>.</li>
+            <li>✓ Cápsulas de formación docente integradas y soporte pedagógico.</li>
+            <li>✓ Posibilidad de programas piloto institucionales y convenios públicos.</li>
+          </ul>
+          <div class="license-footer-action">
+            <button 
+              class="btn-license-contact btn-teal"
+              onclick="document.getElementById('contact-modal')?.classList.add('open'); document.getElementById('contact-modal')?.setAttribute('aria-hidden', 'false');"
+            >
+              <span>Solicitar Información para Escuelas</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Clinics & Professionals -->
+        <div class="license-card clinic-card">
+          <div class="license-header">
+            <span class="license-tag tag-orange">SALUD Y REHABILITACIÓN</span>
+            <h3>Clínicas, Gabinetes y Entidades</h3>
+          </div>
+          <p class="license-intro">
+            Para unidades de atención temprana, logopedas, terapeutas ocupacionales, hospitales e inversores en salud digital:
+          </p>
+          <ul class="license-checklist">
+            <li>✓ Kits terapéuticos con superficies sensoriales, prensión y resonancia acústica.</li>
+            <li>✓ Sinergia directa con el ecosistema de rehabilitación <strong>Valeria+</strong>.</li>
+            <li>✓ Demostraciones clínicas personalizadas con el equipo médico.</li>
+            <li>✓ Acuerdos de licencia, transferencia tecnológica y proyectos colaborativos.</li>
+          </ul>
+          <div class="license-footer-action">
+            <button 
+              class="btn-license-contact btn-orange"
+              onclick="document.getElementById('contact-modal')?.classList.add('open'); document.getElementById('contact-modal')?.setAttribute('aria-hidden', 'false');"
+            >
+              <span>Contactar para Clínicas y Alianzas</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="faq-block">
+      <div class="section-header">
+        <span class="section-pill">Preguntas Frecuentes</span>
+        <h2 class="section-title">
+          Dudas Habituales sobre <span class="gradient-text-orange">Lúa Construye</span>
+        </h2>
+      </div>
+
+      <div class="faq-list">
+        <!-- FAQ 1 -->
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <span>¿Para qué edades está recomendado Lúa Construye?</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              El sistema abarca toda la etapa de primera infancia, de <strong>0 a 6 años</strong>. Gracias al gran tamaño ergonómico de sus piezas y al cumplimiento de la normativa europea de seguridad <strong>EN 71-1</strong>, puede utilizarse con total seguridad en el primer ciclo de educación infantil (0-3 años) para exploración sensorial y motora, así como en el segundo ciclo (3-6 años) y en terapia para retos de secuenciación espacial, lateralidad y lenguaje.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Por qué las niñas y niños no interactúan con ninguna pantalla?</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              La evidencia científica y las directrices de la OMS y la Asociación Española de Pediatría desaconsejan el uso de pantallas en los primeros años de vida. En <strong>Lúa Construye</strong>, la aplicación móvil funciona únicamente como un guión de apoyo para la persona adulta (la educadora, el terapeuta o la familia). El niño desarrolla su cerebro tocando piezas reales, coordinando sus manos y mirando a los ojos de quienes juegan con él.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Qué beneficios aporta a niños con hipoacusia, implante coclear o dificultades del lenguaje?</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Ideado por el <strong>Dr. Frank Alberto Betances Reinoso</strong>, médico especialista en Otorrinolaringología y Audiología Infantil, el sistema evita cualquier ruido de fondo que compita con la voz humana. Las dinámicas conectan la acción física (construir, presionar, recorrer un camino) con la escucha activa, el turno de palabra, el ritmo visual y la estimulación táctil palmar, facilitando la rehabilitación auditivo-verbal de forma lúdica y natural.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Se necesita conexión a internet en el aula o en el gabinete para utilizarlo?</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              No. Tanto las guías pedagógicas como todas las locuciones de voz están integradas para funcionar <strong>100% sin conexión a internet</strong>. Esto garantiza una respuesta inmediata en cualquier aula o consulta y asegura que ningún dato de los menores salga jamás a la red.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Cómo podemos solicitar una demostración, un presupuesto o un proyecto piloto?</span>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Puedes ponerte en contacto directamente con el Dr. Frank Betances pulsando cualquiera de los botones de contacto de esta página. Estudiaremos las necesidades de tu escuela infantil, concello o clínica para ofrecerte una presentación detallada y acordar la mejor modalidad de colaboración.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- High-Conversion Final CTA Banner -->
+    <div class="bottom-cta-banner">
+      <div class="cta-inner">
+        <span class="cta-eyebrow">Contacto Directo · Earlify Health & startTIC</span>
+        <h3 class="cta-title">¿Quieres llevar Lúa Construye a tu escuela infantil, clínica o institución?</h3>
+        <p class="cta-desc">
+          Escríbenos para recibir el dossier informativo completo, concertar una demostración presencial u online, o explorar convenios de implantación con el Dr. Frank Alberto Betances Reinoso.
+        </p>
+        <div class="cta-actions">
+          <button 
+            class="btn-cta-primary"
+            onclick="document.getElementById('contact-modal')?.classList.add('open'); document.getElementById('contact-modal')?.setAttribute('aria-hidden', 'false');"
+          >
+            <span>Solicitar Más Información Ahora</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </button>
+          <a href="mailto:frank.alberto.betances.reinoso@gmail.com" class="btn-cta-secondary">
+            <span>frank.alberto.betances.reinoso@gmail.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .licensing-faq-section {
+    padding: 5rem 0;
+    position: relative;
+    background: #07090E;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .licensing-block {
+    margin-bottom: 5.5rem;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .section-pill {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    background: rgba(249, 115, 22, 0.12);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: var(--radius-full);
+    color: #FB923C;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.8vw, 2.8rem);
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .gradient-text-orange {
+    background: linear-gradient(135deg, #FB923C 0%, #F97316 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  /* Licensing cards grid */
+  .licensing-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .license-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(16px);
+  }
+
+  .school-card {
+    border-color: rgba(0, 242, 254, 0.28);
+  }
+
+  .clinic-card {
+    border-color: rgba(249, 115, 22, 0.35);
+  }
+
+  .license-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .license-tag {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  .tag-teal {
+    background: rgba(0, 242, 254, 0.14);
+    color: #67E8F9;
+    border: 1px solid rgba(0, 242, 254, 0.3);
+  }
+
+  .tag-orange {
+    background: rgba(249, 115, 22, 0.15);
+    color: #FDBA74;
+    border: 1px solid rgba(249, 115, 22, 0.35);
+  }
+
+  .license-header h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .license-intro {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+
+  .license-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .license-checklist li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .license-checklist strong {
+    color: var(--text-main);
+  }
+
+  .license-footer-action {
+    margin-top: auto;
+  }
+
+  .btn-license-contact {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.25rem;
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .btn-teal {
+    background: linear-gradient(135deg, #0D9488 0%, #0284C7 100%);
+  }
+
+  .btn-teal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+  }
+
+  .btn-orange {
+    background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  }
+
+  .btn-orange:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+  }
+
+  /* FAQ Block */
+  .faq-block {
+    max-width: 900px;
+    margin: 0 auto 5rem auto;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(12px);
+  }
+
+  .faq-item[open] {
+    border-color: rgba(249, 115, 22, 0.4);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-arrow {
+    color: #FB923C;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] .faq-arrow {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+  }
+
+  .faq-answer strong {
+    color: var(--text-main);
+  }
+
+  /* Bottom CTA banner */
+  .bottom-cta-banner {
+    background: radial-gradient(circle at center, rgba(249, 115, 22, 0.16) 0%, rgba(15, 23, 42, 0.9) 100%);
+    border: 1px solid rgba(249, 115, 22, 0.38);
+    border-radius: var(--radius-lg);
+    padding: 3.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.6);
+  }
+
+  .cta-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .cta-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #FDBA74;
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-title {
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .cta-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin-bottom: 2.2rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.85rem;
+    background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.98rem;
+    cursor: pointer;
+    box-shadow: 0 4px 22px rgba(249, 115, 22, 0.4);
+    transition: all 0.25s ease;
+  }
+
+  .btn-cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(249, 115, 22, 0.55);
+  }
+
+  .btn-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.9rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-full);
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: all 0.25s ease;
+  }
+
+  .btn-cta-secondary:hover {
+    color: var(--text-main);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  @media (max-width: 900px) {
+    .licensing-cards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -5,7 +5,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 ---
 
 <section class="construye-hero">
-  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="hero-bg-pattern" aria-hidden="true"></div>
   <div class="hero-glow orb-amber" aria-hidden="true"></div>
   <div class="hero-glow orb-cyan" aria-hidden="true"></div>
 
@@ -26,7 +26,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
         <div class="origin-separator" aria-hidden="true"></div>
 
-        <!-- startTIC Logo inside clean white pill -->
+        <!-- startTIC Logo -->
         <div class="logo-item partner-pill" title="Incubadora de Alta Tecnología startTIC">
           <img 
             src={`${baseUrl}/assets/descubre-con-lua/startic-logo.png`} 
@@ -39,7 +39,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
         <div class="origin-separator" aria-hidden="true"></div>
 
-        <!-- Consorcio da Zona Franca de Vigo Logo inside clean white pill -->
+        <!-- Consorcio da Zona Franca de Vigo Logo -->
         <div class="logo-item partner-pill" title="Consorcio de la Zona Franca de Vigo">
           <img 
             src={`${baseUrl}/assets/descubre-con-lua/zona-franca-vigo-logo.png`} 
@@ -51,103 +51,96 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         </div>
       </div>
       <p class="origin-text">
-        <strong>Dr. Frank Alberto Betances Reinoso</strong> · Incubadora <strong>startTIC</strong> · <strong>Consorcio Zona Franca de Vigo</strong> · <strong>Earlify Health</strong>
+        <strong>Dr. Frank Alberto Betances Reinoso</strong> · Incubadora de Alta Tecnología <strong>startTIC</strong> · <strong>Consorcio Zona Franca de Vigo</strong> · <strong>Earlify Health</strong>
       </p>
     </div>
 
-    <!-- Badges Row -->
+    <!-- Editorial Badges -->
     <div class="hero-badges">
       <span class="hero-badge badge-orange">
         <span class="badge-dot dot-orange"></span>
-        Estándar Duplo (31,80 mm)
-      </span>
-      <span class="hero-badge badge-cyan">
-        <span class="badge-dot dot-cyan"></span>
-        Blender 4.x Headless (bpy)
+        Educación Infantil y Estimulación (0 a 6 años)
       </span>
       <span class="hero-badge badge-emerald">
         <span class="badge-dot dot-emerald"></span>
-        Norma EN 71-1 (>31,75 mm)
+        100% Manipulativo · Cero Pantallas para el Menor
       </span>
-      <span class="hero-badge badge-purple">
-        <span class="badge-dot dot-purple"></span>
-        Cero Pantallas para la Criatura
+      <span class="hero-badge badge-cyan">
+        <span class="badge-dot dot-cyan"></span>
+        Seguridad Europea EN 71-1
       </span>
     </div>
 
-    <!-- Main Title -->
+    <!-- Main Headline -->
     <div class="hero-title-area">
-      <div class="hero-title-icon" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none" class="brick-icon">
-          <rect x="6" y="16" width="36" height="24" rx="3" fill="#F97316" fill-opacity="0.2" stroke="#FB923C" stroke-width="2.5"/>
-          <rect x="11" y="8" width="10" height="8" rx="2" fill="#F97316" stroke="#FB923C" stroke-width="2"/>
-          <rect x="27" y="8" width="10" height="8" rx="2" fill="#F97316" stroke="#FB923C" stroke-width="2"/>
-          <line x1="24" y1="16" x2="24" y2="40" stroke="#FB923C" stroke-width="1.5" stroke-dasharray="3 3"/>
-        </svg>
+      <div class="lua-avatar-badge">
+        <img 
+          src={`${baseUrl}/assets/valeria_lua.png`} 
+          alt="Lúa, la mascota guía de aprendizaje tangible" 
+          class="lua-hero-avatar"
+          loading="eager"
+          decoding="async"
+        />
       </div>
       <h1 class="hero-title">
         Lúa Construye <br />
-        <span class="gradient-text-brick">Robótica Manipulativa y Modular 3D</span>
+        <span class="gradient-text-brick">Aprender con las Manos, Escuchar con el Corazón</span>
       </h1>
     </div>
 
     <!-- Lead Narrative -->
     <p class="hero-lead">
-      Sistema modular tangible de construcción educativa y estimulación neurofuncional para la primera infancia (0 a 6 años). Basado en el estándar mecánico <strong>Duplo (paso de 31,80 mm)</strong>, modelado proceduralmente en <strong>Blender (Python <code>bpy</code>)</strong> para impresión 3D FDM/resina y sincronizado con el software pedagógico de aula <strong>Descubre con Lúa</strong> y clínico de <strong>Valeria+</strong>.
+      El sistema de juego tangible y estimulación neurofuncional diseñado para escuelas infantiles, gabinetes clínicos y familias. Mientras las niñas y niños construyen caminos, exploran texturas y resuelven retos reales sobre la alfombra, la persona adulta dispone de una guía pedagógica y acústica paso a paso <strong>sin exponer a la infancia a las pantallas</strong>.
     </p>
 
-    <!-- KPI Metric Cards -->
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <div class="kpi-value text-orange">31,80 mm</div>
-        <div class="kpi-label">Paso Modular Duplo</div>
-        <div class="kpi-desc">Interoperable al 100% con piezas existentes y bases 8×8</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value text-emerald">> 31,75 mm</div>
-        <div class="kpi-label">Seguridad EN 71-1</div>
-        <div class="kpi-desc">Todas las piezas superan el cilindro anti-asfixia para &lt; 36 meses</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value text-cyan">Blender bpy</div>
-        <div class="kpi-label">Pipeline Procedural</div>
-        <div class="kpi-desc">Exportación STL paramétrica headless con Manifold 2-manifold estricto</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value text-purple">Zero-Network</div>
-        <div class="kpi-label">Software Desacoplado</div>
-        <div class="kpi-desc">Flutter Canvas <code>CustomPainter</code>, audios TPR en inglés y cero PHI</div>
-      </div>
+    <!-- Primary CTAs focused on lead generation -->
+    <div class="hero-cta-group">
+      <button 
+        id="open-contact-modal-hero" 
+        class="btn-primary-hero"
+        onclick="document.getElementById('contact-modal')?.classList.add('open'); document.getElementById('contact-modal')?.setAttribute('aria-hidden', 'false');"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>Solicitar Información o Demostración</span>
+      </button>
+
+      <a href="#como-funciona" class="btn-secondary-hero">
+        <span>Descubrir la Metodología</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+
+      <a href="#lineas-aplicacion" class="btn-tertiary-hero">
+        <span>Ver Aplicaciones en Aula y Clínica</span>
+      </a>
     </div>
 
-    <!-- CTA Actions -->
-    <div class="hero-cta-group">
-      <a href="#especificaciones" class="btn-primary-hero">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-        </svg>
-        <span>Especificación Mecánica</span>
-      </a>
-
-      <a href="#blender-script" class="btn-secondary-hero">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="16 18 22 12 16 6"></polyline>
-          <polyline points="8 6 2 12 8 18"></polyline>
-        </svg>
-        <span>Script Blender bpy</span>
-      </a>
-
-      <a href="#matriz-compatibilidad" class="btn-tertiary-hero">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="3" y="3" width="7" height="7"></rect>
-          <rect x="14" y="3" width="7" height="7"></rect>
-          <rect x="14" y="14" width="7" height="7"></rect>
-          <rect x="3" y="14" width="7" height="7"></rect>
-        </svg>
-        <span>Gama Lúa vs Valeria</span>
-      </a>
+    <!-- 4 Value Proposition Highlights -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon-pill pill-orange">👐</div>
+        <div class="kpi-label">Juego 100% Tangible</div>
+        <div class="kpi-desc">Desarrollo de la motricidad bimanual, la orientación espacial y la lógica secuencial mediante bloques físicos reales.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon-pill pill-emerald">🛡️</div>
+        <div class="kpi-label">Ergonomía y Seguridad</div>
+        <div class="kpi-desc">Piezas de gran formato adaptadas al agarre palmar infantil bajo los estándares europeos de seguridad pediátrica (EN 71-1).</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon-pill pill-cyan">🎧</div>
+        <div class="kpi-label">Guía Acústica para el Adulto</div>
+        <div class="kpi-desc">Locuciones naturales, canciones a compás visual e iniciación al inglés por movimiento para acompañar sin esfuerzo.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon-pill pill-purple">🏫</div>
+        <div class="kpi-label">Doble Vertiente: Aula y Clínica</div>
+        <div class="kpi-desc">Conectado con <strong>Descubre con Lúa</strong> para escuelas infantiles y con <strong>Valeria+</strong> para estimulación del lenguaje.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -159,16 +152,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     overflow: hidden;
   }
 
-  /* Engineering Blueprint Grid Background */
-  .hero-bg-grid {
+  .hero-bg-pattern {
     position: absolute;
     inset: 0;
-    background-image: 
-      linear-gradient(to right, rgba(249, 115, 22, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
-    background-size: 31.8px 31.8px;
-    mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%);
-    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%);
+    background-image: radial-gradient(rgba(249, 115, 22, 0.12) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
     pointer-events: none;
     z-index: -2;
   }
@@ -183,7 +173,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .orb-amber {
     top: -100px;
-    left: 20%;
+    left: 18%;
     width: 500px;
     height: 500px;
     background: radial-gradient(circle, rgba(249, 115, 22, 0.16) 0%, rgba(249, 115, 22, 0) 70%);
@@ -191,7 +181,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .orb-cyan {
     top: 20%;
-    right: 10%;
+    right: 12%;
     width: 450px;
     height: 450px;
     background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, rgba(0, 242, 254, 0) 70%);
@@ -291,7 +281,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     gap: 0.5rem;
     font-size: 0.82rem;
     font-weight: 600;
-    padding: 0.35rem 0.85rem;
+    padding: 0.35rem 0.9rem;
     border-radius: var(--radius-full);
     border: 1px solid transparent;
   }
@@ -323,13 +313,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
   .dot-emerald { background: #10B981; box-shadow: 0 0 8px #10B981; }
 
-  .badge-purple {
-    background: rgba(138, 43, 226, 0.1);
-    color: #D8B4FE;
-    border-color: rgba(138, 43, 226, 0.3);
-  }
-  .dot-purple { background: #A855F7; box-shadow: 0 0 8px #A855F7; }
-
   /* Title Area */
   .hero-title-area {
     display: flex;
@@ -338,16 +321,22 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     margin-bottom: 1.5rem;
   }
 
-  .hero-title-icon {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 16px rgba(249, 115, 22, 0.4));
+  .lua-avatar-badge {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, #FB923C, #00F2FE);
+    margin-bottom: 1.25rem;
+    box-shadow: 0 8px 28px rgba(249, 115, 22, 0.35);
   }
 
-  .brick-icon {
+  .lua-hero-avatar {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #07090e;
   }
 
   .hero-title {
@@ -359,81 +348,21 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .gradient-text-brick {
-    background: linear-gradient(135deg, #FB923C 0%, #F97316 40%, #00F2FE 100%);
+    background: linear-gradient(135deg, #FB923C 0%, #F97316 45%, #00F2FE 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .hero-lead {
-    max-width: 860px;
+    max-width: 840px;
     font-size: 1.15rem;
     line-height: 1.7;
     color: var(--text-muted);
-    margin-bottom: 2.8rem;
+    margin-bottom: 2.5rem;
   }
 
   .hero-lead strong {
     color: var(--text-main);
-  }
-
-  .hero-lead code {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 0.15rem 0.4rem;
-    border-radius: 4px;
-    color: #67E8F9;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.95em;
-  }
-
-  /* KPI Grid */
-  .kpi-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-    width: 100%;
-    max-width: 1140px;
-    margin-bottom: 3rem;
-  }
-
-  .kpi-card {
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-md);
-    padding: 1.5rem 1.2rem;
-    text-align: left;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .kpi-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(249, 115, 22, 0.4);
-    box-shadow: 0 12px 28px -6px rgba(249, 115, 22, 0.15);
-  }
-
-  .kpi-value {
-    font-family: var(--font-heading);
-    font-size: 1.85rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 0.35rem;
-  }
-
-  .text-orange { color: #FB923C; }
-  .text-emerald { color: #34D399; }
-  .text-cyan { color: #00F2FE; }
-  .text-purple { color: #C084FC; }
-
-  .kpi-label {
-    font-size: 0.92rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 0.35rem;
-  }
-
-  .kpi-desc {
-    font-size: 0.8rem;
-    color: var(--text-dim);
-    line-height: 1.45;
   }
 
   /* CTAs */
@@ -442,6 +371,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    margin-bottom: 3.5rem;
   }
 
   .btn-primary-hero,
@@ -450,27 +380,30 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 0.85rem 1.6rem;
+    font-weight: 700;
+    font-size: 0.96rem;
+    padding: 0.9rem 1.75rem;
     border-radius: var(--radius-full);
     text-decoration: none;
+    cursor: pointer;
     transition: all 0.25s ease;
+    font-family: var(--font-heading);
   }
 
   .btn-primary-hero {
     background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
     color: #FFFFFF;
-    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+    border: none;
+    box-shadow: 0 4px 22px rgba(249, 115, 22, 0.4);
   }
 
   .btn-primary-hero:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 26px rgba(249, 115, 22, 0.5);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.55);
   }
 
   .btn-secondary-hero {
-    background: rgba(15, 23, 42, 0.7);
+    background: rgba(15, 23, 42, 0.75);
     color: #67E8F9;
     border: 1px solid rgba(0, 242, 254, 0.35);
   }
@@ -489,8 +422,67 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .btn-tertiary-hero:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
+  }
+
+  /* KPI Grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 1140px;
+  }
+
+  .kpi-card {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.6rem 1.35rem;
+    text-align: left;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    backdrop-filter: blur(12px);
+  }
+
+  .kpi-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(249, 115, 22, 0.4);
+    box-shadow: 0 12px 28px -6px rgba(249, 115, 22, 0.15);
+  }
+
+  .kpi-icon-pill {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+  }
+
+  .pill-orange { background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.3); }
+  .pill-emerald { background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); }
+  .pill-cyan { background: rgba(0, 242, 254, 0.15); border: 1px solid rgba(0, 242, 254, 0.3); }
+  .pill-purple { background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); }
+
+  .kpi-label {
+    font-family: var(--font-heading);
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.45rem;
+  }
+
+  .kpi-desc {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .kpi-desc strong {
+    color: var(--text-main);
   }
 
   @media (max-width: 992px) {
