@@ -54,7 +54,21 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
         >
           <span class="tab-indicator indicator-emerald"></span>
           <span class="tab-step">02</span>
-          <span class="tab-name">El Aula Escolar (Descubre)</span>
+          <span class="tab-name">Aula Escolar (Descubre)</span>
+        </button>
+
+        <button 
+          type="button" 
+          role="tab" 
+          id="tab-btn-construye" 
+          aria-selected="false" 
+          aria-controls="panel-construye" 
+          class="eco-tab-btn"
+          data-target="construye"
+        >
+          <span class="tab-indicator indicator-rose"></span>
+          <span class="tab-step">03</span>
+          <span class="tab-name">Juego Tangible (Lúa Construye)</span>
         </button>
 
         <button 
@@ -67,8 +81,8 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
           data-target="valeria"
         >
           <span class="tab-indicator indicator-purple"></span>
-          <span class="tab-step">03</span>
-          <span class="tab-name">El Hogar (Valeria+)</span>
+          <span class="tab-step">04</span>
+          <span class="tab-name">Hogar y Familia (Valeria+)</span>
         </button>
 
         <button 
@@ -81,8 +95,8 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
           data-target="lua"
         >
           <span class="tab-indicator indicator-amber"></span>
-          <span class="tab-step">04</span>
-          <span class="tab-name">Hardware AIoT (Lúa)</span>
+          <span class="tab-step">05</span>
+          <span class="tab-name">Compañera Física (Lúa)</span>
         </button>
       </div>
     </div>
@@ -104,27 +118,27 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
               <span>EVALUACIÓN OBJETIVA EN CONSULTA</span>
             </div>
-            <h3 class="panel-title">VIA+ · Precisión Diagnóstica SaMD Clase IIa</h3>
+            <h3 class="panel-title">VIA+ · Estación Clínica Llave en Mano (SaMD Clase IIa)</h3>
             <p class="panel-desc">
-              En la consulta médica de otorrinolaringología y pediatría, VIA+ aporta rigor objetivo sin algoritmos de caja negra. 13 módulos clínicos en tablet que evalúan audición, foniatría con DSP Praat en C++ JSI y neurodesarrollo normativo ASHA.
+              En la consulta médica de otorrinolaringología, audiología y logopedia, VIA+ se entrega preconfigurado en una tableta clínica homologada en modo kiosco con calibración electroacústica sellada en cámara anecoica, 13 módulos de evaluación y motor NLG determinista para informes.
             </p>
             <div class="panel-features-list">
               <div class="feature-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-                <span><strong>DSP Praat C++ JSI:</strong> Extracción acústica ciclo a ciclo (F0, Jitter, Shimmer, HNR) validada empíricamente.</span>
+                <span><strong>Calibración de Fábrica &amp; Validación Fonética:</strong> Curva electroacústica sellada frente a sonómetro Clase 1 y extracción vocal ciclo a ciclo contrastada con estándares de fonética clínica.</span>
               </div>
               <div class="feature-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                <span><strong>Cero IA en Runtime:</strong> Conforme al AI Act UE 2024/1689. Juicio clínico 100% en manos del facultativo.</span>
+                <span><strong>Motor NLG Determinista &amp; Cero IA en Dispositivo:</strong> Síntesis clínica combinatoria sin alucinaciones con borrador supervisado y firma colegiada.</span>
               </div>
               <div class="feature-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                <span><strong>Zero-PHI &amp; QR Anónimo:</strong> Datos locales en SQLite cifrada y exportación sin transmisión a la nube.</span>
+                <span><strong>Almacenamiento Cifrado &amp; QR Zero-PHI:</strong> Datos clínicos 100% locales en reposo y telemetría de usabilidad anónima sin nube.</span>
               </div>
             </div>
             <div class="panel-cta-row">
               <a href={`${baseUrl}/via`} class="btn-panel-action btn-cyan">
-                <span>Ver Módulos de VIA+</span>
+                <span>Explorar VIA+</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
@@ -136,12 +150,12 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                 <span class="dot-btn red"></span>
                 <span class="dot-btn yellow"></span>
                 <span class="dot-btn green"></span>
-                <span class="mockup-title">VIA+ · Audiometría &amp; Foniatría</span>
+                <span class="mockup-title">VIA+ · Estación Clínica en Kiosco</span>
               </div>
               <div class="mockup-img-wrap">
                 <img 
                   src={`${baseUrl}/assets/via-app-1.png`} 
-                  alt="Pantalla de exploración de VIA+ en tablet clínica" 
+                  alt="Pantalla de exploración de VIA+ en tableta clínica homologada" 
                   class="mockup-img"
                   loading="lazy"
                 />
@@ -183,7 +197,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
               </div>
               <div class="feature-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-                <span><strong>1.020 Locuciones Neuronales:</strong> Grabadas offline con voces de alta naturalidad (Celtia / Proxecto Nós, Sharvard y LJSpeech).</span>
+                <span><strong>1.020 Locuciones Neuronales:</strong> Empaquetadas offline en gallego y castellano con total privacidad escolar.</span>
               </div>
             </div>
             <div class="panel-cta-row">
@@ -231,7 +245,71 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
       </div>
 
-      <!-- Panel 3: Valeria+ (El Hogar) -->
+      <!-- Panel 3: Lúa Construye (Juego Manipulativo) -->
+      <div 
+        id="panel-construye" 
+        role="tabpanel" 
+        aria-labelledby="tab-btn-construye" 
+        class="eco-stage-panel panel-theme-rose"
+      >
+        <span id="lua-construye"></span>
+        <div class="panel-grid">
+          <div class="panel-content-col">
+            <div class="panel-tag tag-rose">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              <span>JUEGO MANIPULATIVO · 1 A 6 AÑOS</span>
+            </div>
+            <h3 class="panel-title">Lúa Construye · Bloques Tangibles y Lenguaje en Acción</h3>
+            <p class="panel-desc">
+              Sistema de construcción física de gran formato combinado con una guía narrativa para el adulto (docente, logopeda o familia). El niño manipula piezas reales sobre la mesa mientras el adulto propone misiones de vocabulario, conceptos espaciales y turnos sin que el menor toque pantallas.
+            </p>
+            <div class="panel-features-list">
+              <div class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span><strong>Seguridad Pediátrica EN 71-1:</strong> Piezas ergonómicas de gran formato con bordes redondeados aptas desde el primer año de vida.</span>
+              </div>
+              <div class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                <span><strong>4 Escenarios Narrativos:</strong> La Granja, El Tren de los Sonidos, El Puente y La Casa de Lúa para estimular habla, escucha y motricidad fina.</span>
+              </div>
+              <div class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span><strong>Cero Pantallas para el Menor:</strong> La aplicación actúa exclusivamente como cuaderno de bitácora y modelo de voz en manos del adulto.</span>
+              </div>
+            </div>
+            <div class="panel-cta-row">
+              <a href={`${baseUrl}/construye-con-lua`} class="btn-panel-action btn-rose">
+                <span>Descubrir Lúa Construye</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="panel-visual-col">
+            <div class="mockup-frame frame-rose">
+              <div class="mockup-header">
+                <span class="dot-btn red"></span>
+                <span class="dot-btn yellow"></span>
+                <span class="dot-btn green"></span>
+                <span class="mockup-title">Lúa Construye · Juego Tangible</span>
+              </div>
+              <div class="mockup-img-wrap">
+                <img 
+                  src={`${baseUrl}/assets/construye-con-lua/hero-construye-familia.png`} 
+                  alt="Familia y menor jugando con los bloques físicos de gran formato de Lúa Construye" 
+                  class="mockup-img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mockup-caption">
+                <span>Manipulación Real en Mesa · Seguridad Infantil EN 71-1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Valeria+ (El Hogar) -->
       <div 
         id="panel-valeria" 
         role="tabpanel" 
@@ -243,24 +321,24 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
           <div class="panel-content-col">
             <div class="panel-tag tag-purple">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-              <span>REHABILITACIÓN EN EL HOGAR</span>
+              <span>APOYO FAMILIAR EN CASA</span>
             </div>
-            <h3 class="panel-title">Valeria+ · Inmersión Familiar &amp; 10 Bloques TPR</h3>
+            <h3 class="panel-title">Valeria+ · Primero Forma a la Familia, Después Practica con Lúa</h3>
             <p class="panel-desc">
-              Terapia domiciliaria guiada donde el adulto recupera el control. Con el método TPR (Respuesta Física Total) y micro-formación en 2 minutos (Academy), la familia practica discriminación fonológica, motricidad y audición sin pantallas pasivas.
+              Aplicación educativa 100% offline y sin servidor para acompañar el habla entre sesión y sesión con el logopeda. Abre directamente en Academy con cápsulas de 2 minutos y ofrece 10 bloques de juego y rutinas donde el adulto siempre acompaña y valida.
             </p>
             <div class="panel-features-list">
               <div class="feature-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-                <span><strong>10 Bloques de Terapia 100% Offline:</strong> Desde pares mínimos e integración sensorial hasta la Pizarra Mágica y RA orofacial.</span>
+                <span><strong>10 Bloques y Rutinas en 4 Pasos:</strong> Integración sensorial con pre-escucha, pares mínimos, rutinas diarias, Pizarra Mágica y RA 3D.</span>
               </div>
               <div class="feature-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                <span><strong>Academy (2 min):</strong> Capacitación basada en los hitos de la ASHA y el abecedario dactilológico en LSE con 27 figuras.</span>
+                <span><strong>Academy (2 min):</strong> Guías familiares con La Brújula de las Palabras (ASHA 0–5 años) y 27 signos en LSE validados por ACOPROS.</span>
               </div>
               <div class="feature-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg>
-                <span><strong>4.711 Locuciones Neuronales:</strong> Grabadas en 6 variedades idiomáticas para preservar el acento y la identidad familiar.</span>
+                <span><strong>4.711 Locuciones en 6 Variedades:</strong> Castellano, Galego, Dominicano, Euskara, US English y Català, sin cuentas ni nube.</span>
               </div>
             </div>
             <div class="panel-cta-row">
@@ -277,25 +355,25 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                 <span class="dot-btn red"></span>
                 <span class="dot-btn yellow"></span>
                 <span class="dot-btn green"></span>
-                <span class="mockup-title">Valeria+ · Terapia Guiada en Casa</span>
+                <span class="mockup-title">Valeria+ · Apoyo Familiar en Casa</span>
               </div>
               <div class="mockup-img-wrap">
                 <img 
                   src={`${baseUrl}/assets/valeria-app-1.png`} 
-                  alt="Interfaz de Valeria+ en dispositivo móvil para estimulación del lenguaje" 
+                  alt="Interfaz de Valeria+ en dispositivo móvil para acompañar el lenguaje en casa" 
                   class="mockup-img"
                   loading="lazy"
                 />
               </div>
               <div class="mockup-caption">
-                <span>Dispositivo Médico Clase I · Muro Regulatorio Adulto</span>
+                <span>Aplicación Educativa · Control Exclusivo del Adulto</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Panel 4: Lúa AIoT (Hardware & Acompañante) -->
+      <!-- Panel 5: Lúa (Compañera Física & Acompañante) -->
       <div 
         id="panel-lua" 
         role="tabpanel" 
@@ -307,24 +385,24 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
           <div class="panel-content-col">
             <div class="panel-tag tag-amber">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect></svg>
-              <span>HARDWARE AIoT &amp; VÍNCULO AFECTIVO</span>
+              <span>COMPAÑERA FÍSICA &amp; VÍNCULO AFECTIVO</span>
             </div>
-            <h3 class="panel-title">Lúa · Mascota AIoT Pediátrica (ESP32-C3)</h3>
+            <h3 class="panel-title">Lúa · Mascota Física Interactiva</h3>
             <p class="panel-desc">
-              Compañera interactiva física y gemelo digital que une ambos mundos. Reduce la ansiedad en la sala de espera, guarda estricto silencio clínico en consulta para no interferir en las pruebas acústicas y acompaña el juego en casa.
+              Compañera física de escritorio y gemelo digital que une todos los entornos del ecosistema. Reduce la ansiedad antes de la consulta, permanece en estricto silencio clínico durante las pruebas médicas y celebra cada avance en el aula y en casa.
             </p>
             <div class="panel-features-list">
               <div class="feature-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path><path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path></svg>
-                <span><strong>Sin Micrófonos por Diseño:</strong> Hardware físicamente carente de sensores de captura sonora para blindar la intimidad del menor.</span>
+                <span><strong>Sin Micrófonos por Diseño:</strong> Hardware físicamente carente de sensores de escucha o grabación para blindar la intimidad familiar y clínica.</span>
               </div>
               <div class="feature-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
-                <span><strong>Silencio Clínico (SAFE 1):</strong> Apagado automático de pantalla durante la exploración médica con VIA+.</span>
+                <span><strong>Silencio Clínico en Consulta:</strong> Permanece en reposo durante las exploraciones acústicas para no interferir en el acto médico.</span>
               </div>
               <div class="feature-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                <span><strong>Descanso Visual 20-20-20:</strong> Protocolo activo tras 20 minutos de interacción para evitar la fatiga ocular pediátrica.</span>
+                <span><strong>Descanso Visual 20-20-20:</strong> Invita a descansar la vista cada 20 minutos mirando a lo lejos junto al menor.</span>
               </div>
             </div>
             <div class="panel-cta-row">
@@ -348,7 +426,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
               </div>
               <div class="lua-spec-pill">
                 <span class="spec-dot"></span>
-                <span>Placa V1 (ESP32-C3) · Panel IPS Redondo GC9A01</span>
+                <span>Compañera Física Interactiva · Cero Micrófonos · startTIC</span>
               </div>
             </div>
           </div>
@@ -407,6 +485,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
       const hash = window.location.hash.toLowerCase();
       if (hash.includes('via')) selectTab('via');
       else if (hash.includes('descubre')) selectTab('descubre');
+      else if (hash.includes('construye')) selectTab('construye');
       else if (hash.includes('valeria')) selectTab('valeria');
       else if (hash.includes('lua')) selectTab('lua');
     }
@@ -608,6 +687,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
   }
   .indicator-cyan { background-color: #00f2fe; box-shadow: 0 0 10px #00f2fe; }
   .indicator-emerald { background-color: #10b981; box-shadow: 0 0 10px #10b981; }
+  .indicator-rose { background-color: #fb7185; box-shadow: 0 0 10px #fb7185; }
   .indicator-purple { background-color: #a855f7; box-shadow: 0 0 10px #a855f7; }
   .indicator-amber { background-color: #f59e0b; box-shadow: 0 0 10px #f59e0b; }
 
@@ -672,6 +752,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
   }
   .tag-cyan { background: rgba(0, 242, 254, 0.12); color: #00f2fe; border: 1px solid rgba(0, 242, 254, 0.25); }
   .tag-emerald { background: rgba(16, 185, 129, 0.12); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.25); }
+  .tag-rose { background: rgba(244, 63, 94, 0.12); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.25); }
   .tag-purple { background: rgba(168, 85, 247, 0.12); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.25); }
   .tag-amber { background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.25); }
 
@@ -732,6 +813,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
   }
   .btn-cyan { background: #00f2fe; color: #041017; }
   .btn-emerald { background: #10b981; color: #022013; }
+  .btn-rose { background: #fb7185; color: #2b0610; }
   .btn-purple { background: #a855f7; color: #1e0933; }
   .btn-amber { background: #f59e0b; color: #211200; }
 
@@ -746,6 +828,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
     box-sizing: border-box;
   }
   .frame-cyan { border-color: rgba(0, 242, 254, 0.3); }
+  .frame-rose { border-color: rgba(244, 63, 94, 0.3); }
   .frame-purple { border-color: rgba(168, 85, 247, 0.3); }
 
   .mockup-header {
