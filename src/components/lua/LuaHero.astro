@@ -30,9 +30,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
     <!-- Progress & Stage Indicators (Discreet Editorial Line, invisible at 0 scroll) -->
     <div class="hero-editorial-tracker" id="lua-tracker" aria-hidden="true">
-      <div class="tracker-segment" id="lua-track-0"><span>01</span><div class="track-bar"><div class="track-fill" id="lua-fill-0"></div></div><span>Mascota AIoT</span></div>
-      <div class="tracker-segment" id="lua-track-1"><span>02</span><div class="track-bar"><div class="track-fill" id="lua-fill-1"></div></div><span>Hardware & Doble Modo</span></div>
-      <div class="tracker-segment" id="lua-track-2"><span>03</span><div class="track-bar"><div class="track-fill" id="lua-fill-2"></div></div><span>Cero Castigo & CTAs</span></div>
+      <div class="tracker-segment" id="lua-track-0"><span>01</span><div class="track-bar"><div class="track-fill" id="lua-fill-0"></div></div><span>Compañera Física</span></div>
+      <div class="tracker-segment" id="lua-track-1"><span>02</span><div class="track-bar"><div class="track-fill" id="lua-fill-1"></div></div><span>Visor Circular &amp; Sets STEAM</span></div>
+      <div class="tracker-segment" id="lua-track-2"><span>03</span><div class="track-bar"><div class="track-fill" id="lua-fill-2"></div></div><span>Cero Castigo &amp; Contacto</span></div>
     </div>
 
     <!-- Sutil indicador de ratón inicial abajo (desaparece al hacer scroll) -->
@@ -43,14 +43,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       </div>
     </div>
 
-    <!-- PHASE 0: Presentación de la Mascota AIoT (Carga inmediata a scroll 0) -->
+    <!-- PHASE 0: Presentación de la Mascota Física + STEAM & AR (Carga inmediata a scroll 0) -->
     <div id="lua-phase-0" class="hero-phase-panel phase-initial">
       <div class="phase-inner max-w-content">
         <!-- Official Lúa Mascot Icon -->
         <div class="lua-mascot-icon-wrapper">
           <img 
             src={`${baseUrl}/assets/valeria_lua.png`} 
-            alt="Lúa la Gata - Mascota AIoT de Valeria+ y VIA+" 
+            alt="Lúa la Gata - Compañera física interactiva de Earlify Health" 
             class="lua-brand-icon" 
             width="110"
             height="110"
@@ -60,34 +60,44 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         </div>
 
         <div class="editorial-eyebrow eyebrow-orange">
-          <span>Compañera Terapéutica AIoT (ESP32-C3)</span>
+          <span>Compañera Física Interactiva · Juego STEAM + Realidad Aumentada</span>
         </div>
 
         <h1 class="hero-headline">
-          Lúa: La Mascota Inteligente <span class="gradient-text-orange">en la Terapia y en la Consulta</span>
+          Lúa: El Puente Afectivo Tangible <span class="gradient-text-orange">entre Consulta, Aula y Hogar</span>
         </h1>
 
         <p class="hero-narrative-lead">
-          Dispositivo físico complementario para el neurodesarrollo y la audiología pediátrica. En casa, <strong>espeja el estímulo visual y el refuerzo de Valeria+</strong> capturando la mirada del menor; en clínica, <strong>asiste en estricto Silencio Clínico en VIA+</strong> sin interferir en el acto médico.
+          Figura física de cuerpo entero con <strong>visor circular integrado</strong>, ampliada con <strong>sets de bloques manipulativos (EN 71-1) y Realidad Aumentada</strong> para <strong>Valeria+</strong> y <strong>Descubre con Lúa</strong>. La aplicación guía, Lúa acompaña: no mide, no juzga y <strong>jamás escucha</strong>.
         </p>
 
         <div class="hero-badge-pill-row">
-          <span class="badge-pill pill-cyan">🚀 Incubado en startTIC · Alta Tecnología</span>
-          <span class="badge-pill pill-orange">🐱 ESP32-C3 · 240×240 IPS</span>
-          <span class="badge-pill pill-purple">📶 Bluetooth LE 5.0 (Zero-PHI)</span>
-          <span class="badge-pill pill-emerald">🔇 Silencio Clínico (0 dB)</span>
+          <span class="badge-pill pill-cyan">🚀 Incubada en startTIC · Alta Tecnología</span>
+          <span class="badge-pill pill-orange">🐱 Visor Circular + Bloques EN 71-1</span>
+          <span class="badge-pill pill-purple">✨ Realidad Aumentada Zero-PHI</span>
+          <span class="badge-pill pill-emerald">🔇 Cero Micrófonos · Silencio Clínico</span>
+        </div>
+
+        <div class="card-action-row" style="justify-content: center; margin-top: 0.5rem;">
+          <button type="button" class="hero-btn btn-orange" data-open-contact style="border: none; cursor: pointer; font-family: inherit;">
+            <span>Solicitar Información o Demo</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </button>
+          <a href="#arquitectura-sets-steam" class="hero-btn btn-ghost">
+            <span>Explorar Sets STEAM + AR</span>
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- PHASE 1: Hardware & Doble Modalidad (38% - 70% Scroll) -->
+    <!-- PHASE 1: Visor Circular, Espejo de App & Sets Manipulativos (38% - 70% Scroll) -->
     <div id="lua-phase-1" class="hero-phase-panel">
       <div class="phase-inner max-w-showcase">
         <div class="editorial-eyebrow eyebrow-cyan">
-          <span>Doble Modalidad & Simulación Física</span>
+          <span>Una Sola Mascota · Del Visor Circular a la Mesa de Juego</span>
         </div>
         <h2 class="hero-headline gradient-text-orange">
-          Modo Espejo para Terapia & Compañera Emocional Autónoma.
+          Espejo Visual, Sets Manipulativos y Descanso 20-20-20.
         </h2>
 
         <div class="lua-showcase-grid">
@@ -96,24 +106,24 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
             <div class="lua-feature-card">
               <div class="feature-icon-badge icon-orange">🪞</div>
               <div class="feature-text">
-                <strong>Modo Espejo (App Mirror · Valeria+)</strong>
-                <p>Refuerzo visual de fases (<code>PHASE</code>), veredictos articulatorios (<code>VERDICT</code>), 66 pictogramas y 45 insignias de nivel.</p>
+                <strong>Espejo de Actividad y Compañía (Valeria+)</strong>
+                <p>Muestra en su visor circular los turnos de juego, <strong>120 pictogramas en arte voxel</strong>, <strong>45 insignias</strong>, el armario de coleccionables y responde a las caricias con ronroneo visual.</p>
               </div>
             </div>
 
             <div class="lua-feature-card">
-              <div class="feature-icon-badge icon-cyan">🧘</div>
+              <div class="feature-icon-badge icon-cyan">🧱</div>
               <div class="feature-text">
-                <strong>Modo Compañera Emocional Autónoma</strong>
-                <p>Juegos de respiración guiada 4-4-4 (<code>RELAX</code>), máquina de estados de afecto y cambio de atuendos (<code>ACCESSORY</code>).</p>
+                <strong>Sets de Bloques STEAM y Realidad Aumentada</strong>
+                <p>Figura sin motores ni ruido mecánico con encajes modulares para los sets sensoriales y orofaciales de <strong>Valeria+</strong> y los circuitos tangibles de <strong>Descubre con Lúa</strong>.</p>
               </div>
             </div>
 
             <div class="lua-feature-card">
               <div class="feature-icon-badge icon-purple">🔒</div>
               <div class="feature-text">
-                <strong>Silencio Clínico & Zero-PHI (VIA+)</strong>
-                <p>Bloqueo instantáneo con acuse de recibo ante pruebas auditivas. Sin micrófono: cero interferencia acústica ni riesgo de privacidad.</p>
+                <strong>Ancla Visual 20-20-20 y Silencio Clínico (VIA+)</strong>
+                <p>Invita a descansar la vista cada 20 minutos echándose a dormir y entra en bloqueo silencioso inmediato durante exploraciones médicas en consulta.</p>
               </div>
             </div>
           </div>
@@ -134,7 +144,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
                 </div>
               </div>
               <div class="device-caption-row">
-                <span class="device-badge">ESP32-C3 · GC9A01 240×240 IPS</span>
+                <span class="device-badge">Visor Circular Integrado · 25 Expresiones + 120 Fichas Voxel</span>
               </div>
             </div>
           </div>
@@ -146,7 +156,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <div id="lua-phase-2" class="hero-phase-panel">
       <div class="phase-inner max-w-showcase">
         <div class="editorial-eyebrow eyebrow-emerald">
-          <span>Ética Pediátrica & Acompañamiento Clínico</span>
+          <span>Ética Pediátrica &amp; Acompañamiento Clínico</span>
         </div>
         <h2 class="hero-headline gradient-text-emerald">
           Diseñada para Animar, Nunca para Juzgar.
@@ -158,26 +168,29 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
             <div class="card-accent-tag text-orange">🐱 Gamificación Responsable</div>
             <h3>Principio de Cero Castigo</h3>
             <p>
-              Si el menor no acierta, Lúa <strong>nunca llora ni se entristece</strong>: mantiene una expresión atenta y comprensiva (<code class="inline-code">HELPFUL</code> / <code class="inline-code">NEUTRAL</code>), protegiendo la autoestima del niño y evitando la frustración.
+              Cuando un intento no sale a la primera, Lúa <strong>nunca llora, ni pone cara triste, ni emite sonidos de error</strong>: mantiene una expresión atenta y serena, protegiendo la autoestima infantil y acompañando el aprendizaje sin frustración.
             </p>
             <div class="card-mini-badges">
               <span class="mini-tag">🛡️ Cero Frustración</span>
               <span class="mini-tag">💖 Refuerzo Positivo</span>
-              <span class="mini-tag">🔇 0 dB en Consulta</span>
+              <span class="mini-tag">🔇 Cero Micrófonos</span>
             </div>
           </div>
 
           <!-- Col 2: Conexión con el Ecosistema -->
           <div class="lua-info-card glass-card">
-            <div class="card-accent-tag text-cyan">🔄 Ecosistema Earlify</div>
-            <h3>Conexión Bluetooth LE 5.0</h3>
+            <div class="card-accent-tag text-cyan">🔄 Ecosistema Earlify Health</div>
+            <h3>Privacidad Estructural y Continuidad</h3>
             <p>
-              Protocolo binario ultra-rápido de 4 bytes sin almacenamiento de datos personales. Se sincroniza automáticamente con Valeria+ en casa o entra en reposo absoluto en consulta.
+              Sincronización inalámbrica local sin transmisión de textos ni datos personales. Une el hogar (<strong>Valeria+</strong>), el aula (<strong>Descubre con Lúa</strong>), el juego manipulativo (<strong>Lúa Construye</strong>) y la consulta (<strong>VIA+</strong>).
             </p>
             <div class="card-action-row">
-              <a href={`${baseUrl}/`} class="hero-btn btn-orange">
-                <span>Ver App Valeria+</span>
+              <button type="button" class="hero-btn btn-orange" data-open-contact style="border: none; cursor: pointer; font-family: inherit;">
+                <span>Contactar con el Dr. Betances</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+              <a href={`${baseUrl}/construye-con-lua`} class="hero-btn btn-ghost">
+                <span>Ver Lúa Construye</span>
               </a>
               <a href={`${baseUrl}/earlify`} class="hero-btn btn-ghost">
                 <span>Ecosistema Earlify</span>

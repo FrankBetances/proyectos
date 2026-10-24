@@ -5,41 +5,41 @@
   <div class="container">
     
     <div class="section-header">
-      <span class="section-badge badge-orange">Catálogo Visual & Motor de Expresiones</span>
-      <h2 class="section-title">22 Caras, 8 Emociones Puras y 66 Fichas Clínicas</h2>
+      <span class="section-badge badge-orange">Catálogo Visual &amp; Expresividad Pediátrica</span>
+      <h2 class="section-title">25 Expresiones, 8 Emociones Puras y 120 Fichas Voxel</h2>
       <p class="section-description">
-        El sprite base es un diseño determinista en píxel art paritario con Valeria+. Las expresiones se generan mediante parches matemáticos sobre los ojos (5×5) y el hocico (5×10), acompañados de un motor procedural de partículas.
+        El rostro de Lúa comparte exactamente el mismo diseño en píxel art que las aplicaciones del ecosistema. En su visor circular cobra vida con animaciones de respiración, estados de compañía, armario coleccionable y un catálogo de 120 pictogramas en volumen isométrico.
       </p>
     </div>
 
     <!-- 3 States Card Grid -->
     <div class="states-banner glass-card">
-      <h3 class="states-title">Los Tres Estados Operativos de la Máquina de Estados</h3>
+      <h3 class="states-title">Los Tres Modos de Comportamiento de Lúa</h3>
       <div class="states-grid">
         <div class="state-card state-dormida">
           <div class="state-indicator-dot dot-dim"></div>
           <div class="state-content">
-            <span class="state-code">MODO 0 · REPOSO</span>
+            <span class="state-code">MODO 1 · REPOSO Y PAUSA 20-20-20</span>
             <h4>Dormida (Estado por Omisión)</h4>
-            <p>Sin concesión viva o tras caducar el TTL. Ojos cerrados, respiración lenta. No atiende a ningún comando salvo IDLE.</p>
+            <p>Cuando no hay sesión activa o durante la pausa visual 20-20-20, Lúa cierra los ojos y respira pausadamente para que el menor descanse la vista.</p>
           </div>
         </div>
 
         <div class="state-card state-activa">
           <div class="state-indicator-dot dot-cyan"></div>
           <div class="state-content">
-            <span class="state-code">MODO 1 · ACTIVA</span>
-            <h4>Activa (Concesión Viva)</h4>
-            <p>Solo con un <code>GRANT</code> reciente y renovado con <code>HEARTBEAT</code> cada 10 s. El anillo del bisel muestra el tiempo restante.</p>
+            <span class="state-code">MODO 2 · ACOMPAÑAMIENTO ACTIVO</span>
+            <h4>Espejo de Actividad y Compañía</h4>
+            <p>Sincronizada con el juego guiado por el adulto: refleja turnos de escucha y habla, muestra pictogramas, viste sus accesorios y ronronea al acariciarla.</p>
           </div>
         </div>
 
         <div class="state-card state-bloqueada">
           <div class="state-indicator-dot dot-red"></div>
           <div class="state-content">
-            <span class="state-code">MODO 2 · BLOQUEADA</span>
-            <h4>Silencio Clínico (SAFE 0x01)</h4>
-            <p>Panel apagado a gris azulado con anillo rojo de seguridad. Sobrevive a reinicios del enlace. Solo se levanta con <code>UNLOCK</code> explícito.</p>
+            <span class="state-code">MODO 3 · SILENCIO CLÍNICO</span>
+            <h4>Bloqueo en Consulta Médica</h4>
+            <p>Durante pruebas diagnósticas en consulta (VIA+), oscurece su visor con un halo de seguridad para garantizar cero distracciones en la exploración.</p>
           </div>
         </div>
       </div>
@@ -49,10 +49,10 @@
     <div class="expressions-matrix-wrapper glass-card">
       <div class="matrix-header">
         <div>
-          <span class="sub-badge text-orange">Catálogo Facial</span>
-          <h3 class="matrix-title">Mapeo de Expresiones y Opcodes Clínicos</h3>
+          <span class="sub-badge text-orange">Repertorio Visual</span>
+          <h3 class="matrix-title">Expresiones Faciales, Compañía y Celebración</h3>
         </div>
-        <span class="pixel-tag">Rejilla 240×240 IPS</span>
+        <span class="pixel-tag">Visor Circular · 240×240 px</span>
       </div>
 
       <div class="table-responsive">
@@ -61,205 +61,184 @@
             <tr>
               <th>#</th>
               <th>Expresión</th>
-              <th>Cuándo y Contexto Clínico</th>
-              <th>Opcode Asociado</th>
-              <th>Comportamiento Visual</th>
+              <th>Momento Pedagógico o Clínico</th>
+              <th>Categoría</th>
+              <th>Respuesta Visual en el Visor</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><code>0</code></td>
-              <td><strong>Neutra</strong></td>
-              <td>Concesión viva, en calma sin tarea activa</td>
-              <td><code class="opcode-tag">IDLE (0x04)</code></td>
-              <td>Mirada al frente, respiración pausada.</td>
+              <td><code>01</code></td>
+              <td><strong>Serena / Neutra</strong></td>
+              <td>En calma junto al niño o durante integración sensorial auditiva</td>
+              <td><span class="opcode-tag">Compañía</span></td>
+              <td>Mirada tranquila al frente y respiración suave.</td>
             </tr>
             <tr>
-              <td><code>1</code></td>
+              <td><code>02</code></td>
               <td><strong>Atenta</strong></td>
-              <td>Fase de escucha del niño y punto de retorno neutral</td>
-              <td><code class="opcode-tag">PHASE(0 · 2)</code></td>
-              <td>Orejas erguidas, pupilas atentas al estímulo.</td>
+              <td>Fase de escucha y retorno amable ante cualquier intento</td>
+              <td><span class="opcode-tag">Turno de Escucha</span></td>
+              <td>Orejas erguidas y pupilas concentradas sin reproche.</td>
             </tr>
             <tr>
-              <td><code>2</code></td>
+              <td><code>03</code></td>
               <td><strong>Animando</strong></td>
-              <td>Fase de repetición: anima al niño a vocalizar</td>
-              <td><code class="opcode-tag">PHASE(1)</code></td>
-              <td>Boca abierta en ánimo, ligero balanceo de cabeza.</td>
+              <td>Invita al menor a vocalizar o participar en la actividad</td>
+              <td><span class="opcode-tag">Turno Activo</span></td>
+              <td>Expresión entusiasta que acompaña la iniciativa del niño.</td>
             </tr>
             <tr>
-              <td><code>6</code></td>
+              <td><code>04</code></td>
               <td><strong>Impulso (⚡)</strong></td>
-              <td>Intento cercano (la palabra se dijo a medias)</td>
-              <td><code class="opcode-tag">VERDICT(1)</code></td>
-              <td>Rayo superior y dos cuñas laterales de impulso (1,5 s).</td>
+              <td>Intento cercano (la palabra o acción está casi lograda)</td>
+              <td><span class="opcode-tag">Ánimo Positivo</span></td>
+              <td>Destello de impulso que anima a volver a intentarlo.</td>
             </tr>
             <tr>
-              <td><code>7</code></td>
+              <td><code>05</code></td>
               <td><strong>Calma Aprobatoria (✓)</strong></td>
-              <td>Acierto fonológico pronunciado correctamente</td>
-              <td><code class="opcode-tag">VERDICT(2)</code></td>
-              <td>Visto suave superior y halo circular envolvente.</td>
+              <td>Objetivo logrado con serenidad y sin estridencias</td>
+              <td><span class="opcode-tag">Refuerzo Suave</span></td>
+              <td>Halo circular envolvente y gesto de aprobación tranquila.</td>
             </tr>
             <tr>
-              <td><code>8</code></td>
-              <td><strong>Epifanía (!)</strong></td>
-              <td>Subida de nivel en la sesión de rehabilitación</td>
-              <td><code class="opcode-tag">CELEBRATE(1)</code></td>
-              <td>Exclamación luminosa y cuatro radios giratorios.</td>
+              <td><code>06</code></td>
+              <td><strong>Antojo y Comiendo</strong></td>
+              <td>Hay un premio ganado en el rincón de la mascota</td>
+              <td><span class="opcode-tag">Vínculo Diario</span></td>
+              <td>Piensa en su premio favorito y celebra cuando el niño la alimenta.</td>
             </tr>
             <tr>
-              <td><code>9</code></td>
-              <td><strong>Éxito Absoluto (⭐)</strong></td>
-              <td>Insignia clínica desbloqueada (celebración mayor)</td>
-              <td><code class="opcode-tag">CELEBRATE(2)</code></td>
-              <td>Estrella superior y lluvia de confeti expansivo.</td>
+              <td><code>07</code></td>
+              <td><strong>Ronroneo y Armario</strong></td>
+              <td>Respuesta a la caricia y prendas coleccionables</td>
+              <td><span class="opcode-tag">Afecto Táctil</span></td>
+              <td>Ojos entornados de felicidad luciendo su flor, gorro o pajarita.</td>
             </tr>
             <tr>
-              <td><code>18</code></td>
-              <td><strong>Dormida</strong></td>
-              <td>Reposo seguro sin consumo activo</td>
-              <td><code class="opcode-tag">— (Sin concesión)</code></td>
-              <td>Ojos en arco cerrado, respiración cada 3,6 s.</td>
+              <td><code>08</code></td>
+              <td><strong>Epifanía y Éxito (⭐)</strong></td>
+              <td>Subida de nivel o nueva insignia desbloqueada al cerrar sesión</td>
+              <td><span class="opcode-tag">Celebración</span></td>
+              <td>Estrella luminosa, corona de 12 niveles y lluvia de partículas.</td>
             </tr>
             <tr>
-              <td><code>19</code></td>
-              <td><strong>Llamada</strong></td>
-              <td>Modo Vínculo y recordatorio diario de sesión</td>
-              <td><code class="opcode-tag">CALL (0x05)</code></td>
-              <td>Mirada expectante y anillo exterior pulsante.</td>
+              <td><code>09</code></td>
+              <td><strong>Descanso 20-20-20</strong></td>
+              <td>Ancla Visual Lejana tras 20 minutos de actividad</td>
+              <td><span class="opcode-tag">Salud Visual</span></td>
+              <td>Ojos cerrados con halo activo mientras el menor mira a lo lejos.</td>
             </tr>
             <tr>
-              <td><code>21</code></td>
-              <td><strong>Bloqueada</strong></td>
-              <td>Silencio Clínico en exploraciones diagnósticas (VIA+)</td>
-              <td><code class="opcode-tag">SAFE(1)</code></td>
-              <td>Panel oscurecido y aro perimetral carmesí.</td>
-            </tr>
-            <tr>
-              <td><code>22</code></td>
-              <td><strong>Pictograma</strong></td>
-              <td>Estímulo foniátrico presentado en la mascota</td>
-              <td><code class="opcode-tag">PICTO(índice)</code></td>
-              <td>Ficha de 24×24 en marco turquesa con destellos.</td>
-            </tr>
-            <tr>
-              <td><code>23</code></td>
-              <td><strong>Insignia</strong></td>
-              <td>Colección gamificada: familia y rango alcanzado</td>
-              <td><code class="opcode-tag">AWARD(id)</code></td>
-              <td>Glifo 24×24 con fondo y anillo del rango (1–5).</td>
-            </tr>
-            <tr>
-              <td><code>24</code></td>
-              <td><strong>Nivel</strong></td>
-              <td>Progresión curricular en 12 niveles de dominio</td>
-              <td><code class="opcode-tag">LEVEL(1..12)</code></td>
-              <td>12 segmentos iluminados en el bisel exterior.</td>
+              <td><code>10</code></td>
+              <td><strong>Pictograma e Insignia</strong></td>
+              <td>Ficha visual del ejercicio o medalla alcanzada</td>
+              <td><span class="opcode-tag">Espejo Pedagógico</span></td>
+              <td>Ilustración voxel enmarcada en anillo turquesa o del color del rango.</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- 8 Pure Emotions (AFFECT) Grid -->
+    <!-- 8 Pure Emotions Grid -->
     <div class="emotions-section">
       <div class="section-subhead">
-        <span class="sub-badge text-cyan">Emociones Puras · Opcode 0x06 (AFFECT)</span>
-        <h3 class="subhead-title">8 Estados de Ánimo con Fisiología de Partículas</h3>
+        <span class="sub-badge text-cyan">Vínculo Afectivo · 8 Emociones Puras</span>
+        <h3 class="subhead-title">8 Estados de Ánimo con Dinámica de Partículas</h3>
         <p class="subhead-desc">
-          No miden el acierto del turno: fortalecen el vínculo afectivo. Son emitidas a mano por el acompañante o por hitos de sesión, calculadas mediante un motor de partículas procedimentales.
+          No evalúan el acierto de un ejercicio: fortalecen el vínculo emocional entre el niño, la familia y Lúa con efectos visuales suaves y envolventes.
         </p>
       </div>
 
       <div class="emotions-grid">
         <div class="emotion-card glass-card">
           <div class="emotion-top">
-            <span class="emotion-index">AFFECT(0)</span>
+            <span class="emotion-index">EMOCIÓN 01</span>
             <h4>Alegría</h4>
           </div>
-          <p>Explosión radial continua de partículas que renacen desde el centro de la mascota.</p>
+          <p>Destellos radiales continuos que brotan suavemente alrededor de la mascota.</p>
         </div>
 
         <div class="emotion-card glass-card">
           <div class="emotion-top">
-            <span class="emotion-index">AFFECT(1)</span>
+            <span class="emotion-index">EMOCIÓN 02</span>
             <h4>Amor</h4>
           </div>
-          <p>Lluvia densa y ascendente de corazones que serpentean en zigzag hacia arriba.</p>
+          <p>Estela ascendente de pequeños corazones que acompañan las caricias.</p>
         </div>
 
         <div class="emotion-card glass-card">
           <div class="emotion-top">
-            <span class="emotion-index">AFFECT(2)</span>
+            <span class="emotion-index">EMOCIÓN 03</span>
             <h4>Gratitud</h4>
           </div>
-          <p>Anillo concéntrico de fotones brillantes que convergen suavemente hacia el rostro.</p>
+          <p>Anillo concéntrico de puntos luminosos que convergen con suavidad.</p>
         </div>
 
         <div class="emotion-card glass-card">
           <div class="emotion-top">
-            <span class="emotion-index">AFFECT(3)</span>
+            <span class="emotion-index">EMOCIÓN 04</span>
             <h4>Tranquilidad</h4>
           </div>
-          <p>Onda circular expansiva que respira a compás lento (4 s) alrededor de la gata.</p>
+          <p>Onda circular expansiva que respira a compás pausado de 4 segundos.</p>
         </div>
 
         <div class="emotion-card glass-card">
           <div class="emotion-top">
-            <span class="emotion-index">AFFECT(4)</span>
+            <span class="emotion-index">EMOCIÓN 05</span>
             <h4>Esperanza</h4>
           </div>
-          <p>Fuente de chispas luminosas que ascienden con fuerza parabólica y caen en gravedad.</p>
+          <p>Chispas de luz que ascienden y descienden con movimiento suave.</p>
         </div>
 
         <div class="emotion-card glass-card">
           <div class="emotion-top">
-            <span class="emotion-index">AFFECT(5)</span>
+            <span class="emotion-index">EMOCIÓN 06</span>
             <h4>Orgullo</h4>
           </div>
-          <p>Rayos solares giratorios lentos coronados por dos pilares de luz ascendente.</p>
+          <p>Rayos dorados giratorios que celebran la constancia familiar.</p>
         </div>
 
         <div class="emotion-card glass-card">
           <div class="emotion-top">
-            <span class="emotion-index">AFFECT(6)</span>
+            <span class="emotion-index">EMOCIÓN 07</span>
             <h4>Inspiración</h4>
           </div>
-          <p>Destellos estelares estroboscópicos de alta frecuencia en el tercio superior.</p>
+          <p>Destellos estelares en el tercio superior que despiertan la curiosidad.</p>
         </div>
 
         <div class="emotion-card glass-card">
           <div class="emotion-top">
-            <span class="emotion-index">AFFECT(7)</span>
+            <span class="emotion-index">EMOCIÓN 08</span>
             <h4>Diversión</h4>
           </div>
-          <p>Malla geométrica de triángulos cinéticos que rebotan con inercia contra el bisel.</p>
+          <p>Figuras geométricas de colores que bailan alrededor del bisel circular.</p>
         </div>
       </div>
     </div>
 
-    <!-- 66 Pictograms & 45 Badges in 24x24 Pixel Art -->
+    <!-- 120 Voxel Pictograms & 45 Badges -->
     <div class="pixel-art-catalogue glass-card">
       <div class="catalogue-header">
         <div>
-          <span class="sub-badge text-emerald">Arte Clínico Redibujado</span>
-          <h3 class="catalogue-title">66 Pictogramas y 45 Insignias en Matriz 24×24</h3>
+          <span class="sub-badge text-emerald">Catálogo Gráfico Ampliado en Volumen Isométrico</span>
+          <h3 class="catalogue-title">120 Pictogramas Voxel (33 Colores) y 45 Insignias</h3>
           <p class="catalogue-text">
-            El contenido clínico se rediseñó íntegramente en matrices de 24×24 píxeles con paleta de 21 colores, contorno oscuro y luces propias. En la pantalla circular de 32 mm se renderizan a 3 px por celda (72 px de los 240), permitiendo máxima legibilidad sin competir con la gata.
+            El repertorio visual incluye 120 fichas ilustradas en estilo voxel isométrico con luces y sombras propias (animales, hogar, naturaleza, emociones, pares mínimos y léxico cultural hispanohablante), además de 9 familias de insignias en 5 rangos y 5 prendas coleccionables del armario de Lúa.
           </p>
         </div>
       </div>
 
       <div class="catalogue-stats-row">
         <div class="c-stat">
-          <span class="c-stat-val">66</span>
-          <span class="c-stat-label">Pictogramas Clínicos de Fonética y Vocabulario</span>
+          <span class="c-stat-val">120</span>
+          <span class="c-stat-label">Pictogramas en Arte Voxel Isométrico (33 Colores)</span>
         </div>
         <div class="c-stat">
           <span class="c-stat-val">9 × 5</span>
-          <span class="c-stat-label">Insignias (9 Familias × 5 Rangos de Dominio)</span>
+          <span class="c-stat-label">45 Insignias (9 Familias × 5 Rangos de Evolución)</span>
         </div>
         <div class="c-stat">
           <span class="c-stat-val">5 Rangos</span>
@@ -267,7 +246,7 @@
         </div>
         <div class="c-stat">
           <span class="c-stat-val">12 Niveles</span>
-          <span class="c-stat-label">Segmentos de Corona en Bisel Circular</span>
+          <span class="c-stat-label">Corona Luminosa de Progreso en el Bisel Circular</span>
         </div>
       </div>
     </div>

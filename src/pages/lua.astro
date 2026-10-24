@@ -6,14 +6,14 @@ import ContactModal from '../components/cv/ContactModal.astro';
 
 import LuaHero from '../components/lua/LuaHero.astro';
 import LuaClinicalObjectives from '../components/lua/LuaClinicalObjectives.astro';
+import LuaProtocolTable from '../components/lua/LuaProtocolTable.astro';
 import LuaExpressionsGallery from '../components/lua/LuaExpressionsGallery.astro';
 import LuaEcosystemIntegration from '../components/lua/LuaEcosystemIntegration.astro';
-import LuaProtocolTable from '../components/lua/LuaProtocolTable.astro';
 import LuaArchitecture from '../components/lua/LuaArchitecture.astro';
 import LuaCTA from '../components/lua/LuaCTA.astro';
 
-const pageTitle = "Lúa · Mascota AIoT para Rehabilitación Pediátrica y Consulta";
-const pageDescription = "Mascota física AIoT (ESP32-C3, IPS circular 240×240, BLE 5.0) para Valeria+ y VIA+. Prototipada y validada tecnológicamente en la incubadora startTIC.";
+const pageTitle = "Lúa · Compañera Física Interactiva, Juego STEAM y Realidad Aumentada";
+const pageDescription = "Mascota física con visor circular integrado, sets de bloques manipulativos (EN 71-1) y Realidad Aumentada Zero-PHI para Valeria+, Descubre con Lúa y VIA+. Incubada en startTIC.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -21,42 +21,42 @@ const jsonLd = {
     {
       "@type": "Product",
       "@id": "https://FrankBetances.github.io/proyectos/lua#product",
-      "name": "Lúa (Mascota Física AIoT)",
+      "name": "Lúa (Compañera Física Interactiva, Juego STEAM y Realidad Aumentada)",
       "description": pageDescription,
       "brand": {
         "@type": "Organization",
         "name": "Earlify Health S.L."
       },
-      "category": "Medical Device Accessory & Pediatric Neurodevelopment Hardware",
+      "category": "Pediatric Neurodevelopment Companion & STEAM Manipulative System",
       "manufacturer": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
-        "jobTitle": "ORL & Especialista en Salud Digital"
+        "jobTitle": "ORL Infantil & Especialista en Salud Digital"
       },
       "audience": {
-        "@type": "Patient",
-        "healthCondition": "Hipoacusia, Trastornos del Lenguaje y Neurodesarrollo Pediátrico"
+        "@type": "Audience",
+        "audienceType": "Familias, Escuelas Infantiles (0-6 años) y Consultas de Otorrinolaringología y Logopedia Pediátrica"
       },
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Microcontroller",
-          "value": "ESP32-C3 (RISC-V 160MHz)"
+          "name": "PhysicalFormat",
+          "value": "Figura de cuerpo entero sin motores ni piezas móviles con visor circular integrado (240x240 px)"
         },
         {
           "@type": "PropertyValue",
-          "name": "Display",
-          "value": "240x240 IPS Circular GC9A01"
+          "name": "ManipulativeSystem",
+          "value": "Sets de bloques de gran formato (> 31,75 mm, norma europea EN 71-1) y Realidad Aumentada Zero-PHI"
         },
         {
           "@type": "PropertyValue",
-          "name": "Connectivity",
-          "value": "Bluetooth LE 5.0 (Zero-PHI Binary Protocol)"
+          "name": "VisualCatalogue",
+          "value": "25 expresiones faciales, 8 emociones puras, 120 pictogramas voxel y 45 insignias"
         },
         {
           "@type": "PropertyValue",
           "name": "Microphone",
-          "value": "None (Zero Acoustic Interference / Zero-PHI)"
+          "value": "None (Cero micrófonos por diseño físico · Privacidad Zero-PHI)"
         },
         {
           "@type": "PropertyValue",
@@ -72,7 +72,7 @@ const jsonLd = {
 <Layout 
   title={pageTitle}
   description={pageDescription}
-  keywords="Mascota Lúa, Mascota AIoT, ESP32-C3, GC9A01, startTIC, Gradiant, Zona Franca de Vigo, Rehabilitación del Lenguaje, Valeria+, VIA+ SaMD, Silencio Clínico, Zero-PHI, Refuerzo Conductual Pediátrico, Dr. Frank Betances"
+  keywords="Mascota Lúa, Compañera Física Pediátrica, Juguete STEAM Infantil, Bloques Manipulativos EN 71-1, Realidad Aumentada Pediátrica, startTIC, Gradiant, Zona Franca de Vigo, Valeria+, Descubre con Lúa, Lúa Construye, VIA+ SaMD, Silencio Clínico, Zero-PHI, Dr. Frank Betances"
   jsonLd={jsonLd}
 >
   <Header activeTab="lua" />
@@ -80,9 +80,9 @@ const jsonLd = {
   <main id="main-content">
     <LuaHero />
     <LuaClinicalObjectives />
+    <LuaProtocolTable />
     <LuaExpressionsGallery />
     <LuaEcosystemIntegration />
-    <LuaProtocolTable />
     <LuaArchitecture />
     <LuaCTA />
   </main>

@@ -8,22 +8,25 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   <div class="container">
     <div class="cta-card glass-card">
       <div class="cta-content">
-        <span class="cta-badge">Open Science & Hardware Determinista</span>
-        <h2 class="cta-title">Desarrollado en Abierto para la Salud Digital Pediátrica</h2>
+        <span class="cta-badge">Información, Pilotos y Demostraciones</span>
+        <h2 class="cta-title">¿Quieres llevar a Lúa y sus sets STEAM + AR a tu centro o a casa?</h2>
         <p class="cta-description">
-          El firmware completo de Lúa, su máquina de estados, el emulador de escritorio y los generadores de arte viven en GitHub con paridad estricta con Valeria+ y VIA+.
+          Si formas parte de una clínica, hospital, centro de atención temprana, escuela infantil, institución educativa o fondo de inversión y deseas conocer de cerca la compañera física Lúa y sus sets de bloques manipulativos, contacta directamente con el Dr. Frank Betances.
         </p>
 
         <div class="cta-actions">
-          <a href="https://github.com/FrankBetances/lua-firmware" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            <span>Ver Repositorio lua-firmware</span>
+          <button type="button" class="btn btn-primary" data-open-contact>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>Contactar con el Dr. Frank Betances</span>
+          </button>
+          <a href={`${baseUrl}/construye-con-lua`} class="btn btn-secondary">
+            <span>Explorar Lúa Construye</span>
           </a>
           <a href={`${baseUrl}/`} class="btn btn-secondary">
             <span>Conoce Valeria+</span>
           </a>
-          <a href={`${baseUrl}/via`} class="btn btn-secondary">
-            <span>Conoce VIA+ (SaMD)</span>
+          <a href={`${baseUrl}/earlify`} class="btn btn-secondary">
+            <span>Ecosistema Earlify Health</span>
           </a>
         </div>
       </div>
@@ -48,7 +51,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .cta-content {
-    max-width: 780px;
+    max-width: 820px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -99,6 +102,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     font-size: 0.95rem;
     font-weight: 700;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
     transition: all 0.3s ease;
   }
 
