@@ -1,13 +1,13 @@
 ---
 const techItems = [
-  { category: "Frontend / Mobile Core", stack: "React Native 0.81.5 · TypeScript 5.4 · Gluestack UI v1 · Lucide Icons · Reanimated" },
-  { category: "Persistencia Local & Datos", stack: "TypeORM 0.3.x · Nitro SQLite (driver síncrono C++) · Offline-first estricto" },
-  { category: "Audio DSP & Sonómetro", stack: "react-native-audio-api (Oboe / AudioContext 48 kHz) · Ponderación A con estado (IEC 61672)" },
-  { category: "Validación Acústica Praat", stack: "LPC orden 20 · Pasa-alto 55 Hz · Jitter/Shimmer ciclo a ciclo vs Praat (tools/acoustics)" },
-  { category: "Voz Neuronal (Build-time)", stack: "Piper · Coqui TTS (Proxecto Nós) · AhoTTS (HiTZ) · Matxa-TTS (AINA/BSC) · ffmpeg loudnorm" },
-  { category: "Internacionalización UI", stack: "Catálogo tipado propio en src/I18n/ (7 lenguas) · Cambio de idioma en caliente · Gate check-ui-strings" },
-  { category: "Hardware BLE & Sensores", stack: "react-native-ble-plx (Pulsioxímetro SpO₂ 0x1822 + enlace GATT periférico Lúa)" },
-  { category: "Informes & Telemetría", stack: "pdf-lib (informes estructurados) · lz-string · react-native-qrcode-svg (Zero-PHI ecl Q)" }
+  { category: "Estación Clínica Homologada", stack: "Tableta médica de 11\" (IP68) llave en mano · Modo Kiosco MDM bloqueado · Carcasa de silicona médica lavable" },
+  { category: "Calibración Electroacústica", stack: "Curva de transferencia en cámara anecoica vs sonómetro Clase 1 · Conversión dB SPL ↔ dB HL sellada · Micrófono en modo crudo" },
+  { category: "Audio DSP & Sonómetro", stack: "Captura PCM a 48 kHz · Síntesis tonal de baja latencia · Sonómetro en dB(A) con ponderación A (IEC 61672), LAeq y percentiles" },
+  { category: "Validación Acústica Praat", stack: "Análisis LPC de orden 20 · Jitter y Shimmer ciclo a ciclo · F0, HNR y formantes F1–F3 contrastados frente a Praat" },
+  { category: "Motor NLG Determinista", stack: "Síntesis clínica combinatoria trazable sin IA generativa · Borrador editable supervisado · Firma digital colegiada en PDF" },
+  { category: "Voz Neuronal & 7 Lenguas", stack: "421 locuciones pre-sintetizadas (Proxecto Nós, HiTZ, AINA, Quisqueya Habla) · Interfaz reactiva en 7 variedades" },
+  { category: "Cifrado & Persistencia Local", stack: "Base de datos relacional local 100% offline · Cifrado en reposo respaldado por hardware · Consentimiento bloqueante" },
+  { category: "Sensores BLE & Telemetría", stack: "Pulsioximetría inalámbrica (SpO₂ en MECV-V) · Silencio clínico en periférico Lúa · Telemetría QR Zero-PHI (IEC 62366-1)" }
 ];
 ---
 

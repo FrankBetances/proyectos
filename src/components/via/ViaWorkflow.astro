@@ -28,15 +28,15 @@ const steps = [
     num: "4",
     title: "Pre-screening Clínico (CAP)",
     icon: "📋",
-    desc: "Certificado de Aptitud para la Prueba: checklist de 4 capacidades. Si alguna no se cumple, bloquea la batería y sugiere métodos alternativos.",
-    badge: "Aptitud Verificada",
+    desc: "Certificado de Aptitud para la Prueba en 4 dominios (Otoscopia por oído, Visual, Verbal por edad y Motora fina). Emite veredicto graduado (Completo, Parcial o Bloqueado).",
+    badge: "Otoscopia & Aptitud",
     badgeColor: "rose"
   },
   {
     num: "5",
     title: "Sonómetro de Sala & Hub",
     icon: "🎛️",
-    desc: "Comprobación del nivel de ruido en dB(A) (LAeq ≤ 45 dB), acceso a diagnóstico de audio y selección entre 7 lenguas de sesión.",
+    desc: "Comprobación del nivel de ruido en dB(A) (LAeq ≤ 45 dB), diagnóstico de cadena de audio en 4 escuchas y selección entre 7 lenguas de sesión.",
     badge: "Gate de Ruido & Idioma",
     badgeColor: "amber"
   },
@@ -44,33 +44,33 @@ const steps = [
     num: "6",
     title: "Batería de 13 Módulos",
     icon: "🎮",
-    desc: "Evaluación gamificada interactiva. El Modo Niño ofrece una interfaz lúdica; el clínico supervisa con mediciones deterministas y controles simultáneos.",
+    desc: "Evaluación gamificada interactiva. El Modo Niño ofrece una interfaz lúdica sin elementos clínicos visibles; el facultativo supervisa con mediciones deterministas.",
     badge: "13 Módulos",
     badgeColor: "emerald"
   },
   {
     num: "7",
-    title: "Resultados & Telemetría QR",
-    icon: "📊",
-    desc: "Panel de resultados con semáforo clínico, generación de informe PDF estructurado y código QR de telemetría de usabilidad Zero-PHI (IEC 62366-1).",
-    badge: "PDF + QR Anónimo",
+    title: "Síntesis NLG & Informe Firmado",
+    icon: "🧾",
+    desc: "El motor NLG determinista redacta el pre-informe clínico (PTA, voz, ASHA, otoscopia). El facultativo revisa y edita el borrador, lo firma en pantalla y genera el PDF.",
+    badge: "NLG + Firma Colegiada",
     badgeColor: "cyan"
   },
   {
     num: "8",
-    title: "Archivo y Seguimiento",
+    title: "Archivo Local & Telemetría QR",
     icon: "🗂️",
-    desc: "Persistencia local en el dispositivo del historial longitudinal de sesiones anteriores para seguimiento evolutivo del paciente.",
-    badge: "Historial Clínico",
+    desc: "Persistencia cifrada en el dispositivo para seguimiento evolutivo longitudinal y exportación opcional de telemetría de usabilidad en QR anónimo (Zero-PHI).",
+    badge: "Historial & QR Zero-PHI",
     badgeColor: "purple"
   }
 ];
 
 const capItems = [
-  { label: "Capacidad Visual", detail: "Identificación clara de estímulos gráficos y tarjetas de conjunto cerrado en la pantalla." },
-  { label: "Motora Fina", detail: "Capacidad de interacción táctil (pulsación precisa, arrastre y silbato en tablet)." },
-  { label: "Auditiva Periférica", detail: "Percepción basal suficiente para recibir consignas locutadas en la sala." },
-  { label: "Estado Cognitivo", detail: "Alerta, colaboración y nivel de atención mínimos requeridos para tareas lúdicas." }
+  { label: "1. Otoscopia por Oído", detail: "Registra Normal, Cerumen, OMA, OME, Perforación o DTT. El tapón de cerumen, OMA o perforación bloquean selectivamente la audiometría de ese oído." },
+  { label: "2. Capacidad Visual", detail: "Verifica fijación de la mirada, distinción de dos imágenes en pantalla, señalamiento y ausencia de nistagmo marcado." },
+  { label: "3. Comprensión Verbal por Edad", detail: "Ítems escalonados en 3 franjas (18m–2a11m, 3–4a11m y ≥5 años), desde responder a su nombre hasta comprender la tarea tras demostración." },
+  { label: "4. Motricidad Fina", detail: "Comprueba pulsación en objetivo ≥ 4 cm, distinción entre dos zonas táctiles, arrastre ≥ 3 cm y ausencia de movimientos involuntarios severos." }
 ];
 ---
 
@@ -119,7 +119,7 @@ const capItems = [
       </div>
       
       <div class="cap-footnote">
-        <em>*Excepción clínica:</em> El cribado de disfagia MECV-V no requiere CAP ni sonómetro de sala (el consentimiento informado sí es preceptivo).
+        <em>*Veredicto graduado:</em> Un hallazgo parcial en el CAP no cancela toda la sesión, sino que deshabilita únicamente las pruebas que ese hallazgo invalida (por ejemplo, audiometría ipsilateral ante tapón de cerumen u otitis media aguda).
       </div>
     </div>
   </div>

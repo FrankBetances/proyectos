@@ -53,12 +53,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
             </div>
             <div>
               <h3>Valeria+</h3>
-              <span class="badge badge-purple">Terapia en el Hogar</span>
+              <span class="badge badge-purple">App Educativa en Casa</span>
             </div>
           </div>
-          <span class="eco-role">Rehabilitación del Lenguaje y Adherencia</span>
+          <span class="eco-role">Formación Familiar y Práctica Diaria</span>
           <p>
-            Aplicación terapéutica offline para niñas y niños con dificultades del habla o hipoacusia: 9 bloques de ejercicios, protocolo con familias y formación en Academy.
+            Aplicación educativa 100% offline y sin servidor para acompañar el lenguaje en casa entre sesiones: abre en Academy (2 min) y ofrece 10 bloques de juego y rutinas con Lúa.
           </p>
           <a href={`${baseUrl}/`} class="eco-link">Conocer Valeria+ →</a>
         </div>
@@ -84,15 +84,25 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
             </div>
             <div>
               <h3>Lúa</h3>
-              <span class="badge badge-orange">Hardware AIoT</span>
+              <span class="badge badge-orange">Periférico Físico</span>
             </div>
           </div>
-          <span class="eco-role">Mascota Física y Silencio Clínico</span>
+          <span class="eco-role">Silencio Clínico y Recompensa al Cierre</span>
           <p>
-            En consulta con VIA+, permanece en estricto <strong>Silencio Clínico</strong> durante la exploración para no contaminar el acto médico; en Valeria+, es el espejo visual del estímulo.
+            En consulta con VIA+, permanece ausente o en estricto <strong>Silencio Clínico</strong> durante las mediciones para no interferir en el acto médico, celebrando únicamente al cerrar la sesión.
           </p>
           <a href={`${baseUrl}/lua`} class="eco-link">Conocer Lúa (Hardware) →</a>
         </div>
+      </div>
+
+      <div class="via-contact-cta">
+        <div class="cta-text-col">
+          <h3>¿Interesado en implantar VIA+ en tu servicio hospitalario o clínica?</h3>
+          <p>Solicita una demostración de la estación clínica llave en mano, el protocolo de validación acústica o información para estudios multicéntricos.</p>
+        </div>
+        <button type="button" data-open-contact class="btn-via-contact">
+          <span>Contactar con el Dr. Frank Betances</span>
+        </button>
       </div>
     </div>
   </div>
@@ -264,6 +274,60 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: flex;
     align-items: center;
     color: var(--text-dim);
+  }
+
+  .via-contact-cta {
+    margin-top: 2.75rem;
+    padding: 2rem 2.25rem;
+    border-radius: var(--radius-lg);
+    background: rgba(2, 6, 23, 0.65);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-text-col {
+    flex: 1;
+    min-width: 260px;
+  }
+
+  .cta-text-col h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 0.4rem 0;
+  }
+
+  .cta-text-col p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .btn-via-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.85rem;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+    color: #040914;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.98rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 242, 254, 0.35);
+    transition: all 0.25s ease;
+  }
+
+  .btn-via-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 242, 254, 0.55);
   }
 
   @media (max-width: 900px) {

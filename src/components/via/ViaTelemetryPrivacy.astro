@@ -19,39 +19,38 @@
             <h4>Aislamiento Estructural Zero-PHI</h4>
           </div>
           <p>
-            El payload contiene únicamente un <code>sessionId</code> aleatorio de 8 caracteres (base36), los tiempos por reactivo y el Likert del profesional. 
-            No existe campo para NHC, nombre ni identificadores reidentificables.
+            El registro de usabilidad contiene únicamente un identificador efímero aleatorio de sesión, los tiempos de respuesta por reactivo y la valoración Likert del facultativo. 
+            No existe ningún campo para historia clínica, nombre ni datos del menor.
           </p>
         </div>
 
         <div class="feature-box">
           <div class="f-top">
             <span class="f-icon">⚡</span>
-            <h4>Hook Silencioso en Memoria</h4>
+            <h4>Captura Silenciosa en Memoria</h4>
           </div>
           <p>
-            Implementado mediante <code>useTelemetryTracker</code> con <code>useRef</code> puro: <strong>cero re-renders</strong> en la interfaz React Native. El estado vive en un singleton efímero en memoria que no toca la base clínica.
+            Diseñada con impacto cero sobre la fluidez gráfica de las pruebas a 60 fps. El estado de usabilidad vive en memoria volátil separada por completo de la base de datos clínica.
           </p>
         </div>
 
         <div class="feature-box">
           <div class="f-top">
-            <span class="f-icon">📦</span>
-            <h4>Compresión Extrema LZString</h4>
+            <span class="f-icon">🛡️</span>
+            <h4>Almacenamiento Cifrado por Hardware</h4>
           </div>
           <p>
-            Compresión ASCII URL-safe mediante <code>LZString.compressToEncodedURIComponent</code>. 
-            Reduce el payload un <strong>~32% frente a JSON crudo</strong> y un <strong>~49% frente a Base64</strong> (1 byte por carácter en el QR).
+            En el modelo de tableta homologada en modo kiosco, los resultados de las evaluaciones y las muestras acústicas permanecen en reposo bajo protección criptográfica de hardware.
           </p>
         </div>
 
         <div class="feature-box">
           <div class="f-top">
             <span class="f-icon">📷</span>
-            <h4>Exportación con QR Anónimo</h4>
+            <h4>Exportación en Código QR Anónimo</h4>
           </div>
           <p>
-            Al finalizar la sesión y marcar la escala Likert (1–5), la pantalla revela un código QR con corrección de errores del 25% (<code>ecl='Q'</code>) para escaneo rápido por el equipo de calidad.
+            Al concluir la batería y registrar la escala de facilidad de uso (Likert 1–5), se genera un código QR compacto de alta densidad para auditoría de calidad (IEC 62366-1) sin conexión a red.
           </p>
         </div>
       </div>
@@ -61,15 +60,15 @@
         <div class="p-item">
           <span class="p-dot local"></span>
           <div>
-            <strong>Datos Clínicos y Grabaciones:</strong>
-            <span>100% Locales en SQLite del dispositivo (nunca tocan la nube).</span>
+            <strong>Datos Clínicos y Muestras Acústicas:</strong>
+            <span>100% locales y cifrados en el dispositivo homologado (jamás se suben a la nube).</span>
           </div>
         </div>
         <div class="p-item">
           <span class="p-dot cloud"></span>
           <div>
-            <strong>Identidad del Profesional:</strong>
-            <span>Firebase Auth + Firestore <code>professionals/&#123;uid&#125;</code> (cifrado TLS 1.3).</span>
+            <strong>Acreditación del Facultativo:</strong>
+            <span>Identidad profesional verificada y perfil colegiado con cifrado TLS 1.3.</span>
           </div>
         </div>
       </div>

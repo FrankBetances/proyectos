@@ -11,10 +11,11 @@ import ViaLanguages from '../components/via/ViaLanguages.astro';
 import ViaTelemetryPrivacy from '../components/via/ViaTelemetryPrivacy.astro';
 import ViaTechStack from '../components/via/ViaTechStack.astro';
 import ViaEcosystem from '../components/via/ViaEcosystem.astro';
+import ContactModal from '../components/cv/ContactModal.astro';
 import Footer from '../components/Footer.astro';
 
-const pageTitle = "VIA+ · Software Médico SaMD Clase IIa (13 Módulos & 7 Lenguas)";
-const pageDescription = "Software como Dispositivo Médico (SaMD Clase IIa, MDR 2017/745) para apoyo diagnóstico en audiología pediátrica, análisis de voz con Praat, disfagia, neurodesarrollo e hitos ASHA.";
+const pageTitle = "VIA+ · Software Médico SaMD Clase IIa Llave en Mano (13 Módulos & 7 Lenguas)";
+const pageDescription = "Software como Dispositivo Médico (SaMD Clase IIa, MDR 2017/745) entregado llave en mano en tableta clínica homologada en modo kiosco con calibración acústica de fábrica y motor NLG determinista.";
 
 const viaJsonLd = {
   "@context": "https://schema.org",
@@ -23,9 +24,9 @@ const viaJsonLd = {
       "@type": "SoftwareApplication",
       "@id": "https://FrankBetances.github.io/proyectos/via#software",
       "name": "VIA+ (Valoración Interactiva de Audición y Lenguaje)",
-      "softwareVersion": "2.4",
+      "softwareVersion": "3.0",
       "applicationCategory": "MedicalApplication",
-      "operatingSystem": "iOS, Android",
+      "operatingSystem": "Estación Clínica Homologada en Modo Kiosco",
       "description": pageDescription,
       "author": {
         "@type": "Person",
@@ -43,22 +44,23 @@ const viaJsonLd = {
         "audienceType": ["Physician", "Otorhinolaryngologist", "Audiologist", "Speech Language Pathologist", "Pediatrician"]
       },
       "featureList": [
+        "SaMD Clase IIa entregado llave en mano sobre tableta clínica homologada en modo kiosco bloqueado",
+        "Calibración electroacústica sellada de fábrica en cámara anecoica frente a sonómetro Clase 1",
+        "Motor NLG determinista para informes clínicos sin alucinaciones con borrador supervisado y firma colegiada",
         "13 módulos de evaluación clínica y neurodesarrollo adaptados a la infancia",
-        "Pre-screening clínico CAP (Certificado de Aptitud para la Prueba) bloqueante",
-        "Sonómetro Ambiental en dB(A) con ponderación A con estado (IEC 61672)",
-        "Audiometría Tonal liminar (Hughson-Westlake) y Condicionada (El Tren del Sonido)",
-        "Análisis Acústico de Voz (F0, jitter, shimmer, HNR) contrastado matemáticamente contra Praat",
-        "Test de Disfagia MECV-V con pulsioximetría BLE (perfil 0x1822) para desaturación SpO₂",
-        "Cribado de Autismo M-CHAT-R/F y SAHS Infantil (PSQ de Chervin)",
-        "Articulación fonética T.A.R. (registro SODA) con modelo hablado y reconocedor local",
-        "Logoaudiometría Verbal en campo libre con 7 lenguas de sesión registradas",
+        "Pre-screening clínico CAP con otoscopia por oído y veredicto graduado (Completo, Parcial o Bloqueado)",
+        "Sonómetro Ambiental en dB(A) con ponderación A (IEC 61672), LAeq y percentiles",
+        "Audiometría Tonal liminar (Hughson-Westlake) y Condicionada (El Tren del Sonido) con cálculo de PTA",
+        "Análisis Acústico de Voz (F0, jitter, shimmer ciclo a ciclo, HNR y LPC orden 20) validado contra Praat",
+        "Test de Disfagia MECV-V con pulsioximetría BLE para detección de desaturación SpO₂",
+        "Cribado de Autismo M-CHAT-R/F y SAHS Infantil (PSQ de Chervin + Brodsky)",
+        "Articulación fonética T.A.R. (registro SODA) con 86 ítems propios por variedad",
+        "Logoaudiometría Verbal en campo libre con 7 variedades lingüísticas",
         "Funciones Ejecutivas con 5 mini-juegos estructurados por franjas de edad",
-        "Análisis Prosódico descriptivo sobre habla conectada espontánea",
+        "Análisis Prosódico descriptivo sobre habla conectada",
         "Cribado normativo de Hitos del Lenguaje ASHA (0 a 5 años) con 8 banderas rojas",
-        "Principio de Cero IA en el dispositivo (modelos neuronales confinados a build-time)",
-        "Telemetría de usabilidad Zero-PHI con código QR anónimo (IEC 62366-1)",
-        "Operación 100% offline y persistencia local en SQLite",
-        "Integración con mascota física Lúa (ESP32-C3) bajo estricto silencio clínico durante la exploración"
+        "Principio de Cero IA en el dispositivo y almacenamiento local cifrado por hardware",
+        "Telemetría de usabilidad Zero-PHI con código QR anónimo (IEC 62366-1)"
       ]
     },
     {
@@ -131,4 +133,5 @@ const viaJsonLd = {
 		<ViaEcosystem />
 	</main>
 	<Footer />
+	<ContactModal />
 </Layout>

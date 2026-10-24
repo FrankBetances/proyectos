@@ -26,6 +26,24 @@ const domains = [
   }
 ];
 
+const turnkeyFeatures = [
+  {
+    title: "Tableta Clínica Homologada en Modo Kiosco",
+    badge: "Hardware Llave en Mano",
+    desc: "Se entrega cerrado y preconfigurado en un único modelo de tableta de 11\" (IP68) con aislamiento MDM (arranque directo en VIA+, bloqueo de navegación y puertos) y carcasa de silicona médica desinfectable con clorhexidina o alcohol al 70%."
+  },
+  {
+    title: "Calibración Electroacústica en Cámara Anecoica",
+    badge: "dB SPL ↔ dB HL Sellado",
+    desc: "Al fijar un único hardware de referencia, la curva de transferencia acústica se mide en cámara anecoica frente a sonómetro patrón Clase 1 y se sella en origen, bloqueando el micrófono en modo crudo sin procesado del sistema."
+  },
+  {
+    title: "Motor NLG Determinista para Informes",
+    badge: "Cero Alucinaciones",
+    desc: "En lugar de modelos generativos impredecibles, redacta una síntesis clínica trazable mediante lógica combinatoria (PTA según BIAP/OMS, validación de otoscopia del CAP, F0/jitter y banderas rojas ASHA) con borrador editable y firma colegiada."
+  }
+];
+
 const restrictions = [
   { text: "Emitir diagnósticos automatizados sin validación médica", reason: "Requeriría clasificación SaMD Clase III; VIA+ actúa como CDSS de apoyo" },
   { text: "Sustituir el juicio clínico del profesional sanitario", reason: "Herramienta de ayuda a la decisión clínica, nunca de reemplazo facultativo" },
@@ -38,9 +56,9 @@ const restrictions = [
 <section id="que-es-via" class="via-overview section-padding">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Definición & Alcance Clínico</span>
+      <span class="tag">Definición & Entrega Llave en Mano</span>
       <h2>¿Qué es <span class="gradient-text">VIA+</span>?</h2>
-      <p>Herramienta de apoyo a la decisión clínica (CDSS) que opera sobre tablets iOS/Android bajo la supervisión directa del facultativo especialista.</p>
+      <p>Software como Dispositivo Médico (SaMD Clase IIa) de apoyo a la decisión clínica (CDSS), entregado llave en mano sobre tableta homologada en modo kiosco bajo supervisión directa del facultativo especialista.</p>
     </div>
 
     <div class="domains-grid">
@@ -54,6 +72,24 @@ const restrictions = [
           <p>{d.desc}</p>
         </div>
       ))}
+    </div>
+
+    <!-- Turnkey COTS & Deterministic NLG Showcase -->
+    <div class="glass-card turnkey-box">
+      <div class="turnkey-header">
+        <span class="badge badge-purple">Arquitectura Clínica Homologada</span>
+        <h3>SaMD sobre Hardware Homologado (Llave en Mano) + Motor NLG</h3>
+        <p>Resuelve la variabilidad acústica y la seguridad hospitalaria entregando software y estación clínica precalibrada como una unidad indivisible:</p>
+      </div>
+      <div class="turnkey-grid">
+        {turnkeyFeatures.map((tf) => (
+          <div class="turnkey-item">
+            <span class="badge badge-cyan">{tf.badge}</span>
+            <h4>{tf.title}</h4>
+            <p>{tf.desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
 
     <!-- Restrictions Section -->
@@ -138,6 +174,65 @@ const restrictions = [
 
   .domain-card p {
     font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Turnkey Box */
+  .turnkey-box {
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(8, 47, 73, 0.3) 100%);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+  }
+
+  .turnkey-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .turnkey-header h3 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0.75rem 0 0.5rem 0;
+  }
+
+  .turnkey-header p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .turnkey-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .turnkey-item {
+    background: rgba(2, 6, 23, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  .turnkey-item h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .turnkey-item p {
+    font-size: 0.88rem;
     color: var(--text-muted);
     line-height: 1.55;
     margin: 0;
