@@ -51,7 +51,7 @@ const viaJsonLd = {
         "Pre-screening clínico CAP con otoscopia por oído y veredicto graduado (Completo, Parcial o Bloqueado)",
         "Sonómetro Ambiental en dB(A) con ponderación A (IEC 61672), LAeq y percentiles",
         "Audiometría Tonal liminar (Hughson-Westlake) y Condicionada (El Tren del Sonido) con cálculo de PTA",
-        "Análisis Acústico de Voz (F0, jitter, shimmer ciclo a ciclo, HNR y LPC orden 20) validado contra Praat",
+        "Análisis Acústico de Voz (F0, jitter, shimmer ciclo a ciclo y HNR) validado frente a estándares de fonética clínica",
         "Test de Disfagia MECV-V con pulsioximetría BLE para detección de desaturación SpO₂",
         "Cribado de Autismo M-CHAT-R/F y SAHS Infantil (PSQ de Chervin + Brodsky)",
         "Articulación fonética T.A.R. (registro SODA) con 86 ítems propios por variedad",
@@ -80,7 +80,7 @@ const viaJsonLd = {
           "name": "¿Qué significa que VIA+ aplica el principio de 'Cero IA en el dispositivo'?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Significa que la aplicación no utiliza modelos de inteligencia artificial de 'caja negra' en tiempo real. Todas las mediciones acústicas y algoritmos de evaluación son matemáticamente deterministas, auditables y validados (como contra el estándar Praat), lo que garantiza máxima fiabilidad y cumplimiento con el Reglamento de IA de la UE."
+            "text": "Significa que la aplicación no utiliza modelos de inteligencia artificial de 'caja negra' en tiempo real. Todas las mediciones acústicas y algoritmos de evaluación son matemáticamente deterministas, auditables y validados frente a estándares de fonética clínica, lo que garantiza máxima fiabilidad y cumplimiento con el Reglamento de IA de la UE."
           }
         },
         {
@@ -96,7 +96,7 @@ const viaJsonLd = {
           "name": "¿Cómo protege la privacidad de los niños y sus datos de salud?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Todos los datos clínicos y grabaciones de audio se guardan exclusivamente en la memoria local de la tablet (SQLite) y nunca se suben a la nube. La telemetría de usabilidad es anónima (Zero-PHI) y se exporta mediante un código QR sin internet."
+            "text": "Todos los datos clínicos y grabaciones de audio se guardan exclusivamente en la memoria local cifrada de la estación clínica y nunca se suben a la nube. La telemetría de usabilidad es anónima (Zero-PHI) y se exporta mediante un código QR sin internet."
           }
         },
         {
@@ -116,7 +116,7 @@ const viaJsonLd = {
 <Layout 
 	title={pageTitle}
 	description={pageDescription}
-	keywords="VIA+, SaMD, Dispositivo Médico Clase IIa, MDR 2017/745, Audiología Pediátrica, Logoaudiometría, Análisis Acústico de Voz Praat, Disfagia MECV-V, M-CHAT-R, Hitos ASHA, Telemetría Zero-PHI, Dr. Frank Betances, Earlify Health"
+	keywords="VIA+, SaMD, Dispositivo Médico Clase IIa, MDR 2017/745, Audiología Pediátrica, Logoaudiometría, Análisis Acústico de Voz, Disfagia MECV-V, M-CHAT-R, Hitos ASHA, Telemetría Zero-PHI, Dr. Frank Betances, Earlify Health"
 	jsonLd={viaJsonLd}
 >
 	<Header activeTab="via" />

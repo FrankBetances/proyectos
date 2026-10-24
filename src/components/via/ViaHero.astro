@@ -4,296 +4,129 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : import.meta.env.BASE_URL;
 ---
 
-<!-- 320vh Sticky Scroll Hero Section for VIA+ inspired by Creating-Oneshot-Hero-Landing-Pages -->
-<section id="via-hero-scrub" class="hero-scrub-container">
-  <div class="hero-sticky-viewport">
-    
-    <!-- Deep Ambient Glow & Clinical Backdrop Graphic with Parallax -->
-    <div class="hero-background-canvas" aria-hidden="true">
-      <div id="via-hero-bg-stage" class="hero-clinical-bg-stage">
+<section id="via-hero" class="via-hero-section">
+  <!-- Ambient Glow & Clinical Backdrop -->
+  <div class="hero-background-canvas" aria-hidden="true">
+    <div class="hero-clinical-bg-stage">
+      <img 
+        src={`${baseUrl}/assets/via-hero-bg.jpg?v=1`} 
+        alt="Consulta pediátrica con estación clínica mostrando análisis acústico y audiometría junto a especialista y paciente" 
+        class="clinical-artwork-img"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="clinical-overlay-gradient"></div>
+    </div>
+    <div class="glow-orb orb-cyan"></div>
+    <div class="glow-orb orb-blue"></div>
+    <div class="glow-orb orb-emerald"></div>
+    <div class="hero-grid-pattern"></div>
+  </div>
+
+  <div class="container hero-content-wrapper">
+    <!-- Top Intro Block -->
+    <div class="hero-top-intro">
+      <div class="via-app-icon-wrapper">
         <img 
-          src={`${baseUrl}/assets/via-hero-bg.jpg?v=1`} 
-          alt="Consulta pediátrica con tablet médica mostrando análisis acústico y audiometría junto a especialista y paciente" 
-          class="clinical-artwork-img"
-          width="1920"
-          height="1080"
+          src={`${baseUrl}/assets/via-logo.png`} 
+          alt="Logo Oficial de VIA+ (SaMD Clase IIa)" 
+          class="via-brand-icon" 
           loading="eager"
           fetchpriority="high"
         />
-        <div class="clinical-overlay-gradient"></div>
       </div>
-      <div class="glow-orb orb-cyan"></div>
-      <div class="glow-orb orb-blue"></div>
-      <div class="glow-orb orb-emerald"></div>
-      <div class="hero-grid-pattern"></div>
-    </div>
 
-    <!-- Progress & Stage Indicators (Discreet Editorial Line, invisible at 0 scroll) -->
-    <div class="hero-editorial-tracker" id="via-tracker" aria-hidden="true">
-      <div class="tracker-segment" id="via-track-0"><span>01</span><div class="track-bar"><div class="track-fill" id="via-fill-0"></div></div><span>SaMD Llave en Mano</span></div>
-      <div class="tracker-segment" id="via-track-1"><span>02</span><div class="track-bar"><div class="track-fill" id="via-fill-1"></div></div><span>13 Módulos & NLG</span></div>
-      <div class="tracker-segment" id="via-track-2"><span>03</span><div class="track-bar"><div class="track-fill" id="via-fill-2"></div></div><span>7 Lenguas & Contacto</span></div>
-    </div>
+      <div class="editorial-eyebrow eyebrow-cyan">
+        <span>Equipamiento Clínico Llave en Mano · SaMD Clase IIa (MDR 2017/745)</span>
+      </div>
 
-    <!-- Sutil indicador de ratón inicial abajo (desaparece al hacer scroll) -->
-    <div id="via-scroll-starter" class="hero-scroll-starter" aria-hidden="true">
-      <span class="starter-text">Scroll para explorar la plataforma médica</span>
-      <div class="hint-mouse">
-        <div class="mouse-wheel"></div>
+      <h1 class="hero-headline">
+        Valoración interactiva de audición, voz y lenguaje: <span class="gradient-text-cyan">SaMD llave en mano y 100% offline</span>
+      </h1>
+
+      <p class="hero-narrative-lead">
+        Software como Dispositivo Médico (<strong>SaMD Clase IIa · MDR 2017/745</strong>) entregado preconfigurado sobre <strong>tableta clínica homologada en modo kiosco</strong> con calibración electroacústica sellada de fábrica. Incluye <strong>13 módulos gamificados</strong>, análisis acústico validado frente a estándares de fonética clínica, soporte en <strong>7 variedades lingüísticas</strong> y <strong>motor NLG determinista</strong> para informes bajo supervisión facultativa.
+      </p>
+
+      <div class="hero-badge-pill-row">
+        <span class="badge-pill pill-cyan">⚕️ SaMD Clase IIa · MDR 2017/745</span>
+        <span class="badge-pill pill-purple">🛡️ Estación Homologada Llave en Mano</span>
+        <span class="badge-pill pill-emerald">🧾 Motor NLG Determinista</span>
+        <span class="badge-pill pill-amber">⚡ Cero IA de Caja Negra · 100% Offline</span>
+      </div>
+
+      <div class="hero-cta-group">
+        <button type="button" data-open-contact class="btn-via-primary">
+          <span>Solicitar Demostración Clínica</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <a href="#modulos" class="btn-via-secondary">
+          <span>Explorar los 13 Módulos</span>
+        </a>
+        <a href="#que-es-via" class="btn-via-secondary">
+          <span>Sistema Llave en Mano</span>
+        </a>
       </div>
     </div>
 
-    <!-- PHASE 0: El Marco Clínico SaMD Clase IIa (Carga inmediata a scroll 0) -->
-    <div id="via-phase-0" class="hero-phase-panel phase-initial">
-      <div class="phase-inner max-w-content">
-        <!-- Official VIA+ App Icon -->
-        <div class="via-app-icon-wrapper">
+    <!-- Bottom Showcase Grid: 3 Clinical Pillars + Real Tablet Mockup -->
+    <div class="via-showcase-grid">
+      <div class="showcase-cards-col">
+        <div class="via-feature-card">
+          <div class="feature-icon-badge icon-cyan">🎙️</div>
+          <div class="feature-text">
+            <strong>Calibración en Cámara Anecoica &amp; Audiometría</strong>
+            <p>Curva electroacústica sellada de fábrica frente a sonómetro Clase 1, control de ruido ambiental en dB(A) y audiometría tonal y condicionada.</p>
+          </div>
+        </div>
+
+        <div class="via-feature-card">
+          <div class="feature-icon-badge icon-purple">🔬</div>
+          <div class="feature-text">
+            <strong>Biomarcadores de Voz, Hitos ASHA &amp; Cribado Clínico</strong>
+            <p>Extracción de frecuencia fundamental, perturbación vocal y formantes, junto con cribado normativo ASHA (0 a 5 años), disfagia MECV-V, SAHS y M-CHAT-R/F.</p>
+          </div>
+        </div>
+
+        <div class="via-feature-card">
+          <div class="feature-icon-badge icon-emerald">🧾</div>
+          <div class="feature-text">
+            <strong>Informes con Motor NLG Determinista y 7 Lenguas</strong>
+            <p>Síntesis clínica combinatoria sin alucinaciones con cálculo de pérdida auditiva (BIAP/OMS), borrador editable por el especialista, firma colegiada y 7 lenguas de sesión.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-tablet-col">
+        <div class="tablet-frame-mockup">
+          <div class="tablet-status-bar">
+            <span class="tablet-notch"></span>
+            <span class="tablet-tag">VIA+ SaMD · Estación en Modo Kiosco</span>
+          </div>
           <img 
-            src={`${baseUrl}/assets/via-logo.png`} 
-            alt="Logo Oficial de VIA+ (SaMD Clase IIa)" 
-            class="via-brand-icon" 
+            src={`${baseUrl}/assets/via-app-clean.png`} 
+            alt="Captura real del módulo clínico de VIA+ SaMD con Análisis Acústico de Voz y Audiometría" 
+            class="tablet-capture-img"
             loading="eager"
-            fetchpriority="high"
           />
         </div>
-
-        <h1 class="hero-headline">
-          Valoración interactiva de audición, voz y lenguaje: <span class="gradient-text-cyan">SaMD llave en mano y 100% offline</span>
-        </h1>
-
-        <p class="hero-narrative-lead">
-          Software como Dispositivo Médico (SaMD Clase IIa · MDR 2017/745) preconfigurado sobre tableta clínica homologada en modo kiosco con calibración electroacústica de fábrica. 
-          13 módulos gamificados, análisis acústico validado frente a Praat y motor NLG determinista para informes clínicos bajo supervisión facultativa.
-        </p>
-
-        <div class="hero-badge-pill-row">
-          <span class="badge-pill pill-cyan">⚕️ SaMD Clase IIa · MDR 2017/745</span>
-          <span class="badge-pill pill-purple">🛡️ Tableta Homologada Llave en Mano</span>
-          <span class="badge-pill pill-emerald">🧾 Motor NLG Determinista</span>
-          <span class="badge-pill pill-amber">⚡ Cero IA en Dispositivo</span>
-        </div>
       </div>
     </div>
-
-    <!-- PHASE 1: Los 13 Módulos & DSP Acústico Validado (38% - 70% Scroll) -->
-    <div id="via-phase-1" class="hero-phase-panel">
-      <div class="phase-inner max-w-showcase">
-        <div class="editorial-eyebrow eyebrow-cyan">
-          <span>Equipamiento Clínico Llave en Mano</span>
-        </div>
-        <h2 class="hero-headline text-gradient-cyan">
-          13 Módulos clínicos con calibración acústica en cámara anecoica y síntesis NLG.
-        </h2>
-
-        <div class="via-showcase-grid">
-          <!-- Left: Clinical Cards -->
-          <div class="showcase-cards-col">
-            <div class="via-feature-card">
-              <div class="feature-icon-badge icon-cyan">🎙️</div>
-              <div class="feature-text">
-                <strong>Calibración de Fábrica & Audiometría</strong>
-                <p>Curva electroacústica sellada frente a sonómetro Clase 1, control de ruido ambiental en dB(A) y audiometría tonal / condicionada.</p>
-              </div>
-            </div>
-
-            <div class="via-feature-card">
-              <div class="feature-icon-badge icon-purple">🔬</div>
-              <div class="feature-text">
-                <strong>Biomarcadores de Voz (Praat) & Hitos ASHA</strong>
-                <p>F0, jitter y shimmer ciclo a ciclo contrastados matemáticamente con Praat, junto con cribado normativo ASHA (0 a 5 años) y M-CHAT-R.</p>
-              </div>
-            </div>
-
-            <div class="via-feature-card">
-              <div class="feature-icon-badge icon-emerald">🧾</div>
-              <div class="feature-text">
-                <strong>Informes con Motor NLG Determinista</strong>
-                <p>Síntesis clínica combinatoria sin alucinaciones con cálculo de PTA (BIAP/OMS), borrador editable por el especialista y firma colegiada.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right: Real App Screenshot Card -->
-          <div class="showcase-tablet-col">
-            <div class="tablet-frame-mockup">
-              <div class="tablet-status-bar">
-                <span class="tablet-notch"></span>
-                <span class="tablet-tag">VIA+ SaMD · Kiosco Clínico</span>
-              </div>
-              <img 
-                src={`${baseUrl}/assets/via-app-clean.png`} 
-                alt="Captura real del módulo clínico de VIA+ SaMD con Análisis Acústico de Voz y Audiometría" 
-                class="tablet-capture-img"
-                loading="eager"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PHASE 2: 7 Lenguas, Privacidad Zero-PHI & Acciones (72% - 100% Scroll) -->
-    <div id="via-phase-2" class="hero-phase-panel">
-      <div class="phase-inner max-w-content">
-        <div class="editorial-eyebrow eyebrow-emerald">
-          <span>Soberanía Lingüística & Seguridad Hospitalaria</span>
-        </div>
-        <h2 class="hero-headline">
-          <span class="quote-tagline-cyan">“Criterio clínico. Cero cajas negras.”</span>
-        </h2>
-        <p class="hero-narrative-lead">
-          Evaluación en 7 variedades lingüísticas (Castellano, Galego, Euskara, Español Dominicano, Català, Español LatAm e Inglés) con almacenamiento local cifrado por hardware y aislamiento en modo kiosco sanitario.
-        </p>
-
-        <div class="hero-cta-group">
-          <a href="#modulos" class="btn-via-primary">
-            <span>Explorar los 13 Módulos</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="#que-es-via" class="btn-via-secondary">
-            <span>Sistema Llave en Mano</span>
-          </a>
-          <button type="button" data-open-contact class="btn-via-secondary">
-            <span>Solicitar Demostración Clínica</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<script>
-  function initViaHero() {
-    const heroSection = document.getElementById('via-hero-scrub');
-    const scrollStarter = document.getElementById('via-scroll-starter');
-    const tracker = document.getElementById('via-tracker');
-    const phase0 = document.getElementById('via-phase-0');
-    const phase1 = document.getElementById('via-phase-1');
-    const phase2 = document.getElementById('via-phase-2');
-
-    const fill0 = document.getElementById('via-fill-0');
-    const fill1 = document.getElementById('via-fill-1');
-    const fill2 = document.getElementById('via-fill-2');
-    const bgStage = document.getElementById('via-hero-bg-stage');
-
-    if (!heroSection || !phase0 || !phase1 || !phase2) return;
-
-    let targetProgress = 0;
-    let currentProgress = 0;
-
-    function calcOpacity(progress: number, enterStart: number, enterEnd: number, exitStart: number, exitEnd: number): number {
-      if (progress < enterStart || progress > exitEnd) return 0;
-      if (progress < enterEnd) {
-        if (enterEnd === enterStart) return 1.0;
-        return (progress - enterStart) / (enterEnd - enterStart);
-      }
-      if (progress > exitStart) {
-        if (exitEnd === exitStart) return 0.0;
-        return Math.max(0, 1 - (progress - exitStart) / (exitEnd - exitStart));
-      }
-      return 1.0;
-    }
-
-    function updateScroll() {
-      const rect = heroSection!.getBoundingClientRect();
-      const maxScroll = rect.height - window.innerHeight;
-      if (maxScroll > 0) {
-        targetProgress = Math.max(0, Math.min(1, -rect.top / maxScroll));
-      } else {
-        targetProgress = 0;
-      }
-    }
-
-    window.addEventListener('scroll', updateScroll, { passive: true });
-    window.addEventListener('resize', updateScroll);
-    updateScroll();
-
-    function renderLoop() {
-      currentProgress += (targetProgress - currentProgress) * 0.18;
-
-      // Starter hint is visible on start and fades out as user scrolls
-      const opStarter = calcOpacity(targetProgress, 0.0, 0.0, 0.03, 0.08);
-      if (scrollStarter) {
-        scrollStarter.style.opacity = opStarter.toFixed(3);
-        scrollStarter.style.pointerEvents = opStarter > 0.4 ? 'auto' : 'none';
-      }
-
-      // Phase 0: Fully visible at 0 scroll (1.0) -> exits between 0.18 and 0.35
-      const op0 = calcOpacity(targetProgress, 0.0, 0.0, 0.18, 0.35);
-      // Phase 1: 13 Módulos & DSP (enters 0.30 -> peaks at 0.40-0.62 -> exits at 0.72)
-      const op1 = calcOpacity(targetProgress, 0.30, 0.40, 0.62, 0.72);
-      // Phase 2: 7 Lenguas & CTAs (enters 0.68 -> peaks at 0.78-1.00)
-      const op2 = calcOpacity(targetProgress, 0.68, 0.78, 1.0, 1.0);
-
-      phase0!.style.opacity = op0.toFixed(3);
-      phase0!.style.transform = `translateY(${-targetProgress * 40}px)`;
-      phase0!.style.pointerEvents = op0 > 0.4 ? 'auto' : 'none';
-
-      phase1!.style.opacity = op1.toFixed(3);
-      phase1!.style.transform = `translateY(${(0.50 - targetProgress) * 40}px)`;
-      phase1!.style.pointerEvents = op1 > 0.4 ? 'auto' : 'none';
-
-      phase2!.style.opacity = op2.toFixed(3);
-      phase2!.style.transform = `translateY(${(0.85 - targetProgress) * 35}px)`;
-      phase2!.style.pointerEvents = op2 > 0.4 ? 'auto' : 'none';
-
-      // Clinical Background Dynamic Parallax
-      if (bgStage) {
-        const scale = 1 + currentProgress * 0.08;
-        const transY = currentProgress * -25;
-        const bgOpacity = Math.max(0.35, 0.65 - currentProgress * 0.25);
-        bgStage.style.transform = `translate(-50%, -50%) scale(${scale.toFixed(3)}) translateY(${transY.toFixed(1)}px)`;
-        bgStage.style.opacity = bgOpacity.toFixed(3);
-      }
-
-      // Tracker visibility
-      if (tracker) {
-        tracker.style.opacity = '1';
-      }
-
-      if (fill0) fill0.style.width = `${Math.min(100, Math.max(0, (targetProgress / 0.34) * 100))}%`;
-      if (fill1) fill1.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.34) / 0.34) * 100))}%`;
-      if (fill2) fill2.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.68) / 0.32) * 100))}%`;
-
-      requestAnimationFrame(renderLoop);
-    }
-
-    requestAnimationFrame(renderLoop);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initViaHero);
-  } else {
-    initViaHero();
-  }
-  document.addEventListener('astro:page-load', initViaHero);
-</script>
-
 <style>
-  /* 320vh Hero Container */
-  .hero-scrub-container {
+  .via-hero-section {
     position: relative;
-    height: 320vh;
+    padding: 8.5rem 0 5rem 0;
     width: 100%;
     background-color: var(--bg-dark);
-  }
-
-  .hero-sticky-viewport {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 100vh;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
-  /* Ambient Backdrop Canvas */
   .hero-background-canvas {
     position: absolute;
     inset: 0;
@@ -302,22 +135,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     z-index: 1;
   }
 
-  /* Clinical Artwork Background Parallax Stage */
   .hero-clinical-bg-stage {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 100vh;
-    max-width: 1920px;
-    max-height: 1080px;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2;
-    will-change: transform, opacity;
-    opacity: 0.72;
+    opacity: 0.55;
     pointer-events: none;
   }
 
@@ -325,16 +150,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: var(--radius-lg);
-    mask-image: radial-gradient(ellipse at 50% 50%, black 45%, transparent 90%);
-    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 45%, transparent 90%);
-    filter: brightness(0.65) contrast(1.15);
+    mask-image: radial-gradient(ellipse at 50% 35%, black 35%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 35%, black 35%, transparent 85%);
+    filter: brightness(0.55) contrast(1.15);
   }
 
   .clinical-overlay-gradient {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(7, 9, 14, 0.45) 0%, rgba(7, 9, 14, 0.85) 75%, var(--bg-dark) 100%);
+    background: radial-gradient(circle at 50% 35%, rgba(7, 9, 14, 0.35) 0%, rgba(7, 9, 14, 0.88) 72%, var(--bg-dark) 100%);
     pointer-events: none;
   }
 
@@ -342,33 +166,33 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     position: absolute;
     border-radius: 50%;
     filter: blur(95px);
-    opacity: 0.28;
+    opacity: 0.25;
     pointer-events: none;
   }
 
   .orb-cyan {
-    top: 20%;
-    left: 18%;
-    width: 520px;
-    height: 520px;
+    top: 10%;
+    left: 15%;
+    width: 500px;
+    height: 500px;
     background: radial-gradient(circle, var(--accent-cyan) 0%, rgba(0, 242, 254, 0) 70%);
   }
 
   .orb-blue {
-    bottom: 20%;
-    right: 15%;
-    width: 480px;
-    height: 480px;
+    bottom: 10%;
+    right: 12%;
+    width: 460px;
+    height: 460px;
     background: radial-gradient(circle, var(--accent-blue) 0%, rgba(79, 172, 254, 0) 70%);
   }
 
   .orb-emerald {
-    top: 60%;
+    top: 50%;
     left: 45%;
     width: 360px;
     height: 360px;
     background: radial-gradient(circle, var(--accent-emerald) 0%, rgba(16, 185, 129, 0) 70%);
-    opacity: 0.18;
+    opacity: 0.16;
   }
 
   .hero-grid-pattern {
@@ -378,11 +202,21 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
-    mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
+    mask-image: radial-gradient(circle at 50% 40%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 40%, black 30%, transparent 80%);
   }
 
-  /* Official Brand Icon */
+  .hero-content-wrapper {
+    position: relative;
+    z-index: 5;
+  }
+
+  .hero-top-intro {
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto 3.5rem auto;
+  }
+
   .via-app-icon-wrapper {
     display: flex;
     justify-content: center;
@@ -391,13 +225,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .via-brand-icon {
-    width: clamp(84px, 12vw, 105px);
+    width: clamp(80px, 10vw, 100px);
     height: auto;
-    border-radius: 26px;
+    border-radius: 24px;
     filter: drop-shadow(0 0 35px rgba(0, 242, 254, 0.45)) drop-shadow(0 10px 25px rgba(0, 0, 0, 0.6));
     border: 2px solid rgba(0, 242, 254, 0.4);
     background: #0f172a;
-    transition: transform 0.3s ease;
     animation: subtleFloat 4s ease-in-out infinite alternate;
   }
 
@@ -406,170 +239,50 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     100% { transform: translateY(-6px); }
   }
 
-  /* Sutil indicador de inicio abajo (desaparece con el scroll) */
-  .hero-scroll-starter {
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
-    z-index: 8;
-    will-change: opacity;
-    pointer-events: auto;
-    transition: opacity 0.2s ease;
-  }
-
-  .starter-text {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-  }
-
-  /* Editorial Tracker */
-  .hero-editorial-tracker {
-    position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 1.75rem;
-    z-index: 10;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .tracker-segment {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-  }
-
-  .track-bar {
-    width: 48px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .track-fill {
-    height: 100%;
-    width: 0%;
-    background: var(--accent-cyan);
-    transition: width 0.1s linear;
-  }
-
-  /* Phase Panels */
-  .hero-phase-panel {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1.5rem;
-    z-index: 5;
-    will-change: opacity, transform;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .hero-phase-panel.phase-initial {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .phase-inner {
-    text-align: center;
-    width: 100%;
-  }
-
-  .max-w-content {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .max-w-showcase {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
   .editorial-eyebrow {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1.25rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
   }
 
   .eyebrow-cyan {
     color: var(--accent-cyan);
   }
 
-  .eyebrow-emerald {
-    color: var(--accent-emerald);
-  }
-
   .hero-headline {
-    font-size: clamp(2.1rem, 4.2vw, 3.6rem);
+    font-size: clamp(2.1rem, 4.2vw, 3.5rem);
     font-weight: 900;
-    line-height: 1.18;
+    line-height: 1.16;
     letter-spacing: -0.03em;
     color: #FFFFFF;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.35rem;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
   }
 
   .gradient-text-cyan {
     color: #38BDF8;
     font-weight: 900;
-    text-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
-  }
-
-  .text-gradient-cyan {
-    color: #38BDF8;
-    font-weight: 900;
-    text-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
-  }
-
-  .quote-tagline-cyan {
-    color: #38BDF8;
-    font-weight: 900;
-    text-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
-    display: inline-block;
+    text-shadow: 0 0 25px rgba(56, 189, 248, 0.55);
   }
 
   .hero-narrative-lead {
-    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+    font-size: clamp(1.02rem, 1.6vw, 1.22rem);
     color: var(--text-muted);
     line-height: 1.65;
-    max-width: 820px;
-    margin: 0 auto 2.25rem auto;
-    font-weight: 400;
+    max-width: 850px;
+    margin: 0 auto 1.75rem auto;
   }
 
   .hero-narrative-lead strong {
     color: var(--text-main);
   }
 
-  /* Badge Pill Row */
   .hero-badge-pill-row {
     display: flex;
     flex-wrap: wrap;
@@ -610,13 +323,66 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     color: #FCD34D;
   }
 
+  .hero-cta-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-via-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.95rem 2.1rem;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+    color: #040914;
+    font-weight: 800;
+    font-size: 1.02rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 0 4px 25px rgba(0, 242, 254, 0.4);
+    transition: all 0.25s ease;
+  }
+
+  .btn-via-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 35px rgba(0, 242, 254, 0.6);
+  }
+
+  .btn-via-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.95rem 1.75rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 0.98rem;
+    text-decoration: none;
+    backdrop-filter: blur(12px);
+    transition: all 0.25s ease;
+  }
+
+  .btn-via-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+  }
+
   /* Showcase Grid */
   .via-showcase-grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     gap: 2.5rem;
     align-items: center;
-    margin-top: 1.5rem;
+    max-width: 1120px;
+    margin: 0 auto;
     text-align: left;
   }
 
@@ -631,13 +397,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     align-items: center;
     gap: 1.25rem;
     padding: 1.25rem 1.5rem;
-    background: rgba(15, 23, 42, 0.65);
+    background: rgba(15, 23, 42, 0.72);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-radius: var(--radius-lg);
     box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease;
   }
 
   .via-feature-card:hover {
@@ -680,13 +446,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .feature-text p {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
     margin: 0;
-    line-height: 1.45;
+    line-height: 1.5;
   }
 
-  /* Tablet Mockup Frame */
   .showcase-tablet-col {
     display: flex;
     justify-content: center;
@@ -735,133 +500,21 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: block;
   }
 
-  /* CTAs */
-  .hero-cta-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.15rem;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-  }
-
-  .btn-via-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.95rem 2.2rem;
-    border-radius: var(--radius-full);
-    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
-    color: #040914;
-    font-weight: 800;
-    font-size: 1.05rem;
-    text-decoration: none;
-    box-shadow: 0 4px 25px rgba(0, 242, 254, 0.4);
-    transition: all 0.25s ease;
-  }
-
-  .btn-via-primary:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 35px rgba(0, 242, 254, 0.6);
-  }
-
-  .btn-via-secondary {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.95rem 1.85rem;
-    border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    color: var(--text-main);
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    backdrop-filter: blur(12px);
-    transition: all 0.25s ease;
-  }
-
-  .btn-via-secondary:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.35);
-    transform: translateY(-2px);
-  }
-
-  .btn-via-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.95rem 1.6rem;
-    border-radius: var(--radius-full);
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    color: var(--text-muted);
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: all 0.25s ease;
-  }
-
-  .btn-via-ghost:hover {
-    color: var(--text-main);
-    border-color: rgba(255, 255, 255, 0.35);
-    transform: translateY(-2px);
-  }
-
-  /* Hint Mouse */
-  .hint-mouse {
-    width: 22px;
-    height: 36px;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    border-radius: 12px;
-    position: relative;
-  }
-
-  .mouse-wheel {
-    width: 4px;
-    height: 8px;
-    background: var(--accent-cyan);
-    border-radius: 2px;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: wheelScroll 1.8s infinite ease-in-out;
-  }
-
-  @keyframes wheelScroll {
-    0% { transform: translate(-50%, 0); opacity: 1; }
-    80% { transform: translate(-50%, 12px); opacity: 0; }
-    100% { transform: translate(-50%, 0); opacity: 0; }
-  }
-
   @media (max-width: 920px) {
     .via-showcase-grid {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .showcase-tablet-col {
-      display: none;
-    }
-    .hero-editorial-tracker {
-      display: none;
+      gap: 2rem;
     }
   }
 
   @media (max-width: 640px) {
-    .hero-phase-panel {
-      padding: 4.8rem 1rem 1.5rem 1rem;
+    .via-hero-section {
+      padding: 6.5rem 0 3.5rem 0;
     }
     .hero-headline {
-      font-size: clamp(1.45rem, 5.5vw, 1.85rem);
-      margin-bottom: 0.75rem;
+      font-size: clamp(1.75rem, 6vw, 2.2rem);
     }
-    .hero-narrative-lead {
-      font-size: 0.95rem;
-      line-height: 1.55;
-      margin-bottom: 1.25rem;
-      padding: 0;
-    }
-    .btn-via-primary, .btn-via-secondary, .btn-via-ghost {
+    .btn-via-primary, .btn-via-secondary {
       width: 100%;
       justify-content: center;
     }

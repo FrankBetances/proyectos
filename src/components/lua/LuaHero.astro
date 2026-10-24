@@ -4,305 +4,131 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : import.meta.env.BASE_URL;
 ---
 
-<!-- 320vh Sticky Scroll Hero Section for Lúa Mascot inspired by Creating-Oneshot-Hero-Landing-Pages -->
-<section id="lua-hero-scrub" class="hero-scrub-container">
-  <div class="hero-sticky-viewport">
-    
-    <!-- Deep Ambient Glow & Lifestyle Backdrop Graphic with Parallax -->
-    <div class="hero-background-canvas" aria-hidden="true">
-      <div id="lua-hero-bg-stage" class="hero-lua-bg-stage">
+<section id="lua-hero" class="lua-hero-section">
+  <!-- Ambient Glow & Lifestyle Backdrop -->
+  <div class="hero-background-canvas" aria-hidden="true">
+    <div class="hero-lua-bg-stage">
+      <img 
+        src={`${baseUrl}/assets/valeria-lua-hero-bg.jpg?v=1`} 
+        alt="Figura física de Lúa con visor circular junto a interacción familiar y bloques manipulativos" 
+        class="lua-artwork-img"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="lua-overlay-gradient"></div>
+    </div>
+    <div class="glow-orb orb-orange"></div>
+    <div class="glow-orb orb-cyan"></div>
+    <div class="glow-orb orb-purple"></div>
+    <div class="hero-grid-pattern"></div>
+  </div>
+
+  <div class="container hero-content-wrapper">
+    <!-- Top Intro Block -->
+    <div class="hero-top-intro">
+      <div class="lua-mascot-icon-wrapper">
         <img 
-          src={`${baseUrl}/assets/valeria-lua-hero-bg.jpg?v=1`} 
-          alt="Dispositivo circular de Lúa con pixel art sobre mesa de madera junto a interacción familiar y tablet clínica" 
-          class="lua-artwork-img"
-          width="1920"
-          height="1080"
+          src={`${baseUrl}/assets/valeria_lua.png`} 
+          alt="Lúa la Gata - Compañera física interactiva de Earlify Health" 
+          class="lua-brand-icon" 
+          width="105"
+          height="105"
           loading="eager"
           fetchpriority="high"
         />
-        <div class="lua-overlay-gradient"></div>
       </div>
-      <div class="glow-orb orb-orange"></div>
-      <div class="glow-orb orb-cyan"></div>
-      <div class="glow-orb orb-purple"></div>
-      <div class="hero-grid-pattern"></div>
-    </div>
 
-    <!-- Progress & Stage Indicators (Discreet Editorial Line, invisible at 0 scroll) -->
-    <div class="hero-editorial-tracker" id="lua-tracker" aria-hidden="true">
-      <div class="tracker-segment" id="lua-track-0"><span>01</span><div class="track-bar"><div class="track-fill" id="lua-fill-0"></div></div><span>Compañera Física</span></div>
-      <div class="tracker-segment" id="lua-track-1"><span>02</span><div class="track-bar"><div class="track-fill" id="lua-fill-1"></div></div><span>Visor Circular &amp; Sets STEAM</span></div>
-      <div class="tracker-segment" id="lua-track-2"><span>03</span><div class="track-bar"><div class="track-fill" id="lua-fill-2"></div></div><span>Cero Castigo &amp; Contacto</span></div>
-    </div>
-
-    <!-- Sutil indicador de ratón inicial abajo (desaparece al hacer scroll) -->
-    <div id="lua-scroll-starter" class="hero-scroll-starter" aria-hidden="true">
-      <span class="starter-text">Scroll para conocer a Lúa</span>
-      <div class="hint-mouse">
-        <div class="mouse-wheel"></div>
+      <div class="editorial-eyebrow eyebrow-orange">
+        <span>Compañera Física Interactiva · Juego STEAM + Realidad Aumentada</span>
       </div>
-    </div>
 
-    <!-- PHASE 0: Presentación de la Mascota Física + STEAM & AR (Carga inmediata a scroll 0) -->
-    <div id="lua-phase-0" class="hero-phase-panel phase-initial">
-      <div class="phase-inner max-w-content">
-        <!-- Official Lúa Mascot Icon -->
-        <div class="lua-mascot-icon-wrapper">
-          <img 
-            src={`${baseUrl}/assets/valeria_lua.png`} 
-            alt="Lúa la Gata - Compañera física interactiva de Earlify Health" 
-            class="lua-brand-icon" 
-            width="110"
-            height="110"
-            loading="eager"
-            fetchpriority="high"
-          />
-        </div>
+      <h1 class="hero-headline">
+        Lúa: El Puente Afectivo Tangible <span class="gradient-text-orange">entre Consulta, Aula y Hogar</span>
+      </h1>
 
-        <div class="editorial-eyebrow eyebrow-orange">
-          <span>Compañera Física Interactiva · Juego STEAM + Realidad Aumentada</span>
-        </div>
+      <p class="hero-narrative-lead">
+        Figura física de cuerpo entero con <strong>visor circular integrado</strong>, ampliada con <strong>sets de bloques manipulativos (EN 71-1) y Realidad Aumentada</strong> para <strong>Valeria+</strong> y <strong>Descubre con Lúa</strong>. La aplicación guía, Lúa acompaña: no mide, no juzga y <strong>jamás escucha</strong>.
+      </p>
 
-        <h1 class="hero-headline">
-          Lúa: El Puente Afectivo Tangible <span class="gradient-text-orange">entre Consulta, Aula y Hogar</span>
-        </h1>
+      <div class="hero-badge-pill-row">
+        <span class="badge-pill pill-cyan">🚀 Incubada en startTIC · Alta Tecnología</span>
+        <span class="badge-pill pill-orange">🐱 Visor Circular + Bloques EN 71-1</span>
+        <span class="badge-pill pill-purple">✨ Realidad Aumentada Zero-PHI</span>
+        <span class="badge-pill pill-emerald">🔇 Cero Micrófonos · Silencio Clínico</span>
+      </div>
 
-        <p class="hero-narrative-lead">
-          Figura física de cuerpo entero con <strong>visor circular integrado</strong>, ampliada con <strong>sets de bloques manipulativos (EN 71-1) y Realidad Aumentada</strong> para <strong>Valeria+</strong> y <strong>Descubre con Lúa</strong>. La aplicación guía, Lúa acompaña: no mide, no juzga y <strong>jamás escucha</strong>.
-        </p>
-
-        <div class="hero-badge-pill-row">
-          <span class="badge-pill pill-cyan">🚀 Incubada en startTIC · Alta Tecnología</span>
-          <span class="badge-pill pill-orange">🐱 Visor Circular + Bloques EN 71-1</span>
-          <span class="badge-pill pill-purple">✨ Realidad Aumentada Zero-PHI</span>
-          <span class="badge-pill pill-emerald">🔇 Cero Micrófonos · Silencio Clínico</span>
-        </div>
-
-        <div class="card-action-row" style="justify-content: center; margin-top: 0.5rem;">
-          <button type="button" class="hero-btn btn-orange" data-open-contact style="border: none; cursor: pointer; font-family: inherit;">
-            <span>Solicitar Información o Demo</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          </button>
-          <a href="#arquitectura-sets-steam" class="hero-btn btn-ghost">
-            <span>Explorar Sets STEAM + AR</span>
-          </a>
-        </div>
+      <div class="card-action-row">
+        <button type="button" class="hero-btn btn-orange" data-open-contact>
+          <span>Solicitar Información o Demo</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </button>
+        <a href="#arquitectura-sets-steam" class="hero-btn btn-ghost">
+          <span>Explorar Sets STEAM + AR</span>
+        </a>
+        <a href={`${baseUrl}/construye-con-lua`} class="hero-btn btn-ghost">
+          <span>Ver Lúa Construye</span>
+        </a>
       </div>
     </div>
 
-    <!-- PHASE 1: Visor Circular, Espejo de App & Sets Manipulativos (38% - 70% Scroll) -->
-    <div id="lua-phase-1" class="hero-phase-panel">
-      <div class="phase-inner max-w-showcase">
-        <div class="editorial-eyebrow eyebrow-cyan">
-          <span>Una Sola Mascota · Del Visor Circular a la Mesa de Juego</span>
+    <!-- Bottom Showcase Grid: 3 Feature Cards + Interactive Circular Visor Canvas -->
+    <div class="lua-showcase-grid">
+      <div class="showcase-cards-col">
+        <div class="lua-feature-card">
+          <div class="feature-icon-badge icon-orange">🪞</div>
+          <div class="feature-text">
+            <strong>Espejo de Actividad y Compañía (Valeria+)</strong>
+            <p>Muestra en su visor circular los turnos de juego, <strong>120 pictogramas en arte voxel</strong>, <strong>45 insignias</strong>, el armario de coleccionables y responde a las caricias con ronroneo visual.</p>
+          </div>
         </div>
-        <h2 class="hero-headline gradient-text-orange">
-          Espejo Visual, Sets Manipulativos y Descanso 20-20-20.
-        </h2>
 
-        <div class="lua-showcase-grid">
-          <!-- Left: Feature Cards -->
-          <div class="showcase-cards-col">
-            <div class="lua-feature-card">
-              <div class="feature-icon-badge icon-orange">🪞</div>
-              <div class="feature-text">
-                <strong>Espejo de Actividad y Compañía (Valeria+)</strong>
-                <p>Muestra en su visor circular los turnos de juego, <strong>120 pictogramas en arte voxel</strong>, <strong>45 insignias</strong>, el armario de coleccionables y responde a las caricias con ronroneo visual.</p>
-              </div>
+        <div class="lua-feature-card">
+          <div class="feature-icon-badge icon-cyan">🧱</div>
+          <div class="feature-text">
+            <strong>Sets de Bloques STEAM y Realidad Aumentada</strong>
+            <p>Figura sin motores ni ruido mecánico con encajes modulares para los sets sensoriales y orofaciales de <strong>Valeria+</strong> y los circuitos tangibles de <strong>Descubre con Lúa</strong>.</p>
+          </div>
+        </div>
+
+        <div class="lua-feature-card">
+          <div class="feature-icon-badge icon-purple">🔒</div>
+          <div class="feature-text">
+            <strong>Ancla Visual 20-20-20 y Silencio Clínico (VIA+)</strong>
+            <p>Invita a descansar la vista cada 20 minutos echándose a dormir y entra en bloqueo silencioso inmediato durante exploraciones médicas en consulta.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-device-col">
+        <div class="lua-physical-device">
+          <div class="device-bezel-outer">
+            <div class="bezel-led-ring">
+              <div class="led-dot led-1 active"></div>
+              <div class="led-dot led-2 active"></div>
+              <div class="led-dot led-3 active"></div>
+              <div class="led-dot led-4 active"></div>
             </div>
-
-            <div class="lua-feature-card">
-              <div class="feature-icon-badge icon-cyan">🧱</div>
-              <div class="feature-text">
-                <strong>Sets de Bloques STEAM y Realidad Aumentada</strong>
-                <p>Figura sin motores ni ruido mecánico con encajes modulares para los sets sensoriales y orofaciales de <strong>Valeria+</strong> y los circuitos tangibles de <strong>Descubre con Lúa</strong>.</p>
-              </div>
-            </div>
-
-            <div class="lua-feature-card">
-              <div class="feature-icon-badge icon-purple">🔒</div>
-              <div class="feature-text">
-                <strong>Ancla Visual 20-20-20 y Silencio Clínico (VIA+)</strong>
-                <p>Invita a descansar la vista cada 20 minutos echándose a dormir y entra en bloqueo silencioso inmediato durante exploraciones médicas en consulta.</p>
-              </div>
+            <div class="device-screen-circular">
+              <canvas id="lua-hero-canvas" width="240" height="240" class="pixel-display-canvas"></canvas>
+              <div class="screen-glare-overlay"></div>
             </div>
           </div>
-
-          <!-- Right: Interactive Device Simulator & Pixel Canvas -->
-          <div class="showcase-device-col">
-            <div class="lua-physical-device">
-              <div class="device-bezel-outer">
-                <div class="bezel-led-ring">
-                  <div class="led-dot led-1 active"></div>
-                  <div class="led-dot led-2 active"></div>
-                  <div class="led-dot led-3 active"></div>
-                  <div class="led-dot led-4 active"></div>
-                </div>
-                <div class="device-screen-circular">
-                  <canvas id="lua-hero-canvas" width="240" height="240" class="pixel-display-canvas"></canvas>
-                  <div class="screen-glare-overlay"></div>
-                </div>
-              </div>
-              <div class="device-caption-row">
-                <span class="device-badge">Visor Circular Integrado · 25 Expresiones + 120 Fichas Voxel</span>
-              </div>
-            </div>
+          <div class="device-caption-row">
+            <span class="device-badge">Visor Circular Integrado · 25 Expresiones + 120 Fichas Voxel</span>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- PHASE 2: Cero Castigo, Silencio Clínico & CTAs (75% - 100% Scroll) -->
-    <div id="lua-phase-2" class="hero-phase-panel">
-      <div class="phase-inner max-w-showcase">
-        <div class="editorial-eyebrow eyebrow-emerald">
-          <span>Ética Pediátrica &amp; Acompañamiento Clínico</span>
-        </div>
-        <h2 class="hero-headline gradient-text-emerald">
-          Diseñada para Animar, Nunca para Juzgar.
-        </h2>
-
-        <div class="lua-dual-showcase">
-          <!-- Col 1: Ética Pediátrica -->
-          <div class="lua-info-card glass-card">
-            <div class="card-accent-tag text-orange">🐱 Gamificación Responsable</div>
-            <h3>Principio de Cero Castigo</h3>
-            <p>
-              Cuando un intento no sale a la primera, Lúa <strong>nunca llora, ni pone cara triste, ni emite sonidos de error</strong>: mantiene una expresión atenta y serena, protegiendo la autoestima infantil y acompañando el aprendizaje sin frustración.
-            </p>
-            <div class="card-mini-badges">
-              <span class="mini-tag">🛡️ Cero Frustración</span>
-              <span class="mini-tag">💖 Refuerzo Positivo</span>
-              <span class="mini-tag">🔇 Cero Micrófonos</span>
-            </div>
-          </div>
-
-          <!-- Col 2: Conexión con el Ecosistema -->
-          <div class="lua-info-card glass-card">
-            <div class="card-accent-tag text-cyan">🔄 Ecosistema Earlify Health</div>
-            <h3>Privacidad Estructural y Continuidad</h3>
-            <p>
-              Sincronización inalámbrica local sin transmisión de textos ni datos personales. Une el hogar (<strong>Valeria+</strong>), el aula (<strong>Descubre con Lúa</strong>), el juego manipulativo (<strong>Lúa Construye</strong>) y la consulta (<strong>VIA+</strong>).
-            </p>
-            <div class="card-action-row">
-              <button type="button" class="hero-btn btn-orange" data-open-contact style="border: none; cursor: pointer; font-family: inherit;">
-                <span>Contactar con el Dr. Betances</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-              </button>
-              <a href={`${baseUrl}/construye-con-lua`} class="hero-btn btn-ghost">
-                <span>Ver Lúa Construye</span>
-              </a>
-              <a href={`${baseUrl}/earlify`} class="hero-btn btn-ghost">
-                <span>Ecosistema Earlify</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <script>
-  function initLuaHero() {
-    const heroSection = document.getElementById('lua-hero-scrub');
-    const scrollStarter = document.getElementById('lua-scroll-starter');
-    const tracker = document.getElementById('lua-tracker');
-    const fill0 = document.getElementById('lua-fill-0');
-    const fill1 = document.getElementById('lua-fill-1');
-    const fill2 = document.getElementById('lua-fill-2');
-    const phase0 = document.getElementById('lua-phase-0');
-    const phase1 = document.getElementById('lua-phase-1');
-    const phase2 = document.getElementById('lua-phase-2');
-    const bgStage = document.getElementById('lua-hero-bg-stage');
-
-    if (!heroSection || !phase0 || !phase1 || !phase2) return;
-
-    let targetProgress = 0;
-    let currentProgress = 0;
-
-    function calcOpacity(progress: number, fadeInStart: number, fadeInEnd: number, fadeOutStart: number, fadeOutEnd: number) {
-      if (progress < fadeInStart) return 0;
-      if (progress < fadeInEnd) {
-        return fadeInStart === fadeInEnd ? 1 : (progress - fadeInStart) / (fadeInEnd - fadeInStart);
-      }
-      if (progress <= fadeOutStart) return 1;
-      if (progress < fadeOutEnd) {
-        return 1 - (progress - fadeOutStart) / (fadeOutEnd - fadeOutStart);
-      }
-      return 0;
-    }
-
-    function updateScroll() {
-      const rect = heroSection!.getBoundingClientRect();
-      const maxScroll = rect.height - window.innerHeight;
-      if (maxScroll > 0) {
-        targetProgress = Math.max(0, Math.min(1, -rect.top / maxScroll));
-      } else {
-        targetProgress = 0;
-      }
-    }
-
-    window.addEventListener('scroll', updateScroll, { passive: true });
-    window.addEventListener('resize', updateScroll);
-    updateScroll();
-
-    function renderLoop() {
-      currentProgress += (targetProgress - currentProgress) * 0.18;
-
-      const opStarter = calcOpacity(targetProgress, 0.0, 0.0, 0.03, 0.08);
-      if (scrollStarter) {
-        scrollStarter.style.opacity = opStarter.toFixed(3);
-        scrollStarter.style.pointerEvents = opStarter > 0.4 ? 'auto' : 'none';
-      }
-
-      const op0 = calcOpacity(targetProgress, 0.0, 0.0, 0.20, 0.35);
-      const op1 = calcOpacity(targetProgress, 0.30, 0.40, 0.65, 0.74);
-      const op2 = calcOpacity(targetProgress, 0.70, 0.80, 1.0, 1.0);
-
-      phase0!.style.opacity = op0.toFixed(3);
-      phase0!.style.transform = `translateY(${-targetProgress * 35}px)`;
-      phase0!.style.pointerEvents = op0 > 0.4 ? 'auto' : 'none';
-
-      phase1!.style.opacity = op1.toFixed(3);
-      phase1!.style.transform = `translateY(${(0.52 - targetProgress) * 40}px)`;
-      phase1!.style.pointerEvents = op1 > 0.4 ? 'auto' : 'none';
-
-      phase2!.style.opacity = op2.toFixed(3);
-      phase2!.style.transform = `translateY(${(0.88 - targetProgress) * 35}px)`;
-      phase2!.style.pointerEvents = op2 > 0.4 ? 'auto' : 'none';
-
-      if (tracker) {
-        tracker.style.opacity = '1';
-      }
-
-      if (bgStage) {
-        const scale = 1 + currentProgress * 0.08;
-        const transY = currentProgress * -25;
-        const artOpacity = Math.max(0.35, 0.65 - currentProgress * 0.20);
-        bgStage.style.transform = `translate(-50%, -50%) scale(${scale.toFixed(3)}) translateY(${transY.toFixed(1)}px)`;
-        bgStage.style.opacity = artOpacity.toFixed(3);
-      }
-
-      if (fill0) fill0.style.width = `${Math.min(100, Math.max(0, (targetProgress / 0.34) * 100))}%`;
-      if (fill1) fill1.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.34) / 0.34) * 100))}%`;
-      if (fill2) fill2.style.width = `${Math.min(100, Math.max(0, ((targetProgress - 0.68) / 0.32) * 100))}%`;
-
-      requestAnimationFrame(renderLoop);
-    }
-
-    requestAnimationFrame(renderLoop);
-  }
-
-  // Pixel Canvas Interactive Drawing (Lúa in 24x24 pixel art inside GC9A01 screen)
   function initLuaCanvas() {
     const canvas = document.getElementById('lua-hero-canvas') as HTMLCanvasElement;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Standard Lúa 24x24 palette
     const P = {
       BG: '#0B0F19',
       WHITE: '#FFFFFF',
@@ -319,55 +145,43 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       ctx!.fillStyle = P.BG;
       ctx!.fillRect(0, 0, 240, 240);
 
-      // Circular clip and grid rendering
       const scale = 8;
       const ox = 24;
       const oy = 24;
 
-      // Base cat head outline & body in canonical pixel art
       ctx!.fillStyle = '#1E293B';
-      // Head base
       ctx!.fillRect(ox + 5 * scale, oy + 4 * scale, 14 * scale, 14 * scale);
-      // Ears
       ctx!.fillRect(ox + 4 * scale, oy + 2 * scale, 4 * scale, 4 * scale);
       ctx!.fillRect(ox + 16 * scale, oy + 2 * scale, 4 * scale, 4 * scale);
 
-      // Inner ears (pink)
       ctx!.fillStyle = P.PINK;
       ctx!.fillRect(ox + 5 * scale, oy + 3 * scale, 2 * scale, 2 * scale);
       ctx!.fillRect(ox + 17 * scale, oy + 3 * scale, 2 * scale, 2 * scale);
 
-      // Cute Eyes with blink cycle
       const isBlinking = (frame % 140 > 132);
       ctx!.fillStyle = P.TURQUOISE;
       if (isBlinking) {
         ctx!.fillRect(ox + 7 * scale, oy + 9 * scale, 3 * scale, 1 * scale);
         ctx!.fillRect(ox + 14 * scale, oy + 9 * scale, 3 * scale, 1 * scale);
       } else {
-        // Sparkling eyes
         ctx!.fillRect(ox + 7 * scale, oy + 7 * scale, 3 * scale, 4 * scale);
         ctx!.fillRect(ox + 14 * scale, oy + 7 * scale, 3 * scale, 4 * scale);
 
-        // Eye highlights
         ctx!.fillStyle = P.WHITE;
         ctx!.fillRect(ox + 7 * scale, oy + 7 * scale, 1 * scale, 1 * scale);
         ctx!.fillRect(ox + 14 * scale, oy + 7 * scale, 1 * scale, 1 * scale);
       }
 
-      // Snout & Cheeks
       ctx!.fillStyle = P.PINK;
       ctx!.fillRect(ox + 5 * scale, oy + 11 * scale, 2 * scale, 1 * scale);
       ctx!.fillRect(ox + 17 * scale, oy + 11 * scale, 2 * scale, 1 * scale);
 
-      // Nose
       ctx!.fillStyle = P.ORANGE;
       ctx!.fillRect(ox + 11 * scale, oy + 10 * scale, 2 * scale, 1 * scale);
 
-      // Mouth
       ctx!.fillStyle = P.WHITE;
       ctx!.fillRect(ox + 11 * scale, oy + 12 * scale, 2 * scale, 1 * scale);
 
-      // Outer Turquoise Ring with breathing glow
       const glow = Math.sin(frame * 0.05) * 4 + 8;
       ctx!.strokeStyle = 'rgba(0, 242, 254, 0.8)';
       ctx!.lineWidth = 3;
@@ -385,36 +199,20 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      initLuaHero();
-      initLuaCanvas();
-    });
+    document.addEventListener('DOMContentLoaded', initLuaCanvas);
   } else {
-    initLuaHero();
     initLuaCanvas();
   }
-  document.addEventListener('astro:page-load', () => {
-    initLuaHero();
-    initLuaCanvas();
-  });
+  document.addEventListener('astro:page-load', initLuaCanvas);
 </script>
 
 <style>
-  .hero-scrub-container {
+  .lua-hero-section {
     position: relative;
-    height: 320vh;
-    background-color: var(--bg-dark);
-  }
-
-  .hero-sticky-viewport {
-    position: sticky;
-    top: 0;
-    height: 100vh;
+    padding: 8.5rem 0 5rem 0;
     width: 100%;
+    background-color: var(--bg-dark);
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .hero-background-canvas {
@@ -425,50 +223,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     z-index: 1;
   }
 
-  .glow-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.28;
-    pointer-events: none;
-  }
-
-  .orb-orange {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, #f97316 0%, rgba(249, 115, 22, 0) 70%);
-    top: -100px;
-    left: -150px;
-  }
-
-  .orb-cyan {
-    width: 550px;
-    height: 550px;
-    background: radial-gradient(circle, #00F2FE 0%, rgba(0, 242, 254, 0) 70%);
-    bottom: -100px;
-    right: -100px;
-  }
-
-  .orb-purple {
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, #8A2BE2 0%, rgba(138, 43, 226, 0) 70%);
-    top: 30%;
-    left: 45%;
-    transform: translate(-50%, -50%);
-    opacity: 0.15;
-  }
-
   .hero-lua-bg-stage {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     z-index: 2;
-    will-change: transform, opacity;
-    opacity: 0.65;
+    opacity: 0.55;
+    pointer-events: none;
   }
 
   .lua-artwork-img {
@@ -477,14 +237,48 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     object-fit: cover;
     object-position: center 40%;
     display: block;
-    filter: brightness(0.85) contrast(1.08) saturate(1.15);
+    filter: brightness(0.75) contrast(1.08) saturate(1.15);
   }
 
   .lua-overlay-gradient {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(7, 9, 14, 0.25) 0%, rgba(7, 9, 14, 0.8) 75%, var(--bg-dark) 100%);
+    background: radial-gradient(circle at 50% 40%, rgba(7, 9, 14, 0.35) 0%, rgba(7, 9, 14, 0.85) 75%, var(--bg-dark) 100%);
     pointer-events: none;
+  }
+
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .orb-orange {
+    width: 560px;
+    height: 560px;
+    background: radial-gradient(circle, #f97316 0%, rgba(249, 115, 22, 0) 70%);
+    top: -100px;
+    left: -120px;
+  }
+
+  .orb-cyan {
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, #00F2FE 0%, rgba(0, 242, 254, 0) 70%);
+    bottom: -100px;
+    right: -100px;
+  }
+
+  .orb-purple {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, #8A2BE2 0%, rgba(138, 43, 226, 0) 70%);
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
   }
 
   .hero-grid-pattern {
@@ -494,9 +288,20 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
-    mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
+    mask-image: radial-gradient(circle at 50% 40%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 40%, black 30%, transparent 80%);
     z-index: 3;
+  }
+
+  .hero-content-wrapper {
+    position: relative;
+    z-index: 5;
+  }
+
+  .hero-top-intro {
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto 3.5rem auto;
   }
 
   .lua-mascot-icon-wrapper {
@@ -507,8 +312,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .lua-brand-icon {
-    width: 100px;
-    height: 100px;
+    width: 96px;
+    height: 96px;
     border-radius: 24px;
     box-shadow: 0 0 40px rgba(249, 115, 22, 0.45), 0 10px 25px rgba(0, 0, 0, 0.6);
     border: 2px solid rgba(255, 255, 255, 0.15);
@@ -521,147 +326,21 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     100% { transform: translateY(-6px); }
   }
 
-  .hero-scroll-starter {
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
-    z-index: 8;
-    will-change: opacity;
-    pointer-events: auto;
-    transition: opacity 0.2s ease;
-  }
-
-  .starter-text {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-  }
-
-  .hint-mouse {
-    width: 22px;
-    height: 36px;
-    border: 2px solid rgba(255, 255, 255, 0.35);
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    padding-top: 6px;
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(8px);
-  }
-
-  .mouse-wheel {
-    width: 3px;
-    height: 7px;
-    background: #fb923c;
-    border-radius: 2px;
-    animation: scrollAnim 1.8s ease-in-out infinite;
-  }
-
-  @keyframes scrollAnim {
-    0% { transform: translateY(0); opacity: 1; }
-    50% { transform: translateY(8px); opacity: 0.4; }
-    100% { transform: translateY(0); opacity: 1; }
-  }
-
-  .hero-editorial-tracker {
-    position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 1.75rem;
-    z-index: 10;
-    pointer-events: none;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-
-  .tracker-segment {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .track-bar {
-    width: 48px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .track-fill {
-    height: 100%;
-    width: 0%;
-    background: #f97316;
-    transition: width 0.1s linear;
-  }
-
-  .hero-phase-panel {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5.5rem 1.5rem 2rem 1.5rem;
-    z-index: 5;
-    will-change: opacity, transform;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .hero-phase-panel.phase-initial {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .phase-inner {
-    text-align: center;
-    width: 100%;
-  }
-
-  .max-w-content {
-    max-width: 980px;
-    margin: 0 auto;
-  }
-
-  .max-w-showcase {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
   .editorial-eyebrow {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     margin-bottom: 1rem;
   }
 
   .eyebrow-orange { color: #fb923c; }
-  .eyebrow-cyan { color: var(--accent-cyan); }
-  .eyebrow-emerald { color: var(--accent-emerald); }
 
   .hero-headline {
-    font-size: clamp(2.1rem, 4.5vw, 3.8rem);
+    font-size: clamp(2.1rem, 4.2vw, 3.5rem);
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -0.03em;
@@ -675,32 +354,24 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     -webkit-text-fill-color: transparent;
   }
 
-  .gradient-text-emerald {
-    background: linear-gradient(135deg, #FFFFFF 20%, #34D399 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
   .hero-narrative-lead {
-    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    font-size: clamp(1.02rem, 1.6vw, 1.22rem);
     color: var(--text-muted);
     line-height: 1.65;
-    max-width: 820px;
+    max-width: 840px;
     margin: 0 auto 1.75rem auto;
-    font-weight: 400;
   }
 
   .hero-narrative-lead strong {
     color: var(--text-main);
   }
 
-  /* Badge Pill Row */
   .hero-badge-pill-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.85rem;
   }
 
   .badge-pill {
@@ -735,13 +406,59 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     color: var(--accent-emerald);
   }
 
-  /* Phase 1 Showcase Grid */
+  .card-action-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.85rem;
+    align-items: center;
+  }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: var(--radius-full);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.25s ease;
+  }
+
+  .btn-orange {
+    background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+    color: #FFFFFF;
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.4);
+  }
+
+  .btn-orange:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(249, 115, 22, 0.6);
+  }
+
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-main);
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+  }
+
   .lua-showcase-grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     gap: 2.5rem;
     align-items: center;
-    margin-top: 1.5rem;
+    max-width: 1120px;
+    margin: 0 auto;
     text-align: left;
   }
 
@@ -755,8 +472,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    background: rgba(15, 23, 42, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(15, 23, 42, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding: 1.25rem 1.5rem;
@@ -771,8 +488,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .feature-icon-badge {
     font-size: 1.6rem;
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -804,22 +521,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .feature-text p {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
     margin: 0;
-    line-height: 1.45;
+    line-height: 1.5;
   }
 
-  .feature-text code {
-    font-family: monospace;
-    font-size: 0.78rem;
-    color: #fdba74;
-    background: rgba(249, 115, 22, 0.12);
-    padding: 0.15rem 0.35rem;
-    border-radius: 4px;
-  }
-
-  /* Physical Device Frame (Lúa Circular Screen) */
   .showcase-device-col {
     display: flex;
     justify-content: center;
@@ -834,8 +541,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .device-bezel-outer {
     position: relative;
-    width: 290px;
-    height: 290px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     background: radial-gradient(circle, #1E293B 0%, #0F172A 70%, #020617 100%);
     border: 6px solid #334155;
@@ -873,8 +580,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .device-screen-circular {
     position: relative;
-    width: 240px;
-    height: 240px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
     overflow: hidden;
     background: #0B0F19;
@@ -910,138 +617,23 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     font-weight: 700;
     padding: 0.35rem 0.9rem;
     border-radius: var(--radius-full);
-  }
-
-  /* Phase 2: Dual Showcase */
-  .lua-dual-showcase {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 1.5rem;
-    text-align: left;
-  }
-
-  .lua-info-card {
-    padding: 2.25rem;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-lg);
-    background: rgba(15, 23, 42, 0.65);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-
-  .card-accent-tag {
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.75rem;
-  }
-
-  .text-orange { color: #fb923c; }
-  .text-cyan { color: var(--accent-cyan); }
-
-  .lua-info-card h3 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-main);
-    margin-bottom: 0.75rem;
-  }
-
-  .lua-info-card p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-  }
-
-  .inline-code {
-    font-family: monospace;
-    font-size: 0.82rem;
-    color: #fdba74;
-    background: rgba(249, 115, 22, 0.12);
-    padding: 0.15rem 0.35rem;
-    border-radius: 4px;
-  }
-
-  .card-mini-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .mini-tag {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-main);
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.3rem 0.7rem;
-    border-radius: var(--radius-full);
-  }
-
-  .card-action-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    align-items: center;
-  }
-
-  .hero-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.4rem;
-    border-radius: var(--radius-full);
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.25s ease;
-  }
-
-  .btn-orange {
-    background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
-    color: #FFFFFF;
-    box-shadow: 0 0 25px rgba(249, 115, 22, 0.4);
-  }
-
-  .btn-orange:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 35px rgba(249, 115, 22, 0.6);
-  }
-
-  .btn-ghost {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--text-main);
-  }
-
-  .btn-ghost:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: var(--accent-cyan);
-    color: var(--accent-cyan);
+    text-align: center;
   }
 
   @media (max-width: 900px) {
-    .lua-showcase-grid,
-    .lua-dual-showcase {
+    .lua-showcase-grid {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: 2rem;
     }
+  }
 
-    .showcase-device-col {
-      display: none;
+  @media (max-width: 640px) {
+    .lua-hero-section {
+      padding: 6.5rem 0 3.5rem 0;
     }
-
-    .hero-editorial-tracker {
-      display: none;
-    }
-
-    .hero-phase-panel {
-      padding: 4.5rem 1rem 2rem 1rem;
+    .hero-btn {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>
