@@ -27,10 +27,10 @@ const blocks = [
     num: "01",
     id: "sor",
     domain: "audicion",
-    title: "Integración Sensorial SOR",
-    category: "Sobre-Responsividad",
-    desc: "Desensibilización sonora ante ruidos fuertes cotidianos (secador, aula). Muro de control adulto donde pausar la sesión suma puntos.",
-    badge: "SOR Acústico",
+    title: "Integración Sensorial Auditiva",
+    category: "Tolerancia Sonora",
+    desc: "6 actividades con 11 sonidos cotidianos (8 aparatos y alertas + 3 ambientes vivos: aula, centro comercial y calle con obras). Incluye escucha previa para el adulto y botón de pausa que siempre suma puntos.",
+    badge: "11 Estímulos + Pre-Escucha",
     badgeColor: "cyan",
     img: `${baseUrl}/assets/05-hub-bloques.png`
   },
@@ -40,7 +40,7 @@ const blocks = [
     domain: "habla",
     title: "Aventuras con Lúa",
     category: "Lúa y las Palabras",
-    desc: "105 actividades en 6 franjas de edad (0 a 10 años): preguntas interactivas, cuentos ilustrados y canciones habladas a pulso.",
+    desc: "105 actividades en 6 franjas de edad (0 a 10 años): 25 juegos de selección, 60 preguntas, 10 cuentos y 10 canciones habladas a pulso con metrónomo visual en castellano y galego.",
     badge: "105 Actividades",
     badgeColor: "purple",
     img: `${baseUrl}/assets/08-pares-juego.png`
@@ -49,10 +49,10 @@ const blocks = [
     num: "03",
     id: "pares",
     domain: "habla",
-    title: "Pares Mínimos D7",
-    category: "Dislalias y Habla",
-    desc: "15 pares contrastados en 6 grupos articulatorios. Algoritmo O2 que coteja ambas palabras evitando falsos positivos de error.",
-    badge: "Algoritmo O2",
+    title: "Pares Mínimos",
+    category: "Contrastes Fonológicos",
+    desc: "Palabras que cambian de significado por un solo sonido (pato/gato, pera/perra). Coteja ambas opciones del par, propone una misión física en casa e incorpora el sello «Manos juntas».",
+    badge: "6 Variedades Validadas",
     badgeColor: "cyan",
     img: `${baseUrl}/assets/08-pares-juego.png`
   },
@@ -60,10 +60,10 @@ const blocks = [
     num: "04",
     id: "expansion",
     domain: "habla",
-    title: "Expansión Semántica",
-    category: "Léxico y Comprensión",
-    desc: "66 pictogramas propios en píxel art. Práctica en doble vuelta: el menor primero señala la imagen y luego articula la palabra.",
-    badge: "Doble Vuelta",
+    title: "Expansión Semántica y Rutinas",
+    category: "Rutinas y Léxico",
+    desc: "Rutinas del día en 4 pasos ilustrados: primero ordenar tocando las tarjetas (comprensión) y después nombrar en orden (producción), junto con 5 categorías, 9 progresiones y más de 160 pictogramas en píxel art.",
+    badge: "Rutinas + Doble Vuelta",
     badgeColor: "emerald",
     img: `${baseUrl}/assets/12-expansion-juego.png`
   },
@@ -71,9 +71,9 @@ const blocks = [
     num: "05",
     id: "acopros",
     domain: "audicion",
-    title: "Audición (ACOPROS)",
+    title: "Audición (18 ejercicios)",
     category: "Auditivo-Verbal",
-    desc: "Discriminación fonética fina y comprensión en ruido babble graduable simulando el aula real, validado por logopedas de ACOPROS.",
+    desc: "Discriminación fonética fina, identificación e integración auditiva con ruido de fondo (babble) graduable simulando el aula real, revisado por logopedas de ACOPROS.",
     badge: "Protocolo ACOPROS",
     badgeColor: "purple",
     img: `${baseUrl}/assets/15-ling-test.png`
@@ -82,10 +82,10 @@ const blocks = [
     num: "06",
     id: "lenguaje",
     domain: "neuro",
-    title: "Lenguaje Temprano",
-    category: "Estimulación Familiar",
-    desc: "Atención conjunta triangulada, imitación progresiva (gesto → sílaba → palabra) y rutinas comunicativas funcionales en el hogar.",
-    badge: "Rutina Diaria",
+    title: "Lenguaje Temprano (7 ejercicios)",
+    category: "Interacción en Casa",
+    desc: "Atención conjunta con 5 variantes lúdicas, imitación progresiva (gesto → sílaba → palabra) y aviso previo de los objetos cotidianos necesarios antes de empezar cada actividad.",
+    badge: "5 Variantes + Materiales",
     badgeColor: "cyan",
     img: `${baseUrl}/assets/10-expansion-escenarios.png`
   },
@@ -93,10 +93,10 @@ const blocks = [
     num: "07",
     id: "tea",
     domain: "neuro",
-    title: "TEA (Espectro Autista)",
-    category: "PRT + Conductual",
-    desc: "Atención conjunta con Time Delay, quiebres pragmáticos y anticipación estructurada con estresores regulados a mano por el adulto.",
-    badge: "Estresores Manuales",
+    title: "TEA (6 ejercicios)",
+    category: "Atención Conjunta y Turnos",
+    desc: "Sello «Punto de mirada» para coordinar la atención antes del turno, esperas estructuradas, quiebres comunicativos y anticipación con retos regulados siempre a mano por el adulto.",
+    badge: "Punto de Mirada",
     badgeColor: "amber",
     img: `${baseUrl}/assets/05-hub-bloques.png`
   },
@@ -104,10 +104,10 @@ const blocks = [
     num: "08",
     id: "dislexia",
     domain: "neuro",
-    title: "Dislexia y Fonología",
+    title: "Dislexia y Fonología (6 ejercicios)",
     category: "Conciencia Fonológica",
-    desc: "Intruso fonológico auditivo, criba de pseudopalabras y mapa de rotaciones críticas (b/d · p/q) con denominación rápida automatizada.",
-    badge: "Criba Fonológica",
+    desc: "Intruso fonológico numerado para guiar sin tocar la pantalla, criba de pseudopalabras, mapa de rotaciones críticas (b/d · p/q) y denominación rápida.",
+    badge: "Ruta Fonológica",
     badgeColor: "purple",
     img: `${baseUrl}/assets/08-pares-juego.png`
   },
@@ -115,10 +115,10 @@ const blocks = [
     num: "09",
     id: "pizarra",
     domain: "neuro",
-    title: "La Pizarra Mágica",
+    title: "La Pizarra Mágica (18 trazos)",
     category: "Grafomotricidad",
-    desc: "18 trazos guiados en SVG sobre pauta Montessori con puntos numerados (1, 2, 3) que fijan la secuencia motriz correcta de las letras.",
-    badge: "18 Trazos SVG",
+    desc: "12 letras críticas organizadas en 6 contrastes cerrados (b↔d, p↔q, m↔n, a↔e, s↔z, g↔q) con orden de trazo numerado (1, 2, 3), botón «Oír la letra» y 6 lazos motores.",
+    badge: "18 Trazos + Voz",
     badgeColor: "emerald",
     img: `${baseUrl}/assets/12-expansion-juego.png`
   },
@@ -126,24 +126,24 @@ const blocks = [
     num: "10",
     id: "ra",
     domain: "neuro",
-    title: "Realidad Aumentada 3D",
-    category: "Sensor Orofacial",
-    desc: "Cámara frontal como sensor cinemático orofacial sin micrófono activo (ARCore + MediaPipe + Filament), garantizando privacidad estricta.",
-    badge: "Cámara sin Audio",
+    title: "Realidad Aumentada 3D (6 ejercicios)",
+    category: "Motricidad Orofacial",
+    desc: "Juegos espaciales y de soplo/praxias donde la cámara funciona solo como sensor de movimiento con el micrófono apagado y sin guardar imágenes ni vídeo.",
+    badge: "Sensor sin Grabación",
     badgeColor: "cyan",
     img: `${baseUrl}/assets/05-hub-bloques.png`
   }
 ];
 ---
 
-<!-- Interactive Clinical Showcase: 10 Therapy Blocks + Ling Test -->
+<!-- Interactive Showcase: 10 Exercise Blocks + Ling Test -->
 <section id="bloques-clinicos" class="therapy-section">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Protocolo de Rehabilitación Pediátrica</span>
-      <h2>10 Bloques Clínicos: <span class="gradient-text">Estimulación Estructurada</span></h2>
+      <span class="tag">Práctica Lúdica Guiada en Casa</span>
+      <h2>10 Bloques de Ejercicios: <span class="gradient-text">Aprender Jugando con Lúa</span></h2>
       <p>
-        Diseñados bajo rigor logopédico para entrenar audición, habla, neurodesarrollo y motricidad sin frustración ni juicios automáticos.
+        Diseñados con rigor logopédico para practicar audición, habla, rutinas y grafomotricidad en sesiones cortas, alegres y sin frustración.
       </p>
 
       <!-- Clinical Domain Tabs Filter -->
@@ -180,7 +180,7 @@ const blocks = [
             <img 
               id="active-clinical-img"
               src={`${baseUrl}/assets/05-hub-bloques.png`} 
-              alt="Interfaz interactiva en app de Valeria+ v14" 
+              alt="Interfaz interactiva en app de Valeria+ v16" 
               class="active-screen-img"
               width="360"
               height="780"
