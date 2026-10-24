@@ -1,0 +1,521 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
+<section class="construye-hero">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="hero-glow orb-amber" aria-hidden="true"></div>
+  <div class="hero-glow orb-cyan" aria-hidden="true"></div>
+
+  <div class="container hero-container">
+    <!-- Institutional Origin Banner -->
+    <div class="origin-banner">
+      <div class="origin-logos">
+        <!-- Dr. Frank Betances Emblem -->
+        <div class="logo-item emblem-wrapper" title="Dr. Frank Alberto Betances Reinoso">
+          <img 
+            src={`${baseUrl}/assets/descubre-con-lua/dr-betances-emblem.jpg`} 
+            alt="Emblema del Dr. Frank Alberto Betances Reinoso" 
+            class="emblem-img" 
+            loading="eager" 
+            decoding="async"
+          />
+        </div>
+
+        <div class="origin-separator" aria-hidden="true"></div>
+
+        <!-- startTIC Logo inside clean white pill -->
+        <div class="logo-item partner-pill" title="Incubadora de Alta Tecnología startTIC">
+          <img 
+            src={`${baseUrl}/assets/descubre-con-lua/startic-logo.png`} 
+            alt="Incubadora de Alta Tecnología startTIC" 
+            class="partner-img startic-img" 
+            loading="eager" 
+            decoding="async"
+          />
+        </div>
+
+        <div class="origin-separator" aria-hidden="true"></div>
+
+        <!-- Consorcio da Zona Franca de Vigo Logo inside clean white pill -->
+        <div class="logo-item partner-pill" title="Consorcio de la Zona Franca de Vigo">
+          <img 
+            src={`${baseUrl}/assets/descubre-con-lua/zona-franca-vigo-logo.png`} 
+            alt="Consorcio de la Zona Franca de Vigo" 
+            class="partner-img zona-franca-img" 
+            loading="eager" 
+            decoding="async"
+          />
+        </div>
+      </div>
+      <p class="origin-text">
+        <strong>Dr. Frank Alberto Betances Reinoso</strong> · Incubadora <strong>startTIC</strong> · <strong>Consorcio Zona Franca de Vigo</strong> · <strong>Earlify Health</strong>
+      </p>
+    </div>
+
+    <!-- Badges Row -->
+    <div class="hero-badges">
+      <span class="hero-badge badge-orange">
+        <span class="badge-dot dot-orange"></span>
+        Estándar Duplo (31,80 mm)
+      </span>
+      <span class="hero-badge badge-cyan">
+        <span class="badge-dot dot-cyan"></span>
+        Blender 4.x Headless (bpy)
+      </span>
+      <span class="hero-badge badge-emerald">
+        <span class="badge-dot dot-emerald"></span>
+        Norma EN 71-1 (>31,75 mm)
+      </span>
+      <span class="hero-badge badge-purple">
+        <span class="badge-dot dot-purple"></span>
+        Cero Pantallas para la Criatura
+      </span>
+    </div>
+
+    <!-- Main Title -->
+    <div class="hero-title-area">
+      <div class="hero-title-icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" class="brick-icon">
+          <rect x="6" y="16" width="36" height="24" rx="3" fill="#F97316" fill-opacity="0.2" stroke="#FB923C" stroke-width="2.5"/>
+          <rect x="11" y="8" width="10" height="8" rx="2" fill="#F97316" stroke="#FB923C" stroke-width="2"/>
+          <rect x="27" y="8" width="10" height="8" rx="2" fill="#F97316" stroke="#FB923C" stroke-width="2"/>
+          <line x1="24" y1="16" x2="24" y2="40" stroke="#FB923C" stroke-width="1.5" stroke-dasharray="3 3"/>
+        </svg>
+      </div>
+      <h1 class="hero-title">
+        Lúa Construye <br />
+        <span class="gradient-text-brick">Robótica Manipulativa y Modular 3D</span>
+      </h1>
+    </div>
+
+    <!-- Lead Narrative -->
+    <p class="hero-lead">
+      Sistema modular tangible de construcción educativa y estimulación neurofuncional para la primera infancia (0 a 6 años). Basado en el estándar mecánico <strong>Duplo (paso de 31,80 mm)</strong>, modelado proceduralmente en <strong>Blender (Python <code>bpy</code>)</strong> para impresión 3D FDM/resina y sincronizado con el software pedagógico de aula <strong>Descubre con Lúa</strong> y clínico de <strong>Valeria+</strong>.
+    </p>
+
+    <!-- KPI Metric Cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-value text-orange">31,80 mm</div>
+        <div class="kpi-label">Paso Modular Duplo</div>
+        <div class="kpi-desc">Interoperable al 100% con piezas existentes y bases 8×8</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value text-emerald">> 31,75 mm</div>
+        <div class="kpi-label">Seguridad EN 71-1</div>
+        <div class="kpi-desc">Todas las piezas superan el cilindro anti-asfixia para &lt; 36 meses</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value text-cyan">Blender bpy</div>
+        <div class="kpi-label">Pipeline Procedural</div>
+        <div class="kpi-desc">Exportación STL paramétrica headless con Manifold 2-manifold estricto</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value text-purple">Zero-Network</div>
+        <div class="kpi-label">Software Desacoplado</div>
+        <div class="kpi-desc">Flutter Canvas <code>CustomPainter</code>, audios TPR en inglés y cero PHI</div>
+      </div>
+    </div>
+
+    <!-- CTA Actions -->
+    <div class="hero-cta-group">
+      <a href="#especificaciones" class="btn-primary-hero">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>Especificación Mecánica</span>
+      </a>
+
+      <a href="#blender-script" class="btn-secondary-hero">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span>Script Blender bpy</span>
+      </a>
+
+      <a href="#matriz-compatibilidad" class="btn-tertiary-hero">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>Gama Lúa vs Valeria</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .construye-hero {
+    position: relative;
+    padding: 3rem 0 5rem;
+    overflow: hidden;
+  }
+
+  /* Engineering Blueprint Grid Background */
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(to right, rgba(249, 115, 22, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+    background-size: 31.8px 31.8px;
+    mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%);
+    pointer-events: none;
+    z-index: -2;
+  }
+
+  .hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .orb-amber {
+    top: -100px;
+    left: 20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.16) 0%, rgba(249, 115, 22, 0) 70%);
+  }
+
+  .orb-cyan {
+    top: 20%;
+    right: 10%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, rgba(0, 242, 254, 0) 70%);
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Origin Banner */
+  .origin-banner {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.6rem;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(12px);
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .origin-logos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .emblem-wrapper .emblem-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FB923C;
+    box-shadow: 0 0 14px rgba(251, 146, 60, 0.4);
+  }
+
+  .partner-pill {
+    background: #ffffff;
+    border-radius: 9999px;
+    padding: 4px 14px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .partner-img {
+    display: block;
+    object-fit: contain;
+  }
+
+  .startic-img {
+    height: 30px;
+    width: auto;
+  }
+
+  .zona-franca-img {
+    height: 34px;
+    width: auto;
+  }
+
+  .origin-separator {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .origin-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .origin-text strong {
+    color: var(--text-main);
+  }
+
+  /* Badges */
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
+  }
+
+  .badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+
+  .badge-orange {
+    background: rgba(249, 115, 22, 0.12);
+    color: #FDBA74;
+    border-color: rgba(249, 115, 22, 0.35);
+  }
+  .dot-orange { background: #FB923C; box-shadow: 0 0 8px #FB923C; }
+
+  .badge-cyan {
+    background: rgba(0, 242, 254, 0.1);
+    color: #67E8F9;
+    border-color: rgba(0, 242, 254, 0.3);
+  }
+  .dot-cyan { background: #00F2FE; box-shadow: 0 0 8px #00F2FE; }
+
+  .badge-emerald {
+    background: rgba(16, 185, 129, 0.1);
+    color: #6EE7B7;
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+  .dot-emerald { background: #10B981; box-shadow: 0 0 8px #10B981; }
+
+  .badge-purple {
+    background: rgba(138, 43, 226, 0.1);
+    color: #D8B4FE;
+    border-color: rgba(138, 43, 226, 0.3);
+  }
+  .dot-purple { background: #A855F7; box-shadow: 0 0 8px #A855F7; }
+
+  /* Title Area */
+  .hero-title-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 16px rgba(249, 115, 22, 0.4));
+  }
+
+  .brick-icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+  }
+
+  .gradient-text-brick {
+    background: linear-gradient(135deg, #FB923C 0%, #F97316 40%, #00F2FE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-lead {
+    max-width: 860px;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 2.8rem;
+  }
+
+  .hero-lead strong {
+    color: var(--text-main);
+  }
+
+  .hero-lead code {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    color: #67E8F9;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95em;
+  }
+
+  /* KPI Grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 1140px;
+    margin-bottom: 3rem;
+  }
+
+  .kpi-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.2rem;
+    text-align: left;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .kpi-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(249, 115, 22, 0.4);
+    box-shadow: 0 12px 28px -6px rgba(249, 115, 22, 0.15);
+  }
+
+  .kpi-value {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+  }
+
+  .text-orange { color: #FB923C; }
+  .text-emerald { color: #34D399; }
+  .text-cyan { color: #00F2FE; }
+  .text-purple { color: #C084FC; }
+
+  .kpi-label {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.35rem;
+  }
+
+  .kpi-desc {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    line-height: 1.45;
+  }
+
+  /* CTAs */
+  .hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn-primary-hero,
+  .btn-secondary-hero,
+  .btn-tertiary-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .btn-primary-hero {
+    background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+  }
+
+  .btn-primary-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 26px rgba(249, 115, 22, 0.5);
+  }
+
+  .btn-secondary-hero {
+    background: rgba(15, 23, 42, 0.7);
+    color: #67E8F9;
+    border: 1px solid rgba(0, 242, 254, 0.35);
+  }
+
+  .btn-secondary-hero:hover {
+    background: rgba(0, 242, 254, 0.12);
+    border-color: #00F2FE;
+    transform: translateY(-2px);
+  }
+
+  .btn-tertiary-hero {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid var(--border-light);
+  }
+
+  .btn-tertiary-hero:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 992px) {
+    .kpi-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .kpi-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-badges {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .hero-cta-group {
+      flex-direction: column;
+      width: 100%;
+    }
+    .btn-primary-hero,
+    .btn-secondary-hero,
+    .btn-tertiary-hero {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
