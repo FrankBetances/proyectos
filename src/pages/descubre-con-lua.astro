@@ -10,8 +10,8 @@ import DescubrePedagogyVoice from '../components/descubre-con-lua/DescubrePedago
 import DescubrePrivacyGates from '../components/descubre-con-lua/DescubrePrivacyGates.astro';
 import DescubreLicensingFAQ from '../components/descubre-con-lua/DescubreLicensingFAQ.astro';
 
-const pageTitle = "Descubre con Lúa · Edición Vigo | App Educativa 0-3 Anos";
-const pageDescription = "Aplicación Android educativa 100% sen conexión para escolas municipais de Vigo e familias (0-3 anos). Desenvolvida por Frank Betances en startTIC.";
+const pageTitle = "Descubre con Lúa · Edición Escolar | App Educativa 0-3 Años";
+const pageDescription = "Aplicación Android educativa 100% sin conexión para escuelas infantiles y familias (0-3 años). Desarrollada por el Dr. Frank Betances en startTIC.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -19,11 +19,11 @@ const jsonLd = {
     {
       "@type": "SoftwareApplication",
       "@id": "https://FrankBetances.github.io/proyectos/descubre-con-lua#software",
-      "name": "Descubre con Lúa · Edición Vigo",
+      "name": "Descubre con Lúa · Edición Escolar",
       "operatingSystem": "Android 7.0+ (minSdk 24, targetSdk 36)",
       "applicationCategory": "EducationalApplication",
       "description": pageDescription,
-      "inLanguage": ["gl-ES", "es-ES"],
+      "inLanguage": ["es-ES", "gl-ES"],
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -33,29 +33,29 @@ const jsonLd = {
       "author": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
-        "jobTitle": "ORL & Especialista en Saúde Dixital",
+        "jobTitle": "ORL Infantil & Especialista en Salud Digital",
         "url": "https://FrankBetances.github.io/proyectos/cv"
       },
       "sponsor": [
         {
           "@type": "Organization",
-          "name": "Consorcio da Zona Franca de Vigo"
+          "name": "Consorcio de la Zona Franca de Vigo"
         },
         {
           "@type": "Organization",
-          "name": "Incubadora de Alta Tecnoloxía startTIC"
+          "name": "Incubadora de Alta Tecnología startTIC"
         }
       ],
       "featureList": [
-        "10 unidades de aula (unha por mes de curso escolar)",
+        "10 unidades de aula (una por mes de curso escolar)",
         "11 cápsulas formativas (5 de Academy + 6 de formación docente)",
-        "1.020 locucións neuronais gravadas offline (Celtia / Proxecto Nós, Sharvard, LJSpeech)",
-        "80 láminas vectoriais debuxadas como datos (50 vocabulario + 30 escenas)",
-        "Pulso rítmico visual para nenos con audiófono ou implante coclear",
-        "Premios e gamificación ética dirixida exclusivamente á persoa adulta",
-        "Cero permisos de rede e total protección da privacidade infantil",
-        "A criatura de 0 a 3 anos non interactúa coa pantalla",
-        "Pipeline de calidade estrito con 16 gates automáticos de compilación"
+        "1.020 locuciones neuronales grabadas offline (Celtia / Proxecto Nós, Sharvard, LJSpeech)",
+        "80 láminas vectoriales dibujadas como datos (50 vocabulario + 30 escenas)",
+        "Pulso rítmico visual para menores con audífono o implante coclear",
+        "Premios y gamificación ética dirigida exclusivamente a la persona adulta",
+        "Cero permisos de red y total protección de la privacidad infantil",
+        "El menor de 0 a 3 años no interactúa con la pantalla",
+        "Pipeline de calidad estricto con 16 gates automáticos de compilación"
       ]
     },
     {
@@ -64,26 +64,26 @@ const jsonLd = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Por que a criatura non debe mirar nin tocar a pantalla nesta idade (0-3 anos)?",
+          "name": "¿Por qué el menor no debe mirar ni tocar la pantalla a esta edad (0-3 años)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "As directrices da OMS e da AEP desaconsellan a exposición a pantallas en menores de 2 anos. A app é un guión instrumental para o adulto; a criatura interactúa cara a cara coa persoa que lle fala."
+            "text": "Las directrices de la OMS y de la Asociación Española de Pediatría desaconsejan la exposición a pantallas en menores de 2 años. La app es un guión instrumental para la persona adulta; el niño interactúa cara a cara con la persona que le habla."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Como funciona o inglés na aplicación?",
+          "name": "¿Cómo funciona el inglés en la aplicación?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "O inglés é contido que se escoita antes de falar. O adulto preme a pastilla con voz neuronal nativa, escoita a modulación correcta e logo pronúnciaa con seguridade diante da criatura."
+            "text": "El inglés es contenido que se escucha antes de hablar. El adulto pulsa la pastilla con voz neuronal nativa, escucha la modulación correcta y luego la pronuncia con seguridad delante del menor."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Que diferenza hai entre Descubre con Lúa e Valeria+ ou VIA+?",
+          "name": "¿Qué diferencia hay entre Descubre con Lúa y Valeria+ o VIA+?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Descubre con Lúa ten finalidade exclusivamente educativa e comunitaria (0-3 anos). Non é un produto sanitario. Valeria+ é terapia domiciliaria para dificultades da linguaxe e VIA+ é un SaMD Clase IIa de diagnóstico médico."
+            "text": "Descubre con Lúa tiene finalidad exclusivamente educativa y comunitaria (0-3 años). No es un producto sanitario. Valeria+ es apoyo familiar en casa para el desarrollo del lenguaje y VIA+ es un SaMD Clase IIa de apoyo al diagnóstico médico en consulta."
           }
         }
       ]
@@ -96,7 +96,7 @@ const jsonLd = {
   title={pageTitle}
   description={pageDescription}
   image="/assets/descubre-con-lua/bienvenida-gl.png"
-  keywords="Descubre con Lúa, Lúa Vigo, Escolas Infantís Vigo, startTIC, Zona Franca de Vigo, Educación Infantil 0-3 anos, Proxecto Nós, Celtia voz neuronal, Dr. Frank Betances, Aprendizaxe sen conexión, Cero pantallas"
+  keywords="Descubre con Lúa, Escuelas Infantiles, startTIC, Zona Franca de Vigo, Educación Infantil 0-3 años, Estimulación del Lenguaje, Dr. Frank Betances, Aprendizaje sin conexión, Cero pantallas"
   jsonLd={jsonLd}
 >
   <Header activeTab="descubre-con-lua" />

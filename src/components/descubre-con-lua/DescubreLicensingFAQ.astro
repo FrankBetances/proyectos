@@ -9,52 +9,53 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <!-- Licensing Overview -->
     <div class="licensing-block">
       <div class="section-header">
-        <span class="section-pill">Marco Legal e Licenza</span>
+        <span class="section-pill">Marco Legal y Licencia</span>
         <h2 class="section-title">
-          Gratis para as Familias, <span class="gradient-text-teal">Con Licenza Institucional</span>
+          Gratis para las Familias, <span class="gradient-text-teal">Con Licencia Institucional</span>
         </h2>
         <p class="section-subtitle">
-          Un modelo de licenza deseñado para protexer o interese público e garantir a calidade da implementación pedagóxica nas aulas municipais.
+          Un modelo de licencia diseñado para proteger el interés público y garantizar la calidad de la implementación pedagógica en las aulas.
         </p>
       </div>
 
       <div class="licensing-cards-grid">
         <div class="license-card family-card">
           <div class="license-header">
-            <span class="license-tag tag-free">GRATIS PARA SEMPRE</span>
-            <h3>Familias e Uso Individual</h3>
+            <span class="license-tag tag-free">GRATIS PARA SIEMPRE</span>
+            <h3>Familias y Uso Individual</h3>
           </div>
           <p class="license-intro">
-            Para calquera nai, pai, titor ou persoa a título particular:
+            Para cualquier madre, padre, tutor o persona a título particular:
           </p>
           <ul class="license-checklist">
-            <li>✓ Uso completo da aplicación sen custo algún.</li>
-            <li>✓ Acceso ás 11 cápsulas de formación e ás 10 unidades.</li>
-            <li>✓ Sen publicidade, sen subscricións nin compras ocultas.</li>
-            <li>✓ Libre compilación e adaptación privada para o propio fogar.</li>
+            <li>✓ Uso completo de la aplicación sin coste alguno.</li>
+            <li>✓ Acceso a las 11 cápsulas de formación y a las 10 unidades.</li>
+            <li>✓ Sin publicidad, sin suscripciones ni compras ocultas.</li>
+            <li>✓ Libre compilación y adaptación privada para el propio hogar.</li>
           </ul>
           <div class="license-footer-note">
-            Non cómpre pedir permiso previo nin asinar ningún documento.
+            No es necesario pedir permiso previo ni firmar ningún documento.
           </div>
         </div>
 
         <div class="license-card institution-card">
           <div class="license-header">
-            <span class="license-tag tag-institutional">ACORDO POR ESCRITO</span>
-            <h3>Escolas, Concellos e Entidades</h3>
+            <span class="license-tag tag-institutional">ACUERDO POR ESCRITO</span>
+            <h3>Escuelas, Ayuntamientos y Entidades</h3>
           </div>
           <p class="license-intro">
-            Para escolas infantís, centros educativos, gabinetes, concellos ou empresas:
+            Para escuelas infantiles, centros educativos, gabinetes, ayuntamientos o empresas:
           </p>
           <ul class="license-checklist">
-            <li>Requírese <strong>licenza previa por escrito</strong> antes da implantación na aula.</li>
-            <li>Aínda que o servizo prestado sexa gratuíto ou sen ánimo de lucro.</li>
-            <li>Acórdanse convenios caso por caso (que <strong>poden ser 100% gratuítos</strong> en proxectos públicos ou pilotos).</li>
-            <li>Prohibida a redistribución en tendas de apps alleas sen autorización.</li>
+            <li>Se requiere <strong>licencia previa por escrito</strong> antes de la implantación en el aula.</li>
+            <li>Incluso si el servicio prestado es gratuito o sin ánimo de lucro.</li>
+            <li>Se acuerdan convenios caso por caso (que <strong>pueden ser 100% gratuitos</strong> en proyectos públicos o pilotos).</li>
+            <li>Prohibida la redistribución en tiendas de apps ajenas sin autorización.</li>
           </ul>
           <div class="license-footer-action">
             <button 
               class="btn-license-contact"
+              data-open-contact
               onclick="document.getElementById('contact-modal')?.classList.add('open'); document.getElementById('contact-modal')?.setAttribute('aria-hidden', 'false');"
             >
               <span>Solicitar Convenio Institucional</span>
@@ -73,7 +74,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <div class="section-header">
         <span class="section-pill">Preguntas Frecuentes</span>
         <h2 class="section-title">
-          Dúbidas sobre o <span class="gradient-text-teal">Proxecto e Pedagoxía</span>
+          Dudas sobre el <span class="gradient-text-teal">Proyecto y la Pedagogía</span>
         </h2>
       </div>
 
@@ -81,12 +82,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <!-- FAQ 1 -->
         <details class="faq-item" open>
           <summary class="faq-question">
-            <span>¿Por que a criatura non debe mirar nin tocar a pantalla nesta idade (0-3 anos)?</span>
+            <span>¿Por qué el menor no debe mirar ni tocar la pantalla a esta edad (0-3 años)?</span>
             <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </summary>
           <div class="faq-answer">
             <p>
-              As directrices da Organización Mundial da Saúde (OMS) e da Asociación Española de Pediatría (AEP) desaconsellan taxativamente a exposición pasiva ou activa a pantallas en menores de 2 anos, e aconsellan restrinxila ao máximo nos 3 anos. En <strong>Descubre con Lúa</strong>, a pantalla é exclusivamente un guión instrumental para a persoa adulta (a mestra ou o pai/nai). A criatura mira aos ollos da persoa que lle fala, canta, xoga e interactúa no mundo real.
+              Las directrices de la Organización Mundial de la Salud (OMS) y de la Asociación Española de Pediatría (AEP) desaconsejan taxativamente la exposición pasiva o activa a pantallas en menores de 2 años, y recomiendan restringirla al máximo a los 3 años. En <strong>Descubre con Lúa</strong>, la pantalla es exclusivamente un guión instrumental para la persona adulta (la educadora o el padre/madre). El menor mira a los ojos de la persona que le habla, canta, juega e interactúa en el mundo real.
             </p>
           </div>
         </details>
@@ -94,12 +95,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <!-- FAQ 2 -->
         <details class="faq-item">
           <summary class="faq-question">
-            <span>¿Como funciona o inglés na aplicación se ningunha pantalla está escrita en inglés?</span>
+            <span>¿Cómo funciona el inglés en la aplicación si ninguna pantalla está escrita en inglés?</span>
             <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </summary>
           <div class="faq-answer">
             <p>
-              O inglés é contido que <strong>se escoita antes de falar</strong>. Ningunha docente nin familia de Vigo ten por que adiviñar a pronuncia correcta dunha orde TPR ou dunha palabra mensual. A persoa adulta preme a pastilla con audio neuronal nativo (LJSpeech), escoita a modulación exacta en privacidade e pronúnciaa despois á criatura de xeito natural.
+              El inglés es contenido que <strong>se escucha antes de hablar</strong>. Ningún docente ni familia tiene por qué adivinar la pronunciación correcta de una orden TPR o de una palabra mensual. La persona adulta pulsa la pastilla con audio neuronal nativo (LJSpeech), escucha la modulación exacta en privacidad y luego la pronuncia al menor de forma natural.
             </p>
           </div>
         </details>
@@ -107,12 +108,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <!-- FAQ 3 -->
         <details class="faq-item">
           <summary class="faq-question">
-            <span>¿Que diferenza a Descubre con Lúa de Valeria+ e de VIA+?</span>
+            <span>¿Qué diferencia a Descubre con Lúa de Valeria+ y de VIA+?</span>
             <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </summary>
           <div class="faq-answer">
             <p>
-              <strong>Descubre con Lúa</strong> ten finalidade exclusivamente educativa e comunitaria para o ciclo 0-3 anos (escolas infantís de Vigo). Non é un produto sanitario. Pola súa banda, <strong>Valeria+</strong> é unha plataforma de rehabilitación fonoaudiolóxica domiciliaria para nenos con hipoacusia ou dificultades de linguaxe (a partir de 3 anos), e <strong>VIA+</strong> é un Software como Dispositivo Médico (SaMD Clase IIa) de apoio ao diagnóstico clínico en consulta otorrinolaringolóxica.
+              <strong>Descubre con Lúa</strong> tiene finalidad exclusivamente educativa y comunitaria para el ciclo 0-3 años en escuelas infantiles y hogares. No es un producto sanitario. Por su parte, <strong>Valeria+</strong> es una plataforma de apoyo familiar para el desarrollo del lenguaje en el hogar (a partir de 3 años), y <strong>VIA+</strong> es un Software como Dispositivo Médico (SaMD Clase IIa) de apoyo a la decisión clínica en consulta médica y audiológica.
             </p>
           </div>
         </details>
@@ -120,12 +121,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <!-- FAQ 4 -->
         <details class="faq-item">
           <summary class="faq-question">
-            <span>¿Que función institucional cumpre o Consorcio da Zona Franca de Vigo e startTIC?</span>
+            <span>¿Qué función institucional cumple el Consorcio de la Zona Franca de Vigo y startTIC?</span>
             <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </summary>
           <div class="faq-answer">
             <p>
-              O proxecto xurdiu e foi desenvolvido dentro da <strong>Incubadora de Alta Tecnoloxía startTIC</strong>, pertencente ao Consorcio da Zona Franca de Vigo. As marcas institucionais figuran por orixe e procedencia tecnolóxica do desenvolvemento dirixido polo Dr. Frank Alberto Betances Reinoso.
+              El proyecto surgió y fue desarrollado dentro de la <strong>Incubadora de Alta Tecnología startTIC</strong>, impulsada por el Consorcio de la Zona Franca de Vigo y el Centro Tecnológico GRADIANT con cofinanciación FEDER (Fundación INCYDE). Las entidades institucionales figuran por origen y procedencia del desarrollo tecnológico dirigido por el Dr. Frank Alberto Betances Reinoso.
             </p>
           </div>
         </details>
@@ -133,12 +134,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <!-- FAQ 5 -->
         <details class="faq-item">
           <summary class="faq-question">
-            <span>¿Onde se pode consultar o Manual de Casos de Uso completo?</span>
+            <span>¿Dónde se puede consultar el Manual de Casos de Uso completo?</span>
             <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </summary>
           <div class="faq-answer">
             <p>
-              O proxecto dispón dun manual técnico de seis capítulos con máis de 20 capturas de pantalla oficiais nas dúas linguas, dispoñible tanto en liña coma en formatos imprimibles PDF e Word para centros e educadores interesados en formalizar un convenio de uso.
+              El proyecto dispone de un manual técnico estructurado con capturas de pantalla explicativas y guías didácticas para centros y educadores interesados en formalizar un convenio de uso institucional o piloto educativo.
             </p>
           </div>
         </details>
@@ -148,24 +149,22 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <!-- Final Institutional CTA -->
     <div class="bottom-cta-banner">
       <div class="cta-inner">
-        <h3 class="cta-title">¿Interesado en levar Descubre con Lúa á túa escola ou concello?</h3>
+        <h3 class="cta-title">¿Interesado en llevar Descubre con Lúa a tu escuela o municipio?</h3>
         <p class="cta-desc">
-          Contacta co Dr. Frank Alberto Betances Reinoso para acordar un piloto educativo gratuíto ou convenio de implantación homologado.
+          Contacta con el Dr. Frank Alberto Betances Reinoso para acordar un piloto educativo gratuito o convenio de implantación homologado.
         </p>
         <div class="cta-actions">
           <button 
             class="btn-cta-primary"
+            data-open-contact
             onclick="document.getElementById('contact-modal')?.classList.add('open'); document.getElementById('contact-modal')?.setAttribute('aria-hidden', 'false');"
           >
-            <span>Contactar con Frank Betances</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            <span>Contactar con el Dr. Frank Betances</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
           </button>
-          <a href="mailto:frank.alberto.betances.reinoso@gmail.com" class="btn-cta-secondary">
-            <span>frank.alberto.betances.reinoso@gmail.com</span>
-          </a>
         </div>
       </div>
     </div>
@@ -186,7 +185,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .section-header {
     text-align: center;
     max-width: 820px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 3.5rem auto;
   }
 
   .section-pill {
@@ -209,35 +208,41 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     margin-bottom: 1rem;
   }
 
+  .gradient-text-teal {
+    background: linear-gradient(135deg, #2DD4BF 0%, #38BDF8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .section-subtitle {
     color: var(--text-muted);
     font-size: 1.05rem;
     line-height: 1.6;
   }
 
-  /* Licensing cards grid */
+  /* Licensing Cards */
   .licensing-cards-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
 
   .license-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-lg);
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
     padding: 2.25rem;
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(12px);
   }
 
   .family-card {
-    border-color: rgba(16, 185, 129, 0.25);
+    border-top: 4px solid #2DD4BF;
   }
 
   .institution-card {
-    border-color: rgba(20, 184, 166, 0.35);
+    border-top: 4px solid #FB923C;
   }
 
   .license-header {
@@ -249,43 +254,41 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     padding: 0.2rem 0.65rem;
     border-radius: var(--radius-full);
     font-size: 0.72rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.05em;
     margin-bottom: 0.75rem;
   }
 
   .tag-free {
-    background: rgba(16, 185, 129, 0.15);
-    color: #34D399;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-  }
-
-  .tag-institutional {
     background: rgba(20, 184, 166, 0.15);
     color: #2DD4BF;
     border: 1px solid rgba(20, 184, 166, 0.35);
   }
 
-  .license-header h3 {
-    font-size: 1.5rem;
-    font-weight: 800;
+  .tag-institutional {
+    background: rgba(249, 115, 22, 0.15);
+    color: #FB923C;
+    border: 1px solid rgba(249, 115, 22, 0.35);
+  }
+
+  .license-card h3 {
+    font-size: 1.4rem;
     color: var(--text-main);
   }
 
   .license-intro {
-    color: var(--text-muted);
     font-size: 0.95rem;
-    line-height: 1.5;
+    color: var(--text-muted);
     margin-bottom: 1.25rem;
   }
 
   .license-checklist {
     list-style: none;
     padding: 0;
-    margin: 0 0 1.75rem 0;
+    margin: 0 0 1.5rem 0;
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 0.75rem;
   }
 
   .license-checklist li {
@@ -294,18 +297,18 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     line-height: 1.5;
   }
 
-  .license-checklist strong {
+  .license-checklist li strong {
     color: var(--text-main);
   }
 
   .license-footer-note {
     margin-top: auto;
+    padding: 0.85rem 1rem;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: var(--radius-md);
-    padding: 0.85rem 1rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
+    border-radius: 12px;
+    font-size: 0.84rem;
+    color: #2DD4BF;
     text-align: center;
   }
 
@@ -315,30 +318,30 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .btn-license-contact {
     width: 100%;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.85rem 1.25rem;
-    background: linear-gradient(135deg, #0D9488 0%, #0284C7 100%);
-    color: #FFFFFF;
+    gap: 0.6rem;
+    padding: 0.85rem;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
     border: none;
-    border-radius: var(--radius-md);
+    border-radius: 12px;
+    color: #FFFFFF;
     font-family: var(--font-heading);
-    font-weight: 700;
     font-size: 0.95rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.25s ease;
   }
 
   .btn-license-contact:hover {
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
   }
 
   /* FAQ Block */
   .faq-block {
-    max-width: 900px;
+    max-width: 860px;
     margin: 0 auto 5rem auto;
   }
 
@@ -349,30 +352,27 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .faq-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    transition: all 0.25s ease;
-    backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.25s ease;
   }
 
   .faq-item[open] {
-    border-color: rgba(20, 184, 166, 0.35);
+    border-color: rgba(20, 184, 166, 0.4);
+    background: rgba(15, 23, 42, 0.8);
   }
 
   .faq-question {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1.25rem 1.5rem;
     font-family: var(--font-heading);
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-main);
     cursor: pointer;
-    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     list-style: none;
   }
 
@@ -391,35 +391,33 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   }
 
   .faq-answer {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.65;
   }
 
   .faq-answer strong {
     color: var(--text-main);
   }
 
-  /* Bottom CTA banner */
+  /* Bottom CTA Banner */
   .bottom-cta-banner {
-    background: radial-gradient(circle at center, rgba(13, 148, 136, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
-    border: 1px solid rgba(20, 184, 166, 0.3);
-    border-radius: var(--radius-lg);
+    background: radial-gradient(circle at 50% 0%, rgba(20, 184, 166, 0.15) 0%, rgba(15, 23, 42, 0.7) 70%);
+    border: 1px solid rgba(20, 184, 166, 0.35);
+    border-radius: 24px;
     padding: 3rem 2rem;
     text-align: center;
-    box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(16px);
   }
 
   .cta-inner {
-    max-width: 720px;
+    max-width: 680px;
     margin: 0 auto;
   }
 
   .cta-title {
-    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
     color: var(--text-main);
     margin-bottom: 0.85rem;
   }
@@ -428,58 +426,32 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     color: var(--text-muted);
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-
-  .cta-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    margin-bottom: 1.85rem;
   }
 
   .btn-cta-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.85rem 1.75rem;
-    background: linear-gradient(135deg, #0D9488 0%, #0284C7 100%);
+    padding: 0.9rem 2.2rem;
+    background: linear-gradient(135deg, #14B8A6 0%, #0284C7 100%);
     color: #FFFFFF;
-    border: none;
-    border-radius: var(--radius-full);
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    border-radius: var(--radius-full);
+    border: none;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(13, 148, 136, 0.35);
+    box-shadow: 0 4px 20px rgba(20, 184, 166, 0.35);
     transition: all 0.25s ease;
   }
 
   .btn-cta-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(13, 148, 136, 0.5);
+    box-shadow: 0 8px 30px rgba(20, 184, 166, 0.5);
   }
 
-  .btn-cta-secondary {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.85rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-full);
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.25s ease;
-  }
-
-  .btn-cta-secondary:hover {
-    color: var(--text-main);
-    border-color: rgba(255, 255, 255, 0.25);
-  }
-
-  @media (max-width: 900px) {
+  @media (max-width: 800px) {
     .licensing-cards-grid {
       grid-template-columns: 1fr;
     }
