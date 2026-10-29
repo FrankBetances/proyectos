@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import WhatIsValeria from '../components/WhatIsValeria.astro';
+import ValeriaSTEAMAndAR from '../components/ValeriaSTEAMAndAR.astro';
 import TherapyBlocks from '../components/TherapyBlocks.astro';
 import AcademySection from '../components/AcademySection.astro';
 import AdultPanel from '../components/AdultPanel.astro';
@@ -22,13 +23,13 @@ const valeriaJsonLd = {
       "@type": "SoftwareApplication",
       "@id": "https://FrankBetances.github.io/proyectos/#software",
       "name": "Valeria+",
-      "softwareVersion": "16.0",
+      "softwareVersion": "17.0",
       "applicationCategory": "EducationalApplication",
       "applicationSubCategory": "Speech & Language Family Support",
       "operatingSystem": "Android 8.0+",
       "downloadUrl": "https://play.google.com/store/apps/details?id=eu.futureforkids.valeria",
       "installUrl": "https://play.google.com/store/apps/details?id=eu.futureforkids.valeria",
-      "description": "Aplicación educativa para acompañar el lenguaje infantil en casa. Abre en Academy con guías de 2 minutos para la familia y ofrece 10 bloques de juego con la gata Lúa, rutinas secuenciales de 4 pasos, más de 160 pictogramas en píxel art y 4.711 locuciones 100% offline sin servidor.",
+      "description": "Aplicación educativa de formación para madres, padres y cuidadores sobre el desarrollo del lenguaje y la comunicación en la infancia, con juegos y ejercicios para practicar en casa. Desde octubre de 2026 la práctica se ordena alrededor de STEAM: el niño provoca un fenómeno con las manos en los mundos de Construye con Lúa, y el lenguaje lo nombra. Pensada también para familias de niñas y niños con hipoacusia, implante coclear, dislalias, dislexia o TEA. Offline y en el bolsillo.",
       "author": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
@@ -48,12 +49,18 @@ const valeriaJsonLd = {
           }
         }
       },
+      "award": "Mejor Iniciativa Innovadora en Maker Faire Galicia 2026",
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "EUR"
       },
       "featureList": [
+        "Eje vertebrador STEAM: el fenómeno físico manda y el lenguaje lo nombra (basado en BrickSmart CHI 2025)",
+        "6 Mundos de Construye con Lúa adaptados a la práctica del hogar (norma europea EN 71-1, piezas > 31,75 mm)",
+        "Contrato de interacción de Realidad Aumentada de 5 eslabones con sensor ciego local (Google Filament, mallas < 100 KB)",
+        "Cuentos pedagógicos dialógicos de 3-4 láminas con sugerencias de recast y expansión para el adulto",
+        "Perfiles de adaptación configurables con PIN profesional (Hipoacusia e implantes, TEA, Dislexia, Dislalias)",
         "Formación familiar en Academy: cápsulas de 2 minutos, La Brújula ASHA (0-5 años) y 27 signos LSE validados por ACOPROS",
         "Integración Sensorial Auditiva con 11 estímulos cotidianos y ambientales, pre-escucha para el adulto y pausa que suma puntos",
         "Aventuras con Lúa: 105 actividades en 6 franjas de edad con canciones habladas a pulso y metrónomo visual en castellano y galego",
@@ -64,11 +71,9 @@ const valeriaJsonLd = {
         "TEA (6 ejercicios) con sello Punto de mirada y retos regulados a mano por el adulto",
         "Dislexia (6 ejercicios) con intruso fonológico numerado, criba de pseudopalabras y mapa de rotaciones b/d y p/q",
         "La Pizarra Mágica de Lúa con 18 trazos guiados, 6 contrastes de letras confundibles y voz neuronal en 5 idiomas",
-        "Realidad Aumentada 3D como sensor de movimiento orofacial y espacial sin grabar imágenes ni sonido",
-        "Comprobación previa de los 6 sonidos de Ling para audífonos e implantes cocleares",
-        "Mascota Lúa acariciable en píxel art con 12 niveles, 18 insignias, descanso visual 20-20-20 y conexión con dispositivo físico Lúa",
+        "Mascota Lúa en píxel art con 12 niveles, 18 insignias, descanso visual 20-20-20 y enlace BLE con la cabeza oficial circular V1",
         "6 variedades lingüísticas: Castellano, Galego, Dominicano, Euskara, US English y Català (4.711 locuciones offline)",
-        "Funcionamiento 100% offline, sin cuentas ni servidor, bajo control exclusivo del adulto"
+        "Funcionamiento 100% offline, sin cuentas, sin servidor ni backend, bajo control exclusivo del adulto"
       ]
     },
     {
@@ -80,15 +85,15 @@ const valeriaJsonLd = {
           "name": "¿Qué es Valeria+ y cómo apoya a las familias en casa?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Valeria+ es una aplicación educativa de apoyo al lenguaje infantil pensada para madres, padres y cuidadores entre sesión y sesión con el logopeda. Abre directamente en Academy con cápsulas de 2 minutos y ofrece 10 bloques de juego guiados por la gata Lúa."
+            "text": "Valeria+ es una aplicación educativa de apoyo al lenguaje infantil pensada para madres, padres y cuidadores entre sesión y sesión con el logopeda. Abre directamente en Academy con cápsulas de 2 minutos y ofrece 10 bloques de juego guiados por la gata Lúa y los mundos STEAM."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Por qué funciona 100% offline y sin servidor?",
+          "name": "¿Por qué funciona 100% offline y sin backend?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Para proteger de forma estricta la privacidad infantil. Valeria+ no pide cuentas de usuario ni se conecta a servidores externos: las 4.711 locuciones y el reconocimiento operan dentro del móvil o tablet sin guardar ni enviar grabaciones."
+            "text": "Para proteger de forma estricta la privacidad infantil bajo el principio Zero-PHI. Valeria+ no pide cuentas de usuario ni se conecta a servidores externos: las 4.711 locuciones y la Realidad Aumentada operan localmente dentro del dispositivo sin guardar ni enviar datos."
           }
         },
         {
@@ -101,18 +106,18 @@ const valeriaJsonLd = {
         },
         {
           "@type": "Question",
-          "name": "¿Qué incluyen los 10 bloques de ejercicios?",
+          "name": "¿Por qué desde octubre de 2026 la práctica se ordena alrededor de STEAM y los bloques?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Abarcan Integración Sensorial Auditiva (con pre-escucha para el adulto), Aventuras con Lúa (105 actividades), Pares Mínimos, Expansión Semántica y Rutinas de 4 pasos, Audición (protocolo ACOPROS), Lenguaje temprano, TEA, Dislexia, La Pizarra Mágica (18 trazos) y Realidad Aumentada 3D, además de la comprobación previa de los 6 sonidos de Ling."
+            "text": "Porque en el desarrollo infantil el orden importa: el fenómeno manda y el lenguaje lo nombra. Al provocar un fenómeno físico tangible con las manos (una esfera que baja por una rampa, un resonador acústico o el equilibrio de una balanza en Construye con Lúa), la app sugiere al adulto palabras espaciales y de proceso adecuadas, fundamentado en investigaciones como BrickSmart (CHI 2025)."
           }
         },
         {
           "@type": "Question",
-          "name": "¿En qué idiomas y variedades lingüísticas está disponible?",
+          "name": "¿Cómo funciona el contrato de interacción de Realidad Aumentada sin comprometer la privacidad?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Dispone de 6 variedades de voz con 4.711 locuciones neuronales offline: Castellano, Galego (Proxecto Nós / ACOPROS), Dominicano (Quisqueya Habla), Euskara (HiTZ), US English (validado en Howard University) y Català (Projecte AINA), con interfaz disponible en 4 idiomas (Castellano, Galego, Català e Inglés)."
+            "text": "La tableta opera como un sensor ciego local (ARCore + MediaPipe + Google Filament, mallas < 100 KB) procesando únicamente magnitudes físicas en memoria volátil. Ningún evento depende exclusivamente de la cámara (el adulto siempre puede validarlo con un toque) y jamás se graban, guardan ni transmiten vídeos o audios fuera del dispositivo."
           }
         }
       ]
@@ -122,16 +127,17 @@ const valeriaJsonLd = {
 ---
 
 <Layout 
-	title="Valeria+ · Apoyo al Lenguaje y Audición Infantil en Casa"
-	description="Aplicación educativa para acompañar el habla e hipoacusia en familia. Cápsulas Academy de 2 minutos, 10 bloques de juego con Lúa, rutinas y privacidad 100% offline sin servidor."
+	title="Valeria+ · Entiende su lenguaje, practica en casa. Lúa os acompaña"
+	description="Aplicación educativa sobre el desarrollo del lenguaje en la infancia. Práctica guiada con STEAM y los mundos de Construye con Lúa, cápsulas Academy de 2 min y privacidad 100% offline sin backend."
 	image="https://FrankBetances.github.io/proyectos/assets/valeria-lua-hero-bg.jpg"
-	keywords="Valeria+, apoyo al lenguaje en casa, logopedia infantil, hipoacusia, implante coclear, dislalia, dislexia infantil, TEA autismo, integracion sensorial auditiva, Lua mascota, Dr. Frank Betances, Earlify Health, startTIC"
+	keywords="Valeria+, apoyo al lenguaje en casa, STEAM infantil, Construye con Lúa, logopedia infantil, hipoacusia, implante coclear, dislalia, dislexia infantil, TEA autismo, integracion sensorial auditiva, Lua mascota, Maker Faire Galicia 2026, Dr. Frank Betances, Earlify Health, startTIC"
 	jsonLd={valeriaJsonLd}
 >
 	<Header activeTab="home" />
 	<main id="main-content">
 		<Hero />
 		<WhatIsValeria />
+		<ValeriaSTEAMAndAR />
 		<TherapyBlocks />
 		<AcademySection />
 		<AdultPanel />

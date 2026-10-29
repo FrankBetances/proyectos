@@ -29,8 +29,10 @@ const blocks = [
     domain: "audicion",
     title: "Integración Sensorial Auditiva",
     category: "Tolerancia Sonora",
-    desc: "6 actividades con 11 sonidos cotidianos (8 aparatos y alertas + 3 ambientes vivos: aula, centro comercial y calle con obras). Incluye escucha previa para el adulto y botón de pausa que siempre suma puntos.",
-    badge: "11 Estímulos + Pre-Escucha",
+    destinado: "Sobre-reactividad auditiva",
+    mundoSteam: "Set 2 · Estación de Sonido y Eco",
+    desc: "El adulto configura estímulo, intensidad y duración. 11 sonidos cotidianos (8 aparatos y alertas + 3 ambientes: aula, centro comercial y calle). Lúa acompaña muda. Parar siempre suma.",
+    badge: "Set 2 STEAM",
     badgeColor: "cyan",
     img: `${baseUrl}/assets/05-hub-bloques.png`
   },
@@ -40,8 +42,10 @@ const blocks = [
     domain: "habla",
     title: "Aventuras con Lúa",
     category: "Lúa y las Palabras",
-    desc: "105 actividades en 6 franjas de edad (0 a 10 años): 25 juegos de selección, 60 preguntas, 10 cuentos y 10 canciones habladas a pulso con metrónomo visual en castellano y galego.",
-    badge: "105 Actividades",
+    destinado: "Todas las familias",
+    mundoSteam: "Común a todos los sets",
+    desc: "105 actividades en 6 franjas de edad (0 a 10 años): 25 juegos, 60 preguntas, 10 cuentos y 10 canciones habladas a pulso con metrónomo visual en castellano y galego.",
+    badge: "Todos los Sets",
     badgeColor: "purple",
     img: `${baseUrl}/assets/08-pares-juego.png`
   },
@@ -51,8 +55,10 @@ const blocks = [
     domain: "habla",
     title: "Pares Mínimos",
     category: "Contrastes Fonológicos",
-    desc: "Palabras que cambian de significado por un solo sonido (pato/gato, pera/perra). Coteja ambas opciones del par, propone una misión física en casa e incorpora el sello «Manos juntas».",
-    badge: "6 Variedades Validadas",
+    destinado: "Dislalias fonológicas",
+    mundoSteam: "Set 2 (Reto 4)",
+    desc: "Pares casi iguales (pato/gato, pera/perra) + misión física en casa con el sello «Manos juntas». Coteja ambas opciones del par sin penalizar.",
+    badge: "Set 2 STEAM",
     badgeColor: "cyan",
     img: `${baseUrl}/assets/08-pares-juego.png`
   },
@@ -62,8 +68,10 @@ const blocks = [
     domain: "habla",
     title: "Expansión Semántica y Rutinas",
     category: "Rutinas y Léxico",
-    desc: "Rutinas del día en 4 pasos ilustrados: primero ordenar tocando las tarjetas (comprensión) y después nombrar en orden (producción), junto con 5 categorías, 9 progresiones y más de 160 pictogramas en píxel art.",
-    badge: "Rutinas + Doble Vuelta",
+    destinado: "Vocabulario por debajo de lo esperado",
+    mundoSteam: "Set 5 (Opuestos) y Set 6 (Jardín)",
+    desc: "Rutinas en 4 pasos: primero ordenar tocando las tarjetas (comprensión) y después nombrar en orden (producción), con 5 categorías, 9 progresiones y más de 160 pictogramas en píxel art.",
+    badge: "Sets 5 y 6 STEAM",
     badgeColor: "emerald",
     img: `${baseUrl}/assets/12-expansion-juego.png`
   },
@@ -73,7 +81,9 @@ const blocks = [
     domain: "audicion",
     title: "Audición (18 ejercicios)",
     category: "Auditivo-Verbal",
-    desc: "Discriminación fonética fina, identificación e integración auditiva con ruido de fondo (babble) graduable simulando el aula real, revisado por logopedas de ACOPROS.",
+    destinado: "Hipoacusia e implante coclear",
+    mundoSteam: "Set 2 · Estación de Sonido",
+    desc: "Fonética, semántica, morfosintaxis, pragmática y escucha en ruido de fondo (babble) graduable, validado por logopedas de ACOPROS.",
     badge: "Protocolo ACOPROS",
     badgeColor: "purple",
     img: `${baseUrl}/assets/15-ling-test.png`
@@ -84,8 +94,10 @@ const blocks = [
     domain: "neuro",
     title: "Lenguaje Temprano (7 ejercicios)",
     category: "Interacción en Casa",
-    desc: "Atención conjunta con 5 variantes lúdicas, imitación progresiva (gesto → sílaba → palabra) y aviso previo de los objetos cotidianos necesarios antes de empezar cada actividad.",
-    badge: "5 Variantes + Materiales",
+    destinado: "Cualquiera de los perfiles",
+    mundoSteam: "Set 1, Set 3 y Set 6",
+    desc: "Atención conjunta con 5 variantes lúdicas, imitación progresiva (gesto → sílaba → palabra), comprensión, expresión y regulación motriz.",
+    badge: "Sets 1, 3 y 6 STEAM",
     badgeColor: "cyan",
     img: `${baseUrl}/assets/10-expansion-escenarios.png`
   },
@@ -94,8 +106,10 @@ const blocks = [
     id: "tea",
     domain: "neuro",
     title: "TEA (6 ejercicios)",
-    category: "Atención Conjunta y Turnos",
-    desc: "Sello «Punto de mirada» para coordinar la atención antes del turno, esperas estructuradas, quiebres comunicativos y anticipación con retos regulados siempre a mano por el adulto.",
+    category: "Atención Conjunta y Rutinas",
+    destinado: "Trastorno del espectro autista",
+    mundoSteam: "Set 1 y Set 3",
+    desc: "Atención conjunta, espera estructurada, rutinas predecibles, exploración táctil a su ritmo y apoyos de Comunicación Aumentativa y Alternativa (CAA).",
     badge: "Punto de Mirada",
     badgeColor: "amber",
     img: `${baseUrl}/assets/05-hub-bloques.png`
@@ -106,8 +120,10 @@ const blocks = [
     domain: "neuro",
     title: "Dislexia y Fonología (6 ejercicios)",
     category: "Conciencia Fonológica",
-    desc: "Intruso fonológico numerado para guiar sin tocar la pantalla, criba de pseudopalabras, mapa de rotaciones críticas (b/d · p/q) y denominación rápida.",
-    badge: "Ruta Fonológica",
+    destinado: "Dificultades lectoras o riesgo de dislexia",
+    mundoSteam: "Set 2 · Segmentación Silábica",
+    desc: "Fonología, acceso léxico, rotaciones b/d · p/q, nombrado rápido e intruso fonológico numerado para guiar sin tocar la pantalla.",
+    badge: "Set 2 STEAM",
     badgeColor: "purple",
     img: `${baseUrl}/assets/08-pares-juego.png`
   },
@@ -117,19 +133,23 @@ const blocks = [
     domain: "neuro",
     title: "La Pizarra Mágica (18 trazos)",
     category: "Grafomotricidad",
-    desc: "12 letras críticas organizadas en 6 contrastes cerrados (b↔d, p↔q, m↔n, a↔e, s↔z, g↔q) con orden de trazo numerado (1, 2, 3), botón «Oír la letra» y 6 lazos motores.",
-    badge: "18 Trazos + Voz",
+    destinado: "Cualquiera de los perfiles",
+    mundoSteam: "Set 3 (seguimiento) y Set 6 (rotación)",
+    desc: "12 letras críticas en 6 contrastes cerrados con orden de trazo numerado (1, 2, 3), puntos de control y voz neuronal en 5 idiomas.",
+    badge: "18 Trazos Guiados",
     badgeColor: "emerald",
     img: `${baseUrl}/assets/12-expansion-juego.png`
   },
   {
     num: "10",
-    id: "ra",
+    id: "cuentos",
     domain: "neuro",
-    title: "Realidad Aumentada 3D (6 ejercicios)",
-    category: "Motricidad Orofacial",
-    desc: "Juegos espaciales y de soplo/praxias donde la cámara funciona solo como sensor de movimiento con el micrófono apagado y sin guardar imágenes ni vídeo.",
-    badge: "Sensor sin Grabación",
+    title: "Cuentos Pedagógicos Dialógicos",
+    category: "Lectura Compartida & Recast",
+    destinado: "Todas las familias",
+    mundoSteam: "Uno por cada Mundo STEAM",
+    desc: "Microcuentos dialógicos de 3–4 láminas. La historia la cuenta el adulto; Lúa aporta refuerzo visual en su visor circular y la app sugiere pistas de recast sin calificar.",
+    badge: "Cuentos STEAM",
     badgeColor: "cyan",
     img: `${baseUrl}/assets/05-hub-bloques.png`
   }
@@ -246,6 +266,10 @@ const blocks = [
                 <span class="card-category-text">{block.category}</span>
               </div>
               <h3>{block.num}. {block.title}</h3>
+              <div class="card-meta-line">
+                <span class="meta-tag-pill tag-target">Familias: <strong>{block.destinado}</strong></span>
+                <span class="meta-tag-pill tag-steam">Mundo: <strong>{block.mundoSteam}</strong></span>
+              </div>
               <p>{block.desc}</p>
               <div class="card-action-cue">
                 <span>Ver pantalla en visor</span>
@@ -255,6 +279,51 @@ const blocks = [
               </div>
             </article>
           ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Perfiles de Adaptación con PIN Profesional -->
+    <div class="adaptation-profiles-banner glass-card">
+      <div class="adaptation-top">
+        <span class="sub-badge text-purple">Personalización Familiar &amp; Clínica con PIN</span>
+        <h3 class="adaptation-title">Perfiles de Adaptación por Necesidad</h3>
+        <p class="adaptation-desc">
+          Nombrar la condición de la niña o el niño es información orientativa para que la familia encuentre su contenido; no es una promesa de efecto clínico. Además, el adulto puede activar un <strong>perfil de adaptación</strong> que calibra la experiencia:
+        </p>
+      </div>
+
+      <div class="adaptation-grid">
+        <div class="adapt-card">
+          <div class="adapt-card-header">
+            <span class="adapt-icon">👂</span>
+            <h4>Hipoacusia e Implante Coclear</h4>
+          </div>
+          <p>Lúa permanece muda, silencio absoluto durante la escucha, metrónomo visual por defecto y consignas reforzadas con pictogramas.</p>
+        </div>
+
+        <div class="adapt-card">
+          <div class="adapt-card-header">
+            <span class="adapt-icon">🧠</span>
+            <h4>TEA (Espectro Autista)</h4>
+          </div>
+          <p>Tiempos de espera extendidos, rutinas anunciadas previamente, animaciones al mínimo sensorial y respuesta admitida por CAA.</p>
+        </div>
+
+        <div class="adapt-card">
+          <div class="adapt-card-header">
+            <span class="adapt-icon">📖</span>
+            <h4>Dislexia y Fonología</h4>
+          </div>
+          <p>Segmentación silábica visible en pantalla, tiempo de respuesta ampliado y ausencia deliberada de cronómetro.</p>
+        </div>
+
+        <div class="adapt-card">
+          <div class="adapt-card-header">
+            <span class="adapt-icon">🗣️</span>
+            <h4>Dislalias Fonológicas</h4>
+          </div>
+          <p>Priorización directa del módulo de pares mínimos en el Set 2 de sonido con misiones físicas guiadas en el hogar.</p>
         </div>
       </div>
     </div>
@@ -626,5 +695,110 @@ const blocks = [
     .clinical-card.active-card {
       transform: none;
     }
+  }
+
+  /* Metadata and Adaptation Styles */
+  .card-meta-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.4rem 0 0.65rem 0;
+  }
+
+  .meta-tag-pill {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+  }
+
+  .meta-tag-pill strong {
+    color: var(--text-main);
+  }
+
+  .tag-target {
+    border-color: rgba(168, 85, 247, 0.3);
+    color: #d8b4fe;
+  }
+
+  .tag-steam {
+    border-color: rgba(0, 196, 190, 0.3);
+    color: #2dd4bf;
+  }
+
+  .adaptation-profiles-banner {
+    margin-top: 3.5rem;
+    padding: 2.25rem;
+  }
+
+  .adaptation-top {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .sub-badge {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.35rem;
+  }
+
+  .text-purple { color: #d8b4fe; }
+
+  .adaptation-title {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .adaptation-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .adaptation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .adapt-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+  }
+
+  .adapt-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .adapt-icon {
+    font-size: 1.2rem;
+  }
+
+  .adapt-card h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .adapt-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
   }
 </style>

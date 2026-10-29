@@ -1,0 +1,621 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+
+const steamWorlds = [
+  {
+    set: "0 · Kit Lúa",
+    fenomeno: "Cuerpo de bloques de Lúa y zócalo universal con placas de identidad",
+    gesto: "Montar a Lúa con sus patas y cola",
+    usoValeria: "Común a todos los mundos y sesiones de práctica familiar",
+    badge: "Núcleo Común",
+    badgeColor: "orange"
+  },
+  {
+    set: "1 · El Camino de Lúa",
+    fenomeno: "Orientación espacial y algoritmos tangibles",
+    gesto: "Colocar baldosas y deslizar a Lúa",
+    usoValeria: "Rutinas en 4 pasos, fuerza de pinza, exploración táctil a su ritmo",
+    badge: "Secuenciación",
+    badgeColor: "cyan"
+  },
+  {
+    set: "2 · Estación de Sonido y Eco",
+    fenomeno: "El sonido es vibración mecánica (resonadores 5,0/3,2/1,5 mm)",
+    gesto: "Percutir y raspar resonadores pasivos",
+    usoValeria: "Juegos de escucha, segmentación silábica, pares mínimos y pulso con Ronroneo",
+    badge: "Acústica & Ritmo",
+    badgeColor: "purple"
+  },
+  {
+    set: "3 · Rampas y Gravedad",
+    fenomeno: "Gravedad, fricción y aceleración (planos 15° y 30°)",
+    gesto: "Esperar la señal y soltar la esfera",
+    usoValeria: "Autorregulación, espera estructurada y fijación visual previa a la Pizarra Mágica",
+    badge: "Cinemática",
+    badgeColor: "teal"
+  },
+  {
+    set: "4 · Máquina de Soplo y Viento",
+    fenomeno: "Flujo de aire y desplazamiento de compuertas",
+    gesto: "Dosificar el soplo sobre la embocadura",
+    usoValeria: "Juego de causa-efecto y redondeo labial (lúdico, sin finalidad terapéutica)",
+    badge: "Causa-Efecto",
+    badgeColor: "amber"
+  },
+  {
+    set: "5 · Puente de Equilibrio y Fuerza",
+    fenomeno: "Palanca, estática y distribución de cargas",
+    gesto: "Colocar masas calibradas (20/40/60 g)",
+    usoValeria: "Graduación de fuerza en pinza y conceptos opuestos en expansión semántica",
+    badge: "Estática & Pinza",
+    badgeColor: "emerald"
+  },
+  {
+    set: "6 · Jardín del Sol y la Semilla",
+    fenomeno: "Crecimiento vegetal, refracción y sombras",
+    gesto: "Sembrar, enroscar tallos e interponer prismas",
+    usoValeria: "Estructura sintáctica de relatos cronológicos y praxia rotatoria de muñeca",
+    badge: "Relato & Óptica",
+    badgeColor: "pink"
+  }
+];
+
+const evidenceTable = [
+  {
+    afirmacion: "El juego de bloques guiado por un adulto aumenta el lenguaje espacial",
+    respaldo: "BrickSmart (CHI 2025): 24 díadas, niños de 6–8 años, una sesión",
+    uso: "Justifica sugerir vocabulario espacial al adulto. No se extrapola a 0–5 años."
+  },
+  {
+    afirmacion: "Construir copiando un modelo se asocia con el desarrollo de la numeración",
+    respaldo: "Gilligan-Lee et al. 2023: 116 niños de 4 años",
+    uso: "Asociación correlacional, no causalidad directa. Justifica el uso de tarjetas de modelo."
+  },
+  {
+    afirmacion: "La terapia basada en bloques mejora la interacción social en TEA",
+    respaldo: "Narzisi et al. 2021: un solo ensayo clínico aleatorizado (ECA)",
+    uso: "Inspiración para roles cooperativos de juego guiado, no tratamiento médico validado."
+  },
+  {
+    afirmacion: "Los ejercicios de soplo mejoran el habla o el cierre velofaríngeo",
+    respaldo: "No respaldado por evidencia científica",
+    uso: "El Set 4 es exclusivamente juego lúdico de control respiratorio, nunca tratamiento foniátrico."
+  }
+];
+---
+
+<section id="steam-valeria" class="steam-valeria-section">
+  <div class="container">
+    
+    <!-- 1. Header STEAM Eje Vertebrador -->
+    <div class="section-header">
+      <span class="tag tag-cyan">Evolución Canónica · Octubre 2026</span>
+      <h2>STEAM como Eje Vertebrador: <span class="gradient-text">El fenómeno manda, el lenguaje lo nombra</span></h2>
+      <p>
+        En Valeria+, cada actividad manipulativa se diseña empezando por un fenómeno científico o físico que el niño provoca con sus manos. Después se le asignan objetivos de lenguaje, de inglés L2 mediante TPR y de práctica lúdica. <strong>El orden importa: el fenómeno manda y el lenguaje lo nombra.</strong>
+      </p>
+    </div>
+
+    <!-- Cita Rectora -->
+    <div class="axiom-box glass-card">
+      <p class="axiom-text">
+        «La app decide. Lúa reacciona. Los bloques los mueve el niño. El adulto media siempre.»
+      </p>
+    </div>
+
+    <!-- 2. Tabla de los Seis Mundos de Construye con Lúa -->
+    <div class="worlds-block glass-card">
+      <div class="block-top-header">
+        <div>
+          <span class="sub-tag text-teal">Construye con Lúa en Casa</span>
+          <h3 class="block-h3">Los Seis Mundos STEAM Adaptados a la Práctica de Valeria+</h3>
+        </div>
+        <a href={`${baseUrl}/construye-con-lua`} class="btn-link-steam">
+          <span>Ver Kits de Bloques</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="table-responsive">
+        <table class="steam-valeria-table">
+          <thead>
+            <tr>
+              <th>Mundo Tangible</th>
+              <th>Fenómeno Científico</th>
+              <th>Gesto del Menor</th>
+              <th>Objetivo en Valeria+</th>
+            </tr>
+          </thead>
+          <tbody>
+            {steamWorlds.map((item) => (
+              <tr>
+                <td>
+                  <strong>{item.set}</strong>
+                  <span class={`badge-world badge-${item.badgeColor}`}>{item.badge}</span>
+                </td>
+                <td>{item.fenomeno}</td>
+                <td><em>{item.gesto}</em></td>
+                <td>{item.usoValeria}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3. Contrato de Interacción en Realidad Aumentada -->
+    <div class="ar-contract-block glass-card">
+      <div class="contract-header">
+        <div class="contract-icon-box">🎯</div>
+        <div>
+          <span class="sub-tag text-purple">Lazo de Cierre Físico-Digital</span>
+          <h3 class="block-h3">Realidad Aumentada: El Contrato de Interacción de 5 Eslabones</h3>
+        </div>
+      </div>
+
+      <p class="contract-lead">
+        La Realidad Aumentada no es un minijuego aislado. Es el <strong>lazo de cierre</strong> entre los mundos físicos de bloques, la tableta y Lúa. La tableta actúa como <strong>sensor ciego local</strong> (ARCore + MediaPipe + Google Filament, mallas &lt; 100 KB): solo calcula magnitudes físicas (grados, ms, ratios). <strong>Cero vídeo transmitido, cero almacenamiento de imagen y cero datos personales.</strong>
+      </p>
+
+      <!-- Cadena de 5 Eslabones -->
+      <div class="chain-grid">
+        <div class="chain-step">
+          <span class="step-num">1</span>
+          <h4>Evento Físico</h4>
+          <p>El niño coloca, desliza, sopla, golpea, equilibra o enrosca piezas reales de bloque.</p>
+        </div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-step">
+          <span class="step-num">2</span>
+          <h4>Detección Óptica</h4>
+          <p>Sensor ciego de la tableta (marcador, mano, cara) <strong>o confirmación táctil del adulto</strong>.</p>
+        </div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-step">
+          <span class="step-num">3</span>
+          <h4>Decisión Local</h4>
+          <p>La app compara el evento físico con el reto lúdico planteado en la sesión.</p>
+        </div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-step">
+          <span class="step-num">4</span>
+          <h4>Reacción de Lúa</h4>
+          <p>Lúa reacciona por opcode BLE (gesto afectivo, luz direccional o Ronroneo opcional).</p>
+        </div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-step">
+          <span class="step-num">5</span>
+          <h4>Palabra &amp; Recast</h4>
+          <p>Voz de la tableta o frase sugerida a la familia para nombrar el fenómeno sin tapar la acción.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Cuentos Pedagógicos Dialógicos -->
+    <div class="stories-block glass-card">
+      <div class="stories-header">
+        <div class="stories-icon">📖</div>
+        <div>
+          <span class="sub-tag text-amber">Lectura Compartida &amp; Recast</span>
+          <h3 class="block-h3">Cuentos Pedagógicos Dialógicos: La Puerta Narrativa de Cada Mundo</h3>
+        </div>
+      </div>
+      <p class="stories-desc">
+        Inspirados en los microcuentos de <em>Descubre con Lúa</em> y adaptados a la estimulación del lenguaje en casa: cada unidad cuenta con <strong>3 o 4 láminas ilustradas</strong>. La historia la narra el adulto en voz alta; Lúa solo aporta refuerzo visual en su pantalla circular.
+      </p>
+      <div class="stories-pills-row">
+        <div class="s-pill">
+          <strong>Pregunta para el niño:</strong> Consigna breve para responder señalando o vocalizando.
+        </div>
+        <div class="s-pill">
+          <strong>Pista para el adulto:</strong> Sugerencia de reformulación positiva (<em>recast</em>) y expansión léxica.
+        </div>
+        <div class="s-pill">
+          <strong>Cero Examen:</strong> Refuerzan comprensión, secuenciación y atención conjunta sin calificar.
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Honestidad Epistemológica: Qué dice la evidencia y qué no -->
+    <div class="evidence-block glass-card">
+      <div class="evidence-header">
+        <div class="evidence-icon">📊</div>
+        <div>
+          <span class="sub-tag text-emerald">Honestidad Epistemológica &amp; Rigor Científico</span>
+          <h3 class="block-h3">Qué Dice la Evidencia Científica y Qué No</h3>
+        </div>
+      </div>
+
+      <p class="evidence-lead">
+        En Earlify Health diferenciamos con total transparencia los efectos con respaldo empírico de las hipótesis en desarrollo:
+      </p>
+
+      <div class="table-responsive">
+        <table class="evidence-table">
+          <thead>
+            <tr>
+              <th>Afirmación o Premisa</th>
+              <th>Respaldo Científico Disponible</th>
+              <th>Criterio Canónico de Uso en Valeria+</th>
+            </tr>
+          </thead>
+          <tbody>
+            {evidenceTable.map((row) => (
+              <tr>
+                <td><strong>{row.afirmacion}</strong></td>
+                <td><span class="respaldo-tag">{row.respaldo}</span></td>
+                <td>{row.uso}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .steam-valeria-section {
+    padding: 85px 0;
+    position: relative;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .tag-cyan {
+    background: rgba(0, 242, 254, 0.12);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    color: var(--accent-cyan);
+  }
+
+  .axiom-box {
+    text-align: center;
+    padding: 1.25rem 2rem;
+    margin: 0 auto 3rem auto;
+    max-width: 820px;
+    background: rgba(249, 115, 22, 0.08);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+  }
+
+  .axiom-text {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #fed7aa;
+    font-style: italic;
+  }
+
+  .worlds-block {
+    padding: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .block-top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .sub-tag {
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.35rem;
+  }
+
+  .text-teal { color: #2dd4bf; }
+  .text-purple { color: #d8b4fe; }
+  .text-amber { color: #fbbf24; }
+  .text-emerald { color: #6ee7b7; }
+
+  .block-h3 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .btn-link-steam {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-link-steam:hover {
+    background: rgba(0, 242, 254, 0.15);
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+  }
+
+  .steam-valeria-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+
+  .steam-valeria-table th {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .steam-valeria-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-muted);
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+
+  .steam-valeria-table td strong {
+    color: var(--text-main);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .badge-world {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .badge-orange { background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.35); color: #fb923c; }
+  .badge-cyan { background: rgba(0, 242, 254, 0.15); border: 1px solid rgba(0, 242, 254, 0.35); color: #00F2FE; }
+  .badge-purple { background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.35); color: #d8b4fe; }
+  .badge-teal { background: rgba(0, 196, 190, 0.15); border: 1px solid rgba(0, 196, 190, 0.35); color: #2dd4bf; }
+  .badge-amber { background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.35); color: #fbbf24; }
+  .badge-emerald { background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color: #6ee7b7; }
+  .badge-pink { background: rgba(244, 114, 182, 0.15); border: 1px solid rgba(244, 114, 182, 0.35); color: #f472b6; }
+
+  /* Contrato AR */
+  .ar-contract-block {
+    padding: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contract-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .contract-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .contract-lead {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  .chain-grid {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .chain-step {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.2);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #d8b4fe;
+    font-weight: 800;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .chain-step h4 {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .chain-step p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  .chain-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    padding: 0 0.25rem;
+  }
+
+  /* Cuentos */
+  .stories-block {
+    padding: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .stories-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .stories-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .stories-desc {
+    font-size: 0.96rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .stories-pills-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .s-pill {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 1.15rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .s-pill strong {
+    color: #fbbf24;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Evidencia */
+  .evidence-block {
+    padding: 2.25rem;
+  }
+
+  .evidence-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .evidence-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .evidence-lead {
+    font-size: 0.96rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .evidence-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .evidence-table th {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .evidence-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-muted);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .evidence-table td strong {
+    color: var(--text-main);
+  }
+
+  .respaldo-tag {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #6ee7b7;
+  }
+
+  @media (max-width: 900px) {
+    .chain-grid {
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .chain-arrow {
+      transform: rotate(90deg);
+      padding: 0.25rem 0;
+    }
+  }
+</style>
