@@ -10,10 +10,11 @@ import LuaProtocolTable from '../components/lua/LuaProtocolTable.astro';
 import LuaExpressionsGallery from '../components/lua/LuaExpressionsGallery.astro';
 import LuaEcosystemIntegration from '../components/lua/LuaEcosystemIntegration.astro';
 import LuaArchitecture from '../components/lua/LuaArchitecture.astro';
+import LuaDecisionsAndStatus from '../components/lua/LuaDecisionsAndStatus.astro';
 import LuaCTA from '../components/lua/LuaCTA.astro';
 
-const pageTitle = "Lúa · Compañera Física Interactiva, Juego STEAM y Realidad Aumentada";
-const pageDescription = "Mascota física con visor circular integrado, sets de bloques manipulativos (EN 71-1) y Realidad Aumentada Zero-PHI para Valeria+, Descubre con Lúa y VIA+. Incubada en startTIC.";
+const pageTitle = "Lúa · Mascota STEAM de Bloques con Cabeza Electrónica Sellada";
+const pageDescription = "Mascota STEAM con cabeza electrónica sellada (placa oficial V1 circular ESP32-C3 · 27 fps), cuerpo de bloques que monta el niño, 6 mundos de Construye con Lúa (EN 71-1), bloque háptico Ronroneo y RA local Zero-PHI. Incubada en startTIC.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -21,47 +22,53 @@ const jsonLd = {
     {
       "@type": "Product",
       "@id": "https://FrankBetances.github.io/proyectos/lua#product",
-      "name": "Lúa (Compañera Física Interactiva, Juego STEAM y Realidad Aumentada)",
+      "name": "Lúa · Mascota STEAM de Bloques con Cabeza Electrónica Sellada",
       "description": pageDescription,
       "brand": {
         "@type": "Organization",
         "name": "Earlify Health S.L."
       },
-      "category": "Pediatric Neurodevelopment Companion & STEAM Manipulative System",
+      "category": "Pediatric STEAM Toy & Neurodevelopmental Tangible System",
       "manufacturer": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
-        "jobTitle": "ORL Infantil & Especialista en Salud Digital"
+        "jobTitle": "ORL Infantil & Especialista en Salud Digital",
+        "url": "https://FrankBetances.github.io/proyectos/cv"
       },
       "audience": {
         "@type": "Audience",
-        "audienceType": "Familias, Escuelas Infantiles (0-6 años) y Consultas de Otorrinolaringología y Logopedia Pediátrica"
+        "audienceType": "Familias, Escuelas Infantiles (0-6 años), Logopedas y Consultas de Otorrinolaringología Pediátrica"
       },
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "PhysicalFormat",
-          "value": "Figura de cuerpo entero sin motores ni piezas móviles con visor circular integrado (240x240 px)"
+          "name": "ElectronicHead",
+          "value": "Cabeza V4 en PLA con placa oficial V1 (ESP32-C3 circular 240x240 px · 27 fps), batería y anillo de 4 luces direccionales sellados por masque3d (Orense)"
         },
         {
           "@type": "PropertyValue",
-          "name": "ManipulativeSystem",
-          "value": "Sets de bloques de gran formato (> 31,75 mm, norma europea EN 71-1) y Realidad Aumentada Zero-PHI"
+          "name": "BlockBody",
+          "value": "Cuerpo de bloques pasivos ensamblado por el niño sin electrónica, cables, tornillos, pegamento ni imanes (orientación forzada)"
         },
         {
           "@type": "PropertyValue",
-          "name": "VisualCatalogue",
-          "value": "25 expresiones faciales, 8 emociones puras, 120 pictogramas voxel y 45 insignias"
+          "name": "STEAMSystem",
+          "value": "6 Mundos interoperables de Construye con Lúa (norma europea EN 71-1, piezas > 31,75 mm)"
         },
         {
           "@type": "PropertyValue",
-          "name": "Microphone",
-          "value": "None (Cero micrófonos por diseño físico · Privacidad Zero-PHI)"
+          "name": "HapticBlock",
+          "value": "Bloque háptico externo Ronroneo (≥ 3 años, LRA DRV2605L con batería LiPo propia, excluido de VIA+ para garantizar Silencio Clínico)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "AcousticDesign",
+          "value": "Sin altavoz y sin micrófono por diseño físico estructural (Silencio Clínico físico garantizado · Zero-PHI)"
         },
         {
           "@type": "PropertyValue",
           "name": "IncubatorProgram",
-          "value": "startTIC - Incubadora de Alta Tecnología (Zona Franca de Vigo / Gradiant / FEDER)"
+          "value": "startTIC - Incubadora de Alta Tecnología (Zona Franca de Vigo / Gradiant / FEDER 60%)"
         }
       ]
     }
@@ -72,7 +79,8 @@ const jsonLd = {
 <Layout 
   title={pageTitle}
   description={pageDescription}
-  keywords="Mascota Lúa, Compañera Física Pediátrica, Juguete STEAM Infantil, Bloques Manipulativos EN 71-1, Realidad Aumentada Pediátrica, startTIC, Gradiant, Zona Franca de Vigo, Valeria+, Descubre con Lúa, Lúa Construye, VIA+ SaMD, Silencio Clínico, Zero-PHI, Dr. Frank Betances"
+  image="/assets/valeria_lua.png"
+  keywords="Mascota Lúa, Mascota STEAM de Bloques, Juguete STEAM Infantil, Cabeza Sellada V1 circular, Bloques Manipulativos EN 71-1, Bloque Háptico Ronroneo, Anillo de Luces Direccionales, startTIC, Gradiant, Zona Franca de Vigo, masque3d, Valeria+, Descubre con Lúa, Lúa Construye, VIA+ SaMD, Silencio Clínico, Zero-PHI, Dr. Frank Betances"
   jsonLd={jsonLd}
 >
   <Header activeTab="lua" />
@@ -81,9 +89,10 @@ const jsonLd = {
     <LuaHero />
     <LuaClinicalObjectives />
     <LuaProtocolTable />
+    <LuaArchitecture />
     <LuaExpressionsGallery />
     <LuaEcosystemIntegration />
-    <LuaArchitecture />
+    <LuaDecisionsAndStatus />
     <LuaCTA />
   </main>
 

@@ -10,7 +10,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <div class="hero-lua-bg-stage">
       <img 
         src={`${baseUrl}/assets/valeria-lua-hero-bg.jpg?v=1`} 
-        alt="Figura física de Lúa con visor circular junto a interacción familiar y bloques manipulativos" 
+        alt="Lúa, mascota STEAM de bloques con visor circular junto a interacción familiar y bloques manipulativos" 
         class="lua-artwork-img"
         loading="eager"
         fetchpriority="high"
@@ -29,7 +29,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <div class="lua-mascot-icon-wrapper">
         <img 
           src={`${baseUrl}/assets/valeria_lua.png`} 
-          alt="Lúa la Gata - Compañera física interactiva de Earlify Health" 
+          alt="Lúa la Gata - Mascota STEAM de bloques interactiva de Earlify Health" 
           class="lua-brand-icon" 
           width="105"
           height="105"
@@ -39,22 +39,34 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       </div>
 
       <div class="editorial-eyebrow eyebrow-orange">
-        <span>Compañera Física Interactiva · Juego STEAM + Realidad Aumentada</span>
+        <span>Mascota STEAM de Bloques · Cabeza V4 Circular · Versión V5 de Prueba</span>
       </div>
 
       <h1 class="hero-headline">
-        Lúa: El Puente Afectivo Tangible <span class="gradient-text-orange">entre Consulta, Aula y Hogar</span>
+        Lúa: Mascota STEAM de Bloques <span class="gradient-text-orange">con Cabeza Electrónica Sellada</span>
       </h1>
 
+      <!-- Cita Canónica Rectora -->
+      <div class="canonical-axiom-banner">
+        <p class="axiom-quote">
+          «La app decide. Lúa reacciona. Los bloques los mueve el niño. El adulto media siempre.»
+        </p>
+      </div>
+
       <p class="hero-narrative-lead">
-        Figura física de cuerpo entero con <strong>visor circular integrado</strong>, ampliada con <strong>sets de bloques manipulativos (EN 71-1) y Realidad Aumentada</strong> para <strong>Valeria+</strong> y <strong>Descubre con Lúa</strong>. La aplicación guía, Lúa acompaña: no mide, no juzga y <strong>jamás escucha</strong>.
+        <strong>Lúa</strong> es la gata negra en píxel art de <strong>Valeria+</strong> y <strong>Descubre con Lúa</strong>, y también un juguete físico que el niño <strong>construye con sus manos</strong>. La cabeza versión 4 con placa oficial V1 circular (ESP32-C3 a 27 fps) es la <strong>única pieza electrónica</strong> de la mascota, sellada en fábrica por <strong>masque3d (Orense)</strong>. El cuerpo, los escenarios y los 6 mundos de Construye con Lúa se montan con bloques pasivos.
       </p>
 
+      <!-- Shields Canónicos de Gobernanza -->
       <div class="hero-badge-pill-row">
-        <span class="badge-pill pill-cyan">🚀 Incubada en startTIC · Alta Tecnología</span>
-        <span class="badge-pill pill-orange">🐱 Visor Circular + Bloques EN 71-1</span>
-        <span class="badge-pill pill-purple">✨ Realidad Aumentada Zero-PHI</span>
-        <span class="badge-pill pill-emerald">🔇 Cero Micrófonos · Silencio Clínico</span>
+        <span class="badge-pill pill-blue">C++17</span>
+        <span class="badge-pill pill-cyan">Placa V1 Oficial · ESP32-C3 · 27 fps</span>
+        <span class="badge-pill pill-teal">Eje Vertebrador STEAM</span>
+        <span class="badge-pill pill-amber">V5 Bloques (En Diseño)</span>
+        <span class="badge-pill pill-gray">Versión Robot Descartada</span>
+        <span class="badge-pill pill-red">Sin Altavoz · Sin Micrófono</span>
+        <span class="badge-pill pill-emerald">Zero-PHI Estructural</span>
+        <span class="badge-pill pill-purple">🚀 startTIC · Zona Franca Vigo</span>
       </div>
 
       <div class="card-action-row">
@@ -62,8 +74,11 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           <span>Solicitar Información o Demo</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         </button>
-        <a href="#arquitectura-sets-steam" class="hero-btn btn-ghost">
-          <span>Explorar Sets STEAM + AR</span>
+        <a href="#sets-steam-construye" class="hero-btn btn-ghost">
+          <span>Explorar los 6 Sets STEAM</span>
+        </a>
+        <a href="#decisiones-estado" class="hero-btn btn-ghost">
+          <span>Estado y Decisiones (Oct 2026)</span>
         </a>
         <a href={`${baseUrl}/construye-con-lua`} class="hero-btn btn-ghost">
           <span>Ver Lúa Construye</span>
@@ -75,26 +90,26 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <div class="lua-showcase-grid">
       <div class="showcase-cards-col">
         <div class="lua-feature-card">
-          <div class="feature-icon-badge icon-orange">🪞</div>
+          <div class="feature-icon-badge icon-orange">🐱</div>
           <div class="feature-text">
-            <strong>Espejo de Actividad y Compañía (Valeria+)</strong>
-            <p>Muestra en su visor circular los turnos de juego, <strong>120 pictogramas en arte voxel</strong>, <strong>45 insignias</strong>, el armario de coleccionables y responde a las caricias con ronroneo visual.</p>
+            <strong>Unidad Electrónica Sellada (Cabeza V4 + Placa V1)</strong>
+            <p>Impresa e integrada en fábrica por <strong>masque3d (Orense)</strong>. Pantalla circular de 240×240 px a 27 fps, bloque-cuello con batería LiPo y anillo de 4 luces direccionales. El menor nunca manipula circuitos.</p>
           </div>
         </div>
 
         <div class="lua-feature-card">
           <div class="feature-icon-badge icon-cyan">🧱</div>
           <div class="feature-text">
-            <strong>Sets de Bloques STEAM y Realidad Aumentada</strong>
-            <p>Figura sin motores ni ruido mecánico con encajes modulares para los sets sensoriales y orofaciales de <strong>Valeria+</strong> y los circuitos tangibles de <strong>Descubre con Lúa</strong>.</p>
+            <strong>Cuerpo de Bloques que Monta el Niño (V5)</strong>
+            <p>Tronco, 4 patas y cola ensamblados con bloques pasivos, lavables, sin cables, sin imanes ni tornillos. Una sola postura anatómica correcta de acople (orientación mecánica forzada).</p>
           </div>
         </div>
 
         <div class="lua-feature-card">
-          <div class="feature-icon-badge icon-purple">🔒</div>
+          <div class="feature-icon-badge icon-purple">✨</div>
           <div class="feature-text">
-            <strong>Ancla Visual 20-20-20 y Silencio Clínico (VIA+)</strong>
-            <p>Invita a descansar la vista cada 20 minutos echándose a dormir y entra en bloqueo silencioso inmediato durante exploraciones médicas en consulta.</p>
+            <strong>6 Mundos STEAM + Bloque Háptico Ronroneo</strong>
+            <p>Interoperabilidad total entre sets. Opcional (≥ 3 años): bloque háptico Ronroneo externo con batería propia, garantizando físicamente el <strong>Silencio Clínico absoluto en VIA+</strong>.</p>
           </div>
         </div>
       </div>
@@ -102,19 +117,42 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <div class="showcase-device-col">
         <div class="lua-physical-device">
           <div class="device-bezel-outer">
-            <div class="bezel-led-ring">
-              <div class="led-dot led-1 active"></div>
-              <div class="led-dot led-2 active"></div>
-              <div class="led-dot led-3 active"></div>
-              <div class="led-dot led-4 active"></div>
+            <!-- Anillo de 4 Luces Direccionales (Delante / Detrás / Izq / Dcha) -->
+            <div class="bezel-led-ring" id="lua-led-ring" aria-label="Anillo de 4 luces direccionales de Lúa">
+              <div class="led-directional led-front" id="led-front" title="Luz Delantera (Step Forward)">
+                <span class="led-label">DELANTE</span>
+              </div>
+              <div class="led-directional led-back" id="led-back" title="Luz Trasera">
+                <span class="led-label">DETRÁS</span>
+              </div>
+              <div class="led-directional led-left active" id="led-left" title="Luz Izquierda (Turn Left)">
+                <span class="led-label">IZQ</span>
+              </div>
+              <div class="led-directional led-right" id="led-right" title="Luz Derecha (Turn Right)">
+                <span class="led-label">DCHA</span>
+              </div>
             </div>
+            
             <div class="device-screen-circular">
               <canvas id="lua-hero-canvas" width="240" height="240" class="pixel-display-canvas"></canvas>
               <div class="screen-glare-overlay"></div>
             </div>
           </div>
+
+          <!-- Interactive Light Controller Bar -->
+          <div class="light-control-panel">
+            <span class="control-panel-label">Simular Anillo de 4 Luces Direccionales (V5):</span>
+            <div class="control-btn-group">
+              <button type="button" class="ctrl-btn" data-light="left" title="Giro a la izquierda">⬅️ Izq</button>
+              <button type="button" class="ctrl-btn" data-light="front" title="Avance frontal">⬆️ Delante</button>
+              <button type="button" class="ctrl-btn" data-light="right" title="Giro a la derecha">➡️ Dcha</button>
+              <button type="button" class="ctrl-btn" data-light="back" title="Orientación trasera">⬇️ Detrás</button>
+              <button type="button" class="ctrl-btn ctrl-relax" data-light="relax" title="Modo Calm / Relax">💤 Relax</button>
+            </div>
+          </div>
+
           <div class="device-caption-row">
-            <span class="device-badge">Visor Circular Integrado · 25 Expresiones + 120 Fichas Voxel</span>
+            <span class="device-badge">Unidad Sellada Lúa · Visor Circular 240×240 px · 27 fps · C++17</span>
           </div>
         </div>
       </div>
@@ -130,9 +168,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     if (!ctx) return;
 
     const P = {
-      BG: '#0B0F19',
+      BG: '#07090E',
+      CAT_BODY: '#111827',
+      CAT_HIGHLIGHT: '#1F2937',
       WHITE: '#FFFFFF',
-      EYE_DARK: '#0F172A',
       TURQUOISE: '#00F2FE',
       PINK: '#F472B6',
       GOLD: '#FBBF24',
@@ -140,6 +179,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     };
 
     let frame = 0;
+
     function drawLuaCat() {
       frame++;
       ctx!.fillStyle = P.BG;
@@ -149,41 +189,56 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       const ox = 24;
       const oy = 24;
 
-      ctx!.fillStyle = '#1E293B';
-      ctx!.fillRect(ox + 5 * scale, oy + 4 * scale, 14 * scale, 14 * scale);
-      ctx!.fillRect(ox + 4 * scale, oy + 2 * scale, 4 * scale, 4 * scale);
-      ctx!.fillRect(ox + 16 * scale, oy + 2 * scale, 4 * scale, 4 * scale);
+      // Suave respiración vertical
+      const breathe = Math.sin(frame * 0.04) * 1.5;
 
+      // Base cabeza de la gata negra
+      ctx!.fillStyle = P.CAT_BODY;
+      ctx!.fillRect(ox + 5 * scale, oy + 4 * scale + breathe, 14 * scale, 14 * scale);
+
+      // Orejas
+      ctx!.fillRect(ox + 4 * scale, oy + 2 * scale + breathe, 4 * scale, 4 * scale);
+      ctx!.fillRect(ox + 16 * scale, oy + 2 * scale + breathe, 4 * scale, 4 * scale);
+
+      // Interior orejas (rosa cálido)
       ctx!.fillStyle = P.PINK;
-      ctx!.fillRect(ox + 5 * scale, oy + 3 * scale, 2 * scale, 2 * scale);
-      ctx!.fillRect(ox + 17 * scale, oy + 3 * scale, 2 * scale, 2 * scale);
+      ctx!.fillRect(ox + 5 * scale, oy + 3 * scale + breathe, 2 * scale, 2 * scale);
+      ctx!.fillRect(ox + 17 * scale, oy + 3 * scale + breathe, 2 * scale, 2 * scale);
 
-      const isBlinking = (frame % 140 > 132);
+      // Ojos grandes píxel art turquesa con parpadeo periódico
+      const isBlinking = (frame % 150 > 142);
       ctx!.fillStyle = P.TURQUOISE;
       if (isBlinking) {
-        ctx!.fillRect(ox + 7 * scale, oy + 9 * scale, 3 * scale, 1 * scale);
-        ctx!.fillRect(ox + 14 * scale, oy + 9 * scale, 3 * scale, 1 * scale);
+        ctx!.fillRect(ox + 7 * scale, oy + 9 * scale + breathe, 3 * scale, 1 * scale);
+        ctx!.fillRect(ox + 14 * scale, oy + 9 * scale + breathe, 3 * scale, 1 * scale);
       } else {
-        ctx!.fillRect(ox + 7 * scale, oy + 7 * scale, 3 * scale, 4 * scale);
-        ctx!.fillRect(ox + 14 * scale, oy + 7 * scale, 3 * scale, 4 * scale);
+        ctx!.fillRect(ox + 7 * scale, oy + 7 * scale + breathe, 3 * scale, 4 * scale);
+        ctx!.fillRect(ox + 14 * scale, oy + 7 * scale + breathe, 3 * scale, 4 * scale);
 
+        // Brillo blanco en ojos
         ctx!.fillStyle = P.WHITE;
-        ctx!.fillRect(ox + 7 * scale, oy + 7 * scale, 1 * scale, 1 * scale);
-        ctx!.fillRect(ox + 14 * scale, oy + 7 * scale, 1 * scale, 1 * scale);
+        ctx!.fillRect(ox + 7 * scale, oy + 7 * scale + breathe, 1 * scale, 1 * scale);
+        ctx!.fillRect(ox + 14 * scale, oy + 7 * scale + breathe, 1 * scale, 1 * scale);
       }
 
+      // Mejillas sonrosadas
       ctx!.fillStyle = P.PINK;
-      ctx!.fillRect(ox + 5 * scale, oy + 11 * scale, 2 * scale, 1 * scale);
-      ctx!.fillRect(ox + 17 * scale, oy + 11 * scale, 2 * scale, 1 * scale);
+      ctx!.fillRect(ox + 5 * scale, oy + 11 * scale + breathe, 2 * scale, 1 * scale);
+      ctx!.fillRect(ox + 17 * scale, oy + 11 * scale + breathe, 2 * scale, 1 * scale);
 
+      // Naricilla naranja
       ctx!.fillStyle = P.ORANGE;
-      ctx!.fillRect(ox + 11 * scale, oy + 10 * scale, 2 * scale, 1 * scale);
+      ctx!.fillRect(ox + 11 * scale, oy + 10 * scale + breathe, 2 * scale, 1 * scale);
 
+      // Boca tierna en W
       ctx!.fillStyle = P.WHITE;
-      ctx!.fillRect(ox + 11 * scale, oy + 12 * scale, 2 * scale, 1 * scale);
+      ctx!.fillRect(ox + 10 * scale, oy + 12 * scale + breathe, 1 * scale, 1 * scale);
+      ctx!.fillRect(ox + 13 * scale, oy + 12 * scale + breathe, 1 * scale, 1 * scale);
+      ctx!.fillRect(ox + 11 * scale, oy + 12.5 * scale + breathe, 2 * scale, 0.8 * scale);
 
-      const glow = Math.sin(frame * 0.05) * 4 + 8;
-      ctx!.strokeStyle = 'rgba(0, 242, 254, 0.8)';
+      // Anillo circular de visualización con pulso sutil
+      const glow = Math.sin(frame * 0.05) * 4 + 7;
+      ctx!.strokeStyle = 'rgba(0, 242, 254, 0.75)';
       ctx!.lineWidth = 3;
       ctx!.shadowBlur = glow;
       ctx!.shadowColor = '#00F2FE';
@@ -196,6 +251,32 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     }
 
     drawLuaCat();
+
+    // Controlador interactivo de luces direccionales
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.light-control-panel .ctrl-btn');
+    const leds = {
+      front: document.getElementById('led-front'),
+      back: document.getElementById('led-back'),
+      left: document.getElementById('led-left'),
+      right: document.getElementById('led-right')
+    };
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.light;
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Reset lights
+        Object.values(leds).forEach(l => l?.classList.remove('active', 'relax'));
+
+        if (target === 'relax') {
+          Object.values(leds).forEach(l => l?.classList.add('relax'));
+        } else if (target && leds[target as keyof typeof leds]) {
+          leds[target as keyof typeof leds]?.classList.add('active');
+        }
+      });
+    });
   }
 
   if (document.readyState === 'loading') {
@@ -237,13 +318,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     object-fit: cover;
     object-position: center 40%;
     display: block;
-    filter: brightness(0.75) contrast(1.08) saturate(1.15);
+    filter: brightness(0.72) contrast(1.1) saturate(1.15);
   }
 
   .lua-overlay-gradient {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 40%, rgba(7, 9, 14, 0.35) 0%, rgba(7, 9, 14, 0.85) 75%, var(--bg-dark) 100%);
+    background: radial-gradient(circle at 50% 40%, rgba(7, 9, 14, 0.4) 0%, rgba(7, 9, 14, 0.88) 75%, var(--bg-dark) 100%);
     pointer-events: none;
   }
 
@@ -300,7 +381,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .hero-top-intro {
     text-align: center;
-    max-width: 960px;
+    max-width: 980px;
     margin: 0 auto 3.5rem auto;
   }
 
@@ -354,11 +435,30 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     -webkit-text-fill-color: transparent;
   }
 
+  .canonical-axiom-banner {
+    display: inline-block;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1.6rem;
+    margin: 0 auto 1.5rem auto;
+    backdrop-filter: blur(8px);
+  }
+
+  .axiom-quote {
+    margin: 0;
+    font-size: clamp(1rem, 1.5vw, 1.18rem);
+    font-weight: 800;
+    color: #fed7aa;
+    font-style: italic;
+    letter-spacing: 0.01em;
+  }
+
   .hero-narrative-lead {
     font-size: clamp(1.02rem, 1.6vw, 1.22rem);
     color: var(--text-muted);
     line-height: 1.65;
-    max-width: 840px;
+    max-width: 860px;
     margin: 0 auto 1.75rem auto;
   }
 
@@ -370,22 +470,22 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.65rem;
     margin-bottom: 1.85rem;
   }
 
   .badge-pill {
-    padding: 0.4rem 1rem;
+    padding: 0.35rem 0.85rem;
     border-radius: var(--radius-full);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
   }
 
-  .pill-orange {
-    background: rgba(249, 115, 22, 0.15);
-    border: 1px solid rgba(249, 115, 22, 0.4);
-    color: #fdba74;
+  .pill-blue {
+    background: rgba(0, 89, 156, 0.2);
+    border: 1px solid rgba(0, 89, 156, 0.5);
+    color: #60a5fa;
   }
 
   .pill-cyan {
@@ -394,16 +494,40 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     color: var(--accent-cyan);
   }
 
+  .pill-teal {
+    background: rgba(0, 196, 190, 0.15);
+    border: 1px solid rgba(0, 196, 190, 0.4);
+    color: #2dd4bf;
+  }
+
+  .pill-amber {
+    background: rgba(240, 165, 0, 0.15);
+    border: 1px solid rgba(240, 165, 0, 0.4);
+    color: #fbbf24;
+  }
+
+  .pill-gray {
+    background: rgba(138, 138, 138, 0.15);
+    border: 1px solid rgba(138, 138, 138, 0.35);
+    color: #cbd5e1;
+  }
+
+  .pill-red {
+    background: rgba(179, 38, 30, 0.15);
+    border: 1px solid rgba(179, 38, 30, 0.4);
+    color: #fca5a5;
+  }
+
+  .pill-emerald {
+    background: rgba(10, 125, 84, 0.2);
+    border: 1px solid rgba(10, 125, 84, 0.45);
+    color: #6ee7b7;
+  }
+
   .pill-purple {
     background: rgba(168, 85, 247, 0.12);
     border: 1px solid rgba(168, 85, 247, 0.35);
     color: #D8B4FE;
-  }
-
-  .pill-emerald {
-    background: rgba(16, 185, 129, 0.12);
-    border: 1px solid rgba(16, 185, 129, 0.35);
-    color: var(--accent-emerald);
   }
 
   .card-action-row {
@@ -454,10 +578,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .lua-showcase-grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1.25fr 1fr;
     gap: 2.5rem;
     align-items: center;
-    max-width: 1120px;
+    max-width: 1140px;
     margin: 0 auto;
     text-align: left;
   }
@@ -465,18 +589,18 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .showcase-cards-col {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.15rem;
   }
 
   .lua-feature-card {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.25rem;
     background: rgba(15, 23, 42, 0.72);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    padding: 1.25rem 1.5rem;
+    padding: 1.35rem 1.5rem;
     border-radius: var(--radius-md);
     transition: transform 0.25s ease, border-color 0.25s ease;
   }
@@ -517,7 +641,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     font-size: 1.05rem;
     font-weight: 800;
     color: var(--text-main);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
   }
 
   .feature-text p {
@@ -536,21 +660,23 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 360px;
   }
 
   .device-bezel-outer {
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 290px;
+    height: 290px;
     border-radius: 50%;
     background: radial-gradient(circle, #1E293B 0%, #0F172A 70%, #020617 100%);
-    border: 6px solid #334155;
+    border: 8px solid #334155;
     box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 45px rgba(249, 115, 22, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 14px;
   }
 
   .bezel-led-ring {
@@ -560,22 +686,81 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     pointer-events: none;
   }
 
-  .led-dot {
+  /* 4 Luces Direccionales del Bloque-Cuello Sellado */
+  .led-directional {
     position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(0, 242, 254, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .led-1 { top: 12px; left: 50%; transform: translateX(-50%); }
-  .led-2 { bottom: 12px; left: 50%; transform: translateX(-50%); }
-  .led-3 { left: 12px; top: 50%; transform: translateY(-50%); }
-  .led-4 { right: 12px; top: 50%; transform: translateY(-50%); }
+  .led-label {
+    font-size: 0.58rem;
+    font-weight: 800;
+    font-family: monospace;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.05em;
+  }
 
-  .led-dot.active {
-    background: var(--accent-cyan);
-    box-shadow: 0 0 10px var(--accent-cyan);
+  .led-front {
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 58px;
+    height: 14px;
+  }
+
+  .led-back {
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 58px;
+    height: 14px;
+  }
+
+  .led-left {
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 58px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .led-right {
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 58px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .led-directional.active {
+    background: #00F2FE;
+    border-color: #FFFFFF;
+    box-shadow: 0 0 20px #00F2FE, 0 0 40px rgba(0, 242, 254, 0.8);
+  }
+
+  .led-directional.active .led-label {
+    color: #0F172A;
+    font-weight: 900;
+  }
+
+  .led-directional.relax {
+    background: rgba(249, 115, 22, 0.25);
+    border-color: rgba(249, 115, 22, 0.6);
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.4);
+  }
+
+  .led-directional.relax .led-label {
+    color: #fb923c;
   }
 
   .device-screen-circular {
@@ -585,7 +770,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     border-radius: 50%;
     overflow: hidden;
     background: #0B0F19;
-    border: 2px solid rgba(0, 242, 254, 0.3);
+    border: 2px solid rgba(0, 242, 254, 0.35);
   }
 
   .pixel-display-canvas {
@@ -603,6 +788,65 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     border-radius: 50%;
   }
 
+  /* Panel Interactivo del Anillo */
+  .light-control-panel {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .control-panel-label {
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.65rem;
+  }
+
+  .control-btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .ctrl-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-main);
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .ctrl-btn:hover {
+    background: rgba(0, 242, 254, 0.15);
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+  }
+
+  .ctrl-btn.active {
+    background: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+    color: #0F172A;
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.5);
+  }
+
+  .ctrl-relax.active {
+    background: #f97316;
+    border-color: #f97316;
+    color: #FFFFFF;
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.5);
+  }
+
   .device-caption-row {
     display: flex;
     justify-content: center;
@@ -613,7 +857,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: var(--text-muted);
     font-family: monospace;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 700;
     padding: 0.35rem 0.9rem;
     border-radius: var(--radius-full);
@@ -624,6 +868,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     .lua-showcase-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
+    }
+    .lua-physical-device {
+      max-width: 320px;
     }
   }
 

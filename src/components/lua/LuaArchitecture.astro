@@ -5,84 +5,149 @@
   <div class="container">
     
     <div class="section-header">
-      <span class="section-badge badge-orange">Seguridad Infantil, Calidad y Validación</span>
-      <h2 class="section-title">Diseño Pediátrico Seguro y Paridad en Todo el Ecosistema</h2>
+      <span class="section-badge badge-orange">Arquitectura Física V5 · Seguridad Infantil &amp; Estándares</span>
+      <h2 class="section-title">Unidad Electrónica Sellada, Cuerpo Pasivo y Topología BLE</h2>
       <p class="section-description">
-        Tanto la figura física de Lúa como sus sets de bloques complementarios han sido diseñados bajo estrictos criterios de seguridad infantil, robustez mecánica y coherencia visual entre las aplicaciones del adulto y el visor circular del menor.
+        Desde octubre de 2026, la electrónica vive <strong>exclusivamente en la cabeza</strong> de Lúa, ensamblada en fábrica por <strong>masque3d (Orense)</strong>. Todo lo que el niño toca, muerde o monta son bloques pasivos, seguros, lavables y compatibles con la norma EN 71-1.
       </p>
     </div>
 
-    <!-- Main Architecture Grid -->
-    <div class="arch-cards-grid">
-      
-      <!-- Card 1: Seguridad Física y Ergonomía -->
-      <div class="arch-card glass-card">
-        <div class="card-header">
-          <div class="card-icon icon-orange">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <!-- Visual Architecture Diagram V5 -->
+    <div class="arch-diagram-block glass-card">
+      <div class="diagram-header">
+        <span class="sub-badge text-orange">Esquema Físico Canónico · V5 de Prueba</span>
+        <h3 class="diagram-title">Arquitectura Modular del Sistema Lúa</h3>
+      </div>
+
+      <div class="diagram-flow">
+        <!-- Nivel 1: Unidad Electrónica Sellada -->
+        <div class="diagram-tier tier-sealed">
+          <div class="tier-badge badge-sealed">UNIDAD ELECTRÓNICA SELLADA (La monta masque3d en fábrica · El menor no la abre)</div>
+          <div class="tier-content">
+            <h4>Cabeza V4 (PLA) + Placa Oficial V1 (ESP32-C3 · GC9A01 Ø32,4 mm circular · 27 fps)</h4>
+            <p>Aloja la batería LiPo integrada, el microcontrolador, la pantalla circular de alta fluidez y el <strong>anillo de 4 luces direccionales</strong> en el bloque-cuello. Sin altavoz, sin micrófono, sin motores mecánicos. Anti-espigas estándar en la base inferior.</p>
           </div>
-          <h3>Seguridad Física y Ergonomía Infantil</h3>
         </div>
-        <div class="tech-specs-list">
-          <div class="spec-row">
-            <span class="spec-name">Formato Físico</span>
-            <span class="spec-val highlight-orange">Muñeco de Cuerpo Entero sin Motores</span>
+
+        <div class="tier-connector">
+          <span class="conn-label">Encaje por orientación mecánica forzada (una sola postura anatómica)</span>
+          <div class="conn-arrow">↓</div>
+        </div>
+
+        <!-- Nivel 2: Cuerpo de Bloques -->
+        <div class="diagram-tier tier-body">
+          <div class="tier-badge badge-body">CUERPO DE BLOQUES (Lo arma el niño con sus manos)</div>
+          <div class="tier-content">
+            <h4>Tronco, Patas y Cola con Bloques Pasivos</h4>
+            <p>Piezas plásticas estructurales de gran formato (&gt; 31,75 mm, paredes ≥ 3,2 mm). Cero cables, cero componentes electrónicos, cero tornillos, pegamentos ni imanes. Lavables y reemplazables.</p>
           </div>
-          <div class="spec-row">
-            <span class="spec-name">Visor Integrado</span>
-            <span class="spec-val">Pantalla Circular a Color (240×240 px)</span>
+        </div>
+
+        <div class="tier-connector">
+          <span class="conn-label">Mismo módulo de encaje universal</span>
+          <div class="conn-arrow">↓</div>
+        </div>
+
+        <!-- Nivel 3: Sets y Periféricos -->
+        <div class="tier-split-grid">
+          <div class="diagram-tier tier-sets">
+            <div class="tier-badge badge-sets">SETS DE CONSTRUYE CON LÚA · 6 MUNDOS STEAM</div>
+            <div class="tier-content">
+              <h4>Valeria+ (Hogar/Sesión) ◄── 100% Compatibles ──► Descubre con Lúa (Escuela 0–6)</h4>
+              <p>Los 6 mundos (Camino, Resonancia, Rampas, Soplo, Equilibrio y Jardín) se ensamblan con el mismo estándar.</p>
+            </div>
           </div>
-          <div class="spec-row">
-            <span class="spec-name">Seguridad del Juguete</span>
-            <span class="spec-val">Geometría EN 71-1 (&gt; 31,75 mm)</span>
+
+          <div class="diagram-tier tier-haptic">
+            <div class="tier-badge badge-haptic">OPCIONAL (≥ 3 AÑOS): BLOQUE HÁPTICO RONRONEO</div>
+            <div class="tier-content">
+              <h4>Módulo Háptico Independiente (LRA DRV2605L)</h4>
+              <p>Batería LiPo propia, recarga USB-C protegida por el adulto. Fuera de la cabeza y excluido del kit de VIA+.</p>
+            </div>
           </div>
-          <div class="spec-row">
-            <span class="spec-name">Ensamblaje Estructural</span>
-            <span class="spec-val">Ajuste Mecánico sin Tornillos ni Pegamento</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-name">Privacidad Acústica</span>
-            <span class="spec-val">Cero Micrófonos por Diseño Físico</span>
+        </div>
+
+        <div class="tier-connector">
+          <span class="conn-label">Topología en estrella · Comunicación BLE anónima de 8 bytes fijos</span>
+          <div class="conn-arrow">↕</div>
+        </div>
+
+        <!-- Nivel 4: Tableta del Adulto -->
+        <div class="diagram-tier tier-tablet">
+          <div class="tier-badge badge-tablet">TABLETA DEL ADULTO (Único Central BLE · Sensor Ciego Local de RA)</div>
+          <div class="tier-content">
+            <h4>Decide, Narra, Guía y Procesa la Realidad Aumentada Localmente</h4>
+            <p>ARCore + MediaPipe + Google Filament (mallas &lt; 100 KB). Procesa magnitudes físicas en memoria volátil. Cero transmisión de vídeo a servidores, cero cuentas personales, cero datos almacenados.</p>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Card 2: Garantías de Comportamiento y Paridad -->
-      <div class="arch-card glass-card">
-        <div class="card-header">
-          <div class="card-icon icon-cyan">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          </div>
-          <h3>Garantías de Uso en Hogar, Aula y Consulta</h3>
+    <!-- Por qué la electrónica vive solo en la cabeza & Topología BLE -->
+    <div class="why-head-grid">
+      <div class="why-card glass-card">
+        <div class="why-icon icon-orange">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div class="repo-layers">
-          <div class="layer-item">
-            <span class="layer-code">Espejo 1:1</span>
-            <div class="layer-desc">
-              <strong>Identidad visual única:</strong> el niño ve exactamente el mismo personaje, las mismas prendas coleccionables y las mismas 120 fichas voxel en la aplicación y en el visor de Lúa.
-            </div>
-          </div>
-          <div class="layer-item">
-            <span class="layer-code">Zero-PHI</span>
-            <div class="layer-desc">
-              <strong>Enlace inalámbrico anónimo:</strong> la comunicación local no admite nombres ni textos libres, protegiendo de raíz la privacidad del menor.
-            </div>
-          </div>
-          <div class="layer-item">
-            <span class="layer-code">20-20-20</span>
-            <div class="layer-desc">
-              <strong>Higiene visual pediátrica:</strong> pausas guiadas por el adulto en las que Lúa duerme para favorecer el descanso ocular lejos de las pantallas.
-            </div>
-          </div>
-          <div class="layer-item">
-            <span class="layer-code">Consulta</span>
-            <div class="layer-desc">
-              <strong>Silencio Clínico garantizado:</strong> bloqueo instantáneo durante pruebas audiológicas y foniátricas en VIA+, con celebración al cierre de la sesión.
-            </div>
-          </div>
+        <h3>¿Por qué la electrónica vive solo en la cabeza?</h3>
+        <p>
+          El menor de edad debe poder manipular, montar, desmontar, morder, mojar o tirar al suelo las piezas del cuerpo sin el menor riesgo eléctrico, químico o mecánico.
+        </p>
+        <p>
+          Concentrar la placa oficial V1, la pantalla circular y la batería en una <strong>unidad sellada en fábrica por masque3d (Orense)</strong> deja todo lo que el niño manipula con libertad como piezas pasivas, resistentes y 100% lavables.
+        </p>
+      </div>
+
+      <div class="why-card glass-card">
+        <div class="why-icon icon-cyan">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
+        <h3>Topología BLE en Estrella sin Intercomunicación</h3>
+        <p>
+          La aplicación móvil de la persona adulta es el <strong>único dispositivo central</strong> de la red local.
+        </p>
+        <p>
+          Lúa (cabeza) y Ronroneo (bloque háptico) son periféricos independientes que <strong>no se comunican entre sí</strong>. Ninguno toma decisiones clínicas ni almacena secuencias: ambos ejecutan exclusivamente órdenes numéricas fijadas a catálogos en su memoria flash interna.
+        </p>
+      </div>
+    </div>
+
+    <!-- Seguridad Física, Normativa y Ensayos -->
+    <div class="safety-normative-card glass-card">
+      <div class="normative-header">
+        <div class="normative-icon icon-emerald">🛡️</div>
+        <div>
+          <span class="sub-badge text-emerald">Marco de Conformidad Normativa</span>
+          <h3 class="normative-title">Seguridad Física del Juguete Infantil y Trazabilidad Regulatoria</h3>
         </div>
       </div>
 
+      <p class="normative-desc">
+        Las piezas de bloque de Construye con Lúa se modelan con dimensiones significativamente mayores que el cilindro de piezas pequeñas de la norma <strong>EN 71-1 (&gt; 31,75 mm)</strong> y con espesores estructurales de pared <strong>≥ 3,2 mm</strong>.
+      </p>
+
+      <div class="normative-pills-grid">
+        <div class="n-pill-box">
+          <span class="n-tag">EN 71-1 / EN 71-2 / EN 71-3</span>
+          <span class="n-val">Seguridad Mecánica, Inflamabilidad y No Toxicidad</span>
+          <p>Geometría anti-atragantamiento para menores de 3 años y ensayos de migración de elementos en materiales termoplásticos.</p>
+        </div>
+        <div class="n-pill-box">
+          <span class="n-tag">EN 62115</span>
+          <span class="n-val">Seguridad en Juguetes Eléctricos</span>
+          <p>Aplicable a la unidad sellada de la cabeza y al bloque Ronroneo, con voltajes seguros de baja tensión y aislamiento total.</p>
+        </div>
+        <div class="n-pill-box">
+          <span class="n-tag">DIRECTIVA RED (2014/53/UE)</span>
+          <span class="n-val">Equipos Radioeléctricos &amp; BLE</span>
+          <p>Conformidad en emisión de radiofrecuencia de baja potencia (Bluetooth Low Energy) y actos delegados de ciberseguridad.</p>
+        </div>
+        <div class="n-pill-box">
+          <span class="n-tag">REGLAMENTO (UE) 2023/1542</span>
+          <span class="n-val">Reglamento Europeo de Baterías</span>
+          <p>Protección térmica, ciclo de vida y diseño de envolventes de estanqueidad segura sin acceso infantil.</p>
+        </div>
+      </div>
     </div>
 
     <!-- startTIC & Gradiant IoT Hardware Validation Strip -->
@@ -90,25 +155,25 @@
       <div class="starttic-lua-header">
         <div class="starttic-icon-pill">🚀</div>
         <div>
-          <span class="starttic-eyebrow">Incubadora de Alta Tecnología startTIC</span>
+          <span class="starttic-eyebrow">Incubadora de Alta Tecnología startTIC · VgoTIC</span>
           <h3 class="starttic-lua-title">Validación Tecnológica de Hardware &amp; Dispositivo Conectado con GRADIANT</h3>
         </div>
       </div>
       <p class="starttic-lua-desc">
-        El desarrollo y validación de la compañera física Lúa cuenta con el respaldo tecnológico de <strong>GRADIANT</strong> y los laboratorios de la incubadora de alta tecnología <strong>startTIC</strong> del <strong>Consorcio de la Zona Franca de Vigo</strong> en el VgoTIC Global HUB, dentro del programa cofinanciado al 60% por el Fondo Europeo <strong>FEDER</strong> a través de la Fundación INCYDE.
+        El desarrollo y validación tecnológica de la mascota Lúa cuenta con el acompañamiento técnico de <strong>GRADIANT</strong> y los laboratorios de la incubadora de alta tecnología <strong>startTIC</strong> del <strong>Consorcio de la Zona Franca de Vigo</strong> en el VgoTIC Global HUB, dentro del programa cofinanciado al 60% por el Fondo Europeo <strong>FEDER</strong> a través de la Fundación INCYDE.
       </p>
       <div class="starttic-metrics-row">
         <div class="starttic-metric">
           <span class="m-val">Zero-PHI</span>
-          <span class="m-lbl">Privacidad Estructural Validada</span>
+          <span class="m-lbl">Privacidad Estructural</span>
         </div>
         <div class="starttic-metric">
           <span class="m-val">EN 71-1</span>
           <span class="m-lbl">Bloques Seguros (&gt; 31,75 mm)</span>
         </div>
         <div class="starttic-metric">
-          <span class="m-val">VgoTIC</span>
-          <span class="m-lbl">HUB Tecnológico de Vigo</span>
+          <span class="m-val">masque3d</span>
+          <span class="m-lbl">Fabricación Oficial (Orense)</span>
         </div>
         <div class="starttic-metric">
           <span class="m-val">FEDER 60%</span>
@@ -152,146 +217,287 @@
   .section-title {
     font-size: clamp(1.9rem, 4vw, 2.6rem);
     font-weight: 800;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+    line-height: 1.2;
   }
 
   .section-description {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
-  .arch-cards-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+  /* Diagrama Visual V5 */
+  .arch-diagram-block {
+    padding: 2.5rem;
     margin-bottom: 2.5rem;
   }
 
-  .arch-card {
-    padding: 2.25rem;
-    border-radius: var(--radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+  .diagram-header {
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
-  .card-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.75rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  .sub-badge {
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.35rem;
   }
 
-  .card-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
+  .text-orange { color: #fb923c; }
+  .text-emerald { color: #6ee7b7; }
 
-  .icon-orange {
-    background: rgba(249, 115, 22, 0.15);
-    border: 1px solid rgba(249, 115, 22, 0.4);
-    color: #fb923c;
-  }
-
-  .icon-cyan {
-    background: rgba(0, 242, 254, 0.15);
-    border: 1px solid rgba(0, 242, 254, 0.4);
-    color: var(--accent-cyan);
-  }
-
-  .card-header h3 {
-    font-size: 1.25rem;
+  .diagram-title {
+    font-size: 1.45rem;
     font-weight: 800;
     color: var(--text-main);
     margin: 0;
   }
 
-  .tech-specs-list {
+  .diagram-flow {
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 0.5rem;
+    max-width: 860px;
+    margin: 0 auto;
   }
 
-  .spec-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.95rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    gap: 1rem;
+  .diagram-tier {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.75rem;
+    position: relative;
   }
 
-  .spec-row:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+  .tier-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 0.75rem;
   }
 
-  .spec-name {
-    color: var(--text-muted);
-  }
-
-  .spec-val {
-    font-weight: 700;
-    color: var(--text-main);
-    font-size: 0.9rem;
-    text-align: right;
-  }
-
-  .highlight-orange {
+  .badge-sealed {
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.4);
     color: #fb923c;
   }
 
-  .repo-layers {
+  .badge-body {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    color: #93c5fd;
+  }
+
+  .badge-sets {
+    background: rgba(0, 196, 190, 0.15);
+    border: 1px solid rgba(0, 196, 190, 0.4);
+    color: #2dd4bf;
+  }
+
+  .badge-haptic {
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #d8b4fe;
+  }
+
+  .badge-tablet {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #6ee7b7;
+  }
+
+  .tier-content h4 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .tier-content p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .tier-connector {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0.4rem 0;
+  }
+
+  .conn-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    font-family: monospace;
+    color: var(--text-muted);
+    text-align: center;
+    background: rgba(15, 23, 42, 0.8);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .conn-arrow {
+    font-size: 1.2rem;
+    color: var(--accent-cyan);
+    line-height: 1;
+    margin-top: 0.2rem;
+  }
+
+  .tier-split-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 1rem;
+  }
+
+  /* Por qué solo en la cabeza */
+  .why-head-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .why-card {
+    padding: 2.25rem 2rem;
+  }
+
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .icon-orange {
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    color: #fb923c;
+  }
+
+  .icon-cyan {
+    background: rgba(0, 242, 254, 0.15);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    color: var(--accent-cyan);
+  }
+
+  .why-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 0.85rem 0;
+  }
+
+  .why-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 0.85rem 0;
+  }
+
+  .why-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .why-card strong {
+    color: var(--text-main);
+  }
+
+  /* Seguridad Normativa */
+  .safety-normative-card {
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .normative-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .normative-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    flex-shrink: 0;
+  }
+
+  .normative-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .normative-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+  }
+
+  .normative-pills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.25rem;
   }
 
-  .layer-item {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
+  .n-pill-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
   }
 
-  .layer-code {
-    font-family: monospace;
-    font-size: 0.8rem;
+  .n-tag {
+    display: block;
+    font-size: 0.74rem;
     font-weight: 800;
-    color: var(--accent-cyan);
-    background: rgba(0, 242, 254, 0.1);
-    border: 1px solid rgba(0, 242, 254, 0.25);
-    padding: 0.25rem 0.6rem;
-    border-radius: 6px;
-    flex-shrink: 0;
-    min-width: 82px;
-    text-align: center;
+    font-family: monospace;
+    color: #6ee7b7;
+    margin-bottom: 0.35rem;
   }
 
-  .layer-desc {
-    font-size: 0.92rem;
+  .n-val {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .n-pill-box p {
+    margin: 0;
+    font-size: 0.84rem;
     color: var(--text-muted);
     line-height: 1.5;
   }
 
-  .layer-desc strong {
-    color: var(--text-main);
-  }
-
-  /* startTIC Lua Card */
+  /* startTIC */
   .starttic-lua-card {
-    margin-top: 1rem;
-    padding: 2.25rem;
-    border-radius: var(--radius-lg);
-    background: linear-gradient(135deg, rgba(0, 242, 254, 0.06) 0%, rgba(15, 23, 42, 0.75) 100%);
-    border: 1px solid rgba(0, 242, 254, 0.3);
-    box-shadow: 0 0 35px -10px rgba(0, 242, 254, 0.18);
+    padding: 2.25rem 2rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(20, 20, 35, 0.7) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .starttic-lua-header {
@@ -302,44 +508,40 @@
   }
 
   .starttic-icon-pill {
-    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     background: rgba(0, 242, 254, 0.12);
     border: 1px solid rgba(0, 242, 254, 0.35);
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.5rem;
     flex-shrink: 0;
   }
 
   .starttic-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 700;
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--accent-cyan);
-    display: block;
     margin-bottom: 0.25rem;
   }
 
   .starttic-lua-title {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: var(--text-main);
     margin: 0;
   }
 
   .starttic-lua-desc {
-    font-size: 0.95rem;
+    font-size: 0.94rem;
     color: var(--text-muted);
     line-height: 1.65;
     margin-bottom: 1.75rem;
-  }
-
-  .starttic-lua-desc strong {
-    color: var(--text-main);
   }
 
   .starttic-metrics-row {
@@ -349,43 +551,32 @@
   }
 
   .starttic-metric {
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-md);
-    padding: 1rem 1.25rem;
+    padding: 1rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
   }
 
-  .starttic-metric .m-val {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
+  .m-val {
+    display: block;
+    font-size: 1.2rem;
     font-weight: 900;
     color: var(--accent-cyan);
+    margin-bottom: 0.25rem;
   }
 
-  .starttic-metric .m-lbl {
+  .m-lbl {
     font-size: 0.78rem;
-    color: var(--text-dim);
-    font-weight: 600;
+    color: var(--text-muted);
   }
 
-  @media (max-width: 768px) {
-    .architecture-section {
-      padding: 60px 0;
-    }
-    .arch-cards-grid {
+  @media (max-width: 900px) {
+    .tier-split-grid {
       grid-template-columns: 1fr;
     }
-    .starttic-lua-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
-    .starttic-metrics-row {
-      grid-template-columns: 1fr 1fr;
+    .why-head-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

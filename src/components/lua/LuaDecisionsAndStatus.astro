@@ -1,0 +1,516 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+---
+
+<section id="decisiones-estado" class="decisions-status-section section-padding">
+  <div class="container">
+    
+    <div class="section-header">
+      <span class="section-badge badge-amber">Gobernanza Técnica &amp; Hoja de Ruta</span>
+      <h2 class="section-title">Decisiones de Diseño Vigentes y Estado Técnico (Octubre 2026)</h2>
+      <p class="section-description">
+        Desde octubre de 2026, el proyecto se ordena alrededor de una sola certeza: <strong>Lúa es un juguete STEAM de bloques</strong>. La cabeza concentra toda la electrónica en una unidad sellada por el fabricante; el cuerpo y los mundos de juego los arma el menor con bloques pasivos.
+      </p>
+    </div>
+
+    <!-- 1. Decisiones de Diseño Vigentes (Octubre 2026) -->
+    <div class="status-block glass-card">
+      <div class="block-header">
+        <div class="block-icon icon-amber">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <div>
+          <span class="sub-badge text-amber">Marco Canónico Vigente</span>
+          <h3 class="block-title">Decisiones de Diseño Canónicas</h3>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="canonical-table">
+          <thead>
+            <tr>
+              <th>Decisión Arquitectónica</th>
+              <th>Estado</th>
+              <th>Impacto en el Producto y Seguridad Infantil</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Versión robótica motorizada</strong></td>
+              <td><span class="badge-status status-discarded">Descartada definitivamente</span></td>
+              <td>Eliminación total de ruido mecánico, atascos y servomotores. Silencio Clínico garantizado para niños con implante o audífono.</td>
+            </tr>
+            <tr>
+              <td><strong>Otras placas microcontroladoras</strong></td>
+              <td><span class="badge-status status-discarded">Descartadas · Solo V1 circular</span></td>
+              <td>Estandarización exclusiva en la placa oficial V1 (ESP32-C3 · display circular GC9A01 Ø32,4 mm a 27 fps fluidos).</td>
+            </tr>
+            <tr>
+              <td><strong>Cabeza del muñeco versión 4 (PLA)</strong></td>
+              <td><span class="badge-status status-active">Se conserva</span></td>
+              <td>Diseñada en Blender (<code>bpy</code>). Aloja la electrónica sellada y la pantalla redonda. Fabricación por <strong>masque3d (Orense)</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Cuerpo del muñeco versión 4</strong></td>
+              <td><span class="badge-status status-replaced">Sustituido por cuerpo de bloques</span></td>
+              <td>El cuerpo rígido anterior se retira. Ahora el tronco, patas y cola los construye el niño con bloques pasivos lavables y modulares.</td>
+            </tr>
+            <tr>
+              <td><strong>Vibración háptica (Ronroneo)</strong></td>
+              <td><span class="badge-status status-proposal">Propuesta V5 · Bloque externo</span></td>
+              <td>Vibración confinada exclusivamente a un bloque independiente (Ronroneo), nunca en la cabeza. Excluido del kit de VIA+ por Silencio Clínico.</td>
+            </tr>
+            <tr>
+              <td><strong>Luces como canal de interacción</strong></td>
+              <td><span class="badge-status status-proposal">Propuesta V5 · Anillo de 4 luces</span></td>
+              <td>Anillo direccional en el bloque-cuello sellado (delante/detrás/izq./dcha.). Significan dirección, no decoran. Nunca en los bloques del niño.</td>
+            </tr>
+            <tr>
+              <td><strong>Impresión e integración electrónica V5</strong></td>
+              <td><span class="badge-status status-active">masque3d (Orense)</span></td>
+              <td>El fabricante imprime la cabeza/cuello e integra la electrónica. Ni el menor ni el equipo clínico realizan intervenciones de hardware.</td>
+            </tr>
+            <tr>
+              <td><strong>STEAM como eje vertebrador</strong></td>
+              <td><span class="badge-status status-active">Adoptado canónicamente</span></td>
+              <td>Cada set se diseña primero como experiencia de ciencia/técnica y después se le asignan metas de lenguaje (<em>el fenómeno manda y el lenguaje lo nombra</em>).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2. Estado de Componentes (Octubre 2026) -->
+    <div class="status-block glass-card">
+      <div class="block-header">
+        <div class="block-icon icon-cyan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        </div>
+        <div>
+          <span class="sub-badge text-cyan">Trazabilidad de Hardware &amp; Software</span>
+          <h3 class="block-title">Estado de Componentes de la Mascota Lúa</h3>
+        </div>
+      </div>
+
+      <div class="components-grid">
+        <div class="comp-card">
+          <div class="comp-top">
+            <span class="comp-name">Placa V1 Circular</span>
+            <span class="comp-badge badge-green">Operativa</span>
+          </div>
+          <p class="comp-desc">Compila, flashea, arranca y refresca a 27 fps. Ocho unidades encargadas. Cristal capacitivo leído con precisión.</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-top">
+            <span class="comp-name">Cabeza Versión 4</span>
+            <span class="comp-badge badge-green">En Producción</span>
+          </div>
+          <p class="comp-desc">Diseñada proceduralmente en Blender (<code>bpy</code>). Entregada para impresión 3D e integración en masque3d (Orense). Se conserva.</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-top">
+            <span class="comp-name">Cuerpo Versión 4</span>
+            <span class="comp-badge badge-gray">Retirado</span>
+          </div>
+          <p class="comp-desc">Sustituido íntegramente por cuerpo de bloques armable por el menor (V5, en diseño paramétrico).</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-top">
+            <span class="comp-name">Bloque-Cuello con Batería y Luces</span>
+            <span class="comp-badge badge-amber">Propuesta V5</span>
+          </div>
+          <p class="comp-desc">Aloja la batería y 4 luces direccionales. Impresión e integración por masque3d. Sujeto a resolución de decisiones B1 y B5.</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-top">
+            <span class="comp-name">Bloque Háptico Ronroneo</span>
+            <span class="comp-badge badge-amber">Propuesta V5</span>
+          </div>
+          <p class="comp-desc">Módulo 2×4 independiente (≥ 3 años), LRA DRV2605L, batería LiPo propia USB-C sellada por adulto. Sujeto a B3.</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-top">
+            <span class="comp-name">Construye con Lúa (6 Sets)</span>
+            <span class="comp-badge badge-green">Operativo</span>
+          </div>
+          <p class="comp-desc">Pipeline procedural Blender + JSON + CustomPainter operativo. Integración de Realidad Aumentada local (AR-1/2/3).</p>
+        </div>
+
+        <div class="comp-card comp-card-highlight">
+          <div class="comp-top">
+            <span class="comp-name">Valeria+ en Maker Faire</span>
+            <span class="comp-badge badge-gold">Galardón 2026</span>
+          </div>
+          <p class="comp-desc">Premiada como <strong>Mejor Iniciativa Innovadora en Maker Faire Galicia 2026</strong> por su integración física y digital sin pantallas para el menor.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Decisiones Bloqueantes (B1 a B5) -->
+    <div class="status-block glass-card">
+      <div class="block-header">
+        <div class="block-icon icon-purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div>
+          <span class="sub-badge text-purple">Rigocidad &amp; Puertas de Decisión</span>
+          <h3 class="block-title">Decisiones Bloqueantes Abiertas (B1 a B5)</h3>
+        </div>
+      </div>
+
+      <div class="blocking-grid">
+        <div class="blocking-card">
+          <div class="b-code">B1</div>
+          <div class="b-info">
+            <h4>Ubicación de la batería de Lúa</h4>
+            <p><strong>Pregunta técnica:</strong> ¿Cabe la batería LiPo en la cabeza versión 4 o requiere el bloque-cuello sellado? Requiere medir el volumen interior de la cabeza impresa con masque3d, contabilizando el consumo del display a 27 fps y el anillo de 4 luces.</p>
+            <span class="b-status-pill pill-amber">En medición volumétrica con masque3d</span>
+          </div>
+        </div>
+
+        <div class="blocking-card">
+          <div class="b-code">B2</div>
+          <div class="b-info">
+            <h4>Integración electrónica con masque3d</h4>
+            <p><strong>Resolución parcial:</strong> masque3d imprime e integra la cabeza y cuello. Queda por confirmar si también suministran o ensamblan la placa de Ronroneo o si debe llegarles montada de otro proveedor electrónico especializado.</p>
+            <span class="b-status-pill pill-cyan">Parcialmente resuelta · masque3d integrado</span>
+          </div>
+        </div>
+
+        <div class="blocking-card">
+          <div class="b-code">B3</div>
+          <div class="b-info">
+            <h4>Aprobación clínica de nuevos canales (Luz y Háptica)</h4>
+            <p><strong>Condición:</strong> Validación clínica de la vibración y la luz como canales nuevos y aprobación formal de los opcodes <code>HAPTIC</code> y <code>LIGHT</code> en la puerta regulatoria y pedagógica antes de fusionar en el firmware oficial.</p>
+            <span class="b-status-pill pill-purple">Puerta clínica en proceso</span>
+          </div>
+        </div>
+
+        <div class="blocking-card">
+          <div class="b-code">B4</div>
+          <div class="b-info">
+            <h4>Denominación pública de los bloques</h4>
+            <p><strong>Política de marca:</strong> Evitar marcas de terceros en nombres, catálogos, insignias y material comercial. Describir las piezas estrictamente por su estándar geométrico (módulo de encaje de gran formato, paso 31,80 mm / EN 71-1 &gt; 31,75 mm).</p>
+            <span class="b-status-pill pill-green">Criterio fijado: módulo de encaje universal</span>
+          </div>
+        </div>
+
+        <div class="blocking-card">
+          <div class="b-code">B5</div>
+          <div class="b-info">
+            <h4>Pin libre en la placa oficial V1</h4>
+            <p><strong>Comprobación de hardware:</strong> Verificar pin GPIO libre en la placa ESP32-C3 para gobernar el bus de datos de las 4 luces direccionales. masque3d lo valida sobre la placa real antes de proceder a la impresión definitiva del cuello.</p>
+            <span class="b-status-pill pill-amber">Verificación en placa física con masque3d</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .decisions-status-section {
+    padding: 80px 0;
+    position: relative;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: 0.35rem 1.1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .badge-amber {
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: #fbbf24;
+  }
+
+  .section-title {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+    line-height: 1.2;
+  }
+
+  .section-description {
+    font-size: 1.12rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .status-block {
+    margin-bottom: 2.5rem;
+    padding: 2.25rem;
+  }
+
+  .block-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .block-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .icon-amber {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: #fbbf24;
+  }
+
+  .icon-cyan {
+    background: rgba(0, 242, 254, 0.15);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    color: var(--accent-cyan);
+  }
+
+  .icon-purple {
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    color: #d8b4fe;
+  }
+
+  .sub-badge {
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.25rem;
+  }
+
+  .text-amber { color: #fbbf24; }
+  .text-cyan { color: var(--accent-cyan); }
+  .text-purple { color: #d8b4fe; }
+
+  .block-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .canonical-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+
+  .canonical-table th {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .canonical-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-muted);
+    vertical-align: middle;
+  }
+
+  .canonical-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .canonical-table td strong {
+    color: var(--text-main);
+  }
+
+  .badge-status {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .status-discarded {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #fca5a5;
+  }
+
+  .status-active {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #6ee7b7;
+  }
+
+  .status-replaced {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    color: #93c5fd;
+  }
+
+  .status-proposal {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: #fde68a;
+  }
+
+  .components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .comp-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .comp-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .comp-card-highlight {
+    background: rgba(245, 158, 11, 0.05);
+    border-color: rgba(245, 158, 11, 0.25);
+  }
+
+  .comp-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.65rem;
+  }
+
+  .comp-name {
+    font-weight: 800;
+    font-size: 0.98rem;
+    color: var(--text-main);
+  }
+
+  .comp-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+  }
+
+  .badge-green {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #6ee7b7;
+  }
+
+  .badge-gray {
+    background: rgba(148, 163, 184, 0.15);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    color: #cbd5e1;
+  }
+
+  .badge-gold {
+    background: rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    color: #fde68a;
+  }
+
+  .comp-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .blocking-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+
+  .blocking-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .b-code {
+    font-size: 1.2rem;
+    font-weight: 900;
+    font-family: monospace;
+    color: #d8b4fe;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 8px;
+    padding: 0.35rem 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .b-info h4 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .b-info p {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .b-status-pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.7rem;
+    border-radius: var(--radius-full);
+  }
+
+  .pill-green {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #6ee7b7;
+  }
+
+  @media (max-width: 768px) {
+    .blocking-card {
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+  }
+</style>
