@@ -1,85 +1,261 @@
 ---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
 ---
 
 <section id="como-funciona" class="how-section">
   <div class="container">
+    <!-- Header -->
     <div class="section-header">
-      <span class="section-badge">Metodología Vivencial</span>
+      <span class="section-badge">Arquitectura Física y Pedagógica</span>
       <h2 class="section-title">
-        ¿Cómo Funciona <span class="gradient-text-orange">Lúa Construye</span> en una Sesión Real?
+        El Contrato de Interacción y la <span class="gradient-text-orange">Topología en Estrella</span>
       </h2>
       <p class="section-subtitle">
-        El neurodesarrollo en los primeros años de vida ocurre a través del tacto, el movimiento corporal y la mirada compartida. Nuestra metodología devuelve el protagonismo al juego físico mientras brinda seguridad y estructura al adulto.
+        Diseñado bajo la directriz del <strong>Dr. Frank Alberto Betances Reinoso</strong>: la tecnología inteligente acompaña a la persona adulta, mientras las manos infantiles descubren el mundo físico sin intermediación de pantallas adictivas.
       </p>
     </div>
 
-    <!-- 3 Step Process -->
-    <div class="steps-grid">
-      <!-- Step 1 -->
-      <article class="step-card">
-        <div class="step-top">
-          <span class="step-number">01</span>
-          <span class="step-tag">Preparación en 1 Minuto</span>
-        </div>
-        <h3 class="step-title">La Persona Adulta Recibe el Guión</h3>
-        <p class="step-desc">
-          Antes de iniciar la actividad, la educadora, el terapeuta o la familia consulta en su dispositivo qué piezas del kit se van a utilizar hoy y cuál es el objetivo pedagógico o clínico de la sesión.
-        </p>
-        <ul class="step-points">
-          <li><strong>Sin improvisación:</strong> Consignas claras adaptadas a la edad del grupo.</li>
-          <li><strong>Apoyo acústico previo:</strong> El adulto puede escuchar en privado la pronunciación exacta de las canciones o expresiones en inglés antes de transmitirlas.</li>
-        </ul>
-      </article>
-
-      <!-- Step 2 -->
-      <article class="step-card">
-        <div class="step-top">
-          <span class="step-number">02</span>
-          <span class="step-tag">Manos a la Obra</span>
-        </div>
-        <h3 class="step-title">Construcción Tangible en la Alfombra</h3>
-        <p class="step-desc">
-          El dispositivo se guarda o queda fuera de la vista infantil. Las niñas y niños toman los bloques modulares de gran formato para construir caminos, curvas, puentes o tableros sensoriales con sus propias manos.
-        </p>
-        <ul class="step-points">
-          <li><strong>Encaje suave y seguro:</strong> Diseñado para la fuerza palmar y la pinza digital de los más pequeños.</li>
-          <li><strong>Atención conjunta:</strong> Fomenta el respeto de turnos, la escucha activa y el trabajo cooperativo.</li>
-        </ul>
-      </article>
-
-      <!-- Step 3 -->
-      <article class="step-card">
-        <div class="step-top">
-          <span class="step-number">03</span>
-          <span class="step-tag">Acción y Lenguaje</span>
-        </div>
-        <h3 class="step-title">Retos con la Gata Lúa y Movimiento</h3>
-        <p class="step-desc">
-          A través de historias, ritmos y órdenes dinámicas, las criaturas desplazan a Lúa por el circuito construido, exploran relieves con las yemas de los dedos e imitan sonidos, gestos y palabras.
-        </p>
-        <ul class="step-points">
-          <li><strong>Pensamiento lógico inicial:</strong> Comprenden causas, secuencias paso a paso y giros espaciales sin tocar un ordenador.</li>
-          <li><strong>Cero sobreestimulación:</strong> Aprendizaje sereno, humano y libre de recompensas digitales adictivas.</li>
-        </ul>
-      </article>
-    </div>
-
-    <!-- Clinical & Pedagogical Highlight Banner -->
-    <div class="philosophy-banner">
-      <div class="phil-icon">🧠</div>
-      <div class="phil-content">
-        <h4>Respaldado por la Evidencia Pediátrica y Audiológica</h4>
-        <p>
-          Siguiendo las recomendaciones de la Organización Mundial de la Salud (OMS) y las sociedades de pediatría, <strong>Lúa Construye elimina por completo el tiempo de pantalla en la primera infancia</strong>, sustituyéndolo por manipulación tridimensional, diálogo cara a cara y estimulación auditivo-verbal real.
+    <!-- What Lúa Does and What Lúa DOES NOT Do -->
+    <div class="roles-comparison-box">
+      <div class="roles-header">
+        <span class="roles-pill">Transparencia y Arquitectura Determinista</span>
+        <h3 class="roles-title">¿Qué hace Lúa y qué NO hace en el juego manipulativo?</h3>
+        <p class="roles-desc">
+          Garantía de hardware y diseño clínico: Lúa es un agente reactivo visual, no un sustituto de la interacción humana.
         </p>
       </div>
-      <div class="phil-action">
-        <button 
-          class="btn-phil-contact"
-          onclick="document.getElementById('contact-modal')?.classList.add('open'); document.getElementById('contact-modal')?.setAttribute('aria-hidden', 'false');"
-        >
-          <span>Consultar con el Dr. Betances</span>
-        </button>
+
+      <div class="roles-grid">
+        <!-- Col 1: Lúa SÍ hace -->
+        <div class="role-col col-yes">
+          <div class="col-badge badge-yes">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Lúa SÍ hace (Hardware Reactivo)</span>
+          </div>
+          <ul class="role-list">
+            <li>
+              <strong>Muestra 28 expresiones vivas:</strong> Pantalla circular TFT IPS de 240×240 px (cabeza V4 + placa V1 ESP32-C3) con ojos expresivos que reaccionan a los bloques.
+            </li>
+            <li>
+              <strong>Muestra pictogramas y progreso:</strong> Despliega insignias de logro, pictogramas de vocabulario y niveles pedagógicos sincronizados.
+            </li>
+            <li>
+              <strong>4 Luces Direccionales en Bloque-Cuello:</strong> Anillo sellado de 4 LEDs discretos que indican rumbos, giros recomendados o avance en el circuito.
+            </li>
+            <li>
+              <strong>Ejecuta opcodes por BLE:</strong> Recibe comandos en tiempo real desde la tableta central con latencia inferior a 50 milisegundos.
+            </li>
+            <li>
+              <strong>Zócalo de encaje universal:</strong> Su base se acopla con precisión mecánica a los bloques de escala G (0-3 años) y escala E (3-6 años).
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Lúa NO hace -->
+        <div class="role-col col-no">
+          <div class="col-badge badge-no">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <span>Lúa NO hace (Límites Innegociables)</span>
+          </div>
+          <ul class="role-list">
+            <li>
+              <strong>NO habla ni emite sonidos:</strong> Carece por diseño de altavoz en su cabeza para no perturbar a niños con hipoacusia o implantes cocleares.
+            </li>
+            <li>
+              <strong>NO escucha ni graba audio:</strong> Sin micrófono en circuito físico. Cumplimiento absoluto del Muro Regulatorio Zero-PHI.
+            </li>
+            <li>
+              <strong>NO se mueve sola (cero motores):</strong> No tiene ruedas ni servos motorizados; es la criatura quien la desplaza con sus manos por el recorrido.
+            </li>
+            <li>
+              <strong>NO mide, no juzga ni decide:</strong> No almacena historiales ni calcula notas. Toda la inteligencia pedagógica reside en la app de la persona adulta.
+            </li>
+            <li>
+              <strong>NO vibra en la cabeza:</strong> La vibración táctil se reserva exclusivamente al bloque accesorio opcional «Ronroneo» (&ge; 3 años, vetado en VIA+).
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="roles-note">
+        <span class="note-highlight">La Voz Pertenece al Adulto:</span> La tableta del docente o la familia reproduce las consignas sonoras, canciones a compás visual y pronunciación en inglés; el adulto las verbaliza cara a cara con la niña o el niño, manteniendo viva la atención conjunta.
+      </div>
+    </div>
+
+    <!-- Star BLE Topology Banner -->
+    <div class="topology-section">
+      <div class="topology-header">
+        <span class="topology-tag">Topología Determinista</span>
+        <h3 class="topology-title">Arquitectura en Estrella: Cero Dependencia de la Nube</h3>
+      </div>
+
+      <div class="topology-diagram">
+        <div class="top-node node-tablet">
+          <div class="node-icon">📱</div>
+          <div class="node-info">
+            <strong>Tableta del Adulto (Central BLE)</strong>
+            <span>Sensor ciego local (RA local) · Motor NLG determinista · Zero-Network</span>
+          </div>
+        </div>
+
+        <div class="top-links">
+          <div class="link-arm">
+            <span class="link-label">BLE Directo (&lt;50ms)</span>
+            <div class="link-line"></div>
+          </div>
+          <div class="link-arm arm-right">
+            <span class="link-label">BLE Opcional (&ge; 3 años)</span>
+            <div class="link-line"></div>
+          </div>
+        </div>
+
+        <div class="top-peripherals">
+          <div class="top-node node-lua">
+            <div class="node-icon">🐱</div>
+            <div class="node-info">
+              <strong>Lúa Física (Periférico BLE)</strong>
+              <span>Cabeza V4 + Placa V1 (240×240) · 4 LEDs en cuello · 0 altavoz · 0 micro</span>
+            </div>
+          </div>
+
+          <div class="top-node node-ronroneo">
+            <div class="node-icon">📳</div>
+            <div class="node-info">
+              <strong>Bloque Ronroneo (Accesorio Háptico)</strong>
+              <span>Motor LRA/ERM sellado · Independiente de Lúa · Estimulación táctil palmar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="topology-caption">
+        Topología en estrella pura: La tableta es el único nodo central. Lúa y el bloque Ronroneo son periféricos aislados y <strong>no se comunican entre sí</strong>.
+      </p>
+    </div>
+
+    <!-- The 5-Link Interaction Contract -->
+    <div class="contract-container">
+      <div class="contract-header">
+        <span class="section-badge">Protocolo de Interacción</span>
+        <h3 class="contract-title">El Contrato de Interacción de 5 Eslabones</h3>
+        <p class="contract-desc">
+          Un ciclo riguroso y cerrado donde cada evento físico en los bloques desencadena una reacción comprensible y armónica sin abrumar al menor:
+        </p>
+      </div>
+
+      <div class="chain-grid">
+        <!-- Eslabón 1 -->
+        <div class="chain-card">
+          <div class="chain-step">01</div>
+          <div class="chain-badge">Acción Tangible</div>
+          <h4 class="chain-name">Evento Físico</h4>
+          <p class="chain-detail">
+            El niño encaja una curva, coloca una baldosa rugosa, desliza la masa por la rampa o sopla en la embocadura del rotor.
+          </p>
+        </div>
+
+        <div class="chain-arrow" aria-hidden="true">→</div>
+
+        <!-- Eslabón 2 -->
+        <div class="chain-card">
+          <div class="chain-step">02</div>
+          <div class="chain-badge">Visión o Toque</div>
+          <h4 class="chain-name">Detección</h4>
+          <p class="chain-detail">
+            La cámara trasera de la tableta detecta el marcador geométrico del bloque en tiempo real. <em>Redundancia: el adulto siempre puede validar con un toque en pantalla.</em>
+          </p>
+        </div>
+
+        <div class="chain-arrow" aria-hidden="true">→</div>
+
+        <!-- Eslabón 3 -->
+        <div class="chain-card">
+          <div class="chain-step">03</div>
+          <div class="chain-badge">Motor Pedagógico</div>
+          <h4 class="chain-name">Decisión</h4>
+          <p class="chain-detail">
+            La app evalúa la máquina de estados pedagógica: valida el paso curricular, comprueba el objetivo y formula la consigna.
+          </p>
+        </div>
+
+        <div class="chain-arrow" aria-hidden="true">→</div>
+
+        <!-- Eslabón 4 -->
+        <div class="chain-card">
+          <div class="chain-step">04</div>
+          <div class="chain-badge">BLE Instantáneo</div>
+          <h4 class="chain-name">Reacción</h4>
+          <p class="chain-detail">
+            La cabeza de Lúa cambia de expresión (alegría, asombro, curiosidad) y enciende sus luces direccionales para señalar el siguiente reto.
+          </p>
+        </div>
+
+        <div class="chain-arrow" aria-hidden="true">→</div>
+
+        <!-- Eslabón 5 -->
+        <div class="chain-card">
+          <div class="chain-step">05</div>
+          <div class="chain-badge">Atención Conjunta</div>
+          <h4 class="chain-name">Palabra</h4>
+          <p class="chain-detail">
+            La app sugiere la frase a la docente o familiar. El adulto nombra el fenómeno con calidez y amplía el vocabulario cara a cara.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- The 6 Rules of the Contract -->
+    <div class="rules-container">
+      <h3 class="rules-title">Las 6 Reglas de Oro del Contrato de Interacción</h3>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-num">R1</div>
+          <div class="rule-body">
+            <h4>Redundancia Manual Obligatoria</h4>
+            <p>Ningún evento depende exclusivamente de la visión artificial. Si hay poca luz o sombra, el adulto confirma la acción tocando la pantalla.</p>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-num">R2</div>
+          <div class="rule-body">
+            <h4>El Fenómeno Manda (Orden Temporal)</h4>
+            <p>Primero sucede el fenómeno en el mundo real (la bola cae, el resonador vibra); Lúa reacciona y sólo después el adulto verbaliza el concepto.</p>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-num">R3</div>
+          <div class="rule-body">
+            <h4>Turno Verbal vs. Turno Motor</h4>
+            <p>Cuando el adulto o la app emite voz, el entorno manipulativo permanece quieto. Cuando se construye, no hay ruidos parásitos que distraigan.</p>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-num">R4</div>
+          <div class="rule-body">
+            <h4>Error Neutro y Acogedor</h4>
+            <p>Cero zumbidos de error o castigo. Si un bloque no encaja en la secuencia, Lúa muestra sorpresa suave o postura de reflexión exploratoria.</p>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-num">R5</div>
+          <div class="rule-body">
+            <h4>RA Explicativa, No Distractora</h4>
+            <p>La realidad aumentada en la tableta ilustra lo invisible (líneas de aire, ondas de sonido) únicamente en la fase de ampliación posterior.</p>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-num">R6</div>
+          <div class="rule-body">
+            <h4>Diseño Universal UDL</h4>
+            <p>Señalar con el dedo, fijar la mirada compartida o pulsar un comunicador CAA cuenta como interacción exitosa para todo el sistema.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -87,7 +263,7 @@
 
 <style>
   .how-section {
-    padding: 5rem 0;
+    padding: 5.5rem 0;
     position: relative;
     background: linear-gradient(180deg, rgba(7, 9, 14, 0) 0%, rgba(15, 23, 42, 0.45) 50%, rgba(7, 9, 14, 0) 100%);
     border-top: 1px solid var(--border-light);
@@ -95,7 +271,7 @@
 
   .section-header {
     text-align: center;
-    max-width: 820px;
+    max-width: 860px;
     margin: 0 auto 3.5rem;
   }
 
@@ -114,7 +290,7 @@
   }
 
   .section-title {
-    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-size: clamp(2rem, 4vw, 2.85rem);
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -133,173 +309,472 @@
     line-height: 1.65;
   }
 
-  /* Steps Grid */
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 3.5rem;
+  .section-subtitle strong {
+    color: var(--text-main);
   }
 
-  .step-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
+  /* Roles Comparison Box */
+  .roles-comparison-box {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(249, 115, 22, 0.3);
     border-radius: var(--radius-lg);
-    padding: 2.25rem;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    backdrop-filter: blur(16px);
+    padding: 2.75rem 2.25rem;
+    margin-bottom: 4.5rem;
+    backdrop-filter: blur(14px);
   }
 
-  .step-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(249, 115, 22, 0.4);
-    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6);
+  .roles-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 2.25rem;
   }
 
-  .step-top {
-    display: flex;
+  .roles-pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #67E8F9;
+    background: rgba(0, 242, 254, 0.12);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 0.75rem;
+  }
+
+  .roles-title {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+  }
+
+  .roles-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .role-col {
+    background: rgba(10, 15, 29, 0.6);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+  }
+
+  .col-yes {
+    border-color: rgba(16, 185, 129, 0.35);
+  }
+
+  .col-no {
+    border-color: rgba(239, 68, 68, 0.35);
+  }
+
+  .col-badge {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-full);
     margin-bottom: 1.25rem;
   }
 
-  .step-number {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #FB923C;
-    line-height: 1;
+  .badge-yes {
+    background: rgba(16, 185, 129, 0.15);
+    color: #6EE7B7;
+    border: 1px solid rgba(16, 185, 129, 0.4);
   }
 
-  .step-tag {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 0.25rem 0.7rem;
-    border-radius: var(--radius-full);
-    background: rgba(249, 115, 22, 0.12);
-    color: #FDBA74;
-    border: 1px solid rgba(249, 115, 22, 0.28);
+  .badge-no {
+    background: rgba(239, 68, 68, 0.15);
+    color: #FCA5A5;
+    border: 1px solid rgba(239, 68, 68, 0.4);
   }
 
-  .step-title {
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: var(--text-main);
-    margin-bottom: 0.85rem;
-    line-height: 1.3;
-  }
-
-  .step-desc {
-    font-size: 0.94rem;
-    color: var(--text-muted);
-    line-height: 1.65;
-    margin-bottom: 1.5rem;
-  }
-
-  .step-points {
+  .role-list {
     list-style: none;
     padding: 0;
-    margin: auto 0 0 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding-top: 1.25rem;
+    gap: 1.1rem;
   }
 
-  .step-points li {
-    font-size: 0.86rem;
+  .role-list li {
+    font-size: 0.92rem;
+    line-height: 1.6;
     color: var(--text-muted);
-    line-height: 1.5;
-    padding-left: 1.2rem;
+    padding-left: 1.4rem;
     position: relative;
   }
 
-  .step-points li::before {
+  .col-yes .role-list li::before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #34D399;
+    color: #10B981;
     font-weight: 800;
   }
 
-  .step-points strong {
-    color: var(--text-main);
-  }
-
-  /* Philosophy Banner */
-  .philosophy-banner {
-    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(15, 23, 42, 0.85) 100%);
-    border: 1px solid rgba(249, 115, 22, 0.35);
-    border-radius: var(--radius-lg);
-    padding: 2.2rem 2.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1.75rem;
-  }
-
-  .phil-icon {
-    font-size: 2.6rem;
-    flex-shrink: 0;
-  }
-
-  .phil-content {
-    flex-grow: 1;
-  }
-
-  .phil-content h4 {
-    font-size: 1.2rem;
+  .col-no .role-list li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    color: #EF4444;
     font-weight: 800;
-    color: var(--text-main);
-    margin-bottom: 0.4rem;
   }
 
-  .phil-content p {
-    font-size: 0.94rem;
+  .role-list strong {
+    color: var(--text-main);
+  }
+
+  .roles-note {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: var(--radius-md);
+    padding: 1.2rem 1.6rem;
+    font-size: 0.92rem;
     color: var(--text-muted);
     line-height: 1.6;
+    text-align: center;
   }
 
-  .phil-content strong {
+  .note-highlight {
     color: #FDBA74;
+    font-weight: 800;
   }
 
-  .phil-action {
+  /* Topology */
+  .topology-section {
+    background: rgba(10, 15, 29, 0.7);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2.75rem 2rem;
+    margin-bottom: 4.5rem;
+    text-align: center;
+  }
+
+  .topology-header {
+    margin-bottom: 2rem;
+  }
+
+  .topology-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #38BDF8;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+  }
+
+  .topology-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-top: 0.5rem;
+  }
+
+  .topology-diagram {
+    max-width: 780px;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-node {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.5rem;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    transition: transform 0.2s ease;
+  }
+
+  .top-node:hover {
+    transform: translateY(-2px);
+  }
+
+  .node-tablet {
+    border-color: rgba(56, 189, 248, 0.4);
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 0.5rem;
+  }
+
+  .node-lua {
+    border-color: rgba(249, 115, 22, 0.45);
+    flex: 1;
+  }
+
+  .node-ronroneo {
+    border-color: rgba(168, 85, 247, 0.4);
+    flex: 1;
+  }
+
+  .node-icon {
+    font-size: 2rem;
     flex-shrink: 0;
   }
 
-  .btn-phil-contact {
-    padding: 0.8rem 1.5rem;
-    border-radius: var(--radius-full);
-    background: rgba(249, 115, 22, 0.2);
-    border: 1px solid #FB923C;
-    color: #FFFFFF;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    white-space: nowrap;
+  .node-info strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
   }
 
-  .btn-phil-contact:hover {
-    background: #F97316;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);
+  .node-info span {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    display: block;
+  }
+
+  .top-links {
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+  }
+
+  .link-arm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .link-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #67E8F9;
+    letter-spacing: 0.03em;
+  }
+
+  .link-line {
+    width: 2px;
+    height: 28px;
+    background: linear-gradient(180deg, #00F2FE, #FB923C);
+  }
+
+  .arm-right .link-label {
+    color: #D8B4FE;
+  }
+
+  .arm-right .link-line {
+    background: linear-gradient(180deg, #00F2FE, #C084FC);
+  }
+
+  .top-peripherals {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .topology-caption {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .topology-caption strong {
+    color: var(--text-main);
+  }
+
+  /* Contract of 5 links */
+  .contract-container {
+    margin-bottom: 4.5rem;
+  }
+
+  .contract-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .contract-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contract-desc {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+  }
+
+  .chain-grid {
+    display: flex;
+    align-items: stretch;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+
+  .chain-card {
+    flex: 1;
+    min-width: 190px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .chain-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(249, 115, 22, 0.4);
+  }
+
+  .chain-step {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #FB923C;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .chain-badge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #67E8F9;
+    margin-bottom: 0.5rem;
+  }
+
+  .chain-name {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
+  }
+
+  .chain-detail {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .chain-detail em {
+    color: #FDBA74;
+    font-style: normal;
+  }
+
+  .chain-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FB923C;
+    font-size: 1.5rem;
+    font-weight: 800;
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+
+  /* 6 Rules */
+  .rules-container {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2.75rem 2.25rem;
+  }
+
+  .rules-title {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 2.25rem;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .rule-card {
+    background: rgba(10, 15, 29, 0.7);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.4rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .rule-num {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    color: #FB923C;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .rule-body h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.35rem;
+  }
+
+  .rule-body p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
   }
 
   @media (max-width: 960px) {
-    .steps-grid {
+    .roles-grid {
       grid-template-columns: 1fr;
     }
-    .philosophy-banner {
+    .top-peripherals {
       flex-direction: column;
-      text-align: center;
-      padding: 2rem 1.5rem;
+    }
+    .chain-grid {
+      flex-direction: column;
+    }
+    .chain-arrow {
+      transform: rotate(90deg);
+      padding: 0.25rem 0;
+    }
+    .rules-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

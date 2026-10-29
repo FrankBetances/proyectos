@@ -11,8 +11,8 @@ import ConstruyeExperiences from '../components/construye-con-lua/ConstruyeExper
 import ConstruyeInstitutionalValue from '../components/construye-con-lua/ConstruyeInstitutionalValue.astro';
 import ConstruyeLicensingFAQ from '../components/construye-con-lua/ConstruyeLicensingFAQ.astro';
 
-const pageTitle = "Lúa Construye · Juego Manipulativo y Estimulación Infantil Sin Pantallas";
-const pageDescription = "Sistema de juego tangible, pensamiento espacial y estimulación neurofuncional para primera infancia (0 a 6 años). Cero pantallas para el menor, conectado con Descubre con Lúa y Valeria+.";
+const pageTitle = "Lúa Construye · Bloques Pedagógicos STEAM para Primera Infancia (0 a 6 años)";
+const pageDescription = "Sistema de bloques manipulativos STEAM y estimulación neurofuncional sin pantallas. Conecta la manipulación tangible con visión artificial local y la mascota Lúa. Especificación V5 Octubre 2026.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -20,13 +20,13 @@ const jsonLd = {
     {
       "@type": "Product",
       "@id": "https://FrankBetances.github.io/proyectos/construye-con-lua#product",
-      "name": "Lúa Construye · Aprendizaje Manipulativo y Estimulación Sensorial (0-6 años)",
+      "name": "Lúa Construye · Bloques Pedagógicos STEAM y Juego Manipulativo (0-6 años)",
       "description": pageDescription,
       "brand": {
         "@type": "Organization",
         "name": "Earlify Health S.L."
       },
-      "category": "Educational & Pediatric Neurodevelopment System",
+      "category": "Educational & Pediatric STEAM System",
       "manufacturer": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
@@ -45,7 +45,7 @@ const jsonLd = {
       ],
       "audience": {
         "@type": "Audience",
-        "audienceType": "Escuelas Infantiles, Colegios, Logopedas, Terapeutas Ocupacionales y Familias"
+        "audienceType": "Escuelas Infantiles (0-3 y 3-6 años), Logopedas, Terapeutas Ocupacionales, Audiólogos Pediátricos y Familias"
       }
     },
     {
@@ -54,26 +54,34 @@ const jsonLd = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Para qué edades está recomendado Lúa Construye?",
+          "name": "¿Cuál es el axioma fundamental de Lúa Construye?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "El sistema abarca toda la etapa de primera infancia, de 0 a 6 años, cumpliendo con la normativa europea de seguridad infantil EN 71-1 tanto para aulas de 0-3 años como para 3-6 años y gabinetes clínicos."
+            "text": "La app decide. Lúa reacciona. Los bloques los mueve el niño. El adulto media siempre. El principio pedagógico rector es: «El fenómeno manda y el lenguaje lo nombra»."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Por qué las niñas y niños no interactúan con ninguna pantalla?",
+          "name": "¿Por qué Lúa no tiene altavoz ni micrófono en su cabeza física?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Siguiendo las directrices de la OMS y la Asociación Española de Pediatría, la aplicación sirve exclusivamente como guión para la persona adulta. Los menores aprenden manipulando piezas reales y dialogando cara a cara."
+            "text": "Por prescripción médica del Dr. Frank Alberto Betances Reinoso: los altavoces de juguete provocan distorsión que perjudica a menores con implantes o audífonos, y prescindir de micrófono blinda por hardware el Muro Regulatorio Zero-PHI. La voz pertenece exclusivamente a la persona adulta."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Cómo solicitar una demostración o proyecto piloto para una escuela o clínica?",
+          "name": "¿Cómo conviven las Escalas G (0-3 años) y E (3-6 años) sin adaptadores?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A través del formulario de contacto profesional de la página o escribiendo directamente al equipo del Dr. Frank Betances para acordar una demostración o convenio institucional."
+            "text": "Mediante una proporción geométrica 2:1 nativa con paso paramétrico 2P (Escala G, piezas > 31,75 mm y paredes >= 3,2 mm bajo norma EN 71-1) y paso P (Escala E), permitiendo encaje directo sin adaptadores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo funciona la visión artificial sin conexión a internet ni riesgo para la privacidad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La cámara de la tableta opera como sensor ciego en memoria RAM local mediante algoritmos deterministas (ARCore/MediaPipe). Ninguna imagen o dato biométrico se almacena ni se transmite a servidores."
           }
         }
       ]
@@ -86,7 +94,7 @@ const jsonLd = {
   title={pageTitle}
   description={pageDescription}
   image="/assets/lua-mascota-valeria.png"
-  keywords="Lúa Construye, Juego Manipulativo Infantil, Educación Sin Pantallas, Atención Temprana, Estimulación Sensorial, Descubre con Lúa, Valeria+, Earlify Health, Dr. Frank Betances, startTIC, Zona Franca de Vigo"
+  keywords="Lúa Construye, Bloques STEAM, Juego Manipulativo Infantil, Educación Sin Pantallas, Atención Temprana, Estimulación Sensorial, Descubre con Lúa, Valeria+, Earlify Health, Dr. Frank Betances, startTIC, Zona Franca de Vigo, EN 71-1"
   jsonLd={jsonLd}
 >
   <Header activeTab="construye-con-lua" />

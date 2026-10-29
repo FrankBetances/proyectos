@@ -1,20 +1,59 @@
 ---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
 ---
 
-<section id="experiencias" class="experiences-section">
+<section id="mundos-steam" class="experiences-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">Desarrollo Integral Infantil</span>
+      <span class="section-badge">Bloques STEAM Canónicos · V5 Octubre 2026</span>
       <h2 class="section-title">
-        Seis Experiencias de <span class="gradient-text-orange">Descubrimiento Tangible</span>
+        Los Seis Mundos de Juego STEAM + <span class="gradient-text-orange">Kit Lúa (Set 0)</span>
       </h2>
       <p class="section-subtitle">
-        Cada elemento físico ha sido concebido con un propósito neurofuncional y pedagógico claro: transformar conceptos abstractos en experiencias que las niñas y niños pueden tocar, ver y compartir.
+        Cada mundo materializa un fenómeno físico tangible para que la infancia lo toque, lo mueva y lo experimente con sus propias manos. <em>«El fenómeno manda y el lenguaje lo nombra»</em>.
       </p>
     </div>
 
+    <!-- Set 0: Kit Lúa Spotlight Card -->
+    <div class="set0-card">
+      <div class="set0-badge">NÚCLEO DEL SISTEMA · SET 0</div>
+      <div class="set0-content">
+        <div class="set0-header">
+          <div class="set0-icon">🐱</div>
+          <div>
+            <h3 class="set0-title">Set 0 · Kit Lúa: La Mascota Física Reactiva</h3>
+            <span class="set0-subtitle">Cabeza V4 + Placa V1 (240×240 px) · Bloque Dorsal con Marcador · Cuello con 4 LEDs</span>
+          </div>
+        </div>
+        <p class="set0-desc">
+          El cuerpo físico de Lúa está compuesto por bloques modulares que el niño puede montar, desmontar y desplazar. Su cabeza circular alberga la pantalla TFT IPS de 240×240 px con las 28 expresiones canónicas. En su espalda incorpora el bloque dorsal con marcador de visión artificial para detección ciego por la cámara del adulto, y en su cuello un anillo sellado de 4 luces direccionales. <strong>Cero altavoz, cero micrófono y cero motores: es un agente reactivo visual guiado por las manos del niño.</strong>
+        </p>
+        <div class="set0-specs">
+          <div class="spec-item">
+            <span class="spec-label">Pantalla</span>
+            <span class="spec-val">Circular IPS 240×240 px (28 expresiones)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Conectividad</span>
+            <span class="spec-val">BLE 2,4 GHz (&lt; 50 ms) · Topología estrella</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Seguridad</span>
+            <span class="spec-val">Batería LiPo aislada · Desconexión térmica</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Encaje</span>
+            <span class="spec-val">Zócalo universal compatible Escalas G y E</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The 6 STEAM Worlds Grid -->
     <div class="exp-grid">
-      <!-- 1. Rutas y Secuencias -->
+      <!-- Set 1: El Camino de Lúa -->
       <article class="exp-card">
         <div class="exp-visual">
           <svg viewBox="0 0 200 130" fill="none" class="exp-svg" aria-hidden="true">
@@ -23,115 +62,198 @@
             <circle cx="60" cy="65" r="8" fill="#FB923C"/>
             <polygon points="155,65 143,58 143,72" fill="#00F2FE"/>
           </svg>
-          <span class="exp-pill pill-teal">Lógica y Espacio</span>
+          <span class="exp-pill pill-cyan">Set 1 · Espacio</span>
         </div>
         <div class="exp-body">
-          <h3 class="exp-title">1. Caminos y Secuencias</h3>
+          <span class="exp-discipline">MATEMÁTICAS & PENSAMIENTO COMPUTACIONAL</span>
+          <h3 class="exp-title">El Camino de Lúa</h3>
           <p class="exp-text">
-            Las niñas y niños unen tramos rectos para llevar a Lúa desde un punto de partida hasta su destino. Aprenden a planificar pequeños pasos ordenados y a anticipar el recorrido antes de mover la figura.
+            <strong>Fenómeno:</strong> Orientación espacial y algoritmo tangible paso a paso.
+          </p>
+          <p class="exp-text">
+            <strong>Piezas Físicas:</strong> Baldosas rectas, tramos de textura rugosa, curvas a 90° e intersecciones en T.
+          </p>
+          <p class="exp-text">
+            <strong>Gesto y Reacción:</strong> El niño traza la ruta física; la cámara detecta el recorrido cerrado; Lúa enciende sus luces direccionales indicando por dónde continuar el viaje.
           </p>
         </div>
       </article>
 
-      <!-- 2. Giros y Lateralidad -->
-      <article class="exp-card">
-        <div class="exp-visual">
-          <svg viewBox="0 0 200 130" fill="none" class="exp-svg" aria-hidden="true">
-            <rect x="25" y="25" width="150" height="80" rx="12" fill="rgba(0, 242, 254, 0.08)" stroke="#00F2FE" stroke-width="2"/>
-            <path d="M 55 90 Q 55 45 125 45" stroke="#FB923C" stroke-width="4" stroke-linecap="round" fill="none"/>
-            <polygon points="135,45 122,38 122,52" fill="#FB923C"/>
-          </svg>
-          <span class="exp-pill pill-teal">Orientación</span>
-        </div>
-        <div class="exp-body">
-          <h3 class="exp-title">2. Giros y Lateralidad</h3>
-          <p class="exp-text">
-            Mediante curvas suaves e intersecciones, los pequeños descubren cómo cambia la dirección del movimiento. Es la base vivencial para interiorizar nociones espaciales como dentro, fuera, a un lado y al otro.
-          </p>
-        </div>
-      </article>
-
-      <!-- 3. La Gata Lúa como Guía -->
+      <!-- Set 2: Estación de Sonido y Eco -->
       <article class="exp-card">
         <div class="exp-visual">
           <svg viewBox="0 0 200 130" fill="none" class="exp-svg" aria-hidden="true">
             <rect x="25" y="25" width="150" height="80" rx="12" fill="rgba(249, 115, 22, 0.08)" stroke="#FB923C" stroke-width="2"/>
-            <path d="M 75 90 L 75 55 L 88 38 L 100 52 L 112 38 L 125 55 L 125 90 Z" fill="#0B111E" stroke="#FB923C" stroke-width="2.2"/>
-            <circle cx="90" cy="65" r="3.5" fill="#00F2FE"/>
-            <circle cx="110" cy="65" r="3.5" fill="#00F2FE"/>
+            <circle cx="70" cy="65" r="14" stroke="#FB923C" stroke-width="2.5"/>
+            <circle cx="100" cy="65" r="22" stroke="#FB923C" stroke-width="2" stroke-dasharray="4 4"/>
+            <circle cx="130" cy="65" r="14" stroke="#FB923C" stroke-width="2.5"/>
+            <path d="M 65 35 L 75 45 M 125 35 L 135 45" stroke="#FDBA74" stroke-width="2"/>
           </svg>
-          <span class="exp-pill pill-orange">Vínculo y Empatía</span>
+          <span class="exp-pill pill-orange">Set 2 · Acústica</span>
         </div>
         <div class="exp-body">
-          <h3 class="exp-title">3. Lúa como Protagonista</h3>
+          <span class="exp-discipline">FÍSICA ONDULATORIA & RESONANCIA</span>
+          <h3 class="exp-title">Estación de Sonido y Eco</h3>
           <p class="exp-text">
-            La mascota oficial cobra forma física en las manos del niño. Al ayudar a Lúa a superar cada reto, se despierta la motivación intrínseca, el juego simbólico y la narración oral espontánea en el grupo.
+            <strong>Fenómeno:</strong> El sonido es vibración física y resonancia mecánica en cavidades.
+          </p>
+          <p class="exp-text">
+            <strong>Piezas Físicas:</strong> Resonadores de pared calibrada (5,0 mm grave, 3,2 mm medio, 1,5 mm agudo), martillo balancín y raspador estriado.
+          </p>
+          <p class="exp-text">
+            <strong>Gesto y Reacción:</strong> El niño golpea el resonador y siente la vibración en los dedos; Lúa muestra ondas rítmicas en pantalla al compás exacto de la percusión.
           </p>
         </div>
       </article>
 
-      <!-- 4. Superficies Sensoriales -->
-      <article class="exp-card">
-        <div class="exp-visual">
-          <svg viewBox="0 0 200 130" fill="none" class="exp-svg" aria-hidden="true">
-            <rect x="25" y="25" width="150" height="80" rx="12" fill="rgba(192, 132, 252, 0.08)" stroke="#C084FC" stroke-width="2"/>
-            <path d="M 45 50 Q 72 38 100 50 T 155 50" stroke="#C084FC" stroke-width="3" stroke-linecap="round"/>
-            <path d="M 45 68 Q 72 56 100 68 T 155 68" stroke="#E9D5FF" stroke-width="3" stroke-linecap="round"/>
-            <path d="M 45 86 Q 72 74 100 86 T 155 86" stroke="#C084FC" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-          <span class="exp-pill pill-purple">Integración Sensorial</span>
-        </div>
-        <div class="exp-body">
-          <h3 class="exp-title">4. Relieves y Tacto Activo</h3>
-          <p class="exp-text">
-            Superficies con ondas, puntos y texturas diferenciadas invitan a explorar con los ojos abiertos o cerrados, favoreciendo la discriminación táctil, la propiocepción y la autorregulación sensorial.
-          </p>
-        </div>
-      </article>
-
-      <!-- 5. Coordinación y Destreza -->
-      <article class="exp-card">
-        <div class="exp-visual">
-          <svg viewBox="0 0 200 130" fill="none" class="exp-svg" aria-hidden="true">
-            <rect x="25" y="25" width="150" height="80" rx="12" fill="rgba(192, 132, 252, 0.08)" stroke="#C084FC" stroke-width="2"/>
-            <circle cx="100" cy="65" r="26" stroke="#A855F7" stroke-width="2"/>
-            <circle cx="100" cy="65" r="14" fill="rgba(192, 132, 252, 0.3)" stroke="#E9D5FF" stroke-width="2.5"/>
-          </svg>
-          <span class="exp-pill pill-purple">Motricidad Fina</span>
-        </div>
-        <div class="exp-body">
-          <h3 class="exp-title">5. Fuerza Bimanual y Pinza</h3>
-          <p class="exp-text">
-            El encaje y desencaje progresivo entrena el uso coordinado de ambas manos, el control de la fuerza muscular y la precisión de los dedos, sentando las bases anatómicas previas a la escritura.
-          </p>
-        </div>
-      </article>
-
-      <!-- 6. Ritmo y Escucha -->
+      <!-- Set 3: Laboratorio de Rampas y Gravedad -->
       <article class="exp-card">
         <div class="exp-visual">
           <svg viewBox="0 0 200 130" fill="none" class="exp-svg" aria-hidden="true">
             <rect x="25" y="25" width="150" height="80" rx="12" fill="rgba(16, 185, 129, 0.08)" stroke="#34D399" stroke-width="2"/>
-            <circle cx="70" cy="65" r="10" fill="rgba(52, 211, 153, 0.25)" stroke="#34D399" stroke-width="2"/>
-            <circle cx="100" cy="65" r="14" fill="#34D399"/>
-            <circle cx="130" cy="65" r="10" fill="rgba(52, 211, 153, 0.25)" stroke="#34D399" stroke-width="2"/>
+            <path d="M 45 90 L 145 45 L 145 90 Z" fill="rgba(52, 211, 153, 0.15)" stroke="#34D399" stroke-width="2"/>
+            <circle cx="75" cy="70" r="12" fill="#34D399"/>
           </svg>
-          <span class="exp-pill pill-emerald">Audición y Lenguaje</span>
+          <span class="exp-pill pill-emerald">Set 3 · Gravedad</span>
         </div>
         <div class="exp-body">
-          <h3 class="exp-title">6. Compás, Sonido y Silencio</h3>
+          <span class="exp-discipline">CINEMÁTICA & FRICCIÓN</span>
+          <h3 class="exp-title">Laboratorio de Rampas y Gravedad</h3>
           <p class="exp-text">
-            Actividades que combinan percusión suave, pausas de espera y seguimiento rítmico visual. Diseñadas especialmente para favorecer la atención auditiva sin saturar con ruidos de fondo.
+            <strong>Fenómeno:</strong> Aceleración por gravedad, pendiente y rozamiento superficial.
+          </p>
+          <p class="exp-text">
+            <strong>Piezas Físicas:</strong> Rampas modulares de 15° y 30°, pistas con superficie lisa vs estriada, y esferas seguras de Ø 38 mm (&gt; 31,75 mm EN 71-1).
+          </p>
+          <p class="exp-text">
+            <strong>Gesto y Reacción:</strong> El niño suelta la esfera en diferentes pendientes; al cruzar el zócalo final, Lúa reacciona con asombro o alegría según la velocidad alcanzada.
           </p>
         </div>
       </article>
+
+      <!-- Set 4: Máquina de Soplo y Viento -->
+      <article class="exp-card">
+        <div class="exp-visual">
+          <svg viewBox="0 0 200 130" fill="none" class="exp-svg" aria-hidden="true">
+            <rect x="25" y="25" width="150" height="80" rx="12" fill="rgba(192, 132, 252, 0.08)" stroke="#C084FC" stroke-width="2"/>
+            <circle cx="100" cy="65" r="24" stroke="#C084FC" stroke-width="2"/>
+            <line x1="100" y1="41" x2="100" y2="89" stroke="#C084FC" stroke-width="2"/>
+            <line x1="76" y1="65" x2="124" y2="65" stroke="#C084FC" stroke-width="2"/>
+            <path d="M 50 65 Q 65 55 80 65" stroke="#E9D5FF" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span class="exp-pill pill-purple">Set 4 · Viento</span>
+        </div>
+        <div class="exp-body">
+          <span class="exp-discipline">NEUMÁTICA & AERODINÁMICA</span>
+          <h3 class="exp-title">Máquina de Soplo y Viento</h3>
+          <p class="exp-text">
+            <strong>Fenómeno:</strong> Energía cinética del aire y flujo laminar vs turbulento.
+          </p>
+          <p class="exp-text">
+            <strong>Piezas Físicas:</strong> Rotor aerodinámico de baja fricción, tobera orientable y compuertas basculantes (ligera y pesada).
+          </p>
+          <p class="exp-text">
+            <strong>Gesto y Reacción:</strong> El niño sopla o usa un fuelle manual; el rotor gira físicamente y Lúa despliega molinillos de viento girando a la par. <em>(Nota clínica: juego lúdico de causa-efecto, sin atribución terapéutica sobre el habla).</em>
+          </p>
+        </div>
+      </article>
+
+      <!-- Set 5: Puente de Equilibrio y Fuerza -->
+      <article class="exp-card">
+        <div class="exp-visual">
+          <svg viewBox="0 0 200 130" fill="none" class="exp-svg" aria-hidden="true">
+            <rect x="25" y="25" width="150" height="80" rx="12" fill="rgba(245, 158, 11, 0.08)" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="45" y1="65" x2="155" y2="65" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+            <polygon points="100,67 90,85 110,85" fill="#F59E0B"/>
+            <rect x="55" y="50" width="16" height="15" rx="3" fill="#FCD34D"/>
+            <rect x="130" y="42" width="20" height="23" rx="3" fill="#F59E0B"/>
+          </svg>
+          <span class="exp-pill pill-amber">Set 5 · Equilibrio</span>
+        </div>
+        <div class="exp-body">
+          <span class="exp-discipline">ESTÁTICA & CENTRO DE GRAVEDAD</span>
+          <h3 class="exp-title">Puente de Equilibrio y Fuerza</h3>
+          <p class="exp-text">
+            <strong>Fenómeno:</strong> Principio de la palanca, momento de fuerza y distribución de pesos.
+          </p>
+          <p class="exp-text">
+            <strong>Piezas Físicas:</strong> Viga balancín graduada, fulcros móviles y cápsulas de masa lastradas herméticas de 20 g, 40 g y 60 g.
+          </p>
+          <p class="exp-text">
+            <strong>Gesto y Reacción:</strong> El niño busca el equilibrio entre distancias y pesos; cuando la viga queda horizontal, Lúa celebra con ojos de gato satisfecho y luces sincronizadas.
+          </p>
+        </div>
+      </article>
+
+      <!-- Set 6: Jardín del Sol, la Sombra y la Semilla -->
+      <article class="exp-card">
+        <div class="exp-visual">
+          <svg viewBox="0 0 200 130" fill="none" class="exp-svg" aria-hidden="true">
+            <rect x="25" y="25" width="150" height="80" rx="12" fill="rgba(14, 165, 233, 0.08)" stroke="#0EA5E9" stroke-width="2"/>
+            <circle cx="70" cy="55" r="16" fill="#F59E0B"/>
+            <polygon points="120,40 145,85 95,85" fill="rgba(14, 165, 233, 0.2)" stroke="#0EA5E9" stroke-width="2"/>
+            <line x1="86" y1="55" x2="108" y2="55" stroke="#FDBA74" stroke-width="2" stroke-dasharray="3 3"/>
+          </svg>
+          <span class="exp-pill pill-sky">Set 6 · Luz y Vida</span>
+        </div>
+        <div class="exp-body">
+          <span class="exp-discipline">BIOLOGÍA TEMPRANA & ÓPTICA</span>
+          <h3 class="exp-title">Jardín del Sol y la Semilla</h3>
+          <p class="exp-text">
+            <strong>Fenómeno:</strong> Ciclos naturales de germinación, trayectoria de la luz y sombras proyectadas.
+          </p>
+          <p class="exp-text">
+            <strong>Piezas Físicas:</strong> Prismas translúcidos coloreados, roscas helicoidales que simulan el brote de tallos y pantallas opacas para sombras.
+          </p>
+          <p class="exp-text">
+            <strong>Gesto y Reacción:</strong> Al hacer girar la rosca para hacer crecer la planta o interponer el prisma al sol, Lúa proyecta en pantalla flores abriéndose y abejas en vuelo.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Dual Interlocking System (Escala G vs Escala E) -->
+    <div class="interlocking-box">
+      <div class="interlocking-header">
+        <span class="interlocking-badge">INGENIERÍA PARAMÉTRICA PROPIA</span>
+        <h3 class="interlocking-title">Sistema de Encaje en Dos Escalas (G y E)</h3>
+        <p class="interlocking-subtitle">
+          Diseñado bajo la directiva de <strong>cero marcas comerciales de terceros</strong> (Regla B4). Proporción canónica 2:1 que permite conectar ambos mundos sin piezas adaptadoras.
+        </p>
+      </div>
+
+      <div class="scale-grid">
+        <!-- Escala G -->
+        <div class="scale-card scale-g">
+          <div class="scale-pill pill-g">ESCALA G · PRIMER CICLO (0 A 3 AÑOS)</div>
+          <h4 class="scale-name">Módulo Gigante (Paso 2P)</h4>
+          <ul class="scale-features">
+            <li><strong>Prevención de ingesta EN 71-1:</strong> Dimensiones mínimas superiores a 31,75 mm (imposible de tragar o alojar en vías aéreas).</li>
+            <li><strong>Espesor de pared &ge; 3,2 mm:</strong> Resistencia extrema a mordeduras, caídas e impactos repetidos en guarderías.</li>
+            <li><strong>Agarre palmar intuitivo:</strong> Diseñado para manos que aún no dominan la pinza fina, facilitando el apilado y desencaje suave.</li>
+            <li><strong>Uso en aula y clínica:</strong> Ideal para asambleas de 0-3 años y estimulación vestibular y propioceptiva temprana.</li>
+          </ul>
+        </div>
+
+        <!-- Escala E -->
+        <div class="scale-card scale-e">
+          <div class="scale-pill pill-e">ESCALA E · SEGUNDO CICLO (3 A 6 AÑOS)</div>
+          <h4 class="scale-name">Módulo Estándar (Paso P)</h4>
+          <ul class="scale-features">
+            <li><strong>Mayor resolución espacial:</strong> Permite construir mecanismos complejos, rampas con múltiples curvas y circuitos ramificados.</li>
+            <li><strong>Entrenamiento de pinza digital:</strong> Estimula la motricidad fina bimanual preparatoria para el trazo gráfico y la escritura.</li>
+            <li><strong>Encaje 2:1 nativo:</strong> Un bloque de escala G encaja exactamente sobre cuatro tetones de escala E sin holguras.</li>
+            <li><strong>Compatibilidad paramétrica:</strong> Código abierto en Python (`bpy` / Manifold) con paso P definido geométricamente.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .experiences-section {
-    padding: 5rem 0;
+    padding: 5.5rem 0;
     position: relative;
     background: rgba(10, 15, 29, 0.45);
     border-top: 1px solid var(--border-light);
@@ -140,7 +262,7 @@
 
   .section-header {
     text-align: center;
-    max-width: 820px;
+    max-width: 860px;
     margin: 0 auto 3.5rem;
   }
 
@@ -159,7 +281,7 @@
   }
 
   .section-title {
-    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-size: clamp(2rem, 4vw, 2.85rem);
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -178,11 +300,116 @@
     line-height: 1.65;
   }
 
-  /* Grid */
+  .section-subtitle em {
+    color: #67E8F9;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* Set 0 Card */
+  .set0-card {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.15) 0%, rgba(15, 23, 42, 0.85) 100%);
+    border: 1px solid rgba(249, 115, 22, 0.45);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .set0-badge {
+    position: absolute;
+    top: -12px;
+    left: 28px;
+    background: #F97316;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.9rem;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+  }
+
+  .set0-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .set0-icon {
+    font-size: 2.8rem;
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .set0-title {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+  }
+
+  .set0-subtitle {
+    font-size: 0.88rem;
+    color: #FDBA74;
+    font-weight: 600;
+  }
+
+  .set0-desc {
+    font-size: 0.96rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+  }
+
+  .set0-desc strong {
+    color: var(--text-main);
+  }
+
+  .set0-specs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1.25rem;
+  }
+
+  .spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .spec-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #67E8F9;
+  }
+
+  .spec-val {
+    font-size: 0.86rem;
+    color: var(--text-main);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  /* Grid of 6 Worlds */
   .exp-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    margin-bottom: 4.5rem;
   }
 
   .exp-card {
@@ -197,7 +424,7 @@
 
   .exp-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(249, 115, 22, 0.38);
+    border-color: rgba(249, 115, 22, 0.45);
     box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
   }
 
@@ -225,60 +452,198 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    padding: 0.2rem 0.6rem;
+    padding: 0.2rem 0.65rem;
     border-radius: var(--radius-full);
   }
 
-  .pill-teal {
-    background: rgba(0, 242, 254, 0.14);
-    color: #67E8F9;
-    border: 1px solid rgba(0, 242, 254, 0.3);
-  }
-
-  .pill-orange {
-    background: rgba(249, 115, 22, 0.15);
-    color: #FDBA74;
-    border: 1px solid rgba(249, 115, 22, 0.35);
-  }
-
-  .pill-purple {
-    background: rgba(192, 132, 252, 0.15);
-    color: #E9D5FF;
-    border: 1px solid rgba(192, 132, 252, 0.35);
-  }
-
-  .pill-emerald {
-    background: rgba(16, 185, 129, 0.15);
-    color: #6EE7B7;
-    border: 1px solid rgba(16, 185, 129, 0.35);
-  }
+  .pill-cyan { background: rgba(0, 242, 254, 0.14); color: #67E8F9; border: 1px solid rgba(0, 242, 254, 0.3); }
+  .pill-orange { background: rgba(249, 115, 22, 0.15); color: #FDBA74; border: 1px solid rgba(249, 115, 22, 0.35); }
+  .pill-emerald { background: rgba(16, 185, 129, 0.15); color: #6EE7B7; border: 1px solid rgba(16, 185, 129, 0.35); }
+  .pill-purple { background: rgba(192, 132, 252, 0.15); color: #E9D5FF; border: 1px solid rgba(192, 132, 252, 0.35); }
+  .pill-amber { background: rgba(245, 158, 11, 0.15); color: #FCD34D; border: 1px solid rgba(245, 158, 11, 0.35); }
+  .pill-sky { background: rgba(14, 165, 233, 0.15); color: #7DD3FC; border: 1px solid rgba(14, 165, 233, 0.35); }
 
   .exp-body {
     padding: 1.6rem;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .exp-discipline {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #FDBA74;
   }
 
   .exp-title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--text-main);
-    margin-bottom: 0.65rem;
+    line-height: 1.25;
   }
 
   .exp-text {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .exp-text strong {
+    color: var(--text-main);
+  }
+
+  .exp-text em {
+    color: #94A3B8;
+    font-style: italic;
+    font-size: 0.82rem;
+    display: block;
+    margin-top: 0.35rem;
+  }
+
+  /* Interlocking Scale Box */
+  .interlocking-box {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2.75rem 2.25rem;
+  }
+
+  .interlocking-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .interlocking-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #38BDF8;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+
+  .interlocking-title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+  }
+
+  .interlocking-subtitle {
+    font-size: 0.96rem;
     color: var(--text-muted);
     line-height: 1.6;
+  }
+
+  .scale-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .scale-card {
+    background: rgba(10, 15, 29, 0.6);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+  }
+
+  .scale-g {
+    border-color: rgba(249, 115, 22, 0.35);
+  }
+
+  .scale-e {
+    border-color: rgba(0, 242, 254, 0.35);
+  }
+
+  .scale-pill {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 0.7rem;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    margin-bottom: 0.85rem;
+  }
+
+  .pill-g {
+    background: rgba(249, 115, 22, 0.14);
+    color: #FDBA74;
+    border: 1px solid rgba(249, 115, 22, 0.35);
+  }
+
+  .pill-e {
+    background: rgba(0, 242, 254, 0.14);
+    color: #67E8F9;
+    border: 1px solid rgba(0, 242, 254, 0.35);
+  }
+
+  .scale-name {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .scale-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .scale-features li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    padding-left: 1.3rem;
+    position: relative;
+  }
+
+  .scale-features li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    font-size: 0.65rem;
+    top: 0.3rem;
+  }
+
+  .scale-g .scale-features li::before { color: #FB923C; }
+  .scale-e .scale-features li::before { color: #00F2FE; }
+
+  .scale-features strong {
+    color: var(--text-main);
   }
 
   @media (max-width: 1024px) {
     .exp-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+    .set0-specs {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 640px) {
     .exp-grid {
+      grid-template-columns: 1fr;
+    }
+    .scale-grid {
+      grid-template-columns: 1fr;
+    }
+    .set0-specs {
       grid-template-columns: 1fr;
     }
   }
