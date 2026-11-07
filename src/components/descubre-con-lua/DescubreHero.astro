@@ -99,30 +99,38 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       </button>
     </div>
 
-    <!-- Dual Device Showcase (Galego / Castellano View) -->
+    <!-- Triple Device Showcase (Capturas Reales de Descubre con Lúa) -->
     <div class="hero-visual-showcase">
       <div class="showcase-card">
         <div class="showcase-header">
           <div class="tab-indicator active">
-            <span class="lang-badge">ES</span>
-            <span>Versión en Castellano</span>
+            <span class="lang-badge">VIGO</span>
+            <span>Edición Escuelas Infantiles y Familias</span>
           </div>
           <div class="tab-indicator">
-            <span class="lang-badge">GL</span>
-            <span>Versión en Gallego</span>
+            <span class="lang-badge">GL · ES</span>
+            <span>Bilingüe Inmediato</span>
+          </div>
+          <div class="tab-indicator">
+            <span class="lang-badge">OFFLINE</span>
+            <span>Zero-Network Estricto</span>
           </div>
         </div>
 
-        <div class="device-pair">
+        <div class="device-trio">
           <!-- Device 1: Bienvenida -->
-          <div class="device-wrapper main-device">
-            <div class="device-label">Bienvenida y Entrada · Modo Bilingüe</div>
-            <div class="device-mockup">
+          <div class="device-wrapper">
+            <div class="device-label-group">
+              <span class="device-tag tag-teal">1. INICIO</span>
+              <div class="device-label">Bienvenida y Selección</div>
+              <div class="device-sublabel">Elección de ámbito: Na casa / Na escola</div>
+            </div>
+            <div class="device-mockup mockup-slate">
               <div class="device-notch"></div>
               <div class="device-screen">
                 <img 
-                  src={`${baseUrl}/assets/descubre-con-lua/bienvenida-gl.png`} 
-                  alt="Pantalla de bienvenida de Descubre con Lúa para escuelas infantiles" 
+                  src={`${baseUrl}/assets/descubre-con-lua/descubre-bienvenida.jpg`} 
+                  alt="Pantalla de bienvenida y selección de ámbito (Na casa / Na escola) en Descubre con Lúa Edición Vigo" 
                   class="screen-img" 
                   loading="eager" 
                   decoding="async"
@@ -131,15 +139,40 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
             </div>
           </div>
 
-          <!-- Device 2: Unidades Aula -->
-          <div class="device-wrapper secondary-device">
-            <div class="device-label">10 Unidades de Aula · Asamblea</div>
-            <div class="device-mockup">
+          <!-- Device 2: Hogar / Familias -->
+          <div class="device-wrapper">
+            <div class="device-label-group">
+              <span class="device-tag tag-amber">2. FAMILIAS</span>
+              <div class="device-label">Portal Familias · Na casa</div>
+              <div class="device-sublabel">Lección semanal STEAM por edades y audio</div>
+            </div>
+            <div class="device-mockup mockup-amber">
               <div class="device-notch"></div>
               <div class="device-screen">
                 <img 
-                  src={`${baseUrl}/assets/descubre-con-lua/aula-unidades-gl.png`} 
-                  alt="Unidades mensuales de asamblea de Descubre con Lúa" 
+                  src={`${baseUrl}/assets/descubre-con-lua/descubre-na-casa.jpg`} 
+                  alt="Pantalla del portal familias Na casa con lección semanal STEAM y progreso de unidades" 
+                  class="screen-img" 
+                  loading="lazy" 
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Device 3: Aula / Docentes -->
+          <div class="device-wrapper">
+            <div class="device-label-group">
+              <span class="device-tag tag-cyan">3. DOCENTES</span>
+              <div class="device-label">Portal Docentes · Na escola</div>
+              <div class="device-sublabel">Asamblea diaria de 8 min y dinamización</div>
+            </div>
+            <div class="device-mockup mockup-teal">
+              <div class="device-notch"></div>
+              <div class="device-screen">
+                <img 
+                  src={`${baseUrl}/assets/descubre-con-lua/descubre-na-escola.jpg`} 
+                  alt="Pantalla del portal docentes Na escola con gestión de asamblea y recursos de aula" 
                   class="screen-img" 
                   loading="lazy" 
                   decoding="async"
@@ -415,7 +448,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   /* Visual Showcase */
   .hero-visual-showcase {
     width: 100%;
-    max-width: 980px;
+    max-width: 1140px;
     margin: 0 auto 4rem auto;
   }
 
@@ -423,7 +456,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
-    padding: 2rem;
+    padding: 2.25rem 1.75rem;
     backdrop-filter: blur(16px);
     box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.6);
   }
@@ -431,8 +464,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .showcase-header {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
   }
 
   .tab-indicator {
@@ -468,35 +502,114 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     color: #040914;
   }
 
-  .device-pair {
+  .device-trio {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    align-items: flex-end;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    align-items: flex-start;
   }
 
   .device-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.85rem;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .device-label-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    text-align: center;
+    min-height: 4.8rem;
+  }
+
+  .device-tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+  }
+
+  .tag-teal {
+    background: rgba(20, 184, 166, 0.15);
+    color: #2DD4BF;
+    border: 1px solid rgba(20, 184, 166, 0.35);
+  }
+
+  .tag-amber {
+    background: rgba(249, 115, 22, 0.15);
+    color: #FB923C;
+    border: 1px solid rgba(249, 115, 22, 0.35);
+  }
+
+  .tag-cyan {
+    background: rgba(14, 165, 233, 0.15);
+    color: #38BDF8;
+    border: 1px solid rgba(14, 165, 233, 0.35);
   }
 
   .device-label {
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .device-sublabel {
+    font-size: 0.8rem;
     color: var(--text-muted);
+    line-height: 1.35;
   }
 
   .device-mockup {
     position: relative;
     width: 100%;
-    max-width: 380px;
+    max-width: 360px;
     background: #0B0F19;
     border: 3px solid #334155;
     border-radius: 28px;
     padding: 0.75rem 0.75rem 1.25rem 0.75rem;
-    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 35px rgba(20, 184, 166, 0.15);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .device-mockup:hover {
+    transform: translateY(-5px);
+  }
+
+  .mockup-slate {
+    border-color: rgba(45, 212, 191, 0.3);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(45, 212, 191, 0.12);
+  }
+
+  .mockup-slate:hover {
+    border-color: rgba(45, 212, 191, 0.6);
+    box-shadow: 0 30px 65px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(45, 212, 191, 0.25);
+  }
+
+  .mockup-amber {
+    border-color: rgba(249, 115, 22, 0.35);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(249, 115, 22, 0.12);
+  }
+
+  .mockup-amber:hover {
+    border-color: rgba(249, 115, 22, 0.6);
+    box-shadow: 0 30px 65px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(249, 115, 22, 0.25);
+  }
+
+  .mockup-teal {
+    border-color: rgba(14, 165, 233, 0.35);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(14, 165, 233, 0.12);
+  }
+
+  .mockup-teal:hover {
+    border-color: rgba(14, 165, 233, 0.6);
+    box-shadow: 0 30px 65px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(14, 165, 233, 0.25);
   }
 
   .device-notch {
@@ -570,13 +683,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     margin: 0;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 980px) {
     .metrics-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    .device-pair {
+    .device-trio {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      max-width: 360px;
+      margin: 0 auto;
+      gap: 2.5rem;
     }
   }
 
