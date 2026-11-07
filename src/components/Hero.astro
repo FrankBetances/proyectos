@@ -144,32 +144,99 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         </div>
       </div>
 
-      <!-- Cinematic Product Stage: Device Screen Placed Gracefully Below the Content -->
+      <!-- Cinematic Product Stage: Triple Device Showcase con Capturas Reales -->
       <div class="hero-showcase-stage">
         <div class="stage-ambient-glow" aria-hidden="true"></div>
-        <div class="device-mockup">
-          <div class="device-notch"></div>
-          <div class="device-screen">
-            <img 
-              src={`${baseUrl}/assets/valeria-screen-bienvenida.png`} 
-              alt="Pantalla oficial de Bienvenida de Valeria+ con la mascota Lúa" 
-              class="device-screen-img"
-              width="340"
-              height="756"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
+
+        <div class="valeria-showcase-header">
+          <div class="valeria-tab-indicator active">
+            <span class="v-badge v-badge-purple">VALERIA+</span>
+            <span>App Educativa de Apoyo Familiar</span>
+          </div>
+          <div class="valeria-tab-indicator">
+            <span class="v-badge v-badge-cyan">ZERO-PHI</span>
+            <span>100% Offline Sin Servidor</span>
+          </div>
+          <div class="valeria-tab-indicator">
+            <span class="v-badge v-badge-amber">TUTOR ADULTO</span>
+            <span>Acompañamiento Guiado</span>
           </div>
         </div>
+
+        <div class="valeria-device-trio">
+          <!-- Device 1: Bienvenida & Aval Científico -->
+          <div class="device-stage-wrapper">
+            <div class="device-label-group">
+              <span class="device-tag tag-purple">1. INICIO & AVAL</span>
+              <div class="device-label">Bienvenida y Colaboración</div>
+              <div class="device-sublabel">Dr. Frank Betances · Acopros · Quisqueya Habla</div>
+            </div>
+            <div class="device-mockup mockup-purple">
+              <div class="device-notch"></div>
+              <div class="device-screen">
+                <img 
+                  src={`${baseUrl}/assets/valeria-screen-bienvenida.png`} 
+                  alt="Pantalla oficial de bienvenida y aval institucional de Valeria+ con el Dr. Frank Betances, Acopros y Quisqueya Habla" 
+                  class="device-screen-img"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Device 2: Mascota Lúa & Perfil de Paciente -->
+          <div class="device-stage-wrapper">
+            <div class="device-label-group">
+              <span class="device-tag tag-cyan">2. MASCOTA & PERFIL</span>
+              <div class="device-label">Conoce a Lúa · Ficha Local</div>
+              <div class="device-sublabel">Mascota física V1 circular y selección de perfil</div>
+            </div>
+            <div class="device-mockup mockup-cyan">
+              <div class="device-notch"></div>
+              <div class="device-screen">
+                <img 
+                  src={`${baseUrl}/assets/valeria-screen-conoce-lua.png`} 
+                  alt="Pantalla de presentación de la mascota física Lúa y gestión de perfil del menor en Valeria+" 
+                  class="device-screen-img"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Device 3: Práctica Clínica Guiada de Mesa -->
+          <div class="device-stage-wrapper">
+            <div class="device-label-group">
+              <span class="device-tag tag-amber">3. PRÁCTICA DE MESA</span>
+              <div class="device-label">Sesión de Ejercicios · Fonética</div>
+              <div class="device-sublabel">Consigna del tutor adulto y articulación ("ZAPATO")</div>
+            </div>
+            <div class="device-mockup mockup-amber">
+              <div class="device-notch"></div>
+              <div class="device-screen">
+                <img 
+                  src={`${baseUrl}/assets/valeria-screen-practica-mesa.jpg`} 
+                  alt="Pantalla de práctica de mesa con consigna para el adulto y articulación fonética ZAPATO en Valeria+" 
+                  class="device-screen-img"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Floating Interactive Mascot Pill -->
         <div class="stage-floating-pill">
           <img 
             src={`${baseUrl}/assets/lua-mascota-valeria.png`} 
             alt="Lúa la gata oficial de Valeria+" 
             class="stage-lua-icon" 
-            width="32" 
-            height="32"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stage-pill-text">
             <strong>Lúa · Mascota STEAM de Bloques</strong>
@@ -559,37 +626,186 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     border-radius: 40px;
   }
 
-  .device-mockup {
-    position: relative;
-    z-index: 1;
-    width: 210px;
-    padding: 8px;
-    border-radius: 28px;
-    background: linear-gradient(145deg, #1e293b, #090d16);
-    border: 2px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.75), 0 0 30px rgba(0, 242, 254, 0.14);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .device-mockup:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 25px 50px -6px rgba(0, 0, 0, 0.85), 0 0 40px rgba(168, 85, 247, 0.25);
-  }
-
-  .device-notch {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 48px;
-    height: 9px;
-    border-radius: var(--radius-full);
-    background: #030712;
+  /* Showcase Header Indicators */
+  .valeria-showcase-header {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.25rem;
+    flex-wrap: wrap;
     z-index: 2;
   }
 
+  .valeria-tab-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+  }
+
+  .valeria-tab-indicator.active {
+    color: #e2e8f0;
+    border-color: rgba(168, 85, 247, 0.4);
+    background: rgba(168, 85, 247, 0.12);
+    font-weight: 600;
+  }
+
+  .v-badge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .v-badge-purple {
+    background: #a855f7;
+    color: #0b0f19;
+  }
+
+  .v-badge-cyan {
+    background: #06b6d4;
+    color: #0b0f19;
+  }
+
+  .v-badge-amber {
+    background: #f59e0b;
+    color: #0b0f19;
+  }
+
+  /* Valeria Device Trio */
+  .valeria-device-trio {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .device-stage-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .device-label-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    text-align: center;
+    min-height: 4.8rem;
+  }
+
+  .device-tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+  }
+
+  .tag-purple {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.35);
+  }
+
+  .tag-cyan {
+    background: rgba(6, 182, 212, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(6, 182, 212, 0.35);
+  }
+
+  .tag-amber {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+  }
+
+  .device-label {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .device-sublabel {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.35;
+  }
+
+  .device-mockup {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 340px;
+    padding: 10px 10px 14px 10px;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #1e293b, #090d16);
+    border: 2px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.75);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .device-mockup:hover {
+    transform: translateY(-5px);
+  }
+
+  .mockup-purple {
+    border-color: rgba(168, 85, 247, 0.35);
+    box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.75), 0 0 30px rgba(168, 85, 247, 0.15);
+  }
+
+  .mockup-purple:hover {
+    border-color: rgba(168, 85, 247, 0.65);
+    box-shadow: 0 25px 55px -6px rgba(0, 0, 0, 0.85), 0 0 45px rgba(168, 85, 247, 0.3);
+  }
+
+  .mockup-cyan {
+    border-color: rgba(6, 182, 212, 0.35);
+    box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.75), 0 0 30px rgba(6, 182, 212, 0.15);
+  }
+
+  .mockup-cyan:hover {
+    border-color: rgba(6, 182, 212, 0.65);
+    box-shadow: 0 25px 55px -6px rgba(0, 0, 0, 0.85), 0 0 45px rgba(6, 182, 212, 0.3);
+  }
+
+  .mockup-amber {
+    border-color: rgba(245, 158, 11, 0.35);
+    box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.75), 0 0 30px rgba(245, 158, 11, 0.15);
+  }
+
+  .mockup-amber:hover {
+    border-color: rgba(245, 158, 11, 0.65);
+    box-shadow: 0 25px 55px -6px rgba(0, 0, 0, 0.85), 0 0 45px rgba(245, 158, 11, 0.3);
+  }
+
+  .device-notch {
+    width: 44px;
+    height: 4px;
+    border-radius: 2px;
+    background: #334155;
+    margin: 0 auto 0.6rem auto;
+  }
+
   .device-screen {
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
     position: relative;
     background: #050811;
@@ -598,7 +814,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .device-screen-img {
     width: 100%;
     height: auto;
-    aspect-ratio: 340 / 756;
     object-fit: cover;
     display: block;
   }
@@ -651,6 +866,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   .stage-pill-text span {
     font-size: 0.68rem;
     color: var(--text-muted);
+  }
+
+  @media (max-width: 980px) {
+    .valeria-device-trio {
+      grid-template-columns: 1fr;
+      max-width: 360px;
+      margin: 0 auto 2.5rem auto;
+      gap: 2.5rem;
+    }
   }
 
   @media (max-width: 768px) {
@@ -714,9 +938,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     }
 
     .device-mockup {
-      width: 165px;
-      padding: 6px;
-      border-radius: 22px;
+      max-width: 320px;
+      padding: 8px;
+      border-radius: 24px;
     }
 
     .stage-floating-pill {
