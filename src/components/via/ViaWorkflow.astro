@@ -2,84 +2,48 @@
 const steps = [
   {
     num: "1",
-    title: "Acceso Profesional",
-    icon: "🔑",
-    desc: "Autenticación del facultativo sanitario mediante Firebase Auth. Cada evaluación queda firmada con su número de colegiado y perfil profesional.",
-    badge: "Firma Acreditada",
+    title: "Identificación y Consentimiento",
+    desc: "Registro rápido del paciente y firma digital informada de la familia directamente en la pantalla de la tableta.",
+    badge: "Paso 1 · Apertura",
     badgeColor: "cyan"
   },
   {
     num: "2",
-    title: "Identificación del Paciente",
-    icon: "👤",
-    desc: "Búsqueda en el historial o alta sociodemográfica (NHC, edad calculada, sexo). Se genera la sesión clínica localmente en SQLite.",
-    badge: "Datos Locales",
-    badgeColor: "purple"
-  },
-  {
-    num: "3",
-    title: "Consentimiento Informado",
-    icon: "✍️",
-    desc: "Paso bloqueante legal: texto normativo y firma manuscrita digital del tutor sobre el lienzo táctil. Sin firma válida, la evaluación queda bloqueada.",
-    badge: "Bloqueante Obligatorio",
-    badgeColor: "rose"
-  },
-  {
-    num: "4",
-    title: "Pre-screening Clínico (CAP)",
-    icon: "📋",
-    desc: "Certificado de Aptitud para la Prueba en 4 dominios (Otoscopia por oído, Visual, Verbal por edad y Motora fina). Emite veredicto graduado (Completo, Parcial o Bloqueado).",
-    badge: "Otoscopia & Aptitud",
-    badgeColor: "rose"
-  },
-  {
-    num: "5",
-    title: "Sonómetro de Sala & Hub",
-    icon: "🎛️",
-    desc: "Comprobación del nivel de ruido en dB(A) (LAeq ≤ 45 dB), diagnóstico de cadena de audio en 4 escuchas y selección entre 7 lenguas de sesión.",
-    badge: "Gate de Ruido & Idioma",
+    title: "Control de Ruido Ambiental",
+    desc: "La estación mide en pocos segundos el sonido de la sala para asegurar que las pruebas auditivas sean 100% fiables.",
+    badge: "Paso 2 · Entorno",
     badgeColor: "amber"
   },
   {
-    num: "6",
-    title: "Batería de 13 Módulos",
-    icon: "🎮",
-    desc: "Evaluación gamificada interactiva. El Modo Niño ofrece una interfaz lúdica sin elementos clínicos visibles; el facultativo supervisa con mediciones deterministas.",
-    badge: "13 Módulos",
+    num: "3",
+    title: "Exploración Lúdica con el Menor",
+    desc: "El niño realiza las pruebas mediante juegos interactivos adaptados, obteniendo respuestas objetivas sin miedo ni fatiga.",
+    badge: "Paso 3 · Evaluación",
     badgeColor: "emerald"
   },
   {
-    num: "7",
-    title: "Síntesis NLG & Informe Firmado",
-    icon: "🧾",
-    desc: "El motor NLG determinista redacta el pre-informe clínico (PTA, voz, ASHA, otoscopia). El facultativo revisa y edita el borrador, lo firma en pantalla y genera el PDF.",
-    badge: "NLG + Firma Colegiada",
-    badgeColor: "cyan"
-  },
-  {
-    num: "8",
-    title: "Archivo Local & Telemetría QR",
-    icon: "🗂️",
-    desc: "Persistencia cifrada en el dispositivo para seguimiento evolutivo longitudinal y exportación opcional de telemetría de usabilidad en QR anónimo (Zero-PHI).",
-    badge: "Historial & QR Zero-PHI",
+    num: "4",
+    title: "Informe Inmediato y Firma",
+    desc: "La estación redacta automáticamente el borrador clínico con escalas oficiales, listo para revisar, firmar y entregar en PDF.",
+    badge: "Paso 4 · Cierre",
     badgeColor: "purple"
   }
 ];
 
 const capItems = [
-  { label: "1. Otoscopia por Oído", detail: "Registra Normal, Cerumen, OMA, OME, Perforación o DTT. El tapón de cerumen, OMA o perforación bloquean selectivamente la audiometría de ese oído." },
-  { label: "2. Capacidad Visual", detail: "Verifica fijación de la mirada, distinción de dos imágenes en pantalla, señalamiento y ausencia de nistagmo marcado." },
-  { label: "3. Comprensión Verbal por Edad", detail: "Ítems escalonados en 3 franjas (18m–2a11m, 3–4a11m y ≥5 años), desde responder a su nombre hasta comprender la tarea tras demostración." },
-  { label: "4. Motricidad Fina", detail: "Comprueba pulsación en objetivo ≥ 4 cm, distinción entre dos zonas táctiles, arrastre ≥ 3 cm y ausencia de movimientos involuntarios severos." }
+  { label: "1. Estado del Oído", detail: "Comprobación rápida para descartar tapones de cerumen u otitis antes de la audiometría." },
+  { label: "2. Respuesta Visual", detail: "Verifica que el menor fija la mirada y reconoce los elementos del juego en pantalla." },
+  { label: "3. Comprensión por Edad", detail: "Ajusta la dificultad de las instrucciones según la etapa de desarrollo del niño." },
+  { label: "4. Movilidad y Respuesta", detail: "Confirma que el paciente interactúa con comodidad tocando la pantalla o respondiendo por voz." }
 ];
 ---
 
 <section id="flujo-clinico" class="via-workflow section-padding">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Recorrido Secuencial Obligatorio</span>
-      <h2>Flujo Clínico en Consulta <span class="gradient-text">& Puertas Bloqueantes</span></h2>
-      <p>Cada fase constituye un prerrequisito ineludible para garantizar la validez metodológica y la seguridad del paciente pediátrico.</p>
+      <span class="tag">Eficiencia en Consulta</span>
+      <h2>Flujo de Trabajo en Consulta: <span class="gradient-text">Evaluación e informe en 15 minutos</span></h2>
+      <p>Un recorrido ágil y estructurado que reduce la carga burocrática y consigue la máxima colaboración del paciente pediátrico.</p>
     </div>
 
     <div class="timeline-grid">
@@ -87,7 +51,6 @@ const capItems = [
         <div class="glass-card timeline-card">
           <div class="timeline-top">
             <span class="step-num">{s.num}</span>
-            <span class="step-icon">{s.icon}</span>
             <span class={`badge badge-${s.badgeColor}`}>{s.badge}</span>
           </div>
           <h3>{s.title}</h3>
@@ -99,10 +62,9 @@ const capItems = [
     <!-- CAP Checklist Box -->
     <div class="glass-card cap-box">
       <div class="cap-header">
-        <span class="cap-icon">🛡️</span>
         <div>
-          <h3>Pre-Screening — Certificado de Aptitud para la Prueba (CAP)</h3>
-          <p class="cap-sub">El facultativo debe verificar las 4 capacidades antes de habilitar la batería (paso bloqueante):</p>
+          <h3>Verificación Inicial de Idoneidad</h3>
+          <p class="cap-sub">Cuatro comprobaciones breves para asegurar que la prueba se adapta a las capacidades del menor:</p>
         </div>
       </div>
 

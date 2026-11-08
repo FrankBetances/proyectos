@@ -1,53 +1,32 @@
 ---
 const regulations = [
   {
-    norm: "MDR 2017/745",
-    scope: "Regla 11 · Marcado CE Clase IIa",
-    status: "En Proceso",
+    norm: "MDR 2017/745 (UE)",
+    scope: "SaMD Clase IIa · Apoyo al Diagnóstico",
+    status: "Marco Sanitario",
     badgeColor: "cyan",
-    desc: "Clasificación como SaMD que proporciona información diagnóstica para decisiones clínicas en neurodesarrollo y audiología pediátrica."
+    desc: "Diseñado para proporcionar información diagnóstica objetiva, contrastada y auditable en audiología y patología del habla infantil."
   },
   {
-    norm: "IEC 62304:2006+A1",
-    scope: "Ciclo de Vida de Software Médico · Clase B",
-    status: "En Implementación",
-    badgeColor: "amber",
-    desc: "Control riguroso de arquitectura, verificación unitaria y trazabilidad de requisitos para mitigar cualquier riesgo de software."
-  },
-  {
-    norm: "IEC 62366-1:2015",
-    scope: "Ingeniería de Usabilidad Pediátrica",
-    status: "En Implementación",
-    badgeColor: "purple",
-    desc: "Diseño ergonómico centrado en el menor y captura de fricción clínica mediante telemetría anónima Zero-PHI."
-  },
-  {
-    norm: "ISO 14971:2019",
-    scope: "Gestión de Riesgos en Dispositivos Médicos",
-    status: "En Implementación",
-    badgeColor: "amber",
-    desc: "Matriz FMEA y evaluación sistemática de impacto en la seguridad del paciente antes de cualquier cambio en el código."
-  },
-  {
-    norm: "Reglamento (UE) 2024/1689",
-    scope: "Directiva de Inteligencia Artificial",
-    status: "Fuera de Alcance por Diseño",
+    norm: "Cero Cajas Negras",
+    scope: "Algoritmos Transparentes y Trazables",
+    status: "Rigor Médico",
     badgeColor: "emerald",
-    desc: "VIA+ ratifica el principio de Cero IA en el dispositivo: no embarca inferencia neuronal en runtime, evitando clasificación como IA de alto riesgo."
+    desc: "Sin modelos generativos que puedan inventar datos: cada parámetro vocal y auditivo se calcula mediante algoritmos matemáticos verificables."
   },
   {
-    norm: "GDPR / LOPDGDD",
-    scope: "Privacidad por Diseño (Art. 25)",
-    status: "Conformidad Estricta",
-    badgeColor: "emerald",
-    desc: "Datos clínicos persistidos exclusivamente en el dispositivo local; a la nube solo viaja la cuenta del profesional por TLS 1.3."
-  },
-  {
-    norm: "HL7 FHIR R4",
-    scope: "Interoperabilidad Hospitalaria",
-    status: "En Roadmap",
+    norm: "Privacidad Zero-PHI",
+    scope: "Custodia Local en Dispositivo",
+    status: "Seguridad de Datos",
     badgeColor: "purple",
-    desc: "Sincronización diferida de informes estructurados con la Historia Clínica Electrónica (HCE)."
+    desc: "Las grabaciones y mediciones clínicas del menor se almacenan cifradas en la propia tableta: ningún dato de salud se transmite a servidores."
+  },
+  {
+    norm: "Integración en Consulta",
+    scope: "Informes Clínicos Estructurados",
+    status: "Exportación Directa",
+    badgeColor: "amber",
+    desc: "Genera documentos PDF con escalas oficiales y firma colegiada, listos para incorporar de inmediato a la historia clínica del paciente."
   }
 ];
 ---
@@ -55,9 +34,9 @@ const regulations = [
 <section id="normativas" class="via-regulatory section-padding">
   <div class="container">
     <div class="section-header">
-      <span class="tag">Conformidad Médica Internacional</span>
-      <h2>Marco Regulador <span class="gradient-text">SaMD Clase IIa</span></h2>
-      <p>Diseñado conforme a las directivas más exigentes de la Unión Europea y normativas armonizadas de calidad para software sanitario.</p>
+      <span class="tag">Garantía Sanitaria y Legal</span>
+      <h2>Seguridad Médica y <span class="gradient-text">Protección de Datos</span></h2>
+      <p>Diseñado para ofrecer máxima seguridad jurídica al profesional sanitario y una protección absoluta de la privacidad del paciente pediátrico.</p>
     </div>
 
     <div class="reg-grid">
@@ -76,18 +55,24 @@ const regulations = [
     <div class="regulatory-cards-bottom">
       <div class="glass-card class-b-box">
         <div class="class-b-header">
-          <span class="class-icon">🛡️</span>
-          <h4>IEC 62304 — Clase de Seguridad B</h4>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <h4>El Juicio Médico Siempre Prevalece</h4>
         </div>
         <p>
-          Un fallo eventual en el software podría generar datos orientativos erróneos que, sin el adecuado escrutinio del profesional, 
-          podrían inducir una decisión subóptima. El riesgo de lesión directa es bajo gracias a la <strong>supervisión directa obligatoria del facultativo</strong>.
+          VIA+ actúa como un sistema de apoyo a la decisión clínica (CDSS): aporta mediciones electroacústicas objetivas y redacta el informe en segundos, pero la validación foniátrica y el diagnóstico final corresponden en exclusiva al criterio facultativo.
         </p>
       </div>
 
       <div class="glass-card ai-act-box">
         <div class="class-b-header">
-          <span class="class-icon">🧠</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          <h4>Determinismo y Cero Alucinaciones</h4>
+        </div>
+        <p>
+          Al prescindir de modelos de lenguaje opacos, la plataforma garantiza que cada dato del informe proviene directamente de las respuestas registradas en consulta, cumpliendo de forma estricta la normativa europea sobre fiabilidad tecnológica.
+        </p>
+      </div>
+    </div>
           <h4>ADR de Cero IA en Dispositivo</h4>
         </div>
         <p>

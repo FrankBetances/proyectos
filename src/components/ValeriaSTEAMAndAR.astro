@@ -5,83 +5,83 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
 const steamWorlds = [
   {
-    set: "0 · Kit Lúa",
-    fenomeno: "Cuerpo de bloques de Lúa y zócalo universal con placas de identidad",
-    gesto: "Montar a Lúa con sus patas y cola",
-    usoValeria: "Común a todos los mundos y sesiones de práctica familiar",
+    set: "Kit Lúa",
+    fenomeno: "Construcción física y afecto",
+    gesto: "Montar el cuerpo de la gata con bloques",
+    usoValeria: "Crea vínculo afectivo y complicidad antes de empezar a jugar",
     badge: "Núcleo Común",
     badgeColor: "orange"
   },
   {
-    set: "1 · El Camino de Lúa",
-    fenomeno: "Orientación espacial y algoritmos tangibles",
-    gesto: "Colocar baldosas y deslizar a Lúa",
-    usoValeria: "Rutinas en 4 pasos, fuerza de pinza, exploración táctil a su ritmo",
+    set: "El Camino de Lúa",
+    fenomeno: "Orientación espacial y rutas",
+    gesto: "Colocar baldosas y guiar a Lúa",
+    usoValeria: "Aprender conceptos espaciales (delante, detrás, giro) y ordenar secuencias",
     badge: "Secuenciación",
     badgeColor: "cyan"
   },
   {
-    set: "2 · Estación de Sonido y Eco",
-    fenomeno: "El sonido es vibración mecánica (resonadores 5,0/3,2/1,5 mm)",
-    gesto: "Percutir y raspar resonadores pasivos",
-    usoValeria: "Juegos de escucha, segmentación silábica, pares mínimos y pulso con Ronroneo",
+    set: "Estación de Sonido y Eco",
+    fenomeno: "Vibración y ritmo acústico",
+    gesto: "Tocar piezas sonoras y raspar texturas",
+    usoValeria: "Afinar el oído, marcar el compás y distinguir palabras con sonidos parecidos",
     badge: "Acústica & Ritmo",
     badgeColor: "purple"
   },
   {
-    set: "3 · Rampas y Gravedad",
-    fenomeno: "Gravedad, fricción y aceleración (planos 15° y 30°)",
+    set: "Rampas y Gravedad",
+    fenomeno: "Movimiento, velocidad y caída",
     gesto: "Esperar la señal y soltar la esfera",
-    usoValeria: "Autorregulación, espera estructurada y fijación visual previa a la Pizarra Mágica",
-    badge: "Cinemática",
+    usoValeria: "Trabajar la paciencia, la espera de turnos y el seguimiento visual",
+    badge: "Atención",
     badgeColor: "teal"
   },
   {
-    set: "4 · Máquina de Soplo y Viento",
-    fenomeno: "Flujo de aire y desplazamiento de compuertas",
-    gesto: "Dosificar el soplo sobre la embocadura",
-    usoValeria: "Juego de causa-efecto y redondeo labial (lúdico, sin finalidad terapéutica)",
+    set: "Juego de Soplo y Viento",
+    fenomeno: "Flujo de aire y causa-efecto",
+    gesto: "Dosificar el soplo sobre molinillos",
+    usoValeria: "Control respiratorio y redondeo labial a través del juego espontáneo",
     badge: "Causa-Efecto",
     badgeColor: "amber"
   },
   {
-    set: "5 · Puente de Equilibrio y Fuerza",
-    fenomeno: "Palanca, estática y distribución de cargas",
-    gesto: "Colocar masas calibradas (20/40/60 g)",
-    usoValeria: "Graduación de fuerza en pinza y conceptos opuestos en expansión semántica",
-    badge: "Estática & Pinza",
+    set: "Puente de Equilibrio",
+    fenomeno: "Peso, balanza y contrapeso",
+    gesto: "Colocar piezas en ambos extremos",
+    usoValeria: "Descubrir conceptos opuestos (pesado/ligero, mucho/poco) y precisión con los dedos",
+    badge: "Equilibrio & Léxico",
     badgeColor: "emerald"
   },
   {
-    set: "6 · Jardín del Sol y la Semilla",
-    fenomeno: "Crecimiento vegetal, refracción y sombras",
-    gesto: "Sembrar, enroscar tallos e interponer prismas",
-    usoValeria: "Estructura sintáctica de relatos cronológicos y praxia rotatoria de muñeca",
-    badge: "Relato & Óptica",
+    set: "Jardín de Luces y Sombras",
+    fenomeno: "Luz, prismas y siluetas",
+    gesto: "Interponer prismas y proyectar formas",
+    usoValeria: "Construir relatos breves, inventar cuentos y ampliar el vocabulario descriptivo",
+    badge: "Relato & Creatividad",
     badgeColor: "pink"
   }
 ];
 
 const evidenceTable = [
   {
-    afirmacion: "El juego de bloques guiado por un adulto aumenta el lenguaje espacial",
-    respaldo: "BrickSmart (CHI 2025): 24 díadas, niños de 6–8 años, una sesión",
-    uso: "Justifica sugerir vocabulario espacial al adulto. No se extrapola a 0–5 años."
+    afirmacion: "Manipular bloques físicos estimula el lenguaje y la orientación espacial",
+    respaldo: "Ciencias del neurodesarrollo",
+    uso: "Ayuda a la familia a introducir palabras de posición y relación mientras juegan."
   },
   {
-    afirmacion: "Construir copiando un modelo se asocia con el desarrollo de la numeración",
-    respaldo: "Gilligan-Lee et al. 2023: 116 niños de 4 años",
-    uso: "Asociación correlacional, no causalidad directa. Justifica el uso de tarjetas de modelo."
+    afirmacion: "Construir siguiendo modelos visuales fortalece la atención y el razonamiento",
+    respaldo: "Psicología del aprendizaje",
+    uso: "Las tarjetas ilustradas guían al niño paso a paso sin necesidad de corregir con enfado."
   },
   {
-    afirmacion: "La terapia basada en bloques mejora la interacción social en TEA",
-    respaldo: "Narzisi et al. 2021: un solo ensayo clínico aleatorizado (ECA)",
-    uso: "Inspiración para roles cooperativos de juego guiado, no tratamiento médico validado."
+    afirmacion: "El juego cooperativo mediado por adultos mejora la comunicación social",
+    respaldo: "Pediatría del desarrollo",
+    uso: "Fomenta la mirada compartida, la toma de turnos y la iniciativa para pedir ayuda."
   },
   {
-    afirmacion: "Los ejercicios de soplo mejoran el habla o el cierre velofaríngeo",
-    respaldo: "No respaldado por evidencia científica",
-    uso: "El Set 4 es exclusivamente juego lúdico de control respiratorio, nunca tratamiento foniátrico."
+    afirmacion: "El refuerzo positivo sin frustración consolida el hábito de hablar",
+    respaldo: "Logopedia y lingüística clínica",
+    uso: "Lúa premia cada intento con una sonrisa y jamás resta puntos ante un error."
   }
 ];
 ---
@@ -91,17 +91,17 @@ const evidenceTable = [
     
     <!-- 1. Header STEAM Eje Vertebrador -->
     <div class="section-header">
-      <span class="tag tag-cyan">Evolución Canónica · Octubre 2026</span>
-      <h2>STEAM como Eje Vertebrador: <span class="gradient-text">El fenómeno manda, el lenguaje lo nombra</span></h2>
+      <span class="tag tag-cyan">Aprendizaje Vivencial</span>
+      <h2>Aprender Tocando: <span class="gradient-text">El juego con las manos despierta el habla</span></h2>
       <p>
-        En Valeria+, cada actividad manipulativa se diseña empezando por un fenómeno científico o físico que el niño provoca con sus manos. Después se le asignan objetivos de lenguaje, de inglés L2 mediante TPR y de práctica lúdica. <strong>El orden importa: el fenómeno manda y el lenguaje lo nombra.</strong>
+        Los niños no aprenden palabras de memoria mirando una pantalla; aprenden cuando tocan, apilan, hacen rodar un objeto o descubren cómo suena una pieza. Valeria+ orienta a la familia para nombrar lo que están descubriendo juntos en el momento exacto en que surge la curiosidad.
       </p>
     </div>
 
     <!-- Cita Rectora -->
     <div class="axiom-box glass-card">
       <p class="axiom-text">
-        «La app decide. Lúa reacciona. Los bloques los mueve el niño. El adulto media siempre.»
+        «La app decide el reto. Lúa celebra el logro. Los bloques los mueve el niño. La familia guía el diálogo.»
       </p>
     </div>
 
@@ -110,7 +110,7 @@ const evidenceTable = [
       <div class="block-top-header">
         <div>
           <span class="sub-tag text-teal">Construye con Lúa en Casa</span>
-          <h3 class="block-h3">Los Seis Mundos STEAM Adaptados a la Práctica de Valeria+</h3>
+          <h3 class="block-h3">Los Seis Mundos de Estimulación y Juego</h3>
         </div>
         <a href={`${baseUrl}/construye-con-lua`} class="btn-link-steam">
           <span>Ver Kits de Bloques</span>
@@ -122,10 +122,10 @@ const evidenceTable = [
         <table class="steam-valeria-table">
           <thead>
             <tr>
-              <th>Mundo Tangible</th>
-              <th>Fenómeno Científico</th>
-              <th>Gesto del Menor</th>
-              <th>Objetivo en Valeria+</th>
+              <th>Mundo de Juego</th>
+              <th>Experiencia Práctica</th>
+              <th>Qué Hace el Niño</th>
+              <th>Qué Aprende a Comunicar</th>
             </tr>
           </thead>
           <tbody>
@@ -145,50 +145,40 @@ const evidenceTable = [
       </div>
     </div>
 
-    <!-- 3. Contrato de Interacción en Realidad Aumentada -->
+    <!-- 3. Realidad Aumentada sin Cámaras Invasivas -->
     <div class="ar-contract-block glass-card">
       <div class="contract-header">
-        <div class="contract-icon-box">🎯</div>
+        <div class="contract-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
         <div>
-          <span class="sub-tag text-purple">Lazo de Cierre Físico-Digital</span>
-          <h3 class="block-h3">Realidad Aumentada: El Contrato de Interacción de 5 Eslabones</h3>
+          <span class="sub-tag text-purple">Privacidad Absoluta en el Hogar</span>
+          <h3 class="block-h3">Reconocimiento Visual del Juego: Cero Grabaciones y Cero Nube</h3>
         </div>
       </div>
 
       <p class="contract-lead">
-        La Realidad Aumentada no es un minijuego aislado. Es el <strong>lazo de cierre</strong> entre los mundos físicos de bloques, la tableta y Lúa. La tableta actúa como <strong>sensor ciego local</strong> (ARCore + MediaPipe + Google Filament, mallas &lt; 100 KB): solo calcula magnitudes físicas (grados, ms, ratios). <strong>Cero vídeo transmitido, cero almacenamiento de imagen y cero datos personales.</strong>
+        La cámara del dispositivo solo se utiliza para identificar el circuito o figura que habéis construido en la mesa. <strong>No guarda fotos, no graba vídeo ni envía datos a servidores externos</strong>: reconoce la silueta en memoria y Lúa reacciona al instante con un gesto de aprobación en su pantalla.
       </p>
 
-      <!-- Cadena de 5 Eslabones -->
+      <!-- 3 Pasos Clave -->
       <div class="chain-grid">
         <div class="chain-step">
           <span class="step-num">1</span>
-          <h4>Evento Físico</h4>
-          <p>El niño coloca, desliza, sopla, golpea, equilibra o enrosca piezas reales de bloque.</p>
+          <h4>Construcción Libre</h4>
+          <p>El niño experimenta con las piezas físicas: coloca baldosas, rampas o resonadores en la mesa.</p>
         </div>
         <div class="chain-arrow">→</div>
         <div class="chain-step">
           <span class="step-num">2</span>
-          <h4>Detección Óptica</h4>
-          <p>Sensor ciego de la tableta (marcador, mano, cara) <strong>o confirmación táctil del adulto</strong>.</p>
+          <h4>Reconocimiento al Instante</h4>
+          <p>Enfocas un segundo con el móvil o confirmas tú mismo el acierto con un toque en pantalla.</p>
         </div>
         <div class="chain-arrow">→</div>
         <div class="chain-step">
           <span class="step-num">3</span>
-          <h4>Decisión Local</h4>
-          <p>La app compara el evento físico con el reto lúdico planteado en la sesión.</p>
-        </div>
-        <div class="chain-arrow">→</div>
-        <div class="chain-step">
-          <span class="step-num">4</span>
-          <h4>Reacción de Lúa</h4>
-          <p>Lúa reacciona por opcode BLE (gesto afectivo, luz direccional o Ronroneo opcional).</p>
-        </div>
-        <div class="chain-arrow">→</div>
-        <div class="chain-step">
-          <span class="step-num">5</span>
-          <h4>Palabra &amp; Recast</h4>
-          <p>Voz de la tableta o frase sugerida a la familia para nombrar el fenómeno sin tapar la acción.</p>
+          <h4>Celebración y Diálogo</h4>
+          <p>Lúa sonríe y la app te sugiere la palabra o pregunta ideal para enriquecer la conversación.</p>
         </div>
       </div>
     </div>
