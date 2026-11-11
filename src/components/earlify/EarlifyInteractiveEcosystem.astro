@@ -357,16 +357,52 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
                 <span class="dot-btn green"></span>
                 <span class="mockup-title">Valeria+ · Apoyo Familiar en Casa</span>
               </div>
-              <div class="mockup-img-wrap">
+              <div class="valeria-screen-switcher" role="group" aria-label="Pantallas reales de Valeria+">
+                <button
+                  type="button"
+                  class="valeria-screen-btn active"
+                  aria-pressed="true"
+                  data-src={`${baseUrl}/assets/valeria-screen-academy.jpg`}
+                  data-alt="Pantalla real de Valeria+ Academy con cápsulas de 2 minutos sobre Lenguaje, Dislexia, TEA y Lengua de Signos (LSE)"
+                  data-caption="Academy · Cápsulas formativas de 2 min para familias"
+                >Academy</button>
+                <button
+                  type="button"
+                  class="valeria-screen-btn"
+                  aria-pressed="false"
+                  data-src={`${baseUrl}/assets/valeria-screen-audicion.jpg`}
+                  data-alt="Pantalla real de Práctica de Mesa en Audición con protocolo ACOPROS y Nivel 1 Gatita en Valeria+"
+                  data-caption="Audición · Protocolo ACOPROS y Nivel 1 Gatita"
+                >Audición</button>
+                <button
+                  type="button"
+                  class="valeria-screen-btn"
+                  aria-pressed="false"
+                  data-src={`${baseUrl}/assets/valeria-screen-adivinanza-ept3.jpg`}
+                  data-alt="Sesión de ejercicios en Valeria+ con refuerzo de Lúa, versión en movimiento y evaluación en escala EPT-3"
+                  data-caption="Ejercicio · Movimiento TPR y evaluación EPT-3"
+                >Ejercicio</button>
+                <button
+                  type="button"
+                  class="valeria-screen-btn"
+                  aria-pressed="false"
+                  data-src={`${baseUrl}/assets/valeria-screen-ajustes.jpg`}
+                  data-alt="Pantalla real de Ajustes en Valeria+ con recordatorios de sesión y seis variedades de voz offline"
+                  data-caption="Ajustes · 6 variedades de voz offline y recordatorios"
+                >Ajustes</button>
+              </div>
+              <div class="mockup-img-wrap mockup-phone-wrap">
                 <img 
-                  src={`${baseUrl}/assets/valeria-app-1.png`} 
-                  alt="Interfaz de Valeria+ en dispositivo móvil para acompañar el lenguaje en casa" 
-                  class="mockup-img"
+                  id="earlify-valeria-img"
+                  src={`${baseUrl}/assets/valeria-screen-academy.jpg`} 
+                  alt="Pantalla real de Valeria+ Academy con cápsulas de 2 minutos sobre Lenguaje, Dislexia, TEA y Lengua de Signos (LSE)" 
+                  class="mockup-img mockup-phone-img"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="mockup-caption">
-                <span>Aplicación Educativa · Control Exclusivo del Adulto</span>
+                <span id="earlify-valeria-caption">Academy · Cápsulas formativas de 2 min para familias</span>
               </div>
             </div>
           </div>
@@ -508,6 +544,35 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
         waves.forEach(wave => {
           wave.style.animationDuration = `${periodSeconds.toFixed(2)}s`;
         });
+      });
+    });
+
+    // Valeria+ screen switcher in Panel 4
+    const valeriaBtns = document.querySelectorAll<HTMLButtonElement>('.valeria-screen-btn');
+    const valeriaImg = document.getElementById('earlify-valeria-img') as HTMLImageElement | null;
+    const valeriaCaption = document.getElementById('earlify-valeria-caption');
+
+    valeriaBtns.forEach(btn => {
+      if (btn.dataset.bound === '1') return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', () => {
+        const nextSrc = btn.dataset.src;
+        const nextAlt = btn.dataset.alt;
+        const nextCaption = btn.dataset.caption;
+
+        valeriaBtns.forEach(b => {
+          const isActive = b === btn;
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        if (valeriaImg && nextSrc) {
+          valeriaImg.src = nextSrc;
+          if (nextAlt) valeriaImg.alt = nextAlt;
+        }
+        if (valeriaCaption && nextCaption) {
+          valeriaCaption.textContent = nextCaption;
+        }
       });
     });
   }
@@ -865,12 +930,63 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
     background: #020617;
   }
 
+  .valeria-screen-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.75rem;
+    background: rgba(15, 23, 42, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .valeria-screen-btn {
+    padding: 0.45rem 0.85rem;
+    min-height: 36px;
+    border-radius: 9999px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    background: rgba(168, 85, 247, 0.08);
+    color: #cbd5e1;
+    font-size: 0.74rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .valeria-screen-btn:hover {
+    border-color: rgba(168, 85, 247, 0.65);
+    color: #ffffff;
+  }
+
+  .valeria-screen-btn.active {
+    background: #a855f7;
+    border-color: #c084fc;
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .mockup-phone-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 0.9rem;
+    background: radial-gradient(circle at 50% 45%, rgba(168, 85, 247, 0.12), #020617 75%);
+  }
+
   .mockup-img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     display: block;
     object-fit: cover;
+  }
+
+  .mockup-phone-img {
+    max-width: 240px;
+    width: 100%;
+    aspect-ratio: 473 / 1024;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
   }
 
   .mockup-caption {

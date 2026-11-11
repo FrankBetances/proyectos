@@ -1,4 +1,8 @@
 ---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+
 const academyDomains = [
   {
     iconType: "compass",
@@ -57,9 +61,26 @@ const academyDomains = [
         </p>
       </div>
 
-      <!-- Grid: 6 Clinical Domains -->
-      <div class="domains-grid">
-        {academyDomains.map((d) => (
+      <!-- Showcase: Captura Real de Academy + 6 Clinical Domains -->
+      <div class="academy-showcase-grid">
+        <div class="academy-screenshot-frame glass-card">
+          <div class="frame-bar">
+            <span class="frame-tag">Valeria+ · Academy</span>
+            <span class="badge badge-purple">Captura Real en App</span>
+          </div>
+          <div class="frame-viewport">
+            <img
+              src={`${baseUrl}/assets/valeria-screen-academy.jpg`}
+              alt="Pantalla real de Valeria+ Academy con cápsulas de dos minutos, indicador de progreso, Lúa y accesos a Lenguaje, Dislexia, TEA y Lengua de Signos (LSE)"
+              class="academy-screen-img"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div class="domains-grid">
+          {academyDomains.map((d) => (
           <div class="domain-card">
             <div class="domain-card-header">
               <div class="domain-icon-box">
@@ -100,6 +121,7 @@ const academyDomains = [
             <p>{d.desc}</p>
           </div>
         ))}
+        </div>
       </div>
 
       <!-- Spotlight Showcase: La Brújula + Lengua de Signos (LSE) Validada por ACOPROS -->
@@ -155,11 +177,60 @@ const academyDomains = [
     text-align: center;
   }
 
+  .academy-showcase-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2.25rem;
+    width: 100%;
+  }
+
+  .academy-screenshot-frame {
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    background: rgba(11, 15, 25, 0.85);
+    border: 1px solid rgba(168, 85, 247, 0.28);
+    box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .academy-screenshot-frame .frame-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.25rem;
+  }
+
+  .academy-screenshot-frame .frame-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .academy-screenshot-frame .frame-viewport {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #030712;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .academy-screen-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 473 / 1024;
+    object-fit: cover;
+    display: block;
+  }
+
   .domains-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 2.25rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
     width: 100%;
   }
 
@@ -247,6 +318,16 @@ const academyDomains = [
   }
 
   @media (max-width: 900px) {
+    .academy-showcase-grid {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    .academy-screenshot-frame {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
     .domains-grid {
       grid-template-columns: 1fr;
       gap: 1rem;
