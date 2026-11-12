@@ -1,4 +1,6 @@
 ---
+import GaliciaOriginBadge from '../GaliciaOriginBadge.astro';
+
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL.slice(0, -1)
   : import.meta.env.BASE_URL;
@@ -57,6 +59,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <p class="origin-text">
         <strong>Dr. Frank Alberto Betances Reinoso</strong> · Incubadora de Alta Tecnología <strong>startTIC</strong> · <strong>Consorcio de la Zona Franca de Vigo</strong>
       </p>
+      <GaliciaOriginBadge label="Diseñado en Galicia" detail="Vigo · Escuelas Infantiles" />
     </div>
 
     <!-- Editorial Badge -->

@@ -1,5 +1,6 @@
 ---
 // EarlifyHero.astro - Hero Premium Dark Medical Cyber-Clean para Earlify Health
+import GaliciaOriginBadge from '../GaliciaOriginBadge.astro';
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -54,6 +55,9 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 
     <!-- Editorial Header & Main Heading -->
     <div class="hero-header-content">
+      <div class="galicia-hero-wrap">
+        <GaliciaOriginBadge label="Diseñado en Galicia" detail="Vigo · Santiago · Lugo" />
+      </div>
       <div class="hero-eyebrow">
         <span class="eyebrow-dot"></span>
         <span>SALUD DIGITAL INFANTIL · CONSULTA, AULA Y HOGAR</span>

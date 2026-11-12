@@ -1,4 +1,6 @@
 ---
+import GaliciaOriginBadge from '../GaliciaOriginBadge.astro';
+
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL.slice(0, -1)
   : import.meta.env.BASE_URL;
@@ -60,6 +62,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
             />
           </div>
           <span class="status-dot" title="Activo profesionalmente"></span>
+        </div>
+
+        <div class="galicia-hero-wrap">
+          <GaliciaOriginBadge label="Diseñado en Galicia" detail="Lugo · Santiago · Vigo" />
         </div>
 
         <div class="editorial-eyebrow eyebrow-cyan">

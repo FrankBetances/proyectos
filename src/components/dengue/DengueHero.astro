@@ -1,4 +1,6 @@
 ---
+import GaliciaOriginBadge from '../GaliciaOriginBadge.astro';
+
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
   ? import.meta.env.BASE_URL.slice(0, -1) 
   : import.meta.env.BASE_URL;
@@ -28,6 +30,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
     <!-- Main Title & Narrative -->
     <div class="hero-content">
+      <div class="galicia-dengue-origin">
+        <GaliciaOriginBadge label="Diseñado en Galicia" detail="Cooperación en Salud Digital · La Vega, RD" variant="inline" />
+      </div>
       <div class="badges-row" role="list">
         <span class="badge-pill pill-red">🦟 Vector <em>Aedes aegypti</em></span>
         <span class="badge-pill pill-amber">🇩🇴 Piloto La Vega (9 sectores)</span>
@@ -207,6 +212,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .divider {
     color: rgba(255, 255, 255, 0.2);
+  }
+
+  .galicia-dengue-origin {
+    margin-bottom: 0.75rem;
   }
 
   .badges-row {

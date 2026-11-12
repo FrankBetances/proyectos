@@ -16,7 +16,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       <img src={`${baseUrl}/assets/dr-betances-logo.jpg`} alt="Logo Dr. Frank Betances" class="logo-img" width="44" height="44" />
       <div class="logo-text">
         <span class="logo-name">Dr. Frank <span class="plus">Betances</span></span>
-        <span class="logo-tagline">ORL & Salud Digital</span>
+        <span class="logo-tagline">
+          <span>ORL & Salud Digital</span>
+          <span class="header-galicia-tag" title="Diseñado en Galicia">
+            <img src={`${baseUrl}/assets/galicia/bandera-galicia.svg`} alt="" class="header-galicia-icon" loading="eager" decoding="async" />
+            <img src={`${baseUrl}/assets/galicia/escudo-galicia.svg`} alt="" class="header-galicia-crest" loading="eager" decoding="async" />
+            <span>Diseñado en Galicia</span>
+          </span>
+        </span>
       </div>
     </a>
 
@@ -165,6 +172,39 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     font-size: 0.75rem;
     color: var(--text-muted);
     letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .header-galicia-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.08rem 0.42rem;
+    border-radius: 9999px;
+    background: rgba(0, 153, 204, 0.12);
+    border: 1px solid rgba(0, 153, 204, 0.28);
+    color: #BAE6FD;
+    font-size: 0.65rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  .header-galicia-icon {
+    width: 12px;
+    height: 8px;
+    display: block;
+    object-fit: contain;
+    border-radius: 1.5px;
+  }
+
+  .header-galicia-crest {
+    width: 9px;
+    height: 11px;
+    display: block;
+    object-fit: contain;
   }
 
   .nav-links {

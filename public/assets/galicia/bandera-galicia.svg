@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" role="img" aria-label="Bandera de Galicia">
+  <defs>
+    <clipPath id="galiciaFlagClip">
+      <rect width="36" height="24" rx="3" ry="3"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#galiciaFlagClip)">
+    <rect width="36" height="24" fill="#FFFFFF"/>
+    <polygon points="0,0 7.5,0 36,19 36,24 28.5,24 0,5" fill="#0099CC"/>
+  </g>
+  <rect x="0.5" y="0.5" width="35" height="23" rx="2.5" ry="2.5" fill="none" stroke="#94A3B8" stroke-opacity="0.45" stroke-width="1"/>
+</svg>

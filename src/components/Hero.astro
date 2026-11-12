@@ -1,4 +1,6 @@
 ---
+import GaliciaOriginBadge from './GaliciaOriginBadge.astro';
+
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
   ? import.meta.env.BASE_URL.slice(0, -1) 
   : import.meta.env.BASE_URL;
@@ -32,6 +34,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   </div>
 
   <div class="container hero-container">
+    <GaliciaOriginBadge label="Diseñado en Galicia" detail="Vigo · Santiago · Lugo" />
+
     <!-- Institutional Badges Strip (Pure Micro-SVG, Zero Emojis) -->
     <div class="hero-badges-row" aria-label="Acreditaciones institucionales y regulatorias">
       <div class="hero-badge badge-starttic">
