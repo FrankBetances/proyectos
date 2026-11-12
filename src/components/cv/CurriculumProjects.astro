@@ -20,6 +20,9 @@ import GaliciaOriginBadge from '../GaliciaOriginBadge.astro';
           <span class="badge badge-emerald">Premio Ennova 2025 & 2023</span>
           <span class="project-tag">Plataforma Digital</span>
         </div>
+        <div class="project-origin-row">
+          <GaliciaOriginBadge label="Diseñado en Galicia" detail="Vigo · Santiago · Lugo" variant="inline" />
+        </div>
         <h3 class="project-title">VALERIA+</h3>
         <p class="project-subtitle">Rehabilitación Virtual del Lenguaje con Asistencia Interactiva en Familia</p>
         <p class="project-desc">
@@ -37,6 +40,9 @@ import GaliciaOriginBadge from '../GaliciaOriginBadge.astro';
         <div class="project-card-header">
           <span class="badge badge-cyan">SaMD Clase IIa MDR 2017/745</span>
           <span class="project-tag">Dispositivo Médico</span>
+        </div>
+        <div class="project-origin-row">
+          <GaliciaOriginBadge label="Diseñado en Galicia" detail="Lugo · Vigo · Santiago" variant="inline" />
         </div>
         <h3 class="project-title">VIA+</h3>
         <p class="project-subtitle">Valoración Interactiva de Audición y Lenguaje Pediátrico</p>
@@ -56,6 +62,9 @@ import GaliciaOriginBadge from '../GaliciaOriginBadge.astro';
           <span class="badge badge-purple">Convocatoria Competitiva FONDOCYT</span>
           <span class="project-tag">Investigación Financiada</span>
         </div>
+        <div class="project-origin-row">
+          <GaliciaOriginBadge label="Diseñado en Galicia" detail="Cooperación Galicia · R. Dominicana" variant="inline" />
+        </div>
         <h3 class="project-title">Proyecto QUISQUEYA HABLA</h3>
         <p class="project-subtitle">Fondo Nacional de Innovación y Desarrollo Científico y Tecnológico (FONDOCYT 2024)</p>
         <p class="project-desc">
@@ -72,6 +81,9 @@ import GaliciaOriginBadge from '../GaliciaOriginBadge.astro';
         <div class="project-card-header">
           <span class="badge badge-cyan">Incubadora de Alta Tecnología</span>
           <span class="project-tag">Aceleración TIC & Salud</span>
+        </div>
+        <div class="project-origin-row">
+          <GaliciaOriginBadge label="Diseñado en Galicia" detail="Vigo · VgoTIC Global HUB" variant="inline" />
         </div>
         <h3 class="project-title">startTIC · Incubadora de Alta Tecnología</h3>
         <p class="project-subtitle">Consorcio Zona Franca de Vigo, Cámara PVV, GRADIANT y FEDER (INCYDE)</p>
@@ -90,6 +102,9 @@ import GaliciaOriginBadge from '../GaliciaOriginBadge.astro';
         <div class="project-card-header">
           <span class="badge badge-amber">Programa USC-INTEGRA 2025</span>
           <span class="project-tag">Emprendimiento Tecnológico</span>
+        </div>
+        <div class="project-origin-row">
+          <GaliciaOriginBadge label="Diseñado en Galicia" detail="Santiago de Compostela · USC" variant="inline" />
         </div>
         <h3 class="project-title">USC-INTEGRA & Argos USC</h3>
         <p class="project-subtitle">Transferencia de Tecnología de la Universidade de Santiago de Compostela</p>
@@ -190,7 +205,13 @@ import GaliciaOriginBadge from '../GaliciaOriginBadge.astro';
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-origin-row {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
   }
 
   .project-tag {
