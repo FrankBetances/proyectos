@@ -1,20 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import WhatIsValeria from '../components/WhatIsValeria.astro';
-import ValeriaSTEAMAndAR from '../components/ValeriaSTEAMAndAR.astro';
-import TherapyBlocks from '../components/TherapyBlocks.astro';
-import AcademySection from '../components/AcademySection.astro';
-import AdultPanel from '../components/AdultPanel.astro';
-import LuaMascotSection from '../components/LuaMascotSection.astro';
-import LocalesLanguages from '../components/LocalesLanguages.astro';
-import Collaborators from '../components/Collaborators.astro';
-import ClinicalTelemetry from '../components/ClinicalTelemetry.astro';
-import DownloadCta from '../components/DownloadCta.astro';
-import ValeriaFaq from '../components/ValeriaFaq.astro';
-import ContactModal from '../components/cv/ContactModal.astro';
 import Footer from '../components/Footer.astro';
+import ContactModal from '../components/cv/ContactModal.astro';
+import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import '../styles/compact-landing.css';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+
+const pageTitle = "Valeria+ · Entiende su lenguaje, practica en casa. Lúa os acompaña";
+const pageDescription = "Aplicación educativa Android sin conexión y sin cuentas para madres, padres y cuidadores: forma en Academy y guía la práctica del lenguaje en casa entre consultas con el profesional.";
 
 const valeriaJsonLd = {
   "@context": "https://schema.org",
@@ -23,131 +20,302 @@ const valeriaJsonLd = {
       "@type": "SoftwareApplication",
       "@id": "https://FrankBetances.github.io/proyectos/#software",
       "name": "Valeria+",
-      "softwareVersion": "17.0",
       "applicationCategory": "EducationalApplication",
-      "applicationSubCategory": "Speech & Language Family Support",
-      "operatingSystem": "Android 8.0+",
+      "operatingSystem": "Android",
       "downloadUrl": "https://play.google.com/store/apps/details?id=eu.futureforkids.valeria",
-      "installUrl": "https://play.google.com/store/apps/details?id=eu.futureforkids.valeria",
-      "description": "Aplicación educativa de apoyo al lenguaje y la comunicación infantil para familias y cuidadores. Ofrece formación ágil en 2 minutos para adultos y retos manipulativos de estimulación oral en casa, protegiendo al menor de pantallas y funcionando 100% offline con privacidad Zero-PHI.",
-      "author": {
-        "@type": "Person",
-        "name": "Dr. Frank Alberto Betances Reinoso",
-        "jobTitle": "Otorrinolaringólogo y Especialista en Salud Digital",
-        "url": "https://FrankBetances.github.io/proyectos/cv"
-      },
-      "provider": {
-        "@type": "Organization",
-        "name": "Earlify Health S.L.",
-        "url": "https://FrankBetances.github.io/proyectos/earlify",
-        "memberOf": {
-          "@type": "ProgramMembership",
-          "programName": "startTIC - Incubadora de Alta Tecnología",
-          "hostingOrganization": {
-            "@type": "GovernmentOrganization",
-            "name": "Consorcio de la Zona Franca de Vigo"
-          }
-        }
-      },
-      "award": "Mejor Iniciativa Innovadora en Maker Faire Galicia 2026",
+      "description": pageDescription,
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "EUR"
       },
-      "featureList": [
-        "Eje vertebrador STEAM: el fenómeno físico manda y el lenguaje lo nombra (basado en BrickSmart CHI 2025)",
-        "6 Mundos de Construye con Lúa adaptados a la práctica del hogar (norma europea EN 71-1, piezas > 31,75 mm)",
-        "Juegos de expresión facial y motricidad sin almacenar imágenes ni grabar vídeo",
-        "Cuentos pedagógicos dialógicos de 3-4 láminas con sugerencias de recast y expansión para el adulto",
-        "Perfiles de adaptación configurables con PIN profesional (Hipoacusia e implantes, TEA, Dislexia, Dislalias)",
-        "Formación familiar en Academy: cápsulas de 2 minutos, La Brújula ASHA (0-5 años) y 27 signos LSE validados por ACOPROS",
-        "Integración Sensorial Auditiva con 11 estímulos cotidianos y ambientales, pre-escucha para el adulto y pausa que suma puntos",
-        "Aventuras con Lúa: 105 actividades en 6 franjas de edad con canciones habladas a pulso y metrónomo visual en castellano y galego",
-        "Pares Mínimos en 6 variedades con comparación de ambas palabras del par, misión física y sello Manos juntas",
-        "Expansión Semántica y Rutinas diarias en 4 pasos para ordenar y nombrar en doble vuelta con más de 160 pictogramas en píxel art",
-        "Audición (18 ejercicios) según protocolo ACOPROS con escucha en ruido de fondo graduable",
-        "Lenguaje (7 ejercicios) con 5 variantes de atención conjunta y aviso previo de materiales cotidianos",
-        "TEA (6 ejercicios) con sello Punto de mirada y retos regulados a mano por el adulto",
-        "Dislexia (6 ejercicios) con intruso fonológico numerado, criba de pseudopalabras y mapa de rotaciones b/d y p/q",
-        "La Pizarra Mágica de Lúa con 18 trazos guiados, 6 contrastes de letras confundibles y voz neuronal en 5 idiomas",
-        "Mascota Lúa con expresiones vivas, insignias de logro, descanso visual 20-20-20 y enlace opcional con la mascota física",
-        "6 variedades lingüísticas: Castellano, Galego, Dominicano, Euskara, US English y Català (4.711 locuciones offline)",
-        "Funcionamiento 100% offline, sin cuentas, sin servidor ni backend, bajo control exclusivo del adulto"
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://FrankBetances.github.io/proyectos/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Qué es Valeria+ y cómo apoya a las familias en casa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Valeria+ es una aplicación educativa de apoyo al lenguaje infantil pensada para madres, padres y cuidadores entre sesión y sesión con el logopeda. Abre directamente en Academy con cápsulas de 2 minutos y ofrece 10 bloques de juego guiados por la gata Lúa y los mundos STEAM."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Por qué funciona 100% offline y sin backend?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Para proteger de forma estricta la privacidad infantil bajo el principio Zero-PHI. Valeria+ no pide cuentas de usuario ni se conecta a servidores externos: las 4.711 locuciones y la Realidad Aumentada operan localmente dentro del dispositivo sin guardar ni enviar datos."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo ayuda Valeria+ en la rehabilitación del lenguaje y cuál es su relación con el especialista?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La rehabilitación del lenguaje es estimulación dirigida, sistemática y constante. Valeria+ traslada esa estimulación al hogar entre sesión y sesión con el logopeda, capacitando a las familias para reforzar la comunicación en el día a día. Complementa y multiplica el impacto terapéutico de las pautas del especialista, manteniendo siempre a la persona adulta como mediadora presencial."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Por qué el método se basa en bloques manipulativos y retos STEAM?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Porque los niños aprenden el lenguaje cuando nombran lo que tocan y descubren. Al causar un fenómeno físico tangible con las manos (una rampa, un resonador acústico o el equilibrio de una balanza en Construye con Lúa), la app sugiere al adulto las palabras y conceptos adecuados en el momento exacto en que surge la curiosidad del niño."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo funcionan los juegos de reconocimiento visual sin comprometer la privacidad?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La aplicación procesa los gestos y expresiones en tiempo real en la memoria del propio dispositivo. Ninguna dinámica depende exclusivamente de la cámara (el adulto siempre puede validarla con un toque) y jamás se graban fotos, vídeos ni audios fuera del móvil."
-          }
-        }
-      ]
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Frank Alberto Betances Reinoso",
+        "url": "https://FrankBetances.github.io/proyectos/cv"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Earlify Health S.L.",
+        "url": "https://FrankBetances.github.io/proyectos/earlify"
+      }
     }
   ]
 };
 ---
 
-<Layout 
-	title="Valeria+ · Entiende su lenguaje, practica en casa. Lúa os acompaña"
-	description="Aplicación educativa sobre el desarrollo del lenguaje en la infancia. Práctica guiada con STEAM y los mundos de Construye con Lúa, cápsulas Academy de 2 min y privacidad 100% offline sin backend."
-	image="https://FrankBetances.github.io/proyectos/assets/valeria-lua-hero-bg.jpg"
-	keywords="Valeria+, apoyo al lenguaje en casa, STEAM infantil, Construye con Lúa, logopedia infantil, hipoacusia, implante coclear, dislalia, dislexia infantil, TEA autismo, integracion sensorial auditiva, Lua mascota, Maker Faire Galicia 2026, Dr. Frank Betances, Earlify Health, startTIC"
-	jsonLd={valeriaJsonLd}
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  image="https://FrankBetances.github.io/proyectos/assets/valeria-screen-bienvenida.png"
+  keywords="Valeria+, lenguaje infantil en casa, app educativa familias, logopedia, hipoacusia, implante coclear, TEA, dislexia, dislalias, Lúa, Earlify Health, Dr. Frank Betances"
+  jsonLd={valeriaJsonLd}
 >
-	<Header activeTab="home" />
-	<main id="main-content">
-		<Hero />
-		<WhatIsValeria />
-		<ValeriaSTEAMAndAR />
-		<TherapyBlocks />
-		<AcademySection />
-		<AdultPanel />
-		<LuaMascotSection />
-		<LocalesLanguages />
-		<Collaborators />
-		<ClinicalTelemetry />
-		<DownloadCta />
-		<ValeriaFaq />
-	</main>
-	<Footer />
-	<ContactModal />
+  <Header activeTab="home" />
+
+  <main id="main-content" class="cl-page cl-theme-valeria">
+    <!-- PANTALLA 1: HERO -->
+    <section class="cl-screen cl-hero" aria-labelledby="valeria-title">
+      <div class="container cl-hero-grid">
+        <div>
+          <div class="cl-brand-row">
+            <img
+              src={`${baseUrl}/assets/valeria-logo.png`}
+              alt="Logotipo de Valeria+"
+              class="cl-brand-logo"
+              decoding="async"
+            />
+            <GaliciaOriginBadge label="Diseñado en Galicia" detail="Maker Faire Galicia 2026" variant="inline" />
+          </div>
+
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>App educativa para familias · Android offline</span>
+          </div>
+
+          <h1 id="valeria-title" class="cl-title">
+            Entiende su lenguaje, practica en casa. <span class="cl-title-accent">Lúa os acompaña</span>
+          </h1>
+
+          <p class="cl-lead">
+            Aplicación educativa para madres, padres y cuidadores que forma primero al adulto con <strong>Academy</strong> y facilita la práctica diaria guiada por el profesional.
+            Funciona <strong>sin conexión, sin cuentas y sin servidor</strong>.
+          </p>
+
+          <p class="cl-axiom">
+            Valeria+ es una app educativa, no un dispositivo médico. El adulto guía y valida siempre.
+          </p>
+
+          <div class="cl-actions">
+            <a
+              href="https://play.google.com/store/apps/details?id=eu.futureforkids.valeria"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cl-btn-primary"
+            >
+              Descargar en Google Play
+            </a>
+            <a href="#solucion-valeria" class="cl-btn-secondary">Qué incluye la app</a>
+          </div>
+
+          <div class="cl-meta-pills">
+            <span class="cl-pill">Sin servidor ni cuentas</span>
+            <span class="cl-pill">Cifrada en el móvil</span>
+            <span class="cl-pill">4 idiomas · 6 variedades de voz</span>
+          </div>
+        </div>
+
+        <div class="cl-hero-visual">
+          <div class="cl-phone-pair">
+            <div class="cl-phone-frame">
+              <img
+                src={`${baseUrl}/assets/valeria-screen-bienvenida.png`}
+                alt="Pantalla de bienvenida de Valeria+"
+                class="cl-phone-img"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </div>
+            <div class="cl-phone-frame">
+              <img
+                src={`${baseUrl}/assets/valeria-screen-practica-mesa.jpg`}
+                alt="Pantalla de práctica guiada con consigna para el adulto en Valeria+"
+                class="cl-phone-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+          <span class="cl-media-caption">Capturas reales de Valeria+ en Android</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: EL PROBLEMA -->
+    <section class="cl-screen" aria-labelledby="valeria-problem">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>El problema</span>
+          </div>
+          <h2 id="valeria-problem" class="cl-h2">Entre consulta y consulta, las familias se quedan solas</h2>
+          <p class="cl-sub">
+            Querer ayudar en casa sin saber cómo hacerlo genera frustración tanto en los padres como en el niño.
+          </p>
+        </div>
+
+        <div class="cl-grid-3">
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">01 · Falta de guía</span>
+            <h3>Saber qué practicar sin improvisar</h3>
+            <p>
+              Las pautas verbales al salir de logopedia o consulta ORL se diluyen con la rutina. Hace falta un orden sencillo para el día a día.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">02 · Desconexión con el profesional</span>
+            <h3>Llegar a la revisión sin recordar la semana</h3>
+            <p>
+              Sin un registro claro de lo practicado ni un cuaderno de dudas, cuesta ajustar la frecuencia semanal o coordinarse con otros centros.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">03 · Exposición infantil</span>
+            <h3>Juegos con anuncios, cuentas y nube</h3>
+            <p>
+              Muchas apps captan la atención del niño en solitario y recogen datos personales. La práctica del lenguaje necesita a un adulto delante y privacidad real.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: NUESTRA SOLUCIÓN -->
+    <section id="solucion-valeria" class="cl-screen" aria-labelledby="valeria-solution">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Nuestra solución</span>
+          </div>
+          <h2 id="valeria-solution" class="cl-h2">Formación para el adulto, 10 bloques de práctica y seguimiento</h2>
+          <p class="cl-sub">
+            Pensada también para familias con hipoacusia o implante coclear, dislalias, dislexia o TEA. Nombrar la condición ayuda a encontrar el contenido, sin prometer efecto clínico.
+          </p>
+        </div>
+
+        <div class="cl-grid-3">
+          <article class="cl-card">
+            <span class="cl-card-kicker">Para la familia</span>
+            <h3>Academy y práctica en casa</h3>
+            <p>
+              Cápsulas breves antes de jugar, actividades con voz grabada y vista clara de lo hecho frente a lo recomendado esta semana y en las ocho últimas.
+            </p>
+          </article>
+
+          <article class="cl-card">
+            <span class="cl-card-kicker">Para el profesional (con PIN)</span>
+            <h3>Frecuencia y notas firmadas</h3>
+            <p>
+              Cada especialista entra con su PIN, fija cuántas sesiones semanales recomienda de cada área, ajusta retos y deja indicaciones asíncronas (sin triaje ni urgencias).
+            </p>
+          </article>
+
+          <article class="cl-card">
+            <span class="cl-card-kicker">Otros centros y Lúa</span>
+            <h3>Resumen bajo permiso familiar</h3>
+            <p>
+              La familia puede autorizar y revocar un resumen (QR o texto, sin ficha clínica) para otro centro. Lúa acompaña y celebra; nunca puntúa ni evalúa.
+            </p>
+          </article>
+        </div>
+
+        <details class="cl-details">
+          <summary>Ver los 10 bloques de práctica incluidos en Valeria+</summary>
+          <div class="cl-details-body">
+            <div class="cl-chip-list">
+              <span class="cl-chip">1. Aventuras con Lúa (juegos, cuentos y canciones por edad)</span>
+              <span class="cl-chip">2. Audición (con Test de Ling previo para audífono/implante)</span>
+              <span class="cl-chip">3. Lenguaje (atención conjunta, imitación, comprensión y expresión)</span>
+              <span class="cl-chip">4. TEA (rutinas predecibles, espera estructurada y CAA)</span>
+              <span class="cl-chip">5. Dislexia (conciencia fonológica, acceso léxico, rotaciones b/d · p/q)</span>
+              <span class="cl-chip">6. Pares mínimos (con veredicto del adulto)</span>
+              <span class="cl-chip">7. Expansión semántica (imagen, voz y acción)</span>
+              <span class="cl-chip">8. Integración sensorial auditiva (parar nunca resta)</span>
+              <span class="cl-chip">9. Pizarra Mágica (trazos guiados)</span>
+              <span class="cl-chip">10. Realidad Aumentada (sets Construye con Lúa y cámara con validación táctil)</span>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: PRIVACIDAD, IDIOMAS Y LÍMITES -->
+    <section class="cl-screen" aria-labelledby="valeria-privacy">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Privacidad e idiomas</span>
+          </div>
+          <h2 id="valeria-privacy" class="cl-h2">Todo se queda cifrado en tu teléfono</h2>
+        </div>
+
+        <div class="cl-grid-4">
+          <div class="cl-stat">
+            <div class="cl-stat-val">0 servidores</div>
+            <div class="cl-stat-label">Sin cuentas, sin SDK de terceros y sin llamadas de red propias.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">Cifrado local</div>
+            <div class="cl-stat-label">Fichas, sesiones, notas y consentimientos cifrados en el aparato; se borran al desinstalar.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">Sin grabaciones</div>
+            <div class="cl-stat-label">La voz se descarta en el turno y la cámara RA solo produce números; jamás se guarda vídeo ni audio.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">6 variedades</div>
+            <div class="cl-stat-label">Interfaz en es, gl, ca y en; ejercicios en castellano, dominicano, galego, euskara, català e inglés EE. UU.</div>
+          </div>
+        </div>
+
+        <div class="cl-status-box">
+          <span class="cl-status-tag">Límite educativo</span>
+          <p>
+            <strong>Valeria+ no diagnostica, no evalúa, no trata ni sustituye</strong> a la logopeda, al otorrino ni a ningún profesional.
+            No calcula puntuaciones clínicas ni analiza automáticamente las notas entre familia y profesional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 5: DESCARGA Y CONTACTO -->
+    <section class="cl-screen" aria-labelledby="valeria-cta">
+      <div class="container">
+        <div class="cl-cta-panel">
+          <div>
+            <div class="cl-eyebrow">
+              <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+              <span>Empieza hoy en Android</span>
+            </div>
+            <h2 id="valeria-cta" class="cl-h2">Descarga Valeria+ o consulta para tu gabinete</h2>
+            <p class="cl-sub">
+              Disponible para Android en Google Play. Si eres logopeda, profesional sanitario o institución y quieres probarla con familias, escríbeme.
+            </p>
+            <div class="cl-actions" style="margin-top: 1.25rem; margin-bottom: 0;">
+              <a
+                href="https://play.google.com/store/apps/details?id=eu.futureforkids.valeria"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cl-btn-primary"
+              >
+                Descargar en Google Play
+              </a>
+              <button type="button" data-open-contact class="cl-btn-secondary">Contactar con Frank</button>
+            </div>
+          </div>
+
+          <div class="cl-contact-box">
+            <span class="cl-card-kicker">Privacidad y contacto</span>
+            <strong>Dr. Frank Alberto Betances Reinoso</strong>
+            <a href="mailto:frank.alberto.betances.reinoso@gmail.com?subject=Consulta%20Valeria%2B" class="cl-contact-email">
+              frank.alberto.betances.reinoso@gmail.com
+            </a>
+            <div class="cl-eco-links" style="margin-top: 0.4rem;">
+              <a href="https://frankbetances.github.io/Valeria/privacidad.html" target="_blank" rel="noopener noreferrer" class="cl-eco-link">Política de privacidad</a>
+              <a href={`${baseUrl}/lua`} class="cl-eco-link">Mascota Lúa</a>
+              <a href={`${baseUrl}/construye-con-lua`} class="cl-eco-link">Construye con Lúa</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <ContactModal />
 </Layout>

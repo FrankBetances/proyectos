@@ -1,21 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import ViaHero from '../components/via/ViaHero.astro';
-import ViaOverview from '../components/via/ViaOverview.astro';
-import ViaRegulatory from '../components/via/ViaRegulatory.astro';
-import ViaCollaborators from '../components/via/ViaCollaborators.astro';
-import ViaWorkflow from '../components/via/ViaWorkflow.astro';
-import ViaModules from '../components/via/ViaModules.astro';
-import ViaLanguages from '../components/via/ViaLanguages.astro';
-import ViaTelemetryPrivacy from '../components/via/ViaTelemetryPrivacy.astro';
-import ViaTechStack from '../components/via/ViaTechStack.astro';
-import ViaEcosystem from '../components/via/ViaEcosystem.astro';
-import ContactModal from '../components/cv/ContactModal.astro';
 import Footer from '../components/Footer.astro';
+import ContactModal from '../components/cv/ContactModal.astro';
+import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import '../styles/compact-landing.css';
 
-const pageTitle = "VIA+ · Estación Médica SaMD Clase IIa de Audición y Lenguaje | Earlify Health";
-const pageDescription = "Dispositivo médico SaMD Clase IIa (MDR 2017/745) para consulta foniátrica y audiológica: 13 pruebas clínicas objetivas, calibración acústica de fábrica e informes en 30 segundos sin alucinaciones de IA.";
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+
+const pageTitle = "VIA+ · Apoyo a la decisión clínica en audición y lenguaje pediátricos";
+const pageDescription = "Batería de 13 módulos pediátricos para tableta Android con informe PDF por reglas y cero IA en el dispositivo. En desarrollo hacia SaMD Clase IIa (sin marcado CE todavía).";
 
 const viaJsonLd = {
   "@context": "https://schema.org",
@@ -24,114 +20,273 @@ const viaJsonLd = {
       "@type": "SoftwareApplication",
       "@id": "https://FrankBetances.github.io/proyectos/via#software",
       "name": "VIA+ (Valoración Interactiva de Audición y Lenguaje)",
-      "softwareVersion": "3.0",
       "applicationCategory": "MedicalApplication",
-      "operatingSystem": "Estación Clínica Homologada en Modo Kiosco",
+      "operatingSystem": "Android (tableta)",
       "description": pageDescription,
       "author": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
-        "jobTitle": "Especialista en Otorrinolaringología & Salud Digital",
         "url": "https://FrankBetances.github.io/proyectos/cv"
       },
       "provider": {
         "@type": "Organization",
         "name": "Earlify Health S.L.",
         "url": "https://FrankBetances.github.io/proyectos/earlify"
-      },
-      "medicalAudience": {
-        "@type": "MedicalAudience",
-        "audienceType": ["Physician", "Otorhinolaryngologist", "Audiologist", "Speech Language Pathologist", "Pediatrician"]
-      },
-      "featureList": [
-        "SaMD Clase IIa entregado llave en mano sobre tableta clínica homologada en modo kiosco bloqueado",
-        "Calibración electroacústica sellada de fábrica en cámara anecoica frente a sonómetro Clase 1",
-        "Motor NLG determinista para informes clínicos sin alucinaciones con borrador supervisado y firma colegiada",
-        "13 módulos de evaluación clínica y neurodesarrollo adaptados a la infancia",
-        "Pre-screening clínico CAP con otoscopia por oído y veredicto graduado (Completo, Parcial o Bloqueado)",
-        "Sonómetro Ambiental en dB(A) con ponderación A (IEC 61672), LAeq y percentiles",
-        "Audiometría Tonal liminar (Hughson-Westlake) y Condicionada (El Tren del Sonido) con cálculo de PTA",
-        "Análisis Acústico de Voz (F0, jitter, shimmer ciclo a ciclo y HNR) validado frente a estándares de fonética clínica",
-        "Test de Disfagia MECV-V con pulsioximetría BLE para detección de desaturación SpO₂",
-        "Cribado de Autismo M-CHAT-R/F y SAHS Infantil (PSQ de Chervin + Brodsky)",
-        "Articulación fonética T.A.R. (registro SODA) con 86 ítems propios por variedad",
-        "Logoaudiometría Verbal en campo libre con 7 variedades lingüísticas",
-        "Funciones Ejecutivas con 5 mini-juegos estructurados por franjas de edad",
-        "Análisis Prosódico descriptivo sobre habla conectada",
-        "Cribado normativo de Hitos del Lenguaje ASHA (0 a 5 años) con 8 banderas rojas",
-        "Principio de Cero IA en el dispositivo y almacenamiento local cifrado por hardware",
-        "Telemetría de usabilidad Zero-PHI con código QR anónimo (IEC 62366-1)"
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://FrankBetances.github.io/proyectos/via#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Qué es VIA+ y para qué sirve en consulta médica?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "VIA+ es un Software como Dispositivo Médico (SaMD Clase IIa) diseñado para tablets que asiste a médicos otorrinolaringólogos, audiólogos y logopedas en la valoración integral de la audición, la voz, la articulación, la deglución y el neurodesarrollo infantil de forma interactiva y gamificada."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué significa que VIA+ aplica el principio de 'Cero IA en el dispositivo'?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Significa que la aplicación no utiliza modelos de inteligencia artificial de 'caja negra' en tiempo real. Todas las mediciones acústicas y algoritmos de evaluación son matemáticamente deterministas, auditables y validados frente a estándares de fonética clínica, lo que garantiza máxima fiabilidad y cumplimiento con el Reglamento de IA de la UE."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Por qué VIA+ no emite diagnósticos automáticos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Por mandato de seguridad y regulación sanitaria (MDR 2017/745 Clase IIa y IEC 62304 Clase B). VIA+ es un sistema de apoyo a la decisión clínica (CDSS): proporciona datos precisos, pero el diagnóstico y la decisión médica siempre corresponden en exclusiva al facultativo especialista."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo protege la privacidad de los niños y sus datos de salud?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Todos los datos clínicos y grabaciones de audio se guardan exclusivamente en la memoria local cifrada de la estación clínica y nunca se suben a la nube. La telemetría de usabilidad es anónima (Zero-PHI) y se exporta mediante un código QR sin internet."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿En qué idiomas y lenguas se puede realizar la evaluación?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cuenta con 7 lenguas de sesión: Castellano, Galego (Proxecto Nós), Euskara (HiTZ/Aholab), Dominicano (Quisqueya Habla), Català (projecte AINA), Español Latinoamericano y US English, con bancos de voz neuronal y adaptaciones fonéticas validadas."
-          }
-        }
-      ]
+      }
     }
   ]
 };
 ---
 
-<Layout 
-	title={pageTitle}
-	description={pageDescription}
-	keywords="VIA+, SaMD, Dispositivo Médico Clase IIa, MDR 2017/745, Audiología Pediátrica, Logoaudiometría, Análisis Acústico de Voz, Disfagia MECV-V, M-CHAT-R, Hitos ASHA, Telemetría Zero-PHI, Dr. Frank Betances, Earlify Health"
-	jsonLd={viaJsonLd}
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  image="https://FrankBetances.github.io/proyectos/assets/via-app-clean.png"
+  keywords="VIA+, CDSS pediátrico, SaMD Clase IIa MDR 2017/745, audiometría infantil, análisis acústico de voz, MECV-V, M-CHAT-R, T.A.R., ASHA, Earlify Health"
+  jsonLd={viaJsonLd}
 >
-	<Header activeTab="via" />
-	<main id="main-content">
-		<ViaHero />
-		<ViaOverview />
-		<ViaRegulatory />
-		<ViaCollaborators />
-		<ViaWorkflow />
-		<ViaModules />
-		<ViaLanguages />
-		<ViaTelemetryPrivacy />
-		<ViaTechStack />
-		<ViaEcosystem />
-	</main>
-	<Footer />
-	<ContactModal />
+  <Header activeTab="via" />
+
+  <main id="main-content" class="cl-page cl-theme-via">
+    <!-- PANTALLA 1: HERO -->
+    <section class="cl-screen cl-hero" aria-labelledby="via-title">
+      <div class="container cl-hero-grid">
+        <div>
+          <div class="cl-brand-row">
+            <img
+              src={`${baseUrl}/assets/via-logo.png`}
+              alt="Logotipo de VIA+"
+              class="cl-brand-logo-dark"
+              decoding="async"
+            />
+            <GaliciaOriginBadge label="Diseñado en Galicia" detail="Earlify Health S.L." variant="inline" />
+          </div>
+
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Apoyo a la decisión clínica · Tableta Android</span>
+          </div>
+
+          <h1 id="via-title" class="cl-title">
+            Trece pruebas pediátricas y un informe trazable, <span class="cl-title-accent">sin IA en consulta</span>
+          </h1>
+
+          <p class="cl-lead">
+            <strong>VIA+</strong> reúne en una tableta Android trece módulos de audición, voz, habla, deglución y neurodesarrollo.
+            Genera un informe PDF por reglas que el profesional revisa y firma.
+          </p>
+
+          <p class="cl-axiom">
+            Aviso de seguridad clínica: VIA+ apoya al profesional cualificado; no emite diagnósticos ni sustituye su juicio.
+          </p>
+
+          <div class="cl-actions">
+            <button type="button" data-open-contact class="cl-btn-primary">Solicitar demostración clínica</button>
+            <a href="#solucion-via" class="cl-btn-secondary">Ver los 13 módulos</a>
+          </div>
+
+          <div class="cl-meta-pills">
+            <span class="cl-pill cl-pill-warn">Sin marcado CE aún (en desarrollo SaMD IIa)</span>
+            <span class="cl-pill">100% sin conexión</span>
+            <span class="cl-pill">Cero IA en el dispositivo</span>
+          </div>
+        </div>
+
+        <div class="cl-hero-visual">
+          <div class="cl-media-frame">
+            <img
+              src={`${baseUrl}/assets/via-app-clean.png`}
+              alt="Captura de pantalla de VIA+ mostrando módulos de valoración pediátrica"
+              class="cl-media-img"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <span class="cl-media-caption">Uso exclusivo supervisado en consulta · 7 variedades de interfaz</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: EL PROBLEMA -->
+    <section class="cl-screen" aria-labelledby="via-problem">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>El problema</span>
+          </div>
+          <h2 id="via-problem" class="cl-h2">Valorar a un niño en consulta exige demasiados aparatos y papeles</h2>
+          <p class="cl-sub">
+            Reunir pruebas dispersas, mantener la colaboración del menor y redactar un informe claro consume el tiempo clínico.
+          </p>
+        </div>
+
+        <div class="cl-grid-3">
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">01 · Pruebas inconexas</span>
+            <h3>Cuestionarios en papel y audio sin registro</h3>
+            <p>
+              Audición, acústica vocal, articulación, deglución y cribados de neurodesarrollo suelen vivir en herramientas separadas que obligan a transcribir datos a mano.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">02 · Fatiga infantil</span>
+            <h3>Exploraciones poco adaptadas a la infancia</h3>
+            <p>
+              Un protocolo rígido agota al niño en minutos y reduce la fiabilidad de la exploración. Gamificar la tarea mantiene la atención sin perder rigor.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">03 · Riesgo de caja negra</span>
+            <h3>Modelos generativos que inventan frases clínicas</h3>
+            <p>
+              En sanidad no basta con un texto bien redactado: cada afirmación del informe debe corresponder a una regla explícita y a un dato medido.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: NUESTRA SOLUCIÓN -->
+    <section id="solucion-via" class="cl-screen" aria-labelledby="via-solution">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Nuestra solución</span>
+          </div>
+          <h2 id="via-solution" class="cl-h2">Flujo guiado de sesión y síntesis determinista en PDF</h2>
+          <p class="cl-sub">
+            Acceso local del profesional, alta del paciente, consentimiento firmado, CAP, sonómetro de sala, hub de 13 pruebas y cierre con informe PDF firmado.
+          </p>
+        </div>
+
+        <div class="cl-grid-2">
+          <article class="cl-card">
+            <span class="cl-card-kicker">Qué hace VIA+</span>
+            <h3>Batería modular + informe por reglas</h3>
+            <ul class="cl-list">
+              <li><span class="cl-bullet" aria-hidden="true">+</span><span>Mide señal acústica con algoritmos deterministas y reproduce voces pregrabadas en la app.</span></li>
+              <li><span class="cl-bullet" aria-hidden="true">+</span><span>Redacta el PDF desde reglas fijas (<code>nlgReportEngine</code>) con cortes clínicos centralizados: cero texto libre de IA.</span></li>
+              <li><span class="cl-bullet" aria-hidden="true">+</span><span>Si falta un dato o falla un eslabón de audio, lo avisa en pantalla; nunca asume un resultado favorable.</span></li>
+              <li><span class="cl-bullet" aria-hidden="true">+</span><span>Interfaz en 7 variedades: castellano, gallego, euskera y dominicano completos; catalán, inglés y español latinoamericano provisionales (avisados en pantalla).</span></li>
+            </ul>
+          </article>
+
+          <article class="cl-card">
+            <span class="cl-card-kicker">Límites de seguridad</span>
+            <h3>Qué no hace nunca VIA+</h3>
+            <ul class="cl-list">
+              <li><span class="cl-bullet-no" aria-hidden="true">×</span><span>No emite diagnósticos ni sustituye el criterio del facultativo.</span></li>
+              <li><span class="cl-bullet-no" aria-hidden="true">×</span><span>No etiqueta un resultado como «normal» ni «patológico»: describe y señala.</span></li>
+              <li><span class="cl-bullet-no" aria-hidden="true">×</span><span>No recomienda tratamientos ni funciona sin supervisión profesional.</span></li>
+              <li><span class="cl-bullet-no" aria-hidden="true">×</span><span>No usa servicios remotos ni sube audios o fichas a servidores externos.</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <details class="cl-details">
+          <summary>Ver los 13 módulos clínicos incluidos en el hub de VIA+</summary>
+          <div class="cl-details-body">
+            <div class="cl-chip-list">
+              <span class="cl-chip">1. Evaluación clínica previa (CAP)</span>
+              <span class="cl-chip">2. Cuestionario M-CHAT-R</span>
+              <span class="cl-chip">3. Sonómetro de sala en dB(A)</span>
+              <span class="cl-chip">4. Audiometría infantil tonal</span>
+              <span class="cl-chip">5. Audiometría condicionada (El tren del sonido)</span>
+              <span class="cl-chip">6. Análisis acústico de voz (F0, jitter, shimmer, HNR, formantes, GRBAS)</span>
+              <span class="cl-chip">7. Exploración de disfagia MECV-V (sensor demo hoy)</span>
+              <span class="cl-chip">8. Cribado SAHS infantil</span>
+              <span class="cl-chip">9. Articulación T.A.R. (manual o ASR on-device)</span>
+              <span class="cl-chip">10. Audiometría verbal</span>
+              <span class="cl-chip">11. Funciones ejecutivas</span>
+              <span class="cl-chip">12. Análisis prosódico</span>
+              <span class="cl-chip">13. Cribado de hitos del lenguaje ASHA</span>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: ESTADO REGULATORIO Y PRIVACIDAD -->
+    <section class="cl-screen" aria-labelledby="via-status">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Estado real y privacidad</span>
+          </div>
+          <h2 id="via-status" class="cl-h2">Transparencia regulatoria antes de cualquier despliegue</h2>
+        </div>
+
+        <div class="cl-grid-4">
+          <div class="cl-stat">
+            <div class="cl-stat-val">MDR IIa</div>
+            <div class="cl-stat-label">Finalidad SaMD Clase IIa (Regla 11) e IEC 62304 Clase B. <strong>Sin marcado CE</strong> ni presentación a organismo notificado aún.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">Fuera de RIA</div>
+            <div class="cl-stat-label">Reglamento (UE) 2024/1689 de IA fuera de alcance por diseño: cero inferencia IA en el dispositivo.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">Solo local</div>
+            <div class="cl-stat-label">SQLite local (<code>viaplus.db</code>), audio en memoria para medir y telemetría de usabilidad anónima por QR.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">13 / 13</div>
+            <div class="cl-stat-label">Módulos, informe PDF por reglas y 7 variedades construidos; salida de audio comprobada en dispositivo.</div>
+          </div>
+        </div>
+
+        <div class="cl-status-box">
+          <span class="cl-status-tag">Pendiente de completar</span>
+          <p>
+            No afirmamos lo que aún no está cerrado: falta probar el recorrido completo de los 13 módulos y el PDF en tableta real,
+            activar el <strong>cifrado de la base SQLite y la seudonimización</strong> (ahora depende del cifrado del propio dispositivo),
+            el registro de auditoría con borrado verificable, los bancos verbales propios de catalán e inglés y el expediente formal de gestión de riesgos (ISO 14971 / ISO 13485).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 5: CÓMO PROBAR O CONTACTAR -->
+    <section class="cl-screen" aria-labelledby="via-cta">
+      <div class="container">
+        <div class="cl-cta-panel">
+          <div>
+            <div class="cl-eyebrow">
+              <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+              <span>Pilotos clínicos y evaluación</span>
+            </div>
+            <h2 id="via-cta" class="cl-h2">Solicita una demostración o participa en la validación clínica</h2>
+            <p class="cl-sub">
+              VIA+ es software propietario de Earlify Health S.L. para entornos clínicos supervisados. Escríbeme si quieres ver la batería en directo o colaborar en validación.
+            </p>
+            <div class="cl-actions" style="margin-top: 1.25rem; margin-bottom: 0;">
+              <button type="button" data-open-contact class="cl-btn-primary">Solicitar demostración</button>
+              <a href="mailto:frank.alberto.betances.reinoso@gmail.com?subject=Demostracion%20VIA%2B" class="cl-btn-secondary">Enviar correo directo</a>
+            </div>
+          </div>
+
+          <div class="cl-contact-box">
+            <span class="cl-card-kicker">Responsable clínico</span>
+            <strong>Dr. Frank Alberto Betances Reinoso</strong>
+            <a href="mailto:frank.alberto.betances.reinoso@gmail.com?subject=VIA%2B%20Consulta%20Clinica" class="cl-contact-email">
+              frank.alberto.betances.reinoso@gmail.com
+            </a>
+            <div class="cl-eco-links" style="margin-top: 0.4rem;">
+              <a href={`${baseUrl}/earlify`} class="cl-eco-link">Ecosistema Earlify</a>
+              <a href={`${baseUrl}/`} class="cl-eco-link">Valeria+ (Familias)</a>
+              <a href={`${baseUrl}/lua`} class="cl-eco-link">Periférico Lúa</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <ContactModal />
 </Layout>

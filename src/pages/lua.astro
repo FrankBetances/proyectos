@@ -3,18 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
+import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import '../styles/compact-landing.css';
 
-import LuaHero from '../components/lua/LuaHero.astro';
-import LuaClinicalObjectives from '../components/lua/LuaClinicalObjectives.astro';
-import LuaProtocolTable from '../components/lua/LuaProtocolTable.astro';
-import LuaExpressionsGallery from '../components/lua/LuaExpressionsGallery.astro';
-import LuaEcosystemIntegration from '../components/lua/LuaEcosystemIntegration.astro';
-import LuaArchitecture from '../components/lua/LuaArchitecture.astro';
-import LuaDecisionsAndStatus from '../components/lua/LuaDecisionsAndStatus.astro';
-import LuaCTA from '../components/lua/LuaCTA.astro';
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
 
-const pageTitle = "Lúa · Mascota Interactiva STEAM de Bloques | Earlify Health";
-const pageDescription = "La compañera pedagógica infantil que une el mundo tangible con la interacción digital: el niño construye el cuerpo con bloques pasivos y Lúa reacciona con miradas expresivas en riguroso silencio clínico.";
+const pageTitle = "Lúa · Firmware y muñeco físico de acompañamiento pediátrico";
+const pageDescription = "Lúa es la gata negra de Valeria+ y VIA+ y un muñeco físico en prototipo V5 con dos aparatos independientes (cabeza ESP32-C3 y cubo NFC con luz y vibración). Sin micrófono ni altavoz.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -22,78 +19,261 @@ const jsonLd = {
     {
       "@type": "Product",
       "@id": "https://FrankBetances.github.io/proyectos/lua#product",
-      "name": "Lúa · Mascota STEAM de Bloques con Cabeza Electrónica Sellada",
+      "name": "Lúa · Muñeco físico y firmware (Prototipo V5)",
       "description": pageDescription,
       "brand": {
         "@type": "Organization",
         "name": "Earlify Health S.L."
       },
-      "category": "Pediatric STEAM Toy & Neurodevelopmental Tangible System",
       "manufacturer": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
-        "jobTitle": "ORL Infantil & Especialista en Salud Digital",
         "url": "https://FrankBetances.github.io/proyectos/cv"
-      },
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Familias, Escuelas Infantiles (0-6 años), Logopedas y Consultas de Otorrinolaringología Pediátrica"
-      },
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "ElectronicHead",
-          "value": "Cabeza expresiva sellada con pantalla circular de 240x240 px, batería integrada y 4 luces direccionales suaves"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "BlockBody",
-          "value": "Cuerpo de bloques pasivos ensamblado por el niño sin cables, tornillos, pegamento ni pilas expuestas"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "STEAMSystem",
-          "value": "6 Mundos de juego manipulativo de Construye con Lúa (norma europea EN 71-1 anti-asfixia)"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "HapticBlock",
-          "value": "Bloque háptico opcional Ronroneo (≥ 3 años, estimulación táctil suave regulable por el adulto)"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "AcousticDesign",
-          "value": "Sin altavoz y sin micrófono por diseño físico estructural (Silencio Clínico físico garantizado · Zero-PHI)"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "IncubatorProgram",
-          "value": "startTIC - Incubadora de Alta Tecnología (Zona Franca de Vigo / Gradiant / FEDER 60%)"
-        }
-      ]
+      }
     }
   ]
 };
 ---
 
-<Layout 
+<Layout
   title={pageTitle}
   description={pageDescription}
-  image="/assets/valeria_lua.png"
-  keywords="Mascota Lúa, Mascota STEAM de Bloques, Juguete STEAM Infantil, Cabeza Sellada V1 circular, Bloques Manipulativos EN 71-1, Bloque Háptico Ronroneo, Anillo de Luces Direccionales, startTIC, Gradiant, Zona Franca de Vigo, masque3d, Valeria+, Descubre con Lúa, Lúa Construye, VIA+ SaMD, Silencio Clínico, Zero-PHI, Dr. Frank Betances"
+  image="https://FrankBetances.github.io/proyectos/assets/lua-prototipo-bloques.jpg"
+  keywords="Mascota Lúa, firmware ESP32-C3, Seeed XIAO ESP32-C3, GC9A01, NFC, ESP-NOW, BLE, silencio clínico, Valeria+, VIA+, Construye con Lúa, Earlify Health"
   jsonLd={jsonLd}
 >
   <Header activeTab="lua" />
 
-  <main id="main-content">
-    <LuaHero />
-    <LuaClinicalObjectives />
-    <LuaProtocolTable />
-    <LuaArchitecture />
-    <LuaExpressionsGallery />
-    <LuaEcosystemIntegration />
-    <LuaDecisionsAndStatus />
-    <LuaCTA />
+  <main id="main-content" class="cl-page cl-theme-lua">
+    <!-- PANTALLA 1: HERO -->
+    <section class="cl-screen cl-hero" aria-labelledby="lua-title">
+      <div class="container cl-hero-grid">
+        <div>
+          <div class="cl-brand-row">
+            <img
+              src={`${baseUrl}/assets/valeria_lua.png`}
+              alt="Lúa, gata negra en píxel art"
+              class="cl-brand-logo-dark"
+              decoding="async"
+            />
+            <GaliciaOriginBadge label="Diseñado en Galicia" detail="Prototipo V5 · C++17" variant="inline" />
+          </div>
+
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Muñeco físico de construcción y firmware</span>
+          </div>
+
+          <h1 id="lua-title" class="cl-title">
+            Lúa reacciona en la mesa, <span class="cl-title-accent">sin robar la voz al adulto</span>
+          </h1>
+
+          <p class="cl-lead">
+            La gata negra de <strong>Valeria+</strong> y <strong>VIA+</strong> hecha muñeco de construcción:
+            muestra caras e insignias en una pantalla redonda y responde con luces y vibración en su cubo.
+            <strong>Sin micrófono ni altavoz.</strong>
+          </p>
+
+          <p class="cl-axiom">
+            La app decide. Lúa reacciona. El adulto media siempre.
+          </p>
+
+          <div class="cl-actions">
+            <button type="button" data-open-contact class="cl-btn-primary">Solicitar información o piloto</button>
+            <a href="#solucion-lua" class="cl-btn-secondary">Cómo está diseñada</a>
+          </div>
+
+          <div class="cl-meta-pills">
+            <span class="cl-pill cl-pill-warn">Estado: prototipo V5</span>
+            <span class="cl-pill">Sin micrófono</span>
+            <span class="cl-pill">Sin altavoz</span>
+            <span class="cl-pill">Cero datos del niño</span>
+          </div>
+        </div>
+
+        <div class="cl-hero-visual">
+          <div class="cl-media-frame">
+            <img
+              src={`${baseUrl}/assets/lua-prototipo-bloques.jpg`}
+              alt="Prototipo físico de Lúa con pantalla circular y cuerpo luminoso"
+              class="cl-media-img"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <span class="cl-media-caption">Prototipo físico de Lúa · Pantalla circular GC9A01 y respuesta lumínica silenciosa</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: EL PROBLEMA -->
+    <section class="cl-screen" aria-labelledby="lua-problem">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>El problema</span>
+          </div>
+          <h2 id="lua-problem" class="cl-h2">Los juguetes conectados interrumpen la sesión y escuchan demasiado</h2>
+          <p class="cl-sub">
+            En logopedia, audiología y primera infancia, un robot parlante con micrófono molesta más de lo que ayuda.
+          </p>
+        </div>
+
+        <div class="cl-grid-3">
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">01 · Ruido en consulta</span>
+            <h3>Altavoces que tapan la voz humana</h3>
+            <p>
+              Los juguetes con altavoz compiten con la voz del adulto o del especialista, especialmente cuando el menor lleva audífono o implante coclear.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">02 · Privacidad infantil</span>
+            <h3>Micrófonos grabando en casa o en el aula</h3>
+            <p>
+              Introducir un micrófono en un muñeco obliga a confiar en que nunca grabará ni enviará voz de menores. Eliminarlo en hardware resuelve el riesgo de raíz.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">03 · Frustración por error</span>
+            <h3>Luces rojas y zumbidos punitivos</h3>
+            <p>
+              Muchos dispositivos electrónicos señalan el fallo con sonidos negativos. En estimulación infantil, el error debe ser neutro para no bloquear la intención comunicativa.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: NUESTRA SOLUCIÓN -->
+    <section id="solucion-lua" class="cl-screen" aria-labelledby="lua-solution">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Nuestra solución</span>
+          </div>
+          <h2 id="lua-solution" class="cl-h2">Dos aparatos independientes, sin cables entre sí ni tornillos</h2>
+          <p class="cl-sub">
+            Piezas impresas en PLA con uniones por encaje (clic, rosca o bayoneta), sin tornillos ni pegamento, gobernadas por firmware determinista en C++17.
+          </p>
+        </div>
+
+        <div class="cl-grid-2">
+          <article class="cl-card">
+            <span class="cl-card-kicker">Aparato 1 · Cabeza</span>
+            <h3>Placa redonda ESP32-C3 + pantalla 240 × 240</h3>
+            <ul class="cl-list">
+              <li><span class="cl-bullet" aria-hidden="true">+</span><span>Pantalla circular GC9A01 con táctil capacitivo para expresiones, pictogramas, insignias y niveles.</span></li>
+              <li><span class="cl-bullet" aria-hidden="true">+</span><span>Batería LiPo 3,7 V propia con carga USB-C.</span></li>
+              <li><span class="cl-bullet" aria-hidden="true">+</span><span>Enlace BLE con la tableta y radio ESP-NOW hacia el cubo (sin conexión eléctrica entre ambos).</span></li>
+            </ul>
+          </article>
+
+          <article class="cl-card">
+            <span class="cl-card-kicker">Aparato 2 · Cuerpo (cubo de 140 mm)</span>
+            <h3>Seeed XIAO ESP32-C3 + RGB, vibración y NFC</h3>
+            <ul class="cl-list">
+              <li><span class="cl-bullet" aria-hidden="true">+</span><span>4 luces RGB (una por cara), vibración, acelerómetro y lector NFC, con batería LiPo 3,7 V e interruptor.</span></li>
+              <li><span class="cl-bullet" aria-hidden="true">+</span><span>En sesión obedece por ESP-NOW lo que la app ha decidido a través de la cabeza.</span></li>
+              <li><span class="cl-bullet" aria-hidden="true">+</span><span>Sin cabeza o sin tableta <strong>juega solo</strong>: reacciona al movimiento y lee la ficha NFC de cada set de Construye con Lúa.</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <details class="cl-details">
+          <summary>Ver los 5 principios de seguridad que impone el firmware (y qué no hace Lúa)</summary>
+          <div class="cl-details-body">
+            <div class="cl-chip-list">
+              <span class="cl-chip">Reposo por defecto: exige permiso GRANT reciente de la app que caduca solo</span>
+              <span class="cl-chip">Silencio clínico: apaga luz y vibración mientras la tableta escucha o el niño responde</span>
+              <span class="cl-chip">Error neutro: nunca cara triste ni luz o vibración como señal de fallo</span>
+              <span class="cl-chip">Vibración opcional: arranca apagada en modo autónomo; la activa un adulto desde el mínimo</span>
+              <span class="cl-chip">Sin datos: solo índices a catálogos fijos y estado de 8 bytes (sin texto, audio ni datos del niño)</span>
+              <span class="cl-chip">Límite: no mide, no puntúa, no diagnostica ni sustituye al clínico</span>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: ESTADO REAL Y VERIFICACIÓN -->
+    <section class="cl-screen" aria-labelledby="lua-status">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Estado real del proyecto</span>
+          </div>
+          <h2 id="lua-status" class="cl-h2">Qué ya corre en placa y qué sigue pendiente</h2>
+        </div>
+
+        <div class="cl-grid-4">
+          <div class="cl-stat">
+            <div class="cl-stat-val">Cara · OK</div>
+            <div class="cl-stat-label">El firmware de la placa redonda ya ha corrido en el hardware real.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">Cubo · En PC</div>
+            <div class="cl-stat-label">Lógica del cubo y puzles probados en ordenador (<code>make test</code>); falta compilar y probar en placa.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">ESP-NOW</div>
+            <div class="cl-stat-label">Enlace cabeza → cubo escrito en el repositorio; pendiente de prueba entre placas físicas.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">V5 · En CAD</div>
+            <div class="cl-stat-label">Cubo de 140 mm, cabeza de bloque, manual de montaje y emulador listos; pendiente de impresión y montaje.</div>
+          </div>
+        </div>
+
+        <div class="cl-status-box">
+          <span class="cl-status-tag">Transparencia</span>
+          <p>
+            Lúa es un <strong>prototipo en desarrollo</strong>. Incluye emulador web de escritorio (<code>make run</code>), pruebas automáticas de la lógica en C++17,
+            manual de montaje electrónico y dosier técnico completo antes de pasar a fabricación piloto.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 5: PROBAR O COLABORAR -->
+    <section class="cl-screen" aria-labelledby="lua-cta">
+      <div class="container">
+        <div class="cl-cta-panel">
+          <div>
+            <div class="cl-eyebrow">
+              <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+              <span>Colaboración y prototipado</span>
+            </div>
+            <h2 id="lua-cta" class="cl-h2">¿Quieres probar el emulador o colaborar en el prototipo V5?</h2>
+            <p class="cl-sub">
+              Buscamos talleres de fabricación aditiva, socios de electrónica educativa y centros interesados en evaluar el prototipo junto a Valeria+ y Construye con Lúa.
+            </p>
+            <div class="cl-actions" style="margin-top: 1.25rem; margin-bottom: 0;">
+              <button type="button" data-open-contact class="cl-btn-primary">Hablar con el Dr. Frank Betances</button>
+              <a href={`${baseUrl}/construye-con-lua`} class="cl-btn-secondary">Ver los 11 sets de Construye</a>
+            </div>
+          </div>
+
+          <div class="cl-contact-box">
+            <span class="cl-card-kicker">Contacto directo</span>
+            <strong>Dr. Frank Alberto Betances Reinoso</strong>
+            <a href="mailto:frank.alberto.betances.reinoso@gmail.com?subject=Prototipo%20Lua%20V5" class="cl-contact-email">
+              frank.alberto.betances.reinoso@gmail.com
+            </a>
+            <div class="cl-eco-links" style="margin-top: 0.4rem;">
+              <a href={`${baseUrl}/`} class="cl-eco-link">Valeria+</a>
+              <a href={`${baseUrl}/via`} class="cl-eco-link">VIA+</a>
+              <a href={`${baseUrl}/earlify`} class="cl-eco-link">Earlify Health</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />

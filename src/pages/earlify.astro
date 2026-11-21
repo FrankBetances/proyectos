@@ -3,245 +3,286 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
-import EarlifyHero from '../components/earlify/EarlifyHero.astro';
-import ProblemSection from '../components/earlify/ProblemSection.astro';
-import EarlifyInteractiveEcosystem from '../components/earlify/EarlifyInteractiveEcosystem.astro';
-import EarlifyWorkflow from '../components/earlify/EarlifyWorkflow.astro';
-import EarlifyDifferentiators from '../components/earlify/EarlifyDifferentiators.astro';
-import EarlifyValidation from '../components/earlify/EarlifyValidation.astro';
-import EarlifyB2B from '../components/earlify/EarlifyB2B.astro';
-import EarlifyFounder from '../components/earlify/EarlifyFounder.astro';
-import EarlifyCTA from '../components/earlify/EarlifyCTA.astro';
+import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import '../styles/compact-landing.css';
 
-const pageTitle = "Earlify Health · Ecosistema Pediátrico Completo: Consulta, Aula, Juego, Hogar y Lúa";
-const pageDescription = "Ecosistema integral para el neurodesarrollo infantil: VIA+ (estación clínica SaMD IIa), Descubre con Lúa (aula 0-3 años), Lúa Construye (juego manipulativo EN 71-1), Valeria+ (apoyo familiar en casa) y Lúa (mascota interactiva).";
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+
+const pageTitle = "Earlify Health · Consulta, aula, juego y hogar bajo un mismo criterio";
+const pageDescription = "Ecosistema pediátrico de audición y lenguaje diseñado por el Dr. Frank Betances: VIA+, Valeria+, Descubre con Lúa, Lúa y Construye con Lúa. Sin conexión y con el adulto siempre al mando.";
 
 const earlifyJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MedicalOrganization",
+      "@type": "Organization",
       "@id": "https://FrankBetances.github.io/proyectos/earlify#organization",
       "name": "Earlify Health S.L.",
-      "legalName": "Earlify Health S.L.",
       "url": "https://FrankBetances.github.io/proyectos/earlify",
       "logo": "https://FrankBetances.github.io/proyectos/assets/earlify-logo.png",
-      "image": "https://FrankBetances.github.io/proyectos/assets/earlify-logo.png",
-      "description": "Ecosistema de salud digital y neurodesarrollo infantil de 5 soluciones que une la valoración médica objetiva en consulta con la inclusión en el aula escolar, el juego manipulativo y el apoyo familiar en el hogar bajo un mismo criterio.",
-      "slogan": "Un mismo criterio. Mejor continuidad. Earlify no sustituye el juicio profesional ni el de la familia. Lo ordena y le da continuidad.",
+      "description": pageDescription,
+      "email": "frank.alberto.betances.reinoso@gmail.com",
       "founder": {
         "@type": "Person",
-        "@id": "https://FrankBetances.github.io/proyectos/cv#founder",
         "name": "Dr. Frank Alberto Betances Reinoso",
-        "jobTitle": "Médico Otorrinolaringólogo Infantil (FEA ORL Infantil USC/SERGAS) y Especialista en Salud Digital",
-        "url": "https://FrankBetances.github.io/proyectos/cv",
-        "sameAs": [
-          "https://orcid.org/0000-0002-6349-9537",
-          "https://www.researchgate.net/profile/Frank-Reinoso"
-        ]
-      },
-      "memberOf": {
-        "@type": "ProgramMembership",
-        "programName": "startTIC - Incubadora de Alta Tecnología",
-        "hostingOrganization": {
-          "@type": "GovernmentOrganization",
-          "name": "Consorcio de la Zona Franca de Vigo"
-        }
-      },
-      "funder": [
-        {
-          "@type": "Organization",
-          "name": "Fondo Europeo de Desarrollo Regional (FEDER) - Fundación INCYDE"
-        },
-        {
-          "@type": "Organization",
-          "name": "Consorcio de la Zona Franca de Vigo"
-        }
-      ],
-      "sponsor": [
-        {
-          "@type": "Organization",
-          "name": "Fundación Centro Tecnológico de Telecomunicación de Galicia (GRADIANT)"
-        },
-        {
-          "@type": "Organization",
-          "name": "Sello ITEMAS-ISCIII 2024"
-        }
-      ],
-      "awards": [
-        "Sello ITEMAS-ISCIII 2024",
-        "Incubada en startTIC (Consorcio de la Zona Franca de Vigo / GRADIANT)"
-      ],
-      "makesOffer": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@id": "https://FrankBetances.github.io/proyectos/earlify#samd-via"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@id": "https://FrankBetances.github.io/proyectos/earlify#descubre-con-lua"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@id": "https://FrankBetances.github.io/proyectos/earlify#lua-construye"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@id": "https://FrankBetances.github.io/proyectos/earlify#valeria-plus"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@id": "https://FrankBetances.github.io/proyectos/earlify#lua-companion"
-          }
-        }
-      ]
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://FrankBetances.github.io/proyectos/earlify#samd-via",
-      "name": "VIA+ (Valoración Interactiva de Audición y Lenguaje)",
-      "applicationCategory": "MedicalApplication",
-      "operatingSystem": "Estación Clínica Homologada en Modo Kiosco",
-      "description": "Software como Dispositivo Médico (SaMD Clase IIa MDR 2017/745 Regla 11, IEC 62304 Clase B, ISO 14971) entregado llave en mano para apoyo a la decisión clínica (CDSS) en consulta pediátrica. Incluye 13 módulos clínicos objetivos, calibración electroacústica de fábrica, análisis acústico validado frente a estándares de fonética clínica, motor NLG determinista, 7 lenguas de sesión y código QR anónimo Zero-PHI.",
-      "url": "https://FrankBetances.github.io/proyectos/via",
-      "author": {
-        "@type": "Person",
-        "name": "Dr. Frank Alberto Betances Reinoso"
-      },
-      "provider": {
-        "@id": "https://FrankBetances.github.io/proyectos/earlify#organization"
+        "url": "https://FrankBetances.github.io/proyectos/cv"
       }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://FrankBetances.github.io/proyectos/earlify#descubre-con-lua",
-      "name": "Descubre con Lúa (Edición Aula)",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Android",
-      "description": "Herramienta pedagógica comunitaria para escuelas infantiles (0-3 años) desarrollada en startTIC. Incluye 10 unidades didácticas de aula, metrónomo visual silencioso para hipoacusia, 1.020 locuciones neuronales offline y cero exposición a pantallas directas para el menor.",
-      "url": "https://FrankBetances.github.io/proyectos/descubre-con-lua",
-      "author": {
-        "@type": "Person",
-        "name": "Dr. Frank Alberto Betances Reinoso"
-      },
-      "provider": {
-        "@id": "https://FrankBetances.github.io/proyectos/earlify#organization"
-      }
-    },
-    {
-      "@type": "Product",
-      "@id": "https://FrankBetances.github.io/proyectos/earlify#lua-construye",
-      "name": "Lúa Construye (Construye con Lúa)",
-      "category": "Educational Manipulative Construction System",
-      "description": "Sistema de bloques físicos de gran formato (norma de seguridad infantil EN 71-1) y 4 escenarios narrativos guiados por el adulto para estimular vocabulario, conceptos espaciales y motricidad fina de 1 a 6 años sin pantallas para el menor.",
-      "url": "https://FrankBetances.github.io/proyectos/construye-con-lua",
-      "brand": {
-        "@id": "https://FrankBetances.github.io/proyectos/earlify#organization"
-      },
-      "manufacturer": {
-        "@id": "https://FrankBetances.github.io/proyectos/earlify#organization"
-      }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://FrankBetances.github.io/proyectos/earlify#valeria-plus",
-      "name": "Valeria+ (Apoyo Familiar al Lenguaje y Audición en Casa)",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Android",
-      "description": "Aplicación educativa 100% offline y sin servidor para acompañar el lenguaje y la audición en el hogar. Abre en Academy con cápsulas de 2 minutos para la familia (hitos ASHA y LSE validada por ACOPROS) y ofrece 10 bloques de juego, rutinas secuenciales de 4 pasos y 4.711 locuciones neuronales en 6 variedades bajo control del adulto.",
-      "url": "https://FrankBetances.github.io/proyectos/",
-      "author": {
-        "@type": "Person",
-        "name": "Dr. Frank Alberto Betances Reinoso"
-      },
-      "provider": {
-        "@id": "https://FrankBetances.github.io/proyectos/earlify#organization"
-      }
-    },
-    {
-      "@type": "Product",
-      "@id": "https://FrankBetances.github.io/proyectos/earlify#lua-companion",
-      "name": "Lúa (Compañera Física Interactiva)",
-      "category": "Pediatric Health Companion Hardware",
-      "description": "Mascota física interactiva de acompañamiento pediátrico sin micrófonos por diseño, con modo de Silencio Clínico en consulta y protocolo de descanso visual 20-20-20.",
-      "url": "https://FrankBetances.github.io/proyectos/lua",
-      "brand": {
-        "@id": "https://FrankBetances.github.io/proyectos/earlify#organization"
-      },
-      "manufacturer": {
-        "@id": "https://FrankBetances.github.io/proyectos/earlify#organization"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://FrankBetances.github.io/proyectos/earlify#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Qué es Earlify Health y cuál es su misión médica y educativa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Earlify Health S.L. es un ecosistema de salud digital y neurodesarrollo infantil incubado en startTIC (Consorcio de la Zona Franca de Vigo, Centro Tecnológico GRADIANT, Fondo Europeo FEDER y Fundación INCYDE) con Sello ITEMAS-ISCIII 2024. Su misión es eliminar la brecha entre la consulta médica, el aula escolar, el juego manipulativo y el hogar bajo un mismo criterio clínico y pedagógico."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo se articulan las 5 soluciones del ecosistema Earlify Health?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "VIA+ realiza la valoración clínica objetiva en consulta mediante una estación llave en mano (SaMD Clase IIa) con 13 módulos y motor NLG determinista; Descubre con Lúa traslada la inclusión al aula infantil (0-3 años) con metrónomo visual silencioso; Lúa Construye lleva el lenguaje a la mesa con bloques manipulativos seguros (EN 71-1) sin pantallas; Valeria+ acompaña a las familias en casa con formación previa en Academy y 10 bloques de juego 100% offline; y Lúa une todos los entornos como mascota física interactiva sin micrófonos."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Por qué las soluciones de Earlify funcionan 100% offline y con privacidad estricta?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Para garantizar la máxima protección de la infancia (Zero-PHI) y el cumplimiento normativo europeo. Los datos clínicos y el progreso familiar permanecen exclusivamente en los dispositivos locales sin enviarse a la nube, y las mediciones acústicas son matemáticamente deterministas y auditables."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo puedo solicitar una demostración o implantar Earlify Health en mi centro?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hospitales, clínicas, centros de atención temprana, escuelas infantiles e instituciones pueden contactar directamente con el Dr. Frank Alberto Betances Reinoso a través del formulario de contacto profesional de la web para agendar una demostración o solicitar información sobre pilotos e implantación."
-          }
-        }
-      ]
     }
   ]
 };
 ---
 
-<Layout 
+<Layout
   title={pageTitle}
   description={pageDescription}
   image="https://FrankBetances.github.io/proyectos/assets/earlify-logo.png"
-  keywords="Earlify Health, VIA+ SaMD, Descubre con Lúa, Lúa Construye, Valeria+, Mascota Lúa, startTIC, Incubadora Alta Tecnología, Zona Franca de Vigo, Gradiant, Neurodesarrollo Infantil, Metrónomo Visual, Logopedia en Casa, Salud Digital, Dr. Frank Betances"
+  keywords="Earlify Health, VIA+, Valeria+, Descubre con Lúa, Lúa, Construye con Lúa, audición infantil, lenguaje infantil, startTIC, Zona Franca de Vigo, Dr. Frank Betances"
   jsonLd={earlifyJsonLd}
 >
   <Header activeTab="earlify" />
 
-  <main id="main-content">
-    <EarlifyHero />
-    <ProblemSection />
-    <EarlifyInteractiveEcosystem />
-    <EarlifyWorkflow />
-    <EarlifyDifferentiators />
-    <EarlifyValidation />
-    <EarlifyB2B />
-    <EarlifyFounder />
-    <EarlifyCTA />
+  <main id="main-content" class="cl-page cl-theme-earlify">
+    <!-- PANTALLA 1: HERO -->
+    <section class="cl-screen cl-hero" aria-labelledby="earlify-title">
+      <div class="container cl-hero-grid">
+        <div>
+          <div class="cl-brand-row">
+            <img
+              src={`${baseUrl}/assets/earlify-logo.png`}
+              alt="Logotipo de Earlify Health S.L."
+              class="cl-brand-logo"
+              decoding="async"
+            />
+            <GaliciaOriginBadge label="Diseñado en Galicia" detail="startTIC · Zona Franca de Vigo" variant="inline" />
+          </div>
+
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Ecosistema de audición y lenguaje infantil</span>
+          </div>
+
+          <h1 id="earlify-title" class="cl-title">
+            Un mismo criterio entre la consulta, <span class="cl-title-accent">el aula y tu casa</span>
+          </h1>
+
+          <p class="cl-lead">
+            Cinco herramientas coordinadas para acompañar la audición, el habla y el desarrollo infantil.
+            Funcionan <strong>sin conexión</strong> y mantienen siempre a la persona adulta al mando.
+          </p>
+
+          <p class="cl-axiom">
+            Earlify ordena el criterio del profesional y acompaña a la familia. Nunca sustituye a ninguno de los dos.
+          </p>
+
+          <div class="cl-actions">
+            <a href="#probar-earlify" class="cl-btn-primary">Probar o solicitar piloto</a>
+            <a href="#solucion-earlify" class="cl-btn-secondary">Ver las 5 soluciones</a>
+          </div>
+
+          <div class="cl-meta-pills">
+            <span class="cl-pill">100% offline</span>
+            <span class="cl-pill">Sin cuentas ni servidor</span>
+            <span class="cl-pill">Cero pantallas para el menor</span>
+            <span class="cl-pill">Sello ITEMAS-ISCIII 2024</span>
+          </div>
+        </div>
+
+        <div class="cl-hero-visual">
+          <div class="cl-media-frame">
+            <img
+              src={`${baseUrl}/assets/earlify-hero-metaphor.jpg`}
+              alt="Continuidad entre consulta médica, escuela infantil y hogar en Earlify Health"
+              class="cl-media-img"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <span class="cl-media-caption">Consulta (VIA+) · Escuela (Descubre con Lúa) · Hogar (Valeria+) · Juego físico (Lúa y Construye)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: EL PROBLEMA -->
+    <section class="cl-screen" aria-labelledby="earlify-problem">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>El problema</span>
+          </div>
+          <h2 id="earlify-problem" class="cl-h2">Entre consulta, colegio y casa el hilo se rompe</h2>
+          <p class="cl-sub">
+            El desarrollo del lenguaje ocurre cada día, pero los entornos donde crece el niño trabajan por separado.
+          </p>
+        </div>
+
+        <div class="cl-grid-3">
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">01 · Fragmentación</span>
+            <h3>Treinta minutos de consulta y meses de espera</h3>
+            <p>
+              La familia sale de consulta con pautas en papel y vuelve a casa sin saber cómo convertirlas en juego diario.
+              La escuela infantil y el gabinete tampoco comparten lenguaje común.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">02 · Pantallas solitarias</span>
+            <h3>Apps diseñadas para distraer al niño</h3>
+            <p>
+              La mayoría de aplicaciones sientan al menor solo frente a la pantalla y miden clics.
+              El lenguaje nace al revés: mirando a un adulto, tocando objetos reales y conversando.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">03 · Privacidad y caja negra</span>
+            <h3>Datos de menores en servidores externos</h3>
+            <p>
+              Muchas plataformas suben grabaciones de voz o informes clínicos a la nube y aplican modelos opacos.
+              En infancia y salud, esa exposición es inasumible.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: NUESTRA SOLUCIÓN -->
+    <section id="solucion-earlify" class="cl-screen" aria-labelledby="earlify-solution">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Nuestra solución</span>
+          </div>
+          <h2 id="earlify-solution" class="cl-h2">Cinco piezas con límites claros</h2>
+          <p class="cl-sub">
+            Cada producto cubre un entorno concreto y separa con claridad el ámbito clínico del educativo.
+          </p>
+        </div>
+
+        <div class="cl-grid-5">
+          <a href={`${baseUrl}/via`} class="cl-card cl-card-link">
+            <span class="cl-card-kicker">Consulta · CDSS</span>
+            <h3>VIA+</h3>
+            <p>13 módulos clínicos en tableta Android e informe PDF por reglas. En desarrollo hacia SaMD Clase IIa (sin marcado CE todavía).</p>
+          </a>
+
+          <a href={`${baseUrl}/`} class="cl-card cl-card-link">
+            <span class="cl-card-kicker">Hogar · App educativa</span>
+            <h3>Valeria+</h3>
+            <p>Academy para padres, 10 bloques de práctica y seguimiento entre consultas con PIN profesional. Disponible en Google Play.</p>
+          </a>
+
+          <a href={`${baseUrl}/descubre-con-lua`} class="cl-card cl-card-link">
+            <span class="cl-card-kicker">Escuela y hogar · 0–6 años</span>
+            <h3>Descubre con Lúa</h3>
+            <p>5 cursos (0–6 años), 4.000 palabras inglesas, 39.834 locuciones offline, STEAM y pulso visual para hipoacusia.</p>
+          </a>
+
+          <a href={`${baseUrl}/lua`} class="cl-card cl-card-link">
+            <span class="cl-card-kicker">Periférico físico · Prototipo</span>
+            <h3>Lúa</h3>
+            <p>Muñeco V5 de dos aparatos independientes (cabeza ESP32-C3 + cubo NFC con luz y vibración). Sin micrófono ni altavoz.</p>
+          </a>
+
+          <a href={`${baseUrl}/construye-con-lua`} class="cl-card cl-card-link">
+            <span class="cl-card-kicker">3D manipulativo · 11 sets</span>
+            <h3>Construye con Lúa</h3>
+            <p>11 sets + kit impresos en 3D con enganche único y ficha NFC para provocar fenómenos físicos y nombrarlos con el adulto.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: PRINCIPIOS Y TRANSPARENCIA -->
+    <section class="cl-screen" aria-labelledby="earlify-proof">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Principios y rigor</span>
+          </div>
+          <h2 id="earlify-proof" class="cl-h2">Muro regulatorio claro y cero datos en la nube</h2>
+        </div>
+
+        <div class="cl-grid-4">
+          <div class="cl-stat">
+            <div class="cl-stat-val">0 servidores</div>
+            <div class="cl-stat-label">Todas las aplicaciones operan sin conexión, sin cuentas externas y sin analítica de terceros.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">0 IA en consulta</div>
+            <div class="cl-stat-label">Las voces se sintetizan al compilar y las reglas clínicas son deterministas y auditables.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">Adulto al mando</div>
+            <div class="cl-stat-label">La familia, la docente o el facultativo operan la pantalla; el menor escucha, toca y conversa.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">startTIC · Vigo</div>
+            <div class="cl-stat-label">Proyecto incubado en Zona Franca de Vigo / GRADIANT y reconocido con el Sello ITEMAS-ISCIII 2024.</div>
+          </div>
+        </div>
+
+        <div class="cl-status-box">
+          <span class="cl-status-tag">Honestidad de estado</span>
+          <p>
+            <strong>Valeria+</strong> ya puede descargarse en Google Play y <strong>Descubre con Lúa</strong> cuenta con paquete Android completo de 0 a 6 años.
+            <strong>VIA+</strong> no tiene aún marcado CE y está en fase de validación técnica y cifrado local;
+            <strong>Lúa V5</strong> y <strong>Construye con Lúa</strong> están diseñados en repositorio y pendientes de impresión física y ensayo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 5: PROBAR Y CONTACTO -->
+    <section id="probar-earlify" class="cl-screen" aria-labelledby="earlify-cta">
+      <div class="container">
+        <div class="cl-cta-panel">
+          <div>
+            <div class="cl-eyebrow">
+              <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+              <span>Empieza hoy</span>
+            </div>
+            <h2 id="earlify-cta" class="cl-h2">Prueba Valeria+ o acuerda un piloto para tu centro</h2>
+            <p class="cl-sub">
+              Si diriges una escuela infantil, un gabinete de logopedia, un servicio de ORL o buscas colaborar en el piloto hardware, escríbeme directamente.
+            </p>
+            <div class="cl-actions" style="margin-top: 1.25rem; margin-bottom: 0;">
+              <a
+                href="https://play.google.com/store/apps/details?id=eu.futureforkids.valeria"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cl-btn-primary"
+              >
+                Descargar Valeria+ en Google Play
+              </a>
+              <button type="button" data-open-contact class="cl-btn-secondary">
+                Escribir al Dr. Frank Betances
+              </button>
+            </div>
+          </div>
+
+          <div class="cl-contact-box">
+            <span class="cl-card-kicker">Contacto directo</span>
+            <strong>Dr. Frank Alberto Betances Reinoso</strong>
+            <p style="font-size: 0.86rem; color: var(--text-muted);">
+              Otorrinolaringólogo · Fundador de Earlify Health S.L.
+            </p>
+            <a href="mailto:frank.alberto.betances.reinoso@gmail.com?subject=Consulta%20Earlify%20Health" class="cl-contact-email">
+              frank.alberto.betances.reinoso@gmail.com
+            </a>
+            <div class="cl-eco-links" style="margin-top: 0.4rem;">
+              <a href={`${baseUrl}/cv`} class="cl-eco-link">Ver CV médico</a>
+              <a href="https://github.com/FrankBetances" target="_blank" rel="noopener noreferrer" class="cl-eco-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />

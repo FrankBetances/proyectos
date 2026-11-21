@@ -3,16 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
+import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import '../styles/compact-landing.css';
 
-import ConstruyeHero from '../components/construye-con-lua/ConstruyeHero.astro';
-import ConstruyeHowItWorks from '../components/construye-con-lua/ConstruyeHowItWorks.astro';
-import ConstruyeDualLine from '../components/construye-con-lua/ConstruyeDualLine.astro';
-import ConstruyeExperiences from '../components/construye-con-lua/ConstruyeExperiences.astro';
-import ConstruyeInstitutionalValue from '../components/construye-con-lua/ConstruyeInstitutionalValue.astro';
-import ConstruyeLicensingFAQ from '../components/construye-con-lua/ConstruyeLicensingFAQ.astro';
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
 
-const pageTitle = "Lúa Construye · Bloques Pedagógicos STEAM (0 a 6 años) | Earlify Health";
-const pageDescription = "Sistema de bloques manipulativos STEAM sin pantallas para primera infancia: estimulación sensorial, encaje 2:1 certificado bajo norma europea EN 71-1 y mediación adulta.";
+const pageTitle = "Construye con Lúa · 11 sets de construcción impresos en 3D con NFC";
+const pageDescription = "Once sets de construcción impresos en 3D más kit Lúa y probeta P1: el niño monta un mundo y provoca fenómenos físicos, Lúa reacciona por NFC y la tableta del adulto pone la voz.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -20,92 +19,269 @@ const jsonLd = {
     {
       "@type": "Product",
       "@id": "https://FrankBetances.github.io/proyectos/construye-con-lua#product",
-      "name": "Lúa Construye · Bloques Pedagógicos STEAM y Juego Manipulativo (0-6 años)",
+      "name": "Construye con Lúa · 11 sets de construcción impresos en 3D",
       "description": pageDescription,
       "brand": {
         "@type": "Organization",
         "name": "Earlify Health S.L."
       },
-      "category": "Educational & Pediatric STEAM System",
       "manufacturer": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
-        "jobTitle": "ORL & Especialista en Salud Digital",
         "url": "https://FrankBetances.github.io/proyectos/cv"
-      },
-      "sponsor": [
-        {
-          "@type": "Organization",
-          "name": "Consorcio de la Zona Franca de Vigo"
-        },
-        {
-          "@type": "Organization",
-          "name": "Incubadora de Alta Tecnología startTIC"
-        }
-      ],
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Escuelas Infantiles (0-3 y 3-6 años), Logopedas, Terapeutas Ocupacionales, Audiólogos Pediátricos y Familias"
       }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://FrankBetances.github.io/proyectos/construye-con-lua#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Cuál es el axioma fundamental de Lúa Construye?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La app decide. Lúa reacciona. Los bloques los mueve el niño. El adulto media siempre. El principio pedagógico rector es: «El fenómeno manda y el lenguaje lo nombra»."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Por qué Lúa no tiene altavoz ni micrófono en su cabeza física?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Por prescripción médica del Dr. Frank Alberto Betances Reinoso: los altavoces de juguete provocan distorsión que perjudica a menores con implantes o audífonos, y prescindir de micrófono blinda por hardware el Muro Regulatorio Zero-PHI. La voz pertenece exclusivamente a la persona adulta."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo conviven las Escalas G (0-3 años) y E (3-6 años) sin adaptadores?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mediante una proporción geométrica 2:1 nativa con paso paramétrico 2P (Escala G, piezas > 31,75 mm y paredes >= 3,2 mm bajo norma EN 71-1) y paso P (Escala E), permitiendo encaje directo sin adaptadores."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo funciona la visión artificial sin conexión a internet ni riesgo para la privacidad?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La cámara de la tableta opera como sensor ciego en memoria RAM local mediante algoritmos deterministas (ARCore/MediaPipe). Ninguna imagen o dato biométrico se almacena ni se transmite a servidores."
-          }
-        }
-      ]
     }
   ]
 };
 ---
 
-<Layout 
+<Layout
   title={pageTitle}
   description={pageDescription}
-  image="/assets/lua-mascota-valeria.png"
-  keywords="Lúa Construye, Bloques STEAM, Juego Manipulativo Infantil, Educación Sin Pantallas, Atención Temprana, Estimulación Sensorial, Descubre con Lúa, Valeria+, Earlify Health, Dr. Frank Betances, startTIC, Zona Franca de Vigo, EN 71-1"
+  image="https://FrankBetances.github.io/proyectos/assets/lua-prototipo-bloques.jpg"
+  keywords="Construye con Lúa, Lúa Construye, sets construcción 3D, bloques manipulativos, NFC NTAG213, juego sin pantallas, Valeria+, Lúa, Earlify Health, startTIC"
   jsonLd={jsonLd}
 >
   <Header activeTab="construye-con-lua" />
 
-  <main id="main-content">
-    <ConstruyeHero />
-    <ConstruyeHowItWorks />
-    <ConstruyeDualLine />
-    <ConstruyeExperiences />
-    <ConstruyeInstitutionalValue />
-    <ConstruyeLicensingFAQ />
+  <main id="main-content" class="cl-page cl-theme-construye">
+    <!-- PANTALLA 1: HERO -->
+    <section class="cl-screen cl-hero" aria-labelledby="construye-title">
+      <div class="container cl-hero-grid">
+        <div>
+          <div class="cl-brand-row">
+            <img
+              src={`${baseUrl}/assets/valeria_lua.png`}
+              alt="Lúa en Construye con Lúa"
+              class="cl-brand-logo-dark"
+              decoding="async"
+            />
+            <GaliciaOriginBadge label="Diseñado en Galicia" detail="startTIC · Zona Franca de Vigo" variant="inline" />
+          </div>
+
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>11 sets + kit impresos en 3D · Juego manipulativo</span>
+          </div>
+
+          <h1 id="construye-title" class="cl-title">
+            Primero lo monta con las manos; <span class="cl-title-accent">después llega la palabra</span>
+          </h1>
+
+          <p class="cl-lead">
+            Sets de construcción impresos en 3D donde el niño arma un pequeño mundo, provoca un fenómeno con las manos o la boca y <strong>Lúa</strong> reacciona.
+            La tableta del adulto aporta la voz, la palabra y la realidad aumentada.
+          </p>
+
+          <p class="cl-axiom">
+            El niño construye y mueve. La app decide. Lúa reacciona. El adulto media siempre.
+          </p>
+
+          <div class="cl-actions">
+            <button type="button" data-open-contact class="cl-btn-primary">Solicitar paquete piloto o colaboración</button>
+            <a href="#solucion-construye" class="cl-btn-secondary">Ver los 11 sets y encaje</a>
+          </div>
+
+          <div class="cl-meta-pills">
+            <span class="cl-pill cl-pill-warn">Diseñado en fichero · Pendiente de impresión</span>
+            <span class="cl-pill">Ficha NFC en cada set</span>
+            <span class="cl-pill">Sin tornillos ni pegamento</span>
+          </div>
+        </div>
+
+        <div class="cl-hero-visual">
+          <div class="cl-media-frame">
+            <img
+              src={`${baseUrl}/assets/lua-prototipo-bloques.jpg`}
+              alt="Lúa con bloques de construcción iluminados sobre la mesa"
+              class="cl-media-img"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <span class="cl-media-caption">Lúa se desplaza en su bandeja <code>K-PATIN-G</code> por los caminos y vías que construye el niño</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: EL PROBLEMA -->
+    <section class="cl-screen" aria-labelledby="construye-problem">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>El problema</span>
+          </div>
+          <h2 id="construye-problem" class="cl-h2">Aprender palabras tocando un cristal se queda corto</h2>
+          <p class="cl-sub">
+            En la primera infancia, el lenguaje arraiga cuando nombra algo que acaba de ocurrir en la mesa, delante de las manos del niño.
+          </p>
+        </div>
+
+        <div class="cl-grid-3">
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">01 · Abstracción temprana</span>
+            <h3>Vocabulario suelto sin fenómeno físico</h3>
+            <p>
+              Repetir palabras sobre dibujos planos pierde fuerza frente a empujar una rampa, equilibrar un puente o soplar una máquina y ponerle nombre al instante.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">02 · Juguetes cerrados</span>
+            <h3>Robots que se mueven solos y desplazan al niño</h3>
+            <p>
+              Si el juguete rueda y habla por sí solo, el niño pasa a ser espectador. Aquí el protagonista siempre empuja, encaja y provoca el cambio.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">03 · Sistemas incompatibles</span>
+            <h3>Piezas con tornillos, pegamento o enganches distintos</h3>
+            <p>
+              Mantener material de aula y gabinete requiere piezas modulares que encajen todas igual, sin herrajes sueltos y fáciles de reproducir.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: NUESTRA SOLUCIÓN -->
+    <section id="solucion-construye" class="cl-screen" aria-labelledby="construye-solution">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Nuestra solución</span>
+          </div>
+          <h2 id="construye-solution" class="cl-h2">Un solo enganche, módulo de 32 mm y 11 sets con ficha NFC</h2>
+          <p class="cl-sub">
+            Cada set incluye sus STL listos para cama, manuales paso a paso y su ficha NFC (<code>K-NFC-S&lt;n&gt;</code>) para que el cubo de Lúa reconozca en qué mundo está.
+          </p>
+        </div>
+
+        <div class="cl-grid-3">
+          <article class="cl-card">
+            <span class="cl-card-kicker">Enganche único</span>
+            <h3>Espiga Ø19,2 mm y clip <code>K-CON-G</code></h3>
+            <p>
+              Un único enganche compartido con Lúa: una pata de Lúa entra en cualquier enchufe de los sets y al revés. Baldosas de 192 × 192 × 32 mm que encajan en cualquier giro.
+            </p>
+          </article>
+
+          <article class="cl-card">
+            <span class="cl-card-kicker">Bandeja y ficha NFC</span>
+            <h3>Lúa reconoce cada set al instante</h3>
+            <p>
+              Lúa corre en su bandeja <code>K-PATIN-G</code> por calles y vías. El disco con pegatina NTAG213 (<code>LUA-S&lt;n&gt;</code>) va bajo el lector del cubo para proponer el puzle de ese set.
+            </p>
+          </article>
+
+          <article class="cl-card">
+            <span class="cl-card-kicker">Impresión limpia + Probeta P1</span>
+            <h3>Sin tornillos, pegamento ni soportes dibujados</h3>
+            <p>
+              Antes de imprimir un lote completo, la <strong>probeta P1</strong> (dos bloques y un conector) valida tolerancias y enganche en la impresora real.
+            </p>
+          </article>
+        </div>
+
+        <details class="cl-details">
+          <summary>Ver los 11 sets + kit S0 y la probeta P1 incluidos en el paquete</summary>
+          <div class="cl-details-body">
+            <div class="cl-chip-list">
+              <span class="cl-chip">P1 · Probeta de enganche (2 bloques + conector)</span>
+              <span class="cl-chip">S0 · Kit Lúa</span>
+              <span class="cl-chip">S1 · El Camino de Lúa</span>
+              <span class="cl-chip">S2 · La Estación de Sonido</span>
+              <span class="cl-chip">S3 · El Laboratorio de Rampas</span>
+              <span class="cl-chip">S4 · La Máquina de Soplo</span>
+              <span class="cl-chip">S5 · El Puente de Equilibrio</span>
+              <span class="cl-chip">S6 · El Jardín</span>
+              <span class="cl-chip">S8 · La Comisaría</span>
+              <span class="cl-chip">S9 · El Parque de Bomberos</span>
+              <span class="cl-chip">S10 · El Hospital</span>
+              <span class="cl-chip">S11 · Los Trenes</span>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: SEGURIDAD Y ESTADO REAL -->
+    <section class="cl-screen" aria-labelledby="construye-status">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Seguridad y estado real</span>
+          </div>
+          <h2 id="construye-status" class="cl-h2">Diseñado y medido en fichero; aún por imprimir y ensayar</h2>
+        </div>
+
+        <div class="cl-grid-4">
+          <div class="cl-stat">
+            <div class="cl-stat-val">11 sets + S0</div>
+            <div class="cl-stat-label">Paquete de impresión con STL, lista de copias y gramos, manual tipo IKEA y resumen por set.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">≥ 3,2 mm</div>
+            <div class="cl-stat-label">Paredes reforzadas y piezas grandes medidas contra el cilindro de piezas pequeñas de EN 71-1 en gates.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">Set 4 · Higiene</div>
+            <div class="cl-stat-label">Las embocaduras de soplo nunca se imprimen en PLA y son individuales (una por niño).</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">100% offline</div>
+            <div class="cl-stat-label">Todo el apoyo digital con Valeria+ y Lúa funciona sin red y sin recoger datos del niño.</div>
+          </div>
+        </div>
+
+        <div class="cl-status-box">
+          <span class="cl-status-tag">Honestidad de estado</span>
+          <p>
+            <strong>Ninguna pieza se ha impreso todavía:</strong> que encaje, gire o aguante solo lo confirmará la pieza física (empezando por la probeta P1).
+            Asimismo, <strong>no se declara ninguna conformidad normativa</strong> (EN 71, EN 62115, radio o baterías) sin ensayo de laboratorio acreditado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 5: PROBAR O COLABORAR -->
+    <section class="cl-screen" aria-labelledby="construye-cta">
+      <div class="container">
+        <div class="cl-cta-panel">
+          <div>
+            <div class="cl-eyebrow">
+              <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+              <span>Impresión piloto y centros</span>
+            </div>
+            <h2 id="construye-cta" class="cl-h2">Imprime la probeta P1 o colabora en el primer lote físico</h2>
+            <p class="cl-sub">
+              Si tienes un taller de impresión 3D, un laboratorio de ensayos o un centro educativo interesado en probar Construye con Lúa junto a Valeria+, escríbeme.
+            </p>
+            <div class="cl-actions" style="margin-top: 1.25rem; margin-bottom: 0;">
+              <button type="button" data-open-contact class="cl-btn-primary">Contactar con Frank</button>
+              <a href={`${baseUrl}/lua`} class="cl-btn-secondary">Ver el muñeco Lúa V5</a>
+            </div>
+          </div>
+
+          <div class="cl-contact-box">
+            <span class="cl-card-kicker">Contacto directo</span>
+            <strong>Dr. Frank Alberto Betances Reinoso</strong>
+            <a href="mailto:frank.alberto.betances.reinoso@gmail.com?subject=Construye%20con%20Lua%20-%20Piloto" class="cl-contact-email">
+              frank.alberto.betances.reinoso@gmail.com
+            </a>
+            <div class="cl-eco-links" style="margin-top: 0.4rem;">
+              <a href={`${baseUrl}/`} class="cl-eco-link">Valeria+</a>
+              <a href={`${baseUrl}/descubre-con-lua`} class="cl-eco-link">Descubre con Lúa</a>
+              <a href={`${baseUrl}/earlify`} class="cl-eco-link">Earlify Health</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />

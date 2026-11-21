@@ -3,15 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
+import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import '../styles/compact-landing.css';
 
-import DescubreHero from '../components/descubre-con-lua/DescubreHero.astro';
-import DescubreEcosystem from '../components/descubre-con-lua/DescubreEcosystem.astro';
-import DescubrePedagogyVoice from '../components/descubre-con-lua/DescubrePedagogyVoice.astro';
-import DescubrePrivacyGates from '../components/descubre-con-lua/DescubrePrivacyGates.astro';
-import DescubreLicensingFAQ from '../components/descubre-con-lua/DescubreLicensingFAQ.astro';
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
 
-const pageTitle = "Descubre con Lúa · Edición Escolar | App Educativa 0-3 Años";
-const pageDescription = "Aplicación Android educativa 100% sin conexión para escuelas infantiles y familias (0-3 años). Desarrollada por el Dr. Frank Betances en startTIC.";
+const pageTitle = "Descubre con Lúa · Edición Vigo | App educativa 0–6 años sin conexión";
+const pageDescription = "Aplicación Android educativa sin conexión en gallego y castellano para escuelas infantiles, colegios (0–6 años) y familias de Vigo. 5 cursos, 4.000 palabras inglesas, 39.834 locuciones y cero permisos de red.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -19,94 +19,305 @@ const jsonLd = {
     {
       "@type": "SoftwareApplication",
       "@id": "https://FrankBetances.github.io/proyectos/descubre-con-lua#software",
-      "name": "Descubre con Lúa · Edición Escolar",
-      "operatingSystem": "Android 7.0+ (minSdk 24, targetSdk 36)",
+      "name": "Descubre con Lúa · Edición Vigo",
+      "operatingSystem": "Android (minSdk 24, targetSdk 36)",
       "applicationCategory": "EducationalApplication",
       "description": pageDescription,
-      "inLanguage": ["es-ES", "gl-ES"],
+      "inLanguage": ["gl-ES", "es-ES"],
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "EUR",
-        "category": "Gratis para familias"
+        "category": "Gratis para familias; licencia por escrito para instituciones"
       },
       "author": {
         "@type": "Person",
         "name": "Dr. Frank Alberto Betances Reinoso",
-        "jobTitle": "ORL Infantil & Especialista en Salud Digital",
         "url": "https://FrankBetances.github.io/proyectos/cv"
-      },
-      "sponsor": [
-        {
-          "@type": "Organization",
-          "name": "Consorcio de la Zona Franca de Vigo"
-        },
-        {
-          "@type": "Organization",
-          "name": "Incubadora de Alta Tecnología startTIC"
-        }
-      ],
-      "featureList": [
-        "10 unidades de aula (una por mes de curso escolar)",
-        "11 cápsulas formativas (5 de Academy + 6 de formación docente)",
-        "1.020 locuciones neuronales grabadas offline (Celtia / Proxecto Nós, Sharvard, LJSpeech)",
-        "80 láminas vectoriales dibujadas como datos (50 vocabulario + 30 escenas)",
-        "Pulso rítmico visual para menores con audífono o implante coclear",
-        "Premios y gamificación ética dirigida exclusivamente a la persona adulta",
-        "Cero permisos de red y total protección de la privacidad infantil",
-        "El menor de 0 a 3 años no interactúa con la pantalla",
-        "Pipeline de calidad estricto con 16 gates automáticos de compilación"
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://FrankBetances.github.io/proyectos/descubre-con-lua#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Por qué el menor no debe mirar ni tocar la pantalla a esta edad (0-3 años)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Las directrices de la OMS y de la Asociación Española de Pediatría desaconsejan la exposición a pantallas en menores de 2 años. La app es un guión instrumental para la persona adulta; el niño interactúa cara a cara con la persona que le habla."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo funciona el inglés en la aplicación?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "El inglés es contenido que se escucha antes de hablar. El adulto pulsa la pastilla con voz neuronal nativa, escucha la modulación correcta y luego la pronuncia con seguridad delante del menor."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué diferencia hay entre Descubre con Lúa y Valeria+ o VIA+?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Descubre con Lúa tiene finalidad exclusivamente educativa y comunitaria (0-3 años). No es un producto sanitario. Valeria+ es apoyo familiar en casa para el desarrollo del lenguaje y VIA+ es un SaMD Clase IIa de apoyo al diagnóstico médico en consulta."
-          }
-        }
-      ]
+      }
     }
   ]
 };
 ---
 
-<Layout 
+<Layout
   title={pageTitle}
   description={pageDescription}
-  image="/assets/descubre-con-lua/descubre-bienvenida.jpg"
-  keywords="Descubre con Lúa, Escuelas Infantiles, startTIC, Zona Franca de Vigo, Educación Infantil 0-3 años, Estimulación del Lenguaje, Dr. Frank Betances, Aprendizaje sin conexión, Cero pantallas"
+  image="https://FrankBetances.github.io/proyectos/assets/descubre-con-lua/descubre-bienvenida.jpg"
+  keywords="Descubre con Lúa, Edición Vigo, educación infantil 0-6 años, escuelas infantiles Vigo, bilingüe gallego castellano, inglés TPR, pulso visual, STEAM infantil, startTIC, Zona Franca de Vigo"
   jsonLd={jsonLd}
 >
   <Header activeTab="descubre-con-lua" />
 
-  <main id="main-content">
-    <DescubreHero />
-    <DescubreEcosystem />
-    <DescubrePedagogyVoice />
-    <DescubrePrivacyGates />
-    <DescubreLicensingFAQ />
+  <main id="main-content" class="cl-page cl-theme-descubre">
+    <!-- PANTALLA 1: HERO -->
+    <section class="cl-screen cl-hero" aria-labelledby="descubre-title">
+      <div class="container cl-hero-grid">
+        <div>
+          <div class="cl-brand-row">
+            <img
+              src={`${baseUrl}/assets/descubre-con-lua/dr-betances-emblem.jpg`}
+              alt="Emblema del Dr. Frank Alberto Betances Reinoso"
+              class="cl-brand-logo-dark"
+              decoding="async"
+            />
+            <div class="cl-partner-strip">
+              <span class="cl-partner-pill">
+                <img
+                  src={`${baseUrl}/assets/descubre-con-lua/startic-logo.png`}
+                  alt="Incubadora startTIC"
+                  class="cl-partner-img"
+                  decoding="async"
+                />
+              </span>
+              <span class="cl-partner-pill">
+                <img
+                  src={`${baseUrl}/assets/descubre-con-lua/zona-franca-vigo-logo.png`}
+                  alt="Consorcio da Zona Franca de Vigo"
+                  class="cl-partner-img"
+                  decoding="async"
+                />
+              </span>
+            </div>
+          </div>
+
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Edición Vigo · 0–6 años · Gallego y castellano · Offline</span>
+          </div>
+
+          <h1 id="descubre-title" class="cl-title">
+            Escuela infantil y casa en la misma lección, <span class="cl-title-accent">sin pantallas para el niño</span>
+          </h1>
+
+          <p class="cl-lead">
+            Aplicación Android educativa, <strong>sin conexión</strong>, para primer ciclo (0–3 años) y segundo ciclo (3–6 años).
+            Una sola pregunta al abrir —<strong>¿Dónde la vas a usar?</strong>— conecta el <strong>Portal Docentes</strong> y el <strong>Portal Familias</strong> cada semana.
+          </p>
+
+          <p class="cl-axiom">
+            Finalidad exclusivamente educativa: la criatura no usa la pantalla; la app es para la persona adulta que acompaña.
+          </p>
+
+          <div class="cl-actions">
+            <button type="button" data-open-contact class="cl-btn-primary">Pedir convenio o piloto escolar</button>
+            <a href="#solucion-descubre" class="cl-btn-secondary">Ver qué trae la app</a>
+          </div>
+
+          <div class="cl-meta-pills">
+            <span class="cl-pill">Gratis para familias</span>
+            <span class="cl-pill">0 permisos de red</span>
+            <span class="cl-pill">Pulso visual (audífono/implante)</span>
+            <GaliciaOriginBadge label="startTIC · Vigo" variant="inline" />
+          </div>
+        </div>
+
+        <div class="cl-hero-visual">
+          <div class="cl-phone-pair">
+            <div class="cl-phone-frame">
+              <img
+                src={`${baseUrl}/assets/descubre-con-lua/descubre-bienvenida.jpg`}
+                alt="Pantalla inicial de Descubre con Lúa con selección En casa o En la escuela"
+                class="cl-phone-img"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </div>
+            <div class="cl-phone-frame">
+              <img
+                src={`${baseUrl}/assets/descubre-con-lua/descubre-na-escola.jpg`}
+                alt="Portal docentes Na escola en Descubre con Lúa"
+                class="cl-phone-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+          <span class="cl-media-caption">Mismo contenido en gallego y castellano · Portal Familias y Portal Docentes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: EL PROBLEMA -->
+    <section class="cl-screen" aria-labelledby="descubre-problem">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>El problema</span>
+          </div>
+          <h2 id="descubre-problem" class="cl-h2">Aula y hogar van por libre y el inglés frena a muchos adultos</h2>
+          <p class="cl-sub">
+            Acompañar el lenguaje de 0 a 6 años exige continuidad entre la escuela y la familia, sin exigir pronunciación nativa ni pantallas infantiles.
+          </p>
+        </div>
+
+        <div class="cl-grid-3">
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">01 · Desconexión aula–casa</span>
+            <h3>Las familias no saben qué se trabaja hoy</h3>
+            <p>
+              Sin un calendario compartido, lo que la docente introduce en la asamblea o el taller STEAM rara vez tiene continuidad natural en casa esa misma semana.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">02 · Barrera con el inglés</span>
+            <h3>Nadie debería improvisar pronunciación de oído</h3>
+            <p>
+              Introducir inglés temprano cuesta cuando docentes y familias dudan de cómo se dice una orden o frase. Hace falta oír la grabación antes de decirla con calma.
+            </p>
+          </article>
+
+          <article class="cl-card cl-card-problem">
+            <span class="cl-card-kicker">03 · Accesibilidad auditiva</span>
+            <h3>Metrónomos sonoros que compiten con la voz</h3>
+            <p>
+              En aulas con criaturas que llevan audífono o implante coclear, un metrónomo que suena tapa justo la voz que necesitan seguir.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: NUESTRA SOLUCIÓN -->
+    <section id="solucion-descubre" class="cl-screen" aria-labelledby="descubre-solution">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Nuestra solución</span>
+          </div>
+          <h2 id="descubre-solution" class="cl-h2">Un trayecto completo de 0 a 6 años en dos portales sincronizados</h2>
+          <p class="cl-sub">
+            Los dos portales abren por la lección de la semana y comparten el Calendario Escola · Fogar de cinco cursos (0–2 a 5–6 años).
+          </p>
+        </div>
+
+        <div class="cl-grid-3">
+          <article class="cl-card">
+            <span class="cl-card-kicker">En la escuela · Portal Docentes</span>
+            <h3>Asamblea, sesión de 45 min y Planificador</h3>
+            <p>
+              Pestañas <em>Hoy · Calendario · Recursos · Yo</em>. Incluye 20 asambleas (1.º ciclo), 3 de 2.º ciclo, sesión semanal de 45 min, 10 canciones con <strong>pulso visual</strong> y formación docente (El modelo).
+            </p>
+          </article>
+
+          <article class="cl-card">
+            <span class="cl-card-kicker">En casa · Portal Familias</span>
+            <h3>Juego de 3 minutos, cuentos y Ponte al día</h3>
+            <p>
+              Pestañas <em>Hoy · Calendario · Explorar · Guías</em>. Comparte las mismas palabras del día que la escuela, <strong>Ponte al día</strong> para nuevas incorporaciones, micro-rutinas y guías de 0 meses a 6 años.
+            </p>
+          </article>
+
+          <article class="cl-card">
+            <span class="cl-card-kicker">Inglés que se escucha + STEAM</span>
+            <h3>4.000 palabras sin repetir y ciencia con las manos</h3>
+            <p>
+              5 palabras inglesas nuevas al día (L–J) y reto el viernes, con voz grabada y gesto (TPR en 2.º ciclo). Más 5 sesiones STEAM y 50 experimentos del mes en versión aula y casa.
+            </p>
+          </article>
+        </div>
+
+        <details class="cl-details">
+          <summary>Ver el inventario completo de contenido y voces de Descubre con Lúa</summary>
+          <div class="cl-details-body">
+            <div class="cl-chip-list">
+              <span class="cl-chip">50 meses de calendario (5 cursos × 10) y 48 unidades de gramática (A1–C1 adaptadas)</span>
+              <span class="cl-chip">4.000 palabras inglesas (800/curso), 63 colocaciones y 44 fonemas</span>
+              <span class="cl-chip">100 cuentos dialogados (350 láminas pixel art) + 40 microcuentos + 200 cuentos semanales + 103 adicionales</span>
+              <span class="cl-chip">Ponte al día: 250 palabras previas revisadas a mano con gesto y voz</span>
+              <span class="cl-chip">12 cápsulas (6 Academy familias + 6 formación docente) y El modelo (parentese, espera, expansión, recast)</span>
+              <span class="cl-chip">39.834 locuciones offline: 18.118 en inglés (LJSpeech), 10.858 en gallego (Celtia/Nós) y 10.858 en castellano (Sharvard)</span>
+              <span class="cl-chip">Estimulación del lenguaje y el pensamiento: 40 piezas (2–6 años) + 10 proyectos «mira y nota» (0–2)</span>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: PRIVACIDAD Y VERIFICACIÓN -->
+    <section class="cl-screen" aria-labelledby="descubre-privacy">
+      <div class="container">
+        <div class="cl-head">
+          <div class="cl-eyebrow">
+            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+            <span>Privacidad verificada en el APK</span>
+          </div>
+          <h2 id="descubre-privacy" class="cl-h2">Cero red, cero dependencias externas y 24 gates automáticos</h2>
+        </div>
+
+        <div class="cl-grid-4">
+          <div class="cl-stat">
+            <div class="cl-stat-val">39.834</div>
+            <div class="cl-stat-label">Locuciones generadas al compilar; los modelos de voz nunca corren en el móvil.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">0 red</div>
+            <div class="cl-stat-label">Sin permiso de internet verificado con <code>aapt2</code> sobre el APK compilado (Android <code>minSdk 24</code>, <code>targetSdk 36</code>).</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">24 / 24</div>
+            <div class="cl-stat-label">Gates automáticos de contenido, audio, tempo medido, privacidad y compilación release.</div>
+          </div>
+          <div class="cl-stat">
+            <div class="cl-stat-val">Aula 0 datos</div>
+            <div class="cl-stat-label">En el aula no se registra a ningún niño; en casa todo vive en el teléfono con fechas sin hora.</div>
+          </div>
+        </div>
+
+        <div class="cl-status-box">
+          <span class="cl-status-tag">Procedencia y licencia</span>
+          <p>
+            El proyecto nace en <strong>startTIC</strong> (Consorcio da Zona Franca de Vigo) pensado para las escuelas infantiles municipales del Concello de Vigo (marcas por procedencia y destino, no como respaldo pedido a terceros).
+            <strong>Gratis para las familias para siempre</strong>; para escuelas, ayuntamientos, gabinetes o empresas requiere licencia previa por escrito (puede ser gratuita vía convenio o piloto).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 5: PROBAR O SOLICITAR CONVENIO -->
+    <section class="cl-screen" aria-labelledby="descubre-cta">
+      <div class="container">
+        <div class="cl-cta-panel">
+          <div>
+            <div class="cl-eyebrow">
+              <span class="cl-eyebrow-dot" aria-hidden="true"></span>
+              <span>Acceso para familias y centros</span>
+            </div>
+            <h2 id="descubre-cta" class="cl-h2">Prueba Descubre con Lúa o solicita convenio para tu escuela</h2>
+            <p class="cl-sub">
+              Uso individual y familiar gratuito para siempre. Si representas una escuela infantil, colegio o ayuntamiento, acordamos la licencia o piloto caso por caso.
+            </p>
+            <div class="cl-actions" style="margin-top: 1.25rem; margin-bottom: 0;">
+              <button type="button" data-open-contact class="cl-btn-primary">Solicitar convenio o acceso</button>
+              <a
+                href="https://frankbetances.github.io/Descubre-con-lua/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cl-btn-secondary"
+              >
+                Sitio del proyecto y privacidad
+              </a>
+            </div>
+          </div>
+
+          <div class="cl-contact-box">
+            <span class="cl-card-kicker">Contacto y licencias</span>
+            <strong>Dr. Frank Alberto Betances Reinoso</strong>
+            <a href="mailto:frank.alberto.betances.reinoso@gmail.com?subject=Descubre%20con%20Lua%20-%20Licencia%20o%20Piloto" class="cl-contact-email">
+              frank.alberto.betances.reinoso@gmail.com
+            </a>
+            <div class="cl-eco-links" style="margin-top: 0.4rem;">
+              <a href="https://frankbetances.github.io/Descubre-con-lua/privacy.html" target="_blank" rel="noopener noreferrer" class="cl-eco-link">Privacidad</a>
+              <a href={`${baseUrl}/`} class="cl-eco-link">Valeria+</a>
+              <a href={`${baseUrl}/earlify`} class="cl-eco-link">Earlify Health</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />
