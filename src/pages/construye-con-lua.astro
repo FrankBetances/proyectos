@@ -4,14 +4,15 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import BfhcBadge from '../components/BfhcBadge.astro';
 import '../styles/compact-landing.css';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL.slice(0, -1)
   : import.meta.env.BASE_URL;
 
-const pageTitle = "Construye con Lúa · 11 sets de construcción impresos en 3D con NFC";
-const pageDescription = "Once sets de construcción impresos en 3D más kit Lúa y probeta P1: el niño monta un mundo y provoca fenómenos físicos, Lúa reacciona por NFC y la tableta del adulto pone la voz.";
+const pageTitle = "Construye con Lúa · 11 sets de construcción para aprender con las manos";
+const pageDescription = "Once sets de construcción más el kit Lúa: el niño monta un pequeño mundo, provoca un fenómeno con las manos o la boca, Lúa reacciona y la tableta del adulto pone la voz.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -19,7 +20,7 @@ const jsonLd = {
     {
       "@type": "Product",
       "@id": "https://FrankBetances.github.io/proyectos/construye-con-lua#product",
-      "name": "Construye con Lúa · 11 sets de construcción impresos en 3D",
+      "name": "Construye con Lúa · 11 sets de construcción manipulativa",
       "description": pageDescription,
       "brand": {
         "@type": "Organization",
@@ -39,7 +40,7 @@ const jsonLd = {
   title={pageTitle}
   description={pageDescription}
   image="https://FrankBetances.github.io/proyectos/assets/lua-prototipo-bloques.jpg"
-  keywords="Construye con Lúa, Lúa Construye, sets construcción 3D, bloques manipulativos, NFC NTAG213, juego sin pantallas, Valeria+, Lúa, Earlify Health, startTIC"
+  keywords="Construye con Lúa, Lúa Construye, sets construcción infantil, bloques manipulativos, juego sin pantallas, Valeria+, Lúa, Earlify Health, Business Factory Health&Care"
   jsonLd={jsonLd}
 >
   <Header activeTab="construye-con-lua" />
@@ -56,12 +57,13 @@ const jsonLd = {
               class="cl-brand-logo-dark"
               decoding="async"
             />
-            <GaliciaOriginBadge label="Diseñado en Galicia" detail="startTIC · Zona Franca de Vigo" variant="inline" />
+            <GaliciaOriginBadge label="Diseñado en Galicia" variant="inline" />
+            <BfhcBadge />
           </div>
 
           <div class="cl-eyebrow">
             <span class="cl-eyebrow-dot" aria-hidden="true"></span>
-            <span>11 sets + kit impresos en 3D · Juego manipulativo</span>
+            <span>11 sets + kit Lúa · Juego manipulativo</span>
           </div>
 
           <h1 id="construye-title" class="cl-title">
@@ -69,7 +71,7 @@ const jsonLd = {
           </h1>
 
           <p class="cl-lead">
-            Sets de construcción impresos en 3D donde el niño arma un pequeño mundo, provoca un fenómeno con las manos o la boca y <strong>Lúa</strong> reacciona.
+            Sets de construcción donde el niño arma un pequeño mundo, provoca un fenómeno con las manos o la boca y <strong>Lúa</strong> reacciona.
             La tableta del adulto aporta la voz, la palabra y la realidad aumentada.
           </p>
 
@@ -78,13 +80,13 @@ const jsonLd = {
           </p>
 
           <div class="cl-actions">
-            <button type="button" data-open-contact class="cl-btn-primary">Solicitar paquete piloto o colaboración</button>
-            <a href="#solucion-construye" class="cl-btn-secondary">Ver los 11 sets y encaje</a>
+            <button type="button" data-open-contact class="cl-btn-primary">Solicitar piloto o colaboración</button>
+            <a href="#solucion-construye" class="cl-btn-secondary">Ver los 11 sets</a>
           </div>
 
           <div class="cl-meta-pills">
-            <span class="cl-pill cl-pill-warn">Diseñado en fichero · Pendiente de impresión</span>
-            <span class="cl-pill">Ficha NFC en cada set</span>
+            <span class="cl-pill">11 sets + kit Lúa</span>
+            <span class="cl-pill">Sin pantallas para el menor</span>
             <span class="cl-pill">Sin tornillos ni pegamento</span>
           </div>
         </div>
@@ -99,7 +101,7 @@ const jsonLd = {
               decoding="async"
             />
           </div>
-          <span class="cl-media-caption">Lúa se desplaza en su bandeja <code>K-PATIN-G</code> por los caminos y vías que construye el niño</span>
+          <span class="cl-media-caption">El niño construye caminos, rampas y escenarios por los que mueve a Lúa con sus propias manos</span>
         </div>
       </div>
     </section>
@@ -154,43 +156,16 @@ const jsonLd = {
             <span class="cl-eyebrow-dot" aria-hidden="true"></span>
             <span>Nuestra solución</span>
           </div>
-          <h2 id="construye-solution" class="cl-h2">Un solo enganche, módulo de 32 mm y 11 sets con ficha NFC</h2>
+          <h2 id="construye-solution" class="cl-h2">Once mundos de construcción que se enlazan con Lúa y Valeria+</h2>
           <p class="cl-sub">
-            Cada set incluye sus STL listos para cama, manuales paso a paso y su ficha NFC (<code>K-NFC-S&lt;n&gt;</code>) para que el cubo de Lúa reconozca en qué mundo está.
+            Todas las piezas comparten el mismo encaje sin tornillos ni pegamento. Al colocar a Lúa en un escenario, reconoce en qué mundo está y propone su reto mientras el adulto guía la conversación desde la tableta.
           </p>
         </div>
 
-        <div class="cl-grid-3">
-          <article class="cl-card">
-            <span class="cl-card-kicker">Enganche único</span>
-            <h3>Espiga Ø19,2 mm y clip <code>K-CON-G</code></h3>
-            <p>
-              Un único enganche compartido con Lúa: una pata de Lúa entra en cualquier enchufe de los sets y al revés. Baldosas de 192 × 192 × 32 mm que encajan en cualquier giro.
-            </p>
-          </article>
-
-          <article class="cl-card">
-            <span class="cl-card-kicker">Bandeja y ficha NFC</span>
-            <h3>Lúa reconoce cada set al instante</h3>
-            <p>
-              Lúa corre en su bandeja <code>K-PATIN-G</code> por calles y vías. El disco con pegatina NTAG213 (<code>LUA-S&lt;n&gt;</code>) va bajo el lector del cubo para proponer el puzle de ese set.
-            </p>
-          </article>
-
-          <article class="cl-card">
-            <span class="cl-card-kicker">Impresión limpia + Probeta P1</span>
-            <h3>Sin tornillos, pegamento ni soportes dibujados</h3>
-            <p>
-              Antes de imprimir un lote completo, la <strong>probeta P1</strong> (dos bloques y un conector) valida tolerancias y enganche en la impresora real.
-            </p>
-          </article>
-        </div>
-
-        <details class="cl-details">
-          <summary>Ver los 11 sets + kit S0 y la probeta P1 incluidos en el paquete</summary>
+        <details class="cl-details" open>
+          <summary>Explorar los 11 sets + kit Lúa incluidos</summary>
           <div class="cl-details-body">
             <div class="cl-chip-list">
-              <span class="cl-chip">P1 · Probeta de enganche (2 bloques + conector)</span>
               <span class="cl-chip">S0 · Kit Lúa</span>
               <span class="cl-chip">S1 · El Camino de Lúa</span>
               <span class="cl-chip">S2 · La Estación de Sonido</span>
@@ -208,42 +183,34 @@ const jsonLd = {
       </div>
     </section>
 
-    <!-- PANTALLA 4: SEGURIDAD Y ESTADO REAL -->
+    <!-- PANTALLA 4: SEGURIDAD Y PRIVACIDAD -->
     <section class="cl-screen" aria-labelledby="construye-status">
       <div class="container">
         <div class="cl-head">
           <div class="cl-eyebrow">
             <span class="cl-eyebrow-dot" aria-hidden="true"></span>
-            <span>Seguridad y estado real</span>
+            <span>Seguridad y privacidad</span>
           </div>
-          <h2 id="construye-status" class="cl-h2">Diseñado y medido en fichero; aún por imprimir y ensayar</h2>
+          <h2 id="construye-status" class="cl-h2">Diseñado para jugar seguro en casa, aula y consulta</h2>
         </div>
 
         <div class="cl-grid-4">
           <div class="cl-stat">
             <div class="cl-stat-val">11 sets + S0</div>
-            <div class="cl-stat-label">Paquete de impresión con STL, lista de copias y gramos, manual tipo IKEA y resumen por set.</div>
+            <div class="cl-stat-label">Escenarios de física cotidiana y juego simbólico con manuales visuales paso a paso.</div>
           </div>
           <div class="cl-stat">
-            <div class="cl-stat-val">≥ 3,2 mm</div>
-            <div class="cl-stat-label">Paredes reforzadas y piezas grandes medidas contra el cilindro de piezas pequeñas de EN 71-1 en gates.</div>
+            <div class="cl-stat-val">Gran formato</div>
+            <div class="cl-stat-label">Piezas grandes y resistentes pensadas para manos pequeñas, sin tornillos ni pegamento.</div>
           </div>
           <div class="cl-stat">
             <div class="cl-stat-val">Set 4 · Higiene</div>
-            <div class="cl-stat-label">Las embocaduras de soplo nunca se imprimen en PLA y son individuales (una por niño).</div>
+            <div class="cl-stat-label">Las embocaduras de soplo son individuales (una por niño) y de material higiénico aparte.</div>
           </div>
           <div class="cl-stat">
             <div class="cl-stat-val">100% offline</div>
             <div class="cl-stat-label">Todo el apoyo digital con Valeria+ y Lúa funciona sin red y sin recoger datos del niño.</div>
           </div>
-        </div>
-
-        <div class="cl-status-box">
-          <span class="cl-status-tag">Honestidad de estado</span>
-          <p>
-            <strong>Ninguna pieza se ha impreso todavía:</strong> que encaje, gire o aguante solo lo confirmará la pieza física (empezando por la probeta P1).
-            Asimismo, <strong>no se declara ninguna conformidad normativa</strong> (EN 71, EN 62115, radio o baterías) sin ensayo de laboratorio acreditado.
-          </p>
         </div>
       </div>
     </section>
@@ -255,15 +222,15 @@ const jsonLd = {
           <div>
             <div class="cl-eyebrow">
               <span class="cl-eyebrow-dot" aria-hidden="true"></span>
-              <span>Impresión piloto y centros</span>
+              <span>Pilotos y centros</span>
             </div>
-            <h2 id="construye-cta" class="cl-h2">Imprime la probeta P1 o colabora en el primer lote físico</h2>
+            <h2 id="construye-cta" class="cl-h2">Lleva Construye con Lúa a tu centro o colabora en el piloto</h2>
             <p class="cl-sub">
-              Si tienes un taller de impresión 3D, un laboratorio de ensayos o un centro educativo interesado en probar Construye con Lúa junto a Valeria+, escríbeme.
+              Si diriges una escuela infantil, un gabinete de logopedia o buscas colaborar en la producción de los primeros kits junto a Valeria+ y Lúa, escríbeme.
             </p>
             <div class="cl-actions" style="margin-top: 1.25rem; margin-bottom: 0;">
               <button type="button" data-open-contact class="cl-btn-primary">Contactar con Frank</button>
-              <a href={`${baseUrl}/lua`} class="cl-btn-secondary">Ver el muñeco Lúa V5</a>
+              <a href={`${baseUrl}/lua`} class="cl-btn-secondary">Ver el muñeco Lúa</a>
             </div>
           </div>
 

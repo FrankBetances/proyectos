@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import BfhcBadge from '../components/BfhcBadge.astro';
 import '../styles/compact-landing.css';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
@@ -59,7 +60,8 @@ const viaJsonLd = {
               class="cl-brand-logo-dark"
               decoding="async"
             />
-            <GaliciaOriginBadge label="Diseñado en Galicia" detail="Earlify Health S.L." variant="inline" />
+            <GaliciaOriginBadge label="Diseñado en Galicia" variant="inline" />
+            <BfhcBadge />
           </div>
 
           <div class="cl-eyebrow">
@@ -238,15 +240,6 @@ const viaJsonLd = {
             <div class="cl-stat-val">13 / 13</div>
             <div class="cl-stat-label">Módulos, informe PDF por reglas y 7 variedades construidos; salida de audio comprobada en dispositivo.</div>
           </div>
-        </div>
-
-        <div class="cl-status-box">
-          <span class="cl-status-tag">Pendiente de completar</span>
-          <p>
-            No afirmamos lo que aún no está cerrado: falta probar el recorrido completo de los 13 módulos y el PDF en tableta real,
-            activar el <strong>cifrado de la base SQLite y la seudonimización</strong> (ahora depende del cifrado del propio dispositivo),
-            el registro de auditoría con borrado verificable, los bancos verbales propios de catalán e inglés y el expediente formal de gestión de riesgos (ISO 14971 / ISO 13485).
-          </p>
         </div>
       </div>
     </section>

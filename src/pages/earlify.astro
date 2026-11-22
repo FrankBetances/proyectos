@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import BfhcBadge from '../components/BfhcBadge.astro';
 import '../styles/compact-landing.css';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
@@ -38,7 +39,7 @@ const earlifyJsonLd = {
   title={pageTitle}
   description={pageDescription}
   image="https://FrankBetances.github.io/proyectos/assets/earlify-logo.png"
-  keywords="Earlify Health, VIA+, Valeria+, Descubre con Lúa, Lúa, Construye con Lúa, audición infantil, lenguaje infantil, startTIC, Zona Franca de Vigo, Dr. Frank Betances"
+  keywords="Earlify Health, VIA+, Valeria+, Descubre con Lúa, Lúa, Construye con Lúa, audición infantil, lenguaje infantil, Business Factory Health&Care, Galicia, Dr. Frank Betances"
   jsonLd={earlifyJsonLd}
 >
   <Header activeTab="earlify" />
@@ -55,7 +56,8 @@ const earlifyJsonLd = {
               class="cl-brand-logo"
               decoding="async"
             />
-            <GaliciaOriginBadge label="Diseñado en Galicia" detail="startTIC · Zona Franca de Vigo" variant="inline" />
+            <GaliciaOriginBadge label="Diseñado en Galicia" variant="inline" />
+            <BfhcBadge />
           </div>
 
           <div class="cl-eyebrow">
@@ -73,7 +75,7 @@ const earlifyJsonLd = {
           </p>
 
           <p class="cl-axiom">
-            Earlify ordena el criterio del profesional y acompaña a la familia. Nunca sustituye a ninguno de los dos.
+            Earlify ayuda a ordenar el criterio del profesional y acompaña a la familia. Nunca sustituye a ninguno de los dos.
           </p>
 
           <div class="cl-actions">
@@ -222,17 +224,18 @@ const earlifyJsonLd = {
             <div class="cl-stat-label">La familia, la docente o el facultativo operan la pantalla; el menor escucha, toca y conversa.</div>
           </div>
           <div class="cl-stat">
-            <div class="cl-stat-val">startTIC · Vigo</div>
-            <div class="cl-stat-label">Proyecto incubado en Zona Franca de Vigo / GRADIANT y reconocido con el Sello ITEMAS-ISCIII 2024.</div>
+            <BfhcBadge variant="card" />
+            <div class="cl-stat-label">
+              Impulsado en <a href="https://bfhealthcare.gal" target="_blank" rel="noopener noreferrer" style="color: var(--cl-accent-text);">Business Factory Health&amp;Care</a> y reconocido con el Sello ITEMAS-ISCIII 2024.
+            </div>
           </div>
         </div>
 
         <div class="cl-status-box">
-          <span class="cl-status-tag">Honestidad de estado</span>
+          <span class="cl-status-tag">Estado del ecosistema</span>
           <p>
-            <strong>Valeria+</strong> ya puede descargarse en Google Play y <strong>Descubre con Lúa</strong> cuenta con paquete Android completo de 0 a 6 años.
-            <strong>VIA+</strong> no tiene aún marcado CE y está en fase de validación técnica y cifrado local;
-            <strong>Lúa V5</strong> y <strong>Construye con Lúa</strong> están diseñados en repositorio y pendientes de impresión física y ensayo.
+            <strong>Valeria+</strong> ya puede descargarse en Google Play y <strong>Descubre con Lúa</strong> cuenta con paquete Android de 0 a 6 años.
+            <strong>VIA+</strong> se desarrolla hacia SaMD Clase IIa (sin marcado CE todavía), y <strong>Lúa</strong> junto a <strong>Construye con Lúa</strong> llevan la estimulación a la mesa de juego.
           </p>
         </div>
       </div>

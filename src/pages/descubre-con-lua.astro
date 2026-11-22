@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import BfhcBadge from '../components/BfhcBadge.astro';
 import '../styles/compact-landing.css';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
@@ -44,7 +45,7 @@ const jsonLd = {
   title={pageTitle}
   description={pageDescription}
   image="https://FrankBetances.github.io/proyectos/assets/descubre-con-lua/descubre-bienvenida.jpg"
-  keywords="Descubre con Lúa, Edición Vigo, educación infantil 0-6 años, escuelas infantiles Vigo, bilingüe gallego castellano, inglés TPR, pulso visual, STEAM infantil, startTIC, Zona Franca de Vigo"
+  keywords="Descubre con Lúa, Edición Vigo, educación infantil 0-6 años, escuelas infantiles Vigo, bilingüe gallego castellano, inglés TPR, pulso visual, STEAM infantil, Business Factory Health&Care, Galicia"
   jsonLd={jsonLd}
 >
   <Header activeTab="descubre-con-lua" />
@@ -61,24 +62,8 @@ const jsonLd = {
               class="cl-brand-logo-dark"
               decoding="async"
             />
-            <div class="cl-partner-strip">
-              <span class="cl-partner-pill">
-                <img
-                  src={`${baseUrl}/assets/descubre-con-lua/startic-logo.png`}
-                  alt="Incubadora startTIC"
-                  class="cl-partner-img"
-                  decoding="async"
-                />
-              </span>
-              <span class="cl-partner-pill">
-                <img
-                  src={`${baseUrl}/assets/descubre-con-lua/zona-franca-vigo-logo.png`}
-                  alt="Consorcio da Zona Franca de Vigo"
-                  class="cl-partner-img"
-                  decoding="async"
-                />
-              </span>
-            </div>
+            <GaliciaOriginBadge label="Diseñado en Galicia" detail="Vigo" variant="inline" />
+            <BfhcBadge />
           </div>
 
           <div class="cl-eyebrow">
@@ -92,7 +77,7 @@ const jsonLd = {
 
           <p class="cl-lead">
             Aplicación Android educativa, <strong>sin conexión</strong>, para primer ciclo (0–3 años) y segundo ciclo (3–6 años).
-            Una sola pregunta al abrir —<strong>¿Dónde la vas a usar?</strong>— conecta el <strong>Portal Docentes</strong> y el <strong>Portal Familias</strong> cada semana.
+            Una sola pregunta al abrir (<strong>¿Dónde la vas a usar?</strong>) conecta el <strong>Portal Docentes</strong> y el <strong>Portal Familias</strong> cada semana.
           </p>
 
           <p class="cl-axiom">
@@ -108,7 +93,6 @@ const jsonLd = {
             <span class="cl-pill">Gratis para familias</span>
             <span class="cl-pill">0 permisos de red</span>
             <span class="cl-pill">Pulso visual (audífono/implante)</span>
-            <GaliciaOriginBadge label="startTIC · Vigo" variant="inline" />
           </div>
         </div>
 
@@ -268,9 +252,9 @@ const jsonLd = {
         </div>
 
         <div class="cl-status-box">
-          <span class="cl-status-tag">Procedencia y licencia</span>
+          <span class="cl-status-tag">Licencia y origen</span>
           <p>
-            El proyecto nace en <strong>startTIC</strong> (Consorcio da Zona Franca de Vigo) pensado para las escuelas infantiles municipales del Concello de Vigo (marcas por procedencia y destino, no como respaldo pedido a terceros).
+            Impulsado en <a href="https://bfhealthcare.gal" target="_blank" rel="noopener noreferrer" style="color: var(--cl-accent-text);"><strong>Business Factory Health&amp;Care</strong></a> y pensado para las escuelas infantiles, colegios y familias de Vigo.
             <strong>Gratis para las familias para siempre</strong>; para escuelas, ayuntamientos, gabinetes o empresas requiere licencia previa por escrito (puede ser gratuita vía convenio o piloto).
           </p>
         </div>

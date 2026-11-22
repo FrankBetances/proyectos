@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import BfhcBadge from '../components/BfhcBadge.astro';
 import '../styles/compact-landing.css';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
@@ -66,6 +67,7 @@ const valeriaJsonLd = {
               decoding="async"
             />
             <GaliciaOriginBadge label="Diseñado en Galicia" detail="Maker Faire Galicia 2026" variant="inline" />
+            <BfhcBadge />
           </div>
 
           <div class="cl-eyebrow">

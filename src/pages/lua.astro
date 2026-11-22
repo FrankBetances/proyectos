@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
+import BfhcBadge from '../components/BfhcBadge.astro';
 import '../styles/compact-landing.css';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
@@ -57,6 +58,7 @@ const jsonLd = {
               decoding="async"
             />
             <GaliciaOriginBadge label="Diseñado en Galicia" detail="Prototipo V5 · C++17" variant="inline" />
+            <BfhcBadge />
           </div>
 
           <div class="cl-eyebrow">
@@ -200,47 +202,7 @@ const jsonLd = {
       </div>
     </section>
 
-    <!-- PANTALLA 4: ESTADO REAL Y VERIFICACIÓN -->
-    <section class="cl-screen" aria-labelledby="lua-status">
-      <div class="container">
-        <div class="cl-head">
-          <div class="cl-eyebrow">
-            <span class="cl-eyebrow-dot" aria-hidden="true"></span>
-            <span>Estado real del proyecto</span>
-          </div>
-          <h2 id="lua-status" class="cl-h2">Qué ya corre en placa y qué sigue pendiente</h2>
-        </div>
-
-        <div class="cl-grid-4">
-          <div class="cl-stat">
-            <div class="cl-stat-val">Cara · OK</div>
-            <div class="cl-stat-label">El firmware de la placa redonda ya ha corrido en el hardware real.</div>
-          </div>
-          <div class="cl-stat">
-            <div class="cl-stat-val">Cubo · En PC</div>
-            <div class="cl-stat-label">Lógica del cubo y puzles probados en ordenador (<code>make test</code>); falta compilar y probar en placa.</div>
-          </div>
-          <div class="cl-stat">
-            <div class="cl-stat-val">ESP-NOW</div>
-            <div class="cl-stat-label">Enlace cabeza → cubo escrito en el repositorio; pendiente de prueba entre placas físicas.</div>
-          </div>
-          <div class="cl-stat">
-            <div class="cl-stat-val">V5 · En CAD</div>
-            <div class="cl-stat-label">Cubo de 140 mm, cabeza de bloque, manual de montaje y emulador listos; pendiente de impresión y montaje.</div>
-          </div>
-        </div>
-
-        <div class="cl-status-box">
-          <span class="cl-status-tag">Transparencia</span>
-          <p>
-            Lúa es un <strong>prototipo en desarrollo</strong>. Incluye emulador web de escritorio (<code>make run</code>), pruebas automáticas de la lógica en C++17,
-            manual de montaje electrónico y dosier técnico completo antes de pasar a fabricación piloto.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PANTALLA 5: PROBAR O COLABORAR -->
+    <!-- PANTALLA 4: PROBAR O COLABORAR -->
     <section class="cl-screen" aria-labelledby="lua-cta">
       <div class="container">
         <div class="cl-cta-panel">
