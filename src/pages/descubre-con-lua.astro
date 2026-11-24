@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import ContactModal from '../components/cv/ContactModal.astro';
 import GaliciaOriginBadge from '../components/GaliciaOriginBadge.astro';
 import BfhcBadge from '../components/BfhcBadge.astro';
+import TelegramBotCard from '../components/TelegramBotCard.astro';
 import '../styles/compact-landing.css';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
@@ -300,6 +301,8 @@ const jsonLd = {
             </div>
           </div>
         </div>
+
+        <TelegramBotCard scope="descubre" />
       </div>
     </section>
   </main>

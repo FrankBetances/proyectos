@@ -1,0 +1,151 @@
+---
+interface Props {
+  scope: 'earlify' | 'valeria' | 'descubre';
+}
+
+const { scope } = Astro.props;
+
+const copyByScope: Record<Props['scope'], { title: string; description: string }> = {
+  earlify: {
+    title: '¿Dudas sobre Valeria+ o Descubre con Lúa?',
+    description:
+      'Manual vivo en Telegram sin comandos ni IA externa: resuelve cómo usar cada app, guía los primeros pasos y recoge tus sugerencias de forma anónima. No recoge datos del niño ni responde dudas clínicas.'
+  },
+  valeria: {
+    title: 'Manual vivo y sugerencias de Valeria+ en Telegram',
+    description:
+      'Pregunta con tus palabras cómo usar la app, sigue los primeros pasos, pide cápsulas de Academy o envíanos sugerencias anónimas. Sin IA externa ni datos del niño.'
+  },
+  descubre: {
+    title: 'Guía rápida y sugerencias de Descubre con Lúa',
+    description:
+      'Consulta dudas de aula o casa con tus palabras, recorre los primeros pasos y envía sugerencias anónimas para mejorar la app. Sin IA externa ni datos del niño.'
+  }
+};
+
+const { title, description } = copyByScope[scope];
+---
+
+<article class="cl-bot-card">
+  <header class="cl-bot-header">
+    <span class="cl-bot-kicker">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+      </svg>
+      <span>Telegram · @valeriaencasabot</span>
+    </span>
+    <h3 class="cl-bot-title">{title}</h3>
+  </header>
+
+  <p class="cl-bot-desc">{description}</p>
+
+  <footer class="cl-bot-footer">
+    <a
+      href="https://t.me/valeriaencasabot"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="cl-btn-secondary cl-bot-link"
+    >
+      Abrir @valeriaencasabot en Telegram
+    </a>
+  </footer>
+</article>
+
+<style>
+  .cl-bot-card {
+    container-type: inline-size;
+    margin-top: 1.25rem;
+    padding: 1.2rem 1.4rem;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--cl-accent-border);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    align-items: center;
+  }
+
+  .cl-bot-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .cl-bot-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-heading);
+    font-size: 0.74rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--cl-accent-text);
+  }
+
+  .cl-bot-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.28;
+  }
+
+  .cl-bot-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    max-width: 72ch;
+  }
+
+  .cl-bot-footer {
+    display: flex;
+    align-items: center;
+  }
+
+  .cl-bot-link {
+    min-block-size: 44px;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.88rem;
+    text-align: center;
+    border-color: var(--cl-accent-border);
+    background: var(--cl-accent-soft);
+  }
+
+  .cl-bot-link:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .cl-bot-link:focus-visible {
+    outline: 3px solid var(--cl-accent);
+    outline-offset: 3px;
+  }
+
+  @container (min-width: 640px) {
+    .cl-bot-card {
+      grid-template-columns: 1fr auto;
+      column-gap: 1.5rem;
+      row-gap: 0.35rem;
+    }
+
+    .cl-bot-header {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .cl-bot-desc {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .cl-bot-footer {
+      grid-column: 2;
+      grid-row: 1 / 3;
+      justify-content: flex-end;
+    }
+
+    .cl-bot-link {
+      white-space: nowrap;
+    }
+  }
+</style>
